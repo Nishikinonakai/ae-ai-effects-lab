@@ -1,0 +1,41 @@
+{
+  "_request": "深青蓝色、缓慢流动的烟雾背景 (deep teal-blue, slowly flowing smoke background)",
+  "_planner_rationale": [
+    "smoke form -> ADBE Fractal Noise; enriched card: Fractal Type 1 = 'soft billowy clouds', Noise Type 3 = 'smoothest/splined' — both chosen FROM the vision-derived enum labels, not guesses",
+    "'flowing' -> Evolution expression (churn) + Offset Turbulence drift expression (lateral motion); both marked animatable+expr in the card",
+    "'deep teal-blue' -> Fractal Noise is grayscale, so stack ADBE Tint: black->deep teal, white->pale cyan. THIS is why single-effect recipes were insufficient — real plans are effect stacks",
+    "'background' -> big soft features: Scale up to 220, moderate contrast, slightly darkened"
+  ],
+  "name": "smoke-bg",
+  "compName": "Plan_SmokeBG",
+  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 6 },
+  "background": null,
+  "hostName": "Smoke",
+  "effects": [
+    {
+      "matchName": "ADBE Fractal Noise",
+      "params": [
+        ["ADBE Fractal Noise-0001", 1,    "Fractal Type (soft clouds)"],
+        ["ADBE Fractal Noise-0002", 3,    "Noise Type (smoothest)"],
+        ["ADBE Fractal Noise-0004", 110,  "Contrast"],
+        ["ADBE Fractal Noise-0005", -12,  "Brightness"],
+        ["ADBE Fractal Noise-0010", 220,  "Scale (big billows)"]
+      ],
+      "expressions": [
+        ["ADBE Fractal Noise-0023", "time*40", "Evolution (slow churn)"],
+        ["ADBE Fractal Noise-0013", "[320 + time*18, 180]", "Offset (lateral drift)"]
+      ]
+    },
+    {
+      "matchName": "ADBE Tint",
+      "params": [
+        ["ADBE Tint-0001", [0.02, 0.08, 0.11, 1], "Map Black To (deep teal)"],
+        ["ADBE Tint-0002", [0.45, 0.72, 0.78, 1], "Map White To (pale cyan)"],
+        ["ADBE Tint-0003", 100, "Amount"]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [1, 4]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "tornado",
+  "description": "Rotating debris vortex. Compositional effect (T3) — REQUIRES a swept-angle emitter expression AND a 3D camera rig. This recipe is the whole point of the harness: it encodes structural knowledge that param-name reasoning cannot supply.",
+  "compName": "Recipe_Tornado",
+  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 8 },
+  "background": [0.09, 0.09, 0.11],
+  "effect": "tc Particular",
+  "hostName": "Tornado",
+  "params": [
+    ["tc Particular-0782", 1,      "Emitter Type (Point)"],
+    ["tc Particular-0146", 40000,  "Particles/sec (dense wall)"],
+    ["tc Particular-0011", 4,      "Velocity"],
+    ["tc Particular-0012", 0,      "Velocity from Motion (off)"],
+    ["tc Particular-0002", 1.9,    "Life (sec)"],
+    ["tc Particular-0065", 25,     "Life Random %"],
+    ["tc Particular-0027", 2.2,    "Size"],
+    ["tc Particular-0074", 75,     "Size Random %"],
+    ["tc Particular-0033", 30,     "Opacity"],
+    ["tc Particular-0075", 40,     "Opacity Random %"],
+    ["tc Particular-0070", [0.62, 0.57, 0.52, 1], "Color (dust)"],
+    ["tc Particular-0069", 1,      "Blend Mode (Normal)"],
+    ["tc Particular-0017", -4,     "Gravity (slight lift)"],
+    ["tc Particular-0711", 40,     "Turbulence -> Position (merge coils)"],
+    ["tc Particular-0035", 2,      "Motion Blur (on)"],
+    ["tc Particular-0036", 200,    "Shutter Angle"]
+  ],
+  "expressions": [
+    ["tc Particular-0581",
+      "var angRev=12.0;var hPer=2.0;var c=(time/hPer)%2;var p=1-Math.abs(1-c);var ang=time*angRev*2*Math.PI;var yB=700,yT=70;var y=yB+(yT-yB)*p;var rB=8,rT=150;var r=rB+(rT-rB)*Math.pow(p,0.8);[640+r*Math.sin(ang),y,r*Math.cos(ang)]",
+      "Emitter Position (swept-angle funnel)"]
+  ],
+  "camera": {
+    "position": [640, 380, -1150],
+    "pointOfInterest": [640, 430, 0]
+  },
+  "renderFrames": [5]
+}

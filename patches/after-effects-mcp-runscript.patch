@@ -1,0 +1,16 @@
+diff --git a/src/scripts/mcp-bridge-auto.jsx b/src/scripts/mcp-bridge-auto.jsx
+index 09dca98..3474572 100644
+--- a/src/scripts/mcp-bridge-auto.jsx
++++ b/src/scripts/mcp-bridge-auto.jsx
+@@ -1595,6 +1595,11 @@ function executeCommand(command, args) {
+                 result = setLayerMask(args);
+                 logToPanel("Returned from setLayerMask.");
+                 break;
++            case "runScript":
++                logToPanel("Running custom script (" + (args.script ? args.script.length : 0) + " chars)...");
++                result = String(eval(args.script));
++                logToPanel("Custom script finished.");
++                break;
+             default:
+                 result = JSON.stringify({ error: "Unknown command: " + command });
+         }

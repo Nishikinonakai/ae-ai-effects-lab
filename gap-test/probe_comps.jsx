@@ -1,0 +1,1 @@
+(function(){var c={};for(var i=1;i<=app.project.numItems;i++){var it=app.project.item(i);if(it instanceof CompItem){c[it.name]=(c[it.name]||0)+1;}}var out=[];for(var k in c)out.push('"'+k+'":'+c[k]);return "{"+out.join(",")+"}";})();

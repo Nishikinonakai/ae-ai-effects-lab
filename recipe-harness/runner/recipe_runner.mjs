@@ -1,0 +1,200 @@
+// recipe_runner.mjs — declarative Trapcode recipe runner for the AE MCP bridge.
+//
+// Reads a recipe JSON, compiles it into an idempotent ExtendScript program, sends it
+// through the file bridge (~/Documents/ae-mcp-bridge), waits for completion, then polls
+// for the rendered frame PNGs. Prints a structured report: per-param ok/fail + frame paths.
+//
+// usage: node recipe_runner.mjs <recipe.json> [--timeout=180]
+import fs from 'fs';
+import path from 'path';
+import os from 'os';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const REPO = path.resolve(__dirname, '..');
+const BRIDGE = path.join(os.homedir(), 'Documents', 'ae-mcp-bridge');
+const CMD = path.join(BRIDGE, 'ae_command.json');
+const RES = path.join(BRIDGE, 'ae_mcp_result.json');
+
+function die(msg) { console.error('ERROR: ' + msg); process.exit(1); }
+
+// ---- args ----
+const recipePath = process.argv[2];
+if (!recipePath) die('usage: node recipe_runner.mjs <recipe.json> [--timeout=180]');
+const timeoutSec = Number((process.argv.find(a => a.startsWith('--timeout=')) || '').split('=')[1] || 180);
+
+const recipe = JSON.parse(fs.readFileSync(recipePath, 'utf8'));
+
+// normalize: legacy single `effect` + top-level params/expressions -> one-element stack.
+// Real-world plans are almost always effect STACKS (e.g. Fractal Noise for form + Tint for
+// color), so `effects: [{matchName, params, expressions}, ...]` is the primary schema.
+if (!recipe.effects) {
+  recipe.effects = [{
+    matchName: recipe.effect,
+    params: recipe.params || [],
+    expressions: recipe.expressions || [],
+  }];
+}
+
+// output dir for frames
+const outDir = path.join(REPO, 'output');
+fs.mkdirSync(outDir, { recursive: true });
+recipe._outDir = outDir;
+
+// ---- ExtendScript interpreter (generic; recipe injected as a literal) ----
+// Builds its JSON report string MANUALLY (AE 2022 ExtendScript has no guaranteed JSON.stringify).
+const AEX = String.raw`(function () {
+  var R = __RECIPE__;
+  var parts = [];
+  var frames = [];
+  var esc = function (s) { return String(s).replace(/\\/g, "\\\\").replace(/"/g, '\"'); };
+
+  function findLayer(comp, name) {
+    for (var i = 1; i <= comp.numLayers; i++) if (comp.layer(i).name === name) return comp.layer(i);
+    return null;
+  }
+
+  try {
+    app.beginUndoGroup("Recipe: " + R.name);
+
+    // 1) find-or-create comp (idempotent — no duplicate comps on re-run)
+    var comp = null;
+    for (var i = 1; i <= app.project.numItems; i++) {
+      var it = app.project.item(i);
+      if (it instanceof CompItem && it.name === R.compName) { comp = it; break; }
+    }
+    if (!comp) comp = app.project.items.addComp(R.compName, R.comp.width, R.comp.height, 1, R.comp.duration, R.comp.fps);
+    comp.openInViewer();
+
+    // 2) find-or-create BG solid (Particular renders on transparency; needs a backing)
+    if (R.background) {
+      var bg = findLayer(comp, "BG");
+      if (!bg) bg = comp.layers.addSolid(R.background, "BG", R.comp.width, R.comp.height, 1, R.comp.duration);
+      else bg.property("Source Text"); // no-op guard
+      bg.moveToEnd();
+    }
+
+    // 3) find-or-create particle host solid
+    var hostName = R.hostName || "Host";
+    var host = findLayer(comp, hostName);
+    if (!host) host = comp.layers.addSolid([0,0,0], hostName, R.comp.width, R.comp.height, 1, R.comp.duration);
+
+    // 4) find-or-apply the effect STACK in order (multi-effect plans: form + color + glow ...)
+    for (var s = 0; s < R.effects.length; s++) {
+      var spec = R.effects[s];
+      var fx = null;
+      for (var fi = 1; fi <= host.Effects.numProperties; fi++) {
+        try { if (host.Effects.property(fi).matchName === spec.matchName) { fx = host.Effects.property(fi); break; } } catch (e) {}
+      }
+      if (!fx) fx = host.Effects.addProperty(spec.matchName);
+      var tag = "[" + (s + 1) + ":" + spec.matchName + "] ";
+
+      // params — per-param try/catch + readback (batch-set dies silently on first hidden param)
+      if (spec.params) {
+        for (var k = 0; k < spec.params.length; k++) {
+          var pr = spec.params[k];            // [matchName, value, label]
+          var mn = pr[0], val = pr[1], lbl = tag + (pr[2] || pr[0]);
+          try {
+            fx.property(mn).setValue(val);
+            var rb = String(fx.property(mn).value).substring(0, 24);
+            parts.push('{"p":"' + esc(lbl) + '","ok":true,"v":"' + esc(rb) + '"}');
+          } catch (e) {
+            parts.push('{"p":"' + esc(lbl) + '","ok":false,"err":"' + esc(String(e).substring(0,70)) + '"}');
+          }
+        }
+      }
+
+      // expressions (the only route to procedural motion; curves still need .ffx)
+      if (spec.expressions) {
+        for (var x = 0; x < spec.expressions.length; x++) {
+          var ex = spec.expressions[x];       // [matchName, exprString, label]
+          var emn = ex[0], estr = ex[1], elbl = tag + (ex[2] || ex[0]) + " (expr)";
+          try {
+            fx.property(emn).expression = estr;
+            parts.push('{"p":"' + esc(elbl) + '","ok":true}');
+          } catch (e) {
+            parts.push('{"p":"' + esc(elbl) + '","ok":false,"err":"' + esc(String(e).substring(0,70)) + '"}');
+          }
+        }
+      }
+    }
+
+    // 7) camera rig (Particular auto-uses the comp camera). Remove old, add fresh.
+    for (var L = comp.numLayers; L >= 1; L--) if (comp.layer(L) instanceof CameraLayer) comp.layer(L).remove();
+    if (R.camera) {
+      var cam = comp.layers.addCamera(R.name + " Cam", [R.comp.width/2, R.comp.height/2]);
+      cam.position.setValue(R.camera.position);
+      cam.pointOfInterest.setValue(R.camera.pointOfInterest);
+      if (R.camera.zoom) cam.property("Zoom").setValue(R.camera.zoom);
+    }
+
+    app.endUndoGroup();
+
+    // 8) render frames (saveFrameToPng is async; driver polls for the files)
+    for (var f = 0; f < R.renderFrames.length; f++) {
+      var t = R.renderFrames[f];
+      var fp = R._outDir + "/" + R.name + "_t" + String(t).replace(".", "p") + ".png";
+      comp.saveFrameToPng(t, new File(fp));
+      frames.push('"' + esc(fp) + '"');
+    }
+
+    return '{"status":"done","name":"' + esc(R.name) + '","params":[' + parts.join(",") + '],"frames":[' + frames.join(",") + ']}';
+  } catch (e) {
+    try { app.endUndoGroup(); } catch (e2) {}
+    return '{"status":"error","name":"' + esc(R.name) + '","message":"' + esc(String(e)) + '","params":[' + parts.join(",") + ']}';
+  }
+})();`;
+
+const script = AEX.replace('__RECIPE__', JSON.stringify(recipe));
+
+// ---- send through the bridge ----
+if (!fs.existsSync(BRIDGE)) fs.mkdirSync(BRIDGE, { recursive: true });
+fs.writeFileSync(RES, JSON.stringify({ status: 'waiting' }));
+fs.writeFileSync(CMD, JSON.stringify({
+  command: 'runScript',
+  args: { script },
+  timestamp: new Date().toISOString(),
+  status: 'pending',
+}, null, 2));
+
+const deadline = Date.now() + timeoutSec * 1000;
+let report = null;
+while (Date.now() < deadline) {
+  await new Promise(r => setTimeout(r, 1500));
+  try {
+    const cmd = JSON.parse(fs.readFileSync(CMD, 'utf8'));
+    if (cmd.status === 'completed' || cmd.status === 'error') {
+      report = JSON.parse(fs.readFileSync(RES, 'utf8'));
+      break;
+    }
+  } catch { /* mid-write */ }
+}
+if (!report) die('timed out waiting for AE bridge (is the panel open with Auto-run ON?)');
+if (report.status === 'error') {
+  console.error('RECIPE ERROR: ' + report.message);
+  if (report.params) console.error(fmtParams(report.params));
+  process.exit(1);
+}
+
+// ---- poll for async frame files ----
+const frames = report.frames || [];
+const frameDeadline = Date.now() + 30000;
+const ready = new Set();
+while (ready.size < frames.length && Date.now() < frameDeadline) {
+  await new Promise(r => setTimeout(r, 1000));
+  for (const fp of frames) if (!ready.has(fp) && fs.existsSync(fp) && fs.statSync(fp).size > 0) ready.add(fp);
+}
+
+// ---- report ----
+console.log('\n=== recipe: ' + report.name + ' ===');
+console.log(fmtParams(report.params));
+const okCount = report.params.filter(p => p.ok).length;
+console.log(`\nparams: ${okCount}/${report.params.length} ok`);
+console.log('frames:');
+for (const fp of frames) console.log(`  ${ready.has(fp) ? '✓' : '✗ (not written)'} ${fp}`);
+
+function fmtParams(params) {
+  return params.map(p => p.ok
+    ? `  ✓ ${p.p}${p.v !== undefined ? ' = ' + p.v : ''}`
+    : `  ✗ ${p.p}  — ${p.err}`).join('\n');
+}

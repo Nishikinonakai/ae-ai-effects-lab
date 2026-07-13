@@ -1,0 +1,100 @@
+{
+  "effect": {
+    "name": "Fractal Noise",
+    "matchName": "ADBE Fractal Noise"
+  },
+  "targets": [
+    {
+      "name": "Fractal Type",
+      "matchName": "ADBE Fractal Noise-0001",
+      "min": 1,
+      "max": 20,
+      "values": [
+        {
+          "value": 1,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0001__1.png"
+        },
+        {
+          "value": 6,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0001__6.png"
+        },
+        {
+          "value": 11,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0001__11.png"
+        },
+        {
+          "value": 15,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0001__15.png"
+        },
+        {
+          "value": 20,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0001__20.png"
+        }
+      ]
+    },
+    {
+      "name": "Noise Type",
+      "matchName": "ADBE Fractal Noise-0002",
+      "min": 1,
+      "max": 4,
+      "values": [
+        {
+          "value": 1,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0002__1.png"
+        },
+        {
+          "value": 2,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0002__2.png"
+        },
+        {
+          "value": 3,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0002__3.png"
+        },
+        {
+          "value": 4,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0002__4.png"
+        }
+      ]
+    },
+    {
+      "name": "Invert",
+      "matchName": "ADBE Fractal Noise-0003",
+      "min": 0,
+      "max": 1,
+      "values": [
+        {
+          "value": 0,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0003__0.png"
+        },
+        {
+          "value": 1,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0003__1.png"
+        }
+      ]
+    },
+    {
+      "name": "Overflow",
+      "matchName": "ADBE Fractal Noise-0006",
+      "min": 1,
+      "max": 4,
+      "values": [
+        {
+          "value": 1,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0006__1.png"
+        },
+        {
+          "value": 2,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0006__2.png"
+        },
+        {
+          "value": 3,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0006__3.png"
+        },
+        {
+          "value": 4,
+          "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/introspect/frames/ADBE_Fractal_Noise__ADBE_Fractal_Noise_0006__4.png"
+        }
+      ]
+    }
+  ]
+}

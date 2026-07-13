@@ -1,0 +1,47 @@
+{
+  "effect": "ADBE Fractal Noise",
+  "backend": "agent-vision (Claude, in-session)",
+  "descriptions": {
+    "ADBE Fractal Noise-0001": {
+      "param": "Fractal Type",
+      "values": {
+        "1": "soft billowy clouds — classic smooth fractal noise (Basic)",
+        "6": "soft out-of-focus blobs, lower detail — a 'dynamic' smooth family",
+        "11": "medium organic mottle (intermediate)",
+        "15": "denser churned structure with finer grain",
+        "20": "woven diagonal cross-hatch / grid weave — hard structured lattice"
+      },
+      "note": "Perceptually spans soft clouds (low) -> dynamic blur (mid) -> marble/liquid veins (~13) -> woven grid (high). NOT a smooth continuum; distinct look families. Values 4/6/10 are visually identical when STATIC — they differ only under Evolution animation.",
+      "caveat": "static-frame probe cannot separate temporally-varying members; needs animated probe"
+    },
+    "ADBE Fractal Noise-0002": {
+      "param": "Noise Type",
+      "values": {
+        "1": "soft continuous clouds",
+        "2": "hard square-cell blocks (pixelated mosaic)",
+        "3": "soft continuous clouds (smoothest / splined)",
+        "4": "soft continuous clouds"
+      },
+      "note": "Value 2 is the outlier: blocky mosaic. 1/3/4 are soft with subtle smoothness differences (interpolation quality)."
+    },
+    "ADBE Fractal Noise-0003": {
+      "param": "Invert",
+      "values": {
+        "0": "normal luminance",
+        "1": "tonally inverted (lights<->darks flipped)"
+      },
+      "note": "Boolean; clean luminance inversion."
+    },
+    "ADBE Fractal Noise-0006": {
+      "param": "Overflow",
+      "values": {
+        "1": "standard (clip)",
+        "2": "no visible change at default contrast",
+        "3": "no visible change at default contrast",
+        "4": "no visible change at default contrast"
+      },
+      "note": "CONTEXT-DEPENDENT: Overflow only affects pixels pushed out of 0..1 range. At default Contrast=100 almost nothing overflows, so values look identical. Re-probe at high Contrast (e.g. 400+) to reveal Clip / Soft Clamp / Wrap Back / HDR behavior.",
+      "caveat": "param effect gated by another param; needs a high-contrast probe context"
+    }
+  }
+}
