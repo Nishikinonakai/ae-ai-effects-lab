@@ -1,0 +1,20 @@
+{
+  "intent": "篝火余烬火星：橙红色发光的小火星从画面底部持续升起，被风吹向右上方，带轻微湍流抖动；深暖色近黑背景，密度适中（能看清单颗火星，不是雾也不是稀疏几颗）",
+  "backend": "agent",
+  "outcome": "pass",
+  "best_iter": 2,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "Rising motion confirmed (t1: particles confined to lower half; t4: filled frame — oldest particles reached top). Background near-black warm: good. Density: individual embers readable, acceptable. TWO failures: (1) particles are too dim and small — they read as faint dust motes or distant fireflies, not HOT embers; cores need to feel luminous (brighter amber, stronger glow, slightly larger). (2) rightward wind drift is not readable comparing t1→t4 — the cloud envelope looks horizontally symmetric; the oldest (topmost) particles should visibly lean right. Note: true ember fade-out (size/opacity over life) is a CUSTOM_VALUE curve — unscriptable, would need a .ffx preset; not blocking pass."
+    },
+    {
+      "iter": 2,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "All five criteria met. (1) Embers now luminous — warm amber cores with additive glow halos, size variety from Size Random reads as depth. (2) Motion: t1 lower-half only → t4 full frame (rise), and the rightward lean is readable: t4's upper-right quadrant clearly denser than upper-left (old particles drifted ~800px). (3) Organic scatter with turbulent clumping, no straight-line artifacts. (4) Near-black warm background, embers pop hard. (5) Density moderate, individual embers distinct. Residual taste gaps for a hero shot (not blocking): per-particle fade/shrink over life and color-over-life (white-hot → deep red) are CUSTOM_VALUE curves — unscriptable, owned by the future .ffx preset layer; some large soft blobs read slightly bokeh-like. Usable as a production element as-is."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "_request": "篝火余烬火星，升起并被风吹向右侧 (campfire embers rising, wind-blown to the right)",
+  "_planner_rationale": [
+    "embers = small glowing sprites -> tc Particular, Particle Type 0703=2 (Glow Sphere), Blend Add, warm orange color, glow up",
+    "'rising' -> negative Gravity (buoyant) + strong negative Wind Y; 'blown right' -> positive Wind X",
+    "'ember flicker/wander' -> Turbulence Affect Position with small Scale (fine jitter, not billowing)",
+    "box emitter across the bottom edge so embers enter from a fire line, not a point",
+    "initial values transposed from the verified golden-dust recipe, re-tuned for ember speed/sparseness — the tune loop owns the last 20%"
+  ],
+  "intent": "篝火余烬火星：橙红色发光的小火星从画面底部持续升起，被风吹向右上方，带轻微湍流抖动；深暖色近黑背景，密度适中（能看清单颗火星，不是雾也不是稀疏几颗）",
+  "pass_criteria": [
+    "particles read as small GLOWING embers — warm orange/amber with additive glow, not flat dots",
+    "clear rising + rightward drift visible when comparing the t1 and t4 frames",
+    "slight turbulent wander — trajectories not perfectly straight",
+    "background near-black with a warm tint; embers clearly pop",
+    "moderate density — individual embers readable; neither fog nor a handful"
+  ],
+  "name": "embers",
+  "compName": "Plan_Embers",
+  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 6 },
+  "background": [0.03, 0.015, 0.008],
+  "hostName": "Embers",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        ["tc Particular-0782", 2,                  "Emitter Type (Box)"],
+        ["tc Particular-0581", [640, 700, 0],       "Position (bottom center)"],
+        ["tc Particular-0577", 2,                   "Emitter Size mode"],
+        ["tc Particular-0014", 1100,                "Emitter Size X (fire line)"],
+        ["tc Particular-0146", 120,                 "Particles/sec"],
+        ["tc Particular-0011", 120,                 "Velocity"],
+        ["tc Particular-0012", 60,                  "Velocity Random %"],
+        ["tc Particular-0002", 3.5,                 "Life (sec)"],
+        ["tc Particular-0065", 40,                  "Life Random %"],
+        ["tc Particular-0703", 2,                   "Particle Type (Glow Sphere)"],
+        ["tc Particular-0017", -15,                 "Gravity (buoyant rise)"],
+        ["tc Particular-0750", -140,                "Wind Y (rise)"],
+        ["tc Particular-0749", 90,                  "Wind X (drift right)"],
+        ["tc Particular-0027", 1.6,                 "Size"],
+        ["tc Particular-0074", 60,                  "Size Random %"],
+        ["tc Particular-0033", 90,                  "Opacity"],
+        ["tc Particular-0075", 70,                  "Opacity Random % (flicker)"],
+        ["tc Particular-0070", [1, 0.45, 0.12, 1],  "Color (ember orange)"],
+        ["tc Particular-0069", 2,                   "Blend Mode (Add)"],
+        ["tc Particular-0216", 70,                  "Glow Opacity"],
+        ["tc Particular-0215", 250,                 "Glow Size"],
+        ["tc Particular-0711", 120,                 "Turbulence -> Position"],
+        ["tc Particular-0715", 6,                   "Turbulence Scale (fine jitter)"]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [1, 4]
+}

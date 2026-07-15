@@ -25,12 +25,39 @@ comp camera reprojects it upright) frozen into a portable artifact.
 Prereq: AE open with **Window ▸ mcp-bridge-auto.jsx** panel, "Auto-run commands" checked.
 
 ```bash
+../bridge_up.sh                      # zero-manual-step bridge bootstrap (launches AE + panel)
 node runner/recipe_runner.mjs recipes/golden-dust.json
 node runner/recipe_runner.mjs recipes/tornado.json --timeout=180
+
+# auto visual-tune loop (plan needs "intent"; see below)
+node runner/tune_loop.mjs plans/plan-embers.json --max-iters=4          # agent-vision backend
+node runner/tune_loop.mjs plans/plan-embers.json --backend=api          # headless (ANTHROPIC_API_KEY)
 ```
 
 Frames render to `output/<name>_t<time>.png`. The runner prints a per-parameter ok/fail
 report (with value read-back) and the frame paths.
+
+## The tune loop (closes the visual loop)
+
+`runner/tune_loop.mjs` runs a plan, renders, has a vision scorer judge the frames against
+the plan's `intent` + `pass_criteria`, applies the scorer's suggestions MECHANICALLY to
+the plan, and re-renders — until pass or `--max-iters`. Because the runner is
+find-or-create-idempotent, every iteration turns knobs on the SAME live comp.
+
+- **State machine** over `loop/<name>/iterN/` (plan, param report, frames,
+  review_request.json, review.json) + a final `summary.json`. Every invocation advances
+  as far as it can; exit codes: 0 pass, 1 fail, 2 awaiting review.
+- **Two scorer backends, one schema** (`runner/review_schema.mjs` — same seam philosophy
+  as the introspect vision backends): `--backend=agent` stages a review request and exits
+  for the in-session agent to score; `--backend=api` calls `vision/claude_score.mjs`
+  headlessly. The loop cannot tell them apart.
+- **Suggestions are typed and bounded**: `param` / `expression` / `effect` (max one new
+  effect per iter) / `camera` / `background`. Applied suggestions land in the next iter's
+  plan with a `_loop_history` audit trail; a fail-verdict with no applicable suggestions
+  ends the loop instead of spinning.
+- **Verified 2026-07-15** on `plans/plan-embers.json`: iter1 6/10 (too dim, drift
+  unreadable) → 7 nudges applied → iter2 8/10 PASS → promoted to `recipes/embers.json`.
+  The recipe library can now be GROWN by the loop instead of hand-tuning.
 
 ## Recipe schema
 
@@ -84,5 +111,6 @@ report (with value read-back) and the frame paths.
    undocumented enum ranges (e.g. Emitter Size mode 0577 only accepts 1–2).
 3. **Multi-system / multi-layer recipes** — a portfolio tornado needs core + wisps + debris as
    separate systems plus a matte; the schema currently targets one effect on one host.
-4. **Visual-loop scoring** — the runner renders frames; a scoring/critique step (LLM-in-the-loop)
-   would close the tune loop automatically instead of a human reading each frame.
+4. ~~**Visual-loop scoring**~~ — DONE 2026-07-15: `runner/tune_loop.mjs` (see "The tune loop"
+   above). Remaining refinement: objective sub-checks (e.g. pixel-statistics motion deltas)
+   alongside the perceptual score.

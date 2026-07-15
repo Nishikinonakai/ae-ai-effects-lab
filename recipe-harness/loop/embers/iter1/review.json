@@ -1,0 +1,14 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "Rising motion confirmed (t1: particles confined to lower half; t4: filled frame — oldest particles reached top). Background near-black warm: good. Density: individual embers readable, acceptable. TWO failures: (1) particles are too dim and small — they read as faint dust motes or distant fireflies, not HOT embers; cores need to feel luminous (brighter amber, stronger glow, slightly larger). (2) rightward wind drift is not readable comparing t1→t4 — the cloud envelope looks horizontally symmetric; the oldest (topmost) particles should visibly lean right. Note: true ember fade-out (size/opacity over life) is a CUSTOM_VALUE curve — unscriptable, would need a .ffx preset; not blocking pass.",
+  "suggestions": [
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0749", "value": 230, "why": "Wind X 90→230: make rightward drift unmistakable; topmost/oldest particles will lean clearly right" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0070", "value": [1, 0.58, 0.16, 1], "why": "hotter amber core color — current orange too dull for burning embers" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0027", "value": 2.1, "why": "Size 1.6→2.1: embers currently too small, read as dust" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0033", "value": 100, "why": "full opacity for hot cores" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0216", "value": 100, "why": "Glow Opacity 70→100: luminous halo sells 'glowing'" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0215", "value": 320, "why": "Glow Size 250→320: wider halo" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0146", "value": 160, "why": "slightly fuller field, still individually readable" }
+  ]
+}

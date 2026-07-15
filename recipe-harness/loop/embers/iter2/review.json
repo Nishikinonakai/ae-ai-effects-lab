@@ -1,0 +1,6 @@
+{
+  "verdict": "pass",
+  "score": 8,
+  "critique": "All five criteria met. (1) Embers now luminous — warm amber cores with additive glow halos, size variety from Size Random reads as depth. (2) Motion: t1 lower-half only → t4 full frame (rise), and the rightward lean is readable: t4's upper-right quadrant clearly denser than upper-left (old particles drifted ~800px). (3) Organic scatter with turbulent clumping, no straight-line artifacts. (4) Near-black warm background, embers pop hard. (5) Density moderate, individual embers distinct. Residual taste gaps for a hero shot (not blocking): per-particle fade/shrink over life and color-over-life (white-hot → deep red) are CUSTOM_VALUE curves — unscriptable, owned by the future .ffx preset layer; some large soft blobs read slightly bokeh-like. Usable as a production element as-is.",
+  "suggestions": []
+}

@@ -1,0 +1,125 @@
+{
+  "status": "done",
+  "name": "embers_i2",
+  "params": [
+    {
+      "p": "[1:tc Particular] Emitter Type (Box)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Position (bottom center)",
+      "ok": true,
+      "v": "640,700,0"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size mode",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size X (fire line)",
+      "ok": true,
+      "v": "1100"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec",
+      "ok": true,
+      "v": "160"
+    },
+    {
+      "p": "[1:tc Particular] Velocity",
+      "ok": true,
+      "v": "120"
+    },
+    {
+      "p": "[1:tc Particular] Velocity Random %",
+      "ok": true,
+      "v": "60"
+    },
+    {
+      "p": "[1:tc Particular] Life (sec)",
+      "ok": true,
+      "v": "3.5"
+    },
+    {
+      "p": "[1:tc Particular] Life Random %",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Particle Type (Glow Sphere)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Gravity (buoyant rise)",
+      "ok": true,
+      "v": "-15"
+    },
+    {
+      "p": "[1:tc Particular] Wind Y (rise)",
+      "ok": true,
+      "v": "-140"
+    },
+    {
+      "p": "[1:tc Particular] Wind X (drift right)",
+      "ok": true,
+      "v": "230"
+    },
+    {
+      "p": "[1:tc Particular] Size",
+      "ok": true,
+      "v": "2.09999990463257"
+    },
+    {
+      "p": "[1:tc Particular] Size Random %",
+      "ok": true,
+      "v": "60"
+    },
+    {
+      "p": "[1:tc Particular] Opacity",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Particular] Opacity Random % (flicker)",
+      "ok": true,
+      "v": "70"
+    },
+    {
+      "p": "[1:tc Particular] Color (ember orange)",
+      "ok": true,
+      "v": "1,0.5799999833107,0.1599"
+    },
+    {
+      "p": "[1:tc Particular] Blend Mode (Add)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Glow Opacity",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Particular] Glow Size",
+      "ok": true,
+      "v": "320"
+    },
+    {
+      "p": "[1:tc Particular] Turbulence -> Position",
+      "ok": true,
+      "v": "120"
+    },
+    {
+      "p": "[1:tc Particular] Turbulence Scale (fine jitter)",
+      "ok": true,
+      "v": "6"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/embers/iter2/embers_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/embers/iter2/embers_i2_t4.png"
+  ]
+}

@@ -35,7 +35,7 @@ claim below is backed by a rendered frame or a machine-readable artifact in this
 |---|---|
 | `after-effects-mcp/` | Vendored fork of Dakkshin/after-effects-mcp (see `patches/UPSTREAM.md`). Adds `runScript` — arbitrary ExtendScript through the bridge; everything else depends on it. |
 | `gap-test/` | The 3-tier capability test that de-risked the product thesis, plus all rendered evidence frames (T1 dust / T2 beam / T3 tornado v1–v14). |
-| `recipe-harness/` | Declarative recipe/plan runner (effect **stacks**, ordered params, expressions, camera rigs, frame renders; idempotent). Recipes: golden-dust, tornado. Plans: smoke-bg (first NL→plan→render→score loop). |
+| `recipe-harness/` | Declarative recipe/plan runner (effect **stacks**, ordered params, expressions, camera rigs, frame renders; idempotent) + **`tune_loop.mjs`, the auto visual-tune loop** (render → vision-score vs intent → mechanical nudges → re-render until pass). Recipes: golden-dust, tornado, embers (loop-produced). Plans: smoke-bg, embers. |
 | `introspect/` | Automatic effect-ontology pipeline: generic introspector (any effect → structural card) + visual causal probe (enum semantics from renders) + enrichment merger + production Claude-vision backend. |
 | `patches/` | The fork's diff vs upstream + reproduction instructions. |
 
@@ -60,16 +60,31 @@ claim below is backed by a rendered frame or a machine-readable artifact in this
    的烟雾背景" → card-guided plan (Fractal Noise form + Tint color as an effect stack +
    evolution/drift expressions) → 10/10 params → frames verified against intent, one shot.
    Native effects proved far more LLM-tractable than third-party (semantic names, real ranges).
+6. **The tune loop, closed** (`recipe-harness/runner/tune_loop.mjs`, 2026-07-15): plan →
+   render → vision-score vs intent → typed suggestions applied mechanically → re-render,
+   as a re-entrant state machine with two interchangeable scorer backends (in-session agent /
+   Claude API) writing one review schema. Verified live: embers plan, 6/10 → 8/10 PASS in
+   2 iterations, promoted to `recipes/embers.json`. Recipes are now GROWN by the loop.
+7. **Zero-manual-step bridge bootstrap** (`bridge_up.sh`, 2026-07-15): the bridge panel is a
+   plain ScriptUI palette, so AppleScript `DoScriptFile` can launch it — no Window-menu
+   click. A cold Mac reaches a live bridge fully unattended.
 
 ## Running
 
-Prereqs: AE 2022 open, `Window ▸ mcp-bridge-auto.jsx` panel visible, "Auto-run commands"
-checked, "Allow Scripts to Write Files and Access Network" enabled, Node 18+.
+Prereqs: AE 2022 installed with the bridge panel (see `patches/UPSTREAM.md`), "Allow Scripts
+to Write Files and Access Network" enabled, Node 18+.
 
 ```bash
+# bring the bridge up from cold — launches AE + the panel, no manual clicks
+./bridge_up.sh
+
 # recipes / plans
 node recipe-harness/runner/recipe_runner.mjs recipe-harness/recipes/golden-dust.json
 node recipe-harness/runner/recipe_runner.mjs recipe-harness/plans/plan-smoke-bg.json
+
+# auto visual-tune loop (agent backend pauses for in-session review; api is headless)
+node recipe-harness/runner/tune_loop.mjs recipe-harness/plans/plan-embers.json
+node recipe-harness/runner/tune_loop.mjs recipe-harness/plans/plan-embers.json --backend=api
 
 # ontology pipeline for any effect
 node introspect/introspect_effect.mjs "ADBE Fractal Noise"
