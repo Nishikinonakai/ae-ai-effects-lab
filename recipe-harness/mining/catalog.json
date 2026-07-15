@@ -1,0 +1,5025 @@
+{
+  "generated_from": "/Users/Shared/Red Giant/Trapcode Packs",
+  "presets": [
+    {
+      "name": "Black Triangle Slabs",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Black Triangle Slabs.xbxc",
+      "draft": "drafts/TC14/black-triangle-slabs.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Black Triangle Slabs.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Blue Icosas",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Blue Icosas.xbxc",
+      "draft": "drafts/TC14/blue-icosas.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Blue Icosas.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Bucky Balls",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Bucky Balls.xbxc",
+      "draft": "drafts/TC14/bucky-balls.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Bucky Balls.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Low Poly Spheres",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Low Poly Spheres.xbxc",
+      "draft": "drafts/TC14/low-poly-spheres.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Low Poly Spheres.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Multipoint Stars",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Multipoint Stars.xbxc",
+      "draft": "drafts/TC14/multipoint-stars.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Multipoint Stars.png",
+      "mapped": 35,
+      "unmapped": 36,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Orange Icosas",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Orange Icosas.xbxc",
+      "draft": "drafts/TC14/orange-icosas.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Orange Icosas.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Primitive Bits Directional",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Primitive Bits Directional.xbxc",
+      "draft": "drafts/TC14/primitive-bits-directional.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Primitive Bits Directional.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Primitive Bits Uniform",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Primitive Bits Uniform.xbxc",
+      "draft": "drafts/TC14/primitive-bits-uniform.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Primitive Bits Uniform.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Rounded Cubes",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Rounded Cubes.xbxc",
+      "draft": "drafts/TC14/rounded-cubes.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Rounded Cubes.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Stars 5 pt",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Stars 5 pt.xbxc",
+      "draft": "drafts/TC14/stars-5-pt.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Stars 5 pt.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Stars 6 pt",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Stars 6 pt.xbxc",
+      "draft": "drafts/TC14/stars-6-pt.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Stars 6 pt.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Stars 8 pt",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Stars 8 pt.xbxc",
+      "draft": "drafts/TC14/stars-8-pt.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Stars 8 pt.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Triangles 2D",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Triangles 2D.xbxc",
+      "draft": "drafts/TC14/triangles-2d.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Triangles 2D.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Wireframe Pyramids",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Wireframe Pyramids.xbxc",
+      "draft": "drafts/TC14/wireframe-pyramids.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Wireframe Pyramids.png",
+      "mapped": 29,
+      "unmapped": 13,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Yellow Tech Balls",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Yellow Tech Balls.xbxc",
+      "draft": "drafts/TC14/yellow-tech-balls.json",
+      "thumb": "thumbs/TC14/Abstract and Geometric/Yellow Tech Balls.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Aux System Legacy",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Aux System Legacy.xbxc",
+      "draft": "drafts/TC14/aux-system-legacy.json",
+      "thumb": "thumbs/TC14/Basics/Aux System Legacy.png",
+      "mapped": 64,
+      "unmapped": 151,
+      "curves": []
+    },
+    {
+      "name": "Aux System New",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Aux System New.xbxc",
+      "draft": "drafts/TC14/aux-system-new.json",
+      "thumb": "thumbs/TC14/Basics/Aux System New.png",
+      "mapped": 66,
+      "unmapped": 151,
+      "curves": []
+    },
+    {
+      "name": "Basic Blue Particles",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Basic Blue Particles.xbxc",
+      "draft": "drafts/TC14/basic-blue-particles.json",
+      "thumb": "thumbs/TC14/Basics/Basic Blue Particles.png",
+      "mapped": 32,
+      "unmapped": 6,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Basic Glow Spheres",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Basic Glow Spheres.xbxc",
+      "draft": "drafts/TC14/basic-glow-spheres.json",
+      "thumb": "thumbs/TC14/Basics/Basic Glow Spheres.png",
+      "mapped": 44,
+      "unmapped": 106,
+      "curves": []
+    },
+    {
+      "name": "Basic Stars",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Basic Stars.xbxc",
+      "draft": "drafts/TC14/basic-stars.json",
+      "thumb": "thumbs/TC14/Basics/Basic Stars.png",
+      "mapped": 29,
+      "unmapped": 6,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Clean Start",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Clean Start.xbxc",
+      "draft": "drafts/TC14/clean-start.json",
+      "thumb": "thumbs/TC14/Basics/Clean Start.png",
+      "mapped": 22,
+      "unmapped": 3,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Deep Box Area",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Deep Box Area.xbxc",
+      "draft": "drafts/TC14/deep-box-area.json",
+      "thumb": null,
+      "mapped": 29,
+      "unmapped": 3,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Directional Intense",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Directional Intense.xbxc",
+      "draft": "drafts/TC14/directional-intense.json",
+      "thumb": "thumbs/TC14/Basics/Directional Intense.png",
+      "mapped": 31,
+      "unmapped": 5,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Directional Mild",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Directional Mild.xbxc",
+      "draft": "drafts/TC14/directional-mild.json",
+      "thumb": "thumbs/TC14/Basics/Directional Mild.png",
+      "mapped": 31,
+      "unmapped": 5,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Explosion Trail w Gravity",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Explosion Trail with Gravity.xbxc",
+      "draft": "drafts/TC14/explosion-trail-with-gravity.json",
+      "thumb": null,
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Explosion Trail",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Explosion Trail.xbxc",
+      "draft": "drafts/TC14/explosion-trail.json",
+      "thumb": null,
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Fire Motion",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Fire Motion.xbxc",
+      "draft": "drafts/TC14/fire-motion.json",
+      "thumb": "thumbs/TC14/Basics/Fire Motion.png",
+      "mapped": 37,
+      "unmapped": 7,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "OBJ Emitter",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/OBJ Emitter.xbxc",
+      "draft": "drafts/TC14/obj-emitter.json",
+      "thumb": "thumbs/TC14/Basics/OBJ Emitter.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Pastel Dots",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Pastel Dots.xbxc",
+      "draft": "drafts/TC14/pastel-dots.json",
+      "thumb": "thumbs/TC14/Basics/Pastel Dots.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Point Emitter with Turbulence",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Point Emitter with Turbulence.xbxc",
+      "draft": "drafts/TC14/point-emitter-with-turbulence.json",
+      "thumb": "thumbs/TC14/Basics/Point Emitter with Turbulence.png",
+      "mapped": 31,
+      "unmapped": 5,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Point Explosion",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Point Explosion.xbxc",
+      "draft": "drafts/TC14/point-explosion.json",
+      "thumb": "thumbs/TC14/Basics/Point Explosion.png",
+      "mapped": 28,
+      "unmapped": 3,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Point Rise",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Point Rise.xbxc",
+      "draft": "drafts/TC14/point-rise.json",
+      "thumb": "thumbs/TC14/Basics/Point Rise.png",
+      "mapped": 34,
+      "unmapped": 7,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Simple Dots",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Simple Dots.xbxc",
+      "draft": "drafts/TC14/simple-dots.json",
+      "thumb": "thumbs/TC14/Basics/Simple Dots.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Simple Light Path",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Simple Light Path.xbxc",
+      "draft": "drafts/TC14/simple-light-path.json",
+      "thumb": "thumbs/TC14/Basics/Simple Light Path.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Simple Point Emitter",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Simple Point Emitter.xbxc",
+      "draft": "drafts/TC14/simple-point-emitter.json",
+      "thumb": "thumbs/TC14/Basics/Simple Point Emitter.png",
+      "mapped": 28,
+      "unmapped": 3,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Single Glow",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Single Glow.xbxc",
+      "draft": "drafts/TC14/single-glow.json",
+      "thumb": "thumbs/TC14/Basics/Single Glow.png",
+      "mapped": 63,
+      "unmapped": 140,
+      "curves": []
+    },
+    {
+      "name": "Confetti",
+      "pack": "TC14",
+      "category": "Dust and Debris",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Confetti.xbxc",
+      "draft": "drafts/TC14/confetti.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Dust in the Wind",
+      "pack": "TC14",
+      "category": "Dust and Debris",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Dust in the Wind.xbxc",
+      "draft": "drafts/TC14/dust-in-the-wind.json",
+      "thumb": null,
+      "mapped": 34,
+      "unmapped": 3,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Floating Dust",
+      "pack": "TC14",
+      "category": "Dust and Debris",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Floating Dust.xbxc",
+      "draft": "drafts/TC14/floating-dust.json",
+      "thumb": null,
+      "mapped": 36,
+      "unmapped": 5,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Glitter",
+      "pack": "TC14",
+      "category": "Dust and Debris",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Glitter.xbxc",
+      "draft": "drafts/TC14/glitter.json",
+      "thumb": null,
+      "mapped": 39,
+      "unmapped": 7,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Horizontal Dust",
+      "pack": "TC14",
+      "category": "Dust and Debris",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Horizontal Dust.xbxc",
+      "draft": "drafts/TC14/horizontal-dust.json",
+      "thumb": null,
+      "mapped": 26,
+      "unmapped": 10,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Moon Dust",
+      "pack": "TC14",
+      "category": "Dust and Debris",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Moon Dust.xbxc",
+      "draft": "drafts/TC14/moon-dust.json",
+      "thumb": null,
+      "mapped": 26,
+      "unmapped": 3,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Sparkle Dust",
+      "pack": "TC14",
+      "category": "Dust and Debris",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Sparkle Dust.xbxc",
+      "draft": "drafts/TC14/sparkle-dust.json",
+      "thumb": null,
+      "mapped": 38,
+      "unmapped": 21,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Blast Sparks 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Blast Sparks 1.xbxc",
+      "draft": "drafts/TC14/blast-sparks-1.json",
+      "thumb": "thumbs/TC14/Explosive/Blast Sparks 1.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Blast Sparks 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Blast Sparks 2.xbxc",
+      "draft": "drafts/TC14/blast-sparks-2.json",
+      "thumb": "thumbs/TC14/Explosive/Blast Sparks 2.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Dust Hit 02",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Dust Hit 02.xbxc",
+      "draft": "drafts/TC14/dust-hit-02.json",
+      "thumb": null,
+      "mapped": 39,
+      "unmapped": 26,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Dust Hit 03",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Dust Hit 03.xbxc",
+      "draft": "drafts/TC14/dust-hit-03.json",
+      "thumb": null,
+      "mapped": 39,
+      "unmapped": 26,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Explode Out",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Explode Out.xbxc",
+      "draft": "drafts/TC14/explode-out.json",
+      "thumb": "thumbs/TC14/Explosive/Explode Out.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Explode Up Dark",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Explode Up Dark.xbxc",
+      "draft": "drafts/TC14/explode-up-dark.json",
+      "thumb": "thumbs/TC14/Explosive/Explode Up Dark.png",
+      "mapped": 34,
+      "unmapped": 27,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Explode Up",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Explode Up.xbxc",
+      "draft": "drafts/TC14/explode-up.json",
+      "thumb": "thumbs/TC14/Explosive/Explode Up.png",
+      "mapped": 34,
+      "unmapped": 27,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Fire Burst 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire Burst 1.xbxc",
+      "draft": "drafts/TC14/fire-burst-1.json",
+      "thumb": "thumbs/TC14/Explosive/Fire Burst 1.png",
+      "mapped": 29,
+      "unmapped": 13,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Fire Burst 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire Burst 2.xbxc",
+      "draft": "drafts/TC14/fire-burst-2.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Fire Trails 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire Trails 1.xbxc",
+      "draft": "drafts/TC14/fire-trails-1.json",
+      "thumb": "thumbs/TC14/Explosive/Fire Trails 1.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Fire Trails 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire Trails 2.xbxc",
+      "draft": "drafts/TC14/fire-trails-2.json",
+      "thumb": "thumbs/TC14/Explosive/Fire Trails 2.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Fireball Medium 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fireball Medium 1.xbxc",
+      "draft": "drafts/TC14/fireball-medium-1.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Fireball Medium 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fireball Medium 2.xbxc",
+      "draft": "drafts/TC14/fireball-medium-2.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Flare Flash 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Flare Flash 1.xbxc",
+      "draft": "drafts/TC14/flare-flash-1.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Flare Flash 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Flare Flash 2.xbxc",
+      "draft": "drafts/TC14/flare-flash-2.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Flare Flash 3",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Flare Flash 3.xbxc",
+      "draft": "drafts/TC14/flare-flash-3.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Glass Bits",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Glass Bits.xbxc",
+      "draft": "drafts/TC14/glass-bits.json",
+      "thumb": null,
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Glass Shard Explosion 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Glass Shard Explosion 2.xbxc",
+      "draft": "drafts/TC14/glass-shard-explosion-2.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Glass Shard Explosion 3",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Glass Shard Explosion 3.xbxc",
+      "draft": "drafts/TC14/glass-shard-explosion-3.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Glow Spark Blast",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Glow Spark Blast.xbxc",
+      "draft": "drafts/TC14/glow-spark-blast.json",
+      "thumb": null,
+      "mapped": 35,
+      "unmapped": 82,
+      "curves": []
+    },
+    {
+      "name": "Ignition",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Ignition.xbxc",
+      "draft": "drafts/TC14/ignition.json",
+      "thumb": "thumbs/TC14/Explosive/Ignition.png",
+      "mapped": 29,
+      "unmapped": 13,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Muzzle Flash 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Muzzle Flash 1.xbxc",
+      "draft": "drafts/TC14/muzzle-flash-1.json",
+      "thumb": "thumbs/TC14/Explosive/Muzzle Flash 1.png",
+      "mapped": 32,
+      "unmapped": 25,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Muzzle Flash 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Muzzle Flash 2.xbxc",
+      "draft": "drafts/TC14/muzzle-flash-2.json",
+      "thumb": "thumbs/TC14/Explosive/Muzzle Flash 2.png",
+      "mapped": 32,
+      "unmapped": 25,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Muzzle Flash 3",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Muzzle Flash 3.xbxc",
+      "draft": "drafts/TC14/muzzle-flash-3.json",
+      "thumb": "thumbs/TC14/Explosive/Muzzle Flash 3.png",
+      "mapped": 32,
+      "unmapped": 25,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Muzzle Flash 4",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Muzzle Flash 4.xbxc",
+      "draft": "drafts/TC14/muzzle-flash-4.json",
+      "thumb": "thumbs/TC14/Explosive/Muzzle Flash 4.png",
+      "mapped": 37,
+      "unmapped": 22,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Plasma Cloud Explosion",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Plasma Cloud Explosion 1.xbxc",
+      "draft": "drafts/TC14/plasma-cloud-explosion-1.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Plasma Cloud Explosion 2s",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Plasma Cloud Explosion 2.xbxc",
+      "draft": "drafts/TC14/plasma-cloud-explosion-2.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Ring Explosion",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Ring Explosion.xbxc",
+      "draft": "drafts/TC14/ring-explosion.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Smoke Explosion",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Smoke Explosion.xbxc",
+      "draft": "drafts/TC14/smoke-explosion.json",
+      "thumb": "thumbs/TC14/Explosive/Smoke Explosion.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Smoke Hit",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Smoke Hit.xbxc",
+      "draft": "drafts/TC14/smoke-hit.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Smoke Puff 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Smoke Puff 1.xbxc",
+      "draft": "drafts/TC14/smoke-puff-1.json",
+      "thumb": "thumbs/TC14/Explosive/Smoke Puff 1.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Smoke Puff 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Smoke Puff 2.xbxc",
+      "draft": "drafts/TC14/smoke-puff-2.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Spark Blast 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Blast 1.xbxc",
+      "draft": "drafts/TC14/spark-blast-1.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Spark Directional",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Directional.xbxc",
+      "draft": "drafts/TC14/spark-directional.json",
+      "thumb": "thumbs/TC14/Explosive/Spark Directional.png",
+      "mapped": 39,
+      "unmapped": 22,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Spark Single",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Single.xbxc",
+      "draft": "drafts/TC14/spark-single.json",
+      "thumb": "thumbs/TC14/Explosive/Spark Single.png",
+      "mapped": 38,
+      "unmapped": 21,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Spark Strings 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Strings 1.xbxc",
+      "draft": "drafts/TC14/spark-strings-1.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Spark Strings 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Strings 2.xbxc",
+      "draft": "drafts/TC14/spark-strings-2.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Spark Strings 3",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Strings 3.xbxc",
+      "draft": "drafts/TC14/spark-strings-3.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Sparks Ignite",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Sparks Ignite.xbxc",
+      "draft": "drafts/TC14/sparks-ignite.json",
+      "thumb": null,
+      "mapped": 42,
+      "unmapped": 85,
+      "curves": []
+    },
+    {
+      "name": "Bow Shock",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Bow Shock.xbxc",
+      "draft": "drafts/TC14/bow-shock.json",
+      "thumb": "thumbs/TC14/Fluid/Bow Shock.png",
+      "mapped": 50,
+      "unmapped": 133,
+      "curves": []
+    },
+    {
+      "name": "Brownian Motion",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Brownian Motion.xbxc",
+      "draft": "drafts/TC14/brownian-motion.json",
+      "thumb": "thumbs/TC14/Fluid/Brownian Motion.png",
+      "mapped": 50,
+      "unmapped": 133,
+      "curves": []
+    },
+    {
+      "name": "Candle Flame",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Candle Flame.xbxc",
+      "draft": "drafts/TC14/candle-flame.json",
+      "thumb": "thumbs/TC14/Fluid/Candle Flame.png",
+      "mapped": 50,
+      "unmapped": 133,
+      "curves": []
+    },
+    {
+      "name": "Fumes",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Fumes.xbxc",
+      "draft": "drafts/TC14/fumes.json",
+      "thumb": "thumbs/TC14/Fluid/Fumes.png",
+      "mapped": 50,
+      "unmapped": 133,
+      "curves": []
+    },
+    {
+      "name": "Grid Fluid",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Grid Fluid.xbxc",
+      "draft": "drafts/TC14/grid-fluid.json",
+      "thumb": "thumbs/TC14/Fluid/Grid Fluid.png",
+      "mapped": 50,
+      "unmapped": 133,
+      "curves": []
+    },
+    {
+      "name": "Horizontal Stream",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Horizontal Stream.xbxc",
+      "draft": "drafts/TC14/horizontal-stream.json",
+      "thumb": "thumbs/TC14/Fluid/Horizontal Stream.png",
+      "mapped": 50,
+      "unmapped": 133,
+      "curves": []
+    },
+    {
+      "name": "Ink Drop",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Ink Drop.xbxc",
+      "draft": "drafts/TC14/ink-drop.json",
+      "thumb": "thumbs/TC14/Fluid/Ink Drop.png",
+      "mapped": 50,
+      "unmapped": 133,
+      "curves": []
+    },
+    {
+      "name": "Melted",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Melted.xbxc",
+      "draft": "drafts/TC14/melted.json",
+      "thumb": "thumbs/TC14/Fluid/Melted.png",
+      "mapped": 50,
+      "unmapped": 133,
+      "curves": []
+    },
+    {
+      "name": "Orbit",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Orbit.xbxc",
+      "draft": "drafts/TC14/orbit.json",
+      "thumb": "thumbs/TC14/Fluid/Orbit.png",
+      "mapped": 50,
+      "unmapped": 133,
+      "curves": []
+    },
+    {
+      "name": "Ring Emitter",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Ring Emitter.xbxc",
+      "draft": "drafts/TC14/ring-emitter.json",
+      "thumb": "thumbs/TC14/Fluid/Ring Emitter.png",
+      "mapped": 50,
+      "unmapped": 133,
+      "curves": []
+    },
+    {
+      "name": "Smolder",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Smolder.xbxc",
+      "draft": "drafts/TC14/smolder.json",
+      "thumb": "thumbs/TC14/Fluid/Smolder.png",
+      "mapped": 50,
+      "unmapped": 133,
+      "curves": []
+    },
+    {
+      "name": "Swirl Tracers",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Swirl Tracers.xbxc",
+      "draft": "drafts/TC14/swirl-tracers.json",
+      "thumb": "thumbs/TC14/Fluid/Swirl Tracers.png",
+      "mapped": 50,
+      "unmapped": 133,
+      "curves": []
+    },
+    {
+      "name": "Basic Magic",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Basic Magic.xbxc",
+      "draft": "drafts/TC14/basic-magic.json",
+      "thumb": "thumbs/TC14/Light and Magic/Basic Magic.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Blue Swarm with Trail",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Blue Swarm with Trail.xbxc",
+      "draft": "drafts/TC14/blue-swarm-with-trail.json",
+      "thumb": "thumbs/TC14/Light and Magic/Blue Swarm with Trail.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Electron Dance",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Electron Dance.xbxc",
+      "draft": "drafts/TC14/electron-dance.json",
+      "thumb": "thumbs/TC14/Light and Magic/Electron Dance.png",
+      "mapped": 34,
+      "unmapped": 26,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Energy Stream",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Energy Stream.xbxc",
+      "draft": "drafts/TC14/energy-stream.json",
+      "thumb": "thumbs/TC14/Light and Magic/Energy Stream.png",
+      "mapped": 32,
+      "unmapped": 19,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Ethereal Plane",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Ethereal Plane.xbxc",
+      "draft": "drafts/TC14/ethereal-plane.json",
+      "thumb": "thumbs/TC14/Light and Magic/Ethereal Plane.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Falling Lights",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Falling Lights.xbxc",
+      "draft": "drafts/TC14/falling-lights.json",
+      "thumb": "thumbs/TC14/Light and Magic/Falling Lights.png",
+      "mapped": 39,
+      "unmapped": 16,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Floating Streaks",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Floating Streaks.xbxc",
+      "draft": "drafts/TC14/floating-streaks.json",
+      "thumb": "thumbs/TC14/Light and Magic/Floating Streaks.png",
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Flowing Strings",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Flowing Strings.xbxc",
+      "draft": "drafts/TC14/flowing-strings.json",
+      "thumb": "thumbs/TC14/Light and Magic/Flowing Strings.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Ghost Trail",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Ghost Trail.xbxc",
+      "draft": "drafts/TC14/ghost-trail.json",
+      "thumb": "thumbs/TC14/Light and Magic/Ghost Trail.png",
+      "mapped": 29,
+      "unmapped": 23,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Glowfield",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Glowfield.xbxc",
+      "draft": "drafts/TC14/glowfield.json",
+      "thumb": "thumbs/TC14/Light and Magic/Glowfield.png",
+      "mapped": 34,
+      "unmapped": 26,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Green Pixie",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Green Pixie.xbxc",
+      "draft": "drafts/TC14/green-pixie.json",
+      "thumb": "thumbs/TC14/Light and Magic/Green Pixie.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Inverse Energy",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Inverse Energy.xbxc",
+      "draft": "drafts/TC14/inverse-energy.json",
+      "thumb": "thumbs/TC14/Light and Magic/Inverse Energy.png",
+      "mapped": 28,
+      "unmapped": 18,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Light Blobs",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Light Blobs.xbxc",
+      "draft": "drafts/TC14/light-blobs.json",
+      "thumb": "thumbs/TC14/Light and Magic/Light Blobs.png",
+      "mapped": 31,
+      "unmapped": 26,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Light Streaks Blue",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Light Streaks Blue.xbxc",
+      "draft": "drafts/TC14/light-streaks-blue.json",
+      "thumb": "thumbs/TC14/Light and Magic/Light Streaks Blue.png",
+      "mapped": 29,
+      "unmapped": 12,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Light Streaks Orange",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Light Streaks Orange.xbxc",
+      "draft": "drafts/TC14/light-streaks-orange.json",
+      "thumb": "thumbs/TC14/Light and Magic/Light Streaks Orange.png",
+      "mapped": 29,
+      "unmapped": 12,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Love Hearts",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Love Hearts.xbxc",
+      "draft": "drafts/TC14/love-hearts.json",
+      "thumb": "thumbs/TC14/Light and Magic/Love Hearts.png",
+      "mapped": 34,
+      "unmapped": 36,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Magic Disc",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Magic Disc.xbxc",
+      "draft": "drafts/TC14/magic-disc.json",
+      "thumb": "thumbs/TC14/Light and Magic/Magic Disc.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Magic Smoke Trail",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Magic Smoke Trail.xbxc",
+      "draft": "drafts/TC14/magic-smoke-trail.json",
+      "thumb": "thumbs/TC14/Light and Magic/Magic Smoke Trail.png",
+      "mapped": 39,
+      "unmapped": 22,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Magical",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Magical.xbxc",
+      "draft": "drafts/TC14/magical.json",
+      "thumb": "thumbs/TC14/Light and Magic/Magical.png",
+      "mapped": 27,
+      "unmapped": 19,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Northern Lights",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Northern Lights.xbxc",
+      "draft": "drafts/TC14/northern-lights.json",
+      "thumb": "thumbs/TC14/Light and Magic/Northern Lights.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Orange Stars",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Orange Stars.xbxc",
+      "draft": "drafts/TC14/orange-stars.json",
+      "thumb": "thumbs/TC14/Light and Magic/Orange Stars.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Organic Lines 2",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Organic Lines 2.xbxc",
+      "draft": "drafts/TC14/organic-lines-2.json",
+      "thumb": "thumbs/TC14/Light and Magic/Organic Lines 2.png",
+      "mapped": 36,
+      "unmapped": 26,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Organic Lines",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Organic Lines.xbxc",
+      "draft": "drafts/TC14/organic-lines.json",
+      "thumb": null,
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Particle Swarm",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Particle Swarm.xbxc",
+      "draft": "drafts/TC14/particle-swarm.json",
+      "thumb": "thumbs/TC14/Light and Magic/Particle Swarm.png",
+      "mapped": 21,
+      "unmapped": 4,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Shooting Flares 1",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Shooting Flares 1.xbxc",
+      "draft": "drafts/TC14/shooting-flares-1.json",
+      "thumb": "thumbs/TC14/Light and Magic/Shooting Flares 1.png",
+      "mapped": 27,
+      "unmapped": 13,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Shooting Flares 2",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Shooting Flares 2.xbxc",
+      "draft": "drafts/TC14/shooting-flares-2.json",
+      "thumb": "thumbs/TC14/Light and Magic/Shooting Flares 2.png",
+      "mapped": 27,
+      "unmapped": 13,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Starflight",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Starflight.xbxc",
+      "draft": "drafts/TC14/starflight.json",
+      "thumb": "thumbs/TC14/Light and Magic/Starflight.png",
+      "mapped": 35,
+      "unmapped": 31,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Swarm Fireflies",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Swarm Fireflies.xbxc",
+      "draft": "drafts/TC14/swarm-fireflies.json",
+      "thumb": "thumbs/TC14/Light and Magic/Swarm Fireflies.png",
+      "mapped": 35,
+      "unmapped": 12,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Copper Patina",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Copper Patina.xbxc",
+      "draft": "drafts/TC14/copper-patina.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Copper Patina.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Falling Flares",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Falling Flares.xbxc",
+      "draft": "drafts/TC14/falling-flares.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Falling Flares.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Flickering Lights",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Flickering Lights.xbxc",
+      "draft": "drafts/TC14/flickering-lights.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Flickering Lights.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Flowy Green",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Flowy Green.xbxc",
+      "draft": "drafts/TC14/flowy-green.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Flowy Green.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Glow Field",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Glow Field.xbxc",
+      "draft": "drafts/TC14/glow-field.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Glow Field.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Nebula Strings",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Nebula Strings.xbxc",
+      "draft": "drafts/TC14/nebula-strings.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Nebula Strings.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Outward Flow",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Outward Flow.xbxc",
+      "draft": "drafts/TC14/outward-flow.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Outward Flow.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Phantom Trail",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Phantom Trail.xbxc",
+      "draft": "drafts/TC14/phantom-trail.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Rose Spheres",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Rose Spheres.xbxc",
+      "draft": "drafts/TC14/rose-spheres.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Rose Spheres.png",
+      "mapped": 32,
+      "unmapped": 25,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Serpent",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Serpent.xbxc",
+      "draft": "drafts/TC14/serpent.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Serpent.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Shooting Flares",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Shooting Flares.xbxc",
+      "draft": "drafts/TC14/shooting-flares.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Shooting Flares.png",
+      "mapped": 27,
+      "unmapped": 13,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Shooting Stars",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Shooting Stars 1.xbxc",
+      "draft": "drafts/TC14/shooting-stars-1.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Shooting Stars 1.png",
+      "mapped": 35,
+      "unmapped": 27,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Single Glow",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Single Glow.xbxc",
+      "draft": "drafts/TC14/single-glow.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Single Glow.png",
+      "mapped": 63,
+      "unmapped": 140,
+      "curves": []
+    },
+    {
+      "name": "Streak Brush 1",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 1.xbxc",
+      "draft": "drafts/TC14/streak-brush-1.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Streak Brush 1.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Streak Brush 2",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 2.xbxc",
+      "draft": "drafts/TC14/streak-brush-2.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Streak Brush 2.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Streak Brush 3",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 3.xbxc",
+      "draft": "drafts/TC14/streak-brush-3.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Streak Brush 3.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Streak Brush 4",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 4.xbxc",
+      "draft": "drafts/TC14/streak-brush-4.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Streak Brush 4.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Tempest",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Tempest.xbxc",
+      "draft": "drafts/TC14/tempest.json",
+      "thumb": null,
+      "mapped": 44,
+      "unmapped": 99,
+      "curves": []
+    },
+    {
+      "name": "Triangles 2D",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Triangles 2D.xbxc",
+      "draft": "drafts/TC14/triangles-2d.json",
+      "thumb": "thumbs/TC14/Motion Graphics/Triangles 2D.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Blizzard",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blizzard.xbxc",
+      "draft": "drafts/TC14/blizzard.json",
+      "thumb": "thumbs/TC14/Nature/Blizzard.png",
+      "mapped": 39,
+      "unmapped": 18,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Blowing Bubbles",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Bubbles.xbxc",
+      "draft": "drafts/TC14/blowing-bubbles.json",
+      "thumb": "thumbs/TC14/Nature/Blowing Bubbles.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Blowing Maple Leaves",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Maple Leaves.xbxc",
+      "draft": "drafts/TC14/blowing-maple-leaves.json",
+      "thumb": "thumbs/TC14/Nature/Blowing Maple Leaves.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Blowing Seeds 1",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Seeds 1.xbxc",
+      "draft": "drafts/TC14/blowing-seeds-1.json",
+      "thumb": "thumbs/TC14/Nature/Blowing Seeds 1.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Blowing Seeds 2",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Seeds 2.xbxc",
+      "draft": "drafts/TC14/blowing-seeds-2.json",
+      "thumb": "thumbs/TC14/Nature/Blowing Seeds 2.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Blowing Seeds Wide",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Seeds Wide.xbxc",
+      "draft": "drafts/TC14/blowing-seeds-wide.json",
+      "thumb": "thumbs/TC14/Nature/Blowing Seeds Wide.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Blowing Snow",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Snow.xbxc",
+      "draft": "drafts/TC14/blowing-snow.json",
+      "thumb": "thumbs/TC14/Nature/Blowing Snow.png",
+      "mapped": 37,
+      "unmapped": 25,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Chemtrails",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Chemtrails.xbxc",
+      "draft": "drafts/TC14/chemtrails.json",
+      "thumb": "thumbs/TC14/Nature/Chemtrails.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Cloud Cover",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Cloud Cover.xbxc",
+      "draft": "drafts/TC14/cloud-cover.json",
+      "thumb": "thumbs/TC14/Nature/Cloud Cover.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Clouds",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Clouds.xbxc",
+      "draft": "drafts/TC14/clouds.json",
+      "thumb": "thumbs/TC14/Nature/Clouds.png",
+      "mapped": 44,
+      "unmapped": 94,
+      "curves": []
+    },
+    {
+      "name": "Falling Feathers",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Falling Feathers.xbxc",
+      "draft": "drafts/TC14/falling-feathers.json",
+      "thumb": "thumbs/TC14/Nature/Falling Feathers.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Fireflies",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Fireflies.xbxc",
+      "draft": "drafts/TC14/fireflies.json",
+      "thumb": "thumbs/TC14/Nature/Fireflies.png",
+      "mapped": 33,
+      "unmapped": 20,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Floating Cells",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Floating Cells.xbxc",
+      "draft": "drafts/TC14/floating-cells.json",
+      "thumb": "thumbs/TC14/Nature/Floating Cells.png",
+      "mapped": 35,
+      "unmapped": 14,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Large Snow 2D",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Large Snow 2D.xbxc",
+      "draft": "drafts/TC14/large-snow-2d.json",
+      "thumb": "thumbs/TC14/Nature/Large Snow 2D.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Large Snow 3D",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Large Snow 3D.xbxc",
+      "draft": "drafts/TC14/large-snow-3d.json",
+      "thumb": "thumbs/TC14/Nature/Large Snow 3D.png",
+      "mapped": 33,
+      "unmapped": 19,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Rain",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Rain.xbxc",
+      "draft": "drafts/TC14/rain.json",
+      "thumb": "thumbs/TC14/Nature/Rain.png",
+      "mapped": 26,
+      "unmapped": 23,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Rising Bubbles",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Rising Bubbles.xbxc",
+      "draft": "drafts/TC14/rising-bubbles.json",
+      "thumb": "thumbs/TC14/Nature/Rising Bubbles.png",
+      "mapped": 38,
+      "unmapped": 32,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Rising Fizz Slower",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Rising Fizz Slower.xbxc",
+      "draft": "drafts/TC14/rising-fizz-slower.json",
+      "thumb": "thumbs/TC14/Nature/Rising Fizz Slower.png",
+      "mapped": 31,
+      "unmapped": 6,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life"
+      ]
+    },
+    {
+      "name": "Rising Fizz",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Rising Fizz.xbxc",
+      "draft": "drafts/TC14/rising-fizz.json",
+      "thumb": "thumbs/TC14/Nature/Rising Fizz.png",
+      "mapped": 31,
+      "unmapped": 6,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life"
+      ]
+    },
+    {
+      "name": "Sea Creatures",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Sea Creatures.xbxc",
+      "draft": "drafts/TC14/sea-creatures.json",
+      "thumb": "thumbs/TC14/Nature/Sea Creatures.png",
+      "mapped": 37,
+      "unmapped": 22,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Snowy Night 2",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Snowy NIght 2.xbxc",
+      "draft": "drafts/TC14/snowy-night-2.json",
+      "thumb": "thumbs/TC14/Nature/Snowy NIght 2.png",
+      "mapped": 39,
+      "unmapped": 18,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Snowy Night 1",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Snowy Night 1.xbxc",
+      "draft": "drafts/TC14/snowy-night-1.json",
+      "thumb": "thumbs/TC14/Nature/Snowy Night 1.png",
+      "mapped": 39,
+      "unmapped": 18,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Basic Rising Smoke",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Basic Rising Smoke.xbxc",
+      "draft": "drafts/TC14/basic-rising-smoke.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Basic Rising Smoke.png",
+      "mapped": 35,
+      "unmapped": 6,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Directional FIre 1",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Directional FIre 1.xbxc",
+      "draft": "drafts/TC14/directional-fire-1.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Directional FIre 1.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Directional Fire 2",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Directional Fire 2.xbxc",
+      "draft": "drafts/TC14/directional-fire-2.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Directional Fire 2.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Falling Sparks",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Falling Sparks.xbxc",
+      "draft": "drafts/TC14/falling-sparks.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Falling Sparks.png",
+      "mapped": 29,
+      "unmapped": 15,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Fireplace",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Fireplace.xbxc",
+      "draft": "drafts/TC14/fireplace.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Fireplace.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Firestarter",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Firestarter.xbxc",
+      "draft": "drafts/TC14/firestarter.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Firestarter.png",
+      "mapped": 35,
+      "unmapped": 27,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Hazy Fire",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Hazy Fire.xbxc",
+      "draft": "drafts/TC14/hazy-fire.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Hazy Fire.png",
+      "mapped": 38,
+      "unmapped": 7,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Horizontal Fire",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Horizontal Fire.xbxc",
+      "draft": "drafts/TC14/horizontal-fire.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Horizontal Fire.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Horizontal Smoke 1",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Horizontal Smoke 1.xbxc",
+      "draft": "drafts/TC14/horizontal-smoke-1.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Horizontal Smoke 1.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Horizontal Smoke 2",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Horizontal Smoke 2.xbxc",
+      "draft": "drafts/TC14/horizontal-smoke-2.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Horizontal Smoke 2.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Point Smoke",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Point Smoke.xbxc",
+      "draft": "drafts/TC14/point-smoke.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Point Smoke.png",
+      "mapped": 35,
+      "unmapped": 27,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Rising Embers",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Rising Embers.xbxc",
+      "draft": "drafts/TC14/rising-embers.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Rising Embers.png",
+      "mapped": 30,
+      "unmapped": 4,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Rocket Fire",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Rocket Fire.xbxc",
+      "draft": "drafts/TC14/rocket-fire.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Rocket Fire.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Simple Fire",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Simple Fire.xbxc",
+      "draft": "drafts/TC14/simple-fire.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Simple Fire.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Simple Smoke",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Simple Smoke.xbxc",
+      "draft": "drafts/TC14/simple-smoke.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Simple Smoke.png",
+      "mapped": 31,
+      "unmapped": 17,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life"
+      ]
+    },
+    {
+      "name": "Smoke Magic 2",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Magic 2.xbxc",
+      "draft": "drafts/TC14/smoke-magic-2.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Smoke Magic 2.png",
+      "mapped": 45,
+      "unmapped": 107,
+      "curves": []
+    },
+    {
+      "name": "Smoke Magic",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Magic.xbxc",
+      "draft": "drafts/TC14/smoke-magic.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Smoke Magic.png",
+      "mapped": 38,
+      "unmapped": 29,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Smoke Plume",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Plume.xbxc",
+      "draft": "drafts/TC14/smoke-plume.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Smoke Plume.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    },
+    {
+      "name": "Smoke Rising 1",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Rising 1.xbxc",
+      "draft": "drafts/TC14/smoke-rising-1.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Smoke Rising 1.png",
+      "mapped": 38,
+      "unmapped": 23,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Smoke Rising 2",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Rising 2.xbxc",
+      "draft": "drafts/TC14/smoke-rising-2.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Smoke Rising 2.png",
+      "mapped": 38,
+      "unmapped": 23,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Smoke Trail",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Trail.xbxc",
+      "draft": "drafts/TC14/smoke-trail.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Smoke Trail.png",
+      "mapped": 27,
+      "unmapped": 13,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life"
+      ]
+    },
+    {
+      "name": "Smoke Wizard",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Wizard.xbxc",
+      "draft": "drafts/TC14/smoke-wizard.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Smoke Wizard.png",
+      "mapped": 38,
+      "unmapped": 29,
+      "curves": [
+        "rg.custom.xfer.life",
+        "rg.custom.col.life",
+        "rg.custom.op.life",
+        "rg.custom.size.life",
+        "rg.custom.col.life.aux",
+        "rg.custom.op.life.aux",
+        "rg.custom.size.life.aux"
+      ]
+    },
+    {
+      "name": "Smokey Fire",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smokey Fire.xbxc",
+      "draft": "drafts/TC14/smokey-fire.json",
+      "thumb": "thumbs/TC14/Smoke and Fire/Smokey Fire.png",
+      "mapped": 44,
+      "unmapped": 100,
+      "curves": []
+    }
+  ],
+  "scenes": [
+    {
+      "name": "Yellow Pyramics",
+      "pack": "TC14",
+      "category": "Abstract and Geometric",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Yellow Pyramics.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Aqua Rays",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Aqua Rays.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Bucky Background",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Bucky Background.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Concentric Arrows",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Concentric Arrows.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Diagonals",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Diagonals.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Directional Chevrons",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Directional Chevrons.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Duotone Zoom",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Duotone Zoom.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Electic Eye",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Electric Eye.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Electric Orb",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Electric Orb.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Elektrahedron",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Elektrahedron.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Ethereal Plane",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Ethereal Plane.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Falling Grid 2",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Falling Grid 2.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Falling Grid",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Falling Grid.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Falling Square Grid",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Falling Square Grid.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Flux Field",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Flux Field.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Glow Spheres and Stars",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Glow Spheres and Stars.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Glow Spheres",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Glow Spheres.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Grid Circles",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Grid Circles.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Hemisphere Edges",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Hemisphere Edges.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Hexagon Grid",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Hexagon Grid.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Illuminati",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Illuminati.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Magical Glow Spheres",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Magical Glow Spheres.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Microcosm",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Microcosm.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Nebula Strings",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Nebula Strings.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Orange and Teal",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Orange and Teal.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Polka Dots",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Polka Dots.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Random Grid",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Random Grid.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Spiral Orb",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Spiral Orb.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Streaks at Cam",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Streaks at Cam.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Surface Flow",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Surface Flow.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Technicolor Helix",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Technicolor Helix.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "The Kiss",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/The Kiss.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Traverse Grid",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/Traverse Grid.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "With a Twist",
+      "pack": "TC14",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Backgrounds/With a Twist.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Child Inheritance",
+      "pack": "TC14",
+      "category": "Basics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Child Inheritance.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Brownian Motion",
+      "pack": "TC14",
+      "category": "Dust and Debris",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Brownian Motion.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Action Movie Explosion",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Action Movie Explosion.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Debris Explosion",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Debris Explosion.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Debris Glass Explosion",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Debris Glass Explosion.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Dramatic Explosion 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Dramatic Explosion 1.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Dramatic Explosion 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Dramatic Explosion 2.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Dust Hit 01",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Dust Hit 01.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Electric Shock",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Electric Shock.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Explode Out Dark v2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Explode Out Dark.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Explosion Medium",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Explosion Medium.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fire Explosion 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire Explosion 1.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fire Explosion 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire Explosion 2.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fire and Smoke Explosion 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire and Smoke Explosion 1.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fire and Smoke Explosion 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire and Smoke Explosion 2.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fire and Sparks",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire and Sparks.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Glass Shard Explosion 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Glass Shard Explosion 1.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Grenade Explosion 1",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Grenade Explosion 1.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Grenade Explosion 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Grenade Explosion 2.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Multipoint Explosion",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Multipoint Explosion.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Plasma Explosion",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Plasma Explosion.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Shock Grenade",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Shock Grenade.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Smoke Bomb",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Smoke Bomb.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Spark Blast 2",
+      "pack": "TC14",
+      "category": "Explosive",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Blast 2.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Bidirectional Fireworks 2",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Bidirectional Fireworks 2.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Bidirectional Fireworks",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Bidirectional Fireworks.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fireworks Show",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/FIreworks Show.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Fireworks 2",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks 2.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Fireworks Cascade",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks Cascade.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fireworks Chrsysanthemum",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks Chrsysanthemum.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Fireworks Disc",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks Disc.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fireworks Heart",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks Heart.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fireworks Ice",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks Ice.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fireworks Round 1",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks Round 1.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fireworks Round",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks Round 2.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fireworks Shell 2",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks Shell 2.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Fireworks Shell",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks Shell.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fireworks Show 16",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks Show 16.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Fireworks Smokey 1",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks Smokey 1.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fireworks Smokey 2",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks Smokey 2.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Fireworks Willow",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Fireworks Willow.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "GSG Sparkler",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/GSG Sparkler.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Independence Day",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Independence Day.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Ring Burst",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Ring Burst.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Sparkler",
+      "pack": "TC14",
+      "category": "Fireworks",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fireworks/Sparkler.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Aqueous",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Aqueous.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Blue Smoke",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Blue Smoke.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Dancing Sparkler",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Dancing Sparkler.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Diagonal Swirl",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Diagonal Swirl.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Equilibrium",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Equilibrium.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Flaming OBJ",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Flaming OBJ.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Flow Grid",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Flow Grid.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Galactic",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Galactic.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Leviosa",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Leviosa.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Magic Potion",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Magic Potion.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Mushroom Cloud",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Mushroom Cloud.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Mystic Rhythms",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Mystic Rhythms.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Octa Fluid",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Octa Fluid.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Paint Battle",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Paint Battle.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Phantom",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Phantom.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Rainbow Drop",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Rainbow Drop.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Rising Bubbles",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Rising Bubbles.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Slice",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Slice.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Sparkle Vortex",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Sparkle Vortex.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Spectrum Vortex",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Spectrum Vortex.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Square Swirl",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Square Swirl.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Swirl Stream",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Swirl Stream.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Swirl",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Swirl.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "The Duel",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/The Duel.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Torus Collision",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Torus Collision.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Tube Swirl",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Tube Swirl.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Underwater Splash",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Underwater Splash.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Vortex",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Vortex.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Zauberauch",
+      "pack": "TC14",
+      "category": "Fluid",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Zauberauch.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Golden Disc",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Golden Disc.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Magic Dust",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Magic Dust.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Magic Rising",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Magic Rising.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Thunderstruck",
+      "pack": "TC14",
+      "category": "Light and Magic",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Thunderstruck.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "99 Luftballons",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/99 Luftballons.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Abbot Kinney",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Abbot Kinney.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Air Turbulence",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Air Turbulence.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Apparition",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Apparition.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Aquasparx",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Aquasparx.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Argyle",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Argyle.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Beacon",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Beacon.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Blacklight Paint",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Blacklight Paint.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Blood Drips",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Blood Drips.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Buzz",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Buzz.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Cascade Explosion",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Cascade Explosion.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Cascade",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Cascade.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Chaos Ball",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Chaos Ball.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Chromatic Particles",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Chromatic Particles.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Danse",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Danse.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Dementors",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Dementors.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Electric Sparkles",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Electric Sparkles.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Ember Trail",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Ember Trail.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Emeralds",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Emeralds.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Erana",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Erana.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fairy Journey",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Fairy Journey.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Fairy Trails",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Fairy Trails.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Falling Vines",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Falling Vines.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Fireflies",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Fireflies.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Flashback",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Flashback.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Floating Hearts",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Floating Hearts.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Flux Sphere",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Flux Sphere.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Flux",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Flux.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Glam",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Glam.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Glitter Orb",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Glitter Orb.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Glow Hearts",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Glow Hearts.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Glow Strings",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Glow Strings.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Grid Attraction",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Grid Attraction.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Grid Fluid Motion",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Grid Fluid Motion.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Happy Little Accidents",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Happy Little Accidents.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Higgs Boson",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Higgs Boson.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Hivemind",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Hivemind.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Hocus Pocus",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Hocus Pocus.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Ice Trail",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Ice Trail.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Icosas",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Icosas.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Illusion",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Illusion.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Knowhere",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Knowhere.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Liquid Gold",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Liquid Gold.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Magic Stars",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Magic Stars.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Mass Effects",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Mass Effects.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Matrix Dots",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Matrix Dots.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Mixed Pyramids",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Mixed Pyramids.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Multi-Directional Sphere",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Mult iDirectional Sphere.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Multi-Point Stars",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Multi  Point Stars.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Multi-Shape Emitter",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Multi Shape Emitter.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Multi-Tech Shapes",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Multi Tech Shapes.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Mystic",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Mystic.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Nebula",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Nebula.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Neptune",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Neptune.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Neural Network",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Neural Network.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Oberon",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Oberon.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Oracle",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Oracle.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Particle Attractor",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Particle Attractor.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Plain Aux",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Plain Aux.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Plasmatics",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Plasmatics.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Plasmoid",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Plasmoid.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Point Target",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Point Target.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Polka Dot Outlines",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Polka Dot Outlines.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Poppies",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Poppies.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Predator Preset",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Predator Preset.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Predator Prey Attration",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Predator Prey Attration.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Preset Base",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Preset Base.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Purple Vapor Trail",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Purple Vapor Trail.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Quick Silver",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Quick Silver.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Random Grid",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Random Grid.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Shadow Turbulence",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Shadow Turbulence.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Shooty Shoots",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Shooty Shoots.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Slash Shapes",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Slash Shapes.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Slicer Icosa",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Slicer Icosa.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Smoke Bubbles",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Smoke Bubbles.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Snow Crash",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Snow Crash.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Spark Delays",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Spark Delays.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Sparkle Pop",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Sparkle Pop.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Sparkles",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Sparkles.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Square Attraction",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Square Attraction.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Square Emitter",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Square Emitter.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Steam",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Steam.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Sweet 16",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Sweet 16.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Tarantula",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Tarantula.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Target Attraction",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Target Attraction.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Target Seeker",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Target Seeker.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Triangle Emitter",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Triangle Emitter.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Vertigo",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Vertigo.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Yarn Torus",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Yarn Torus.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Zapped",
+      "pack": "TC14",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Zapped.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Autumn Leaves 1",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Autumn Leaves 1.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Autumn Leaves 2",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Autumn Leaves 2.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Autumn Leaves 3",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Autumn Leaves 3.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Autumn Leaves Narrow",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Autumn Leaves Narrow.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Autumn Leaves Wide",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Autumn Leaves Wide.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Birds",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Birds.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Blowing Leaves 3",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Leaves 3.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Blowing Seeds Mixed",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Seeds Mixed.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Cartoon Rain",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Cartoon Rain.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Cartoon Waterfall",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Cartoon Waterfall.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Caterpillar",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Caterpillar.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Falling Leaves",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Falling Leaves.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Feather Burst",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Feather Burst.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Feeding Time",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Feeding Time.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Flowing Leaves",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Flowing Leaves.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Foam Ball",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Foam Ball.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Light Swarm",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Light Swarm.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Macro Bubbles",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Macro Bubbles.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Mixed Blowing Leaves",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Mixed Blowing Leaves.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Ocean Floor",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Ocean Floor.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Rain Wind Fog",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Rain Wind Fog.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Rain on Ground",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Rain on Ground.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Rising Bubbles Sprite",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Rising Bubbles Sprite.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "School of Fish 2",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/School of Fish 2.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "School of Fish",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/School of Fish.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Seed Puff",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Seed Puff.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Seeds and Dust",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Seeds and Dust.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Snow Globe",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Snow Globe.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Snow on Ground",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Snow on Ground.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Starfield Nebula",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Starfield Nebula.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Starfield",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Starfield.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Waterfall 2",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Waterfall 2.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Waterfall",
+      "pack": "TC14",
+      "category": "Nature",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Waterfall.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Burning Embers",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Burning Embers.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Candle Flame",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Candle Flame.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Cup of Tea",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Cup of Tea.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Dark Rising Smoke",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Dark Rising Smoke.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fire at Cam",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Fire at Cam.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Flamethrower",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Flamethrower.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Nitro Boost",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Nitro Boost.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Rocket Boost",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Rocket Boost.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Smokey Fire Burst",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smokey Fire Burst.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Thick Steam",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Thick Steam.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Weld Blue",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Weld Blue.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Weld Gold",
+      "pack": "TC14",
+      "category": "Smoke and Fire",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Weld Gold.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Candy Drips",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Candy Drips.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Corona",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Corona.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Digital Lines",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Digital Lines.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Dripped",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Dripped.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Drop 2",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Drop 2.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Drop",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Drop.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Electric Rain",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Electric Rain.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Electron Text",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Electron Text.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Ember Text",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Ember Text.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Fizz Text",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Fizz Text.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Full of Stars",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Full of Stars.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Golden",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Golden.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Icosas",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Icosas.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Neon Strings",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Neon Strings.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Paint Drips",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Paint Drips.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Polka Dots",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Polka Dots.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Potpourri",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Potpourri.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Purple Swirl",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Purple Swirl.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Scatter At Camera",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Scatter At Camera.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Shimmer",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Shimmer.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Sparkler Text",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Sparkler Text.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Sparkles",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Sparkles.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Sprouts",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Sprouts.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Strings",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Strings.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Textplosion",
+      "pack": "TC14",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Text/Textplosion.xbxs",
+      "chains": 8
+    },
+    {
+      "name": "Atomic Age Carbonation",
+      "pack": "TC17",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Backgrounds/Atomic Age Carbonation.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Atomic Boomerang Scene",
+      "pack": "TC17",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Backgrounds/Atomic Boomerang Scene.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Atomic Diamonds Scene",
+      "pack": "TC17",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Backgrounds/Atomic Diamonds Scene.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Atomic Swanky Scene",
+      "pack": "TC17",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Backgrounds/Atomic Swanky Scene.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Colorful Bokeh",
+      "pack": "TC17",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Backgrounds/Colorful Bokeh.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Woven",
+      "pack": "TC17",
+      "category": "Backgrounds",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Backgrounds/Woven.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Ball Drop 2",
+      "pack": "TC17",
+      "category": "Bounce",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Bounce/Ball Drop 2.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Ball Drop",
+      "pack": "TC17",
+      "category": "Bounce",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Bounce/Ball Drop.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Ball Stream",
+      "pack": "TC17",
+      "category": "Bounce",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Bounce/Ball Stream.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Basic Bounce",
+      "pack": "TC17",
+      "category": "Bounce",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Bounce/Basic Bounce.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Basic Springy",
+      "pack": "TC17",
+      "category": "Bounce",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Bounce/Basic Springy.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Bullet Hits",
+      "pack": "TC17",
+      "category": "Bounce",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Bounce/Bullet Hits.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Fire Hose 2",
+      "pack": "TC17",
+      "category": "Bounce",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Bounce/Fire Hose 2.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Fire Hose",
+      "pack": "TC17",
+      "category": "Bounce",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Bounce/Fire Hose.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Forcefield Lasers",
+      "pack": "TC17",
+      "category": "Bounce",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Bounce/Forcefield Lasers.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Sands of Time",
+      "pack": "TC17",
+      "category": "Bounce",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Bounce/Sands of Time.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Sprinkler 2",
+      "pack": "TC17",
+      "category": "Bounce",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Bounce/Sprinkler 2.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Sprinkler",
+      "pack": "TC17",
+      "category": "Bounce",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Bounce/Sprinkler.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Alien Autopsy",
+      "pack": "TC17",
+      "category": "Example Scenes",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Example Scenes/Alien Autopsy.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Bumpin",
+      "pack": "TC17",
+      "category": "Example Scenes",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Example Scenes/Bumpin.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Crossed Wires",
+      "pack": "TC17",
+      "category": "Example Scenes",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Example Scenes/Crossed Wires.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Driving Mr Norrby",
+      "pack": "TC17",
+      "category": "Example Scenes",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Example Scenes/Driving Mr Norrby.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Go With the Flow",
+      "pack": "TC17",
+      "category": "Example Scenes",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Example Scenes/Go With the Flow.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Heart Monitor",
+      "pack": "TC17",
+      "category": "Example Scenes",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Example Scenes/Heart Monitor.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "High Noon",
+      "pack": "TC17",
+      "category": "Example Scenes",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Example Scenes/High Noon.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Mobius Grid",
+      "pack": "TC17",
+      "category": "Example Scenes",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Example Scenes/Mobius Grid.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Self Reflection",
+      "pack": "TC17",
+      "category": "Example Scenes",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Example Scenes/Self Reflection.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Ship Push In",
+      "pack": "TC17",
+      "category": "Example Scenes",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Example Scenes/Ship Push In.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "The Eye",
+      "pack": "TC17",
+      "category": "Example Scenes",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Example Scenes/The Eye.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Travel Plans",
+      "pack": "TC17",
+      "category": "Example Scenes",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Example Scenes/Travel Plans.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Atomic",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Atomic.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Bird Flock",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Bird Flock.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Cardioid Vortex",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Cardioid Vortex.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Feeding Time",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Feeding Time.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Infection",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Infection.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Multiple Targets",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Multiple Targets.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Neural Net",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Neural Net.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Outbreak",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Outbreak.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Pastel Worlds",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Pastel Worlds.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Portal",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Portal.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Pyramid Melt",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Pyramid Melt.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Rockem Sockem Boxes",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Rockem Sockem Boxes.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Sneak Attack",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Sneak Attack.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Sphere String Erosion",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Sphere String Erosion.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Vortex Gear",
+      "pack": "TC17",
+      "category": "Flocking",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Flocking/Vortex Gear.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Alien Flower",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Alien Flower.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Atmosphere",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Atmosphere.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Body Scan",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Body Scan.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Cant Stop the Signal",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Cant Stop the Signal.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Cube Ball",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Cube Ball.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Cube Lights",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Cube Lights.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Deal With It",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Deal With It.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Drifting Strings",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Drifting Strings.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Fan Out",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Fan Out.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Form Classic",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Form Classic.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Fountain Lights",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Fountain Lights.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Plasmoid Jr",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Plasmoid.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Turbulence Tracers",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Turbulence Tracers.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Ven Conmigo",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Ven Conmigo.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "WOPR",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/WOPR.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Wind Farm",
+      "pack": "TC17",
+      "category": "Form Behaviors",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Form Behaviors/Wind Farm.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Firebird",
+      "pack": "TC17",
+      "category": "Kaleidospace",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Kaleidospace/Firebird.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Kaleido Burst 01",
+      "pack": "TC17",
+      "category": "Kaleidospace",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Kaleidospace/Kaleido Burst 01.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Kaleido Burst 02",
+      "pack": "TC17",
+      "category": "Kaleidospace",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Kaleidospace/Kaleido Burst 02.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Kaleido Swirl",
+      "pack": "TC17",
+      "category": "Kaleidospace",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Kaleidospace/Kaleido Swirl.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Kaleidoworks",
+      "pack": "TC17",
+      "category": "Kaleidospace",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Kaleidospace/Kaleidoworks.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Mirrored Magic",
+      "pack": "TC17",
+      "category": "Kaleidospace",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Kaleidospace/Mirrored Magic.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Mirrored Paths",
+      "pack": "TC17",
+      "category": "Kaleidospace",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Kaleidospace/Mirrored Paths.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Neon Butterfly",
+      "pack": "TC17",
+      "category": "Kaleidospace",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Kaleidospace/Neon Butterfly.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Paint My Wings",
+      "pack": "TC17",
+      "category": "Kaleidospace",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Kaleidospace/Paint My Wings.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Point of Origin",
+      "pack": "TC17",
+      "category": "Kaleidospace",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Kaleidospace/Point of Origin.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Scarab",
+      "pack": "TC17",
+      "category": "Kaleidospace",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Kaleidospace/Scarab.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Watercolor on Canvas",
+      "pack": "TC17",
+      "category": "Kaleidospace",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Kaleidospace/Watercolor on Canvas.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Jackpot",
+      "pack": "TC17",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Motion Graphics/Jackpot.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Text Burst",
+      "pack": "TC17",
+      "category": "Motion Graphics",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Motion Graphics/Text Burst.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Cycloid",
+      "pack": "TC17",
+      "category": "Spline Primitives",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Spline Primitives/Cycloid.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Heart Burst",
+      "pack": "TC17",
+      "category": "Spline Primitives",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Spline Primitives/Heart Burst.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Heart Strings",
+      "pack": "TC17",
+      "category": "Spline Primitives",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Spline Primitives/Heart Strings.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Helix Strings",
+      "pack": "TC17",
+      "category": "Spline Primitives",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Spline Primitives/Helix Strings.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Ring Emitter",
+      "pack": "TC17",
+      "category": "Spline Primitives",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Spline Primitives/Ring Emitter.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Ring Explosion",
+      "pack": "TC17",
+      "category": "Spline Primitives",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Spline Primitives/Ring Explosion.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Ring Shockwave",
+      "pack": "TC17",
+      "category": "Spline Primitives",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Spline Primitives/Ring Shockwave.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Square Emitter",
+      "pack": "TC17",
+      "category": "Spline Primitives",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Spline Primitives/Square Emitter.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Stacked Rings",
+      "pack": "TC17",
+      "category": "Spline Primitives",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Spline Primitives/Stacked Rings.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Jazzy",
+      "pack": "TC17",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Text/Jazzy.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Kaleidoflocker",
+      "pack": "TC17",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Text/Kaleidoflocker.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Text Erosion 01",
+      "pack": "TC17",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Text/Text Erosion 01.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Text Erosion 02",
+      "pack": "TC17",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Text/Text Erosion 02.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Text Slice",
+      "pack": "TC17",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Text/Text Slice.xbxs",
+      "chains": 16
+    },
+    {
+      "name": "Text Web",
+      "pack": "TC17",
+      "category": "Text",
+      "file": "/Users/Shared/Red Giant/Trapcode Packs/TC17/Presets/Particular/Text/Text Web.xbxs",
+      "chains": 16
+    }
+  ]
+}

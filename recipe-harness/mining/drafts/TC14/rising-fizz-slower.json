@@ -1,0 +1,442 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Rising Fizz Slower.xbxc",
+  "_pack": "TC14",
+  "_category": "Nature",
+  "_map_coverage": "31 mapped / 6 unmapped / 2 curves",
+  "_unmapped": {
+    "FXid_Gen1SubframePos": 0,
+    "FXid_PLayerMultiClips": 2,
+    "FXid_PLayerTime": 0,
+    "FXid_PTMode": 2,
+    "FXid_FAffectSize": 0,
+    "FXid_FAffectTime": 0.5
+  },
+  "_curves": {
+    "rg.custom.xfer.life": {
+      "isCurveMode": false,
+      "samples": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "curveX": [],
+      "curveY": []
+    },
+    "rg.custom.col.life": {
+      "PosP": [
+        0,
+        50,
+        100,
+        150,
+        200
+      ],
+      "PosR": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "PosG": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "PosB": [
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    }
+  },
+  "intent": "vendor preset \"Rising Fizz Slower\" (Nature) — validate against its thumbnail",
+  "name": "rising-fizz-slower",
+  "compName": "Mined_RisingFizzSlower",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "hostName": "Mined",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0146",
+          500,
+          "FXid_Gen1ParticlesPerSecF (alias)"
+        ],
+        [
+          "tc Particular-0014",
+          1977,
+          "FXid_Gen1EmitterSizeX (alias)"
+        ],
+        [
+          "tc Particular-0015",
+          1454,
+          "FXid_Gen1EmitterSizeY (exact)"
+        ],
+        [
+          "tc Particular-0016",
+          600,
+          "FXid_Gen1EmitterSizeZ (exact)"
+        ],
+        [
+          "tc Particular-0782",
+          2,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0221",
+          5,
+          "FXid_Options_GridEmitter_ParticlesInX (alias)"
+        ],
+        [
+          "tc Particular-0222",
+          5,
+          "FXid_Options_GridEmitter_ParticlesInY (alias)"
+        ],
+        [
+          "tc Particular-0223",
+          1,
+          "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+        ],
+        [
+          "tc Particular-0112",
+          0,
+          "FXid_Gen1AngleX (alias)"
+        ],
+        [
+          "tc Particular-0111",
+          0,
+          "FXid_Gen1AngleY (alias)"
+        ],
+        [
+          "tc Particular-0076",
+          0,
+          "FXid_Gen1AngleZ (alias)"
+        ],
+        [
+          "tc Particular-0010",
+          20,
+          "FXid_Gen1DirSpread (alias)"
+        ],
+        [
+          "tc Particular-0113",
+          1,
+          "FXid_Gen1EmitterDir (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0011",
+          2,
+          "FXid_Gen1Vel (alias)"
+        ],
+        [
+          "tc Particular-0013",
+          20,
+          "FXid_Gen1VelEmit (alias)"
+        ],
+        [
+          "tc Particular-0283",
+          20,
+          "FXid_Gen1VelSpread (alias)"
+        ],
+        [
+          "tc Particular-0524",
+          1,
+          "FXid_PAspectRatio (alias)"
+        ],
+        [
+          "tc Particular-0029",
+          50,
+          "FXid_PFeather (alias)"
+        ],
+        [
+          "tc Particular-0002",
+          3,
+          "FXid_PLife (alias)"
+        ],
+        [
+          "tc Particular-0065",
+          0,
+          "FXid_PLifeRnd (alias)"
+        ],
+        [
+          "tc Particular-0027",
+          5,
+          "FXid_PSizeMax (alias)"
+        ],
+        [
+          "tc Particular-0074",
+          29,
+          "FXid_PSizeRnd (alias)"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0531",
+          0,
+          "FXid_PUnmult (alias)"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.5254901960784314,
+            0.7568627450980392,
+            0.9137254901960784,
+            1
+          ],
+          "FXid_PColor (alias)"
+        ],
+        [
+          "tc Particular-0071",
+          0,
+          "FXid_PColorRnd (alias)"
+        ],
+        [
+          "tc Particular-0088",
+          0,
+          "FXid_PSetColor (alias)"
+        ],
+        [
+          "tc Particular-0711",
+          50,
+          "FXid_FAffectPos (alias)"
+        ],
+        [
+          "tc Particular-0719",
+          5,
+          "FXid_FEvolution (alias)"
+        ],
+        [
+          "tc Particular-0715",
+          10,
+          "FXid_FScale (alias)"
+        ],
+        [
+          "tc Particular-0017",
+          -100,
+          "FXid_Gravity (exact)"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ]
+}
