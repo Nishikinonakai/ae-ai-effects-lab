@@ -34,3 +34,28 @@ node mining/mine_xbxc.mjs        # → catalog.json, drafts/<pack>/<name>.json, 
 
 **Licensing**: vendor content installed under the user's license — internal/local research
 material only; do not ship derived recipes without clearance.
+
+## Batch validation results (2026-07-15, all 186 drafts)
+
+`validate_drafts.mjs` rendered every draft through the bridge (186/186 completed, zero
+stalls, ~11s each, resumable JSONL); `make_sheets.py` built render-vs-thumbnail contact
+sheets + pixel stats; agent-vision scored all pairs (`validation/scores.json`).
+
+**23 match / 71 partial / 90 fail** — and the residue is highly clustered:
+
+| class | n | root cause | fix (ranked by yield) |
+|---|---|---|---|
+| white-square | 32 | PType enum table wrong for textured types (Cloudlet/Smokelet/Sprite render as white squares) | probe 0703 empirically; fallback textured→Glow Sphere |
+| sprite-obj | 26 | needs sprite/OBJ footage shipped in the packs | footage import layer, later |
+| aux-trail | 20 | Options_Aux_* never aliased | alias round vs the TSV aux group |
+| no-thumb | 19 | vendor shipped no preview | render-only plausibility (mostly fine) |
+| color-gradient | 19 | Set Color=Over Life + unscriptable gradient → AE default blue | curve masters; cheap fallback = force Set Color→At Birth so the mapped flat PColor survives |
+| ok-partial | 13 | density/size/faintness only | the tune loop can close these |
+| blowout | 8 | flash/ring glow+size unit semantics | investigate scale mapping |
+| burst-behavior | 7 | EmitterBehaviour=Explode was skipped | translate to a Particles/sec spike expression |
+| fluid-physics | 7 | physics model param unmapped | map Physics Model + fluid params |
+| light / emitter-enum / path / empty | 10 | no light layer; ring enum; path keyframes | addLight in runner; probe 0782 |
+
+The 23 matches are usable recipes as-is; the 13 ok-partials are one tune-loop pass away.
+Slug collision bug: `single-glow` and `triangles-2d` exist in two categories and overwrote
+each other's drafts — include the category in the slug on the next mining round.
