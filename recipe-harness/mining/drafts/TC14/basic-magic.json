@@ -2,7 +2,14 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Basic Magic.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "44 mapped / 94 unmapped / 0 curves",
+  "_map_coverage": "43 mapped / 94 unmapped / 0 curves",
+  "_dropped_inert": [
+    [
+      "tc Particular-0711",
+      58,
+      "FXid_FAffectPos (alias)"
+    ]
+  ],
   "_unmapped": {
     "FXid_Gen1EmitterSizeOption": 0,
     "FXid_Gen1SubframePos": 0,
@@ -1298,7 +1305,7 @@
           "FXid_Gen1VelEmit (alias)"
         ],
         [
-          "tc Particular-0283",
+          "tc Particular-0012",
           0,
           "FXid_Gen1VelSpread (alias)"
         ],
@@ -1394,8 +1401,8 @@
         ],
         [
           "tc Particular-0088",
-          0,
-          "FXid_PSetColor (alias)"
+          1,
+          "FXid_PSetColor (alias+enumOffset)"
         ],
         [
           "tc Particular-0017",
@@ -1406,11 +1413,6 @@
           "tc Particular-0018",
           0,
           "FXid_AirResist (alias)"
-        ],
-        [
-          "tc Particular-0711",
-          58,
-          "FXid_FAffectPos (alias)"
         ],
         [
           "tc Particular-0719",

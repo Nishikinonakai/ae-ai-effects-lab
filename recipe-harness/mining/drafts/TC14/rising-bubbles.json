@@ -2,7 +2,19 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Rising Bubbles.xbxc",
   "_pack": "TC14",
   "_category": "Nature",
-  "_map_coverage": "38 mapped / 32 unmapped / 7 curves",
+  "_map_coverage": "36 mapped / 32 unmapped / 7 curves",
+  "_dropped_inert": [
+    [
+      "tc Particular-0711",
+      50,
+      "FXid_FAffectPos (alias)"
+    ],
+    [
+      "tc Particular-0750",
+      -289,
+      "FXid_WindY (exact)"
+    ]
+  ],
   "_unmapped": {
     "FXid_Gen1SubframePos": 0,
     "FXid_PLayerTime": 6,
@@ -1239,7 +1251,7 @@
           "FXid_Gen1VelEmit (alias)"
         ],
         [
-          "tc Particular-0283",
+          "tc Particular-0012",
           50,
           "FXid_Gen1VelSpread (alias)"
         ],
@@ -1295,8 +1307,8 @@
         ],
         [
           "tc Particular-0088",
-          3,
-          "FXid_PSetColor (alias)"
+          4,
+          "FXid_PSetColor (alias+enumOffset)"
         ],
         [
           "tc Particular-0033",
@@ -1307,11 +1319,6 @@
           "tc Particular-0075",
           0,
           "FXid_POpacRnd (alias)"
-        ],
-        [
-          "tc Particular-0711",
-          50,
-          "FXid_FAffectPos (alias)"
         ],
         [
           "tc Particular-0719",
@@ -1347,11 +1354,6 @@
           "tc Particular-0749",
           0,
           "FXid_WindX (exact)"
-        ],
-        [
-          "tc Particular-0750",
-          -289,
-          "FXid_WindY (exact)"
         ],
         [
           "tc Particular-0751",

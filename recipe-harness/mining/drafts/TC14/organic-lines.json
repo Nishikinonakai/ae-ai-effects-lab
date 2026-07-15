@@ -1319,7 +1319,7 @@
           "FXid_Gen1VelEmit (alias)"
         ],
         [
-          "tc Particular-0283",
+          "tc Particular-0012",
           34,
           "FXid_Gen1VelSpread (alias)"
         ],
@@ -1415,8 +1415,8 @@
         ],
         [
           "tc Particular-0088",
-          2,
-          "FXid_PSetColor (alias)"
+          3,
+          "FXid_PSetColor (alias+enumOffset)"
         ],
         [
           "tc Particular-0017",

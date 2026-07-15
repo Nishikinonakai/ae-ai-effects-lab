@@ -2,7 +2,24 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Magic Smoke Trail.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "39 mapped / 22 unmapped / 7 curves",
+  "_map_coverage": "36 mapped / 22 unmapped / 7 curves",
+  "_dropped_inert": [
+    [
+      "tc Particular-0711",
+      50,
+      "FXid_FAffectPos (alias)"
+    ],
+    [
+      "tc Particular-0749",
+      -131,
+      "FXid_WindX (exact)"
+    ],
+    [
+      "tc Particular-0751",
+      72,
+      "FXid_WindZ (exact)"
+    ]
+  ],
   "_unmapped": {
     "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
@@ -1228,7 +1245,7 @@
           "FXid_Gen1VelEmit (alias)"
         ],
         [
-          "tc Particular-0283",
+          "tc Particular-0012",
           100,
           "FXid_Gen1VelSpread (alias)"
         ],
@@ -1289,8 +1306,8 @@
         ],
         [
           "tc Particular-0088",
-          1,
-          "FXid_PSetColor (alias)"
+          2,
+          "FXid_PSetColor (alias+enumOffset)"
         ],
         [
           "tc Particular-0033",
@@ -1301,11 +1318,6 @@
           "tc Particular-0075",
           100,
           "FXid_POpacRnd (alias)"
-        ],
-        [
-          "tc Particular-0711",
-          50,
-          "FXid_FAffectPos (alias)"
         ],
         [
           "tc Particular-0719",
@@ -1338,19 +1350,9 @@
           "FXid_SpinFreq (alias)"
         ],
         [
-          "tc Particular-0749",
-          -131,
-          "FXid_WindX (exact)"
-        ],
-        [
           "tc Particular-0750",
           0,
           "FXid_WindY (exact)"
-        ],
-        [
-          "tc Particular-0751",
-          72,
-          "FXid_WindZ (exact)"
         ]
       ],
       "expressions": []

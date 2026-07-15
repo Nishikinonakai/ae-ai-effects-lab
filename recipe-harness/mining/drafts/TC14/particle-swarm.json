@@ -347,8 +347,8 @@
         ],
         [
           "tc Particular-0088",
-          0,
-          "FXid_PSetColor (alias)"
+          1,
+          "FXid_PSetColor (alias+enumOffset)"
         ],
         [
           "tc Particular-0711",

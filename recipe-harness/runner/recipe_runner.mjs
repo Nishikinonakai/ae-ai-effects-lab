@@ -32,6 +32,9 @@ const AEX = String.raw`(function () {
   }
 
   try {
+    // headless insurance: suppress AE-raised modal dialogs (plugin-native dialogs may still
+    // appear — recipes must avoid known triggers, e.g. wind with Air Resistance 0)
+    try { app.beginSuppressDialogs(); } catch (eSup) {}
     app.beginUndoGroup("Recipe: " + R.name);
 
     // 1) find-or-create comp (idempotent — no duplicate comps on re-run)
@@ -155,9 +158,11 @@ const AEX = String.raw`(function () {
       frames.push('"' + esc(fp) + '"');
     }
 
+    try { app.endSuppressDialogs(false); } catch (eSup2) {}
     return '{"status":"done","name":"' + esc(R.name) + '","params":[' + parts.join(",") + '],"frames":[' + frames.join(",") + ']}';
   } catch (e) {
     try { app.endUndoGroup(); } catch (e2) {}
+    try { app.endSuppressDialogs(false); } catch (eSup3) {}
     return '{"status":"error","name":"' + esc(R.name) + '","message":"' + esc(String(e)) + '","params":[' + parts.join(",") + ']}';
   }
 })();`;

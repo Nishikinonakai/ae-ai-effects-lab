@@ -2,7 +2,19 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Hazy Fire.xbxc",
   "_pack": "TC14",
   "_category": "Smoke and Fire",
-  "_map_coverage": "38 mapped / 7 unmapped / 3 curves",
+  "_map_coverage": "36 mapped / 7 unmapped / 3 curves",
+  "_dropped_inert": [
+    [
+      "tc Particular-0711",
+      90,
+      "FXid_FAffectPos (alias)"
+    ],
+    [
+      "tc Particular-0750",
+      -582,
+      "FXid_WindY (exact)"
+    ]
+  ],
   "_unmapped": {
     "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
@@ -555,7 +567,7 @@
           "FXid_Gen1VelEmit (alias)"
         ],
         [
-          "tc Particular-0283",
+          "tc Particular-0012",
           25,
           "FXid_Gen1VelSpread (alias)"
         ],
@@ -616,8 +628,8 @@
         ],
         [
           "tc Particular-0088",
-          0,
-          "FXid_PSetColor (alias)"
+          1,
+          "FXid_PSetColor (alias+enumOffset)"
         ],
         [
           "tc Particular-0033",
@@ -628,11 +640,6 @@
           "tc Particular-0075",
           0,
           "FXid_POpacRnd (alias)"
-        ],
-        [
-          "tc Particular-0711",
-          90,
-          "FXid_FAffectPos (alias)"
         ],
         [
           "tc Particular-0719",
@@ -663,11 +670,6 @@
           "tc Particular-0749",
           0,
           "FXid_WindX (exact)"
-        ],
-        [
-          "tc Particular-0750",
-          -582,
-          "FXid_WindY (exact)"
         ],
         [
           "tc Particular-0751",

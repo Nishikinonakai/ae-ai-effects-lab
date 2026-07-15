@@ -2,7 +2,14 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Starflight.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "35 mapped / 31 unmapped / 7 curves",
+  "_map_coverage": "34 mapped / 31 unmapped / 7 curves",
+  "_dropped_inert": [
+    [
+      "tc Particular-0751",
+      -1000,
+      "FXid_WindZ (exact)"
+    ]
+  ],
   "_unmapped": {
     "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
@@ -1238,7 +1245,7 @@
           "FXid_Gen1VelEmit (alias)"
         ],
         [
-          "tc Particular-0283",
+          "tc Particular-0012",
           20,
           "FXid_Gen1VelSpread (alias)"
         ],
@@ -1299,8 +1306,8 @@
         ],
         [
           "tc Particular-0088",
-          0,
-          "FXid_PSetColor (alias)"
+          1,
+          "FXid_PSetColor (alias+enumOffset)"
         ],
         [
           "tc Particular-0033",
@@ -1336,11 +1343,6 @@
           "tc Particular-0750",
           0,
           "FXid_WindY (exact)"
-        ],
-        [
-          "tc Particular-0751",
-          -1000,
-          "FXid_WindZ (exact)"
         ]
       ],
       "expressions": []

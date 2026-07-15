@@ -2,7 +2,14 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Single.xbxc",
   "_pack": "TC14",
   "_category": "Explosive",
-  "_map_coverage": "38 mapped / 21 unmapped / 7 curves",
+  "_map_coverage": "37 mapped / 21 unmapped / 7 curves",
+  "_dropped_inert": [
+    [
+      "tc Particular-0711",
+      352,
+      "FXid_FAffectPos (alias)"
+    ]
+  ],
   "_unmapped": {
     "FXid_Gen1SubframePos": 0,
     "FXid_PLayerTime": 4,
@@ -1223,7 +1230,7 @@
           "FXid_Gen1VelEmit (alias)"
         ],
         [
-          "tc Particular-0283",
+          "tc Particular-0012",
           68,
           "FXid_Gen1VelSpread (alias)"
         ],
@@ -1279,8 +1286,8 @@
         ],
         [
           "tc Particular-0088",
-          0,
-          "FXid_PSetColor (alias)"
+          1,
+          "FXid_PSetColor (alias+enumOffset)"
         ],
         [
           "tc Particular-0033",
@@ -1291,11 +1298,6 @@
           "tc Particular-0075",
           0,
           "FXid_POpacRnd (alias)"
-        ],
-        [
-          "tc Particular-0711",
-          352,
-          "FXid_FAffectPos (alias)"
         ],
         [
           "tc Particular-0719",

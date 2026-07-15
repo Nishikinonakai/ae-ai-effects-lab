@@ -60,7 +60,7 @@ const ALIAS = {
   'p aspect ratio': 'aspect ratio',
   'p rot x': 'rotation x', 'p rot y': 'rotation y', 'p rot z': 'rotation z',
   'vel': 'velocity', 'vel rnd': 'velocity random',
-  'vel spread': 'velocity distribution',            // ASSUMED — validate via loop
+  'vel spread': '@tc Particular-0012',              // Velocity Random [%] — vendor values are 0-100, and VelRnd never appears in packs
   'vel emit': 'velocity from emitter mot',          // truncated dump name, prefix-matched below
   'grid emitter particles in x': 'particles in x',
   'grid emitter particles in y': 'particles in y',
@@ -81,7 +81,7 @@ const ALIAS = {
   'emitter type': 'emitter type',
 };
 // params whose Designer value is a 0-based enum while AE popups are 1-based
-const ENUM_OFFSET = new Set(['p type', 'emitter type', 'emitter dir', 'p t mode']);
+const ENUM_OFFSET = new Set(['p type', 'emitter type', 'emitter dir', 'pt mode', 'p set color']);
 
 function stripFxid(key) {
   return norm(key.replace(/^FXid_/, '').replace(/^Options_/, '').replace(/^Settings_/, '')
@@ -168,6 +168,20 @@ for (const file of walk(PACKS)) {
     else { unmapped[k] = v; unmappedFreq.set(k, (unmappedFreq.get(k) || 0) + 1); }
   }
 
+  // physics guard: the engine ignores Wind AND Air Turbulence when Air Resistance == 0,
+  // and AE pops a MODAL warning if you set them anyway — a bridge-stalling hazard. The
+  // vendor's own preview was rendered with them inert (same engine), so the faithful
+  // translation DROPS them rather than activating physics the vendor never saw.
+  // (Verified on fire-motion: AirResist 0 render matches the thumb; clamping to 0.2 bends
+  // the plume away from it.)
+  const airResist = params.find(p => p[0] === 'tc Particular-0018');
+  let droppedInert = [];
+  if (airResist && airResist[1] === 0) {
+    const INERT = new Set(['tc Particular-0749', 'tc Particular-0750', 'tc Particular-0751', 'tc Particular-0711']);
+    droppedInert = params.filter(p => INERT.has(p[0]) && p[1] !== 0);
+    for (const d of droppedInert) params.splice(params.indexOf(d), 1);
+  }
+
   // thumbnail
   let thumb = null;
   if (d.preview?.b64data) {
@@ -181,6 +195,7 @@ for (const file of walk(PACKS)) {
     _mined_from: file,
     _pack: pack, _category: category,
     _map_coverage: `${params.length} mapped / ${Object.keys(unmapped).length} unmapped / ${Object.keys(curves).length} curves`,
+    _dropped_inert: droppedInert.length ? droppedInert : undefined,
     _unmapped: unmapped,
     _curves: curves,
     intent: `vendor preset "${d.name || base}" (${category}) — validate against its thumbnail`,

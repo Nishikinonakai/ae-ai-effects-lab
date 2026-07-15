@@ -2,7 +2,19 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Serpent.xbxc",
   "_pack": "TC14",
   "_category": "Motion Graphics",
-  "_map_coverage": "44 mapped / 94 unmapped / 0 curves",
+  "_map_coverage": "42 mapped / 94 unmapped / 0 curves",
+  "_dropped_inert": [
+    [
+      "tc Particular-0711",
+      4,
+      "FXid_FAffectPos (alias)"
+    ],
+    [
+      "tc Particular-0749",
+      30,
+      "FXid_WindX (exact)"
+    ]
+  ],
   "_unmapped": {
     "FXid_Gen1EmitterSizeOption": 1,
     "FXid_Gen1SubframePos": 0,
@@ -1462,7 +1474,7 @@
           "FXid_Gen1VelEmit (alias)"
         ],
         [
-          "tc Particular-0283",
+          "tc Particular-0012",
           0,
           "FXid_Gen1VelSpread (alias)"
         ],
@@ -1558,8 +1570,8 @@
         ],
         [
           "tc Particular-0088",
-          0,
-          "FXid_PSetColor (alias)"
+          1,
+          "FXid_PSetColor (alias+enumOffset)"
         ],
         [
           "tc Particular-0017",
@@ -1570,11 +1582,6 @@
           "tc Particular-0018",
           0,
           "FXid_AirResist (alias)"
-        ],
-        [
-          "tc Particular-0711",
-          4,
-          "FXid_FAffectPos (alias)"
         ],
         [
           "tc Particular-0719",
@@ -1595,11 +1602,6 @@
           "tc Particular-0020",
           1,
           "FXid_SpinFreq (alias)"
-        ],
-        [
-          "tc Particular-0749",
-          30,
-          "FXid_WindX (exact)"
         ],
         [
           "tc Particular-0750",

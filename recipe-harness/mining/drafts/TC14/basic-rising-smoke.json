@@ -2,7 +2,19 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Basic Rising Smoke.xbxc",
   "_pack": "TC14",
   "_category": "Smoke and Fire",
-  "_map_coverage": "35 mapped / 6 unmapped / 2 curves",
+  "_map_coverage": "33 mapped / 6 unmapped / 2 curves",
+  "_dropped_inert": [
+    [
+      "tc Particular-0711",
+      90,
+      "FXid_FAffectPos (alias)"
+    ],
+    [
+      "tc Particular-0750",
+      -50,
+      "FXid_WindY (exact)"
+    ]
+  ],
   "_unmapped": {
     "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
@@ -546,7 +558,7 @@
           "FXid_Gen1VelEmit (alias)"
         ],
         [
-          "tc Particular-0283",
+          "tc Particular-0012",
           25,
           "FXid_Gen1VelSpread (alias)"
         ],
@@ -601,11 +613,6 @@
           "FXid_POpacRnd (alias)"
         ],
         [
-          "tc Particular-0711",
-          90,
-          "FXid_FAffectPos (alias)"
-        ],
-        [
           "tc Particular-0719",
           5,
           "FXid_FEvolution (alias)"
@@ -634,11 +641,6 @@
           "tc Particular-0749",
           0,
           "FXid_WindX (exact)"
-        ],
-        [
-          "tc Particular-0750",
-          -50,
-          "FXid_WindY (exact)"
         ],
         [
           "tc Particular-0751",
