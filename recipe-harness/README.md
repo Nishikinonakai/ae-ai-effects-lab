@@ -69,6 +69,12 @@ find-or-create-idempotent, every iteration turns knobs on the SAME live comp.
   "background": [0.02, 0.015, 0.01],  // BG solid RGB 0..1 (Particular renders on transparency); null to skip
   "effect": "tc Particular",          // effect matchName applied to the host solid
   "hostName": "Dust",                 // particle host solid layer name
+  "master": {                         // OPTIONAL: clone the host from a curve-library master
+    "library": "library/particular-masters.aep",  // path relative to recipe-harness/
+    "comp": "MASTER_embers_fade",     // comp inside the library; its layer 1 is cloned
+    "layer": 1                        // optional, default 1
+  },
+  "presets": ["path/to/curves.ffx"],  // OPTIONAL: .ffx applied to a FRESH host only
   "params": [                         // [matchName, value, humanLabel]
     ["tc Particular-0146", 350, "Particles/sec"]
   ],
@@ -98,15 +104,31 @@ find-or-create-idempotent, every iteration turns knobs on the SAME live comp.
   idempotency — a retried write re-executes. Idempotent ExtendScript means re-running a recipe
   updates in place instead of spawning duplicate comps. (Verified: two runs → one comp.)
 - **Expressions are first-class.** Procedural motion (swept emitters, wander, lean) is the only
-  scriptable route to compositional structure. **Curves/gradients (Opacity/Color/Size over Life,
-  CUSTOM_VALUE) are NOT scriptable** — those must ship as `.ffx` presets (next milestone).
+  scriptable route to compositional structure.
+- **Curves/gradients (Opacity/Color/Size over Life, CUSTOM_VALUE) are NOT settable by script —
+  but they are CLONEABLE.** Solved 2026-07-15 two ways, both verified through the bridge:
+  1. **Master-layer library (preferred)**: `library/particular-masters.aep` holds hand-authored
+     master layers (curves edited once, in the UI — that IS the curation step). The runner
+     imports the library, `copyToComp`s the master's layer as the host, then overrides the
+     scriptable params on the clone. Layer copy is a full-state transfer, so CUSTOM_VALUE data
+     rides along. Verified: marker state carried, param override on clone works, idempotent
+     re-runs don't re-clone. Authoring is dialog-free (just save the project).
+  2. **`.ffx` presets** (`presets` field, `layer.applyPreset`): verified with native presets;
+     applied only when the host was freshly created (re-applying would stack duplicates).
+     Saving a .ffx needs the UI save dialog, so masters are the smoother authoring path.
+  Curation workflow: open the library .aep → duplicate `MASTER_particular_base` →
+  rename `MASTER_<archetype>` → edit over-life curves/gradients in Effect Controls → save →
+  reference it from the recipe's `master` field.
 - **Camera is a recipe field.** Particular auto-uses the comp camera; there is no "use comp cam"
   param. Adding a camera reprojects the particles, which is mandatory for any volumetric effect.
 
 ## Known gaps / next milestones
 
-1. **`.ffx` preset application** — for curve/gradient params the expression route can't reach.
-   Recipe would gain a `presets: [path, …]` field applied via `layer.applyPreset`.
+1. ~~**`.ffx` preset application**~~ — DONE 2026-07-15, plus the stronger master-clone route
+   (see design decisions). Remaining: author the actual curve masters (fade-out, shrink,
+   white-hot→red) — an artist pass in the library .aep; and mine the 586 Trapcode Designer
+   presets (`/Users/Shared/Red Giant/Trapcode Packs/*/Presets`, plain JSON `.xbxc`/`.xbxs`)
+   as recipe raw material.
 2. **Hidden-param prober tool** — runtime probe of the mode→visibility dependency graph and
    undocumented enum ranges (e.g. Emitter Size mode 0577 only accepts 1–2).
 3. **Multi-system / multi-layer recipes** — a portfolio tornado needs core + wisps + debris as

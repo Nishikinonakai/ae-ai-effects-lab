@@ -96,7 +96,10 @@ node introspect/enrich_card.mjs introspect/cards/<eff>.json introspect/enrichmen
 
 ## Known frontier (next work)
 
-- `.ffx` preset capture/apply for CUSTOM_VALUE curves (the curated-aesthetic layer)
+- ~~`.ffx` preset capture/apply for CUSTOM_VALUE curves~~ — SOLVED 2026-07-15: master-layer
+  library (`recipe-harness/library/`, clone-into-comp carries curves) + `presets`/.ffx field,
+  both verified. Remaining: the artist curve pass on the masters + mining the 586 vendor
+  Designer presets (plain-JSON .xbxc) as recipe material.
 - Animated + context-conditioned probing (temporal enums; gated params like Overflow@Contrast)
 - Batch-enrich the native effect set into a browsable card library for the planner
 - Multi-layer/multi-system plans (portfolio tornado = core + wisps + debris + matte)

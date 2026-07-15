@@ -51,10 +51,50 @@ const AEX = String.raw`(function () {
       bg.moveToEnd();
     }
 
-    // 3) find-or-create particle host solid
+    // 3) host layer: find (idempotent re-run) | clone from a curve-library master | new solid.
+    // Masters carry CUSTOM_VALUE state (over-life curves, gradients) that setValue cannot
+    // reach — layer copy is a full-state transfer, so curves ride along; the recipe's params
+    // pass then overrides the scriptable values on the clone.
     var hostName = R.hostName || "Host";
     var host = findLayer(comp, hostName);
-    if (!host) host = comp.layers.addSolid([0,0,0], hostName, R.comp.width, R.comp.height, 1, R.comp.duration);
+    if (!host) {
+      if (R.master) {
+        var mcomp = null;
+        for (var mi = 1; mi <= app.project.numItems; mi++) {
+          var mit = app.project.item(mi);
+          if (mit instanceof CompItem && mit.name === R.master.comp) { mcomp = mit; break; }
+        }
+        if (!mcomp) {
+          app.project.importFile(new ImportOptions(new File(R.master.library)));
+          for (var mj = 1; mj <= app.project.numItems; mj++) {
+            var mjt = app.project.item(mj);
+            if (mjt instanceof CompItem && mjt.name === R.master.comp) { mcomp = mjt; break; }
+          }
+        }
+        if (!mcomp) throw new Error("master comp not found after import: " + R.master.comp);
+        mcomp.layer(R.master.layer || 1).copyToComp(comp);
+        host = comp.layer(1);            // copyToComp lands on top
+        host.name = hostName;
+        host.startTime = 0;
+        parts.push('{"p":"[master] clone ' + esc(R.master.comp) + '","ok":true}');
+      } else {
+        host = comp.layers.addSolid([0,0,0], hostName, R.comp.width, R.comp.height, 1, R.comp.duration);
+      }
+      // .ffx presets apply ONCE, on the freshly created host only — re-applying on a
+      // found host would stack duplicate effects (idempotency).
+      if (R.presets) {
+        for (var pi = 0; pi < R.presets.length; pi++) {
+          try {
+            var pf = new File(R.presets[pi]);
+            if (!pf.exists) throw new Error("file missing");
+            host.applyPreset(pf);
+            parts.push('{"p":"[preset] ' + esc(R.presets[pi]) + '","ok":true}');
+          } catch (pe) {
+            parts.push('{"p":"[preset] ' + esc(R.presets[pi]) + '","ok":false,"err":"' + esc(String(pe).substring(0,70)) + '"}');
+          }
+        }
+      }
+    }
 
     // 4) find-or-apply the effect STACK in order (multi-effect plans: form + color + glow ...)
     for (var s = 0; s < R.effects.length; s++) {
@@ -143,6 +183,12 @@ export async function runRecipe(recipeInput, opts = {}) {
   fs.mkdirSync(outDir, { recursive: true });
   recipe._outDir = outDir;
   const timeoutSec = opts.timeoutSec || 180;
+
+  // resolve library/preset paths relative to the harness root, so recipes stay portable
+  if (recipe.master?.library && !path.isAbsolute(recipe.master.library))
+    recipe.master.library = path.join(REPO, recipe.master.library);
+  if (recipe.presets)
+    recipe.presets = recipe.presets.map(p => (path.isAbsolute(p) ? p : path.join(REPO, p)));
 
   const script = AEX.replace('__RECIPE__', JSON.stringify(recipe));
 
