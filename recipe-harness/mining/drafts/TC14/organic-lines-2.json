@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Organic Lines 2.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "51 mapped / 11 unmapped / 6 curves",
+  "_map_coverage": "54 mapped / 6 unmapped / 6 curves",
   "_dropped_inert": [
     [
       "tc Particular-2759",
@@ -11,13 +11,8 @@
     ]
   ],
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
-    "FXid_PLayerTime": 0,
     "FXid_PTMode": 2,
-    "FXid_FAffectSize": 34,
-    "FXid_FAffectTime": 0.5,
-    "FXid_SpinTime": 1,
     "FXid_DOF": 1,
     "FXid_MBlurOpacBoost": 0,
     "FXid_MBlurPopup": 1,
@@ -934,6 +929,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          1,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
           "tc Particular-0146",
           50,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -952,11 +957,6 @@
           "tc Particular-0016",
           0,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          1,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -1044,11 +1044,6 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          2,
-          "FXid_PType (alias+enumOffset)"
-        ],
-        [
           "tc Particular-0531",
           0,
           "FXid_PUnmult (alias)"
@@ -1074,17 +1069,27 @@
           "FXid_PSetColor (alias+enumOffset) [forced At Birth: gradient unscriptable]"
         ],
         [
-          "tc Particular-0711",
+          "tc Particular-0042",
           22,
           "FXid_FAffectPos (alias)"
         ],
         [
-          "tc Particular-0719",
+          "tc Particular-0041",
+          34,
+          "FXid_FAffectSize (alias)"
+        ],
+        [
+          "tc Particular-0045",
+          0.5,
+          "FXid_FAffectTime (alias)"
+        ],
+        [
+          "tc Particular-0052",
           50,
           "FXid_FEvolution (alias)"
         ],
         [
-          "tc Particular-0715",
+          "tc Particular-0046",
           10,
           "FXid_FScale (alias)"
         ],
@@ -1102,6 +1107,11 @@
           "tc Particular-0020",
           1,
           "FXid_SpinFreq (alias)"
+        ],
+        [
+          "tc Particular-0021",
+          1,
+          "FXid_SpinTime (alias)"
         ],
         [
           "tc Particular-0749",

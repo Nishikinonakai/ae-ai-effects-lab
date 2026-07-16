@@ -114,6 +114,60 @@ both import). 52 sprite drafts re-validated, zero failures, zero stalls.
 - **Burst**: spike sized to psec×life within the 0.1s window; first sample frame at t=0.08
   (inside the window regardless of life).
 
+## Round-6 RESULTS (2026-07-17 night): 44 match / 93 partial / 49 fail
+
+Trajectory: r1 23/71/90 → r3 33/107/48 → **r6 44/93/49** — matches +33% in one
+night; `promote_matches.mjs` shipped all 44 into `recipes/mined/` (the recipe
+library's first bulk intake). Mean param coverage 56% → **73%**.
+
+What moved: the sprite pipeline (icosas/cubes/stars/tech-balls/seeds/leaves/
+snowflakes/bubbles/feathers now render true textures — 12+ new matches), the
+TF remap (swirl-tracers/electron-dance went blob → thumb-matching swirls),
+aux→S2 (smoke-magic/ghost-trail/firestarter/nebula-strings/blue-swarm show live
+parent-emission), 0577 size-mode gate (clouds/cloud-cover wide emitters formed),
+flat burst spike + t0.08 sampling (muzzle/flare flashes render; lens-flare
+sprites at t0 are genuinely pretty).
+
+New classes discovered by this round's scoring:
+- **render-hang (12 fail)**: a specific burst subset (smoke-puff/hit, spark-*)
+  JAMS AE's async frame renderer — reproducible on a fresh instance, killed two
+  AE sessions tonight. Suspects: r6b streaklet params (0314/0315) × spike, or
+  TF displace on heavy counts. NEEDS BISECTION (round-7 #1).
+- **sprite-alpha (4)**: luma-keyed .mov sprites (fire/smoke family) render as
+  visible CARDS — footage alphaMode/blend handling needed; the geometry .movs
+  (icosas etc.) carry real alpha and are fine.
+- **cloud-merge (6)**: explode-up family renders featureless pancakes — cloudlet
+  size/count fidelity needs the curve masters (size-over-life).
+- **aux-burst-density (3)**: S2 psec on spiked parents multiplies (white walls);
+  needs S2-psec normalization when isBurst.
+- **fluid-viz-suspect (1)**: candle-flame renders a cyan disc in batch context
+  but flame-orange in single runs — 0629 Visualize Flow reads 1 and is LOCKED;
+  0634 Visualize Relative Density defaults 1. Also the general saveFrameToPng
+  degradation below.
+
+**Ops discovery — saveFrameToPng degrades in long sessions**: heavy drafts whose
+async renders exceed the 20s frame poll got dropped when the validator's
+30-draft project-close killed pending renders; late in the night, mis-rendered
+frames (another comp's buffer?) appeared. Mitigations for round-7: bump frame
+timeout for heavy drafts, close-project less aggressively, verify frame counts
+before scoring, restart AE between big batches (bridge_up.sh makes this free).
+
+## Round-7 queue (by yield)
+
+1. **Bisect the render-hang class** (12 drafts) — binary-search the r6 param
+   additions on smoke-puff-1; prime suspects: streaklet 0314/0315, TF displace,
+   shading 0284=0 with smokelet shadow params.
+2. **Sprite alpha/blend** (4+ drafts, improves the whole fire/smoke sprite family):
+   probe footage alphaMode + particle blend mode on horizontal-fire.
+3. **S2-psec burst normalization** (3) — divide S2 psec by spike factor.
+4. **OBJ emitters** (4) — 3D Model group needs the model file connect; likely
+  UI-gated (Choose Model button); check 2581 "3D Model S2"/main twin for a
+  layer-param route (OBJ import into AE unsupported → may need the user once).
+5. **Curve masters** (empty/cloud-merge/size-over-life classes, ~12 drafts) —
+  the artist curve pass on MASTER_particular_* (user session).
+6. PTMode semantics (0..5 enum, 186 presets) + fluid shape (buoyancy/vortex
+  probe) + light-path class (needs animated emitter paths).
+
 ## Round-6 queue (aliases landed, validation pending)
 
 Default-value-pair method (Designer default == TSV default pins the target) resolved:

@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Dust in the Wind.xbxc",
   "_pack": "TC14",
   "_category": "Dust and Debris",
-  "_map_coverage": "33 mapped / 3 unmapped / 3 curves",
+  "_map_coverage": "34 mapped / 1 unmapped / 3 curves",
   "_dropped_inert": [
     [
       "tc Particular-0749",
@@ -11,9 +11,7 @@
     ]
   ],
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
-    "FXid_PTMode": 0,
-    "FXid_SpinTime": 1
+    "FXid_PTMode": 0
   },
   "_curves": {
     "rg.custom.xfer.life": {
@@ -505,6 +503,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          2,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
           "tc Particular-0146",
           487,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -523,11 +531,6 @@
           "tc Particular-0016",
           2000,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          2,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -615,11 +618,6 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          1,
-          "FXid_PType (alias+enumOffset)"
-        ],
-        [
           "tc Particular-0070",
           [
             1,
@@ -663,6 +661,11 @@
           "tc Particular-0020",
           1,
           "FXid_SpinFreq (alias)"
+        ],
+        [
+          "tc Particular-0021",
+          1,
+          "FXid_SpinTime (alias)"
         ],
         [
           "tc Particular-0750",

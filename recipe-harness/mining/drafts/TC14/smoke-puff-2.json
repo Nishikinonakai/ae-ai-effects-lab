@@ -2,10 +2,8 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Smoke Puff 2.xbxc",
   "_pack": "TC14",
   "_category": "Explosive",
-  "_map_coverage": "46 mapped / 70 unmapped / 0 curves",
+  "_map_coverage": "68 mapped / 46 unmapped / 0 curves",
   "_unmapped": {
-    "FXid_Gen1EmitterSizeOption": 0,
-    "FXid_Gen1SubframePos": 0,
     "FXid_Options_OBJEmitFrom": 1,
     "FXid_Options_OBJInvertZ": false,
     "FXid_Options_OBJLayer": {
@@ -15,13 +13,10 @@
     "FXid_Options_OBJNormalize": true,
     "FXid_Options_OBJSequenceOffset": 0,
     "FXid_Options_OBJSequenceSpeed": 1,
-    "FXid_Gen1VelSpreadDistr": 4.01,
-    "FXid_Glow_TransferMode": 0,
     "FXid_PLayer": {
       "uuid": "${RootAssetPack}/Sprites/Common/Smoke and Fire/Luma Fire 1.mov",
       "footage": "${RootAssetPack}/Sprites/Common/Smoke and Fire/Luma Fire 1.mov"
     },
-    "FXid_PLayerTime": 6,
     "FXid_PTMode": 2,
     "FXid_PTModeOverLifeArb": {
       "curveX": [],
@@ -231,17 +226,6 @@
         0
       ]
     },
-    "FXid_Streaklet_NoSpheres": 7,
-    "FXid_Streaklet_Spread": 60,
-    "FXid_PRotAuto": 0,
-    "FXid_PRotate": 0,
-    "FXid_PRotateRndSpeed": 0,
-    "FXid_PRotateRndSpeedDistr": 0.1,
-    "FXid_PRotateSpeed": 0,
-    "FXid_PRotateSpeedX": 0,
-    "FXid_PRotateSpeedY": 0,
-    "FXid_PRotateX": 0,
-    "FXid_PRotateY": 0,
     "FXid_PSizeOverLifeArb": {
       "curveX": [
         0,
@@ -668,22 +652,11 @@
       "curveX": [],
       "curveY": []
     },
-    "FXid_Options_SmokeletShadow_Color": {
-      "r": 0,
-      "g": 0,
-      "b": 0
-    },
-    "FXid_Options_SmokeletShadow_ColorStrength": 100,
-    "FXid_Options_SmokeletShadow_Opacity": 5,
-    "FXid_PShade": 0,
-    "FXid_PShadeFalloffAdjust": 250,
     "FXid_PShadow": 0,
     "FXid_PhTime": 1,
     "FXid_AirResistRotation": false,
     "FXid_AnimationSystem": 0,
     "FXid_FAffectCurve": 1,
-    "FXid_FAffectSize": 34,
-    "FXid_FAffectTime": 1,
     "FXid_FComplex": 3,
     "FXid_FMoveWithWind": 80,
     "FXid_FOctMult": 0.5,
@@ -692,7 +665,6 @@
     "FXid_FOffsetX": 0,
     "FXid_FOffsetY": 0,
     "FXid_FOffsetZ": 0,
-    "FXid_SpinTime": 0.100006103515625,
     "FXid_WFBounce": 50,
     "FXid_WFBounceRnd": 30,
     "FXid_WFSlide": 80,
@@ -1165,6 +1137,21 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0577",
+          1,
+          "FXid_Gen1EmitterSizeOption (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0782",
+          3,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          6,
+          "FXid_PType (alias+enumOffset) [Designer 5 -> Sprite + connected texture]"
+        ],
+        [
           "tc Particular-0014",
           0,
           "FXid_Gen1EmitterSizeX (alias)"
@@ -1178,11 +1165,6 @@
           "tc Particular-0016",
           10,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          3,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0146",
@@ -1245,9 +1227,19 @@
           "FXid_Gen1VelSpread (alias)"
         ],
         [
+          "tc Particular-0283",
+          4.01,
+          "FXid_Gen1VelSpreadDistr (alias)"
+        ],
+        [
           "tc Particular-0230",
           100000,
           "FXid_Options_RandomSeed (exact)"
+        ],
+        [
+          "tc Particular-0218",
+          1,
+          "FXid_Glow_TransferMode (alias+enumOffset)"
         ],
         [
           "tc Particular-0217",
@@ -1280,14 +1272,14 @@
           "FXid_PLifeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          6,
-          "FXid_PType (alias+enumOffset) [Designer 5 -> Sprite + connected texture]"
-        ],
-        [
           "tc Particular-0531",
           1,
           "FXid_PUnmult (alias)"
+        ],
+        [
+          "tc Particular-0314",
+          7,
+          "FXid_Streaklet_NoSpheres (alias)"
         ],
         [
           "tc Particular-0313",
@@ -1295,9 +1287,59 @@
           "FXid_Streaklet_RandomSeed (exact)"
         ],
         [
+          "tc Particular-0315",
+          60,
+          "FXid_Streaklet_Spread (alias)"
+        ],
+        [
           "tc Particular-0524",
           1,
           "FXid_PAspectRatio (alias)"
+        ],
+        [
+          "tc Particular-0726",
+          0,
+          "FXid_PRotAuto (alias)"
+        ],
+        [
+          "tc Particular-0136",
+          0,
+          "FXid_PRotate (alias)"
+        ],
+        [
+          "tc Particular-0279",
+          0,
+          "FXid_PRotateRndSpeed (alias)"
+        ],
+        [
+          "tc Particular-0282",
+          0.1,
+          "FXid_PRotateRndSpeedDistr (alias)"
+        ],
+        [
+          "tc Particular-0138",
+          0,
+          "FXid_PRotateSpeed (alias)"
+        ],
+        [
+          "tc Particular-0277",
+          0,
+          "FXid_PRotateSpeedX (alias)"
+        ],
+        [
+          "tc Particular-0278",
+          0,
+          "FXid_PRotateSpeedY (alias)"
+        ],
+        [
+          "tc Particular-0275",
+          0,
+          "FXid_PRotateX (alias)"
+        ],
+        [
+          "tc Particular-0276",
+          0,
+          "FXid_PRotateY (alias)"
         ],
         [
           "tc Particular-0027",
@@ -1340,6 +1382,36 @@
           "FXid_PSetColor (alias+enumOffset)"
         ],
         [
+          "tc Particular-0210",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (alias)"
+        ],
+        [
+          "tc Particular-0211",
+          100,
+          "FXid_Options_SmokeletShadow_ColorStrength (alias)"
+        ],
+        [
+          "tc Particular-0212",
+          5,
+          "FXid_Options_SmokeletShadow_Opacity (alias)"
+        ],
+        [
+          "tc Particular-0284",
+          0,
+          "FXid_PShade (alias)"
+        ],
+        [
+          "tc Particular-0304",
+          250,
+          "FXid_PShadeFalloffAdjust (alias)"
+        ],
+        [
           "tc Particular-0017",
           0,
           "FXid_Gravity (exact)"
@@ -1350,17 +1422,27 @@
           "FXid_AirResist (alias)"
         ],
         [
-          "tc Particular-0711",
+          "tc Particular-0042",
           66.51515197753906,
           "FXid_FAffectPos (alias)"
         ],
         [
-          "tc Particular-0719",
+          "tc Particular-0041",
+          34,
+          "FXid_FAffectSize (alias)"
+        ],
+        [
+          "tc Particular-0045",
+          1,
+          "FXid_FAffectTime (alias)"
+        ],
+        [
+          "tc Particular-0052",
           16,
           "FXid_FEvolution (alias)"
         ],
         [
-          "tc Particular-0715",
+          "tc Particular-0046",
           8,
           "FXid_FScale (alias)"
         ],
@@ -1373,6 +1455,11 @@
           "tc Particular-0020",
           0.8917236328125,
           "FXid_SpinFreq (alias)"
+        ],
+        [
+          "tc Particular-0021",
+          0.100006103515625,
+          "FXid_SpinTime (alias)"
         ],
         [
           "tc Particular-0749",
@@ -1405,8 +1492,8 @@
       "expressions": [
         [
           "tc Particular-0146",
-          "time < 0.1 ? 64650 : 0",
-          "Explode -> 0.1s burst spike (life-scaled)"
+          "time < 0.1 ? 21550 : 0",
+          "Explode -> 0.1s burst spike"
         ]
       ]
     }

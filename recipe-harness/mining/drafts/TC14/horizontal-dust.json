@@ -2,13 +2,8 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Horizontal Dust.xbxc",
   "_pack": "TC14",
   "_category": "Dust and Debris",
-  "_map_coverage": "24 mapped / 10 unmapped / 2 curves",
+  "_map_coverage": "28 mapped / 5 unmapped / 2 curves",
   "_dropped_inert": [
-    [
-      "tc Particular-0711",
-      10,
-      "FXid_FAffectPos (alias)"
-    ],
     [
       "tc Particular-0749",
       300,
@@ -16,12 +11,7 @@
     ]
   ],
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
-    "FXid_PLayerTime": 0,
     "FXid_PTMode": 2,
-    "FXid_FAffectSize": 0,
-    "FXid_FAffectTime": 0.5,
-    "FXid_SpinTime": 1,
     "FXid_DOF": 1,
     "FXid_MBlurOpacBoost": 0,
     "FXid_MBlurPopup": 2,
@@ -487,6 +477,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          2,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
           "tc Particular-0146",
           500,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -505,11 +505,6 @@
           "tc Particular-0016",
           2000,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          2,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -557,11 +552,6 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          1,
-          "FXid_PType (alias+enumOffset)"
-        ],
-        [
           "tc Particular-0033",
           100,
           "FXid_POpacMax (alias)"
@@ -572,12 +562,27 @@
           "FXid_POpacRnd (alias)"
         ],
         [
-          "tc Particular-0719",
+          "tc Particular-0042",
+          10,
+          "FXid_FAffectPos (alias)"
+        ],
+        [
+          "tc Particular-0041",
+          0,
+          "FXid_FAffectSize (alias)"
+        ],
+        [
+          "tc Particular-0045",
+          0.5,
+          "FXid_FAffectTime (alias)"
+        ],
+        [
+          "tc Particular-0052",
           50,
           "FXid_FEvolution (alias)"
         ],
         [
-          "tc Particular-0715",
+          "tc Particular-0046",
           10,
           "FXid_FScale (alias)"
         ],
@@ -595,6 +600,11 @@
           "tc Particular-0020",
           1,
           "FXid_SpinFreq (alias)"
+        ],
+        [
+          "tc Particular-0021",
+          1,
+          "FXid_SpinTime (alias)"
         ],
         [
           "tc Particular-0750",

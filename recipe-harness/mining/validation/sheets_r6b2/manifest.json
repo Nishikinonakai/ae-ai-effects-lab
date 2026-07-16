@@ -1,0 +1,122 @@
+[
+ {
+  "sheet": 0,
+  "pos": 0,
+  "slug": "flare-flash-1",
+  "flag": "empty"
+ },
+ {
+  "sheet": 0,
+  "pos": 1,
+  "slug": "flare-flash-2",
+  "flag": "empty"
+ },
+ {
+  "sheet": 0,
+  "pos": 2,
+  "slug": "flare-flash-3",
+  "flag": "empty"
+ },
+ {
+  "sheet": 0,
+  "pos": 3,
+  "slug": "glass-bits",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 4,
+  "slug": "glass-shard-explosion-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 5,
+  "slug": "glass-shard-explosion-3",
+  "flag": "faint"
+ },
+ {
+  "sheet": 0,
+  "pos": 6,
+  "slug": "glow-spark-blast",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 7,
+  "slug": "ignition",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 0,
+  "slug": "muzzle-flash-1",
+  "flag": "empty"
+ },
+ {
+  "sheet": 1,
+  "pos": 1,
+  "slug": "muzzle-flash-2",
+  "flag": "empty"
+ },
+ {
+  "sheet": 1,
+  "pos": 2,
+  "slug": "muzzle-flash-3",
+  "flag": "empty"
+ },
+ {
+  "sheet": 1,
+  "pos": 3,
+  "slug": "muzzle-flash-4",
+  "flag": "empty"
+ },
+ {
+  "sheet": 1,
+  "pos": 4,
+  "slug": "plasma-cloud-explosion-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 5,
+  "slug": "plasma-cloud-explosion-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 6,
+  "slug": "ring-explosion",
+  "flag": "no_frame"
+ },
+ {
+  "sheet": 1,
+  "pos": 7,
+  "slug": "smoke-explosion",
+  "flag": "no_frame"
+ },
+ {
+  "sheet": 2,
+  "pos": 0,
+  "slug": "smoke-hit",
+  "flag": "no_frame"
+ },
+ {
+  "sheet": 2,
+  "pos": 1,
+  "slug": "smoke-puff-1",
+  "flag": "no_frame"
+ },
+ {
+  "sheet": 2,
+  "pos": 2,
+  "slug": "smoke-puff-2",
+  "flag": "no_frame"
+ },
+ {
+  "sheet": 2,
+  "pos": 3,
+  "slug": "spark-blast-1",
+  "flag": "no_frame"
+ }
+]

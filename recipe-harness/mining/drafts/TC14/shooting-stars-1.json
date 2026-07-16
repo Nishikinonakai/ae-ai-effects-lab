@@ -2,24 +2,11 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Shooting Stars 1.xbxc",
   "_pack": "TC14",
   "_category": "Motion Graphics",
-  "_map_coverage": "35 mapped / 11 unmapped / 7 curves",
+  "_map_coverage": "41 mapped / 3 unmapped / 7 curves",
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
-    "FXid_PLayerTime": 6,
     "FXid_PTMode": 0,
-    "FXid_Options_SmokeletShadow_Color": {
-      "r": 0,
-      "g": 0,
-      "b": 0,
-      "a": 255
-    },
-    "FXid_Options_SmokeletShadow_ColorStrength": 100,
-    "FXid_Options_SmokeletShadow_Opacity": 9,
-    "FXid_PShade": 0,
-    "FXid_PShadeFalloffAdjust": 710,
-    "FXid_PShadow": 1,
-    "FXid_SpinTime": 1
+    "FXid_PShadow": 1
   },
   "_curves": {
     "rg.custom.xfer.life": {
@@ -1163,6 +1150,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          1,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          3,
+          "FXid_PType (alias+enumOffset) [sprite fallback -> Star]"
+        ],
+        [
           "tc Particular-0146",
           50,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -1181,11 +1178,6 @@
           "tc Particular-0016",
           100,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          1,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -1273,11 +1265,6 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          3,
-          "FXid_PType (alias+enumOffset) [sprite fallback -> Star]"
-        ],
-        [
           "tc Particular-0531",
           0,
           "FXid_PUnmult (alias)"
@@ -1313,6 +1300,36 @@
           "FXid_POpacRnd (alias)"
         ],
         [
+          "tc Particular-0210",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (alias)"
+        ],
+        [
+          "tc Particular-0211",
+          100,
+          "FXid_Options_SmokeletShadow_ColorStrength (alias)"
+        ],
+        [
+          "tc Particular-0212",
+          9,
+          "FXid_Options_SmokeletShadow_Opacity (alias)"
+        ],
+        [
+          "tc Particular-0284",
+          0,
+          "FXid_PShade (alias)"
+        ],
+        [
+          "tc Particular-0304",
+          710,
+          "FXid_PShadeFalloffAdjust (alias)"
+        ],
+        [
           "tc Particular-0018",
           0.100006103515625,
           "FXid_AirResist (alias)"
@@ -1326,6 +1343,11 @@
           "tc Particular-0020",
           1,
           "FXid_SpinFreq (alias)"
+        ],
+        [
+          "tc Particular-0021",
+          1,
+          "FXid_SpinTime (alias)"
         ],
         [
           "tc Particular-0749",

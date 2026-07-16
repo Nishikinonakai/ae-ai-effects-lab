@@ -2,21 +2,10 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Shooting Flares.xbxc",
   "_pack": "TC14",
   "_category": "Motion Graphics",
-  "_map_coverage": "27 mapped / 13 unmapped / 3 curves",
+  "_map_coverage": "36 mapped / 2 unmapped / 3 curves",
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
-    "FXid_PLayerTime": 6,
-    "FXid_PTMode": 2,
-    "FXid_PRotAuto": 0,
-    "FXid_PRotate": 0,
-    "FXid_PRotateRnd": 50,
-    "FXid_PRotateRndSpeed": 0.5,
-    "FXid_PRotateSpeed": 0,
-    "FXid_PRotateSpeedX": 0,
-    "FXid_PRotateSpeedY": 0,
-    "FXid_PRotateX": 0,
-    "FXid_PRotateY": 0
+    "FXid_PTMode": 2
   },
   "_curves": {
     "rg.custom.xfer.life": {
@@ -486,6 +475,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          1,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "FXid_PType (alias+enumOffset) [sprite fallback -> Glow Sphere]"
+        ],
+        [
           "tc Particular-0146",
           20,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -504,11 +503,6 @@
           "tc Particular-0016",
           0,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          1,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -596,11 +590,6 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          2,
-          "FXid_PType (alias+enumOffset) [sprite fallback -> Glow Sphere]"
-        ],
-        [
           "tc Particular-0531",
           1,
           "FXid_PUnmult (alias)"
@@ -624,6 +613,51 @@
           "tc Particular-0088",
           1,
           "FXid_PSetColor (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0726",
+          0,
+          "FXid_PRotAuto (alias)"
+        ],
+        [
+          "tc Particular-0136",
+          0,
+          "FXid_PRotate (alias)"
+        ],
+        [
+          "tc Particular-0137",
+          50,
+          "FXid_PRotateRnd (alias)"
+        ],
+        [
+          "tc Particular-0279",
+          0.5,
+          "FXid_PRotateRndSpeed (alias)"
+        ],
+        [
+          "tc Particular-0138",
+          0,
+          "FXid_PRotateSpeed (alias)"
+        ],
+        [
+          "tc Particular-0277",
+          0,
+          "FXid_PRotateSpeedX (alias)"
+        ],
+        [
+          "tc Particular-0278",
+          0,
+          "FXid_PRotateSpeedY (alias)"
+        ],
+        [
+          "tc Particular-0275",
+          0,
+          "FXid_PRotateX (alias)"
+        ],
+        [
+          "tc Particular-0276",
+          0,
+          "FXid_PRotateY (alias)"
         ]
       ],
       "expressions": []

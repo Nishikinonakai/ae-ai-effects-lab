@@ -2,23 +2,10 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Electron Dance.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "50 mapped / 10 unmapped / 7 curves",
+  "_map_coverage": "56 mapped / 2 unmapped / 7 curves",
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
-    "FXid_PLayerTime": 0,
     "FXid_PTMode": 1,
-    "FXid_Options_SmokeletShadow_Color": {
-      "r": 64,
-      "g": 64,
-      "b": 64,
-      "a": 255
-    },
-    "FXid_Options_SmokeletShadow_ColorStrength": 50,
-    "FXid_Options_SmokeletShadow_Opacity": 50,
-    "FXid_PShade": 0,
-    "FXid_PShadeFalloffAdjust": 250,
-    "FXid_PShadow": 0,
-    "FXid_SpinTime": 0
+    "FXid_PShadow": 0
   },
   "_curves": {
     "rg.custom.xfer.life": {
@@ -1147,6 +1134,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          3,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
           "tc Particular-0146",
           40,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -1165,11 +1162,6 @@
           "tc Particular-0016",
           200,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          3,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -1257,11 +1249,6 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          2,
-          "FXid_PType (alias+enumOffset)"
-        ],
-        [
           "tc Particular-0070",
           [
             0.5019607843137255,
@@ -1292,6 +1279,36 @@
           "FXid_POpacRnd (alias)"
         ],
         [
+          "tc Particular-0210",
+          [
+            0.25098039215686274,
+            0.25098039215686274,
+            0.25098039215686274,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (alias)"
+        ],
+        [
+          "tc Particular-0211",
+          50,
+          "FXid_Options_SmokeletShadow_ColorStrength (alias)"
+        ],
+        [
+          "tc Particular-0212",
+          50,
+          "FXid_Options_SmokeletShadow_Opacity (alias)"
+        ],
+        [
+          "tc Particular-0284",
+          0,
+          "FXid_PShade (alias)"
+        ],
+        [
+          "tc Particular-0304",
+          250,
+          "FXid_PShadeFalloffAdjust (alias)"
+        ],
+        [
           "tc Particular-0018",
           0,
           "FXid_AirResist (alias)"
@@ -1305,6 +1322,11 @@
           "tc Particular-0020",
           20,
           "FXid_SpinFreq (alias)"
+        ],
+        [
+          "tc Particular-0021",
+          0,
+          "FXid_SpinTime (alias)"
         ],
         [
           "tc Particular-0749",

@@ -2,13 +2,8 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Basic Rising Smoke.xbxc",
   "_pack": "TC14",
   "_category": "Smoke and Fire",
-  "_map_coverage": "33 mapped / 6 unmapped / 2 curves",
+  "_map_coverage": "37 mapped / 2 unmapped / 2 curves",
   "_dropped_inert": [
-    [
-      "tc Particular-0711",
-      90,
-      "FXid_FAffectPos (alias)"
-    ],
     [
       "tc Particular-0750",
       -50,
@@ -16,12 +11,8 @@
     ]
   ],
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
-    "FXid_PTMode": 2,
-    "FXid_FAffectSize": 0,
-    "FXid_FAffectTime": 1,
-    "FXid_SpinTime": 1
+    "FXid_PTMode": 2
   },
   "_curves": {
     "rg.custom.xfer.life": {
@@ -483,6 +474,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          1,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          4,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
           "tc Particular-0146",
           50,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -501,11 +502,6 @@
           "tc Particular-0016",
           0,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          1,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -593,11 +589,6 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          4,
-          "FXid_PType (alias+enumOffset)"
-        ],
-        [
           "tc Particular-0531",
           0,
           "FXid_PUnmult (alias)"
@@ -613,12 +604,27 @@
           "FXid_POpacRnd (alias)"
         ],
         [
-          "tc Particular-0719",
+          "tc Particular-0042",
+          90,
+          "FXid_FAffectPos (alias)"
+        ],
+        [
+          "tc Particular-0041",
+          0,
+          "FXid_FAffectSize (alias)"
+        ],
+        [
+          "tc Particular-0045",
+          1,
+          "FXid_FAffectTime (alias)"
+        ],
+        [
+          "tc Particular-0052",
           5,
           "FXid_FEvolution (alias)"
         ],
         [
-          "tc Particular-0715",
+          "tc Particular-0046",
           4,
           "FXid_FScale (alias)"
         ],
@@ -636,6 +642,11 @@
           "tc Particular-0020",
           1,
           "FXid_SpinFreq (alias)"
+        ],
+        [
+          "tc Particular-0021",
+          1,
+          "FXid_SpinTime (alias)"
         ],
         [
           "tc Particular-0749",

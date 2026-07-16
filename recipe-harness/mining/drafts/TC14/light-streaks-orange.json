@@ -2,20 +2,10 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Light Streaks Orange.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "29 mapped / 12 unmapped / 3 curves",
+  "_map_coverage": "38 mapped / 2 unmapped / 3 curves",
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
-    "FXid_PTMode": 2,
-    "FXid_PRotAuto": 1,
-    "FXid_PRotate": 0,
-    "FXid_PRotateRnd": 0,
-    "FXid_PRotateRndSpeed": 0,
-    "FXid_PRotateSpeed": 0,
-    "FXid_PRotateSpeedX": 0,
-    "FXid_PRotateSpeedY": 0,
-    "FXid_PRotateX": 0,
-    "FXid_PRotateY": 0
+    "FXid_PTMode": 2
   },
   "_curves": {
     "rg.custom.xfer.life": {
@@ -507,6 +497,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          1,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          5,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
           "tc Particular-0146",
           2000,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -525,11 +525,6 @@
           "tc Particular-0016",
           50,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          1,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -617,11 +612,6 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          5,
-          "FXid_PType (alias+enumOffset)"
-        ],
-        [
           "tc Particular-0531",
           0,
           "FXid_PUnmult (alias)"
@@ -655,6 +645,51 @@
           "tc Particular-0075",
           0,
           "FXid_POpacRnd (alias)"
+        ],
+        [
+          "tc Particular-0726",
+          1,
+          "FXid_PRotAuto (alias)"
+        ],
+        [
+          "tc Particular-0136",
+          0,
+          "FXid_PRotate (alias)"
+        ],
+        [
+          "tc Particular-0137",
+          0,
+          "FXid_PRotateRnd (alias)"
+        ],
+        [
+          "tc Particular-0279",
+          0,
+          "FXid_PRotateRndSpeed (alias)"
+        ],
+        [
+          "tc Particular-0138",
+          0,
+          "FXid_PRotateSpeed (alias)"
+        ],
+        [
+          "tc Particular-0277",
+          0,
+          "FXid_PRotateSpeedX (alias)"
+        ],
+        [
+          "tc Particular-0278",
+          0,
+          "FXid_PRotateSpeedY (alias)"
+        ],
+        [
+          "tc Particular-0275",
+          0,
+          "FXid_PRotateX (alias)"
+        ],
+        [
+          "tc Particular-0276",
+          0,
+          "FXid_PRotateY (alias)"
         ]
       ],
       "expressions": []

@@ -2,13 +2,8 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Rising 2.xbxc",
   "_pack": "TC14",
   "_category": "Smoke and Fire",
-  "_map_coverage": "36 mapped / 22 unmapped / 3 curves",
+  "_map_coverage": "54 mapped / 3 unmapped / 3 curves",
   "_dropped_inert": [
-    [
-      "tc Particular-0711",
-      90,
-      "FXid_FAffectPos (alias)"
-    ],
     [
       "tc Particular-0750",
       -80,
@@ -16,33 +11,9 @@
     ]
   ],
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
-    "FXid_PLayerTime": 6,
     "FXid_PTMode": 2,
-    "FXid_PRotAuto": 0,
-    "FXid_PRotate": 0,
-    "FXid_PRotateRnd": 25,
-    "FXid_PRotateRndSpeed": 0,
-    "FXid_PRotateSpeed": 0,
-    "FXid_PRotateSpeedX": 0,
-    "FXid_PRotateSpeedY": 0,
-    "FXid_PRotateX": 0,
-    "FXid_PRotateY": 0,
-    "FXid_Options_SmokeletShadow_Color": {
-      "r": 0,
-      "g": 0,
-      "b": 0,
-      "a": 255
-    },
-    "FXid_Options_SmokeletShadow_ColorStrength": 100,
-    "FXid_Options_SmokeletShadow_Opacity": 9.1,
-    "FXid_PShade": 0,
-    "FXid_PShadeFalloffAdjust": 250,
-    "FXid_PShadow": 1,
-    "FXid_FAffectSize": 0,
-    "FXid_FAffectTime": 1,
-    "FXid_SpinTime": 1
+    "FXid_PShadow": 1
   },
   "_curves": {
     "rg.custom.xfer.life": {
@@ -534,6 +505,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          1,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          4,
+          "FXid_PType (alias+enumOffset) [sprite fallback -> Cloudlet]"
+        ],
+        [
           "tc Particular-0146",
           50,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -552,11 +533,6 @@
           "tc Particular-0016",
           0,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          1,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -644,11 +620,6 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          4,
-          "FXid_PType (alias+enumOffset) [sprite fallback -> Cloudlet]"
-        ],
-        [
           "tc Particular-0531",
           1,
           "FXid_PUnmult (alias)"
@@ -684,12 +655,102 @@
           "FXid_POpacRnd (alias)"
         ],
         [
-          "tc Particular-0719",
+          "tc Particular-0726",
+          0,
+          "FXid_PRotAuto (alias)"
+        ],
+        [
+          "tc Particular-0136",
+          0,
+          "FXid_PRotate (alias)"
+        ],
+        [
+          "tc Particular-0137",
+          25,
+          "FXid_PRotateRnd (alias)"
+        ],
+        [
+          "tc Particular-0279",
+          0,
+          "FXid_PRotateRndSpeed (alias)"
+        ],
+        [
+          "tc Particular-0138",
+          0,
+          "FXid_PRotateSpeed (alias)"
+        ],
+        [
+          "tc Particular-0277",
+          0,
+          "FXid_PRotateSpeedX (alias)"
+        ],
+        [
+          "tc Particular-0278",
+          0,
+          "FXid_PRotateSpeedY (alias)"
+        ],
+        [
+          "tc Particular-0275",
+          0,
+          "FXid_PRotateX (alias)"
+        ],
+        [
+          "tc Particular-0276",
+          0,
+          "FXid_PRotateY (alias)"
+        ],
+        [
+          "tc Particular-0210",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (alias)"
+        ],
+        [
+          "tc Particular-0211",
+          100,
+          "FXid_Options_SmokeletShadow_ColorStrength (alias)"
+        ],
+        [
+          "tc Particular-0212",
+          9.1,
+          "FXid_Options_SmokeletShadow_Opacity (alias)"
+        ],
+        [
+          "tc Particular-0284",
+          0,
+          "FXid_PShade (alias)"
+        ],
+        [
+          "tc Particular-0304",
+          250,
+          "FXid_PShadeFalloffAdjust (alias)"
+        ],
+        [
+          "tc Particular-0042",
+          90,
+          "FXid_FAffectPos (alias)"
+        ],
+        [
+          "tc Particular-0041",
+          0,
+          "FXid_FAffectSize (alias)"
+        ],
+        [
+          "tc Particular-0045",
+          1,
+          "FXid_FAffectTime (alias)"
+        ],
+        [
+          "tc Particular-0052",
           5,
           "FXid_FEvolution (alias)"
         ],
         [
-          "tc Particular-0715",
+          "tc Particular-0046",
           4,
           "FXid_FScale (alias)"
         ],
@@ -707,6 +768,11 @@
           "tc Particular-0020",
           1,
           "FXid_SpinFreq (alias)"
+        ],
+        [
+          "tc Particular-0021",
+          1,
+          "FXid_SpinTime (alias)"
         ],
         [
           "tc Particular-0749",

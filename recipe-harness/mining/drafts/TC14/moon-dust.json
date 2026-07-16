@@ -2,10 +2,8 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Moon Dust.xbxc",
   "_pack": "TC14",
   "_category": "Dust and Debris",
-  "_map_coverage": "26 mapped / 3 unmapped / 3 curves",
+  "_map_coverage": "26 mapped / 1 unmapped / 3 curves",
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
-    "FXid_PLayerTime": 0,
     "FXid_PTMode": 2
   },
   "_curves": {
@@ -676,6 +674,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          2,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
           "tc Particular-0146",
           100,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -694,11 +702,6 @@
           "tc Particular-0016",
           2000,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          2,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -784,11 +787,6 @@
           "tc Particular-0074",
           50,
           "FXid_PSizeRnd (alias)"
-        ],
-        [
-          "tc Particular-0703",
-          1,
-          "FXid_PType (alias+enumOffset)"
         ],
         [
           "tc Particular-0033",

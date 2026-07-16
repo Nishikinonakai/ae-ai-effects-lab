@@ -2,10 +2,8 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Point Explosion.xbxc",
   "_pack": "TC14",
   "_category": "Basics",
-  "_map_coverage": "28 mapped / 3 unmapped / 4 curves",
+  "_map_coverage": "28 mapped / 1 unmapped / 4 curves",
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
-    "FXid_PLayerTime": 0,
     "FXid_PTMode": 2
   },
   "_curves": {
@@ -706,6 +704,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          1,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
           "tc Particular-0146",
           10000,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -724,11 +732,6 @@
           "tc Particular-0016",
           0,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          1,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -816,11 +819,6 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          1,
-          "FXid_PType (alias+enumOffset)"
-        ],
-        [
           "tc Particular-0070",
           [
             1,
@@ -854,8 +852,8 @@
       "expressions": [
         [
           "tc Particular-0146",
-          "time < 0.1 ? 300000 : 0",
-          "Explode -> 0.1s burst spike (life-scaled)"
+          "time < 0.1 ? 100000 : 0",
+          "Explode -> 0.1s burst spike"
         ]
       ]
     }

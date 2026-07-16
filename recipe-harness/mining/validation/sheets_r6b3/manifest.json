@@ -1,0 +1,254 @@
+[
+ {
+  "sheet": 0,
+  "pos": 0,
+  "slug": "spark-directional",
+  "flag": "no_frame"
+ },
+ {
+  "sheet": 0,
+  "pos": 1,
+  "slug": "spark-single",
+  "flag": "no_frame"
+ },
+ {
+  "sheet": 0,
+  "pos": 2,
+  "slug": "spark-strings-1",
+  "flag": "no_frame"
+ },
+ {
+  "sheet": 0,
+  "pos": 3,
+  "slug": "spark-strings-2",
+  "flag": "no_frame"
+ },
+ {
+  "sheet": 0,
+  "pos": 4,
+  "slug": "spark-strings-3",
+  "flag": "no_frame"
+ },
+ {
+  "sheet": 0,
+  "pos": 5,
+  "slug": "sparks-ignite",
+  "flag": "no_frame"
+ },
+ {
+  "sheet": 0,
+  "pos": 6,
+  "slug": "bow-shock",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 7,
+  "slug": "brownian-motion",
+  "flag": "faint"
+ },
+ {
+  "sheet": 1,
+  "pos": 0,
+  "slug": "candle-flame",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 1,
+  "slug": "fumes",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 2,
+  "slug": "grid-fluid",
+  "flag": "empty"
+ },
+ {
+  "sheet": 1,
+  "pos": 3,
+  "slug": "horizontal-stream",
+  "flag": "faint"
+ },
+ {
+  "sheet": 1,
+  "pos": 4,
+  "slug": "ink-drop",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 5,
+  "slug": "melted",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 6,
+  "slug": "orbit",
+  "flag": "no_frame"
+ },
+ {
+  "sheet": 1,
+  "pos": 7,
+  "slug": "ring-emitter",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 0,
+  "slug": "smolder",
+  "flag": "faint"
+ },
+ {
+  "sheet": 2,
+  "pos": 1,
+  "slug": "swirl-tracers",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 2,
+  "slug": "basic-magic",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 3,
+  "slug": "blue-swarm-with-trail",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 4,
+  "slug": "electron-dance",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 5,
+  "slug": "energy-stream",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 6,
+  "slug": "ethereal-plane",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 7,
+  "slug": "falling-lights",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 0,
+  "slug": "floating-streaks",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 1,
+  "slug": "flowing-strings",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 2,
+  "slug": "ghost-trail",
+  "flag": "faint"
+ },
+ {
+  "sheet": 3,
+  "pos": 3,
+  "slug": "glowfield",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 4,
+  "slug": "green-pixie",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 5,
+  "slug": "inverse-energy",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 6,
+  "slug": "light-blobs",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 7,
+  "slug": "light-streaks-blue",
+  "flag": "faint"
+ },
+ {
+  "sheet": 4,
+  "pos": 0,
+  "slug": "light-streaks-orange",
+  "flag": "faint"
+ },
+ {
+  "sheet": 4,
+  "pos": 1,
+  "slug": "love-hearts",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 2,
+  "slug": "magic-disc",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 3,
+  "slug": "magic-smoke-trail",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 4,
+  "slug": "magical",
+  "flag": "faint"
+ },
+ {
+  "sheet": 4,
+  "pos": 5,
+  "slug": "northern-lights",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 6,
+  "slug": "orange-stars",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 7,
+  "slug": "organic-lines",
+  "flag": "ok"
+ },
+ {
+  "sheet": 5,
+  "pos": 0,
+  "slug": "organic-lines-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 5,
+  "pos": 1,
+  "slug": "particle-swarm",
+  "flag": "ok"
+ }
+]

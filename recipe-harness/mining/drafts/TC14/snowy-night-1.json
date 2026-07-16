@@ -2,26 +2,11 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Snowy Night 1.xbxc",
   "_pack": "TC14",
   "_category": "Nature",
-  "_map_coverage": "39 mapped / 17 unmapped / 3 curves",
+  "_map_coverage": "47 mapped / 7 unmapped / 3 curves",
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
-    "FXid_PLayerTime": 0,
     "FXid_PTMode": 0,
-    "FXid_Options_SmokeletShadow_Color": {
-      "r": 64,
-      "g": 64,
-      "b": 64,
-      "a": 255
-    },
-    "FXid_Options_SmokeletShadow_ColorStrength": 50,
-    "FXid_Options_SmokeletShadow_Opacity": 50,
-    "FXid_PShade": 0,
-    "FXid_PShadeFalloffAdjust": 250,
     "FXid_PShadow": 0,
-    "FXid_FAffectSize": 0,
-    "FXid_FAffectTime": 0.5,
-    "FXid_SpinTime": 1,
     "FXid_DOF": 1,
     "FXid_MBlurOpacBoost": 6,
     "FXid_MBlurPopup": 2,
@@ -495,6 +480,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          2,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
           "tc Particular-0146",
           600,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -513,11 +508,6 @@
           "tc Particular-0016",
           549,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          2,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -605,11 +595,6 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          1,
-          "FXid_PType (alias+enumOffset)"
-        ],
-        [
           "tc Particular-0531",
           0,
           "FXid_PUnmult (alias)"
@@ -645,17 +630,57 @@
           "FXid_POpacRnd (alias)"
         ],
         [
-          "tc Particular-0711",
+          "tc Particular-0210",
+          [
+            0.25098039215686274,
+            0.25098039215686274,
+            0.25098039215686274,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (alias)"
+        ],
+        [
+          "tc Particular-0211",
+          50,
+          "FXid_Options_SmokeletShadow_ColorStrength (alias)"
+        ],
+        [
+          "tc Particular-0212",
+          50,
+          "FXid_Options_SmokeletShadow_Opacity (alias)"
+        ],
+        [
+          "tc Particular-0284",
+          0,
+          "FXid_PShade (alias)"
+        ],
+        [
+          "tc Particular-0304",
+          250,
+          "FXid_PShadeFalloffAdjust (alias)"
+        ],
+        [
+          "tc Particular-0042",
           0,
           "FXid_FAffectPos (alias)"
         ],
         [
-          "tc Particular-0719",
+          "tc Particular-0041",
+          0,
+          "FXid_FAffectSize (alias)"
+        ],
+        [
+          "tc Particular-0045",
+          0.5,
+          "FXid_FAffectTime (alias)"
+        ],
+        [
+          "tc Particular-0052",
           30,
           "FXid_FEvolution (alias)"
         ],
         [
-          "tc Particular-0715",
+          "tc Particular-0046",
           5.399993896484375,
           "FXid_FScale (alias)"
         ],
@@ -678,6 +703,11 @@
           "tc Particular-0020",
           1.5,
           "FXid_SpinFreq (alias)"
+        ],
+        [
+          "tc Particular-0021",
+          1,
+          "FXid_SpinTime (alias)"
         ],
         [
           "tc Particular-0749",

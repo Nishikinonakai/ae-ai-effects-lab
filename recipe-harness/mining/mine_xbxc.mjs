@@ -53,6 +53,7 @@ const ALIAS = {
   'emitter behaviour': null,                        // designer-only concept
   'p life': 'life seconds', 'p life rnd': 'life random',
   'emitter size x': 'emitter size xyz',             // 0014 doubles as uniform size
+  'emitter size option': '@tc Particular-0577',     // size mode: 1 XYZ-linked / 2 individual — GATES 0015/0016 (round-1 wall, solved r6)
   'p size max': 'size', 'p size rnd': '@tc Particular-0074',  // 0775 is the emitter-group dupe
   'p opac max': 'opacity', 'p opac rnd': 'opacity random',
   'p color': 'color', 'p color rnd': 'color random',
@@ -70,6 +71,9 @@ const ALIAS = {
   'p rot auto': '@tc Particular-0726',              // Orient to Motion
   'vel': 'velocity', 'vel rnd': 'velocity random',
   'vel spread': '@tc Particular-0012',              // Velocity Random [%] — vendor values are 0-100, and VelRnd never appears in packs
+  'vel spread distr': '@tc Particular-0283',        // Velocity Distribution (default 0.5=0.5)
+  'streaklet no spheres': '@tc Particular-0314',    // Number of Streaks (7=7)
+  'streaklet spread': '@tc Particular-0315',        // Streak Size (60=60)
   'vel emit': 'velocity from emitter mot',          // truncated dump name, prefix-matched below
   'grid emitter particles in x': 'particles in x',
   'grid emitter particles in y': 'particles in y',
@@ -145,7 +149,8 @@ const ALIAS = {
 };
 // params whose Designer value is a 0-based enum while AE popups are 1-based
 const ENUM_OFFSET = new Set(['p type', 'emitter type', 'emitter dir', 'pt mode', 'p set color',
-  'fluid motion type', 'fluid force option', 'fluid random swirl option', 'glow transfer mode']);
+  'fluid motion type', 'fluid force option', 'fluid random swirl option', 'glow transfer mode',
+  'emitter size option']);
 
 // ---- aux → S2 translation (2026-07-17) ----
 // Classic Aux became multi-system "Emit from Parent" in v2023. S2 params are script-settable
@@ -279,6 +284,17 @@ for (const file of files) {
     else { unmapped[k] = v; unmappedFreq.set(k, (unmappedFreq.get(k) || 0) + 1); }
   }
 
+  // mode gates first: enum switches that REVEAL other params must be set before them
+  // (hidden-param dependency: 0577 size mode gates Emitter Size Y/Z, 0782 emitter type
+  // gates emitter geometry, 0703 particle type gates sprite controls). Stable sort keeps
+  // everything else in mined order; later blocks push AFTER these (fluid 0638 unshifts to
+  // the very front separately).
+  const HOIST = ['tc Particular-0577', 'tc Particular-0782', 'tc Particular-0703'];
+  params.sort((a, b) => {
+    const ia = HOIST.indexOf(a[0]), ib = HOIST.indexOf(b[0]);
+    return (ia < 0 ? HOIST.length : ia) - (ib < 0 ? HOIST.length : ib);
+  });
+
   // sprite connect (PROBED 2026-07-17): 0703's max IS 6 and 6 IS Sprite — an unconnected
   // sprite renders as a white card, which round-3's visual probe misread as "Square".
   // When the vendor preset references a sprite the packs actually ship, connect it for
@@ -353,10 +369,12 @@ for (const file of files) {
     const psec = params.find(p => p[0] === 'tc Particular-0146');
     const burstN = (psec ? psec[1] : 100) || 100;
     const life = flat.FXid_PLife || 2;
-    // spike sized to the steady-state population (psec × life) squeezed into the 0.1s
-    // window — round-3's flat 10× blew out short-life bursts (muzzle/spark class)
-    const spikeRate = Math.max(1, Math.round(burstN * life * 10));
-    expressionsOut.push(['tc Particular-0146', `time < 0.1 ? ${spikeRate} : 0`, 'Explode -> 0.1s burst spike (life-scaled)']);
+    // spike = flat 10× → total emitted = psec×10×0.1s = EXACTLY psec particles per burst,
+    // which is Designer's Explode semantics (round-6 scoring proved it: the life-scaled
+    // variant over-emitted long-life explosions 2-3× — solid pancakes/white walls once S2
+    // trails multiplied on top — and under-emitted sub-second muzzle flashes).
+    const spikeRate = Math.max(1, Math.round(burstN * 10));
+    expressionsOut.push(['tc Particular-0146', `time < 0.1 ? ${spikeRate} : 0`, 'Explode -> 0.1s burst spike']);
     // frame 1 INSIDE the emission window (0.08 — alive whatever the life is; round-3's
     // life*0.5 sat exactly on the window edge for 0.2s lives), frame 2 mid-flight of the
     // last-born particles

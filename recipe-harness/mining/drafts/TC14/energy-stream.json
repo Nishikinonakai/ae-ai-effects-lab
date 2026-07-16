@@ -2,12 +2,10 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Energy Stream.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "48 mapped / 4 unmapped / 7 curves",
+  "_map_coverage": "49 mapped / 2 unmapped / 7 curves",
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
-    "FXid_PTMode": 2,
-    "FXid_SpinTime": 0.5
+    "FXid_PTMode": 2
   },
   "_curves": {
     "rg.custom.xfer.life": {
@@ -293,6 +291,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          1,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
           "tc Particular-0146",
           200,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -311,11 +319,6 @@
           "tc Particular-0016",
           0,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          1,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -403,11 +406,6 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          1,
-          "FXid_PType (alias+enumOffset)"
-        ],
-        [
           "tc Particular-0070",
           [
             1,
@@ -441,6 +439,11 @@
           "tc Particular-0020",
           8,
           "FXid_SpinFreq (alias)"
+        ],
+        [
+          "tc Particular-0021",
+          0.5,
+          "FXid_SpinTime (alias)"
         ],
         [
           "tc Particular-0749",

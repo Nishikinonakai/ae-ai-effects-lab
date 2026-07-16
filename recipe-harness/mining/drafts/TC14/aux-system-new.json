@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Aux System New.xbxc",
   "_pack": "TC14",
   "_category": "Basics",
-  "_map_coverage": "78 mapped / 136 unmapped / 0 curves",
+  "_map_coverage": "96 mapped / 117 unmapped / 0 curves",
   "_unmapped": {
     "FXid_EmissionOverParentParticleLifeArb": {
       "isCurveMode": false,
@@ -212,7 +212,6 @@
       "curveX": [],
       "curveY": []
     },
-    "FXid_Gen1EmitterSizeOption": 0,
     "FXid_Gen1Pos": [
       0.5,
       0.5,
@@ -246,7 +245,6 @@
     "FXid_TextStrokeSequentially": false,
     "FXid_TextUseFirstVertex": true,
     "FXid_TextUseMasterLayer": false,
-    "FXid_Gen1VelSpreadDistr": 0.5,
     "FXid_VelocityOverLifeArb": {
       "isCurveMode": false,
       "samples": [
@@ -456,14 +454,12 @@
       "curveY": []
     },
     "FXid_EnableUnmult": false,
-    "FXid_Glow_TransferMode": 0,
     "FXid_PLayer": {
       "uuid": "",
       "footage": ""
     },
     "FXid_PLayerMultiClips": 2,
     "FXid_PLayerSubFrame": false,
-    "FXid_PLayerTime": 6,
     "FXid_PTMode": 2,
     "FXid_PTModeOverLifeArb": {
       "isCurveMode": false,
@@ -679,18 +675,10 @@
     "FXid_SpriteColorFill": 0,
     "FXid_SpriteColorize": 0,
     "FXid_SpriteFaceCamera": true,
-    "FXid_Streaklet_NoSpheres": 7,
-    "FXid_Streaklet_Spread": 60,
     "FXid_Time_RandomSeed": 1,
-    "FXid_PRotate": 0,
-    "FXid_PRotateRnd": 0,
-    "FXid_PRotateRndSpeed": 0,
-    "FXid_PRotateRndSpeedDistr": 0.5,
     "FXid_PRotateSpeedDegreesX": 0,
     "FXid_PRotateSpeedDegreesY": 0,
     "FXid_PRotateSpeedDegreesZ": 0,
-    "FXid_PRotateX": 0,
-    "FXid_PRotateY": 0,
     "FXid_PSizeOverLifeArb": {
       "isCurveMode": false,
       "samples": [
@@ -1108,15 +1096,7 @@
       "curveY": []
     },
     "FXid_PColorFromParent": 100,
-    "FXid_Options_SmokeletShadow_Color": {
-      "r": 0,
-      "g": 0,
-      "b": 0
-    },
-    "FXid_Options_SmokeletShadow_ColorStrength": 100,
-    "FXid_Options_SmokeletShadow_Opacity": 5,
     "FXid_Options_SmokeletShadow_Softness": 100,
-    "FXid_PShadeFalloffAdjust": 250,
     "FXid_PShadow_Dist": 100,
     "FXid_PShadow_Size": 100,
     "FXid_PShadow_ZPos": 0,
@@ -1187,16 +1167,13 @@
     "FXid_DRadius": 100,
     "FXid_DStrength": 0,
     "FXid_FAffectCurve": 1,
-    "FXid_FAffectSize": 0,
-    "FXid_FAffectTime": 0.5,
     "FXid_FComplex": 3,
     "FXid_FFOpacity": 0,
     "FXid_FMoveWithDrift": 80,
     "FXid_FMoveWithWind": 80,
     "FXid_FOctMult": 0.5,
     "FXid_FOctScale": 1.5,
-    "FXid_FOffsetE": 0,
-    "FXid_SpinTime": 1
+    "FXid_FOffsetE": 0
   },
   "_curves": {},
   "intent": "vendor preset \"Aux System New\" (Basics) — validate against its thumbnail",
@@ -1224,6 +1201,21 @@
           "Enable Fluid Motion (fluid preset)"
         ],
         [
+          "tc Particular-0577",
+          1,
+          "FXid_Gen1EmitterSizeOption (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0782",
+          6,
+          "FXid_Gen1EmitterType (alias+enumOffset) [v18 enum: 10->6]"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
           "tc Particular-0014",
           500,
           "FXid_Gen1EmitterSizeX (alias)"
@@ -1237,11 +1229,6 @@
           "tc Particular-0016",
           500,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          6,
-          "FXid_Gen1EmitterType (alias+enumOffset) [v18 enum: 10->6]"
         ],
         [
           "tc Particular-0146",
@@ -1328,6 +1315,11 @@
           "FXid_Gen1VelSpread (alias)"
         ],
         [
+          "tc Particular-0283",
+          0.5,
+          "FXid_Gen1VelSpreadDistr (alias)"
+        ],
+        [
           "tc Particular-0230",
           100100,
           "FXid_Options_RandomSeed (exact)"
@@ -1341,6 +1333,11 @@
           "tc Particular-0730",
           0,
           "FXid_AirResistanceRandom (exact)"
+        ],
+        [
+          "tc Particular-0218",
+          1,
+          "FXid_Glow_TransferMode (alias+enumOffset)"
         ],
         [
           "tc Particular-0217",
@@ -1378,11 +1375,6 @@
           "FXid_PLifeRnd (alias)"
         ],
         [
-          "tc Particular-0703",
-          1,
-          "FXid_PType (alias+enumOffset)"
-        ],
-        [
           "tc Particular-0297",
           0,
           "FXid_RotationalAirResistance (exact)"
@@ -1393,14 +1385,54 @@
           "FXid_SizeAffectsAirResistance (exact)"
         ],
         [
+          "tc Particular-0314",
+          7,
+          "FXid_Streaklet_NoSpheres (alias)"
+        ],
+        [
           "tc Particular-0313",
           0,
           "FXid_Streaklet_RandomSeed (exact)"
         ],
         [
+          "tc Particular-0315",
+          60,
+          "FXid_Streaklet_Spread (alias)"
+        ],
+        [
           "tc Particular-0726",
           0,
           "FXid_OrientToMotion (exact)"
+        ],
+        [
+          "tc Particular-0136",
+          0,
+          "FXid_PRotate (alias)"
+        ],
+        [
+          "tc Particular-0137",
+          0,
+          "FXid_PRotateRnd (alias)"
+        ],
+        [
+          "tc Particular-0279",
+          0,
+          "FXid_PRotateRndSpeed (alias)"
+        ],
+        [
+          "tc Particular-0282",
+          0.5,
+          "FXid_PRotateRndSpeedDistr (alias)"
+        ],
+        [
+          "tc Particular-0275",
+          0,
+          "FXid_PRotateX (alias)"
+        ],
+        [
+          "tc Particular-0276",
+          0,
+          "FXid_PRotateY (alias)"
         ],
         [
           "tc Particular-0027",
@@ -1451,6 +1483,31 @@
           "tc Particular-0684",
           0,
           "FXid_EnableShadowlets (exact)"
+        ],
+        [
+          "tc Particular-0210",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (alias)"
+        ],
+        [
+          "tc Particular-0211",
+          100,
+          "FXid_Options_SmokeletShadow_ColorStrength (alias)"
+        ],
+        [
+          "tc Particular-0212",
+          5,
+          "FXid_Options_SmokeletShadow_Opacity (alias)"
+        ],
+        [
+          "tc Particular-0304",
+          250,
+          "FXid_PShadeFalloffAdjust (alias)"
         ],
         [
           "tc Particular-0729",
@@ -1597,17 +1654,27 @@
           "FXid_DriftZ (exact)"
         ],
         [
-          "tc Particular-0711",
+          "tc Particular-0042",
           0,
           "FXid_FAffectPos (alias)"
         ],
         [
-          "tc Particular-0719",
+          "tc Particular-0041",
+          0,
+          "FXid_FAffectSize (alias)"
+        ],
+        [
+          "tc Particular-0045",
+          0.5,
+          "FXid_FAffectTime (alias)"
+        ],
+        [
+          "tc Particular-0052",
           50,
           "FXid_FEvolution (alias)"
         ],
         [
-          "tc Particular-0715",
+          "tc Particular-0046",
           10,
           "FXid_FScale (alias)"
         ],
@@ -1620,6 +1687,11 @@
           "tc Particular-0020",
           1,
           "FXid_SpinFreq (alias)"
+        ],
+        [
+          "tc Particular-0021",
+          1,
+          "FXid_SpinTime (alias)"
         ]
       ],
       "expressions": []

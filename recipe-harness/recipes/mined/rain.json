@@ -1,0 +1,171 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Rain.xbxc",
+  "intent": "vendor preset \"Rain\" (Nature) — validate against its thumbnail",
+  "name": "rain",
+  "compName": "Mined_Rain",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "hostName": "Mined",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          2,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0146",
+          5000,
+          "FXid_Gen1ParticlesPerSecF (alias)"
+        ],
+        [
+          "tc Particular-0014",
+          2000,
+          "FXid_Gen1EmitterSizeX (alias)"
+        ],
+        [
+          "tc Particular-0015",
+          9000,
+          "FXid_Gen1EmitterSizeY (exact)"
+        ],
+        [
+          "tc Particular-0016",
+          0,
+          "FXid_Gen1EmitterSizeZ (exact)"
+        ],
+        [
+          "tc Particular-0221",
+          5,
+          "FXid_Options_GridEmitter_ParticlesInX (alias)"
+        ],
+        [
+          "tc Particular-0222",
+          5,
+          "FXid_Options_GridEmitter_ParticlesInY (alias)"
+        ],
+        [
+          "tc Particular-0223",
+          5,
+          "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+        ],
+        [
+          "tc Particular-0112",
+          -90.00006095133722,
+          "FXid_Gen1AngleX (alias)"
+        ],
+        [
+          "tc Particular-0111",
+          0,
+          "FXid_Gen1AngleY (alias)"
+        ],
+        [
+          "tc Particular-0076",
+          0,
+          "FXid_Gen1AngleZ (alias)"
+        ],
+        [
+          "tc Particular-0010",
+          0,
+          "FXid_Gen1DirSpread (alias)"
+        ],
+        [
+          "tc Particular-0113",
+          2,
+          "FXid_Gen1EmitterDir (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0011",
+          2500,
+          "FXid_Gen1Vel (alias)"
+        ],
+        [
+          "tc Particular-0013",
+          20,
+          "FXid_Gen1VelEmit (alias)"
+        ],
+        [
+          "tc Particular-0012",
+          20,
+          "FXid_Gen1VelSpread (alias)"
+        ],
+        [
+          "tc Particular-0524",
+          1,
+          "FXid_PAspectRatio (alias)"
+        ],
+        [
+          "tc Particular-0029",
+          50,
+          "FXid_PFeather (alias)"
+        ],
+        [
+          "tc Particular-0002",
+          3,
+          "FXid_PLife (alias)"
+        ],
+        [
+          "tc Particular-0065",
+          50,
+          "FXid_PLifeRnd (alias)"
+        ],
+        [
+          "tc Particular-0027",
+          2,
+          "FXid_PSizeMax (alias)"
+        ],
+        [
+          "tc Particular-0074",
+          50,
+          "FXid_PSizeRnd (alias)"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.5764705882352941,
+            0.8156862745098039,
+            0.9019607843137255,
+            1
+          ],
+          "FXid_PColor (alias)"
+        ],
+        [
+          "tc Particular-0071",
+          0,
+          "FXid_PColorRnd (alias)"
+        ],
+        [
+          "tc Particular-0088",
+          1,
+          "FXid_PSetColor (alias+enumOffset)"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_validated": {
+    "round": "r6",
+    "verdict": "match",
+    "backend": "agent-vision"
+  }
+}

@@ -2,11 +2,9 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Rain.xbxc",
   "_pack": "TC14",
   "_category": "Nature",
-  "_map_coverage": "26 mapped / 8 unmapped / 7 curves",
+  "_map_coverage": "26 mapped / 6 unmapped / 7 curves",
   "_unmapped": {
-    "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
-    "FXid_PLayerTime": 0,
     "FXid_PTMode": 2,
     "FXid_DOF": 1,
     "FXid_MBlurOpacBoost": 3,
@@ -935,6 +933,16 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0782",
+          2,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
           "tc Particular-0146",
           5000,
           "FXid_Gen1ParticlesPerSecF (alias)"
@@ -953,11 +961,6 @@
           "tc Particular-0016",
           0,
           "FXid_Gen1EmitterSizeZ (exact)"
-        ],
-        [
-          "tc Particular-0782",
-          2,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
         ],
         [
           "tc Particular-0221",
@@ -1043,11 +1046,6 @@
           "tc Particular-0074",
           50,
           "FXid_PSizeRnd (alias)"
-        ],
-        [
-          "tc Particular-0703",
-          1,
-          "FXid_PType (alias+enumOffset)"
         ],
         [
           "tc Particular-0070",

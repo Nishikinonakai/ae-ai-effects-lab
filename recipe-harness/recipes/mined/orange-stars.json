@@ -1,0 +1,486 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Orange Stars.xbxc",
+  "intent": "vendor preset \"Orange Stars\" (Light and Magic) — validate against its thumbnail",
+  "name": "orange-stars",
+  "compName": "Mined_OrangeStars",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "master": {
+    "library": "library/particular-masters.aep",
+    "comp": "MASTER_particular_S2",
+    "layer": 1
+  },
+  "hostName": "Mined",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0577",
+          1,
+          "FXid_Gen1EmitterSizeOption (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0782",
+          1,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0014",
+          0,
+          "FXid_Gen1EmitterSizeX (alias)"
+        ],
+        [
+          "tc Particular-0015",
+          41,
+          "FXid_Gen1EmitterSizeY (exact)"
+        ],
+        [
+          "tc Particular-0016",
+          20,
+          "FXid_Gen1EmitterSizeZ (exact)"
+        ],
+        [
+          "tc Particular-0146",
+          50,
+          "FXid_Gen1ParticlesPerSecF (alias)"
+        ],
+        [
+          "tc Particular-0221",
+          5,
+          "FXid_Options_GridEmitter_ParticlesInX (alias)"
+        ],
+        [
+          "tc Particular-0222",
+          5,
+          "FXid_Options_GridEmitter_ParticlesInY (alias)"
+        ],
+        [
+          "tc Particular-0223",
+          1,
+          "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+        ],
+        [
+          "tc Particular-0112",
+          0,
+          "FXid_Gen1AngleX (alias)"
+        ],
+        [
+          "tc Particular-0111",
+          0,
+          "FXid_Gen1AngleY (alias)"
+        ],
+        [
+          "tc Particular-0076",
+          0,
+          "FXid_Gen1AngleZ (alias)"
+        ],
+        [
+          "tc Particular-0010",
+          20,
+          "FXid_Gen1DirSpread (alias)"
+        ],
+        [
+          "tc Particular-0113",
+          1,
+          "FXid_Gen1EmitterDir (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0011",
+          0,
+          "FXid_Gen1Vel (alias)"
+        ],
+        [
+          "tc Particular-0013",
+          20,
+          "FXid_Gen1VelEmit (alias)"
+        ],
+        [
+          "tc Particular-0012",
+          0,
+          "FXid_Gen1VelSpread (alias)"
+        ],
+        [
+          "tc Particular-0283",
+          0.5,
+          "FXid_Gen1VelSpreadDistr (alias)"
+        ],
+        [
+          "tc Particular-0230",
+          100000,
+          "FXid_Options_RandomSeed (exact)"
+        ],
+        [
+          "tc Particular-0218",
+          1,
+          "FXid_Glow_TransferMode (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0217",
+          100,
+          "FXid_Options_Glow_Feather (exact)"
+        ],
+        [
+          "tc Particular-0216",
+          25,
+          "FXid_Options_Glow_Opacity (exact)"
+        ],
+        [
+          "tc Particular-0215",
+          300,
+          "FXid_Options_Glow_Size (exact)"
+        ],
+        [
+          "tc Particular-0029",
+          100,
+          "FXid_PFeather (alias)"
+        ],
+        [
+          "tc Particular-0002",
+          0.25,
+          "FXid_PLife (alias)"
+        ],
+        [
+          "tc Particular-0065",
+          0,
+          "FXid_PLifeRnd (alias)"
+        ],
+        [
+          "tc Particular-0531",
+          0,
+          "FXid_PUnmult (alias)"
+        ],
+        [
+          "tc Particular-0314",
+          7,
+          "FXid_Streaklet_NoSpheres (alias)"
+        ],
+        [
+          "tc Particular-0313",
+          0,
+          "FXid_Streaklet_RandomSeed (exact)"
+        ],
+        [
+          "tc Particular-0315",
+          60,
+          "FXid_Streaklet_Spread (alias)"
+        ],
+        [
+          "tc Particular-0524",
+          1,
+          "FXid_PAspectRatio (alias)"
+        ],
+        [
+          "tc Particular-0726",
+          0,
+          "FXid_PRotAuto (alias)"
+        ],
+        [
+          "tc Particular-0136",
+          0,
+          "FXid_PRotate (alias)"
+        ],
+        [
+          "tc Particular-0137",
+          0,
+          "FXid_PRotateRnd (alias)"
+        ],
+        [
+          "tc Particular-0279",
+          0,
+          "FXid_PRotateRndSpeed (alias)"
+        ],
+        [
+          "tc Particular-0282",
+          0.5,
+          "FXid_PRotateRndSpeedDistr (alias)"
+        ],
+        [
+          "tc Particular-0138",
+          0,
+          "FXid_PRotateSpeed (alias)"
+        ],
+        [
+          "tc Particular-0277",
+          0,
+          "FXid_PRotateSpeedX (alias)"
+        ],
+        [
+          "tc Particular-0278",
+          0,
+          "FXid_PRotateSpeedY (alias)"
+        ],
+        [
+          "tc Particular-0275",
+          0,
+          "FXid_PRotateX (alias)"
+        ],
+        [
+          "tc Particular-0276",
+          0,
+          "FXid_PRotateY (alias)"
+        ],
+        [
+          "tc Particular-0027",
+          70,
+          "FXid_PSizeMax (alias)"
+        ],
+        [
+          "tc Particular-0074",
+          0,
+          "FXid_PSizeRnd (alias)"
+        ],
+        [
+          "tc Particular-0033",
+          100,
+          "FXid_POpacMax (alias)"
+        ],
+        [
+          "tc Particular-0075",
+          0,
+          "FXid_POpacRnd (alias)"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            1,
+            0.396078431372549,
+            0.06274509803921569,
+            1
+          ],
+          "FXid_PColor (alias)"
+        ],
+        [
+          "tc Particular-0071",
+          10,
+          "FXid_PColorRnd (alias)"
+        ],
+        [
+          "tc Particular-0088",
+          1,
+          "FXid_PSetColor (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0210",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (alias)"
+        ],
+        [
+          "tc Particular-0211",
+          100,
+          "FXid_Options_SmokeletShadow_ColorStrength (alias)"
+        ],
+        [
+          "tc Particular-0212",
+          5,
+          "FXid_Options_SmokeletShadow_Opacity (alias)"
+        ],
+        [
+          "tc Particular-0284",
+          0,
+          "FXid_PShade (alias)"
+        ],
+        [
+          "tc Particular-0304",
+          250,
+          "FXid_PShadeFalloffAdjust (alias)"
+        ],
+        [
+          "tc Particular-0017",
+          0,
+          "FXid_Gravity (exact)"
+        ],
+        [
+          "tc Particular-0018",
+          0,
+          "FXid_AirResist (alias)"
+        ],
+        [
+          "tc Particular-0042",
+          10,
+          "FXid_FAffectPos (alias)"
+        ],
+        [
+          "tc Particular-0041",
+          0,
+          "FXid_FAffectSize (alias)"
+        ],
+        [
+          "tc Particular-0045",
+          0.5,
+          "FXid_FAffectTime (alias)"
+        ],
+        [
+          "tc Particular-0052",
+          50,
+          "FXid_FEvolution (alias)"
+        ],
+        [
+          "tc Particular-0046",
+          10,
+          "FXid_FScale (alias)"
+        ],
+        [
+          "tc Particular-0019",
+          0,
+          "FXid_SpinAmp (alias)"
+        ],
+        [
+          "tc Particular-0020",
+          1,
+          "FXid_SpinFreq (alias)"
+        ],
+        [
+          "tc Particular-0021",
+          1,
+          "FXid_SpinTime (alias)"
+        ],
+        [
+          "tc Particular-0749",
+          0,
+          "FXid_WindX (exact)"
+        ],
+        [
+          "tc Particular-0750",
+          0,
+          "FXid_WindY (exact)"
+        ],
+        [
+          "tc Particular-0751",
+          0,
+          "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-2830",
+          8,
+          "aux -> S2 Emitter Type: Emit from Parent (v18)"
+        ],
+        [
+          "tc Particular-2066",
+          0,
+          "FXid_Options_Aux_AirPhysics_Resistance (aux->S2)"
+        ],
+        [
+          "tc Particular-2797",
+          0,
+          "FXid_Options_Aux_AirPhysics_Wind (aux->S2)"
+        ],
+        [
+          "tc Particular-2242",
+          0.01,
+          "FXid_Options_Aux_Control_InheritVelocity (aux->S2)"
+        ],
+        [
+          "tc Particular-2236",
+          100,
+          "FXid_Options_Aux_EmitProbability (aux->S2)"
+        ],
+        [
+          "tc Particular-2077",
+          30,
+          "FXid_Options_Aux_Feather (aux->S2)"
+        ],
+        [
+          "tc Particular-2065",
+          -4,
+          "FXid_Options_Aux_Gravity (aux->S2)"
+        ],
+        [
+          "tc Particular-2113",
+          40,
+          "FXid_Options_Aux_Randomness_Life (aux->S2)"
+        ],
+        [
+          "tc Particular-2123",
+          51,
+          "FXid_Options_Aux_Randomness_Opacity (aux->S2)"
+        ],
+        [
+          "tc Particular-2122",
+          50,
+          "FXid_Options_Aux_Randomness_Size (aux->S2)"
+        ],
+        [
+          "tc Particular-2117",
+          2,
+          "FXid_Options_Aux_TransferMode (aux->S2)+enumOffset"
+        ],
+        [
+          "tc Particular-2050",
+          1,
+          "FXid_SE_PLife (aux->S2)"
+        ],
+        [
+          "tc Particular-2081",
+          90,
+          "FXid_SE_POpacity (aux->S2)"
+        ],
+        [
+          "tc Particular-2075",
+          2,
+          "FXid_SE_PSize (aux->S2)"
+        ],
+        [
+          "tc Particular-2751",
+          3,
+          "FXid_SE_PType (aux->S2)+enumOffset"
+        ],
+        [
+          "tc Particular-2059",
+          56,
+          "FXid_SE_PVel (aux->S2)"
+        ],
+        [
+          "tc Particular-2194",
+          58,
+          "FXid_SE_ParticlesPerSecF (aux->S2)"
+        ],
+        [
+          "tc Particular-2136",
+          1,
+          "Set Color S2: At Birth"
+        ],
+        [
+          "tc Particular-2118",
+          [
+            1,
+            0.685947714994351,
+            0.4023965147013466,
+            1
+          ],
+          "Color S2 (flattened SE color curve)"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_validated": {
+    "round": "r6",
+    "verdict": "match",
+    "backend": "agent-vision"
+  }
+}
