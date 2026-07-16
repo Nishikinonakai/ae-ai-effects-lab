@@ -629,12 +629,12 @@
         [
           "tc Particular-0070",
           [
-            1,
-            1,
-            1,
+            0.446,
+            0.201,
+            0.208,
             1
           ],
-          "FXid_PColor (alias)"
+          "FXid_PColor (alias) [tinted from vendor thumb]"
         ],
         [
           "tc Particular-0071",

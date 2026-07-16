@@ -1358,8 +1358,8 @@
         ],
         [
           "tc Particular-0703",
-          2,
-          "FXid_PType (alias+enumOffset) [sprite fallback -> Glow Sphere]"
+          3,
+          "FXid_PType (alias+enumOffset) [sprite fallback -> Star]"
         ],
         [
           "tc Particular-0531",
@@ -1399,12 +1399,12 @@
         [
           "tc Particular-0070",
           [
-            1,
-            1,
-            1,
+            0.378,
+            0.378,
+            0.378,
             1
           ],
-          "FXid_PColor (alias)"
+          "FXid_PColor (alias) [tinted from vendor thumb]"
         ],
         [
           "tc Particular-0071",

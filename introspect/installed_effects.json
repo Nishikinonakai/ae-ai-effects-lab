@@ -1,0 +1,7616 @@
+{
+ "status": "ok",
+ "count": 1522,
+ "effects": [
+  {
+   "name": "Cineware",
+   "match": "CINEMA 4D Effect",
+   "category": "Cinema 4D"
+  },
+  {
+   "name": "Cryptomatte",
+   "match": "Cryptomatte",
+   "category": "3D Channel"
+  },
+  {
+   "name": "CC Ball Action",
+   "match": "CC Ball Action",
+   "category": "Simulation"
+  },
+  {
+   "name": "CC Bend It",
+   "match": "CC Bend It",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Bender",
+   "match": "CC Bender",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Blobbylize",
+   "match": "CC Blobbylize",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Block Load",
+   "match": "CS BlockLoad",
+   "category": "Stylize"
+  },
+  {
+   "name": "CC Bubbles",
+   "match": "CC Bubbles",
+   "category": "Simulation"
+  },
+  {
+   "name": "CC Burn Film",
+   "match": "CC Burn Film",
+   "category": "Stylize"
+  },
+  {
+   "name": "CC Color Neutralizer",
+   "match": "CS Color Neutralizer",
+   "category": "Color Correction"
+  },
+  {
+   "name": "CC Color Offset",
+   "match": "CC Color Offset",
+   "category": "Color Correction"
+  },
+  {
+   "name": "CC Composite",
+   "match": "CC Composite",
+   "category": "Channel"
+  },
+  {
+   "name": "CC Cross Blur",
+   "match": "CS CrossBlur",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "CC Cylinder",
+   "match": "CC Cylinder",
+   "category": "Perspective"
+  },
+  {
+   "name": "CC Drizzle",
+   "match": "CC Drizzle",
+   "category": "Simulation"
+  },
+  {
+   "name": "CC Environment",
+   "match": "CC Environment",
+   "category": "Perspective"
+  },
+  {
+   "name": "CC Flo Motion",
+   "match": "CC Flo Motion",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Force Motion Blur",
+   "match": "CC Force Motion Blur",
+   "category": "Time"
+  },
+  {
+   "name": "CC Glass",
+   "match": "CC Glass",
+   "category": "Stylize"
+  },
+  {
+   "name": "CC Glass Wipe",
+   "match": "CC Glass Wipe",
+   "category": "Transition"
+  },
+  {
+   "name": "CC Glue Gun",
+   "match": "CC Glue Gun",
+   "category": "Generate"
+  },
+  {
+   "name": "CC Grid Wipe",
+   "match": "CC Grid Wipe",
+   "category": "Transition"
+  },
+  {
+   "name": "CC Griddler",
+   "match": "CC Griddler",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Hair",
+   "match": "CC Hair",
+   "category": "Simulation"
+  },
+  {
+   "name": "CC HexTile",
+   "match": "CS HexTile",
+   "category": "Stylize"
+  },
+  {
+   "name": "CC Image Wipe",
+   "match": "CC Image Wipe",
+   "category": "Transition"
+  },
+  {
+   "name": "CC Jaws",
+   "match": "CC Jaws",
+   "category": "Transition"
+  },
+  {
+   "name": "CC Kaleida",
+   "match": "CC Kaleida",
+   "category": "Stylize"
+  },
+  {
+   "name": "CC Kernel",
+   "match": "CS Kernel",
+   "category": "Color Correction"
+  },
+  {
+   "name": "CC Lens",
+   "match": "CC Lens",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Light Burst 2.5",
+   "match": "CC Light Burst 2.5",
+   "category": "Generate"
+  },
+  {
+   "name": "CC Light Rays",
+   "match": "CC Light Rays",
+   "category": "Generate"
+  },
+  {
+   "name": "CC Light Sweep",
+   "match": "CC Light Sweep",
+   "category": "Generate"
+  },
+  {
+   "name": "CC Light Wipe",
+   "match": "CC Light Wipe",
+   "category": "Transition"
+  },
+  {
+   "name": "CC Line Sweep",
+   "match": "CS LineSweep",
+   "category": "Transition"
+  },
+  {
+   "name": "CC Mr. Mercury",
+   "match": "CC Mr. Mercury",
+   "category": "Simulation"
+  },
+  {
+   "name": "CC Mr. Smoothie",
+   "match": "CC Mr. Smoothie",
+   "category": "Stylize"
+  },
+  {
+   "name": "CC Overbrights",
+   "match": "CC Overbrights",
+   "category": "Utility"
+  },
+  {
+   "name": "CC PS Classic (obsolete)",
+   "match": "CC PS Classic",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "CC PS LE Classic (obsolete)",
+   "match": "CC PS LE Classic",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "CC Page Turn",
+   "match": "CC Page Turn",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Particle Systems II",
+   "match": "CC Particle Systems II",
+   "category": "Simulation"
+  },
+  {
+   "name": "CC Particle World",
+   "match": "CC Particle World",
+   "category": "Simulation"
+  },
+  {
+   "name": "CC Pixel Polly",
+   "match": "CC Pixel Polly",
+   "category": "Simulation"
+  },
+  {
+   "name": "CC Plastic",
+   "match": "CC Plastic",
+   "category": "Stylize"
+  },
+  {
+   "name": "CC Power Pin",
+   "match": "CC Power Pin",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Radial Blur",
+   "match": "CC Radial Blur",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "CC Radial Fast Blur",
+   "match": "CC Radial Fast Blur",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "CC Radial ScaleWipe",
+   "match": "CC Radial ScaleWipe",
+   "category": "Transition"
+  },
+  {
+   "name": "CC Rain",
+   "match": "CC Rain",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "CC Rainfall",
+   "match": "CSRainfall",
+   "category": "Simulation"
+  },
+  {
+   "name": "CC RepeTile",
+   "match": "CC RepeTile",
+   "category": "Stylize"
+  },
+  {
+   "name": "CC Ripple Pulse",
+   "match": "CC Ripple Pulse",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Scale Wipe",
+   "match": "CC Scale Wipe",
+   "category": "Transition"
+  },
+  {
+   "name": "CC Scatterize",
+   "match": "CC Scatterize",
+   "category": "Simulation"
+  },
+  {
+   "name": "CC Simple Wire Removal",
+   "match": "CC Simple Wire Removal",
+   "category": "Keying"
+  },
+  {
+   "name": "CC Slant",
+   "match": "CC Slant",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Smear",
+   "match": "CC Smear",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Snow",
+   "match": "CC Snow",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "CC Snowfall",
+   "match": "CSSnowfall",
+   "category": "Simulation"
+  },
+  {
+   "name": "CC Sphere",
+   "match": "CC Sphere",
+   "category": "Perspective"
+  },
+  {
+   "name": "CC Split",
+   "match": "CC Split",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Split 2",
+   "match": "CC Split 2",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Spotlight",
+   "match": "CC Spotlight",
+   "category": "Perspective"
+  },
+  {
+   "name": "CC Star Burst",
+   "match": "CC Star Burst",
+   "category": "Simulation"
+  },
+  {
+   "name": "CC Threads",
+   "match": "CS Threads",
+   "category": "Generate"
+  },
+  {
+   "name": "CC Threshold",
+   "match": "CC Threshold",
+   "category": "Stylize"
+  },
+  {
+   "name": "CC Threshold RGB",
+   "match": "CC Threshold RGB",
+   "category": "Stylize"
+  },
+  {
+   "name": "CC Tiler",
+   "match": "CC Tiler",
+   "category": "Distort"
+  },
+  {
+   "name": "CC Time Blend",
+   "match": "CC Time Blend",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "CC Time Blend FX",
+   "match": "CC Time Blend FX",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "CC Toner",
+   "match": "CC Toner",
+   "category": "Color Correction"
+  },
+  {
+   "name": "CC Twister",
+   "match": "CC Twister",
+   "category": "Transition"
+  },
+  {
+   "name": "CC Vector Blur",
+   "match": "CC Vector Blur",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "CC Vignette",
+   "match": "CS Vignette",
+   "category": "Stylize"
+  },
+  {
+   "name": "CC WarpoMatic",
+   "match": "CC WarpoMatic",
+   "category": "Transition"
+  },
+  {
+   "name": "CC Wide Time",
+   "match": "CC Wide Time",
+   "category": "Time"
+  },
+  {
+   "name": "EXtractoR",
+   "match": "EXtractoR",
+   "category": "3D Channel"
+  },
+  {
+   "name": "IDentifier",
+   "match": "IDentifier",
+   "category": "3D Channel"
+  },
+  {
+   "name": "Keylight (1.2)",
+   "match": "Keylight 906",
+   "category": "Keying"
+  },
+  {
+   "name": "Mocha AE",
+   "match": "mochaAECC",
+   "category": "Boris FX Mocha"
+  },
+  {
+   "name": "mocha shape",
+   "match": "ISL MochaShapeImporter",
+   "category": "Obsolete"
+  },
+  {
+   "name": "Glitch 7in1",
+   "match": "AESweetsGlitch7in1",
+   "category": "AESweets"
+  },
+  {
+   "name": "Element",
+   "match": "VIDEOCOPILOT 3DArray",
+   "category": "Video Copilot"
+  },
+  {
+   "name": "Optical Flares",
+   "match": "VIDEOCOPILOT OpticalFlares",
+   "category": "Video Copilot"
+  },
+  {
+   "name": " BCC+Ambient Light",
+   "match": "BCC_AMBIENTLIGHT",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Atmospheric Glow",
+   "match": "BCC_ATMOSPHERICGLOW",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": "BCC 2D Particles",
+   "match": "BCC32D Particles",
+   "category": "BCC Particles"
+  },
+  {
+   "name": "BCC 3D Extruded Image Shatter",
+   "match": "BCC 3D Extruded Image Shatter",
+   "category": "BCC Perspective"
+  },
+  {
+   "name": "BCC 3D Image Shatter",
+   "match": "BCC33D Image Shatter",
+   "category": "BCC Perspective"
+  },
+  {
+   "name": "BCC 3 Way Color Grade",
+   "match": "BCC6ThreeWayCC",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": "BCC Alpha Pixel Noise OBS",
+   "match": "BCC3Alpha Pixel Noise",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Alpha Process",
+   "match": "BCC3Alpha Process",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Alpha Spotlight OBS",
+   "match": "BCC3Alpha Spotlight",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Artist's Poster",
+   "match": "BCC3Artists Poster",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": "BCC Beat Reactor",
+   "match": "BCC Beat Reactor",
+   "category": "BCC Time"
+  },
+  {
+   "name": "BCC Beauty Studio",
+   "match": "BCC Beauty Studio",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC Blobs Wipe",
+   "match": "BCC Blobs Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Blobs Wipe",
+   "match": "BCC Blobs WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Blur (Obsolete)",
+   "match": "BCC3Blur",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC VR Blur",
+   "match": "BCC VR Blur",
+   "category": "BCC VR"
+  },
+  {
+   "name": "BCC Blur Dissolve",
+   "match": "BCC Blur Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Blur Dissolve",
+   "match": "BCC Blur DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Boost Blend OBS",
+   "match": "BCC3Boost Blend",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Brick",
+   "match": "BCC3Brick",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Brightness-Contrast",
+   "match": "BCC3Brightness-Contrast",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": "BCC Broadcast Safe",
+   "match": "BCC Broadcast Safe",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC Bulge",
+   "match": "BCC3Bulge",
+   "category": "BCC Warp"
+  },
+  {
+   "name": "BCC Bump Map",
+   "match": "BCC3Bump Map",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": "BCC Burnt Film",
+   "match": "BCC3Burnt Film",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Burnt Film",
+   "match": "BCC Burnt FilmPrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Cartoon Look",
+   "match": "BCC6Cartoon2Look",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": "BCC Cartooner",
+   "match": "BCC3Cartooner",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": "BCC Caustics",
+   "match": "BCC3Caustics",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Charcoal Sketch",
+   "match": "BCC6Charcoal Sketch",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": "BCC Checker Wipe",
+   "match": "BCCChecker Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Checker Wipe",
+   "match": "BCCChecker WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Chroma Key",
+   "match": "BCC3Chroma Key",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Chroma Key Studio",
+   "match": "BCC Chroma Key Studio",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Cloth",
+   "match": "BCC3Cloth",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Clouds",
+   "match": "BCC3Clouds",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Color Balance",
+   "match": "BCC3Color Balance",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": "BCC Color Choker",
+   "match": "BCC4Color Choker",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Color Correction",
+   "match": "BCC3Color Correction",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": "BCC Color Match",
+   "match": "BCC3Color Match",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": "BCC Color Palette OBS",
+   "match": "BCC3Color Palette",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Colorize",
+   "match": "BCC3Colorize",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": "BCC Colorize Glow",
+   "match": "BCC3Colorize Glow",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Colorize Glow Dissolve",
+   "match": "BCC Colorize Glow Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Colorize Glow Dissolve",
+   "match": "BCC Colorize Glow DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Comet",
+   "match": "BCC3Comet",
+   "category": "BCC Particles"
+  },
+  {
+   "name": "BCC Composite",
+   "match": "BCC3Composite",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Composite Choker",
+   "match": "BCC3Composite Choker",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Composite Dissolve",
+   "match": "BCC Composite Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Composite Dissolve",
+   "match": "BCC Composite DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Corner Pin OBS",
+   "match": "BCC3CornerPin",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Corner Pin Studio",
+   "match": "BCC Corner Pin Studio",
+   "category": "BCC Match Move"
+  },
+  {
+   "name": "BCC Correct Selected Color",
+   "match": "BCC3Correct Selected Color",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": "BCC Crash Zoom Dissolve",
+   "match": "BCC Crash Zoom Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Crash Zoom Dissolve",
+   "match": "BCC Crash Zoom DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Criss-Cross Wipe",
+   "match": "BCC3Criss-Cross Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Criss-Cross Wipe",
+   "match": "BCC Criss-Cross WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Cross Glitch",
+   "match": "BCC Cross Glitch",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Cross Glitch",
+   "match": "BCC Cross GlitchPrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Cross Melt",
+   "match": "BCC Cross Melt",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Cross Melt",
+   "match": "BCC Cross MeltPrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Cross Zoom",
+   "match": "BCC Cross Zoom",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Cross Zoom",
+   "match": "BCC Cross ZoomPrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Cube",
+   "match": "BCC3Cube",
+   "category": "BCC Perspective"
+  },
+  {
+   "name": "BCC Curl",
+   "match": "BCC Curl",
+   "category": "BCC Warp"
+  },
+  {
+   "name": "BCC Curl Dissolve",
+   "match": "BCC Curl Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Curl Dissolve",
+   "match": "BCC Curl DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Cylinder",
+   "match": "BCC3Cylinder",
+   "category": "BCC Perspective"
+  },
+  {
+   "name": "BCC DVE",
+   "match": "BCC3DVE",
+   "category": "BCC Perspective"
+  },
+  {
+   "name": "BCC DVE Basic",
+   "match": "BCC3DVE Basic",
+   "category": "BCC Perspective"
+  },
+  {
+   "name": "BCC DV Fixer",
+   "match": "BCC6DV Fixer",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC Damaged TV",
+   "match": "BCC4Damaged TV",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Damaged TV Dissolve",
+   "match": "BCC Damaged TV Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Damaged TV Dissolve",
+   "match": "BCC Damaged TV DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC DeGrain OBS",
+   "match": "BCC3DeGrain",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC DeNoise OBS",
+   "match": "BCC3DeNoise",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Deinterlace",
+   "match": "BCC3Deinterlace",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": "BCC Directional Blur",
+   "match": "BCC3Directional Blur",
+   "category": "BCC Blur"
+  },
+  {
+   "name": "BCC Displacement Map",
+   "match": "BCC3Displacement Map",
+   "category": "BCC Warp"
+  },
+  {
+   "name": "BCC Drop Shadow",
+   "match": "BCC3Drop Shadow",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Dropout Fixer",
+   "match": "BCC Dropout Fixer",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC Dust and Scratches",
+   "match": "BCC3Dust and Scratches",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC Edge Cleaner",
+   "match": "BCC Edge Cleaner",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Edge Grunge",
+   "match": "BCC Edge Grunge",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Edge Lighting",
+   "match": "BCC3Edge Lighting",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Emboss",
+   "match": "BCC3Emboss",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Extruded EPS",
+   "match": "ScriptEP",
+   "category": "BCC 3D Objects"
+  },
+  {
+   "name": "BCC Extruded Spline",
+   "match": "ScriptSP",
+   "category": "BCC 3D Objects"
+  },
+  {
+   "name": "BCC Extruded Text",
+   "match": "ScriptET",
+   "category": "BCC 3D Objects"
+  },
+  {
+   "name": "BCC Fast Film Glow",
+   "match": "BCC Fast Film Glow",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": "BCC Fast Film Glow Dissolve",
+   "match": "BCC Fast Film Glow Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Fast Film Glow Dissolve",
+   "match": "BCC Fast Film Glow DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Fast Film Process",
+   "match": "BCC Fast Film Process",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": "BCC Fast Flipper",
+   "match": "BCC3Fast Flipper",
+   "category": "BCC Perspective"
+  },
+  {
+   "name": "BCC Fast Lens Blur",
+   "match": "BCC Fast Lens Blur",
+   "category": "BCC Blur"
+  },
+  {
+   "name": "BCC Film Damage",
+   "match": "BCC3Film Damage",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": "BCC Film Glow OBS",
+   "match": "BCC3Ultra Glow",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Film Glow Dissolve OBS",
+   "match": "BCC Film Glow Dissolve",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Film Glow Dissolve OBS",
+   "match": "BCC Film Glow DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Film Grain",
+   "match": "BCC3Film Grain",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": "BCC Film Process OBS",
+   "match": "BCC3Film Process",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Fire OBS",
+   "match": "BCC3Fire",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Flicker Fixer",
+   "match": "BCC3Flicker Fixer",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC Flutter Cut",
+   "match": "BCCFlutter",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Flutter Cut",
+   "match": "BCCFlutterPrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Fractal Noise",
+   "match": "BCC3Fractal Noise",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC FX Browser",
+   "match": "BCCFXBrowser",
+   "category": "BCC Browser"
+  },
+  {
+   "name": "BCC Gaussian Blur",
+   "match": "BCC3Gaussian Blur",
+   "category": "BCC Blur"
+  },
+  {
+   "name": "BCC Glare",
+   "match": "BCC3Glare",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Glint",
+   "match": "BCC3Glint",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Glitter",
+   "match": "BCC3Glitter",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Glow OBS",
+   "match": "BCC3Glow",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Glow Alpha Edges",
+   "match": "BCC3Glow Alpha Edges",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Glow Matte OBS",
+   "match": "BCC3Glow Matte",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Granite",
+   "match": "BCC3Granite",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Grid Wipe",
+   "match": "BCC Grid Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Grid Wipe",
+   "match": "BCC Grid WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Grunge",
+   "match": "BCC Grunge",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Halftone",
+   "match": "BCC Halftone",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": "BCC Hue-Sat-Lightness",
+   "match": "BCC3Hue-Sat-Lightness",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": "BCC Invert Solarize",
+   "match": "BCC3Invert Solarize",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": "BCC Jitter",
+   "match": "BCC3Jitter",
+   "category": "BCC Time"
+  },
+  {
+   "name": "BCC Jitter Basic",
+   "match": "BCC3Jitter Basic",
+   "category": "BCC Time"
+  },
+  {
+   "name": "BCC Kaleida Dissolve",
+   "match": "BCC Kaleida Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Kaleida Dissolve",
+   "match": "BCC Kaleida DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC LED",
+   "match": "BCC4LED",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Laser Beam",
+   "match": "BCC Laser Beam",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Layer Deformer",
+   "match": "ScriptLD",
+   "category": "BCC 3D Objects"
+  },
+  {
+   "name": "BCC Lens Blur OBS",
+   "match": "BCC6LensBlur",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Lens Blur Dissolve",
+   "match": "BCC Lens Blur Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Lens Blur Dissolve",
+   "match": "BCC Lens Blur DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Lens Correction",
+   "match": "BCC Lens Correction",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC Lens Distortion Wipe",
+   "match": "BCC Lens Distortion Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Lens Distortion Wipe",
+   "match": "BCC Lens Distortion WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Lens Flare OBS",
+   "match": "BCC3Lens Flare",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Lens Flare 3D",
+   "match": "BCC3Lens Flare 3D",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Lens Flare Adv OBS",
+   "match": "BCC3Lens Flare Adv",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Lens Flare Dissolve",
+   "match": "BCC Lens Flare Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Lens Flare Dissolve",
+   "match": "BCC Lens Flare DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Lens Flare Round",
+   "match": "BCC Lens Flare Round",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Lens Flare Round",
+   "match": "BCC Lens Flare RoundPrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Lens Flare Spiked",
+   "match": "BCC Lens Flare Spiked",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Lens Flare Spiked",
+   "match": "BCC Lens Flare SpikedPrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Lens Flash",
+   "match": "BCC Lens Flash",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Lens Flash",
+   "match": "BCC Lens FlashPrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Lens Shape",
+   "match": "BCC6LensShape",
+   "category": "BCC Blur"
+  },
+  {
+   "name": "BCC Lens Transition OBS",
+   "match": "BCC6LensTransition",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Lens Transition OBS",
+   "match": "BCC LensTransitionPrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Levels Gamma",
+   "match": "BCC3Levels Gamma",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": "BCC Light Leaks",
+   "match": "BCC Light Leaks",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Light Leaks Dissolve",
+   "match": "BCCLightLeakDslv",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Light Leaks Dissolve",
+   "match": "BCCLightLeakDslvPrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Light Matte OBS",
+   "match": "BCC3Light Matte",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Light Sweep",
+   "match": "BCC3Light Sweep",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Light Wipe",
+   "match": "BCC Light Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Light Wipe",
+   "match": "BCC Light WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Light Wrap",
+   "match": "BCC3Light Wrap",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Light Zoom OBS",
+   "match": "BCC3Light Zoom",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Lightning",
+   "match": "BCC3Lightning",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Linear Color Key",
+   "match": "BCC3Linear Color Key",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Linear Luma Key",
+   "match": "BCC3Linear Luma Key",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Linear Wipe",
+   "match": "BCC3Linear Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Linear Wipe",
+   "match": "BCC Linear WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Looper",
+   "match": "BCC3Looper",
+   "category": "BCC Time"
+  },
+  {
+   "name": "BCC Magic Sharp",
+   "match": "BCC Magic Sharp",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC Make Alpha Key",
+   "match": "BCC3Make Alpha Key",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Match Grain",
+   "match": "BCC3Match Grain",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": "BCC Match Move",
+   "match": "BCC3MatchMove",
+   "category": "BCC Match Move"
+  },
+  {
+   "name": "BCC Matte Choker",
+   "match": "BCC3Matte Choker",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Matte Cleanup",
+   "match": "BCC3Matte Cleanup",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Median",
+   "match": "BCC3Median",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": "BCC Misalignment",
+   "match": "BCC3Misalignment",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Mixed Colors",
+   "match": "BCC3Mixed Colors",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Morph",
+   "match": "BCC4Morph",
+   "category": "BCC Warp"
+  },
+  {
+   "name": "BCC Mosaic",
+   "match": "Boris3Pixelate",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Motion Blur",
+   "match": "BCC3Motion Blur",
+   "category": "BCC Blur"
+  },
+  {
+   "name": "BCC Motion Key",
+   "match": "BCC3MotionKey",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC Multi Shadow",
+   "match": "BCC3Multi Shadow",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Multi Stretch Wipe",
+   "match": "BCC3Multi Stretch Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Multi Stretch Wipe",
+   "match": "BCC Multi Stretch WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Multi Stripe Wipe",
+   "match": "BCC3Multi Stripe Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Multi Stripe Wipe",
+   "match": "BCC Multi Stripe WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC MultiTone Mix",
+   "match": "BCC3MultiTone Mix",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": "BCC Noise Map OBS",
+   "match": "BCC3Noise Map",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Noise Map 2",
+   "match": "BCC4Noise Map 2",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Noise Reduction",
+   "match": "BCC6Noise Reduction",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC Optical Flow",
+   "match": "BCC3Optical Flow",
+   "category": "BCC Time"
+  },
+  {
+   "name": "BCC Optical Stabilizer",
+   "match": "BCC3Stabilizer",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC Organic Strands",
+   "match": "BCC Organic Strands",
+   "category": "BCC Particles"
+  },
+  {
+   "name": "BCC Page Turn",
+   "match": "BCC3Page Turn",
+   "category": "BCC Perspective"
+  },
+  {
+   "name": "BCC Pan and Zoom",
+   "match": "BCC Pan and Zoom",
+   "category": "BCC Perspective"
+  },
+  {
+   "name": "BCC Particle Array 3D",
+   "match": "BCC Particle Array 3D",
+   "category": "BCC Particles"
+  },
+  {
+   "name": "BCC Particle Emitter 3D",
+   "match": "BCC Particle Emitter 3D",
+   "category": "BCC Particles"
+  },
+  {
+   "name": "BCC Particle Illusion",
+   "match": "BCC Particle Illusion",
+   "category": "BCC Particles"
+  },
+  {
+   "name": "BCC Particle Illusion Dissolve",
+   "match": "BCC PI Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Particle Illusion Dissolve",
+   "match": "BCC PI DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Particle System",
+   "match": "BCC3Particle System",
+   "category": "BCC Particles"
+  },
+  {
+   "name": "BCC Pencil Sketch",
+   "match": "BCC6Pencil Sketch",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": "BCC Pencil Sketch (Obsolete)",
+   "match": "BCC6PencilSketch",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Pin Art 3D",
+   "match": "BCC Pin Art 3D",
+   "category": "BCC Particles"
+  },
+  {
+   "name": "BCC Pixel Chooser",
+   "match": "BCC3Pixel Chooser",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Pixel Fixer",
+   "match": "BCC6Pixel Fixer",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC Polar Displacement",
+   "match": "BCC3Polar Displacement",
+   "category": "BCC Warp"
+  },
+  {
+   "name": "BCC Posterize",
+   "match": "BCC3Posterize",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": "BCC Posterize Time",
+   "match": "BCC3Posterize Time",
+   "category": "BCC Time"
+  },
+  {
+   "name": "BCC Premult",
+   "match": "BCC3Premult",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Primatte Studio",
+   "match": "BCC Primatte Studio",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Prism",
+   "match": "BCC4Prism",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Prism Dissolve",
+   "match": "BCC Prism Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Prism Dissolve",
+   "match": "BCC Prism DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Pyramid Blur",
+   "match": "BCC3Pyramid Blur",
+   "category": "BCC Blur"
+  },
+  {
+   "name": "BCC RGB Blend",
+   "match": "BCC3RGB Blend",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC RGB Blur Dissolve",
+   "match": "BCC RGB Blur Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC RGB Blur Dissolve",
+   "match": "BCC RGB Blur DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC RGB Displacement Dissolve",
+   "match": "BCC RGB Dspl Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC RGB Displacement Dissolve",
+   "match": "BCC RGB Dspl DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC RGB Edges",
+   "match": "BCC3RGB Edges",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC RGB Pixel Noise",
+   "match": "BCC3RGB Pixel Noise",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Radial Blur",
+   "match": "BCC3Radial Blur",
+   "category": "BCC Blur"
+  },
+  {
+   "name": "BCC Radial Wipe",
+   "match": "BCC3Radial Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Radial Wipe",
+   "match": "BCC Radial WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Rain",
+   "match": "BCC3Rain",
+   "category": "BCC Particles"
+  },
+  {
+   "name": "BCC Rays",
+   "match": "BCC3Rays",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Rays Cartoon",
+   "match": "BCC3Rays Cartoon",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Rays Dissolve",
+   "match": "BCC Rays Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Rays Dissolve",
+   "match": "BCC Rays DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Rays Puffy",
+   "match": "BCC3Rays Puffy",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Rays Radiant Edges",
+   "match": "BCC3Rays Radiant Edges",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Rays Radiant Spotlight",
+   "match": "BCC3Rays Radiant Spotlight",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Rays Ring",
+   "match": "BCC3Rays Ring",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Rays Ripply",
+   "match": "BCC3Rays Ripply",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Rays Streaky",
+   "match": "BCC3Rays Streaky",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Rays Textured",
+   "match": "BCC3Rays Textured",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Rays Wedge",
+   "match": "BCC3Rays Wedge",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Rectangular Wipe",
+   "match": "BCC3Rectangular Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Rectangular Wipe",
+   "match": "BCC Rectangular WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Reflection",
+   "match": "BCC Reflection",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Reframer",
+   "match": "BCC Reframer",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC Remover",
+   "match": "BCC Remover",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC VR Reorient",
+   "match": "BCC VR Reorient",
+   "category": "BCC VR"
+  },
+  {
+   "name": "BCC Reptilian",
+   "match": "BCC3Reptilian",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Reverse Spotlight",
+   "match": "BCC3Reverse Spotlight",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Ribbon Wipe",
+   "match": "BCC Ribbon Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Ribbon Wipe",
+   "match": "BCC Ribbon WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Rings Wipe",
+   "match": "BCC Rings Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Rings Wipe",
+   "match": "BCC Rings WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Ripple",
+   "match": "BCC3Ripple",
+   "category": "BCC Warp"
+  },
+  {
+   "name": "BCC Ripple Dissolve",
+   "match": "BCC Ripple Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Ripple Dissolve",
+   "match": "BCC Ripple DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Rock",
+   "match": "BCC3Rock",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Rough Glow OBS",
+   "match": "BCC3Rough Glow",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Safe Colors OBS",
+   "match": "BCC3Safe Colors",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Scanline",
+   "match": "BCC4Scanline",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Scatterize",
+   "match": "BCC3Scatterize",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Sequencer OBS",
+   "match": "BCC3Sequencer",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Cast Shadow",
+   "match": "BCC Cast Shadow",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Smooth Tone OBS",
+   "match": "BCC6Smooth Tone",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Snow",
+   "match": "BCC3Snow",
+   "category": "BCC Particles"
+  },
+  {
+   "name": "BCC Sparks",
+   "match": "BCC3Sparks",
+   "category": "BCC Particles"
+  },
+  {
+   "name": "BCC Sphere",
+   "match": "BCC3Sphere",
+   "category": "BCC Perspective"
+  },
+  {
+   "name": "BCC Sphere Transition",
+   "match": "BCC3Sphere Transition",
+   "category": "BCC Perspective"
+  },
+  {
+   "name": "BCC Spill Remover",
+   "match": "BCC Spill Remover",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Spin Blur Dissolve",
+   "match": "BCC Spin Blur Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Spin Blur Dissolve",
+   "match": "BCC Spin Blur DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Spiral Blur",
+   "match": "BCC3Spiral Blur",
+   "category": "BCC Blur"
+  },
+  {
+   "name": "BCC Spotlight",
+   "match": "BCC3Spotlight",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Spray Paint Noise",
+   "match": "BCC3Spray Paint Noise",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": "BCC Stage Light",
+   "match": "BCC3Stage Light",
+   "category": "BCC Lights"
+  },
+  {
+   "name": "BCC Star Matte OBS",
+   "match": "BCC3Star Matte",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Stars",
+   "match": "BCC3Stars",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Steel Plate",
+   "match": "BCC3Steel Plate",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Super Blend OBS",
+   "match": "BCC3Super Blend",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Swish Pan",
+   "match": "BCC6Swish Pan",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Swish Pan",
+   "match": "BCC Swish PanPrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Temporal Blur",
+   "match": "BCC3Temporal Blur",
+   "category": "BCC Time"
+  },
+  {
+   "name": "BCC Textured Wipe",
+   "match": "BCC3Textured Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Textured Wipe",
+   "match": "BCC Textured WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Tile Mosaic",
+   "match": "BCC4Tile Mosaic",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": "BCC Tile Wipe",
+   "match": "BCC Tile Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Tile Wipe",
+   "match": "BCC Tile WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Time Displacement",
+   "match": "BCC3Time Displacement",
+   "category": "BCC Time"
+  },
+  {
+   "name": "BCC Title Studio",
+   "match": "BCCTS",
+   "category": "BCC 3D Objects"
+  },
+  {
+   "name": "BCC Trails",
+   "match": "BCC3Trails",
+   "category": "BCC Time"
+  },
+  {
+   "name": "BCC Trails Basic",
+   "match": "BCC3Trails Basic",
+   "category": "BCC Time"
+  },
+  {
+   "name": "BCC Tritone",
+   "match": "BCC3Tritone",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": "BCC Tritone Dissolve",
+   "match": "BCC Tritone Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Tritone Dissolve",
+   "match": "BCC Tritone DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Turbulence",
+   "match": "BCC4Turbulence",
+   "category": "BCC Warp"
+  },
+  {
+   "name": "BCC Twirl",
+   "match": "BCC3Twirl",
+   "category": "BCC Warp"
+  },
+  {
+   "name": "BCC Twister",
+   "match": "BCC Twister",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Twister",
+   "match": "BCC TwisterPrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Two Strip Color",
+   "match": "BCC Two Strip Color",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": "BCC Two Way Key",
+   "match": "BCC3Two Way Key",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": "BCC Type On Text",
+   "match": "ScriptTO",
+   "category": "BCC 3D Objects"
+  },
+  {
+   "name": "BCC Unsharp Mask",
+   "match": "BCC3Unsharp Mask",
+   "category": "BCC Blur"
+  },
+  {
+   "name": "BCC UpRez",
+   "match": "BCC UpRez",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC VR Insert",
+   "match": "BCC VR Insert",
+   "category": "BCC VR"
+  },
+  {
+   "name": "BCC VR Flicker Fixer",
+   "match": "BCC VR Flicker Fixer",
+   "category": "BCC VR"
+  },
+  {
+   "name": "BCC VR Sharpen",
+   "match": "BCC VR Sharpen",
+   "category": "BCC VR"
+  },
+  {
+   "name": "BCC Vector Blur Dissolve",
+   "match": "BCC Vector Blur Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Vector Blur Dissolve",
+   "match": "BCC Vector Blur DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Vector Displacement",
+   "match": "BCC3Vector Displacement",
+   "category": "BCC Warp"
+  },
+  {
+   "name": "BCC Veined Marble",
+   "match": "BCC3Veined Marble",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Velocity Remap",
+   "match": "BCC3Velocity Remap",
+   "category": "BCC Time"
+  },
+  {
+   "name": "BCC Video Glitch",
+   "match": "BCC Video Glitch",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": "BCC Video Morph",
+   "match": "BCC4Video Morph",
+   "category": "BCC Warp"
+  },
+  {
+   "name": "BCC Videoscope",
+   "match": "BCC6Videoscope",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": "BCC Vignette",
+   "match": "BCCVignette",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": "BCC Vignette Wipe",
+   "match": "BCCVignette Wipe",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Vignette Wipe",
+   "match": "BCCVignette WipePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Warp",
+   "match": "BCC4Warp",
+   "category": "BCC Warp"
+  },
+  {
+   "name": "BCC Water Color",
+   "match": "BCC6Water Color",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": "BCC Water Waves Dissolve",
+   "match": "BCC Water Waves Dissolve",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": "BCC Water Waves Dissolve",
+   "match": "BCC Water Waves DissolvePrTr",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "BCC Wave",
+   "match": "BCC3Wave",
+   "category": "BCC Warp"
+  },
+  {
+   "name": "BCC Weave",
+   "match": "BCC3Weave",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Wild Cards",
+   "match": "BCC Card Array",
+   "category": "BCC Particles"
+  },
+  {
+   "name": "BCC Wire Remover",
+   "match": "BCC3Wire Remover",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": "BCC WitnessProtection",
+   "match": "Boris3WitnessProtection",
+   "category": "BCC Match Move"
+  },
+  {
+   "name": "BCC Wood Grain",
+   "match": "BCC3Wood Grain",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Wooden Planks",
+   "match": "BCC3Wooden Planks",
+   "category": "BCC Textures"
+  },
+  {
+   "name": "BCC Z-Blur",
+   "match": "BCC3Z-Blur",
+   "category": "BCC Blur"
+  },
+  {
+   "name": "BCC Z Space I OBS",
+   "match": "BCC3Z Space I",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Z Space II OBS",
+   "match": "BCC3Z Space II",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": "BCC Z Space III OBS",
+   "match": "BCC3Z Space III",
+   "category": "BCC Obsolete"
+  },
+  {
+   "name": " BCC+Beauty Studio",
+   "match": "BCC_BEAUTYSTUDIO",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": " BCC+Black and White",
+   "match": "BCC_BLACKANDWHITE",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+Bleach Bypass",
+   "match": "BCC_BLEACHBYPASS",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+Blur Dissolve",
+   "match": "BCC_BLURDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Blur",
+   "match": "BCC_BLUR",
+   "category": "BCC Blur"
+  },
+  {
+   "name": " BCC+Borders",
+   "match": "BCC_BORDERS",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": " BCC+Camera Shake Dissolve",
+   "match": "BCC_CAMERASHAKEDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Camera Shake",
+   "match": "BCC_CAMERASHAKE",
+   "category": "BCC Lens"
+  },
+  {
+   "name": " BCC+Center Spot",
+   "match": "BCC_CENTERSPOT",
+   "category": "BCC Optical Diffusion"
+  },
+  {
+   "name": " BCC+Channel Blur Dissolve",
+   "match": "BCC_CHANNELBLURDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Channel Blur YUV",
+   "match": "BCC_CHANNELYUVBLUR",
+   "category": "BCC Blur"
+  },
+  {
+   "name": " BCC+Channel Blur",
+   "match": "BCC_CHANNELBLUR",
+   "category": "BCC Blur"
+  },
+  {
+   "name": " BCC+Chroma Bands",
+   "match": "BCC_CHROMABANDS",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Chromatic Aberration",
+   "match": "BCC_CHROMATICABERRATION",
+   "category": "BCC Lens"
+  },
+  {
+   "name": " BCC+Color Gradient",
+   "match": "BCC_COLORGRADIENT",
+   "category": "BCC Grads & Tints"
+  },
+  {
+   "name": " BCC+Color Infrared",
+   "match": "BCC_COLORINFRARED",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": " BCC+Color Paste",
+   "match": "BCC_COLORPASTE",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": " BCC+Color Shadow",
+   "match": "BCC_COLORSHADOW",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": " BCC+Color Spot",
+   "match": "BCC_COLORSPOT",
+   "category": "BCC Grads & Tints"
+  },
+  {
+   "name": " BCC+Colorize Gradient",
+   "match": "BCC_COLORIZEGRADIENT",
+   "category": "BCC Grads & Tints"
+  },
+  {
+   "name": " BCC+Composite",
+   "match": "BCC_COMPOSITE",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": " BCC+Crash Zoom Dissolve",
+   "match": "BCC_CRASHZOOMDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Cross Processing",
+   "match": "BCC_CROSSPROCESSING",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+Cross Zoom Dissolve",
+   "match": "BCC_CROSSZOOMDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Day for Night",
+   "match": "BCC_DAYFORNIGHT",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+DeBand",
+   "match": "BCC_DEBAND",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": " BCC+DeBlock",
+   "match": "BCC_DEBLOCK",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": " BCC+DeFog",
+   "match": "BCC_DEFOG",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+DeFringe",
+   "match": "BCC_DEFRINGE",
+   "category": "BCC Lens"
+  },
+  {
+   "name": " BCC+Depth of Field",
+   "match": "BCC_DEPTHOFFIELD",
+   "category": "BCC Optical Diffusion"
+  },
+  {
+   "name": " BCC+Detail",
+   "match": "BCC_DETAIL",
+   "category": "BCC Blur"
+  },
+  {
+   "name": " BCC+Develop",
+   "match": "BCC_DEVELOP",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+Diffusion",
+   "match": "BCC_DIFFUSION",
+   "category": "BCC Optical Diffusion"
+  },
+  {
+   "name": " BCC+Directional Blur Dissolve",
+   "match": "BCC_DIRECTIONALBLURDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Directional Blur",
+   "match": "BCC_DIRECTIONALBLUR",
+   "category": "BCC Blur"
+  },
+  {
+   "name": " BCC+Dissolve",
+   "match": "BCC_DISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Double Fog",
+   "match": "BCC_DOUBLEFOG",
+   "category": "BCC Optical Diffusion"
+  },
+  {
+   "name": " BCC+Dual Gradient",
+   "match": "BCC_DUALGRADIENT",
+   "category": "BCC Grads & Tints"
+  },
+  {
+   "name": " BCC+Edge Composite",
+   "match": "BCC_EDGECOMPOSITE",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": " BCC+Enhancing",
+   "match": "BCC_ENHANCING",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+Eye Light",
+   "match": "BCC_EYELIGHT",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+F-Stop",
+   "match": "BCC_FSTOP",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+Film Glow Dissolve",
+   "match": "BCC_FILMGLOWDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Film Glow",
+   "match": "BCC_FILMGLOW",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+Film Grunge",
+   "match": "BCC_FILMGRUNGE",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+Film Roll",
+   "match": "BCC_FILMROLL",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Film Stocks",
+   "match": "BCC_FILMSTOCKS",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+Flashing",
+   "match": "BCC_FLASHING",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+Fluorescent",
+   "match": "BCC_FLUORESCENT",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+Flutter Cut",
+   "match": "BCC_FLUTTERCUT",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Fog",
+   "match": "BCC_FOG",
+   "category": "BCC Optical Diffusion"
+  },
+  {
+   "name": " BCC+Frost",
+   "match": "BCC_FROST",
+   "category": "BCC Optical Diffusion"
+  },
+  {
+   "name": " BCC+Gels",
+   "match": "BCC_GELS",
+   "category": "BCC Grads & Tints"
+  },
+  {
+   "name": " BCC+Glow Darks",
+   "match": "BCC_GLOWDARKS",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Glow Edges",
+   "match": "BCC_GLOWEDGES",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Glow",
+   "match": "BCC_GLOW",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Grade",
+   "match": "BCC_GRADE",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+Halo",
+   "match": "BCC_HALO",
+   "category": "BCC Optical Diffusion"
+  },
+  {
+   "name": " BCC+Harris Shutter",
+   "match": "BCC_HARRISSHUTTER",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": " BCC+Haze",
+   "match": "BCC_HAZE",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+High Contrast",
+   "match": "BCC_HIGHCONTRAST",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+Holdout Composite",
+   "match": "BCC_HOLDOUTCOMPOSITE",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": " BCC+Ice Halos",
+   "match": "BCC_ICEHALOS",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Infrared",
+   "match": "BCC_INFRARED",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": " BCC+Kelvin",
+   "match": "BCC_KELVIN",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+Key Light",
+   "match": "BCC_KEYLIGHT",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Lens Distortion",
+   "match": "BCC_LENSDISTORTION",
+   "category": "BCC Lens"
+  },
+  {
+   "name": " BCC+Lens Flare",
+   "match": "BCC_LENSFLARE",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Light Flicker",
+   "match": "BCC_LIGHTFLICKER",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+Light Leaks Dissolve",
+   "match": "BCC_LIGHTLEAKSDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Light Leaks",
+   "match": "BCC_LIGHTLEAKS",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Light",
+   "match": "BCC_LIGHT",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Linear Wipe",
+   "match": "BCC_LINEARWIPE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Looks",
+   "match": "BCC_LOOKS",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+Low Contrast",
+   "match": "BCC_LOWCONTRAST",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+Magic Sharp",
+   "match": "BCC_MAGICSHARP",
+   "category": "BCC Image Restoration"
+  },
+  {
+   "name": " BCC+Math Composite",
+   "match": "BCC_MATHCOMPOSITE",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": " BCC+Mist",
+   "match": "BCC_MIST",
+   "category": "BCC Optical Diffusion"
+  },
+  {
+   "name": " BCC+Multi-Star Dissolve",
+   "match": "BCC_MULTISTARDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Multi-Star",
+   "match": "BCC_MULTISTAR",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+ND Gradient",
+   "match": "BCC_NDGRADIENT",
+   "category": "BCC Grads & Tints"
+  },
+  {
+   "name": " BCC+Net",
+   "match": "BCC_NET",
+   "category": "BCC Optical Diffusion"
+  },
+  {
+   "name": " BCC+Night Vision",
+   "match": "BCC_NIGHTVISION",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": " BCC+Non-Additive Mix",
+   "match": "BCC_NONADDITIVEMIX",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": " BCC+Optical Dissolve",
+   "match": "BCC_OPTICALDISSOLVE",
+   "category": "BCC Key & Blend"
+  },
+  {
+   "name": " BCC+Orbs",
+   "match": "BCC_ORBS",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+Overexpose",
+   "match": "BCC_OVEREXPOSE",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Photographic",
+   "match": "BCC_PHOTOGRAPHIC",
+   "category": "BCC Grads & Tints"
+  },
+  {
+   "name": " BCC+Polarizer",
+   "match": "BCC_POLARIZER",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+Prism Dissolve",
+   "match": "BCC_PRISMDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Prism",
+   "match": "BCC_PRISMBLUR",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": " BCC+Rack Focus Dissolve",
+   "match": "BCC_RACKFOCUSDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Rack Focus",
+   "match": "BCC_RACKFOCUS",
+   "category": "BCC Optical Diffusion"
+  },
+  {
+   "name": " BCC+Radial Blur",
+   "match": "BCC_RADIALBLUR",
+   "category": "BCC Blur"
+  },
+  {
+   "name": " BCC+Radial Exposure",
+   "match": "BCC_RADIALEXPOSURE",
+   "category": "BCC Lens"
+  },
+  {
+   "name": " BCC+Radial Tint",
+   "match": "BCC_RADIALTINT",
+   "category": "BCC Grads & Tints"
+  },
+  {
+   "name": " BCC+Radial Wipe",
+   "match": "BCC_RADIALWIPE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Rays Dissolve",
+   "match": "BCC_RAYSDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Rays",
+   "match": "BCC_RAYS",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+ReLight",
+   "match": "BCC_RELIGHT",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Rectangular Wipe",
+   "match": "BCC_RECTANGULARWIPE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Reflector",
+   "match": "BCC_REFLECTOR",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Selective Saturation",
+   "match": "BCC_SELECTIVESATURATION",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+Sepia",
+   "match": "BCC_SEPIA",
+   "category": "BCC Grads & Tints"
+  },
+  {
+   "name": " BCC+Shadows/Highlights",
+   "match": "BCC_SHADOWSHIGHLIGHTS",
+   "category": "BCC Color & Tone"
+  },
+  {
+   "name": " BCC+Silk",
+   "match": "BCC_SILK",
+   "category": "BCC Optical Diffusion"
+  },
+  {
+   "name": " BCC+Skin Tone",
+   "match": "BCC_SKINTONE",
+   "category": "BCC Grads & Tints"
+  },
+  {
+   "name": " BCC+Smear Blur",
+   "match": "BCC_SMEARBLUR",
+   "category": "BCC Blur"
+  },
+  {
+   "name": " BCC+Smoke and Fog",
+   "match": "BCC_SMOKEANDFOG",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+Spin Blur Dissolve",
+   "match": "BCC_SPINBLURDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Split Field",
+   "match": "BCC_SPLITFIELD",
+   "category": "BCC Optical Diffusion"
+  },
+  {
+   "name": " BCC+Split Tone",
+   "match": "BCC_SPLITTONE",
+   "category": "BCC Grads & Tints"
+  },
+  {
+   "name": " BCC+Streaks",
+   "match": "BCC_STREAKS",
+   "category": "BCC Lights"
+  },
+  {
+   "name": " BCC+Sunset",
+   "match": "BCC_SUNSET",
+   "category": "BCC Grads & Tints"
+  },
+  {
+   "name": " BCC+Super LED",
+   "match": "BCC_SUPERLED",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": " BCC+Swish Glow",
+   "match": "BCC_SWISHGLOW",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Swish Pan",
+   "match": "BCC_SWISH",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Swish Prism",
+   "match": "BCC_SWISHPRISM",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Swish Warp",
+   "match": "BCC_SWISHWARP",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Texture Wipe",
+   "match": "BCC_TEXTUREWIPE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Textures",
+   "match": "BCC_TEXTURES",
+   "category": "BCC Textures"
+  },
+  {
+   "name": " BCC+Three Strip",
+   "match": "BCC_THREESTRIP",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+Tint",
+   "match": "BCC_TINT",
+   "category": "BCC Grads & Tints"
+  },
+  {
+   "name": " BCC+Transform",
+   "match": "BCC_TRANSFORM",
+   "category": "BCC Perspective"
+  },
+  {
+   "name": " BCC+Two Strip",
+   "match": "BCC_TWOSTRIP",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+Video Glitch Dissolve",
+   "match": "BCC_VIDEOGLITCHDISSOLVE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Video Glitch",
+   "match": "BCC_VIDEOGLITCH",
+   "category": "BCC Stylize"
+  },
+  {
+   "name": " BCC+Vignette Wipe",
+   "match": "BCC_VIGNETTEWIPE",
+   "category": "BCC Transitions"
+  },
+  {
+   "name": " BCC+Vignette",
+   "match": "BCC_VIGNETTE",
+   "category": "BCC Film Style"
+  },
+  {
+   "name": " BCC+Wide Angle Lens",
+   "match": "BCC_WIDEANGLELENS",
+   "category": "BCC Lens"
+  },
+  {
+   "name": " BCC+X-Ray",
+   "match": "BCC_XRAY",
+   "category": "BCC Art Looks"
+  },
+  {
+   "name": "S_ChannelSwitcher",
+   "match": "S_ChannelSwitcher",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_ClampChroma",
+   "match": "S_ClampChroma",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_DuoTone",
+   "match": "S_DuoTone",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_Gamma",
+   "match": "S_Gamma",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_Hotspots",
+   "match": "S_Hotspots",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_HueSatBright",
+   "match": "S_HueSatBright",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_Invert",
+   "match": "S_Invert",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_Monochrome",
+   "match": "S_Monochrome",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_OCIOTransform",
+   "match": "S_OCIOTransform",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_QuadTone",
+   "match": "S_QuadTone",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_ShowBadColors",
+   "match": "S_ShowBadColors",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_Threshold",
+   "match": "S_Threshold",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_Tint",
+   "match": "S_Tint",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_TriTone",
+   "match": "S_TriTone",
+   "category": "Sapphire Adjust"
+  },
+  {
+   "name": "S_Beauty",
+   "match": "S_Beauty",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_Blur",
+   "match": "S_Blur",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_BlurChannels",
+   "match": "S_BlurChannels",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_BlurChroma",
+   "match": "S_BlurChroma",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_BlurDirectional",
+   "match": "S_BlurDirectional",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_BlurMoCurves",
+   "match": "S_BlurMoCurves",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_BlurMotion",
+   "match": "S_BlurMotion",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_Convolve",
+   "match": "S_Convolve",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_ConvolveComp",
+   "match": "S_ConvolveComp",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_Deband",
+   "match": "S_Deband",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_DefocusPrism",
+   "match": "S_DefocusPrism",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_EdgeAwareBlur",
+   "match": "S_EdgeAwareBlur",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_EdgeBlur",
+   "match": "S_EdgeBlur",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_FreeLens",
+   "match": "S_FreeLens",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_GrainRemove",
+   "match": "S_GrainRemove",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_Median",
+   "match": "S_Median",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_RackDefocus",
+   "match": "S_RackDefocus",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_RackDfComp",
+   "match": "S_RackDfComp",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_Sharpen",
+   "match": "S_Sharpen",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_SoftFocus",
+   "match": "S_SoftFocus",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_ZBlur",
+   "match": "S_ZBlur",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_ZConvolve",
+   "match": "S_ZConvolve",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_ZDefocus",
+   "match": "S_ZDefocus",
+   "category": "Sapphire Blur+Sharpen"
+  },
+  {
+   "name": "S_Effect",
+   "match": "S_Effect",
+   "category": "Sapphire Builder"
+  },
+  {
+   "name": "S_Transition",
+   "match": "S_Transition",
+   "category": "Sapphire Builder"
+  },
+  {
+   "name": "S_EdgeFlash",
+   "match": "S_EdgeFlash",
+   "category": "Sapphire Composite"
+  },
+  {
+   "name": "S_Layer",
+   "match": "S_Layer",
+   "category": "Sapphire Composite"
+  },
+  {
+   "name": "S_MathOps",
+   "match": "S_MathOps",
+   "category": "Sapphire Composite"
+  },
+  {
+   "name": "S_MatteOps",
+   "match": "S_MatteOps",
+   "category": "Sapphire Composite"
+  },
+  {
+   "name": "S_MatteOpsComp",
+   "match": "S_MatteOpsComp",
+   "category": "Sapphire Composite"
+  },
+  {
+   "name": "S_ZComp",
+   "match": "S_ZComp",
+   "category": "Sapphire Composite"
+  },
+  {
+   "name": "S_Distort",
+   "match": "S_Distort",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_DistortBlur",
+   "match": "S_DistortBlur",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_DistortChroma",
+   "match": "S_DistortChroma",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_DistortRGB",
+   "match": "S_DistortRGB",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_InfiniteZoom",
+   "match": "S_InfiniteZoom",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_ParallaxStrips",
+   "match": "S_ParallaxStrips",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_Shake",
+   "match": "S_Shake",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_StretchFrameEdges",
+   "match": "S_StretchFrameEdges",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpBubble",
+   "match": "S_WarpBubble",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpBubble2",
+   "match": "S_WarpBubble2",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpChroma",
+   "match": "S_WarpChroma",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpCornerPin",
+   "match": "S_WarpCornerPin",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpDrops",
+   "match": "S_WarpDrops",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpFishEye",
+   "match": "S_WarpFishEye",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpMagnify",
+   "match": "S_WarpMagnify",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpPerspective",
+   "match": "S_WarpPerspective",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpPolar",
+   "match": "S_WarpPolar",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpPuddle",
+   "match": "S_WarpPuddle",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpPuff",
+   "match": "S_WarpPuff",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpRepeat",
+   "match": "S_WarpRepeat",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpTransform",
+   "match": "S_WarpTransform",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpVortex",
+   "match": "S_WarpVortex",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpWaves",
+   "match": "S_WarpWaves",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_WarpWaves2",
+   "match": "S_WarpWaves2",
+   "category": "Sapphire Distort"
+  },
+  {
+   "name": "S_BokehLights",
+   "match": "S_BokehLights",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_DropShadow",
+   "match": "S_DropShadow",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_EdgeRays",
+   "match": "S_EdgeRays",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_Flashbulbs",
+   "match": "S_Flashbulbs",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_Glare",
+   "match": "S_Glare",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_Glint",
+   "match": "S_Glint",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_GlintRainbow",
+   "match": "S_GlintRainbow",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_Glow",
+   "match": "S_Glow",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_GlowAura",
+   "match": "S_GlowAura",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_GlowDarks",
+   "match": "S_GlowDarks",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_GlowDist",
+   "match": "S_GlowDist",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_GlowEdges",
+   "match": "S_GlowEdges",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_GlowNoise",
+   "match": "S_GlowNoise",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_GlowOrthicon",
+   "match": "S_GlowOrthicon",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_GlowRainbow",
+   "match": "S_GlowRainbow",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_GlowRings",
+   "match": "S_GlowRings",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_LensFlare",
+   "match": "S_LensFlare",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_LensFlareAutoTrack",
+   "match": "S_LensFlareAutoTrack",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_Light3D",
+   "match": "S_Light3D",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_LightLeak",
+   "match": "S_LightLeak",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_Rays",
+   "match": "S_Rays",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_SpotLight",
+   "match": "S_SpotLight",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_Streaks",
+   "match": "S_Streaks",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_UltraGlow",
+   "match": "S_UltraGlow",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_ZGlow",
+   "match": "S_ZGlow",
+   "category": "Sapphire Lighting"
+  },
+  {
+   "name": "S_Aurora",
+   "match": "S_Aurora",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_Caustics",
+   "match": "S_Caustics",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_Clouds",
+   "match": "S_Clouds",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_CloudsColorSmooth",
+   "match": "S_CloudsColorSmooth",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_CloudsMultColor",
+   "match": "S_CloudsMultColor",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_CloudsPerspective",
+   "match": "S_CloudsPerspective",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_CloudsPsyko",
+   "match": "S_CloudsPsyko",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_CloudsVortex",
+   "match": "S_CloudsVortex",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_Dust",
+   "match": "S_Dust",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_Gradient",
+   "match": "S_Gradient",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_GradientMulti",
+   "match": "S_GradientMulti",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_GradientRadial",
+   "match": "S_GradientRadial",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_Grid",
+   "match": "S_Grid",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_Grunge",
+   "match": "S_Grunge",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_LaserBeam",
+   "match": "S_LaserBeam",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_Luna",
+   "match": "S_Luna",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_MuzzleFlash",
+   "match": "S_MuzzleFlash",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_NightSky",
+   "match": "S_NightSky",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_Shape",
+   "match": "S_Shape",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_Sparkles",
+   "match": "S_Sparkles",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_SparklesColor",
+   "match": "S_SparklesColor",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TextureCells",
+   "match": "S_TextureCells",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TextureChromaSpiral",
+   "match": "S_TextureChromaSpiral",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TextureFlux",
+   "match": "S_TextureFlux",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TextureFolded",
+   "match": "S_TextureFolded",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TextureLoops",
+   "match": "S_TextureLoops",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TextureMicro",
+   "match": "S_TextureMicro",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TextureMoire",
+   "match": "S_TextureMoire",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TextureNeurons",
+   "match": "S_TextureNeurons",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TextureNoiseEmboss",
+   "match": "S_TextureNoiseEmboss",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TextureNoisePaint",
+   "match": "S_TextureNoisePaint",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TexturePlasma",
+   "match": "S_TexturePlasma",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TextureSpots",
+   "match": "S_TextureSpots",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TextureTiles",
+   "match": "S_TextureTiles",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_TextureWeave",
+   "match": "S_TextureWeave",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_UltraZap",
+   "match": "S_UltraZap",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_Zap",
+   "match": "S_Zap",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_ZapFrom",
+   "match": "S_ZapFrom",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_ZapTo",
+   "match": "S_ZapTo",
+   "category": "Sapphire Render"
+  },
+  {
+   "name": "S_AutoPaint",
+   "match": "S_AutoPaint",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_BandPass",
+   "match": "S_BandPass",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_BleachBypass",
+   "match": "S_BleachBypass",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Brush",
+   "match": "S_Brush",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Cartoon",
+   "match": "S_Cartoon",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_CartoonPaint",
+   "match": "S_CartoonPaint",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_ColorFuse",
+   "match": "S_ColorFuse",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Crosshatch",
+   "match": "S_Crosshatch",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Diffuse",
+   "match": "S_Diffuse",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_DigitalDamage",
+   "match": "S_DigitalDamage",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_DogVision",
+   "match": "S_DogVision",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_EdgeColorize",
+   "match": "S_EdgeColorize",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_EdgeDetect",
+   "match": "S_EdgeDetect",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_EdgeDetectDouble",
+   "match": "S_EdgeDetectDouble",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_EdgesInDirection",
+   "match": "S_EdgesInDirection",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Emboss",
+   "match": "S_Emboss",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_EmbossDistort",
+   "match": "S_EmbossDistort",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_EmbossGlass",
+   "match": "S_EmbossGlass",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_EmbossShiny",
+   "match": "S_EmbossShiny",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Etching",
+   "match": "S_Etching",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_FilmDamage",
+   "match": "S_FilmDamage",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_FilmEffect",
+   "match": "S_FilmEffect",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_FlysEyeCircles",
+   "match": "S_FlysEyeCircles",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_FlysEyeHex",
+   "match": "S_FlysEyeHex",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_FlysEyeRect",
+   "match": "S_FlysEyeRect",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Grain",
+   "match": "S_Grain",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_GrainStatic",
+   "match": "S_GrainStatic",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_HalfTone",
+   "match": "S_HalfTone",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_HalfToneColor",
+   "match": "S_HalfToneColor",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_HalfToneRings",
+   "match": "S_HalfToneRings",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_JpegDamage",
+   "match": "S_JpegDamage",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Kaleido",
+   "match": "S_Kaleido",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_KaleidoPolar",
+   "match": "S_KaleidoPolar",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_KaleidoRadial",
+   "match": "S_KaleidoRadial",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Mosaic",
+   "match": "S_Mosaic",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_PixelMosh",
+   "match": "S_PixelMosh",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_PixelSort",
+   "match": "S_PixelSort",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Posterize",
+   "match": "S_Posterize",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_PrismLens",
+   "match": "S_PrismLens",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_PseudoColor",
+   "match": "S_PseudoColor",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_PsykoBlobs",
+   "match": "S_PsykoBlobs",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_PsykoStripes",
+   "match": "S_PsykoStripes",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_RomanTile",
+   "match": "S_RomanTile",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_ScanLines",
+   "match": "S_ScanLines",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_ScanLinesMono",
+   "match": "S_ScanLinesMono",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Sketch",
+   "match": "S_Sketch",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Solarize",
+   "match": "S_Solarize",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_StripSlide",
+   "match": "S_StripSlide",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_TVDamage",
+   "match": "S_TVDamage",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_TileScramble",
+   "match": "S_TileScramble",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_UltraGrain",
+   "match": "S_UltraGrain",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Vignette",
+   "match": "S_Vignette",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_VintageColor2Strip",
+   "match": "S_VintageColor2Strip",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_VintageColor3Strip",
+   "match": "S_VintageColor3Strip",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_ZFogExponential",
+   "match": "S_ZFogExponential",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_ZFogLinear",
+   "match": "S_ZFogLinear",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_Zebrafy",
+   "match": "S_Zebrafy",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_ZebrafyColor",
+   "match": "S_ZebrafyColor",
+   "category": "Sapphire Stylize"
+  },
+  {
+   "name": "S_CutToDissolve",
+   "match": "S_CutToDissolve",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_Feedback",
+   "match": "S_Feedback",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_FeedbackBubble",
+   "match": "S_FeedbackBubble",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_FeedbackDistort",
+   "match": "S_FeedbackDistort",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_FieldRemove",
+   "match": "S_FieldRemove",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_Flicker",
+   "match": "S_Flicker",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_FlickerMatch",
+   "match": "S_FlickerMatch",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_FlickerMatchColor",
+   "match": "S_FlickerMatchColor",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_FlickerMatchMatte",
+   "match": "S_FlickerMatchMatte",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_FlickerMchMatteColor",
+   "match": "S_FlickerMchMatteColor",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_FlickerRemove",
+   "match": "S_FlickerRemove",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_FlickerRemoveColor",
+   "match": "S_FlickerRemoveColor",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_FlickerRemoveMatte",
+   "match": "S_FlickerRemoveMatte",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_FlickerRmMatteColor",
+   "match": "S_FlickerRmMatteColor",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_FreezeFrame",
+   "match": "S_FreezeFrame",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_GetFrame",
+   "match": "S_GetFrame",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_JitterFrames",
+   "match": "S_JitterFrames",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_MotionDetect",
+   "match": "S_MotionDetect",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_NearestColor",
+   "match": "S_NearestColor",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_RandomEdits",
+   "match": "S_RandomEdits",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_RepairFrames",
+   "match": "S_RepairFrames",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_Retime",
+   "match": "S_Retime",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_ReverseClip",
+   "match": "S_ReverseClip",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_ReverseEdits",
+   "match": "S_ReverseEdits",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_TimeAverage",
+   "match": "S_TimeAverage",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_TimeDisplace",
+   "match": "S_TimeDisplace",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_TimeSlice",
+   "match": "S_TimeSlice",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_TimeWarpRGB",
+   "match": "S_TimeWarpRGB",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_Trails",
+   "match": "S_Trails",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_TrailsDiffuse",
+   "match": "S_TrailsDiffuse",
+   "category": "Sapphire Time"
+  },
+  {
+   "name": "S_CardFlip",
+   "match": "S_CardFlip",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_Dissolve",
+   "match": "S_Dissolve",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveAutoPaint",
+   "match": "S_DissolveAutoPaint",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveBlur",
+   "match": "S_DissolveBlur",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveBubble",
+   "match": "S_DissolveBubble",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveDefocus",
+   "match": "S_DissolveDefocus",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveDiffuse",
+   "match": "S_DissolveDiffuse",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveDigitalDamage",
+   "match": "S_DissolveDigitalDamage",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveDistort",
+   "match": "S_DissolveDistort",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveEdgeRays",
+   "match": "S_DissolveEdgeRays",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveFilm",
+   "match": "S_DissolveFilm",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveFlashbulbs",
+   "match": "S_DissolveFlashbulbs",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveGlare",
+   "match": "S_DissolveGlare",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveGlint",
+   "match": "S_DissolveGlint",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveGlintRainbow",
+   "match": "S_DissolveGlintRainbow",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveGlow",
+   "match": "S_DissolveGlow",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveLensFlare",
+   "match": "S_DissolveLensFlare",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveLuma",
+   "match": "S_DissolveLuma",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolvePixelMosh",
+   "match": "S_DissolvePixelMosh",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolvePixelSort",
+   "match": "S_DissolvePixelSort",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolvePuddle",
+   "match": "S_DissolvePuddle",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveRays",
+   "match": "S_DissolveRays",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveShake",
+   "match": "S_DissolveShake",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveSpeckle",
+   "match": "S_DissolveSpeckle",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveStatic",
+   "match": "S_DissolveStatic",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveTiles",
+   "match": "S_DissolveTiles",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveUltraGlow",
+   "match": "S_DissolveUltraGlow",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveVortex",
+   "match": "S_DissolveVortex",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveWaves",
+   "match": "S_DissolveWaves",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_DissolveZap",
+   "match": "S_DissolveZap",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_FilmRoll",
+   "match": "S_FilmRoll",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_FlutterCut",
+   "match": "S_FlutterCut",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_HyperPull",
+   "match": "S_HyperPull",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_HyperPush",
+   "match": "S_HyperPush",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_ParallaxStripsTransition",
+   "match": "S_ParallaxStripsTransition",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_StripSlideTransition",
+   "match": "S_StripSlideTransition",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_Swish3D",
+   "match": "S_Swish3D",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_SwishPan",
+   "match": "S_SwishPan",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_TVChannelChange",
+   "match": "S_TVChannelChange",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WhipLash",
+   "match": "S_WhipLash",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeBlobs",
+   "match": "S_WipeBlobs",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeBubble",
+   "match": "S_WipeBubble",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeCells",
+   "match": "S_WipeCells",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeChecker",
+   "match": "S_WipeChecker",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeCircle",
+   "match": "S_WipeCircle",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeClock",
+   "match": "S_WipeClock",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeClouds",
+   "match": "S_WipeClouds",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeDiffuse",
+   "match": "S_WipeDiffuse",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeDots",
+   "match": "S_WipeDots",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeDoubleWedge",
+   "match": "S_WipeDoubleWedge",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeFlux",
+   "match": "S_WipeFlux",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeFourWedges",
+   "match": "S_WipeFourWedges",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeLine",
+   "match": "S_WipeLine",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeMoire",
+   "match": "S_WipeMoire",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipePixelate",
+   "match": "S_WipePixelate",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipePlasma",
+   "match": "S_WipePlasma",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipePointalize",
+   "match": "S_WipePointalize",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeRectangle",
+   "match": "S_WipeRectangle",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeRings",
+   "match": "S_WipeRings",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeStar",
+   "match": "S_WipeStar",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeStripes",
+   "match": "S_WipeStripes",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeTiles",
+   "match": "S_WipeTiles",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeWeave",
+   "match": "S_WipeWeave",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "S_WipeWedge",
+   "match": "S_WipeWedge",
+   "category": "Sapphire Transitions"
+  },
+  {
+   "name": "Deep Glow 2",
+   "match": "PEDG2",
+   "category": "Plugin Everything"
+  },
+  {
+   "name": "Hawaiki Comp Tools 5",
+   "match": "vpn7j7XoQAWuAUrLLY7vGg==",
+   "category": "Hawaiki Keyer 5"
+  },
+  {
+   "name": "Hawaiki Slice 5",
+   "match": "2ax5QUYeQ5GdAlTStie4Ig==",
+   "category": "Hawaiki Keyer 5"
+  },
+  {
+   "name": " Hawaiki Keyer 5  (Green)",
+   "match": "ypQwkeZaT7GZMHGsa2Hu4w==",
+   "category": "Hawaiki Keyer 5"
+  },
+  {
+   "name": " Hawaiki Keyer 5 (Blue) ",
+   "match": "jxpuOOL2Q5mkkzLaYsHNiQ==",
+   "category": "Hawaiki Keyer 5"
+  },
+  {
+   "name": "Arrows",
+   "match": "RYU/0xI4Tsug49Xz6OYkYw==",
+   "category": "Lines 2"
+  },
+  {
+   "name": "Hearts",
+   "match": "hACeJzhUS4abnGd2EXzf2A==",
+   "category": "Lines 2"
+  },
+  {
+   "name": "Marks",
+   "match": "GwHh4gF+RimQT2r7mzjNAQ==",
+   "category": "Lines 2"
+  },
+  {
+   "name": "Scribbles",
+   "match": "v8PFHGf0RAq44qpnO/xo7A==",
+   "category": "Lines 2"
+  },
+  {
+   "name": "Shapes",
+   "match": "VdVLX+arQ3Gz58Wt+hFVTA==",
+   "category": "Lines 2"
+  },
+  {
+   "name": "Stars",
+   "match": "zbDZrqrcSKmwN3jhWeVDCw==",
+   "category": "Lines 2"
+  },
+  {
+   "name": "Storm",
+   "match": "1LTo0/ISQYe4WeNzr+3Xww==",
+   "category": "Yanobox"
+  },
+  {
+   "name": "Hawaiki Super Glow",
+   "match": "dsDjidB6ROK+5QvT+bKPhQ==",
+   "category": "Hawaiki Super Glow"
+  },
+  {
+   "name": "Keyper",
+   "match": "vMKk7GbESrinFtXOxuHjjw==",
+   "category": "Sheffield Softworks"
+  },
+  {
+   "name": "Hawaiki AutoFix",
+   "match": "Ryy2t6ERSUOqdXiDbbwwdw==",
+   "category": "Hawaiki AutoFix"
+  },
+  {
+   "name": "Pan and Zoom (Accelerated)",
+   "match": "uplOFCX2Ra+0fYKpbcFb/Q==",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Pan and Zoom (Basic)",
+   "match": "ugPZcBydR2SzZfzyOm8lkg==",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Pan and Zoom (Obsolete)",
+   "match": "NpCO8PfWQT+istVKfjyExg==",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Pan and Zoom: Image File",
+   "match": "6Xp55+ZAQ8q494qvwxapeA==",
+   "category": "Pan and Zoom"
+  },
+  {
+   "name": "Pan and Zoom: Project Media",
+   "match": "Z2X3fSXxTpieHT/d8uyMvQ==",
+   "category": "Pan and Zoom"
+  },
+  {
+   "name": "Perfect Skin",
+   "match": "oExJqpydT82aUEB0uT2Oig==",
+   "category": "Sheffield Makeup Artist 3"
+  },
+  {
+   "name": "Makeup Artist",
+   "match": "fGIltCX3Se2GBykV8VVBtA==",
+   "category": "Sheffield Makeup Artist 3"
+  },
+  {
+   "name": "Fast Makeup Artist",
+   "match": "BC7E4steSYKMYFDE4jwtmg==",
+   "category": "Sheffield Makeup Artist 3"
+  },
+  {
+   "name": "Cover Up",
+   "match": "t/lXc/67R7GVluRUWIiS1w==",
+   "category": "Sheffield Makeup Artist 3"
+  },
+  {
+   "name": "Cover Up II",
+   "match": "sOlmlxPfS/SHECKeLODl5Q==",
+   "category": "Sheffield Makeup Artist 3"
+  },
+  {
+   "name": "Zombie Makeup Artist",
+   "match": "Wek/5jWmQPSlOd5+Q7ia0A==",
+   "category": "Sheffield Makeup Artist 3"
+  },
+  {
+   "name": "Motype (Obsolete)",
+   "match": "LxbDXPKqSXu88tX1uGIZPA==",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Motype",
+   "match": "A24TP1flTz+dxfA/aPlhEg==",
+   "category": "Yanobox"
+  },
+  {
+   "name": "Motype (Obsolete)",
+   "match": "qBdiVSTFTRu7eU9NNn6tyw==",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "CMYK Halftone",
+   "match": "RzRQYMz5RwSpXTswiskL/A==",
+   "category": "FxFactory Pro Halftones"
+  },
+  {
+   "name": "Circular Screen",
+   "match": "P+/YK+NOTR65YrF+nKq2sA==",
+   "category": "FxFactory Pro Halftones"
+  },
+  {
+   "name": "Dot Screen",
+   "match": "OxLw+gv8QBq2wUllo7s6kw==",
+   "category": "FxFactory Pro Halftones"
+  },
+  {
+   "name": "Hatched Screen",
+   "match": "b6S3RegwSw+o2rtx5qTlnA==",
+   "category": "FxFactory Pro Halftones"
+  },
+  {
+   "name": "Line Screen",
+   "match": "lY9u18+8Qr6fewnMk8d8Sg==",
+   "category": "FxFactory Pro Halftones"
+  },
+  {
+   "name": "Sobel Edge",
+   "match": "wJzY3Ez6QF+X2cw/Bem8/A==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Comic Book",
+   "match": "wrQuAy3ZTJKeZTyRrh+KQg==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Crystallize",
+   "match": "RXE1CXJdRfG810rqRn2JrQ==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Pixellate",
+   "match": "/VJ6BtNLRsyaf00jgVkDxA==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Pointillize",
+   "match": "x55k/LlTTLuU8IVPCWES1A==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Scanlines",
+   "match": "Os5cqdp2S6W6ZgBsr9u14Q==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Spot Light (Single)",
+   "match": "P00qkerwSS+Gxls0y/iBWQ==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Watercolor",
+   "match": "83CSbdaHTx2F29SL2JNRFw==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Edge Work",
+   "match": "HQSUbcxURT2CAmQVUdMykg==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Pop Art",
+   "match": "dSCMTVxIQbW0zbCfe3E4Yg==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Pencil Sketch",
+   "match": "PzGg011wQEKV9v8Rbw/MtA==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Cartoon",
+   "match": "Jp93eaUSTDilvQfmLlVM0g==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Night Vision",
+   "match": "9V0JrHVTQtS0AIfTsurlZQ==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Dots",
+   "match": "V6VHPSfzRhqIWCee+is+0A==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "LED Lights",
+   "match": "vtGKYQ2gQsesjljszGpKcQ==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Neon Circles",
+   "match": "ZHDV99h4QZCWpBrizjXjYQ==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Add Noise",
+   "match": "+SThKc4VQIOiZ7mNqIwfdg==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Hexagons",
+   "match": "DxXwnSkWR4C7HABrLcAXaA==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Heat",
+   "match": "VuK/QbftT/GzgWZ4k4DRIg==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Zebra",
+   "match": "J0+76b0nRIyxQDnGl1Xynw==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Artist Sketch",
+   "match": "bn0iokRkTrynzWpe8cQobA==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Artist Sketch Color",
+   "match": "ETvEXVWHTnGavfandxBHVw==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Neon Edges",
+   "match": "cLLi8GBrRwykOtkVuEfbtQ==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Emboss Text",
+   "match": "H1Uwx7epRE+SjdPSbFZ1OA==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Emboss",
+   "match": "vBzEK6DaSGyjZycf/YtFfA==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Spot Light (Multiple)",
+   "match": "yPC2NlmARC6Zdp0PpKTw7Q==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Vintage TV",
+   "match": "vvFQUJVQSyuGc2TECcns4Q==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Synthesizer",
+   "match": "xMKMgYcYR+CJMBGOqIxhFQ==",
+   "category": "FxFactory Pro Stylize"
+  },
+  {
+   "name": "Threshold With Colors",
+   "match": "K53eBkY5QyqCDZlLASWkbw==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Threshold RGB",
+   "match": "DKL6Odh+SxCjsuOAJh4xTg==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Crush Color",
+   "match": "jlF1K4HXRfef7lSfd3MA0w==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Channel Swap",
+   "match": "mdUXOlgVQpKVQk4neU7R8w==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Luminance To Alpha",
+   "match": "zi1EDm5FRR2oGBKBprQlKA==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Color Fill",
+   "match": "Q8vs9rxERoK82K5+H3bppw==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Replace Range",
+   "match": "MY9QsMgaSK+H8OVAbuFZYg==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Mask From Color",
+   "match": "xVCFNoUURFSHiT9X72m5Rg==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Color Accent",
+   "match": "PO8xhjAIRliRQYzXLBNY0Q==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Alpha Merger",
+   "match": "bWqpZ12eQZ6UZYYg25obPw==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Vignette (Obsolete)",
+   "match": "v6+MAsbhQWq0m7YysyIpkw==",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Bleach Bypass",
+   "match": "ja8G6+clTfWdQZtHeOVZyQ==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Film Process",
+   "match": "aHnhA4DMT0CHMhQYq0OLEw==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Output Levels",
+   "match": "ns3Z7ok6TFC3uLAgl2RFDQ==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Erode/Dilate",
+   "match": "xK3yjPGxSEaJl/wLKCsfKQ==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Local Contrast",
+   "match": "Q0TzEZgbSLG5z4n2FbdgBw==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Vibrance",
+   "match": "Q9BNxH3uSGOIl9oe0hBEcg==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Vignette",
+   "match": "3TE7fWydQQubDs2CzD4eUg==",
+   "category": "FxFactory Pro Color Correction"
+  },
+  {
+   "name": "Copy Machine",
+   "match": "vSDumSXpTRWT0o/FV12BRQ==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Flash",
+   "match": "IAG9gUTqQF6+csyL0awWLA==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Mod",
+   "match": "W4hP0w6DSHC0EL8Sl517Bw==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Disintegrate With Dots",
+   "match": "tniD9hQ2To2IM0CjNxB1xg==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Disintegrate With Tiles",
+   "match": "0gvDyMTTTC6sG0XyVtRp+Q==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Polka Dots",
+   "match": "5dzw5bWJRRCc3oU8YeVJ6Q==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Paint Wipe",
+   "match": "S+jGxtOgRxmOO9NEnTDcxA==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Twirl Wipe",
+   "match": "HgjrYNZ/Rk2aY3GPue00Sw==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Waves Wipe",
+   "match": "MdWwlgZrTj6UuqIa3BjBAQ==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Luminance Dissolve",
+   "match": "0IxUMWVXTRWhGaq0IFyljA==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Glow Dissolve",
+   "match": "BxpJ+lMGTh+DTIbQaQs+bQ==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Bars Wipe",
+   "match": "p2JPbBQ/Qi+IdZALAvWV8Q==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Hexagon Wipe",
+   "match": "AGYrKdjJS56kgG7wJKVYaw==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Fade Out",
+   "match": "28A1kSsJQsmtdaeUR6gGCQ==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Fade In",
+   "match": "5n+ESLcHQcKkjPMSvDs2jg==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Edge Dissolve",
+   "match": "k33icsfIQvKdpkz8Zkx38g==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Mask Dissolve",
+   "match": "1vVH/1QJTduz8Nh4T4xOCg==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Tile Dissolve",
+   "match": "3NGi/fUURcWfOCmnikgz6Q==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Text Dissolve",
+   "match": "BarQ6ZBjR4CG33X07ly0QQ==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Videoconference",
+   "match": "jwlr1HISTU+VhU23EGCM9g==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Cell Phone Browser",
+   "match": "fe+BoNBRSOK+hZhPyHg0fA==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Blur Dissolve",
+   "match": "c5MSvcdLQGOgpYJOtBSDFg==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Cube",
+   "match": "8lpMxKkyTGm52CXJzv6GvQ==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Whoosh",
+   "match": "B72htn64QbuaAIQVHeTHKg==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Blocks Dissolve",
+   "match": "N6qSSUYMTVe8kY7cEDlQpw==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Organic Dissolve",
+   "match": "ABu3+VEaQQGYCpu5ojnXKA==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Radial Wipe",
+   "match": "ps/UHQHJQymgrWSheBDT/Q==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Origami (Square)",
+   "match": "mt8sWD4lQcagix3rhzB4+g==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Origami (Triangle)",
+   "match": "Y3hD63vtRMKxZmHosLtApw==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Page Flip",
+   "match": "46Fh7c+gTbiF9p2Hr4yAng==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Accordion",
+   "match": "sgwh5p7ASnu3bSZgkkDHQw==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Genie",
+   "match": "WDmTBsafTJ+EabE5e+K/Qw==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Agent",
+   "match": "j/Av7BV+QHO2WFWXdhAAGQ==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Scatter",
+   "match": "r1sHXeAAQraY+Ip5xeWU1A==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Channel Switch",
+   "match": "zntqEoa5S3isfK655Ot0ZQ==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Zoom Dissolve",
+   "match": "LFopFlCsRpiaDPw3ZZKczA==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Flip",
+   "match": "OVwsE3krQXeFOGpyq5eZoQ==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Slice",
+   "match": "WYndkg+BRvO2WiyFvIZKuQ==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Doorway",
+   "match": "YqH9yVtfRUeU1QaXnOxc+A==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Playback Ready",
+   "match": "xuRDBqr6TTeKbP7mAAwWnA==",
+   "category": "FxFactory Pro Transitions"
+  },
+  {
+   "name": "Noise Reduction",
+   "match": "VC1EHpr4QrS2HNQ1oMd3Qw==",
+   "category": "FxFactory Pro Sharpen"
+  },
+  {
+   "name": "Sharpen Chroma",
+   "match": "PJTOl08PSK+E+5atVRIolA==",
+   "category": "FxFactory Pro Sharpen"
+  },
+  {
+   "name": "Sharpen Luminance",
+   "match": "DyhMZ7yYQGi0t9GfG3p1/w==",
+   "category": "FxFactory Pro Sharpen"
+  },
+  {
+   "name": "Sharpen RGB",
+   "match": "rymn3inCQNqBNHOVhiLzkA==",
+   "category": "FxFactory Pro Sharpen"
+  },
+  {
+   "name": "Despeckle",
+   "match": "vBlRXv92ROy60EqCVp6FnQ==",
+   "category": "FxFactory Pro Sharpen"
+  },
+  {
+   "name": "Sharpen Edges",
+   "match": "hNxjthe1T8+MpJxO3QO5Wg==",
+   "category": "FxFactory Pro Sharpen"
+  },
+  {
+   "name": "Sharpen Range",
+   "match": "3poqd/3iRhKZ/M1Dow4cTA==",
+   "category": "FxFactory Pro Sharpen"
+  },
+  {
+   "name": "Circle Splash",
+   "match": "S/exmVWLSX+nSfBWJObaEQ==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Circular Wrap",
+   "match": "72w3OOPWQdqkinDeekrlWA==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Hole",
+   "match": "+pyY2cxsRS2TFXU6k/IKmQ==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Glass Lozenge",
+   "match": "seY4cLcSS4iyoT8dgr4kcg==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Pinch",
+   "match": "j31wKM7/T0eYtp3i0Z+mhg==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Torus Lens",
+   "match": "bDcawCrqSxu+W7zgI48RjA==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Vortex",
+   "match": "i0M2WkyGSRO/PWujhkEdKQ==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Perspective Reflection (Obsolet",
+   "match": "2FXKoFacQ2G0G1wwGldfVA==",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Chromatic Aberration",
+   "match": "ZGjqRQQqRdypCOlx3YyQ0g==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Channel Geometry",
+   "match": "Ny1R/aoVTJGzPR8/IHeRxg==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Mask With Geometry",
+   "match": "NY1wWNm1QgSgvio2WhqiKQ==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Free Distort",
+   "match": "eJm2rotvSCusw4v6v6VgSQ==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Clone (Obsolete)",
+   "match": "X5+k8svhQIOopjV9Zk2ThA==",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Random Crop",
+   "match": "lKlnXZ6CSi6yVx6IeEcf3A==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Perspective Reflection",
+   "match": "Km4XaNw5TN68PRxam21zqQ==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Clone",
+   "match": "gzQC3rGQTOi563evrmNDQQ==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Funhouse Mirror",
+   "match": "hhHlD6FmRkuEHi/F103TSw==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Random Close-Up",
+   "match": "EwvEmm0sRSOHxsEwZTHW4g==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Rounded Corners",
+   "match": "qKESpX67TCSnRtlDvNBBFQ==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Genie",
+   "match": "+GVhm15QTlKygZgAJa0cMg==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Camera Shake",
+   "match": "gC5TsLqtTcGo4J9kmzgIFg==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Analog TV",
+   "match": "E5XWCiylQ1W7KKvi3VUeTw==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Bezier Distort",
+   "match": "3wW9d9y8S1CPOpf5JzIXyA==",
+   "category": "FxFactory Pro Distort"
+  },
+  {
+   "name": "Bloom",
+   "match": "oOqpIY19S2SrGB7Y8gBYYA==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Bloom With Threshold",
+   "match": "0kfUE5R4REqG98VQQJUH3A==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Glow",
+   "match": "llvV/kUDR6Gfs/Hhmrc4LA==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Stars",
+   "match": "VQh2DRPLQkivsRnkpDFjOw==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Glow Edges",
+   "match": "LgOclUpOTFSjWmQNaoxW5Q==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Light Rays",
+   "match": "dIEzvLp3SKC1RKamANdApA==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Stars Edges",
+   "match": "n/RKqX57R4mZy71nsZX/OQ==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Light Rays Edges",
+   "match": "F3G/eI+ITMa9Jo/H/oxfdw==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Glow (Disc-shaped)",
+   "match": "TxjInPleQv+zhOKN7YCFww==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Glow (Box-shaped)",
+   "match": "Jp+izmftSmahsVUHvrHq7Q==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Light Streaks",
+   "match": "Vd2cS6HITbaW3UXoyzjaDw==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Glow Text",
+   "match": "a0b1ph6hRkKk7OuGU/ZmLg==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Light Rays Text",
+   "match": "k9MidwSeRbSS8YBbpe6aHQ==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Sun Rays",
+   "match": "uGqjfO/6ShWjt30t8FgyIA==",
+   "category": "FxFactory Pro Glow"
+  },
+  {
+   "name": "Zoom Blur Chroma",
+   "match": "N0whfcsQRt29dHlmvUNU6A==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Zoom Blur Luminance",
+   "match": "7/Ups1SVRiGxlmCz4X7RYg==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Blur RGB",
+   "match": "OGpQbN+HQmSvPnz2oHrZ3Q==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Blur Chroma",
+   "match": "Fujeczm0Q3yzp1ui6/CMWg==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Blur Luminance",
+   "match": "z6CJ6L6wQ5ytvmRzalTjxw==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Blur",
+   "match": "c+G8vlTHTJe0Xzv6/IM8Ug==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Blur Edges",
+   "match": "EBx9V7MCR1KPm/zwxtGVbQ==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Zoom Blur RGB",
+   "match": "9NggTSo5TE2taP6m05aWwA==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Blur (Box-shaped)",
+   "match": "bI2cpmkSSzeI1buDGuKv2g==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Blur (Disc-shaped)",
+   "match": "iDOz8xb1R1W7VVZGmxlyRQ==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Soften Frame",
+   "match": "Ettkw0OWRHyYQ94m3pPF0w==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Blur Two Axes",
+   "match": "anGD31NKS5G3DuBEDChpPw==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Depth Blur (Obsolete)",
+   "match": "cNDFyXneRcmhzfyunhXFeQ==",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Zoom Blur",
+   "match": "+9NTUATUSlGlrpyEFc+V8Q==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Depth Blur",
+   "match": "GA3yxBq7SfWVA+e76PFaqA==",
+   "category": "FxFactory Pro Blur"
+  },
+  {
+   "name": "Reflected Tile (Eightfold)",
+   "match": "LotKelRmRUKL9EPcKrkoDQ==",
+   "category": "FxFactory Pro Tiling"
+  },
+  {
+   "name": "Reflected Tile (Fourfold)",
+   "match": "TJb3arotTwmXoK4snvpTmA==",
+   "category": "FxFactory Pro Tiling"
+  },
+  {
+   "name": "Rotated Tile (Fourfold)",
+   "match": "aQYZAboFQ+KRyZ0lATOsGw==",
+   "category": "FxFactory Pro Tiling"
+  },
+  {
+   "name": "Translated Tile",
+   "match": "r8n7AlUKSiyCWwjUdYHODQ==",
+   "category": "FxFactory Pro Tiling"
+  },
+  {
+   "name": "Glide Reflection",
+   "match": "on5XvljLSBud84Ew5AZEPQ==",
+   "category": "FxFactory Pro Tiling"
+  },
+  {
+   "name": "Op Tile",
+   "match": "g19lKsKASmCp/osJgvIqXg==",
+   "category": "FxFactory Pro Tiling"
+  },
+  {
+   "name": "Reflected Tile (Sixfold)",
+   "match": "cGtyy9N8TLeqMzH5ryiH9g==",
+   "category": "FxFactory Pro Tiling"
+  },
+  {
+   "name": "Rotated Tile (Sixfold)",
+   "match": "QrUF01dLQa+3f3wyoIyIOg==",
+   "category": "FxFactory Pro Tiling"
+  },
+  {
+   "name": "Reflected Tile (Twelvefold)",
+   "match": "7T+7ALW/QeSd6yCIy3UlsA==",
+   "category": "FxFactory Pro Tiling"
+  },
+  {
+   "name": "Triangle Tile",
+   "match": "h1pW4lGlTX20T13uTZbxrA==",
+   "category": "FxFactory Pro Tiling"
+  },
+  {
+   "name": "Kaleidoscope",
+   "match": "+H7dP0BCR3WluljbOcoRsg==",
+   "category": "FxFactory Pro Tiling"
+  },
+  {
+   "name": "Frame Info",
+   "match": "QOi0U+XSQ5asPqw2yq9mFw==",
+   "category": "FxFactory Pro Video"
+  },
+  {
+   "name": "Upscale",
+   "match": "ms19UTfaRXa9lCvI39PAXw==",
+   "category": "FxFactory Pro Video"
+  },
+  {
+   "name": "Banding-free Gradient",
+   "match": "NjsL3chbTj6721gTxcpK1g==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Checkerboard",
+   "match": "ucUIJW7sTQeWi+3Ldmubnw==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Circle",
+   "match": "d8DZFimmTZegmiHeKFjI5Q==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Dots Pattern",
+   "match": "CoBGqIZXRWK5K2l4oId7dA==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Frame Overlay",
+   "match": "uMbwUXvKSrm3sDU0yI/Keg==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Lenticular Halo",
+   "match": "JTIM5l/GRWC5r/3okgoNtw==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Particle System",
+   "match": "tBmw9DpIRNqA6rRXbk49tQ==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "PDF Animator",
+   "match": "qD5Nm9ewRrOkF6QYyiNkSw==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Perlin Noise",
+   "match": "ngRB6bMlQJysri0UI2Pjnw==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Random Noise",
+   "match": "X8+2JTV4RpO/k8USSxRBQQ==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Rounded Rectangle",
+   "match": "Hq/tm5nETI+g+dPztnTa9w==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Slideshow",
+   "match": "As6eLhTUTXG5bplwjwnVAg==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Star Shine",
+   "match": "r85cmEa6T6++vAFMpVlX/A==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Stripes",
+   "match": "d+gSxeUwSOOhzCUyfn9rHw==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Sun",
+   "match": "LbI8spKlQFaTmVle1sQSgQ==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Three Color Gradient",
+   "match": "em8EhRamQ7utIeO2tbhllQ==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Timecode",
+   "match": "VGwdaUKtQt6/2xyN9tSlbQ==",
+   "category": "FxFactory Pro Generators"
+  },
+  {
+   "name": "Nodes 3",
+   "match": "Pz6K7RgmSi+pmrdYNlvDzQ==",
+   "category": "Yanobox"
+  },
+  {
+   "name": "Caption Burner",
+   "match": "umYRL39QTIyMx2qjoz0eYg==",
+   "category": "Caption Burner"
+  },
+  {
+   "name": "Manifesto (Roll/Crawl)",
+   "match": "F9Y+tJwTQce2BurmnSCn8Q==",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Manifesto (Static)",
+   "match": "8GooJiVVRI68S+3KBM0QRw==",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Manifesto Roll/Crawl",
+   "match": "NjEY7rvBR6GV08xjkCCWvg==",
+   "category": "Manifesto"
+  },
+  {
+   "name": "Manifesto Static",
+   "match": "v2dul1TcQgeIBP+Tk5MckA==",
+   "category": "Manifesto"
+  },
+  {
+   "name": "Photo Montage",
+   "match": "S1fN7MZ2QhWtO2sgzA7W/g==",
+   "category": "Photo Montage 3"
+  },
+  {
+   "name": "Deep Glow",
+   "match": "PEDG",
+   "category": "Plugin Everything"
+  },
+  {
+   "name": "Grow Bounds",
+   "match": "Red Giant GrowBounds",
+   "category": "RG Trapcode"
+  },
+  {
+   "name": "uni.Blur",
+   "match": "Universe_Blur_Blur_Premium",
+   "category": "RG Universe Blur"
+  },
+  {
+   "name": "uni.Box Bokeh",
+   "match": "Universe_Blur_Box_Bokeh",
+   "category": "RG Universe Blur"
+  },
+  {
+   "name": "uni.Compound Blur",
+   "match": "Universe_Compound_Blur_Premium",
+   "category": "RG Universe Blur"
+  },
+  {
+   "name": "uni.Spot Blur",
+   "match": "Universe_Blur_Spot_Blur",
+   "category": "RG Universe Blur"
+  },
+  {
+   "name": "uni.Finisher",
+   "match": "Universe_CrumplePop_Finisher",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Fisheye Fixer",
+   "match": "Universe_CrumplePop_Fisheye_Fix",
+   "category": "RG Universe Utilities"
+  },
+  {
+   "name": "uni.Grain16",
+   "match": "Universe_CrumplePop_Grain16",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.OverLight",
+   "match": "Universe_CrumplePop_OverLight",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.ShrinkRay",
+   "match": "Universe_CrumplePop_ShrinkRay",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Camera Shake",
+   "match": "Universe_Distort_Camera_Shake_P",
+   "category": "RG Universe Utilities"
+  },
+  {
+   "name": "uni.Chromatic Aberration",
+   "match": "Universe_Distort_Chromatic_Aber",
+   "category": "RG Universe Distort"
+  },
+  {
+   "name": "uni.Heatwave",
+   "match": "Universe_Distort_Heatwave",
+   "category": "RG Universe Distort"
+  },
+  {
+   "name": "uni.Picture in Picture",
+   "match": "Universe_Distort_Picture_in_Pic",
+   "category": "RG Universe Utilities"
+  },
+  {
+   "name": "uni.Prism Displacement",
+   "match": "Universe_Distort_Prism_Displace",
+   "category": "RG Universe Distort"
+  },
+  {
+   "name": "uni.RGB Separation",
+   "match": "Universe_Distort_RGB_Separation",
+   "category": "RG Universe Distort"
+  },
+  {
+   "name": "uni.Fractal Background",
+   "match": "Universe_Generators_Fractal_Bac",
+   "category": "RG Universe Generators"
+  },
+  {
+   "name": "uni.Gradient Ramp",
+   "match": "Universe_Generators_Gradient_Ra",
+   "category": "RG Universe Generators"
+  },
+  {
+   "name": "uni.Soft Gradient Background",
+   "match": "Universe_Generators_Soft_Gradie",
+   "category": "RG Universe Generators"
+  },
+  {
+   "name": "uni.Spectralicious",
+   "match": "Universe_Generators_Spectralici",
+   "category": "RG Universe Generators"
+  },
+  {
+   "name": "uni.Chromatic Glow",
+   "match": "Universe_Glow_Chromatic_Glow",
+   "category": "RG Universe Glow"
+  },
+  {
+   "name": "uni.Edge Glow",
+   "match": "Universe_Glow_Edge_Glow_Premium",
+   "category": "RG Universe Glow"
+  },
+  {
+   "name": "uni.Glimmer",
+   "match": "Universe_Glow_Glimmer",
+   "category": "RG Universe Glow"
+  },
+  {
+   "name": "uni.Glo Fi",
+   "match": "Universe_Glow_Glo_Fi_Premium",
+   "category": "RG Universe Glow"
+  },
+  {
+   "name": "uni.Glow",
+   "match": "Universe_Glow_Glow",
+   "category": "RG Universe Glow"
+  },
+  {
+   "name": "uni.Point Zoom",
+   "match": "Universe_Glow_Point_Zoom",
+   "category": "RG Universe Glow"
+  },
+  {
+   "name": "uni.Quantum",
+   "match": "RG_UNI_Glow_Quantum",
+   "category": "RG Universe Glow"
+  },
+  {
+   "name": "uni.Array Gun",
+   "match": "Universe_M_G_Array_Gun",
+   "category": "RG Universe Motion Graphics"
+  },
+  {
+   "name": "uni.HUD Components",
+   "match": "Universe_Visualizations_HUD_Com",
+   "category": "RG Universe Motion Graphics"
+  },
+  {
+   "name": "uni.Line",
+   "match": "Universe_Motion_Graphics_Draw_P",
+   "category": "RG Universe Motion Graphics"
+  },
+  {
+   "name": "uni.Progresso",
+   "match": "Universe_M_G_Progresso",
+   "category": "RG Universe Motion Graphics"
+  },
+  {
+   "name": "uni.Reframe",
+   "match": "RG_UNI_M_G_Reframe",
+   "category": "RG Universe Motion Graphics"
+  },
+  {
+   "name": "uni.Turbulence Noise",
+   "match": "Universe_Generators_TurNoise",
+   "category": "RG Universe Generators"
+  },
+  {
+   "name": "uni.Analog",
+   "match": "RG_UNI_Stylize_Analog",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Carousel",
+   "match": "Universe_Stylize_Carousel",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.ChromaTown",
+   "match": "RG_UNI_Chromatown",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Electrify",
+   "match": "RG_UNI_Stylize_Electrify",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Glitch",
+   "match": "Universe_Stylize_Glitch",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Holomatrix II",
+   "match": "Universe_Distort_Holomatrix",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Knoll Light Factory EZ",
+   "match": "Universe_Knoll_Light_Factory_EZ",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.MisFire",
+   "match": "Universe_Misfire_Premium",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Multitone",
+   "match": "RG_UNI_Stylize_Multitone",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Noir",
+   "match": "Universe_Stylize_Noir_Moderne",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.RetroGrade",
+   "match": "Universe_CrumplePop_RetroGrade",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Sketchify",
+   "match": "Universe_Stylize_Sketchify",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Symbol Mapper",
+   "match": "Universe_Stylize_Symbol_Mapper",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Texturize",
+   "match": "Universe_Stylize_Texturize",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Texturize Motion",
+   "match": "MX_UNI_Stylize_Texturize_Motion",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.VHS",
+   "match": "Universe_Stylize_VHS",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.AV Club",
+   "match": "Universe_Text_AV_Club",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Ecto",
+   "match": "Universe_Text_Ecto",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Glo Fi II",
+   "match": "Universe_Text_Glo_Fi_II",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Hacker Text",
+   "match": "Universe_Text_Hacker_Text",
+   "category": "RG Universe Text"
+  },
+  {
+   "name": "uni.Long Shadow",
+   "match": "Universe_Text_Long_Shadow",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Luster",
+   "match": "Universe_Text_Luster",
+   "category": "RG Universe Stylize"
+  },
+  {
+   "name": "uni.Numbers",
+   "match": "Universe_Text_Numbers",
+   "category": "RG Universe Text"
+  },
+  {
+   "name": "uni.Screen Text",
+   "match": "Universe_Text_Screen_Text",
+   "category": "RG Universe Text"
+  },
+  {
+   "name": "uni.Text Tile",
+   "match": "Universe_Text_Text_Tile",
+   "category": "RG Universe Text"
+  },
+  {
+   "name": "uni.Title Motion",
+   "match": "Universe_Utilities_Title_Motion",
+   "category": "RG Universe Text"
+  },
+  {
+   "name": "uni.Type Cast",
+   "match": "Universe_Text_Type_Cast",
+   "category": "RG Universe Text"
+  },
+  {
+   "name": "uni.Type On",
+   "match": "Universe_Text_Type_On",
+   "category": "RG Universe Text"
+  },
+  {
+   "name": "uni.Typographic",
+   "match": "RG_UNI_Text_Typographic",
+   "category": "RG Universe Text"
+  },
+  {
+   "name": "uni.Blinds",
+   "match": "Universe_Transitions_Blinds",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Camera Shake Transition",
+   "match": "Universe_Transitions_Camera_Sha",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Carousel Transition",
+   "match": "Universe_Transitions_Carousel_T",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Channel Blur",
+   "match": "Universe_Transitions_Channel_Bl",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Channel Surf",
+   "match": "Universe_Transitions_Channel_Su",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Clock Wipe",
+   "match": "Universe_Transitions_Clock_Wipe",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Color Mosaic Transition",
+   "match": "Universe_Transitions_Color_Mosa",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Color Stripe",
+   "match": "Universe_Transitions_Color_Stri",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Cube",
+   "match": "Universe_Transitions_Cube",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Diamond Wave",
+   "match": "Universe_Transitions_Diamond_Wa",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Dolly Fade",
+   "match": "Universe_Transitions_Dolly_Fade",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Exposure Blur",
+   "match": "Universe_Exposure_Blur_Premium",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Film Transition",
+   "match": "Universe_Transitions_Film_Trans",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Flicker Cut",
+   "match": "Universe_Transitions_Flicker_Cu",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Fold",
+   "match": "Universe_Transitions_Fold",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Glitch Transition",
+   "match": "Universe_Transitions_Glitch_Tra",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.HalfLight",
+   "match": "Universe_Transitions_HalfLight",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Inside Cube",
+   "match": "Universe_Transitions_Inside_Cub",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Knoll Light Transition",
+   "match": "Universe_Transitions_Knoll_Ligh",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Linear Wipe",
+   "match": "Universe_Transitions_Linear_Wip",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.RetroGrade Transition",
+   "match": "Universe_Transitions_RetroGrade",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Rubix Cube",
+   "match": "Universe_Transitions_Rubics_Cub",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Shape Wipe",
+   "match": "Universe_Transitions_Shape_Wipe",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Slide",
+   "match": "Universe_Transitions_Slide",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Soft Edge Wipe",
+   "match": "Universe_Soft_Edge_Wipe_Premium",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Spectralicious Transition",
+   "match": "Universe_Transitions_Spectralic",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Stretch",
+   "match": "RG_UNI_Transition_Stretch",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Swish Pan",
+   "match": "Universe_Swish_Pan_Premium",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Triangle Wave",
+   "match": "Universe_Transitions_Triangle_W",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Turbulence Transition",
+   "match": "Universe_Transitions_Turbulence",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Unfold",
+   "match": "Universe_Transitions_Unfold",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.VHS Transition",
+   "match": "Universe_Transitions_VHS_Transi",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Warp",
+   "match": "RG_UNI_Transition_Warp",
+   "category": "RG Universe Transitions"
+  },
+  {
+   "name": "uni.Logo Motion",
+   "match": "Universe_Utilities_Logo_Motion",
+   "category": "RG Universe Motion Graphics"
+  },
+  {
+   "name": "uni.Modes",
+   "match": "RG_UNI_Utilities_Modes",
+   "category": "RG Universe Utilities"
+  },
+  {
+   "name": "uni.Socialize",
+   "match": "RG_UNI_Utilities_Socialize",
+   "category": "RG Universe Utilities"
+  },
+  {
+   "name": "uni.Unmult",
+   "match": "Universe_Utilities_Unmult_Premi",
+   "category": "RG Universe Utilities"
+  },
+  {
+   "name": "Plexus",
+   "match": "RWB PLEXUS TWO",
+   "category": "Rowbyte"
+  },
+  {
+   "name": "Plexus Noise Effector",
+   "match": "RWB PLEXEFF Noise",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Spherical Field",
+   "match": "RWB PLEXEFF Spherical Field",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Container",
+   "match": "RWB PLEXEFF Container",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Transform",
+   "match": "RWB PLEXEFF Transform",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Layers Object",
+   "match": "RWB PLEXSRC Lights",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Path Object",
+   "match": "RWB PLEXSRC Paths",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus OBJ Object",
+   "match": "RWB PLEXSRC OBJ",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Color Map",
+   "match": "RWB PLEXEFF Color Map",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Shade Effector",
+   "match": "RWB PLEXEFF Shade Effector",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Toolkit",
+   "match": "RWB PLEXKIT",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Primitives Object",
+   "match": "RWB PLEXSRC Primitives",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Points Renderer",
+   "match": "RWB PLEXREN Points",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Lines Renderer",
+   "match": "RWB PLEXREN Lines",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Facets Renderer",
+   "match": "RWB PLEXREN Facets",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Triangulation Renderer",
+   "match": "RWB PLEXREN Triangles",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Beams Renderer",
+   "match": "RWB PLEXREN Beams",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Instances Object",
+   "match": "RWB PLEXSRC Instances",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Legacy Renderer",
+   "match": "RWB PLEXUS",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Sound Effector",
+   "match": "RWB PLEXEFF Sound Effector",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Plexus Slicer Object",
+   "match": "RWB PLEXSRC Tracer",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "3D Stroke",
+   "match": "tc 3DStrokePath",
+   "category": "RG Trapcode"
+  },
+  {
+   "name": "Echospace",
+   "match": "tc Echospace",
+   "category": "RG Trapcode"
+  },
+  {
+   "name": "Form",
+   "match": "tc Form",
+   "category": "RG Trapcode"
+  },
+  {
+   "name": "Horizon",
+   "match": "tc Trapcode Horizon",
+   "category": "RG Trapcode"
+  },
+  {
+   "name": "Lux",
+   "match": "tc Lux",
+   "category": "RG Trapcode"
+  },
+  {
+   "name": "Mir 3",
+   "match": "rg Mir",
+   "category": "RG Trapcode"
+  },
+  {
+   "name": "Particular",
+   "match": "tc Particular",
+   "category": "RG Trapcode"
+  },
+  {
+   "name": "Shine",
+   "match": "tc Shine",
+   "category": "RG Trapcode"
+  },
+  {
+   "name": "Sound Keys",
+   "match": "tc Sound Keys",
+   "category": "RG Trapcode"
+  },
+  {
+   "name": "Starglow",
+   "match": "tc Starglow",
+   "category": "RG Trapcode"
+  },
+  {
+   "name": "Tao",
+   "match": "tc Tao",
+   "category": "RG Trapcode"
+  },
+  {
+   "name": "Dust Transition",
+   "match": "irrealix Dust Transition",
+   "category": "irrealix"
+  },
+  {
+   "name": "Transform",
+   "match": "ADBE Geometry",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Transform",
+   "match": "ADBE Geometry2",
+   "category": "Distort"
+  },
+  {
+   "name": "Brush Strokes",
+   "match": "ADBE Brush Strokes",
+   "category": "Stylize"
+  },
+  {
+   "name": "Photoshop Solid Fill",
+   "match": "ADBE PSL Solid Fill",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Gradient Ramp",
+   "match": "ADBE Ramp",
+   "category": "Generate"
+  },
+  {
+   "name": "Echo",
+   "match": "ADBE Echo",
+   "category": "Time"
+  },
+  {
+   "name": "Advanced Spill Suppressor",
+   "match": "ADBE Spill2",
+   "category": "Keying"
+  },
+  {
+   "name": "Warp",
+   "match": "ADBE WRPMESH",
+   "category": "Distort"
+  },
+  {
+   "name": "Solid Composite",
+   "match": "ADBE Solid Composite",
+   "category": "Channel"
+  },
+  {
+   "name": "Turbulent Displace",
+   "match": "ADBE Turbulent Displace",
+   "category": "Distort"
+  },
+  {
+   "name": "Delay",
+   "match": "ADBE Aud Delay",
+   "category": "Audio"
+  },
+  {
+   "name": "Reshape",
+   "match": "ADBE RESHAPE",
+   "category": "Distort"
+  },
+  {
+   "name": "Lightning",
+   "match": "ADBE Lightning",
+   "category": "Obsolete"
+  },
+  {
+   "name": "Turbulent Noise",
+   "match": "ADBE AIF Perlin Noise 3D",
+   "category": "Noise & Grain"
+  },
+  {
+   "name": "Roughen Edges",
+   "match": "ADBE Roughen Edges",
+   "category": "Stylize"
+  },
+  {
+   "name": "Paint Bucket",
+   "match": "ADBE Paint Bucket",
+   "category": "Generate"
+  },
+  {
+   "name": "Photo Filter",
+   "match": "ADBE PhotoFilterPS",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Selective Color",
+   "match": "ADBE SelectiveColor",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Vibrance",
+   "match": "ADBE Vibrance",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Brightness & Contrast",
+   "match": "ADBE Brightness & Contrast 2",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Median",
+   "match": "ADBE PS Median",
+   "category": "Noise & Grain"
+  },
+  {
+   "name": "Black & White",
+   "match": "ADBE Black&White",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Compound Arithmetic",
+   "match": "ADBE Compound Arithmetic",
+   "category": "Channel"
+  },
+  {
+   "name": "Add Grain",
+   "match": "VISINF Grain Implant",
+   "category": "Noise & Grain"
+  },
+  {
+   "name": "Photoshop Drop Shadow",
+   "match": "ADBE PSL Drop Shadow",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "3D Camera Tracker",
+   "match": "ADBE 3D Tracker",
+   "category": "Perspective"
+  },
+  {
+   "name": "Lens Flare",
+   "match": "ADBE Lens Flare",
+   "category": "Generate"
+  },
+  {
+   "name": "Key Cleaner",
+   "match": "ADBE KeyCleaner",
+   "category": "Keying"
+  },
+  {
+   "name": "Sharpen",
+   "match": "ADBE Sharpen",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "ID Matte",
+   "match": "ADBE ID MATTE",
+   "category": "3D Channel"
+  },
+  {
+   "name": "Bevel Alpha",
+   "match": "ADBE Bevel Alpha",
+   "category": "Perspective"
+  },
+  {
+   "name": "Time Difference",
+   "match": "ADBE Difference",
+   "category": "Time"
+  },
+  {
+   "name": "Bass & Treble",
+   "match": "ADBE Aud BT",
+   "category": "Audio"
+  },
+  {
+   "name": "Beam",
+   "match": "ADBE Laser",
+   "category": "Generate"
+  },
+  {
+   "name": "Vector Paint",
+   "match": "ADBE Vector Paint",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Motion Tile",
+   "match": "ADBE Tile",
+   "category": "Stylize"
+  },
+  {
+   "name": "Hue/Saturation",
+   "match": "ADBE HUE SATURATION",
+   "category": "Color Correction"
+  },
+  {
+   "name": "VR De-Noise",
+   "match": "Mettle SkyBox Denoise",
+   "category": "Immersive Video"
+  },
+  {
+   "name": "Gaussian Blur",
+   "match": "ADBE Gaussian Blur 2",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "HDR Compander",
+   "match": "ADBE Compander",
+   "category": "Utility"
+  },
+  {
+   "name": "Exposure",
+   "match": "ADBE Exposure2",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Exposure",
+   "match": "ADBE Exposure",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Find Edges",
+   "match": "ADBE Find Edges",
+   "category": "Stylize"
+  },
+  {
+   "name": "Noise HLS",
+   "match": "ADBE Noise HLS",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Noise HLS",
+   "match": "ADBE Noise HLS2",
+   "category": "Noise & Grain"
+  },
+  {
+   "name": "Color Link",
+   "match": "ADBE Color Link",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Fractal Noise",
+   "match": "ADBE Fractal Noise",
+   "category": "Noise & Grain"
+  },
+  {
+   "name": "Mirror",
+   "match": "ADBE Mirror",
+   "category": "Distort"
+  },
+  {
+   "name": "Noise HLS Auto",
+   "match": "ADBE Noise HLS Auto2",
+   "category": "Noise & Grain"
+  },
+  {
+   "name": "Noise HLS Auto",
+   "match": "ADBE Noise HLS Auto",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Smart Blur",
+   "match": "ADBE Smart Blur",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "Blend",
+   "match": "ADBE Blend",
+   "category": "Channel"
+  },
+  {
+   "name": "VR Color Gradients",
+   "match": "Mettle SkyBox Color Gradients",
+   "category": "Immersive Video"
+  },
+  {
+   "name": "Gamma/Pedestal/Gain",
+   "match": "ADBE Gamma/Pedestal/Gain2",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Cineon Converter",
+   "match": "ADBE Cineon Converter",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Cineon Converter",
+   "match": "ADBE Cineon Converter2",
+   "category": "Utility"
+  },
+  {
+   "name": "Channel Combiner",
+   "match": "ADBE Channel Combiner",
+   "category": "Channel"
+  },
+  {
+   "name": "VR Fractal Noise",
+   "match": "Mettle SkyBox Fractal Noise",
+   "category": "Immersive Video"
+  },
+  {
+   "name": "Auto Color",
+   "match": "ADBE AutoColor",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Inner/Outer Key",
+   "match": "ADBE ATG Extract",
+   "category": "Keying"
+  },
+  {
+   "name": "Median (Legacy)",
+   "match": "ADBE Median",
+   "category": "Noise & Grain"
+  },
+  {
+   "name": "Vegas",
+   "match": "APC Vegas",
+   "category": "Generate"
+  },
+  {
+   "name": "Colorama",
+   "match": "APC Colorama",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Camera Lens Blur",
+   "match": "ADBE Camera Lens Blur",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "Bulge",
+   "match": "ADBE Bulge",
+   "category": "Distort"
+  },
+  {
+   "name": "Threshold",
+   "match": "ADBE Threshold",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Threshold",
+   "match": "ADBE Threshold2",
+   "category": "Stylize"
+  },
+  {
+   "name": "VR Glow",
+   "match": "Mettle SkyBox Glow",
+   "category": "Immersive Video"
+  },
+  {
+   "name": "Simple Choker",
+   "match": "ADBE Simple Choker",
+   "category": "Matte"
+  },
+  {
+   "name": "Linear Color Key",
+   "match": "ADBE Linear Color Key2",
+   "category": "Keying"
+  },
+  {
+   "name": "Set Channels",
+   "match": "ADBE Set Channels",
+   "category": "Channel"
+  },
+  {
+   "name": "Brightness & Contrast",
+   "match": "ADBE Brightness & Contrast",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Levels",
+   "match": "ADBE Easy Levels",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Levels",
+   "match": "ADBE Easy Levels2",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Levels (Individual Controls)",
+   "match": "ADBE Pro Levels2",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Levels (Individual Controls)",
+   "match": "ADBE Pro Levels",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Bevel Edges",
+   "match": "ADBE Bevel Edges",
+   "category": "Perspective"
+  },
+  {
+   "name": "Minimax",
+   "match": "ADBE Minimax",
+   "category": "Channel"
+  },
+  {
+   "name": "Corner Pin",
+   "match": "ADBE Corner Pin",
+   "category": "Distort"
+  },
+  {
+   "name": "Eyedropper Fill",
+   "match": "ADBE Eyedropper Fill",
+   "category": "Generate"
+  },
+  {
+   "name": "VR Sharpen",
+   "match": "Mettle SkyBox Sharpen",
+   "category": "Immersive Video"
+  },
+  {
+   "name": "Fast Box Blur",
+   "match": "ADBE Box Blur2",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "Box Blur",
+   "match": "ADBE Box Blur",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "4-Color Gradient",
+   "match": "ADBE 4ColorGradient",
+   "category": "Generate"
+  },
+  {
+   "name": "Broadcast Colors",
+   "match": "ADBE Broadcast Colors",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Color Key",
+   "match": "ADBE Color Key",
+   "category": "Obsolete"
+  },
+  {
+   "name": "VR Chromatic Aberrations",
+   "match": "Mettle SkyBox Chromatic Aberrat",
+   "category": "Immersive Video"
+  },
+  {
+   "name": "Photo Filter",
+   "match": "ADBE Photo Filter",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Ellipse",
+   "match": "ADBE ELLIPSE",
+   "category": "Generate"
+  },
+  {
+   "name": "Parametric EQ",
+   "match": "ADBE Param EQ",
+   "category": "Audio"
+  },
+  {
+   "name": "High-Low Pass",
+   "match": "ADBE Aud HiLo",
+   "category": "Audio"
+  },
+  {
+   "name": "Auto Contrast",
+   "match": "ADBE AutoContrast",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Posterize Time",
+   "match": "ADBE Posterize Time",
+   "category": "Time"
+  },
+  {
+   "name": "Bezier Warp",
+   "match": "ADBE BEZMESH",
+   "category": "Distort"
+  },
+  {
+   "name": "Backwards",
+   "match": "ADBE Aud Reverse",
+   "category": "Audio"
+  },
+  {
+   "name": "Radial Wipe",
+   "match": "ADBE Radial Wipe",
+   "category": "Transition"
+  },
+  {
+   "name": "Displacement Map",
+   "match": "ADBE Displacement Map",
+   "category": "Distort"
+  },
+  {
+   "name": "VR Converter",
+   "match": "Mettle SkyBox Converter",
+   "category": "Immersive Video"
+  },
+  {
+   "name": "Basic 3D",
+   "match": "ADBE Basic 3D",
+   "category": "Obsolete"
+  },
+  {
+   "name": "Noise Alpha",
+   "match": "ADBE Noise Alpha2",
+   "category": "Noise & Grain"
+  },
+  {
+   "name": "Noise Alpha",
+   "match": "ADBE Noise Alpha",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Auto Levels",
+   "match": "ADBE AutoLevels",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Remove Grain",
+   "match": "VISINF Grain Removal",
+   "category": "Noise & Grain"
+  },
+  {
+   "name": "Polar Coordinates",
+   "match": "ADBE Polar Coordinates",
+   "category": "Distort"
+  },
+  {
+   "name": "Timecode",
+   "match": "ADBE Timecode",
+   "category": "Text"
+  },
+  {
+   "name": "Scatter",
+   "match": "ADBE Scatter",
+   "category": "Stylize"
+  },
+  {
+   "name": "Particle Playground",
+   "match": "ADBE Playgnd",
+   "category": "Simulation"
+  },
+  {
+   "name": "3D Channel Extract",
+   "match": "ADBE AUX CHANNEL EXTRACT",
+   "category": "3D Channel"
+  },
+  {
+   "name": "Write-on",
+   "match": "ADBE Write-on",
+   "category": "Generate"
+  },
+  {
+   "name": "Checkerboard",
+   "match": "ADBE Checkerboard",
+   "category": "Generate"
+  },
+  {
+   "name": "Warp Stabilizer",
+   "match": "ADBE SubspaceStabilizer",
+   "category": "Distort"
+  },
+  {
+   "name": "PS Arbitrary Map",
+   "match": "ADBE PS Arbitrary Map",
+   "category": "Color Correction"
+  },
+  {
+   "name": "VR Digital Glitch",
+   "match": "Mettle SkyBox Digital Glitch",
+   "category": "Immersive Video"
+  },
+  {
+   "name": "Unsharp Mask",
+   "match": "ADBE Unsharp Mask2",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "Unsharp Mask",
+   "match": "ADBE Unsharp Mask",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Extract",
+   "match": "ADBE Extract",
+   "category": "Keying"
+  },
+  {
+   "name": "Depth Matte",
+   "match": "ADBE DEPTH MATTE",
+   "category": "3D Channel"
+  },
+  {
+   "name": "Texturize",
+   "match": "ADBE Texturize",
+   "category": "Stylize"
+  },
+  {
+   "name": "Linear Wipe",
+   "match": "ADBE Linear Wipe",
+   "category": "Transition"
+  },
+  {
+   "name": "Color Balance",
+   "match": "ADBE Color Balance 2",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Advanced Lightning",
+   "match": "ADBE Lightning 2",
+   "category": "Generate"
+  },
+  {
+   "name": "Scribble",
+   "match": "ADBE Scribble Fill",
+   "category": "Generate"
+  },
+  {
+   "name": "Stroke",
+   "match": "ADBE Stroke",
+   "category": "Generate"
+  },
+  {
+   "name": "Invert",
+   "match": "ADBE Invert",
+   "category": "Channel"
+  },
+  {
+   "name": "Reverb",
+   "match": "ADBE Aud Reverb",
+   "category": "Audio"
+  },
+  {
+   "name": "Grid",
+   "match": "ADBE Grid",
+   "category": "Generate"
+  },
+  {
+   "name": "Grow Bounds",
+   "match": "ADBE GROW BOUNDS",
+   "category": "Utility"
+  },
+  {
+   "name": "Venetian Blinds",
+   "match": "ADBE Venetian Blinds",
+   "category": "Transition"
+  },
+  {
+   "name": "Modulator",
+   "match": "ADBE Aud Modulator",
+   "category": "Audio"
+  },
+  {
+   "name": "Equalize",
+   "match": "ADBE Equalize",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Flange & Chorus",
+   "match": "ADBE Aud_Flange",
+   "category": "Audio"
+  },
+  {
+   "name": "Card Wipe",
+   "match": "APC CardWipeCam",
+   "category": "Transition"
+  },
+  {
+   "name": "Noise",
+   "match": "ADBE Noise2",
+   "category": "Noise & Grain"
+  },
+  {
+   "name": "Noise",
+   "match": "ADBE Noise",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Strobe Light",
+   "match": "ADBE Strobe",
+   "category": "Stylize"
+  },
+  {
+   "name": "Wave World",
+   "match": "APC Wave World",
+   "category": "Simulation"
+  },
+  {
+   "name": "Shift Channels",
+   "match": "ADBE Shift Channels",
+   "category": "Channel"
+  },
+  {
+   "name": "Matte Choker",
+   "match": "ADBE Matte Choker",
+   "category": "Matte"
+  },
+  {
+   "name": "Radial Shadow",
+   "match": "ADBE Radial Shadow",
+   "category": "Perspective"
+  },
+  {
+   "name": "Tritone",
+   "match": "ADBE Tritone",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Channel Mixer",
+   "match": "ADBE CHANNEL MIXER",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Curves",
+   "match": "ADBE CurvesCustom",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Luma Key",
+   "match": "ADBE Luma Key",
+   "category": "Obsolete"
+  },
+  {
+   "name": "Smear",
+   "match": "ADBE SCHMEAR",
+   "category": "Distort"
+  },
+  {
+   "name": "Color Difference Key",
+   "match": "ADBE Color Difference Key",
+   "category": "Keying"
+  },
+  {
+   "name": "Foam",
+   "match": "APC Foam",
+   "category": "Simulation"
+  },
+  {
+   "name": "Color Balance (HLS)",
+   "match": "ADBE Color Balance (HLS)",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Caustics",
+   "match": "APC Caustics",
+   "category": "Simulation"
+  },
+  {
+   "name": "Photoshop Bevel And Emboss",
+   "match": "ADBE PSL Bevel Emboss",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Channel Blur",
+   "match": "ADBE Channel Blur",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "Wave Warp",
+   "match": "ADBE Wave Warp",
+   "category": "Distort"
+  },
+  {
+   "name": "Color Stabilizer",
+   "match": "ADBE Deflicker",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Spill Suppressor",
+   "match": "ADBE Spill Suppressor",
+   "category": "Obsolete"
+  },
+  {
+   "name": "Optics Compensation",
+   "match": "ADBE Optics Compensation",
+   "category": "Distort"
+  },
+  {
+   "name": "Pixel Motion Blur",
+   "match": "ADBE OFMotionBlur",
+   "category": "Time"
+  },
+  {
+   "name": "Rolling Shutter Repair",
+   "match": "ADBE Rolling Shutter",
+   "category": "Distort"
+  },
+  {
+   "name": "Timewarp",
+   "match": "ADBE Timewarp",
+   "category": "Time"
+  },
+  {
+   "name": "VR Rotate Sphere",
+   "match": "Mettle SkyBox Rotate Sphere",
+   "category": "Immersive Video"
+  },
+  {
+   "name": "Apply Color LUT",
+   "match": "ADBE Apply Color LUT2",
+   "category": "Utility"
+  },
+  {
+   "name": "Apply Color LUT",
+   "match": "ADBE Apply Color LUT",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Mosaic",
+   "match": "ADBE Mosaic",
+   "category": "Stylize"
+  },
+  {
+   "name": "Tint",
+   "match": "ADBE Tint",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Card Dance",
+   "match": "APC CardDanceCam",
+   "category": "Simulation"
+  },
+  {
+   "name": "Gaussian Blur (Legacy)",
+   "match": "ADBE Gaussian Blur",
+   "category": "Obsolete"
+  },
+  {
+   "name": "Lumetri Color",
+   "match": "ADBE Lumetri",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Fill",
+   "match": "ADBE Fill",
+   "category": "Generate"
+  },
+  {
+   "name": "Shatter",
+   "match": "APC Shatter",
+   "category": "Simulation"
+  },
+  {
+   "name": "Set Matte",
+   "match": "ADBE Set Matte3",
+   "category": "Channel"
+  },
+  {
+   "name": "Set Matte",
+   "match": "ADBE Set Matte2",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Compound Blur",
+   "match": "ADBE Compound Blur",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "Liquify",
+   "match": "ADBE LIQUIFY",
+   "category": "Distort"
+  },
+  {
+   "name": "Three-Way Color Corrector",
+   "match": "ADBE Three-Way Color Corrector",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Iris Wipe",
+   "match": "ADBE IRIS_WIPE",
+   "category": "Transition"
+  },
+  {
+   "name": "Drop Shadow",
+   "match": "ADBE Drop Shadow",
+   "category": "Perspective"
+  },
+  {
+   "name": "Tone",
+   "match": "ADBE Aud Tone",
+   "category": "Audio"
+  },
+  {
+   "name": "Basic Text",
+   "match": "ADBE Basic Text2",
+   "category": "Obsolete"
+  },
+  {
+   "name": "Audio Waveform",
+   "match": "ADBE AudWave",
+   "category": "Generate"
+  },
+  {
+   "name": "Audio Spectrum",
+   "match": "ADBE AudSpect",
+   "category": "Generate"
+  },
+  {
+   "name": "Magnify",
+   "match": "ADBE Magnify",
+   "category": "Distort"
+  },
+  {
+   "name": "Bilateral Blur",
+   "match": "ADBE Bilateral",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "VR Blur",
+   "match": "Mettle SkyBox Blur",
+   "category": "Immersive Video"
+  },
+  {
+   "name": "Mesh Warp",
+   "match": "ADBE MESH WARP",
+   "category": "Distort"
+  },
+  {
+   "name": "Match Grain",
+   "match": "VISINF Grain Duplication",
+   "category": "Noise & Grain"
+  },
+  {
+   "name": "Detail-preserving Upscale",
+   "match": "ADBE Upscale",
+   "category": "Distort"
+  },
+  {
+   "name": "Twirl",
+   "match": "ADBE Twirl",
+   "category": "Distort"
+  },
+  {
+   "name": "Fog 3D",
+   "match": "ADBE FOG_3D",
+   "category": "3D Channel"
+  },
+  {
+   "name": "Color Emboss",
+   "match": "ADBE Color Emboss",
+   "category": "Stylize"
+  },
+  {
+   "name": "3D Glasses",
+   "match": "ADBE 3D Glasses2",
+   "category": "Perspective"
+  },
+  {
+   "name": "3D Glasses (Obsolete)",
+   "match": "ADBE 3D Glasses",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Change Color",
+   "match": "ADBE Change Color",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Circle",
+   "match": "ADBE Circle",
+   "category": "Generate"
+  },
+  {
+   "name": "Glow",
+   "match": "ADBE Glo2",
+   "category": "Stylize"
+  },
+  {
+   "name": "Photoshop Inner Glow",
+   "match": "ADBE PSL Inner Glow",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Leave Color",
+   "match": "ADBE Leave Color",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Photoshop Inner Shadow",
+   "match": "ADBE PSL Inner Shadow",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Calculations",
+   "match": "ADBE Calculations",
+   "category": "Channel"
+  },
+  {
+   "name": "Time Displacement",
+   "match": "ADBE Time Displacement",
+   "category": "Time"
+  },
+  {
+   "name": "Difference Matte",
+   "match": "ADBE Difference Matte2",
+   "category": "Keying"
+  },
+  {
+   "name": "Block Dissolve",
+   "match": "ADBE Block Dissolve",
+   "category": "Transition"
+  },
+  {
+   "name": "Cell Pattern",
+   "match": "ADBE Cell Pattern",
+   "category": "Generate"
+  },
+  {
+   "name": "Directional Blur",
+   "match": "ADBE Motion Blur",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "Spherize",
+   "match": "ADBE Spherize",
+   "category": "Distort"
+  },
+  {
+   "name": "Emboss",
+   "match": "ADBE Emboss",
+   "category": "Stylize"
+  },
+  {
+   "name": "Gradient Wipe",
+   "match": "ADBE Gradient Wipe",
+   "category": "Transition"
+  },
+  {
+   "name": "Radio Waves",
+   "match": "APC Radio Waves",
+   "category": "Generate"
+  },
+  {
+   "name": "Radial Blur",
+   "match": "ADBE Radial Blur",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "VR Sphere To Plane",
+   "match": "Mettle SkyBox Viewer",
+   "category": "Immersive Video"
+  },
+  {
+   "name": "Photoshop Outer Glow",
+   "match": "ADBE PSL Outer Glow",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Fast Blur (Legacy)",
+   "match": "ADBE Fast Blur",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Reduce Interlace Flicker",
+   "match": "ADBE Reduce Interlace Flicker",
+   "category": "Obsolete"
+  },
+  {
+   "name": "Shadow/Highlight",
+   "match": "ADBE ShadowHighlight",
+   "category": "Color Correction"
+  },
+  {
+   "name": "VR Plane to Sphere",
+   "match": "Mettle SkyBox Project 2D",
+   "category": "Immersive Video"
+  },
+  {
+   "name": "Checkbox Control",
+   "match": "ADBE Checkbox Control",
+   "category": "Expression Controls"
+  },
+  {
+   "name": "Slider Control",
+   "match": "ADBE Slider Control",
+   "category": "Expression Controls"
+  },
+  {
+   "name": "Layer Control",
+   "match": "ADBE Layer Control",
+   "category": "Expression Controls"
+  },
+  {
+   "name": "Color Control",
+   "match": "ADBE Color Control",
+   "category": "Expression Controls"
+  },
+  {
+   "name": "3D Point Control",
+   "match": "ADBE Point3D Control",
+   "category": "Expression Controls"
+  },
+  {
+   "name": "Point Control",
+   "match": "ADBE Point Control",
+   "category": "Expression Controls"
+  },
+  {
+   "name": "Angle Control",
+   "match": "ADBE Angle Control",
+   "category": "Expression Controls"
+  },
+  {
+   "name": "Dropdown Menu Control",
+   "match": "ADBE Dropdown Control",
+   "category": "Expression Controls"
+  },
+  {
+   "name": "Color Range",
+   "match": "ADBE Color Range",
+   "category": "Keying"
+  },
+  {
+   "name": "Cartoon",
+   "match": "ADBE Cartoonify",
+   "category": "Stylize"
+  },
+  {
+   "name": "Color Profile Converter",
+   "match": "ADBE ProfileToProfile",
+   "category": "Utility"
+  },
+  {
+   "name": "HDR Highlight Compression",
+   "match": "ADBE HDR ToneMap",
+   "category": "Utility"
+  },
+  {
+   "name": "Arithmetic",
+   "match": "ADBE Arithmetic",
+   "category": "Channel"
+  },
+  {
+   "name": "Dust & Scratches",
+   "match": "ADBE Dust & Scratches",
+   "category": "Noise & Grain"
+  },
+  {
+   "name": "Video Limiter",
+   "match": "ADBE DigitalVideoLimiter",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Ripple",
+   "match": "ADBE Ripple",
+   "category": "Distort"
+  },
+  {
+   "name": "Change to Color",
+   "match": "ADBE Change To Color",
+   "category": "Color Correction"
+  },
+  {
+   "name": "Numbers",
+   "match": "ADBE Numbers2",
+   "category": "Text"
+  },
+  {
+   "name": "Fractal",
+   "match": "ADBE Fractal",
+   "category": "Generate"
+  },
+  {
+   "name": "Offset",
+   "match": "ADBE Offset",
+   "category": "Distort"
+  },
+  {
+   "name": "Stereo Mixer",
+   "match": "ADBE Aud Stereo Mixer",
+   "category": "Audio"
+  },
+  {
+   "name": "Camera-Shake Deblur",
+   "match": "ADBE CameraShakeDeblur",
+   "category": "Blur & Sharpen"
+  },
+  {
+   "name": "Alpha Levels",
+   "match": "ADBE Alpha Levels2",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Alpha Levels",
+   "match": "ADBE Alpha Levels3",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Color Balance",
+   "match": "ADBE Color Balance",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Remove Color Matting",
+   "match": "ADBE Remove Color Matting",
+   "category": "Channel"
+  },
+  {
+   "name": "Posterize",
+   "match": "ADBE Posterize",
+   "category": "Stylize"
+  },
+  {
+   "name": "Path Text",
+   "match": "ADBE Path Text",
+   "category": "Obsolete"
+  },
+  {
+   "name": "Depth of Field",
+   "match": "ADBE DEPTH FIELD",
+   "category": "3D Channel"
+  },
+  {
+   "name": "Refine Hard Matte",
+   "match": "ADBE RefineRBMatte",
+   "category": "Matte"
+  },
+  {
+   "name": "Refine Matte",
+   "match": "ADBE RefineMatte",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Refine Soft Matte",
+   "match": "ADBE RefineMatte2",
+   "category": "Matte"
+  },
+  {
+   "name": "Roto Brush & Refine Edge",
+   "match": "ADBE Samurai",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Paint",
+   "match": "ADBE Paint",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Puppet",
+   "match": "ADBE FreePin3",
+   "category": "_Obsolete"
+  },
+  {
+   "name": "Color Swirl",
+   "match": "ADBE Color Swirl",
+   "category": ""
+  },
+  {
+   "name": "Getting Jiggy",
+   "match": "ADBE Getting Jiggy",
+   "category": ""
+  },
+  {
+   "name": "Separate XYZ Position",
+   "match": "ADBE Separate XYZ Position",
+   "category": ""
+  },
+  {
+   "name": "Inset Video - framed",
+   "match": "ADBE CM InsetVideoFramed",
+   "category": ""
+  },
+  {
+   "name": "Inset Video - torn edges",
+   "match": "ADBE CM InsetVideoTorn",
+   "category": ""
+  },
+  {
+   "name": "Mood Lighting - amorphous",
+   "match": "ADBE CM MoodLightAmorph",
+   "category": ""
+  },
+  {
+   "name": "Mood Lighting - digital",
+   "match": "ADBE CM MoodLightDigital",
+   "category": ""
+  },
+  {
+   "name": "Mood Lighting - streaks",
+   "match": "ADBE CM MoodLightStreaks",
+   "category": ""
+  },
+  {
+   "name": "Cracked Tiles",
+   "match": "ADBE CM CrackedTiles",
+   "category": ""
+  },
+  {
+   "name": "Light Leaks - layer markers",
+   "match": "ADBE CM LightLeaksMarkers",
+   "category": ""
+  },
+  {
+   "name": "Light Leaks - random",
+   "match": "ADBE CM LightLeaksRandom",
+   "category": ""
+  },
+  {
+   "name": "Opacity Flash - layer markers",
+   "match": "ADBE CM OpacityFlashMarkers",
+   "category": ""
+  },
+  {
+   "name": "Opacity Flash - random",
+   "match": "ADBE CM OpacityFlashRandom",
+   "category": ""
+  },
+  {
+   "name": "Crop Edges",
+   "match": "ADBE CM CropEdges",
+   "category": ""
+  },
+  {
+   "name": "Autoscroll - horizontal",
+   "match": "ADBE CM AutoscrollHorizontal",
+   "category": ""
+  },
+  {
+   "name": "Autoscroll - vertical",
+   "match": "ADBE CM AutoscrollVertical",
+   "category": ""
+  },
+  {
+   "name": "Drift Over Time",
+   "match": "ADBE CM Throw",
+   "category": ""
+  },
+  {
+   "name": "Fade In+Out - frames",
+   "match": "ADBE CM FadeInOutFrames",
+   "category": ""
+  },
+  {
+   "name": "Fade In+Out - msec",
+   "match": "ADBE CM FadeInOutmsec",
+   "category": ""
+  },
+  {
+   "name": "Rotate Over Time",
+   "match": "ADBE CM Spin",
+   "category": ""
+  },
+  {
+   "name": "Scale Bounce - layer markers",
+   "match": "ADBE CM ScaleBounceMarkers",
+   "category": ""
+  },
+  {
+   "name": "Scale Bounce - random",
+   "match": "ADBE CM ScaleBounceRandom",
+   "category": ""
+  },
+  {
+   "name": "Wiggle - gelatin",
+   "match": "ADBE CM WiggleGelatin",
+   "category": ""
+  },
+  {
+   "name": "Wiggle - position",
+   "match": "ADBE CM WigglePosition",
+   "category": ""
+  },
+  {
+   "name": "Wiggle - rotation",
+   "match": "ADBE CM WiggleRotation",
+   "category": ""
+  },
+  {
+   "name": "Wiggle - scale",
+   "match": "ADBE CM WiggleScale",
+   "category": ""
+  },
+  {
+   "name": "Wiggle - shear",
+   "match": "ADBE CM WiggleShear",
+   "category": ""
+  },
+  {
+   "name": "Wigglerama",
+   "match": "ADBE CM Wigglerama",
+   "category": ""
+  },
+  {
+   "name": "Dissolve - unmelt",
+   "match": "ADBE CM DissolveUnmelt",
+   "category": ""
+  },
+  {
+   "name": "Zoom - 2D spin",
+   "match": "ADBE CM Zoom2DSpin",
+   "category": ""
+  },
+  {
+   "name": "Zoom - 3D tumble",
+   "match": "ADBE CM Zoom3DTumble",
+   "category": ""
+  },
+  {
+   "name": "Zoom - wobble",
+   "match": "ADBE CM ZoomWobble",
+   "category": ""
+  },
+  {
+   "name": "Zoom - bubble",
+   "match": "ADBE CM ZoomBubble",
+   "category": ""
+  },
+  {
+   "name": "Zoom - spiral",
+   "match": "ADBE CM ZoomSpiral",
+   "category": ""
+  },
+  {
+   "name": "Slide - variable",
+   "match": "ADBE CM SlideVariable",
+   "category": ""
+  },
+  {
+   "name": "Fly to Inset",
+   "match": "ADBE CM FlyToInset",
+   "category": ""
+  },
+  {
+   "name": "Corner Reveal",
+   "match": "ADBE CM CornerReveal",
+   "category": ""
+  },
+  {
+   "name": "Grid Wipe",
+   "match": "ADBE CM GridWipe",
+   "category": ""
+  },
+  {
+   "name": "Transition Master Control",
+   "match": "ADBE CM TransComplete",
+   "category": ""
+  },
+  {
+   "name": "Stretch Master Control",
+   "match": "ADBE CM TransStretch",
+   "category": ""
+  },
+  {
+   "name": "Dissolve Master Control",
+   "match": "ADBE CM TransDissolve",
+   "category": ""
+  },
+  {
+   "name": "Fade Master Control",
+   "match": "ADBE CM TransFade",
+   "category": ""
+  },
+  {
+   "name": "Mask Fade Controls",
+   "match": "ADBE CM TransFadeMask",
+   "category": ""
+  },
+  {
+   "name": "Wipe Master Control",
+   "match": "ADBE CM TransWipe",
+   "category": ""
+  },
+  {
+   "name": "Wipe Master Controls",
+   "match": "ADBE CM TransWipeFeath",
+   "category": ""
+  },
+  {
+   "name": "Card Wipe Master Control",
+   "match": "ADBE CM TransCard",
+   "category": ""
+  },
+  {
+   "name": "Slide Master Control",
+   "match": "ADBE CM TransSlide",
+   "category": ""
+  },
+  {
+   "name": "Stretch Master Control(corner)",
+   "match": "ADBE CM TransCorner",
+   "category": ""
+  },
+  {
+   "name": "Stretch Master Control (edge)",
+   "match": "ADBE CM TransDirection",
+   "category": ""
+  },
+  {
+   "name": "Iris Wipe Master Controls",
+   "match": "ADBE CM TransIris",
+   "category": ""
+  },
+  {
+   "name": "Radial Wipe Master Controls",
+   "match": "ADBE CM TransRadial",
+   "category": ""
+  },
+  {
+   "name": "Jiggle",
+   "match": "ADBE DE Jiggle",
+   "category": ""
+  },
+  {
+   "name": "Jiggle At Marker",
+   "match": "ADBE DE Jiggle At Marker",
+   "category": ""
+  },
+  {
+   "name": "Jiggle On Beat",
+   "match": "ADBE DE Jiggle On Beat",
+   "category": ""
+  },
+  {
+   "name": "Jiggle Random",
+   "match": "ADBE DE Jiggle Random",
+   "category": ""
+  },
+  {
+   "name": "Pulse",
+   "match": "ADBE DE Pulse",
+   "category": ""
+  },
+  {
+   "name": "Pulse At Marker",
+   "match": "ADBE DE Pulse At Marker",
+   "category": ""
+  },
+  {
+   "name": "Pulse On Beat",
+   "match": "ADBE DE Pulse On Beat",
+   "category": ""
+  },
+  {
+   "name": "Pulse Random",
+   "match": "ADBE DE Pulse Random",
+   "category": ""
+  },
+  {
+   "name": "Bounce",
+   "match": "ADBE DE Bounce",
+   "category": ""
+  },
+  {
+   "name": "Bounce At Marker",
+   "match": "ADBE DE Bounce At Marker",
+   "category": ""
+  },
+  {
+   "name": "Bounce On Beat",
+   "match": "ADBE DE Bounce On Beat",
+   "category": ""
+  },
+  {
+   "name": "Bounce Random",
+   "match": "ADBE DE Bounce Random",
+   "category": ""
+  },
+  {
+   "name": "Opacity Pulse",
+   "match": "ADBE DE Opacity Pulse",
+   "category": ""
+  },
+  {
+   "name": "Opacity Pulse At Marker",
+   "match": "ADBE DE Opacity Pulse At Marker",
+   "category": ""
+  },
+  {
+   "name": "Opacity Pulse On Beat",
+   "match": "ADBE DE Opacity Pulse On Beat",
+   "category": ""
+  },
+  {
+   "name": "Opacity Pulse Random",
+   "match": "ADBE DE Opacity Pulse Random",
+   "category": ""
+  },
+  {
+   "name": "Oscillate",
+   "match": "ADBE DE Oscillate",
+   "category": ""
+  },
+  {
+   "name": "Oscillate At Marker",
+   "match": "ADBE DE Oscillate At Marker",
+   "category": ""
+  },
+  {
+   "name": "Oscillate On Beat",
+   "match": "ADBE DE Oscillate On Beat",
+   "category": ""
+  },
+  {
+   "name": "Oscillate Random",
+   "match": "ADBE DE Oscillate Random",
+   "category": ""
+  },
+  {
+   "name": "Pendulum",
+   "match": "ADBE DE Pendulum",
+   "category": ""
+  },
+  {
+   "name": "Pendulum At Marker",
+   "match": "ADBE DE Pendulum At Marker",
+   "category": ""
+  },
+  {
+   "name": "Pendulum On Beat",
+   "match": "ADBE DE Pendulum On Beat",
+   "category": ""
+  },
+  {
+   "name": "Pendulum Random",
+   "match": "ADBE DE Pendulum Random",
+   "category": ""
+  },
+  {
+   "name": "Swarm",
+   "match": "ADBE DE Swarm",
+   "category": ""
+  },
+  {
+   "name": "Follow",
+   "match": "ADBE DE Follow",
+   "category": ""
+  },
+  {
+   "name": "Orbit",
+   "match": "ADBE DE Orbit",
+   "category": ""
+  },
+  {
+   "name": "Orbit 3D",
+   "match": "ADBE DE Orbit 3D",
+   "category": ""
+  },
+  {
+   "name": "Random Motion 1D",
+   "match": "ADBE DE Random Motion 1D",
+   "category": ""
+  },
+  {
+   "name": "Random Motion",
+   "match": "ADBE DE Random Motion",
+   "category": ""
+  },
+  {
+   "name": "Random Rotation",
+   "match": "ADBE DE Random Rotation",
+   "category": ""
+  },
+  {
+   "name": "Random Rotation 3D",
+   "match": "ADBE DE Random Rotation 3D",
+   "category": ""
+  },
+  {
+   "name": "Random Opacity",
+   "match": "ADBE DE Random Opacity",
+   "category": ""
+  },
+  {
+   "name": "Random Scale",
+   "match": "ADBE DE Random Scale",
+   "category": ""
+  },
+  {
+   "name": "Random Fill Color",
+   "match": "ADBE DE Random Fill Color",
+   "category": ""
+  },
+  {
+   "name": "Z Spring",
+   "match": "ADBE DE Z Spring",
+   "category": ""
+  },
+  {
+   "name": "Z Spring At Marker",
+   "match": "ADBE DE Z Spring At Marker",
+   "category": ""
+  },
+  {
+   "name": "Wobble Bounce",
+   "match": "ADBE DE Wobble Bounce",
+   "category": ""
+  },
+  {
+   "name": "Wobble Bounce At Marker",
+   "match": "ADBE DE Wobble Bounce At Marker",
+   "category": ""
+  },
+  {
+   "name": "Wobble Bounce On Beat",
+   "match": "ADBE DE Wobble Bounce On Beat",
+   "category": ""
+  },
+  {
+   "name": "Wobble Bounce Random",
+   "match": "ADBE DE Wobble Bounce Random",
+   "category": ""
+  },
+  {
+   "name": "Animated Shape Control",
+   "match": "ADBE CM Animated Shape Control",
+   "category": ""
+  },
+  {
+   "name": "Chaser Control",
+   "match": "ADBE CM Animated Shape 2",
+   "category": ""
+  },
+  {
+   "name": "Animated Shape Control",
+   "match": "ADBE CM Animated Shape 3",
+   "category": ""
+  },
+  {
+   "name": "Sample Image",
+   "match": "ADBE Sample Image",
+   "category": ""
+  },
+  {
+   "name": "Stereo 3D Controls",
+   "match": "ADBE Stereo 3D Controls",
+   "category": ""
+  },
+  {
+   "name": "Face Track Points",
+   "match": "Pseudo/ADBE Animal Head66",
+   "category": ""
+  },
+  {
+   "name": "Face Measurements",
+   "match": "Pseudo/ADBE Animal Head14",
+   "category": ""
+  },
+  {
+   "name": "Trace Path",
+   "match": "Pseudo/ADBE Trace Path",
+   "category": ""
+  }
+ ]
+}

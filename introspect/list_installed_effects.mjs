@@ -17,31 +17,47 @@ const BRIDGE = path.join(os.homedir(), 'Documents', 'ae-mcp-bridge');
 const CMD = path.join(BRIDGE, 'ae_command.json');
 const RES = path.join(BRIDGE, 'ae_mcp_result.json');
 
-const SCRIPT = String.raw`(function () {
+// app.effects access is SLOW (plugin-registry hit per element; >60s for a full suite on
+// cold AE) — pull in chunks with a generous per-chunk timeout.
+const chunkScript = (from, to) => String.raw`(function () {
   var esc = function (s) { return String(s).replace(/\\/g, "\\\\").replace(/"/g, '\"'); };
   try {
-    var out = [];
-    for (var i = 1; i <= app.effects.length; i++) {
+    var n = app.effects.length, out = [];
+    for (var i = ${from}; i < Math.min(${to}, n); i++) {
       var e = app.effects[i];
       out.push('{"name":"' + esc(e.displayName) + '","match":"' + esc(e.matchName) + '","category":"' + esc(e.category) + '"}');
     }
-    return '{"status":"ok","count":' + out.length + ',"effects":[' + out.join(",") + ']}';
+    return '{"status":"ok","total":' + n + ',"effects":[' + out.join(",") + ']}';
   } catch (err) { return '{"status":"error","message":"' + esc(String(err)) + '"}'; }
 })();`;
 
-fs.writeFileSync(RES, JSON.stringify({ status: 'waiting' }));
-fs.writeFileSync(CMD, JSON.stringify({ command: 'runScript', args: { script: SCRIPT }, timestamp: new Date().toISOString(), status: 'pending' }, null, 2));
-
-const deadline = Date.now() + 60000;
-let report = null;
-while (Date.now() < deadline) {
-  await new Promise(r => setTimeout(r, 1500));
-  try {
-    const c = JSON.parse(fs.readFileSync(CMD, 'utf8'));
-    if (c.status === 'completed' || c.status === 'error') { report = JSON.parse(fs.readFileSync(RES, 'utf8')); break; }
-  } catch { /* mid-write */ }
+async function send(script, timeoutMs) {
+  fs.writeFileSync(RES, JSON.stringify({ status: 'waiting' }));
+  fs.writeFileSync(CMD, JSON.stringify({ command: 'runScript', args: { script }, timestamp: new Date().toISOString(), status: 'pending' }, null, 2));
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    await new Promise(r => setTimeout(r, 1500));
+    try {
+      const c = JSON.parse(fs.readFileSync(CMD, 'utf8'));
+      if (c.status === 'completed' || c.status === 'error') return JSON.parse(fs.readFileSync(RES, 'utf8'));
+    } catch { /* mid-write */ }
+  }
+  return null;
 }
-if (!report || report.status !== 'ok') { console.error('failed: ' + JSON.stringify(report).slice(0, 200)); process.exit(1); }
+
+const CHUNK = 250;
+let report = null;
+{
+  const first = await send(chunkScript(0, CHUNK), 240000);
+  if (!first || first.status !== 'ok') { console.error('failed: ' + JSON.stringify(first).slice(0, 200)); process.exit(1); }
+  report = { status: 'ok', count: first.total, effects: first.effects };
+  for (let from = CHUNK; from < first.total; from += CHUNK) {
+    process.stderr.write(`chunk ${from}/${first.total}...\n`);
+    const c = await send(chunkScript(from, from + CHUNK), 240000);
+    if (!c || c.status !== 'ok') { console.error('chunk failed at ' + from); process.exit(1); }
+    report.effects.push(...c.effects);
+  }
+}
 
 const byVendor = {};
 for (const e of report.effects) {

@@ -1565,12 +1565,12 @@
         [
           "tc Particular-0070",
           [
-            0.32941176470588235,
-            0.6509803921568628,
-            0.9647058823529412,
+            0.731,
+            0.837,
+            0.871,
             1
           ],
-          "FXid_PColor (alias)"
+          "FXid_PColor (alias) [tinted from vendor thumb]"
         ],
         [
           "tc Particular-0071",

@@ -106,6 +106,12 @@ const ENUM_OFFSET = new Set(['p type', 'emitter type', 'emitter dir', 'pt mode',
 // on SQUARE (the white-square failure class). Fallback: smoke/fire-ish -> Cloudlet, else GlowSphere.
 const SMOKEISH = /smoke|fire|cloud|fume|plume|haze|smolder|burn|ember|flame/i;
 
+// dominant color per vendor thumbnail (built by a PIL pre-pass; keyed by xbxc path) —
+// used to tint particles whose color-carrying texture is lost in the PType fallback
+const THUMB_COLORS = fs.existsSync(path.join(__dirname, 'thumb_colors.json'))
+  ? JSON.parse(fs.readFileSync(path.join(__dirname, 'thumb_colors.json'), 'utf8'))
+  : {};
+
 function stripFxid(key) {
   return norm(key.replace(/^FXid_/, '').replace(/^Options_/, '').replace(/^Settings_/, '')
     .replace(/^Gen1/, '')
@@ -200,11 +206,21 @@ for (const file of files) {
   }
 
   // PType fallback: Designer sprite/textured types (>=5, i.e. mapped value >=6) either land
-  // on AE Square or get rejected — substitute a built-in soft type instead.
+  // on AE Square or get rejected — substitute a built-in type instead: Star for star-named
+  // presets, Cloudlet for smoke/fire-ish, Glow Sphere otherwise. The lost TEXTURE usually
+  // carried the color, so tint the flat particle color from the vendor THUMBNAIL's dominant
+  // color (the thumb is the vendor's own render = ground truth for the intended hue).
   const ptype = params.find(p => p[0] === 'tc Particular-0703');
   if (ptype && ptype[1] >= 6) {
-    ptype[1] = SMOKEISH.test(category + ' ' + base) ? 4 : 2;
-    ptype[2] += ` [sprite fallback -> ${ptype[1] === 4 ? 'Cloudlet' : 'Glow Sphere'}]`;
+    const names = category + ' ' + base;
+    ptype[1] = /star/i.test(names) ? 3 : SMOKEISH.test(names) ? 4 : 2;
+    ptype[2] += ` [sprite fallback -> ${({ 3: 'Star', 4: 'Cloudlet', 2: 'Glow Sphere' })[ptype[1]]}]`;
+    const tint = THUMB_COLORS[file];
+    if (tint) {
+      const pcol = params.find(p => p[0] === 'tc Particular-0070');
+      if (pcol) { pcol[1] = [...tint, 1]; pcol[2] += ' [tinted from vendor thumb]'; }
+      else params.push(['tc Particular-0070', [...tint, 1], 'tinted from vendor thumb']);
+    }
   }
 
   // gradient flatten: Set Color = Over Life / Random exposes the UNSCRIPTABLE color-over-life
