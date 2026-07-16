@@ -59,3 +59,28 @@ sheets + pixel stats; agent-vision scored all pairs (`validation/scores.json`).
 The 23 matches are usable recipes as-is; the 13 ok-partials are one tune-loop pass away.
 Slug collision bug: `single-glow` and `triangles-2d` exist in two categories and overwrote
 each other's drafts — include the category in the slug on the next mining round.
+
+## Round-3 results (2026-07-16, all 186 re-validated)
+
+Fixes landed: sprite-fallback (probed 0703 table: 1 Sphere / 2 GlowSphere / 3 Star /
+4 Cloudlet / 5 Streaklet / 6 Square, >6 rejected), **thumbnail-dominant-color tint** on
+texture loss (PIL pre-pass → `thumb_colors.json`), star-name → Star type, burst spike +
+life-aware sampling, slug de-collision, aux SE_* aliases (dormant — see below).
+
+**Trajectory: r1 23 / 71 / 90 → r3 32 match / 107 partial / 49 fail.**
+The tint was the big win: entire categories went from white/wrong to vendor-hue particle
+fields (icosas, tech-balls, stars, streak-brushes, smoke-magic/wizard, fire family).
+ring-explosion became a clean usable ring element; point-explosion now matches density.
+
+Round-4 queue (by yield):
+1. **aux/S2 unlock (25 drafts)** — the user's Particular (v2023) replaced Aux Systems with
+   multi-system "Emit From Parent" (S2 params exist: Emitter Type S2=2830, From-Parent
+   Behavior=2752, psec=2194…); THREE probes failed to activate system 2 headlessly (even
+   Show Systems 0565). Plan: user adds System 2 once in the UI while the observer diffs
+   the param state — the diff reveals the enable param. Sensor feeds ontology.
+2. **burst-timing (10)** — muzzle/spark regressions: sample INSIDE the 0-0.1s emission
+   window (t≈0.08) for very short lives; scale spike count by life.
+3. **texture-color without thumbs (19)** — category-based fallback palette (fire→amber…).
+4. **ok-partials (14)** — density/size only: tune-loop batch can close these.
+5. **sprite-obj (27)** — the packs ship the sprites (`Trapcode Packs/*/Objs`, PNG/OBJ);
+   runner needs a footage-import + sprite-layer field, then Particle Type Sprite works.

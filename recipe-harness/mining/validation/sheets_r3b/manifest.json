@@ -1,0 +1,62 @@
+[
+ {
+  "sheet": 0,
+  "pos": 0,
+  "slug": "stars-5-pt",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 1,
+  "slug": "stars-6-pt",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 2,
+  "slug": "plasma-cloud-explosion-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 3,
+  "slug": "ring-explosion",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 4,
+  "slug": "smoke-explosion",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 5,
+  "slug": "smoke-hit",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 6,
+  "slug": "smoke-puff-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 7,
+  "slug": "smoke-puff-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 0,
+  "slug": "spark-blast-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 1,
+  "slug": "spark-directional",
+  "flag": "empty"
+ }
+]

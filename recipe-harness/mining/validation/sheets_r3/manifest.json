@@ -1,0 +1,602 @@
+[
+ {
+  "sheet": 0,
+  "pos": 0,
+  "slug": "abstract-and-geometric-triangles-2d",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 1,
+  "slug": "black-triangle-slabs",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 2,
+  "slug": "blue-icosas",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 3,
+  "slug": "bucky-balls",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 4,
+  "slug": "low-poly-spheres",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 5,
+  "slug": "multipoint-stars",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 6,
+  "slug": "orange-icosas",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 7,
+  "slug": "primitive-bits-directional",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 0,
+  "slug": "primitive-bits-uniform",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 1,
+  "slug": "rounded-cubes",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 2,
+  "slug": "stars-8-pt",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 3,
+  "slug": "wireframe-pyramids",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 4,
+  "slug": "yellow-tech-balls",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 5,
+  "slug": "basics-single-glow",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 6,
+  "slug": "explosion-trail",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 7,
+  "slug": "explosion-trail-with-gravity",
+  "flag": "empty"
+ },
+ {
+  "sheet": 2,
+  "pos": 0,
+  "slug": "point-explosion",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 1,
+  "slug": "confetti",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 2,
+  "slug": "blast-sparks-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 3,
+  "slug": "blast-sparks-2",
+  "flag": "empty"
+ },
+ {
+  "sheet": 2,
+  "pos": 4,
+  "slug": "dust-hit-02",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 5,
+  "slug": "dust-hit-03",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 6,
+  "slug": "explode-out",
+  "flag": "empty"
+ },
+ {
+  "sheet": 2,
+  "pos": 7,
+  "slug": "explode-up",
+  "flag": "empty"
+ },
+ {
+  "sheet": 3,
+  "pos": 0,
+  "slug": "explode-up-dark",
+  "flag": "empty"
+ },
+ {
+  "sheet": 3,
+  "pos": 1,
+  "slug": "fire-burst-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 2,
+  "slug": "fire-burst-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 3,
+  "slug": "fire-trails-1",
+  "flag": "empty"
+ },
+ {
+  "sheet": 3,
+  "pos": 4,
+  "slug": "fire-trails-2",
+  "flag": "empty"
+ },
+ {
+  "sheet": 3,
+  "pos": 5,
+  "slug": "fireball-medium-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 6,
+  "slug": "fireball-medium-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 7,
+  "slug": "flare-flash-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 0,
+  "slug": "flare-flash-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 1,
+  "slug": "flare-flash-3",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 2,
+  "slug": "glass-bits",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 3,
+  "slug": "glass-shard-explosion-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 4,
+  "slug": "glass-shard-explosion-3",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 5,
+  "slug": "glow-spark-blast",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 6,
+  "slug": "ignition",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 7,
+  "slug": "muzzle-flash-1",
+  "flag": "empty"
+ },
+ {
+  "sheet": 5,
+  "pos": 0,
+  "slug": "muzzle-flash-2",
+  "flag": "empty"
+ },
+ {
+  "sheet": 5,
+  "pos": 1,
+  "slug": "muzzle-flash-3",
+  "flag": "empty"
+ },
+ {
+  "sheet": 5,
+  "pos": 2,
+  "slug": "muzzle-flash-4",
+  "flag": "empty"
+ },
+ {
+  "sheet": 5,
+  "pos": 3,
+  "slug": "plasma-cloud-explosion-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 5,
+  "pos": 4,
+  "slug": "spark-single",
+  "flag": "empty"
+ },
+ {
+  "sheet": 5,
+  "pos": 5,
+  "slug": "spark-strings-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 5,
+  "pos": 6,
+  "slug": "spark-strings-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 5,
+  "pos": 7,
+  "slug": "spark-strings-3",
+  "flag": "ok"
+ },
+ {
+  "sheet": 6,
+  "pos": 0,
+  "slug": "sparks-ignite",
+  "flag": "empty"
+ },
+ {
+  "sheet": 6,
+  "pos": 1,
+  "slug": "falling-lights",
+  "flag": "ok"
+ },
+ {
+  "sheet": 6,
+  "pos": 2,
+  "slug": "ghost-trail",
+  "flag": "faint"
+ },
+ {
+  "sheet": 6,
+  "pos": 3,
+  "slug": "inverse-energy",
+  "flag": "ok"
+ },
+ {
+  "sheet": 6,
+  "pos": 4,
+  "slug": "light-blobs",
+  "flag": "ok"
+ },
+ {
+  "sheet": 6,
+  "pos": 5,
+  "slug": "love-hearts",
+  "flag": "ok"
+ },
+ {
+  "sheet": 6,
+  "pos": 6,
+  "slug": "magic-smoke-trail",
+  "flag": "faint"
+ },
+ {
+  "sheet": 6,
+  "pos": 7,
+  "slug": "northern-lights",
+  "flag": "ok"
+ },
+ {
+  "sheet": 7,
+  "pos": 0,
+  "slug": "organic-lines",
+  "flag": "empty"
+ },
+ {
+  "sheet": 7,
+  "pos": 1,
+  "slug": "organic-lines-2",
+  "flag": "faint"
+ },
+ {
+  "sheet": 7,
+  "pos": 2,
+  "slug": "shooting-flares-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 7,
+  "pos": 3,
+  "slug": "shooting-flares-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 7,
+  "pos": 4,
+  "slug": "falling-flares",
+  "flag": "ok"
+ },
+ {
+  "sheet": 7,
+  "pos": 5,
+  "slug": "flickering-lights",
+  "flag": "ok"
+ },
+ {
+  "sheet": 7,
+  "pos": 6,
+  "slug": "motion-graphics-single-glow",
+  "flag": "ok"
+ },
+ {
+  "sheet": 7,
+  "pos": 7,
+  "slug": "motion-graphics-triangles-2d",
+  "flag": "ok"
+ },
+ {
+  "sheet": 8,
+  "pos": 0,
+  "slug": "rose-spheres",
+  "flag": "ok"
+ },
+ {
+  "sheet": 8,
+  "pos": 1,
+  "slug": "shooting-flares",
+  "flag": "ok"
+ },
+ {
+  "sheet": 8,
+  "pos": 2,
+  "slug": "shooting-stars-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 8,
+  "pos": 3,
+  "slug": "streak-brush-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 8,
+  "pos": 4,
+  "slug": "streak-brush-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 8,
+  "pos": 5,
+  "slug": "streak-brush-3",
+  "flag": "ok"
+ },
+ {
+  "sheet": 8,
+  "pos": 6,
+  "slug": "streak-brush-4",
+  "flag": "ok"
+ },
+ {
+  "sheet": 8,
+  "pos": 7,
+  "slug": "blowing-bubbles",
+  "flag": "ok"
+ },
+ {
+  "sheet": 9,
+  "pos": 0,
+  "slug": "blowing-maple-leaves",
+  "flag": "ok"
+ },
+ {
+  "sheet": 9,
+  "pos": 1,
+  "slug": "blowing-seeds-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 9,
+  "pos": 2,
+  "slug": "blowing-seeds-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 9,
+  "pos": 3,
+  "slug": "blowing-seeds-wide",
+  "flag": "ok"
+ },
+ {
+  "sheet": 9,
+  "pos": 4,
+  "slug": "clouds",
+  "flag": "ok"
+ },
+ {
+  "sheet": 9,
+  "pos": 5,
+  "slug": "falling-feathers",
+  "flag": "ok"
+ },
+ {
+  "sheet": 9,
+  "pos": 6,
+  "slug": "fireflies",
+  "flag": "faint"
+ },
+ {
+  "sheet": 9,
+  "pos": 7,
+  "slug": "floating-cells",
+  "flag": "ok"
+ },
+ {
+  "sheet": 10,
+  "pos": 0,
+  "slug": "large-snow-2d",
+  "flag": "ok"
+ },
+ {
+  "sheet": 10,
+  "pos": 1,
+  "slug": "large-snow-3d",
+  "flag": "ok"
+ },
+ {
+  "sheet": 10,
+  "pos": 2,
+  "slug": "rising-bubbles",
+  "flag": "empty"
+ },
+ {
+  "sheet": 10,
+  "pos": 3,
+  "slug": "sea-creatures",
+  "flag": "faint"
+ },
+ {
+  "sheet": 10,
+  "pos": 4,
+  "slug": "directional-fire-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 10,
+  "pos": 5,
+  "slug": "directional-fire-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 10,
+  "pos": 6,
+  "slug": "fireplace",
+  "flag": "ok"
+ },
+ {
+  "sheet": 10,
+  "pos": 7,
+  "slug": "firestarter",
+  "flag": "ok"
+ },
+ {
+  "sheet": 11,
+  "pos": 0,
+  "slug": "hazy-fire",
+  "flag": "ok"
+ },
+ {
+  "sheet": 11,
+  "pos": 1,
+  "slug": "horizontal-fire",
+  "flag": "ok"
+ },
+ {
+  "sheet": 11,
+  "pos": 2,
+  "slug": "horizontal-smoke-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 11,
+  "pos": 3,
+  "slug": "horizontal-smoke-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 11,
+  "pos": 4,
+  "slug": "rocket-fire",
+  "flag": "ok"
+ },
+ {
+  "sheet": 11,
+  "pos": 5,
+  "slug": "smoke-magic",
+  "flag": "ok"
+ },
+ {
+  "sheet": 11,
+  "pos": 6,
+  "slug": "smoke-plume",
+  "flag": "empty"
+ },
+ {
+  "sheet": 11,
+  "pos": 7,
+  "slug": "smoke-rising-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 12,
+  "pos": 0,
+  "slug": "smoke-rising-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 12,
+  "pos": 1,
+  "slug": "smoke-trail",
+  "flag": "ok"
+ },
+ {
+  "sheet": 12,
+  "pos": 2,
+  "slug": "smoke-wizard",
+  "flag": "ok"
+ },
+ {
+  "sheet": 12,
+  "pos": 3,
+  "slug": "smokey-fire",
+  "flag": "ok"
+ }
+]

@@ -5,62 +5,62 @@
   "black-triangle-slabs": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "blue-icosas": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "bucky-balls": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "low-poly-spheres": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "multipoint-stars": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "orange-icosas": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "primitive-bits-directional": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "primitive-bits-uniform": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "rounded-cubes": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "stars-5-pt": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "stars-6-pt": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "stars-8-pt": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "triangles-2d": {
    "verdict": "partial",
@@ -69,12 +69,12 @@
   "wireframe-pyramids": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "yellow-tech-balls": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "aux-system-legacy": {
    "verdict": "fail",
@@ -114,12 +114,13 @@
   },
   "explosion-trail": {
    "verdict": "partial",
-   "class": "no-thumb"
+   "class": "no-thumb",
+   "round": "r3"
   },
   "explosion-trail-with-gravity": {
    "verdict": "fail",
    "class": "burst-timing",
-   "note": "r2 REGRESSION: spike+sampling misses; life-aware sampling needed"
+   "round": "r3"
   },
   "fire-motion": {
    "verdict": "match",
@@ -138,9 +139,9 @@
    "class": "ok"
   },
   "point-explosion": {
-   "verdict": "partial",
+   "verdict": "match",
    "class": "ok",
-   "note": "r2: density plausible now"
+   "round": "r3"
   },
   "point-rise": {
    "verdict": "partial",
@@ -164,7 +165,8 @@
   },
   "confetti": {
    "verdict": "partial",
-   "class": "no-thumb"
+   "class": "no-thumb",
+   "round": "r3"
   },
   "dust-in-the-wind": {
    "verdict": "partial",
@@ -192,165 +194,198 @@
   },
   "blast-sparks-1": {
    "verdict": "partial",
-   "class": "burst-behavior"
+   "class": "aux-s2",
+   "round": "r3"
   },
   "blast-sparks-2": {
    "verdict": "fail",
-   "class": "burst-timing"
+   "class": "aux-s2",
+   "round": "r3"
   },
   "dust-hit-02": {
    "verdict": "partial",
-   "class": "no-thumb"
+   "class": "no-thumb",
+   "round": "r3"
   },
   "dust-hit-03": {
    "verdict": "partial",
-   "class": "no-thumb"
+   "class": "no-thumb",
+   "round": "r3"
   },
   "explode-out": {
    "verdict": "fail",
-   "class": "burst-timing"
+   "class": "aux-s2",
+   "round": "r3"
   },
   "explode-up": {
    "verdict": "fail",
-   "class": "burst-timing"
+   "class": "aux-s2",
+   "round": "r3"
   },
   "explode-up-dark": {
    "verdict": "fail",
-   "class": "burst-timing"
+   "class": "aux-s2",
+   "round": "r3"
   },
   "fire-burst-1": {
-   "verdict": "fail",
+   "verdict": "partial",
    "class": "texture-color",
-   "note": "r2: white mass \u2014 texture-colored preset loses hue on fallback; tint from thumb dominant color"
+   "round": "r3"
   },
   "fire-burst-2": {
    "verdict": "fail",
    "class": "texture-color",
-   "note": "r2: white mass \u2014 texture-colored preset loses hue on fallback; tint from thumb dominant color"
+   "round": "r3"
   },
   "fire-trails-1": {
    "verdict": "fail",
-   "class": "aux-trail",
-   "note": "aux Emit enum (0148) semantics unprobed"
+   "class": "aux-s2",
+   "round": "r3"
   },
   "fire-trails-2": {
    "verdict": "fail",
-   "class": "aux-trail",
-   "note": "aux Emit enum (0148) semantics unprobed"
+   "class": "aux-s2",
+   "round": "r3"
   },
   "fireball-medium-1": {
    "verdict": "fail",
    "class": "texture-color",
-   "note": "r2: white mass \u2014 texture-colored preset loses hue on fallback; tint from thumb dominant color"
+   "round": "r3"
   },
   "fireball-medium-2": {
    "verdict": "fail",
    "class": "texture-color",
-   "note": "r2: white mass \u2014 texture-colored preset loses hue on fallback; tint from thumb dominant color"
+   "round": "r3"
   },
   "flare-flash-1": {
    "verdict": "fail",
-   "class": "blowout"
+   "class": "blowout",
+   "round": "r3"
   },
   "flare-flash-2": {
    "verdict": "fail",
-   "class": "blowout"
+   "class": "blowout",
+   "round": "r3"
   },
   "flare-flash-3": {
    "verdict": "fail",
-   "class": "blowout"
+   "class": "blowout",
+   "round": "r3"
   },
   "glass-bits": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "no-thumb",
+   "round": "r3"
   },
   "glass-shard-explosion-2": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "no-thumb",
+   "round": "r3"
   },
   "glass-shard-explosion-3": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "no-thumb",
+   "round": "r3"
   },
   "glow-spark-blast": {
    "verdict": "match",
-   "class": "no-thumb"
+   "class": "no-thumb",
+   "round": "r3"
   },
   "ignition": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "texture-color",
+   "round": "r3"
   },
   "muzzle-flash-1": {
-   "verdict": "partial",
-   "class": "color-gradient"
+   "verdict": "fail",
+   "class": "burst-timing",
+   "round": "r3"
   },
   "muzzle-flash-2": {
-   "verdict": "partial",
-   "class": "color-gradient"
+   "verdict": "fail",
+   "class": "burst-timing",
+   "round": "r3"
   },
   "muzzle-flash-3": {
-   "verdict": "partial",
-   "class": "color-gradient"
+   "verdict": "fail",
+   "class": "burst-timing",
+   "round": "r3"
   },
   "muzzle-flash-4": {
-   "verdict": "partial",
-   "class": "aux-trail"
+   "verdict": "fail",
+   "class": "burst-timing",
+   "round": "r3"
   },
   "plasma-cloud-explosion-1": {
    "verdict": "partial",
-   "class": "no-thumb"
+   "class": "no-thumb",
+   "round": "r3"
   },
   "plasma-cloud-explosion-2": {
    "verdict": "partial",
-   "class": "no-thumb"
+   "class": "no-thumb",
+   "round": "r3"
   },
   "ring-explosion": {
-   "verdict": "fail",
-   "class": "blowout"
+   "verdict": "match",
+   "class": "ok",
+   "round": "r3"
   },
   "smoke-explosion": {
-   "verdict": "fail",
-   "class": "burst-behavior"
+   "verdict": "partial",
+   "class": "aux-s2",
+   "round": "r3"
   },
   "smoke-hit": {
    "verdict": "partial",
-   "class": "no-thumb"
+   "class": "no-thumb",
+   "round": "r3"
   },
   "smoke-puff-1": {
    "verdict": "match",
-   "class": "ok"
+   "class": "ok",
+   "round": "r3"
   },
   "smoke-puff-2": {
    "verdict": "partial",
-   "class": "white-square"
+   "class": "no-thumb",
+   "round": "r3"
   },
   "spark-blast-1": {
    "verdict": "partial",
-   "class": "no-thumb"
+   "class": "no-thumb",
+   "round": "r3"
   },
   "spark-directional": {
-   "verdict": "partial",
-   "class": "aux-trail"
+   "verdict": "fail",
+   "class": "burst-timing",
+   "round": "r3"
   },
   "spark-single": {
    "verdict": "fail",
-   "class": "aux-trail"
+   "class": "burst-timing",
+   "round": "r3"
   },
   "spark-strings-1": {
    "verdict": "partial",
-   "class": "no-thumb"
+   "class": "no-thumb",
+   "round": "r3"
   },
   "spark-strings-2": {
    "verdict": "partial",
-   "class": "no-thumb"
+   "class": "no-thumb",
+   "round": "r3"
   },
   "spark-strings-3": {
    "verdict": "partial",
-   "class": "no-thumb"
+   "class": "no-thumb",
+   "round": "r3"
   },
   "sparks-ignite": {
-   "verdict": "partial",
-   "class": "no-thumb"
+   "verdict": "fail",
+   "class": "burst-timing",
+   "round": "r3"
   },
   "bow-shock": {
    "verdict": "fail",
@@ -422,7 +457,8 @@
   },
   "falling-lights": {
    "verdict": "partial",
-   "class": "ok"
+   "class": "ok",
+   "round": "r3"
   },
   "floating-streaks": {
    "verdict": "fail",
@@ -434,7 +470,8 @@
   },
   "ghost-trail": {
    "verdict": "partial",
-   "class": "color-gradient"
+   "class": "color-gradient",
+   "round": "r3"
   },
   "glowfield": {
    "verdict": "match",
@@ -446,11 +483,13 @@
   },
   "inverse-energy": {
    "verdict": "partial",
-   "class": "aux-trail"
+   "class": "aux-s2",
+   "round": "r3"
   },
   "light-blobs": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "round": "r3"
   },
   "light-streaks-blue": {
    "verdict": "fail",
@@ -462,7 +501,8 @@
   },
   "love-hearts": {
    "verdict": "partial",
-   "class": "sprite-obj"
+   "class": "sprite-obj",
+   "round": "r3"
   },
   "magic-disc": {
    "verdict": "partial",
@@ -470,15 +510,17 @@
   },
   "magic-smoke-trail": {
    "verdict": "partial",
-   "class": "aux-trail"
+   "class": "aux-s2",
+   "round": "r3"
   },
   "magical": {
    "verdict": "partial",
    "class": "color-gradient"
   },
   "northern-lights": {
-   "verdict": "fail",
-   "class": "blowout"
+   "verdict": "partial",
+   "class": "blowout",
+   "round": "r3"
   },
   "orange-stars": {
    "verdict": "partial",
@@ -486,23 +528,27 @@
   },
   "organic-lines": {
    "verdict": "fail",
-   "class": "empty"
+   "class": "aux-s2",
+   "round": "r3"
   },
   "organic-lines-2": {
-   "verdict": "fail",
-   "class": "aux-trail"
+   "verdict": "partial",
+   "class": "aux-s2",
+   "round": "r3"
   },
   "particle-swarm": {
    "verdict": "match",
    "class": "ok"
   },
   "shooting-flares-1": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "texture-color",
+   "round": "r3"
   },
   "shooting-flares-2": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "texture-color",
+   "round": "r3"
   },
   "starflight": {
    "verdict": "partial",
@@ -517,12 +563,14 @@
    "class": "ok"
   },
   "falling-flares": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "ok",
+   "round": "r3"
   },
   "flickering-lights": {
    "verdict": "match",
-   "class": "ok"
+   "class": "ok",
+   "round": "r3"
   },
   "flowy-green": {
    "verdict": "fail",
@@ -546,35 +594,42 @@
   },
   "rose-spheres": {
    "verdict": "partial",
-   "class": "color-gradient"
+   "class": "ok",
+   "round": "r3"
   },
   "serpent": {
    "verdict": "fail",
    "class": "aux-trail"
   },
   "shooting-flares": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "texture-color",
+   "round": "r3"
   },
   "shooting-stars-1": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "match",
+   "class": "ok",
+   "round": "r3"
   },
   "streak-brush-1": {
    "verdict": "partial",
-   "class": "white-square"
+   "class": "white-square",
+   "round": "r3"
   },
   "streak-brush-2": {
    "verdict": "partial",
-   "class": "white-square"
+   "class": "white-square",
+   "round": "r3"
   },
   "streak-brush-3": {
    "verdict": "partial",
-   "class": "white-square"
+   "class": "white-square",
+   "round": "r3"
   },
   "streak-brush-4": {
    "verdict": "partial",
-   "class": "white-square"
+   "class": "white-square",
+   "round": "r3"
   },
   "tempest": {
    "verdict": "fail",
@@ -585,24 +640,29 @@
    "class": "ok"
   },
   "blowing-bubbles": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "round": "r3"
   },
   "blowing-maple-leaves": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "round": "r3"
   },
   "blowing-seeds-1": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "round": "r3"
   },
   "blowing-seeds-2": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "round": "r3"
   },
   "blowing-seeds-wide": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "round": "r3"
   },
   "blowing-snow": {
    "verdict": "partial",
@@ -618,35 +678,42 @@
   },
   "clouds": {
    "verdict": "partial",
-   "class": "blowout"
+   "class": "blowout",
+   "round": "r3"
   },
   "falling-feathers": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "round": "r3"
   },
   "fireflies": {
-   "verdict": "partial",
-   "class": "ok"
+   "verdict": "match",
+   "class": "ok",
+   "round": "r3"
   },
   "floating-cells": {
-   "verdict": "fail",
-   "class": "blowout"
+   "verdict": "partial",
+   "class": "ok",
+   "round": "r3"
   },
   "large-snow-2d": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "ok",
+   "round": "r3"
   },
   "large-snow-3d": {
    "verdict": "partial",
-   "class": "ok"
+   "class": "blowout",
+   "round": "r3"
   },
   "rain": {
    "verdict": "partial",
    "class": "ok"
   },
   "rising-bubbles": {
-   "verdict": "partial",
-   "class": "ok"
+   "verdict": "fail",
+   "class": "burst-timing",
+   "round": "r3"
   },
   "rising-fizz": {
    "verdict": "match",
@@ -657,8 +724,9 @@
    "class": "ok"
   },
   "sea-creatures": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "aux-s2",
+   "round": "r3"
   },
   "snowy-night-1": {
    "verdict": "partial",
@@ -673,40 +741,48 @@
    "class": "white-square"
   },
   "directional-fire-1": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "texture-color",
+   "round": "r3"
   },
   "directional-fire-2": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "texture-color",
+   "round": "r3"
   },
   "falling-sparks": {
    "verdict": "partial",
    "class": "color-gradient"
   },
   "fireplace": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "texture-color",
+   "round": "r3"
   },
   "firestarter": {
-   "verdict": "fail",
-   "class": "color-gradient"
+   "verdict": "partial",
+   "class": "texture-color",
+   "round": "r3"
   },
   "hazy-fire": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "texture-color",
+   "round": "r3"
   },
   "horizontal-fire": {
-   "verdict": "fail",
-   "class": "blowout"
+   "verdict": "partial",
+   "class": "blowout",
+   "round": "r3"
   },
   "horizontal-smoke-1": {
    "verdict": "partial",
-   "class": "white-square"
+   "class": "texture-color",
+   "round": "r3"
   },
   "horizontal-smoke-2": {
    "verdict": "partial",
-   "class": "white-square"
+   "class": "texture-color",
+   "round": "r3"
   },
   "point-smoke": {
    "verdict": "partial",
@@ -717,8 +793,9 @@
    "class": "ok"
   },
   "rocket-fire": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "texture-color",
+   "round": "r3"
   },
   "simple-fire": {
    "verdict": "partial",
@@ -729,46 +806,64 @@
    "class": "color-gradient"
   },
   "smoke-magic": {
-   "verdict": "partial",
-   "class": "color-gradient"
+   "verdict": "match",
+   "class": "ok",
+   "round": "r3"
   },
   "smoke-magic-2": {
    "verdict": "partial",
    "class": "color-gradient"
   },
   "smoke-plume": {
-   "verdict": "partial",
-   "class": "color-gradient"
+   "verdict": "fail",
+   "class": "burst-timing",
+   "round": "r3"
   },
   "smoke-rising-1": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "texture-color",
+   "round": "r3"
   },
   "smoke-rising-2": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "texture-color",
+   "round": "r3"
   },
   "smoke-trail": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "match",
+   "class": "ok",
+   "round": "r3"
   },
   "smoke-wizard": {
-   "verdict": "partial",
-   "class": "color-gradient"
+   "verdict": "match",
+   "class": "ok",
+   "round": "r3"
   },
   "smokey-fire": {
-   "verdict": "fail",
-   "class": "white-square"
+   "verdict": "partial",
+   "class": "texture-color",
+   "round": "r3"
   },
   "abstract-and-geometric-triangles-2d": {
    "verdict": "partial",
    "class": "sprite-obj",
-   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+   "round": "r3"
   },
   "basics-single-glow": {
    "verdict": "match",
-   "class": "ok"
+   "class": "ok",
+   "round": "r3"
+  },
+  "motion-graphics-triangles-2d": {
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "round": "r3"
+  },
+  "motion-graphics-single-glow": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "r3"
   }
  },
- "round": "r2-partial (57/186 re-rendered; 129 pending AE)"
+ "round": "r3-complete (186/186 at miner-v3+r3)"
 }

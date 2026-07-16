@@ -1,215 +1,95 @@
 {
- "abstract-and-geometric-triangles-2d": {
-  "coverage": 0.0759,
-  "mean_rgb": [
-   37,
-   131,
-   183
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/abstract-and-geometric-triangles-2d/abstract-and-geometric-triangles-2d_t4.png"
- },
- "black-triangle-slabs": {
-  "coverage": 0.2076,
-  "mean_rgb": [
-   124,
-   124,
-   124
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/black-triangle-slabs/black-triangle-slabs_t4.png"
- },
- "blue-icosas": {
-  "coverage": 0.2285,
-  "mean_rgb": [
-   137,
-   137,
-   137
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/blue-icosas/blue-icosas_t4.png"
- },
- "bucky-balls": {
-  "coverage": 0.2347,
-  "mean_rgb": [
-   141,
-   141,
-   141
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/bucky-balls/bucky-balls_t4.png"
- },
- "low-poly-spheres": {
-  "coverage": 0.0802,
-  "mean_rgb": [
-   169,
-   175,
-   170
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/low-poly-spheres/low-poly-spheres_t4.png"
- },
- "multipoint-stars": {
-  "coverage": 0.2591,
-  "mean_rgb": [
-   155,
-   155,
-   155
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/multipoint-stars/multipoint-stars_t4.png"
- },
- "orange-icosas": {
-  "coverage": 0.2285,
-  "mean_rgb": [
-   137,
-   137,
-   137
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/orange-icosas/orange-icosas_t4.png"
- },
- "primitive-bits-directional": {
-  "coverage": 0.102,
-  "mean_rgb": [
-   160,
-   160,
-   160
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/primitive-bits-directional/primitive-bits-directional_t4.png"
- },
- "primitive-bits-uniform": {
-  "coverage": 0.0472,
-  "mean_rgb": [
-   165,
-   165,
-   165
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/primitive-bits-uniform/primitive-bits-uniform_t4.png"
- },
- "rounded-cubes": {
-  "coverage": 0.3115,
-  "mean_rgb": [
-   170,
-   170,
-   170
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/rounded-cubes/rounded-cubes_t4.png"
- },
  "stars-5-pt": {
-  "coverage": 0.229,
+  "coverage": 0.2165,
   "mean_rgb": [
-   137,
-   137,
-   137
+   63,
+   63,
+   63
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/stars-5-pt/stars-5-pt_t4.png"
  },
  "stars-6-pt": {
-  "coverage": 0.229,
+  "coverage": 0.2178,
   "mean_rgb": [
-   137,
-   137,
-   137
+   64,
+   64,
+   64
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/stars-6-pt/stars-6-pt_t4.png"
  },
- "stars-8-pt": {
-  "coverage": 0.229,
+ "plasma-cloud-explosion-2": {
+  "coverage": 0.4304,
   "mean_rgb": [
-   137,
-   137,
-   137
+   234,
+   82,
+   61
   ],
   "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/stars-8-pt/stars-8-pt_t4.png"
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/plasma-cloud-explosion-2/plasma-cloud-explosion-2_t0p56000213623047.png"
  },
- "wireframe-pyramids": {
-  "coverage": 0.0299,
+ "ring-explosion": {
+  "coverage": 0.0963,
   "mean_rgb": [
-   159,
-   159,
-   159
+   65,
+   168,
+   203
   ],
   "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/wireframe-pyramids/wireframe-pyramids_t4.png"
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/ring-explosion/ring-explosion_t2.png"
  },
- "yellow-tech-balls": {
-  "coverage": 0.1173,
-  "mean_rgb": [
-   154,
-   154,
-   154
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/yellow-tech-balls/yellow-tech-balls_t4.png"
- },
- "basics-single-glow": {
-  "coverage": 0.0386,
-  "mean_rgb": [
-   81,
-   26,
-   38
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/basics-single-glow/basics-single-glow_t4.png"
- },
- "explosion-trail": {
-  "coverage": 0.0317,
-  "mean_rgb": [
-   55,
-   55,
-   55
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/explosion-trail/explosion-trail_t0p4.png"
- },
- "explosion-trail-with-gravity": {
-  "coverage": 0.0001,
-  "mean_rgb": [
-   17,
-   17,
-   17
-  ],
-  "flag": "empty",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/explosion-trail-with-gravity/explosion-trail-with-gravity_t2.png"
- },
- "point-explosion": {
-  "coverage": 0.0879,
+ "smoke-explosion": {
+  "coverage": 0.0742,
   "mean_rgb": [
    56,
    56,
    56
   ],
   "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/point-explosion/point-explosion_t2.png"
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/smoke-explosion/smoke-explosion_t1p4.png"
  },
- "confetti": {
-  "coverage": 0.4209,
+ "smoke-hit": {
+  "coverage": 0.3024,
   "mean_rgb": [
-   19,
-   63,
-   70
+   229,
+   157,
+   109
   ],
   "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/confetti/confetti_t4.png"
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/smoke-hit/smoke-hit_t0p875.png"
  },
- "blast-sparks-1": {
-  "coverage": 0.0466,
+ "smoke-puff-1": {
+  "coverage": 0.0633,
   "mean_rgb": [
-   88,
-   40,
-   18
+   163,
+   135,
+   126
   ],
   "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/blast-sparks-1/blast-sparks-1_t0p7.png"
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/smoke-puff-1/smoke-puff-1_t2.png"
  },
- "blast-sparks-2": {
+ "smoke-puff-2": {
+  "coverage": 0.2101,
+  "mean_rgb": [
+   168,
+   138,
+   130
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/smoke-puff-2/smoke-puff-2_t2.png"
+ },
+ "spark-blast-1": {
+  "coverage": 0.0615,
+  "mean_rgb": [
+   220,
+   85,
+   47
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/spark-blast-1/spark-blast-1_t0p525.png"
+ },
+ "spark-directional": {
   "coverage": 0.0,
   "mean_rgb": [
    0,
@@ -217,126 +97,6 @@
    0
   ],
   "flag": "empty",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/blast-sparks-2/blast-sparks-2_t0p7.png"
- },
- "dust-hit-02": {
-  "coverage": 0.0664,
-  "mean_rgb": [
-   40,
-   26,
-   18
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/dust-hit-02/dust-hit-02_t1p08163757324219.png"
- },
- "dust-hit-03": {
-  "coverage": 0.0536,
-  "mean_rgb": [
-   63,
-   39,
-   16
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/dust-hit-03/dust-hit-03_t1p08163757324219.png"
- },
- "explode-out": {
-  "coverage": 0.0,
-  "mean_rgb": [
-   0,
-   0,
-   0
-  ],
-  "flag": "empty",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/explode-out/explode-out_t0p83999786376953.png"
- },
- "explode-up": {
-  "coverage": 0.0,
-  "mean_rgb": [
-   0,
-   0,
-   0
-  ],
-  "flag": "empty",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/explode-up/explode-up_t1p75.png"
- },
- "explode-up-dark": {
-  "coverage": 0.0,
-  "mean_rgb": [
-   0,
-   0,
-   0
-  ],
-  "flag": "empty",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/explode-up-dark/explode-up-dark_t1p75.png"
- },
- "fire-burst-1": {
-  "coverage": 0.3425,
-  "mean_rgb": [
-   224,
-   224,
-   224
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/fire-burst-1/fire-burst-1_t1p4.png"
- },
- "fire-burst-2": {
-  "coverage": 0.8144,
-  "mean_rgb": [
-   235,
-   235,
-   235
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/fire-burst-2/fire-burst-2_t1p05.png"
- },
- "fire-trails-1": {
-  "coverage": 0.0,
-  "mean_rgb": [
-   0,
-   0,
-   0
-  ],
-  "flag": "empty",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/fire-trails-1/fire-trails-1_t2.png"
- },
- "fire-trails-2": {
-  "coverage": 0.0,
-  "mean_rgb": [
-   0,
-   0,
-   0
-  ],
-  "flag": "empty",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/fire-trails-2/fire-trails-2_t2.png"
- },
- "fireball-medium-1": {
-  "coverage": 0.3002,
-  "mean_rgb": [
-   231,
-   231,
-   231
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/fireball-medium-1/fireball-medium-1_t0p875.png"
- },
- "fireball-medium-2": {
-  "coverage": 0.451,
-  "mean_rgb": [
-   233,
-   233,
-   233
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/fireball-medium-2/fireball-medium-2_t0p875.png"
- },
- "flare-flash-1": {
-  "coverage": 1.0,
-  "mean_rgb": [
-   248,
-   248,
-   248
-  ],
-  "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/flare-flash-1/flare-flash-1_t2.png"
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/spark-directional/spark-directional_t0p4.png"
  }
 }
