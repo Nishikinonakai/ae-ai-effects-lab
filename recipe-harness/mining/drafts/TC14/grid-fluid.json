@@ -1393,8 +1393,8 @@
         ],
         [
           "tc Particular-0782",
-          4,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
+          2,
+          "FXid_Gen1EmitterType (alias+enumOffset) [v18 enum: 4->2]"
         ],
         [
           "tc Particular-0146",

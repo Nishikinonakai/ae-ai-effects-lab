@@ -272,9 +272,18 @@ for (const file of files) {
     for (const d of droppedInert) params.splice(params.indexOf(d), 1);
   }
 
-  // light-emitter presets (AE 0782 == 5) need a light named "Emitter" or they render NOTHING
+  // v18 emitter-type enum (read off the UI dropdown 2026-07-16): 1 Point / 2 Box / 3 Sphere /
+  // 4 Light(s) / 5 Layer / 6 3D Model / 7 Text/Mask (+8 Emit-from-Parent on S2 only).
+  // GRID was REMOVED in v18, so the blind Designer+1 mapping is wrong from Grid upward:
+  // Designer 0,1,2 -> 1,2,3; 3 (Grid) -> 2 (Box fallback); 4 Light -> 4; 5 Layer -> 5;
+  // 7 Text -> 7; 8/9 (OBJ) -> 6 (3D Model).
+  const V18_EMITTER = { 1: 1, 2: 2, 3: 3, 4: 2, 5: 4, 6: 5, 7: 5, 8: 7, 9: 6, 10: 6 }; // keyed by old +1 value
   const emitType = params.find(p => p[0] === 'tc Particular-0782');
-  const needsLight = emitType && emitType[1] === 5;
+  if (emitType && V18_EMITTER[emitType[1]] !== undefined && V18_EMITTER[emitType[1]] !== emitType[1]) {
+    emitType[2] += ` [v18 enum: ${emitType[1]}->${V18_EMITTER[emitType[1]]}]`;
+    emitType[1] = V18_EMITTER[emitType[1]];
+  }
+  const needsLight = emitType && emitType[1] === 4;
 
   // thumbnail
   let thumb = null;
