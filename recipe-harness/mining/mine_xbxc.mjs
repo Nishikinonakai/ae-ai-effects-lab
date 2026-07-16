@@ -79,26 +79,76 @@ const ALIAS = {
   'grav': 'gravity',
   'p type': '@tc Particular-0703',                  // 0026 is a hidden legacy dupe
   'emitter type': 'emitter type',
-  // aux system (Designer SE_* / Options_Aux_*) -> the TSV aux group
-  'se emitter': null,                               // aux Emit enum unverified (+1 guess FLOODED snow presets round 2) — probe 0148 before enabling
-  'se particles per sec f': '@tc Particular-0149',
-  'se p vel': '@tc Particular-0152',
-  'se p life': '@tc Particular-0150',
-  'se p size': '@tc Particular-0154',
-  'se p opacity': '@tc Particular-0160',
-  'se p type': '@tc Particular-0151',
-  'se p color from main': null,                     // no matchName found in the dump
-  'aux control inherit velocity': '@tc Particular-0194',
-  'aux gravity': '@tc Particular-0189',
-  'aux air physics turbulence': '@tc Particular-0201',
-  'aux transfer mode': '@tc Particular-0190',
-  'aux randomness life': '@tc Particular-0204',
-  'aux randomness size': '@tc Particular-0205',
-  'aux randomness opacity': '@tc Particular-0206',
+  // aux system (Designer SE_* / Options_Aux_*): consumed by the S2 translation block in the
+  // preset loop — the legacy 01xx aux params rounds 2-3 aliased to are DORMANT in v2023
+  // (multi-systems replaced the Aux UI; setting them has no visual effect). Null here keeps
+  // them out of _unmapped; AUX_S2 below is the live route.
+  'se emitter': null, 'se p color from main': null, 'se p shadow': null,
+  'se p color over life arb': null,                 // flattened into Color S2 by the aux block
+  'p color over life arb': null,                    // flattened into Color (0070) by the gradient block
+  'se particles per sec f': null, 'se p vel': null, 'se p life': null,
+  'se p size': null, 'se p opacity': null, 'se p type': null,
+  'aux control inherit velocity': null, 'aux gravity': null,
+  'aux air physics turbulence': null, 'aux air physics resistance': null,
+  'aux air physics wind': null, 'aux transfer mode': null,
+  'aux randomness life': null, 'aux randomness size': null, 'aux randomness opacity': null,
+  'aux emit probability': null, 'aux feather': null,
+  'aux control start emit': null, 'aux control stop emit': null,   // Emission-over-Parent-Life is 6419 (unscriptable)
+  // fluid physics (Designer FXid_Fluid*): the live switch is 0638 Enable Fluid Motion
+  // (PROBED 2026-07-17: settable; Physics Model 0119 is locked/derived — hidden-param class).
+  // Designer/TSV default-value pairs pin the collision-prone ones: MotionType+1 -> 0615
+  // Fluid Force (0+1=1=default), ForceOption+1 -> 0636 Apply Force (1+1=2=default),
+  // VortexSize -> 0618 Force Region Size (500=500).
+  'fluid motion type': '@tc Particular-0615',
+  'fluid force option': '@tc Particular-0636',
+  'fluid vortex strength': '@tc Particular-0616',
+  'fluid vortex core size': '@tc Particular-0617',
+  'fluid vortex size': '@tc Particular-0618',
+  'fluid vortex tilt': '@tc Particular-0619',
+  'fluid vortex rotate': '@tc Particular-0620',
+  'fluid vortex rel pos': '@tc Particular-0635',
+  'fluid physics time factor': '@tc Particular-0025',
+  'fluid random swirl option': '@tc Particular-0654',
+  'random swirl x': '@tc Particular-0630',          // Designer X = the XYZ/uniform slider
+  'random swirl y': '@tc Particular-0631',
+  'random swirl z': '@tc Particular-0632',
+  'random swirl seed': '@tc Particular-0637',
+  'swirl scale': '@tc Particular-0653',
+  'fluid viscosity': '@tc Particular-0621',
+  'fluid fidelity': '@tc Particular-0628',
+  'fluid density': null,                            // no scriptable target found in the dump
+  'fluid density blend mode': null,
 };
 // params whose Designer value is a 0-based enum while AE popups are 1-based
 const ENUM_OFFSET = new Set(['p type', 'emitter type', 'emitter dir', 'pt mode', 'p set color',
-  'se emitter', 'se p type', 'aux transfer mode']);
+  'fluid motion type', 'fluid force option', 'fluid random swirl option']);
+
+// ---- aux → S2 translation (2026-07-17) ----
+// Classic Aux became multi-system "Emit from Parent" in v2023. S2 params are script-settable
+// ONLY on a layer cloned from MASTER_particular_S2 (system existence is plugin-private state;
+// the master carries it — commit f1f05c0). Chain verified live: clone → 2830=8 → set 2xxx.
+// SE_Emitter is 2 (Continuously) on every active preset in the packs; 0/absent = aux off.
+// Param ids read off the flat dump; Size Random is 2122 (the 2823 name-twin is the STRINGS
+// emitter block). Designer aux size/vel/life are absolute units like the main system.
+const AUX_S2 = {   // stripped Designer key -> [matchName, 'enum'?]
+  'se particles per sec f': ['tc Particular-2194'],
+  'se p life':              ['tc Particular-2050'],
+  'se p size':              ['tc Particular-2075'],
+  'se p opacity':           ['tc Particular-2081'],
+  'se p type':              ['tc Particular-2751', 'enum'],
+  'se p vel':               ['tc Particular-2059'],
+  'aux gravity':            ['tc Particular-2065'],
+  'aux air physics turbulence': ['tc Particular-2759'],
+  'aux air physics resistance': ['tc Particular-2066'],
+  'aux air physics wind':   ['tc Particular-2797'],
+  'aux transfer mode':      ['tc Particular-2117', 'enum'],
+  'aux randomness life':    ['tc Particular-2113'],
+  'aux randomness size':    ['tc Particular-2122'],
+  'aux randomness opacity': ['tc Particular-2123'],
+  'aux control inherit velocity': ['tc Particular-2242'],
+  'aux emit probability':   ['tc Particular-2236'],
+  'aux feather':            ['tc Particular-2077'],
+};
 
 // AE 0703 Particle Type — PROBED 2026-07-16: 1=Sphere 2=GlowSphere 3=Star 4=Cloudlet
 // 5=Streaklet 6=Square, values >6 REJECTED. Designer 0-4 = same list (+1 correct);
@@ -205,13 +255,38 @@ for (const file of files) {
     else { unmapped[k] = v; unmappedFreq.set(k, (unmappedFreq.get(k) || 0) + 1); }
   }
 
+  // sprite connect (PROBED 2026-07-17): 0703's max IS 6 and 6 IS Sprite — an unconnected
+  // sprite renders as a white card, which round-3's visual probe misread as "Square".
+  // When the vendor preset references a sprite the packs actually ship, connect it for
+  // real: footage import as a video-off layer + Layer param 0066 (+ Time Sampling 0067
+  // from PLayerTime). Designer's Colorize/Fill type variants map to the separate 0700/0701
+  // booleans of v2023. Fallback below stays for refs we can't resolve on disk.
+  const packRoot = path.join(PACKS, pack);
+  let footageOut = null;
+  const plRef = flat.FXid_PLayer;
+  if (plRef && typeof plRef === 'object' && plRef.footage) {
+    const resolved = plRef.footage
+      .replace('${RootAssetPack}', packRoot)
+      .replace('${RootBlocks}', path.join(packRoot, 'Blocks'));
+    if (fs.existsSync(resolved)) footageOut = [{ path: resolved, layerName: 'SpriteTex' }];
+  }
+
   // PType fallback: Designer sprite/textured types (>=5, i.e. mapped value >=6) either land
   // on AE Square or get rejected — substitute a built-in type instead: Star for star-named
   // presets, Cloudlet for smoke/fire-ish, Glow Sphere otherwise. The lost TEXTURE usually
   // carried the color, so tint the flat particle color from the vendor THUMBNAIL's dominant
   // color (the thumb is the vendor's own render = ground truth for the intended hue).
   const ptype = params.find(p => p[0] === 'tc Particular-0703');
-  if (ptype && ptype[1] >= 6) {
+  if (ptype && ptype[1] >= 6 && footageOut) {
+    const dsgn = ptype[1] - 1;                        // original Designer enum value
+    ptype[2] += ` [Designer ${dsgn} -> Sprite + connected texture]`;
+    ptype[1] = 6;
+    params.push(['tc Particular-0066', { __layer: 'SpriteTex' }, 'Sprite texture layer (mined PLayer)']);
+    if (dsgn === 6 || dsgn === 9) params.push(['tc Particular-0700', 1, 'Colorize (Designer type variant)']);
+    if (dsgn === 7 || dsgn === 10) params.push(['tc Particular-0701', 1, 'Color Fill (Designer type variant)']);
+    const plTime = flat.FXid_PLayerTime;
+    if (typeof plTime === 'number') params.push(['tc Particular-0067', plTime + 1, 'FXid_PLayerTime (+enumOffset)']);
+  } else if (ptype && ptype[1] >= 6) {
     const names = category + ' ' + base;
     ptype[1] = /star/i.test(names) ? 3 : SMOKEISH.test(names) ? 4 : 2;
     ptype[2] += ` [sprite fallback -> ${({ 3: 'Star', 4: 'Cloudlet', 2: 'Glow Sphere' })[ptype[1]]}]`;
@@ -226,8 +301,10 @@ for (const file of files) {
   // gradient flatten: Set Color = Over Life / Random exposes the UNSCRIPTABLE color-over-life
   // gradient (AE default = blue) — flatten the vendor's mined gradient to its mean color,
   // write it as the flat particle color, and force Set Color back to At Birth.
+  // The gradient lives in EITHER rg.custom.col.life OR FXid_PColorOverLifeArb (same
+  // PosP/PosR/PosG/PosB shape; candle-flame-class presets use the FXid form — found 2026-07-17).
   const setColor = params.find(p => p[0] === 'tc Particular-0088');
-  const colLife = curves['rg.custom.col.life'];
+  const colLife = curves['rg.custom.col.life'] || flat.FXid_PColorOverLifeArb;
   if (setColor && setColor[1] >= 2 && colLife?.PosP?.length > 1) {
     const P = colLife.PosP, span = P[P.length - 1] - P[0] || 1;
     const mean = ch => {
@@ -251,11 +328,15 @@ for (const file of files) {
     isBurst = true;
     const psec = params.find(p => p[0] === 'tc Particular-0146');
     const burstN = (psec ? psec[1] : 100) || 100;
-    expressionsOut.push(['tc Particular-0146', `time < 0.1 ? ${Math.round(burstN * 10)} : 0`, 'Explode -> 0.1s burst spike']);
-    // sample within the particles' lifetime (muzzle-flash-class lives ~0.2s — round-2's
-    // fixed [0.5, 2] sampled corpses)
     const life = flat.FXid_PLife || 2;
-    burstFrames = [Math.min(0.15, life * 0.5), Math.max(0.4, Math.min(2, life * 0.7))];
+    // spike sized to the steady-state population (psec × life) squeezed into the 0.1s
+    // window — round-3's flat 10× blew out short-life bursts (muzzle/spark class)
+    const spikeRate = Math.max(1, Math.round(burstN * life * 10));
+    expressionsOut.push(['tc Particular-0146', `time < 0.1 ? ${spikeRate} : 0`, 'Explode -> 0.1s burst spike (life-scaled)']);
+    // frame 1 INSIDE the emission window (0.08 — alive whatever the life is; round-3's
+    // life*0.5 sat exactly on the window edge for 0.2s lives), frame 2 mid-flight of the
+    // last-born particles
+    burstFrames = [0.08, Math.min(2, 0.1 + life * 0.6)];
   }
 
   // physics guard: the engine ignores Wind AND Air Turbulence when Air Resistance == 0,
@@ -270,6 +351,66 @@ for (const file of files) {
     const INERT = new Set(['tc Particular-0749', 'tc Particular-0750', 'tc Particular-0751', 'tc Particular-0711']);
     droppedInert = params.filter(p => INERT.has(p[0]) && p[1] !== 0);
     for (const d of droppedInert) params.splice(params.indexOf(d), 1);
+  }
+
+  // fluid enable: any FXid_Fluid* block means the vendor authored under fluid physics.
+  // 0638 goes FIRST — fluid children are gated behind it (hidden-param class).
+  if (Object.keys(flat).some(k => k.startsWith('FXid_Fluid'))) {
+    params.unshift(['tc Particular-0638', 1, 'Enable Fluid Motion (fluid preset)']);
+  }
+
+  // aux → S2 (see AUX_S2 table): active aux presets clone the S2 master and script the
+  // 2xxx params. Color: classic aux has no flat color param — ColorFromMain % inherits the
+  // parent's (final, post-flatten/tint) color; else the SE color curve flattens to its mean;
+  // else classic default white (the MASTER's S2 red must always be overridden). Set Color S2
+  // pinned to At Birth.
+  const hasAuxS2 = flat.FXid_SE_Emitter === 2;
+  if (hasAuxS2) {
+    params.push(['tc Particular-2830', 8, 'aux -> S2 Emitter Type: Emit from Parent (v18)']);
+    for (const [k, v] of Object.entries(flat)) {
+      const spec = AUX_S2[stripFxid(k)];
+      if (!spec || v === null || typeof v === 'object') continue;
+      let val = typeof v === 'boolean' ? (v ? 1 : 0) : v;
+      let lbl = `${k} (aux->S2)`;
+      if (spec[1] === 'enum') { val += 1; lbl += '+enumOffset'; }
+      params.push([spec[0], val, lbl]);
+    }
+    // S2 particle type: same v18 6-cap; aux sprites share the main texture layer via 2114
+    const pt2 = params.find(p => p[0] === 'tc Particular-2751');
+    if (pt2 && pt2[1] >= 6) {
+      if (footageOut) {
+        pt2[1] = 6; pt2[2] += ' [Sprite + shared texture]';
+        params.push(['tc Particular-2114', { __layer: 'SpriteTex' }, 'S2 sprite texture layer']);
+      } else {
+        pt2[1] = 2; pt2[2] += ' [sprite fallback -> Glow Sphere]';
+      }
+    }
+    const cfm = flat.FXid_SE_PColorFromMain || 0;
+    const mainCol = params.find(p => p[0] === 'tc Particular-0070');
+    let col2 = [1, 1, 1, 1], colSrc = 'classic aux default white';
+    const seCol = flat.FXid_SE_PColorOverLifeArb;
+    if (cfm >= 50 && mainCol) { col2 = mainCol[1]; colSrc = `inherit main (${cfm}%)`; }
+    else if (seCol?.PosP?.length > 1) {
+      const P = seCol.PosP, span = P[P.length - 1] - P[0] || 1;
+      const mean = ch => {
+        let s = 0;
+        for (let i = 0; i < P.length - 1; i++) s += ((ch[i] + ch[i + 1]) / 2) * (P[i + 1] - P[i]);
+        return Math.max(0, Math.min(1, s / span));
+      };
+      col2 = [mean(seCol.PosR || []), mean(seCol.PosG || []), mean(seCol.PosB || []), 1];
+      colSrc = 'flattened SE color curve';
+    }
+    params.push(['tc Particular-2136', 1, 'Set Color S2: At Birth']);
+    params.push(['tc Particular-2118', col2, `Color S2 (${colSrc})`]);
+    // S2 physics guard — same engine rule as main: wind/turbulence are inert at
+    // Air Resistance 0 and setting them anyway pops the bridge-stalling modal
+    const air2 = params.find(p => p[0] === 'tc Particular-2066');
+    if (!air2 || air2[1] === 0) {
+      for (const mn of ['tc Particular-2797', 'tc Particular-2759']) {
+        const idx = params.findIndex(p => p[0] === mn && p[1] !== 0);
+        if (idx >= 0) { droppedInert.push(params[idx]); params.splice(idx, 1); }
+      }
+    }
   }
 
   // v18 emitter-type enum (read off the UI dropdown 2026-07-16): 1 Point / 2 Box / 3 Sphere /
@@ -308,6 +449,10 @@ for (const file of files) {
     comp: { width: 1280, height: 720, fps: 30, duration: 6 },
     background: [0, 0, 0],
     lights: needsLight ? [{ name: 'Emitter', position: [640, 360, 0] }] : undefined,
+    footage: footageOut || undefined,
+    master: hasAuxS2
+      ? { library: 'library/particular-masters.aep', comp: 'MASTER_particular_S2', layer: 1 }
+      : undefined,
     hostName: 'Mined',
     effects: [{ matchName: 'tc Particular', params, expressions: expressionsOut }],
     camera: null,

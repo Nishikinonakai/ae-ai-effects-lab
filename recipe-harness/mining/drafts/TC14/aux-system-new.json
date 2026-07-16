@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Aux System New.xbxc",
   "_pack": "TC14",
   "_category": "Basics",
-  "_map_coverage": "66 mapped / 151 unmapped / 0 curves",
+  "_map_coverage": "78 mapped / 136 unmapped / 0 curves",
   "_unmapped": {
     "FXid_EmissionOverParentParticleLifeArb": {
       "isCurveMode": false,
@@ -223,7 +223,6 @@
     "FXid_IsPositionRelative": true,
     "FXid_LERGBUsage": 4,
     "FXid_OBJSequenceControlType": 0,
-    "FXid_Options_Aux_EmitProbability": 100,
     "FXid_Options_EmissionExtras_PerodicityRnd": 0,
     "FXid_Options_LightEmitter_ParticleModifier": 0,
     "FXid_Options_OBJEmitFrom": 1,
@@ -1109,36 +1108,6 @@
       "curveY": []
     },
     "FXid_PColorFromParent": 100,
-    "FXid_PColorOverLifeArb": {
-      "PosP": [
-        0,
-        50,
-        100,
-        150,
-        200
-      ],
-      "PosR": [
-        1,
-        1,
-        0,
-        0,
-        0
-      ],
-      "PosG": [
-        0,
-        1,
-        1,
-        1,
-        0
-      ],
-      "PosB": [
-        0,
-        0,
-        0,
-        1,
-        1
-      ]
-    },
     "FXid_Options_SmokeletShadow_Color": {
       "r": 0,
       "g": 0,
@@ -1202,21 +1171,6 @@
       0
     ],
     "FXid_Flocking_Type": 0,
-    "FXid_FluidDensity": 5,
-    "FXid_FluidDensityBlendMode": 0,
-    "FXid_FluidForceOption": 1,
-    "FXid_FluidMotionType": 0,
-    "FXid_FluidRandomSwirlOption": 0,
-    "FXid_FluidVortexCoreSize": 50,
-    "FXid_FluidVortexRelPos": [
-      0,
-      0,
-      0
-    ],
-    "FXid_FluidVortexRotate": 0,
-    "FXid_FluidVortexSize": 500,
-    "FXid_FluidVortexStrength": 100,
-    "FXid_FluidVortexTilt": 0,
     "FXid_Meander_Complex": 3,
     "FXid_Meander_Evolution": 50,
     "FXid_Meander_OctMult": 0.5,
@@ -1224,8 +1178,6 @@
     "FXid_Meander_OffsetE": 0,
     "FXid_Meander_Scale": 10,
     "FXid_Meander_Speed": 0,
-    "FXid_RandomSwirlSeed": 0,
-    "FXid_RandomSwirlX": 0,
     "FXid_DFeather": 50,
     "FXid_DPos": [
       0.5,
@@ -1266,6 +1218,11 @@
     {
       "matchName": "tc Particular",
       "params": [
+        [
+          "tc Particular-0638",
+          1,
+          "Enable Fluid Motion (fluid preset)"
+        ],
         [
           "tc Particular-0014",
           500,
@@ -1538,22 +1495,81 @@
         [
           "tc Particular-0628",
           4,
-          "FXid_FluidFidelity (fuzzy:fluid simulation fidelity)"
+          "FXid_FluidFidelity (alias)"
+        ],
+        [
+          "tc Particular-0636",
+          2,
+          "FXid_FluidForceOption (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0615",
+          1,
+          "FXid_FluidMotionType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0654",
+          1,
+          "FXid_FluidRandomSwirlOption (alias+enumOffset)"
         ],
         [
           "tc Particular-0621",
           20,
-          "FXid_FluidViscosity (exact)"
+          "FXid_FluidViscosity (alias)"
+        ],
+        [
+          "tc Particular-0617",
+          50,
+          "FXid_FluidVortexCoreSize (alias)"
+        ],
+        [
+          "tc Particular-0635",
+          [
+            0,
+            0,
+            0
+          ],
+          "FXid_FluidVortexRelPos (alias)"
+        ],
+        [
+          "tc Particular-0620",
+          0,
+          "FXid_FluidVortexRotate (alias)"
+        ],
+        [
+          "tc Particular-0618",
+          500,
+          "FXid_FluidVortexSize (alias)"
+        ],
+        [
+          "tc Particular-0616",
+          100,
+          "FXid_FluidVortexStrength (alias)"
+        ],
+        [
+          "tc Particular-0619",
+          0,
+          "FXid_FluidVortexTilt (alias)"
+        ],
+        [
+          "tc Particular-0637",
+          0,
+          "FXid_RandomSwirlSeed (alias)"
+        ],
+        [
+          "tc Particular-0630",
+          0,
+          "FXid_RandomSwirlX (alias)"
         ],
         [
           "tc Particular-0631",
           0,
-          "FXid_RandomSwirlY (exact)"
+          "FXid_RandomSwirlY (alias)"
         ],
         [
           "tc Particular-0632",
           0,
-          "FXid_RandomSwirlZ (exact)"
+          "FXid_RandomSwirlZ (alias)"
         ],
         [
           "tc Particular-0753",
@@ -1563,7 +1579,7 @@
         [
           "tc Particular-0653",
           10,
-          "FXid_SwirlScale (exact)"
+          "FXid_SwirlScale (alias)"
         ],
         [
           "tc Particular-0022",

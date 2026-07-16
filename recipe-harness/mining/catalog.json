@@ -8,8 +8,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Black Triangle Slabs.xbxc",
       "draft": "drafts/TC14/black-triangle-slabs.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Black Triangle Slabs.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 46,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -19,8 +19,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Blue Icosas.xbxc",
       "draft": "drafts/TC14/blue-icosas.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Blue Icosas.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 46,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -30,8 +30,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Bucky Balls.xbxc",
       "draft": "drafts/TC14/bucky-balls.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Bucky Balls.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 46,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -41,8 +41,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Low Poly Spheres.xbxc",
       "draft": "drafts/TC14/low-poly-spheres.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Low Poly Spheres.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 47,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -52,8 +52,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Multipoint Stars.xbxc",
       "draft": "drafts/TC14/multipoint-stars.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Multipoint Stars.png",
-      "mapped": 48,
-      "unmapped": 21,
+      "mapped": 35,
+      "unmapped": 20,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -70,8 +70,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Orange Icosas.xbxc",
       "draft": "drafts/TC14/orange-icosas.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Orange Icosas.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 46,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -81,8 +81,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Primitive Bits Directional.xbxc",
       "draft": "drafts/TC14/primitive-bits-directional.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Primitive Bits Directional.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 46,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -92,8 +92,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Primitive Bits Uniform.xbxc",
       "draft": "drafts/TC14/primitive-bits-uniform.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Primitive Bits Uniform.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 46,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -103,8 +103,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Rounded Cubes.xbxc",
       "draft": "drafts/TC14/rounded-cubes.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Rounded Cubes.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 47,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -114,8 +114,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Stars 5 pt.xbxc",
       "draft": "drafts/TC14/stars-5-pt.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Stars 5 pt.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 47,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -125,8 +125,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Stars 6 pt.xbxc",
       "draft": "drafts/TC14/stars-6-pt.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Stars 6 pt.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 47,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -136,8 +136,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Stars 8 pt.xbxc",
       "draft": "drafts/TC14/stars-8-pt.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Stars 8 pt.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 47,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -147,8 +147,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Triangles 2D.xbxc",
       "draft": "drafts/TC14/abstract-and-geometric-triangles-2d.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Triangles 2D.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 47,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -174,8 +174,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Yellow Tech Balls.xbxc",
       "draft": "drafts/TC14/yellow-tech-balls.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Yellow Tech Balls.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 46,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -185,8 +185,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Aux System Legacy.xbxc",
       "draft": "drafts/TC14/aux-system-legacy.json",
       "thumb": "thumbs/TC14/Basics/Aux System Legacy.png",
-      "mapped": 64,
-      "unmapped": 151,
+      "mapped": 76,
+      "unmapped": 136,
       "curves": []
     },
     {
@@ -196,8 +196,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Aux System New.xbxc",
       "draft": "drafts/TC14/aux-system-new.json",
       "thumb": "thumbs/TC14/Basics/Aux System New.png",
-      "mapped": 66,
-      "unmapped": 151,
+      "mapped": 78,
+      "unmapped": 136,
       "curves": []
     },
     {
@@ -222,8 +222,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Basic Glow Spheres.xbxc",
       "draft": "drafts/TC14/basic-glow-spheres.json",
       "thumb": "thumbs/TC14/Basics/Basic Glow Spheres.png",
-      "mapped": 56,
-      "unmapped": 91,
+      "mapped": 43,
+      "unmapped": 82,
       "curves": []
     },
     {
@@ -309,8 +309,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Explosion Trail with Gravity.xbxc",
       "draft": "drafts/TC14/explosion-trail-with-gravity.json",
       "thumb": null,
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 65,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -320,8 +320,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Explosion Trail.xbxc",
       "draft": "drafts/TC14/explosion-trail.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 92,
+      "mapped": 64,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -346,8 +346,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/OBJ Emitter.xbxc",
       "draft": "drafts/TC14/obj-emitter.json",
       "thumb": "thumbs/TC14/Basics/OBJ Emitter.png",
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 45,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -357,8 +357,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Pastel Dots.xbxc",
       "draft": "drafts/TC14/pastel-dots.json",
       "thumb": "thumbs/TC14/Basics/Pastel Dots.png",
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 45,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -413,8 +413,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Simple Dots.xbxc",
       "draft": "drafts/TC14/simple-dots.json",
       "thumb": "thumbs/TC14/Basics/Simple Dots.png",
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 45,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -424,8 +424,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Simple Light Path.xbxc",
       "draft": "drafts/TC14/simple-light-path.json",
       "thumb": "thumbs/TC14/Basics/Simple Light Path.png",
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 45,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -450,8 +450,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Single Glow.xbxc",
       "draft": "drafts/TC14/basics-single-glow.json",
       "thumb": "thumbs/TC14/Basics/Single Glow.png",
-      "mapped": 62,
-      "unmapped": 140,
+      "mapped": 74,
+      "unmapped": 125,
       "curves": []
     },
     {
@@ -461,8 +461,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Confetti.xbxc",
       "draft": "drafts/TC14/confetti.json",
       "thumb": null,
-      "mapped": 56,
-      "unmapped": 79,
+      "mapped": 46,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -548,7 +548,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Sparkle Dust.xbxc",
       "draft": "drafts/TC14/sparkle-dust.json",
       "thumb": null,
-      "mapped": 51,
+      "mapped": 38,
       "unmapped": 6,
       "curves": [
         "rg.custom.xfer.life",
@@ -567,8 +567,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Blast Sparks 1.xbxc",
       "draft": "drafts/TC14/blast-sparks-1.json",
       "thumb": "thumbs/TC14/Explosive/Blast Sparks 1.png",
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 63,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -578,8 +578,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Blast Sparks 2.xbxc",
       "draft": "drafts/TC14/blast-sparks-2.json",
       "thumb": "thumbs/TC14/Explosive/Blast Sparks 2.png",
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 63,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -589,7 +589,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Dust Hit 02.xbxc",
       "draft": "drafts/TC14/dust-hit-02.json",
       "thumb": null,
-      "mapped": 52,
+      "mapped": 55,
       "unmapped": 11,
       "curves": [
         "rg.custom.xfer.life",
@@ -608,7 +608,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Dust Hit 03.xbxc",
       "draft": "drafts/TC14/dust-hit-03.json",
       "thumb": null,
-      "mapped": 52,
+      "mapped": 55,
       "unmapped": 11,
       "curves": [
         "rg.custom.xfer.life",
@@ -627,8 +627,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Explode Out.xbxc",
       "draft": "drafts/TC14/explode-out.json",
       "thumb": "thumbs/TC14/Explosive/Explode Out.png",
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 65,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -638,8 +638,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Explode Up Dark.xbxc",
       "draft": "drafts/TC14/explode-up-dark.json",
       "thumb": "thumbs/TC14/Explosive/Explode Up Dark.png",
-      "mapped": 47,
-      "unmapped": 12,
+      "mapped": 50,
+      "unmapped": 11,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -656,8 +656,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Explode Up.xbxc",
       "draft": "drafts/TC14/explode-up.json",
       "thumb": "thumbs/TC14/Explosive/Explode Up.png",
-      "mapped": 47,
-      "unmapped": 12,
+      "mapped": 50,
+      "unmapped": 11,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -690,8 +690,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire Burst 2.xbxc",
       "draft": "drafts/TC14/fire-burst-2.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 46,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -701,8 +701,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire Trails 1.xbxc",
       "draft": "drafts/TC14/fire-trails-1.json",
       "thumb": "thumbs/TC14/Explosive/Fire Trails 1.png",
-      "mapped": 56,
-      "unmapped": 85,
+      "mapped": 63,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -712,8 +712,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire Trails 2.xbxc",
       "draft": "drafts/TC14/fire-trails-2.json",
       "thumb": "thumbs/TC14/Explosive/Fire Trails 2.png",
-      "mapped": 57,
-      "unmapped": 85,
+      "mapped": 64,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -723,8 +723,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fireball Medium 1.xbxc",
       "draft": "drafts/TC14/fireball-medium-1.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 46,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -734,8 +734,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fireball Medium 2.xbxc",
       "draft": "drafts/TC14/fireball-medium-2.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 46,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -745,8 +745,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Flare Flash 1.xbxc",
       "draft": "drafts/TC14/flare-flash-1.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 46,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -756,8 +756,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Flare Flash 2.xbxc",
       "draft": "drafts/TC14/flare-flash-2.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 46,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -767,8 +767,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Flare Flash 3.xbxc",
       "draft": "drafts/TC14/flare-flash-3.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 46,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -778,8 +778,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Glass Bits.xbxc",
       "draft": "drafts/TC14/glass-bits.json",
       "thumb": null,
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 47,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -789,8 +789,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Glass Shard Explosion 2.xbxc",
       "draft": "drafts/TC14/glass-shard-explosion-2.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 46,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -800,8 +800,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Glass Shard Explosion 3.xbxc",
       "draft": "drafts/TC14/glass-shard-explosion-3.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 46,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -811,8 +811,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Glow Spark Blast.xbxc",
       "draft": "drafts/TC14/glow-spark-blast.json",
       "thumb": null,
-      "mapped": 48,
-      "unmapped": 67,
+      "mapped": 55,
+      "unmapped": 58,
       "curves": []
     },
     {
@@ -838,7 +838,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Muzzle Flash 1.xbxc",
       "draft": "drafts/TC14/muzzle-flash-1.json",
       "thumb": "thumbs/TC14/Explosive/Muzzle Flash 1.png",
-      "mapped": 45,
+      "mapped": 48,
       "unmapped": 10,
       "curves": [
         "rg.custom.xfer.life",
@@ -857,7 +857,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Muzzle Flash 2.xbxc",
       "draft": "drafts/TC14/muzzle-flash-2.json",
       "thumb": "thumbs/TC14/Explosive/Muzzle Flash 2.png",
-      "mapped": 45,
+      "mapped": 48,
       "unmapped": 10,
       "curves": [
         "rg.custom.xfer.life",
@@ -876,7 +876,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Muzzle Flash 3.xbxc",
       "draft": "drafts/TC14/muzzle-flash-3.json",
       "thumb": "thumbs/TC14/Explosive/Muzzle Flash 3.png",
-      "mapped": 45,
+      "mapped": 48,
       "unmapped": 10,
       "curves": [
         "rg.custom.xfer.life",
@@ -895,7 +895,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Muzzle Flash 4.xbxc",
       "draft": "drafts/TC14/muzzle-flash-4.json",
       "thumb": "thumbs/TC14/Explosive/Muzzle Flash 4.png",
-      "mapped": 50,
+      "mapped": 53,
       "unmapped": 7,
       "curves": [
         "rg.custom.xfer.life",
@@ -912,8 +912,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Plasma Cloud Explosion 1.xbxc",
       "draft": "drafts/TC14/plasma-cloud-explosion-1.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 47,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -923,8 +923,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Plasma Cloud Explosion 2.xbxc",
       "draft": "drafts/TC14/plasma-cloud-explosion-2.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 47,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -934,8 +934,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Ring Explosion.xbxc",
       "draft": "drafts/TC14/ring-explosion.json",
       "thumb": null,
-      "mapped": 56,
-      "unmapped": 85,
+      "mapped": 63,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -945,8 +945,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Smoke Explosion.xbxc",
       "draft": "drafts/TC14/smoke-explosion.json",
       "thumb": "thumbs/TC14/Explosive/Smoke Explosion.png",
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 64,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -956,8 +956,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Smoke Hit.xbxc",
       "draft": "drafts/TC14/smoke-hit.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 47,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -967,8 +967,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Smoke Puff 1.xbxc",
       "draft": "drafts/TC14/smoke-puff-1.json",
       "thumb": "thumbs/TC14/Explosive/Smoke Puff 1.png",
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 44,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -978,8 +978,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Smoke Puff 2.xbxc",
       "draft": "drafts/TC14/smoke-puff-2.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 46,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -989,8 +989,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Blast 1.xbxc",
       "draft": "drafts/TC14/spark-blast-1.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 64,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -1000,7 +1000,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Directional.xbxc",
       "draft": "drafts/TC14/spark-directional.json",
       "thumb": "thumbs/TC14/Explosive/Spark Directional.png",
-      "mapped": 51,
+      "mapped": 54,
       "unmapped": 7,
       "curves": [
         "rg.custom.xfer.life",
@@ -1019,7 +1019,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Single.xbxc",
       "draft": "drafts/TC14/spark-single.json",
       "thumb": "thumbs/TC14/Explosive/Spark Single.png",
-      "mapped": 50,
+      "mapped": 53,
       "unmapped": 6,
       "curves": [
         "rg.custom.xfer.life",
@@ -1038,8 +1038,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Strings 1.xbxc",
       "draft": "drafts/TC14/spark-strings-1.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 64,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -1049,8 +1049,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Strings 2.xbxc",
       "draft": "drafts/TC14/spark-strings-2.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 84,
+      "mapped": 64,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -1060,8 +1060,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Strings 3.xbxc",
       "draft": "drafts/TC14/spark-strings-3.json",
       "thumb": null,
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 64,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1071,8 +1071,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Sparks Ignite.xbxc",
       "draft": "drafts/TC14/sparks-ignite.json",
       "thumb": null,
-      "mapped": 55,
-      "unmapped": 70,
+      "mapped": 62,
+      "unmapped": 62,
       "curves": []
     },
     {
@@ -1083,7 +1083,7 @@
       "draft": "drafts/TC14/bow-shock.json",
       "thumb": "thumbs/TC14/Fluid/Bow Shock.png",
       "mapped": 63,
-      "unmapped": 118,
+      "unmapped": 95,
       "curves": []
     },
     {
@@ -1094,7 +1094,7 @@
       "draft": "drafts/TC14/brownian-motion.json",
       "thumb": "thumbs/TC14/Fluid/Brownian Motion.png",
       "mapped": 61,
-      "unmapped": 118,
+      "unmapped": 95,
       "curves": []
     },
     {
@@ -1105,7 +1105,7 @@
       "draft": "drafts/TC14/candle-flame.json",
       "thumb": "thumbs/TC14/Fluid/Candle Flame.png",
       "mapped": 63,
-      "unmapped": 118,
+      "unmapped": 95,
       "curves": []
     },
     {
@@ -1116,7 +1116,7 @@
       "draft": "drafts/TC14/fumes.json",
       "thumb": "thumbs/TC14/Fluid/Fumes.png",
       "mapped": 63,
-      "unmapped": 118,
+      "unmapped": 95,
       "curves": []
     },
     {
@@ -1126,8 +1126,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Grid Fluid.xbxc",
       "draft": "drafts/TC14/grid-fluid.json",
       "thumb": "thumbs/TC14/Fluid/Grid Fluid.png",
-      "mapped": 63,
-      "unmapped": 118,
+      "mapped": 83,
+      "unmapped": 95,
       "curves": []
     },
     {
@@ -1138,7 +1138,7 @@
       "draft": "drafts/TC14/horizontal-stream.json",
       "thumb": "thumbs/TC14/Fluid/Horizontal Stream.png",
       "mapped": 63,
-      "unmapped": 118,
+      "unmapped": 95,
       "curves": []
     },
     {
@@ -1149,7 +1149,7 @@
       "draft": "drafts/TC14/ink-drop.json",
       "thumb": "thumbs/TC14/Fluid/Ink Drop.png",
       "mapped": 63,
-      "unmapped": 118,
+      "unmapped": 95,
       "curves": []
     },
     {
@@ -1159,8 +1159,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Melted.xbxc",
       "draft": "drafts/TC14/melted.json",
       "thumb": "thumbs/TC14/Fluid/Melted.png",
-      "mapped": 63,
-      "unmapped": 118,
+      "mapped": 83,
+      "unmapped": 95,
       "curves": []
     },
     {
@@ -1170,8 +1170,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Orbit.xbxc",
       "draft": "drafts/TC14/orbit.json",
       "thumb": "thumbs/TC14/Fluid/Orbit.png",
-      "mapped": 63,
-      "unmapped": 118,
+      "mapped": 83,
+      "unmapped": 95,
       "curves": []
     },
     {
@@ -1182,7 +1182,7 @@
       "draft": "drafts/TC14/ring-emitter.json",
       "thumb": "thumbs/TC14/Fluid/Ring Emitter.png",
       "mapped": 63,
-      "unmapped": 118,
+      "unmapped": 95,
       "curves": []
     },
     {
@@ -1193,7 +1193,7 @@
       "draft": "drafts/TC14/smolder.json",
       "thumb": "thumbs/TC14/Fluid/Smolder.png",
       "mapped": 63,
-      "unmapped": 118,
+      "unmapped": 95,
       "curves": []
     },
     {
@@ -1203,8 +1203,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Swirl Tracers.xbxc",
       "draft": "drafts/TC14/swirl-tracers.json",
       "thumb": "thumbs/TC14/Fluid/Swirl Tracers.png",
-      "mapped": 63,
-      "unmapped": 118,
+      "mapped": 83,
+      "unmapped": 95,
       "curves": []
     },
     {
@@ -1214,8 +1214,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Basic Magic.xbxc",
       "draft": "drafts/TC14/basic-magic.json",
       "thumb": "thumbs/TC14/Light and Magic/Basic Magic.png",
-      "mapped": 56,
-      "unmapped": 79,
+      "mapped": 62,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1225,8 +1225,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Blue Swarm with Trail.xbxc",
       "draft": "drafts/TC14/blue-swarm-with-trail.json",
       "thumb": "thumbs/TC14/Light and Magic/Blue Swarm with Trail.png",
-      "mapped": 56,
-      "unmapped": 84,
+      "mapped": 63,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -1236,8 +1236,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Electron Dance.xbxc",
       "draft": "drafts/TC14/electron-dance.json",
       "thumb": "thumbs/TC14/Light and Magic/Electron Dance.png",
-      "mapped": 47,
-      "unmapped": 11,
+      "mapped": 50,
+      "unmapped": 10,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -1255,7 +1255,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Energy Stream.xbxc",
       "draft": "drafts/TC14/energy-stream.json",
       "thumb": "thumbs/TC14/Light and Magic/Energy Stream.png",
-      "mapped": 45,
+      "mapped": 48,
       "unmapped": 4,
       "curves": [
         "rg.custom.xfer.life",
@@ -1274,8 +1274,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Ethereal Plane.xbxc",
       "draft": "drafts/TC14/ethereal-plane.json",
       "thumb": "thumbs/TC14/Light and Magic/Ethereal Plane.png",
-      "mapped": 56,
-      "unmapped": 92,
+      "mapped": 43,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -1300,8 +1300,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Floating Streaks.xbxc",
       "draft": "drafts/TC14/floating-streaks.json",
       "thumb": "thumbs/TC14/Light and Magic/Floating Streaks.png",
-      "mapped": 55,
-      "unmapped": 84,
+      "mapped": 62,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -1311,8 +1311,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Flowing Strings.xbxc",
       "draft": "drafts/TC14/flowing-strings.json",
       "thumb": "thumbs/TC14/Light and Magic/Flowing Strings.png",
-      "mapped": 56,
-      "unmapped": 92,
+      "mapped": 62,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -1322,7 +1322,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Ghost Trail.xbxc",
       "draft": "drafts/TC14/ghost-trail.json",
       "thumb": "thumbs/TC14/Light and Magic/Ghost Trail.png",
-      "mapped": 42,
+      "mapped": 44,
       "unmapped": 8,
       "curves": [
         "rg.custom.xfer.life",
@@ -1341,8 +1341,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Glowfield.xbxc",
       "draft": "drafts/TC14/glowfield.json",
       "thumb": "thumbs/TC14/Light and Magic/Glowfield.png",
-      "mapped": 47,
-      "unmapped": 11,
+      "mapped": 34,
+      "unmapped": 10,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -1360,8 +1360,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Green Pixie.xbxc",
       "draft": "drafts/TC14/green-pixie.json",
       "thumb": "thumbs/TC14/Light and Magic/Green Pixie.png",
-      "mapped": 56,
-      "unmapped": 85,
+      "mapped": 62,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -1371,7 +1371,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Inverse Energy.xbxc",
       "draft": "drafts/TC14/inverse-energy.json",
       "thumb": "thumbs/TC14/Light and Magic/Inverse Energy.png",
-      "mapped": 41,
+      "mapped": 44,
       "unmapped": 3,
       "curves": [
         "rg.custom.xfer.life",
@@ -1390,7 +1390,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Light Blobs.xbxc",
       "draft": "drafts/TC14/light-blobs.json",
       "thumb": "thumbs/TC14/Light and Magic/Light Blobs.png",
-      "mapped": 44,
+      "mapped": 47,
       "unmapped": 11,
       "curves": [
         "rg.custom.xfer.life",
@@ -1439,8 +1439,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Love Hearts.xbxc",
       "draft": "drafts/TC14/love-hearts.json",
       "thumb": "thumbs/TC14/Light and Magic/Love Hearts.png",
-      "mapped": 47,
-      "unmapped": 21,
+      "mapped": 34,
+      "unmapped": 20,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -1457,8 +1457,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Magic Disc.xbxc",
       "draft": "drafts/TC14/magic-disc.json",
       "thumb": "thumbs/TC14/Light and Magic/Magic Disc.png",
-      "mapped": 56,
-      "unmapped": 79,
+      "mapped": 62,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1468,7 +1468,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Magic Smoke Trail.xbxc",
       "draft": "drafts/TC14/magic-smoke-trail.json",
       "thumb": "thumbs/TC14/Light and Magic/Magic Smoke Trail.png",
-      "mapped": 49,
+      "mapped": 51,
       "unmapped": 7,
       "curves": [
         "rg.custom.xfer.life",
@@ -1487,7 +1487,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Magical.xbxc",
       "draft": "drafts/TC14/magical.json",
       "thumb": "thumbs/TC14/Light and Magic/Magical.png",
-      "mapped": 40,
+      "mapped": 42,
       "unmapped": 4,
       "curves": [
         "rg.custom.xfer.life",
@@ -1506,8 +1506,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Northern Lights.xbxc",
       "draft": "drafts/TC14/northern-lights.json",
       "thumb": "thumbs/TC14/Light and Magic/Northern Lights.png",
-      "mapped": 56,
-      "unmapped": 85,
+      "mapped": 46,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -1517,8 +1517,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Orange Stars.xbxc",
       "draft": "drafts/TC14/orange-stars.json",
       "thumb": "thumbs/TC14/Light and Magic/Orange Stars.png",
-      "mapped": 56,
-      "unmapped": 85,
+      "mapped": 62,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -1528,7 +1528,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Organic Lines 2.xbxc",
       "draft": "drafts/TC14/organic-lines-2.json",
       "thumb": "thumbs/TC14/Light and Magic/Organic Lines 2.png",
-      "mapped": 49,
+      "mapped": 51,
       "unmapped": 11,
       "curves": [
         "rg.custom.xfer.life",
@@ -1546,8 +1546,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Organic Lines.xbxc",
       "draft": "drafts/TC14/organic-lines.json",
       "thumb": null,
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 65,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -1603,8 +1603,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Starflight.xbxc",
       "draft": "drafts/TC14/starflight.json",
       "thumb": "thumbs/TC14/Light and Magic/Starflight.png",
-      "mapped": 47,
-      "unmapped": 16,
+      "mapped": 34,
+      "unmapped": 15,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -1623,7 +1623,7 @@
       "draft": "drafts/TC14/swarm-fireflies.json",
       "thumb": "thumbs/TC14/Light and Magic/Swarm Fireflies.png",
       "mapped": 35,
-      "unmapped": 12,
+      "unmapped": 11,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -1637,8 +1637,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Copper Patina.xbxc",
       "draft": "drafts/TC14/copper-patina.json",
       "thumb": "thumbs/TC14/Motion Graphics/Copper Patina.png",
-      "mapped": 56,
-      "unmapped": 79,
+      "mapped": 43,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1648,8 +1648,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Falling Flares.xbxc",
       "draft": "drafts/TC14/falling-flares.json",
       "thumb": "thumbs/TC14/Motion Graphics/Falling Flares.png",
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 46,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1659,8 +1659,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Flickering Lights.xbxc",
       "draft": "drafts/TC14/flickering-lights.json",
       "thumb": "thumbs/TC14/Motion Graphics/Flickering Lights.png",
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 47,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1670,8 +1670,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Flowy Green.xbxc",
       "draft": "drafts/TC14/flowy-green.json",
       "thumb": "thumbs/TC14/Motion Graphics/Flowy Green.png",
-      "mapped": 55,
-      "unmapped": 79,
+      "mapped": 62,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1681,8 +1681,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Glow Field.xbxc",
       "draft": "drafts/TC14/glow-field.json",
       "thumb": "thumbs/TC14/Motion Graphics/Glow Field.png",
-      "mapped": 57,
-      "unmapped": 85,
+      "mapped": 44,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -1692,8 +1692,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Nebula Strings.xbxc",
       "draft": "drafts/TC14/nebula-strings.json",
       "thumb": "thumbs/TC14/Motion Graphics/Nebula Strings.png",
-      "mapped": 56,
-      "unmapped": 92,
+      "mapped": 62,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -1703,8 +1703,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Outward Flow.xbxc",
       "draft": "drafts/TC14/outward-flow.json",
       "thumb": "thumbs/TC14/Motion Graphics/Outward Flow.png",
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 63,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1714,8 +1714,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Phantom Trail.xbxc",
       "draft": "drafts/TC14/phantom-trail.json",
       "thumb": null,
-      "mapped": 56,
-      "unmapped": 84,
+      "mapped": 43,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -1725,7 +1725,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Rose Spheres.xbxc",
       "draft": "drafts/TC14/rose-spheres.json",
       "thumb": "thumbs/TC14/Motion Graphics/Rose Spheres.png",
-      "mapped": 45,
+      "mapped": 48,
       "unmapped": 10,
       "curves": [
         "rg.custom.xfer.life",
@@ -1744,8 +1744,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Serpent.xbxc",
       "draft": "drafts/TC14/serpent.json",
       "thumb": "thumbs/TC14/Motion Graphics/Serpent.png",
-      "mapped": 55,
-      "unmapped": 79,
+      "mapped": 62,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1770,8 +1770,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Shooting Stars 1.xbxc",
       "draft": "drafts/TC14/shooting-stars-1.json",
       "thumb": "thumbs/TC14/Motion Graphics/Shooting Stars 1.png",
-      "mapped": 48,
-      "unmapped": 12,
+      "mapped": 35,
+      "unmapped": 11,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -1789,8 +1789,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Single Glow.xbxc",
       "draft": "drafts/TC14/motion-graphics-single-glow.json",
       "thumb": "thumbs/TC14/Motion Graphics/Single Glow.png",
-      "mapped": 62,
-      "unmapped": 140,
+      "mapped": 74,
+      "unmapped": 125,
       "curves": []
     },
     {
@@ -1800,8 +1800,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 1.xbxc",
       "draft": "drafts/TC14/streak-brush-1.json",
       "thumb": "thumbs/TC14/Motion Graphics/Streak Brush 1.png",
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 69,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -1811,8 +1811,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 2.xbxc",
       "draft": "drafts/TC14/streak-brush-2.json",
       "thumb": "thumbs/TC14/Motion Graphics/Streak Brush 2.png",
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 69,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -1822,8 +1822,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 3.xbxc",
       "draft": "drafts/TC14/streak-brush-3.json",
       "thumb": "thumbs/TC14/Motion Graphics/Streak Brush 3.png",
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 69,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -1833,8 +1833,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 4.xbxc",
       "draft": "drafts/TC14/streak-brush-4.json",
       "thumb": "thumbs/TC14/Motion Graphics/Streak Brush 4.png",
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 69,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -1844,8 +1844,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Tempest.xbxc",
       "draft": "drafts/TC14/tempest.json",
       "thumb": null,
-      "mapped": 56,
-      "unmapped": 84,
+      "mapped": 63,
+      "unmapped": 75,
       "curves": []
     },
     {
@@ -1855,8 +1855,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Triangles 2D.xbxc",
       "draft": "drafts/TC14/motion-graphics-triangles-2d.json",
       "thumb": "thumbs/TC14/Motion Graphics/Triangles 2D.png",
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 47,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1867,7 +1867,7 @@
       "draft": "drafts/TC14/blizzard.json",
       "thumb": "thumbs/TC14/Nature/Blizzard.png",
       "mapped": 39,
-      "unmapped": 18,
+      "unmapped": 17,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -1882,8 +1882,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Bubbles.xbxc",
       "draft": "drafts/TC14/blowing-bubbles.json",
       "thumb": "thumbs/TC14/Nature/Blowing Bubbles.png",
-      "mapped": 56,
-      "unmapped": 79,
+      "mapped": 45,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1893,8 +1893,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Maple Leaves.xbxc",
       "draft": "drafts/TC14/blowing-maple-leaves.json",
       "thumb": "thumbs/TC14/Nature/Blowing Maple Leaves.png",
-      "mapped": 57,
-      "unmapped": 92,
+      "mapped": 46,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -1904,8 +1904,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Seeds 1.xbxc",
       "draft": "drafts/TC14/blowing-seeds-1.json",
       "thumb": "thumbs/TC14/Nature/Blowing Seeds 1.png",
-      "mapped": 57,
-      "unmapped": 92,
+      "mapped": 46,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -1915,8 +1915,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Seeds 2.xbxc",
       "draft": "drafts/TC14/blowing-seeds-2.json",
       "thumb": "thumbs/TC14/Nature/Blowing Seeds 2.png",
-      "mapped": 57,
-      "unmapped": 92,
+      "mapped": 46,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -1926,8 +1926,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Seeds Wide.xbxc",
       "draft": "drafts/TC14/blowing-seeds-wide.json",
       "thumb": "thumbs/TC14/Nature/Blowing Seeds Wide.png",
-      "mapped": 56,
-      "unmapped": 92,
+      "mapped": 45,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -1937,7 +1937,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Snow.xbxc",
       "draft": "drafts/TC14/blowing-snow.json",
       "thumb": "thumbs/TC14/Nature/Blowing Snow.png",
-      "mapped": 48,
+      "mapped": 35,
       "unmapped": 10,
       "curves": [
         "rg.custom.xfer.life",
@@ -1956,8 +1956,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Chemtrails.xbxc",
       "draft": "drafts/TC14/chemtrails.json",
       "thumb": "thumbs/TC14/Nature/Chemtrails.png",
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 64,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1967,8 +1967,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Cloud Cover.xbxc",
       "draft": "drafts/TC14/cloud-cover.json",
       "thumb": "thumbs/TC14/Nature/Cloud Cover.png",
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 44,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1978,8 +1978,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Clouds.xbxc",
       "draft": "drafts/TC14/clouds.json",
       "thumb": "thumbs/TC14/Nature/Clouds.png",
-      "mapped": 57,
-      "unmapped": 79,
+      "mapped": 46,
+      "unmapped": 70,
       "curves": []
     },
     {
@@ -1989,8 +1989,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Falling Feathers.xbxc",
       "draft": "drafts/TC14/falling-feathers.json",
       "thumb": "thumbs/TC14/Nature/Falling Feathers.png",
-      "mapped": 57,
-      "unmapped": 85,
+      "mapped": 47,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -2000,7 +2000,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Fireflies.xbxc",
       "draft": "drafts/TC14/fireflies.json",
       "thumb": "thumbs/TC14/Nature/Fireflies.png",
-      "mapped": 46,
+      "mapped": 33,
       "unmapped": 5,
       "curves": [
         "rg.custom.xfer.life",
@@ -2034,8 +2034,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Large Snow 2D.xbxc",
       "draft": "drafts/TC14/large-snow-2d.json",
       "thumb": "thumbs/TC14/Nature/Large Snow 2D.png",
-      "mapped": 56,
-      "unmapped": 85,
+      "mapped": 45,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -2060,7 +2060,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Rain.xbxc",
       "draft": "drafts/TC14/rain.json",
       "thumb": "thumbs/TC14/Nature/Rain.png",
-      "mapped": 39,
+      "mapped": 26,
       "unmapped": 8,
       "curves": [
         "rg.custom.xfer.life",
@@ -2079,8 +2079,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Rising Bubbles.xbxc",
       "draft": "drafts/TC14/rising-bubbles.json",
       "thumb": "thumbs/TC14/Nature/Rising Bubbles.png",
-      "mapped": 49,
-      "unmapped": 17,
+      "mapped": 36,
+      "unmapped": 16,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -2126,7 +2126,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Sea Creatures.xbxc",
       "draft": "drafts/TC14/sea-creatures.json",
       "thumb": "thumbs/TC14/Nature/Sea Creatures.png",
-      "mapped": 48,
+      "mapped": 50,
       "unmapped": 7,
       "curves": [
         "rg.custom.xfer.life",
@@ -2145,7 +2145,7 @@
       "draft": "drafts/TC14/snowy-night-2.json",
       "thumb": "thumbs/TC14/Nature/Snowy NIght 2.png",
       "mapped": 39,
-      "unmapped": 18,
+      "unmapped": 17,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -2160,7 +2160,7 @@
       "draft": "drafts/TC14/snowy-night-1.json",
       "thumb": "thumbs/TC14/Nature/Snowy Night 1.png",
       "mapped": 39,
-      "unmapped": 18,
+      "unmapped": 17,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -2188,8 +2188,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Directional FIre 1.xbxc",
       "draft": "drafts/TC14/directional-fire-1.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Directional FIre 1.png",
-      "mapped": 57,
-      "unmapped": 85,
+      "mapped": 46,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -2199,8 +2199,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Directional Fire 2.xbxc",
       "draft": "drafts/TC14/directional-fire-2.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Directional Fire 2.png",
-      "mapped": 57,
-      "unmapped": 85,
+      "mapped": 46,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -2211,7 +2211,7 @@
       "draft": "drafts/TC14/falling-sparks.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Falling Sparks.png",
       "mapped": 29,
-      "unmapped": 15,
+      "unmapped": 14,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -2225,8 +2225,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Fireplace.xbxc",
       "draft": "drafts/TC14/fireplace.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Fireplace.png",
-      "mapped": 57,
-      "unmapped": 85,
+      "mapped": 46,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -2236,8 +2236,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Firestarter.xbxc",
       "draft": "drafts/TC14/firestarter.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Firestarter.png",
-      "mapped": 48,
-      "unmapped": 12,
+      "mapped": 51,
+      "unmapped": 11,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -2270,8 +2270,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Horizontal Fire.xbxc",
       "draft": "drafts/TC14/horizontal-fire.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Horizontal Fire.png",
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 66,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -2281,8 +2281,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Horizontal Smoke 1.xbxc",
       "draft": "drafts/TC14/horizontal-smoke-1.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Horizontal Smoke 1.png",
-      "mapped": 57,
-      "unmapped": 85,
+      "mapped": 46,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -2292,8 +2292,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Horizontal Smoke 2.xbxc",
       "draft": "drafts/TC14/horizontal-smoke-2.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Horizontal Smoke 2.png",
-      "mapped": 57,
-      "unmapped": 85,
+      "mapped": 46,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -2303,8 +2303,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Point Smoke.xbxc",
       "draft": "drafts/TC14/point-smoke.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Point Smoke.png",
-      "mapped": 48,
-      "unmapped": 12,
+      "mapped": 35,
+      "unmapped": 11,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -2338,8 +2338,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Rocket Fire.xbxc",
       "draft": "drafts/TC14/rocket-fire.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Rocket Fire.png",
-      "mapped": 57,
-      "unmapped": 85,
+      "mapped": 46,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -2349,8 +2349,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Simple Fire.xbxc",
       "draft": "drafts/TC14/simple-fire.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Simple Fire.png",
-      "mapped": 57,
-      "unmapped": 92,
+      "mapped": 44,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -2361,7 +2361,7 @@
       "draft": "drafts/TC14/simple-smoke.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Simple Smoke.png",
       "mapped": 31,
-      "unmapped": 17,
+      "unmapped": 16,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -2376,8 +2376,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Magic 2.xbxc",
       "draft": "drafts/TC14/smoke-magic-2.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smoke Magic 2.png",
-      "mapped": 58,
-      "unmapped": 92,
+      "mapped": 64,
+      "unmapped": 83,
       "curves": []
     },
     {
@@ -2387,8 +2387,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Magic.xbxc",
       "draft": "drafts/TC14/smoke-magic.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smoke Magic.png",
-      "mapped": 51,
-      "unmapped": 14,
+      "mapped": 54,
+      "unmapped": 13,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -2406,8 +2406,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Plume.xbxc",
       "draft": "drafts/TC14/smoke-plume.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smoke Plume.png",
-      "mapped": 57,
-      "unmapped": 85,
+      "mapped": 47,
+      "unmapped": 76,
       "curves": []
     },
     {
@@ -2418,7 +2418,7 @@
       "draft": "drafts/TC14/smoke-rising-1.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smoke Rising 1.png",
       "mapped": 36,
-      "unmapped": 23,
+      "unmapped": 22,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -2433,7 +2433,7 @@
       "draft": "drafts/TC14/smoke-rising-2.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smoke Rising 2.png",
       "mapped": 36,
-      "unmapped": 23,
+      "unmapped": 22,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -2462,8 +2462,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Wizard.xbxc",
       "draft": "drafts/TC14/smoke-wizard.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smoke Wizard.png",
-      "mapped": 51,
-      "unmapped": 14,
+      "mapped": 54,
+      "unmapped": 13,
       "curves": [
         "rg.custom.xfer.life",
         "rg.custom.col.life",
@@ -2481,8 +2481,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smokey Fire.xbxc",
       "draft": "drafts/TC14/smokey-fire.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smokey Fire.png",
-      "mapped": 55,
-      "unmapped": 85,
+      "mapped": 44,
+      "unmapped": 76,
       "curves": []
     }
   ],

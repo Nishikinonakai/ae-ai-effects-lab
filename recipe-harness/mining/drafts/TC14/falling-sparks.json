@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Falling Sparks.xbxc",
   "_pack": "TC14",
   "_category": "Smoke and Fire",
-  "_map_coverage": "29 mapped / 15 unmapped / 3 curves",
+  "_map_coverage": "29 mapped / 14 unmapped / 3 curves",
   "_unmapped": {
     "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
@@ -19,7 +19,6 @@
     "FXid_PShade": 0,
     "FXid_PShadeFalloffAdjust": 250,
     "FXid_PShadow": 0,
-    "FXid_SE_PShadow": 0,
     "FXid_DOF": 1,
     "FXid_MBlurOpacBoost": 0,
     "FXid_MBlurPopup": 1,

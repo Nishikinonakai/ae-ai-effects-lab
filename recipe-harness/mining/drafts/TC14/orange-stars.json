@@ -2,12 +2,17 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Orange Stars.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "56 mapped / 85 unmapped / 0 curves",
+  "_map_coverage": "62 mapped / 76 unmapped / 0 curves",
   "_dropped_inert": [
     [
       "tc Particular-0711",
       10,
       "FXid_FAffectPos (alias)"
+    ],
+    [
+      "tc Particular-2759",
+      80,
+      "FXid_Options_Aux_AirPhysics_Turbulence (aux->S2)"
     ]
   ],
   "_unmapped": {
@@ -691,12 +696,6 @@
       "curveX": [],
       "curveY": []
     },
-    "FXid_PColorOverLifeArb": {
-      "PosP": [],
-      "PosR": [],
-      "PosG": [],
-      "PosB": []
-    },
     "FXid_Options_SmokeletShadow_Color": {
       "r": 0,
       "g": 0,
@@ -710,7 +709,6 @@
     "FXid_PShadow_Dist": 100,
     "FXid_PShadow_Size": 100,
     "FXid_PShadow_ZPos": 0,
-    "FXid_SE_PShadow": 0,
     "FXid_PhTime": 1,
     "FXid_AirResistRotation": false,
     "FXid_AnimationSystem": 0,
@@ -732,12 +730,6 @@
     "FXid_DFeather": 50,
     "FXid_DRadius": 100,
     "FXid_DStrength": 0,
-    "FXid_Options_Aux_AirPhysics_Resistance": 0,
-    "FXid_Options_Aux_AirPhysics_Wind": 0,
-    "FXid_Options_Aux_Control_StartEmit": 0,
-    "FXid_Options_Aux_Control_StopEmit": 100,
-    "FXid_Options_Aux_EmitProbability": 100,
-    "FXid_Options_Aux_Feather": 30,
     "FXid_PColorRnd_AUX": 0,
     "FXid_PColor_AUX": {
       "r": 255,
@@ -760,28 +752,6 @@
     "FXid_PRotateY_AUX": 0,
     "FXid_PRotateZ_AUX": 0,
     "FXid_PSetColor_AUX": 0,
-    "FXid_SE_PColorOverLifeArb": {
-      "PosP": [
-        0,
-        50,
-        180
-      ],
-      "PosR": [
-        1,
-        1,
-        1
-      ],
-      "PosG": [
-        1,
-        0.9411764740943909,
-        0.21176470816135406
-      ],
-      "PosB": [
-        1,
-        0.4901960790157318,
-        0.05098039284348488
-      ]
-    },
     "FXid_SE_POpacityOverLifeArb": {
       "isCurveMode": false,
       "samples": [
@@ -1214,6 +1184,11 @@
     0,
     0
   ],
+  "master": {
+    "library": "library/particular-masters.aep",
+    "comp": "MASTER_particular_S2",
+    "layer": 1
+  },
   "hostName": "Mined",
   "effects": [
     {
@@ -1440,69 +1415,104 @@
           "FXid_WindZ (exact)"
         ],
         [
-          "tc Particular-0201",
-          80,
-          "FXid_Options_Aux_AirPhysics_Turbulence (alias)"
+          "tc Particular-2830",
+          8,
+          "aux -> S2 Emitter Type: Emit from Parent (v18)"
         ],
         [
-          "tc Particular-0194",
+          "tc Particular-2066",
+          0,
+          "FXid_Options_Aux_AirPhysics_Resistance (aux->S2)"
+        ],
+        [
+          "tc Particular-2797",
+          0,
+          "FXid_Options_Aux_AirPhysics_Wind (aux->S2)"
+        ],
+        [
+          "tc Particular-2242",
           0.01,
-          "FXid_Options_Aux_Control_InheritVelocity (alias)"
+          "FXid_Options_Aux_Control_InheritVelocity (aux->S2)"
         ],
         [
-          "tc Particular-0189",
+          "tc Particular-2236",
+          100,
+          "FXid_Options_Aux_EmitProbability (aux->S2)"
+        ],
+        [
+          "tc Particular-2077",
+          30,
+          "FXid_Options_Aux_Feather (aux->S2)"
+        ],
+        [
+          "tc Particular-2065",
           -4,
-          "FXid_Options_Aux_Gravity (alias)"
+          "FXid_Options_Aux_Gravity (aux->S2)"
         ],
         [
-          "tc Particular-0204",
+          "tc Particular-2113",
           40,
-          "FXid_Options_Aux_Randomness_Life (alias)"
+          "FXid_Options_Aux_Randomness_Life (aux->S2)"
         ],
         [
-          "tc Particular-0206",
+          "tc Particular-2123",
           51,
-          "FXid_Options_Aux_Randomness_Opacity (alias)"
+          "FXid_Options_Aux_Randomness_Opacity (aux->S2)"
         ],
         [
-          "tc Particular-0205",
+          "tc Particular-2122",
           50,
-          "FXid_Options_Aux_Randomness_Size (alias)"
+          "FXid_Options_Aux_Randomness_Size (aux->S2)"
         ],
         [
-          "tc Particular-0190",
+          "tc Particular-2117",
           2,
-          "FXid_Options_Aux_TransferMode (alias+enumOffset)"
+          "FXid_Options_Aux_TransferMode (aux->S2)+enumOffset"
         ],
         [
-          "tc Particular-0150",
+          "tc Particular-2050",
           1,
-          "FXid_SE_PLife (alias)"
+          "FXid_SE_PLife (aux->S2)"
         ],
         [
-          "tc Particular-0160",
+          "tc Particular-2081",
           90,
-          "FXid_SE_POpacity (alias)"
+          "FXid_SE_POpacity (aux->S2)"
         ],
         [
-          "tc Particular-0154",
+          "tc Particular-2075",
           2,
-          "FXid_SE_PSize (alias)"
+          "FXid_SE_PSize (aux->S2)"
         ],
         [
-          "tc Particular-0151",
+          "tc Particular-2751",
           3,
-          "FXid_SE_PType (alias+enumOffset)"
+          "FXid_SE_PType (aux->S2)+enumOffset"
         ],
         [
-          "tc Particular-0152",
+          "tc Particular-2059",
           56,
-          "FXid_SE_PVel (alias)"
+          "FXid_SE_PVel (aux->S2)"
         ],
         [
-          "tc Particular-0149",
+          "tc Particular-2194",
           58,
-          "FXid_SE_ParticlesPerSecF (alias)"
+          "FXid_SE_ParticlesPerSecF (aux->S2)"
+        ],
+        [
+          "tc Particular-2136",
+          1,
+          "Set Color S2: At Birth"
+        ],
+        [
+          "tc Particular-2118",
+          [
+            1,
+            0.685947714994351,
+            0.4023965147013466,
+            1
+          ],
+          "Color S2 (flattened SE color curve)"
         ]
       ],
       "expressions": []

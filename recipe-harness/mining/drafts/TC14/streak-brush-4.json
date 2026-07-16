@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 4.xbxc",
   "_pack": "TC14",
   "_category": "Motion Graphics",
-  "_map_coverage": "58 mapped / 92 unmapped / 0 curves",
+  "_map_coverage": "69 mapped / 83 unmapped / 0 curves",
   "_unmapped": {
     "FXid_Gen1EmitterSizeOption": 0,
     "FXid_Gen1Pos": [
@@ -717,36 +717,6 @@
       "curveX": [],
       "curveY": []
     },
-    "FXid_PColorOverLifeArb": {
-      "PosP": [
-        0,
-        50,
-        100,
-        150,
-        200
-      ],
-      "PosR": [
-        1,
-        1,
-        0,
-        0,
-        0
-      ],
-      "PosG": [
-        0,
-        1,
-        1,
-        1,
-        0
-      ],
-      "PosB": [
-        0,
-        0,
-        0,
-        1,
-        1
-      ]
-    },
     "FXid_Options_SmokeletShadow_Color": {
       "r": 0,
       "g": 0,
@@ -760,7 +730,6 @@
     "FXid_PShadow_Dist": 100,
     "FXid_PShadow_Size": 100,
     "FXid_PShadow_ZPos": 0,
-    "FXid_SE_PShadow": 0,
     "FXid_PhTime": 1,
     "FXid_AirResistRotation": false,
     "FXid_AnimationSystem": 0,
@@ -798,12 +767,6 @@
     ],
     "FXid_DRadius": 100,
     "FXid_DStrength": 0,
-    "FXid_Options_Aux_AirPhysics_Resistance": 0,
-    "FXid_Options_Aux_AirPhysics_Wind": 0,
-    "FXid_Options_Aux_Control_StartEmit": 0,
-    "FXid_Options_Aux_Control_StopEmit": 100,
-    "FXid_Options_Aux_EmitProbability": 100,
-    "FXid_Options_Aux_Feather": 30,
     "FXid_PColorRnd_AUX": 0,
     "FXid_PColor_AUX": {
       "r": 255,
@@ -827,36 +790,6 @@
     "FXid_PRotateY_AUX": 0,
     "FXid_PRotateZ_AUX": 0,
     "FXid_PSetColor_AUX": 0,
-    "FXid_SE_PColorOverLifeArb": {
-      "PosB": [
-        0,
-        0,
-        0,
-        1,
-        1
-      ],
-      "PosG": [
-        0,
-        1,
-        1,
-        1,
-        0
-      ],
-      "PosP": [
-        0,
-        50,
-        100,
-        150,
-        200
-      ],
-      "PosR": [
-        1,
-        1,
-        0,
-        0,
-        0
-      ]
-    },
     "FXid_SE_POpacityOverLifeArb": {
       "curveX": [
         0,
@@ -1393,6 +1326,17 @@
     0,
     0
   ],
+  "footage": [
+    {
+      "path": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Sprites/Common/Streak Brushes/Streak Brush 4.png",
+      "layerName": "SpriteTex"
+    }
+  ],
+  "master": {
+    "library": "library/particular-masters.aep",
+    "comp": "MASTER_particular_S2",
+    "layer": 1
+  },
   "hostName": "Mined",
   "effects": [
     {
@@ -1524,8 +1468,8 @@
         ],
         [
           "tc Particular-0703",
-          2,
-          "FXid_PType (alias+enumOffset) [sprite fallback -> Glow Sphere]"
+          6,
+          "FXid_PType (alias+enumOffset) [Designer 6 -> Sprite + connected texture]"
         ],
         [
           "tc Particular-0531",
@@ -1565,12 +1509,12 @@
         [
           "tc Particular-0070",
           [
-            0.688,
-            0.895,
-            0.895,
+            0.23529411764705882,
+            1,
+            1,
             1
           ],
-          "FXid_PColor (alias) [tinted from vendor thumb]"
+          "FXid_PColor (alias)"
         ],
         [
           "tc Particular-0071",
@@ -1633,69 +1577,133 @@
           "FXid_WindZ (exact)"
         ],
         [
-          "tc Particular-0201",
-          0,
-          "FXid_Options_Aux_AirPhysics_Turbulence (alias)"
+          "tc Particular-0066",
+          {
+            "__layer": "SpriteTex"
+          },
+          "Sprite texture layer (mined PLayer)"
         ],
         [
-          "tc Particular-0194",
-          0,
-          "FXid_Options_Aux_Control_InheritVelocity (alias)"
-        ],
-        [
-          "tc Particular-0189",
-          0,
-          "FXid_Options_Aux_Gravity (alias)"
-        ],
-        [
-          "tc Particular-0204",
-          0,
-          "FXid_Options_Aux_Randomness_Life (alias)"
-        ],
-        [
-          "tc Particular-0206",
-          0,
-          "FXid_Options_Aux_Randomness_Opacity (alias)"
-        ],
-        [
-          "tc Particular-0205",
-          0,
-          "FXid_Options_Aux_Randomness_Size (alias)"
-        ],
-        [
-          "tc Particular-0190",
+          "tc Particular-0700",
           1,
-          "FXid_Options_Aux_TransferMode (alias+enumOffset)"
+          "Colorize (Designer type variant)"
         ],
         [
-          "tc Particular-0150",
-          0.5,
-          "FXid_SE_PLife (alias)"
+          "tc Particular-0067",
+          1,
+          "FXid_PLayerTime (+enumOffset)"
         ],
         [
-          "tc Particular-0160",
-          50,
-          "FXid_SE_POpacity (alias)"
+          "tc Particular-2830",
+          8,
+          "aux -> S2 Emitter Type: Emit from Parent (v18)"
         ],
         [
-          "tc Particular-0154",
-          3.5,
-          "FXid_SE_PSize (alias)"
-        ],
-        [
-          "tc Particular-0151",
-          6,
-          "FXid_SE_PType (alias+enumOffset)"
-        ],
-        [
-          "tc Particular-0152",
+          "tc Particular-2066",
           0,
-          "FXid_SE_PVel (alias)"
+          "FXid_Options_Aux_AirPhysics_Resistance (aux->S2)"
         ],
         [
-          "tc Particular-0149",
+          "tc Particular-2759",
+          0,
+          "FXid_Options_Aux_AirPhysics_Turbulence (aux->S2)"
+        ],
+        [
+          "tc Particular-2797",
+          0,
+          "FXid_Options_Aux_AirPhysics_Wind (aux->S2)"
+        ],
+        [
+          "tc Particular-2242",
+          0,
+          "FXid_Options_Aux_Control_InheritVelocity (aux->S2)"
+        ],
+        [
+          "tc Particular-2236",
+          100,
+          "FXid_Options_Aux_EmitProbability (aux->S2)"
+        ],
+        [
+          "tc Particular-2077",
+          30,
+          "FXid_Options_Aux_Feather (aux->S2)"
+        ],
+        [
+          "tc Particular-2065",
+          0,
+          "FXid_Options_Aux_Gravity (aux->S2)"
+        ],
+        [
+          "tc Particular-2113",
+          0,
+          "FXid_Options_Aux_Randomness_Life (aux->S2)"
+        ],
+        [
+          "tc Particular-2123",
+          0,
+          "FXid_Options_Aux_Randomness_Opacity (aux->S2)"
+        ],
+        [
+          "tc Particular-2122",
+          0,
+          "FXid_Options_Aux_Randomness_Size (aux->S2)"
+        ],
+        [
+          "tc Particular-2117",
+          1,
+          "FXid_Options_Aux_TransferMode (aux->S2)+enumOffset"
+        ],
+        [
+          "tc Particular-2050",
+          0.5,
+          "FXid_SE_PLife (aux->S2)"
+        ],
+        [
+          "tc Particular-2081",
+          50,
+          "FXid_SE_POpacity (aux->S2)"
+        ],
+        [
+          "tc Particular-2075",
+          3.5,
+          "FXid_SE_PSize (aux->S2)"
+        ],
+        [
+          "tc Particular-2751",
+          6,
+          "FXid_SE_PType (aux->S2)+enumOffset [Sprite + shared texture]"
+        ],
+        [
+          "tc Particular-2059",
+          0,
+          "FXid_SE_PVel (aux->S2)"
+        ],
+        [
+          "tc Particular-2194",
           15,
-          "FXid_SE_ParticlesPerSecF (alias)"
+          "FXid_SE_ParticlesPerSecF (aux->S2)"
+        ],
+        [
+          "tc Particular-2114",
+          {
+            "__layer": "SpriteTex"
+          },
+          "S2 sprite texture layer"
+        ],
+        [
+          "tc Particular-2136",
+          1,
+          "Set Color S2: At Birth"
+        ],
+        [
+          "tc Particular-2118",
+          [
+            0.375,
+            0.75,
+            0.375,
+            1
+          ],
+          "Color S2 (flattened SE color curve)"
         ]
       ],
       "expressions": []

@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Swarm Fireflies.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "35 mapped / 12 unmapped / 3 curves",
+  "_map_coverage": "35 mapped / 11 unmapped / 3 curves",
   "_unmapped": {
     "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
@@ -19,7 +19,6 @@
     "FXid_PShade": 0,
     "FXid_PShadeFalloffAdjust": 250,
     "FXid_PShadow": 0,
-    "FXid_SE_PShadow": 0,
     "FXid_SpinTime": 0
   },
   "_curves": {

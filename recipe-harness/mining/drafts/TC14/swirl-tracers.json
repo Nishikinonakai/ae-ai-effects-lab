@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Swirl Tracers.xbxc",
   "_pack": "TC14",
   "_category": "Fluid",
-  "_map_coverage": "63 mapped / 118 unmapped / 0 curves",
+  "_map_coverage": "83 mapped / 95 unmapped / 0 curves",
   "_unmapped": {
     "FXid_Gen1EmitterSizeOption": 1,
     "FXid_Gen1Pos": [
@@ -676,36 +676,6 @@
       "curveX": [],
       "curveY": []
     },
-    "FXid_PColorOverLifeArb": {
-      "PosP": [
-        0,
-        50,
-        100,
-        150,
-        200
-      ],
-      "PosR": [
-        0.2800000011920929,
-        0.05000000074505806,
-        0.30000001192092896,
-        0.03999999910593033,
-        0.47999998927116394
-      ],
-      "PosG": [
-        0.550000011920929,
-        0.8700000047683716,
-        0.46000000834465027,
-        0.1599999964237213,
-        0
-      ],
-      "PosB": [
-        0.699999988079071,
-        0.6399999856948853,
-        0.5899999737739563,
-        0.28999999165534973,
-        0.8999999761581421
-      ]
-    },
     "FXid_Options_SmokeletShadow_Color": {
       "r": 0,
       "g": 0,
@@ -719,7 +689,6 @@
     "FXid_PShadow_Dist": 100,
     "FXid_PShadow_Size": 100,
     "FXid_PShadow_ZPos": 0,
-    "FXid_SE_PShadow": 1,
     "FXid_PhTime": 1,
     "FXid_AirResistRotation": false,
     "FXid_AnimationSystem": 2,
@@ -739,24 +708,6 @@
       "footage": ""
     },
     "FXid_FloorMode": 0,
-    "FXid_FluidDensity": -20,
-    "FXid_FluidDensityBlendMode": 0,
-    "FXid_FluidForceOption": 1,
-    "FXid_FluidMotionType": 0,
-    "FXid_FluidPhysicsTimeFactor": 1,
-    "FXid_FluidRandomSwirlOption": 0,
-    "FXid_FluidVortexCoreSize": 50,
-    "FXid_FluidVortexRelPos": [
-      0,
-      0,
-      0
-    ],
-    "FXid_FluidVortexRotate": 0,
-    "FXid_FluidVortexSize": 500,
-    "FXid_FluidVortexStrength": 100,
-    "FXid_FluidVortexTilt": 0,
-    "FXid_RandomSwirlSeed": 0,
-    "FXid_RandomSwirlX": 7,
     "FXid_SpinTime": 1,
     "FXid_WFBounce": 50,
     "FXid_WFBounceRnd": 30,
@@ -775,12 +726,6 @@
     ],
     "FXid_DRadius": 100,
     "FXid_DStrength": 0,
-    "FXid_Options_Aux_AirPhysics_Resistance": 0,
-    "FXid_Options_Aux_AirPhysics_Wind": 0,
-    "FXid_Options_Aux_Control_StartEmit": 0,
-    "FXid_Options_Aux_Control_StopEmit": 100,
-    "FXid_Options_Aux_EmitProbability": 100,
-    "FXid_Options_Aux_Feather": 30,
     "FXid_PColorRnd_AUX": 0,
     "FXid_PColor_AUX": {
       "r": 255,
@@ -804,36 +749,6 @@
     "FXid_PRotateY_AUX": 0,
     "FXid_PRotateZ_AUX": 0,
     "FXid_PSetColor_AUX": 0,
-    "FXid_SE_PColorOverLifeArb": {
-      "PosB": [
-        0,
-        0,
-        0,
-        1,
-        1
-      ],
-      "PosG": [
-        0,
-        1,
-        1,
-        1,
-        0
-      ],
-      "PosP": [
-        0,
-        50,
-        100,
-        150,
-        200
-      ],
-      "PosR": [
-        1,
-        1,
-        0,
-        0,
-        0
-      ]
-    },
     "FXid_SE_POpacityOverLifeArb": {
       "curveX": [
         0,
@@ -1371,11 +1286,21 @@
     0,
     0
   ],
+  "master": {
+    "library": "library/particular-masters.aep",
+    "comp": "MASTER_particular_S2",
+    "layer": 1
+  },
   "hostName": "Mined",
   "effects": [
     {
       "matchName": "tc Particular",
       "params": [
+        [
+          "tc Particular-0638",
+          1,
+          "Enable Fluid Motion (fluid preset)"
+        ],
         [
           "tc Particular-0014",
           72,
@@ -1543,12 +1468,12 @@
         [
           "tc Particular-0070",
           [
-            1,
-            1,
-            1,
+            0.19250000175088644,
+            0.4412500038743019,
+            0.5799999833106995,
             1
           ],
-          "FXid_PColor (alias)"
+          "FXid_PColor (alias) [flattened col.life gradient]"
         ],
         [
           "tc Particular-0071",
@@ -1557,8 +1482,8 @@
         ],
         [
           "tc Particular-0088",
-          3,
-          "FXid_PSetColor (alias+enumOffset)"
+          1,
+          "FXid_PSetColor (alias+enumOffset) [forced At Birth: gradient unscriptable]"
         ],
         [
           "tc Particular-0017",
@@ -1588,22 +1513,86 @@
         [
           "tc Particular-0628",
           4,
-          "FXid_FluidFidelity (fuzzy:fluid simulation fidelity)"
+          "FXid_FluidFidelity (alias)"
+        ],
+        [
+          "tc Particular-0636",
+          2,
+          "FXid_FluidForceOption (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0615",
+          1,
+          "FXid_FluidMotionType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0025",
+          1,
+          "FXid_FluidPhysicsTimeFactor (alias)"
+        ],
+        [
+          "tc Particular-0654",
+          1,
+          "FXid_FluidRandomSwirlOption (alias+enumOffset)"
         ],
         [
           "tc Particular-0621",
           20,
-          "FXid_FluidViscosity (exact)"
+          "FXid_FluidViscosity (alias)"
+        ],
+        [
+          "tc Particular-0617",
+          50,
+          "FXid_FluidVortexCoreSize (alias)"
+        ],
+        [
+          "tc Particular-0635",
+          [
+            0,
+            0,
+            0
+          ],
+          "FXid_FluidVortexRelPos (alias)"
+        ],
+        [
+          "tc Particular-0620",
+          0,
+          "FXid_FluidVortexRotate (alias)"
+        ],
+        [
+          "tc Particular-0618",
+          500,
+          "FXid_FluidVortexSize (alias)"
+        ],
+        [
+          "tc Particular-0616",
+          100,
+          "FXid_FluidVortexStrength (alias)"
+        ],
+        [
+          "tc Particular-0619",
+          0,
+          "FXid_FluidVortexTilt (alias)"
+        ],
+        [
+          "tc Particular-0637",
+          0,
+          "FXid_RandomSwirlSeed (alias)"
+        ],
+        [
+          "tc Particular-0630",
+          7,
+          "FXid_RandomSwirlX (alias)"
         ],
         [
           "tc Particular-0631",
           0,
-          "FXid_RandomSwirlY (exact)"
+          "FXid_RandomSwirlY (alias)"
         ],
         [
           "tc Particular-0632",
           0,
-          "FXid_RandomSwirlZ (exact)"
+          "FXid_RandomSwirlZ (alias)"
         ],
         [
           "tc Particular-0019",
@@ -1618,7 +1607,7 @@
         [
           "tc Particular-0653",
           10,
-          "FXid_SwirlScale (exact)"
+          "FXid_SwirlScale (alias)"
         ],
         [
           "tc Particular-0749",
@@ -1636,69 +1625,109 @@
           "FXid_WindZ (exact)"
         ],
         [
-          "tc Particular-0201",
-          0,
-          "FXid_Options_Aux_AirPhysics_Turbulence (alias)"
+          "tc Particular-2830",
+          8,
+          "aux -> S2 Emitter Type: Emit from Parent (v18)"
         ],
         [
-          "tc Particular-0194",
+          "tc Particular-2066",
+          0,
+          "FXid_Options_Aux_AirPhysics_Resistance (aux->S2)"
+        ],
+        [
+          "tc Particular-2759",
+          0,
+          "FXid_Options_Aux_AirPhysics_Turbulence (aux->S2)"
+        ],
+        [
+          "tc Particular-2797",
+          0,
+          "FXid_Options_Aux_AirPhysics_Wind (aux->S2)"
+        ],
+        [
+          "tc Particular-2242",
           20.100000000000026,
-          "FXid_Options_Aux_Control_InheritVelocity (alias)"
+          "FXid_Options_Aux_Control_InheritVelocity (aux->S2)"
         ],
         [
-          "tc Particular-0189",
+          "tc Particular-2236",
+          100,
+          "FXid_Options_Aux_EmitProbability (aux->S2)"
+        ],
+        [
+          "tc Particular-2077",
+          30,
+          "FXid_Options_Aux_Feather (aux->S2)"
+        ],
+        [
+          "tc Particular-2065",
           0,
-          "FXid_Options_Aux_Gravity (alias)"
+          "FXid_Options_Aux_Gravity (aux->S2)"
         ],
         [
-          "tc Particular-0204",
+          "tc Particular-2113",
           0,
-          "FXid_Options_Aux_Randomness_Life (alias)"
+          "FXid_Options_Aux_Randomness_Life (aux->S2)"
         ],
         [
-          "tc Particular-0206",
+          "tc Particular-2123",
           0,
-          "FXid_Options_Aux_Randomness_Opacity (alias)"
+          "FXid_Options_Aux_Randomness_Opacity (aux->S2)"
         ],
         [
-          "tc Particular-0205",
+          "tc Particular-2122",
           0,
-          "FXid_Options_Aux_Randomness_Size (alias)"
+          "FXid_Options_Aux_Randomness_Size (aux->S2)"
         ],
         [
-          "tc Particular-0190",
+          "tc Particular-2117",
           2,
-          "FXid_Options_Aux_TransferMode (alias+enumOffset)"
+          "FXid_Options_Aux_TransferMode (aux->S2)+enumOffset"
         ],
         [
-          "tc Particular-0150",
+          "tc Particular-2050",
           1,
-          "FXid_SE_PLife (alias)"
+          "FXid_SE_PLife (aux->S2)"
         ],
         [
-          "tc Particular-0160",
+          "tc Particular-2081",
           50,
-          "FXid_SE_POpacity (alias)"
+          "FXid_SE_POpacity (aux->S2)"
         ],
         [
-          "tc Particular-0154",
+          "tc Particular-2075",
           4.299999999999999,
-          "FXid_SE_PSize (alias)"
+          "FXid_SE_PSize (aux->S2)"
         ],
         [
-          "tc Particular-0151",
-          6,
-          "FXid_SE_PType (alias+enumOffset)"
+          "tc Particular-2751",
+          2,
+          "FXid_SE_PType (aux->S2)+enumOffset [sprite fallback -> Glow Sphere]"
         ],
         [
-          "tc Particular-0152",
+          "tc Particular-2059",
           0,
-          "FXid_SE_PVel (alias)"
+          "FXid_SE_PVel (aux->S2)"
         ],
         [
-          "tc Particular-0149",
+          "tc Particular-2194",
           31,
-          "FXid_SE_ParticlesPerSecF (alias)"
+          "FXid_SE_ParticlesPerSecF (aux->S2)"
+        ],
+        [
+          "tc Particular-2136",
+          1,
+          "Set Color S2: At Birth"
+        ],
+        [
+          "tc Particular-2118",
+          [
+            0.19250000175088644,
+            0.4412500038743019,
+            0.5799999833106995,
+            1
+          ],
+          "Color S2 (inherit main (100%))"
         ]
       ],
       "expressions": []

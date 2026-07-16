@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Explode Up.xbxc",
   "_pack": "TC14",
   "_category": "Explosive",
-  "_map_coverage": "47 mapped / 12 unmapped / 6 curves",
+  "_map_coverage": "50 mapped / 11 unmapped / 6 curves",
   "_unmapped": {
     "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
@@ -19,7 +19,6 @@
     "FXid_PShade": 0,
     "FXid_PShadeFalloffAdjust": 250,
     "FXid_PShadow": 0,
-    "FXid_SE_PShadow": 1,
     "FXid_SpinTime": 1
   },
   "_curves": {
@@ -922,6 +921,11 @@
     0,
     0
   ],
+  "master": {
+    "library": "library/particular-masters.aep",
+    "comp": "MASTER_particular_S2",
+    "layer": 1
+  },
   "hostName": "Mined",
   "effects": [
     {
@@ -1103,83 +1107,103 @@
           "FXid_WindZ (exact)"
         ],
         [
-          "tc Particular-0201",
-          0,
-          "FXid_Options_Aux_AirPhysics_Turbulence (alias)"
+          "tc Particular-2830",
+          8,
+          "aux -> S2 Emitter Type: Emit from Parent (v18)"
         ],
         [
-          "tc Particular-0194",
+          "tc Particular-2759",
+          0,
+          "FXid_Options_Aux_AirPhysics_Turbulence (aux->S2)"
+        ],
+        [
+          "tc Particular-2242",
           0.01,
-          "FXid_Options_Aux_Control_InheritVelocity (alias)"
+          "FXid_Options_Aux_Control_InheritVelocity (aux->S2)"
         ],
         [
-          "tc Particular-0189",
+          "tc Particular-2065",
           0,
-          "FXid_Options_Aux_Gravity (alias)"
+          "FXid_Options_Aux_Gravity (aux->S2)"
         ],
         [
-          "tc Particular-0204",
+          "tc Particular-2113",
           50,
-          "FXid_Options_Aux_Randomness_Life (alias)"
+          "FXid_Options_Aux_Randomness_Life (aux->S2)"
         ],
         [
-          "tc Particular-0206",
+          "tc Particular-2123",
           50,
-          "FXid_Options_Aux_Randomness_Opacity (alias)"
+          "FXid_Options_Aux_Randomness_Opacity (aux->S2)"
         ],
         [
-          "tc Particular-0205",
+          "tc Particular-2122",
           30,
-          "FXid_Options_Aux_Randomness_Size (alias)"
+          "FXid_Options_Aux_Randomness_Size (aux->S2)"
         ],
         [
-          "tc Particular-0190",
+          "tc Particular-2117",
           1,
-          "FXid_Options_Aux_TransferMode (alias+enumOffset)"
+          "FXid_Options_Aux_TransferMode (aux->S2)+enumOffset"
         ],
         [
-          "tc Particular-0150",
+          "tc Particular-2050",
           5,
-          "FXid_SE_PLife (alias)"
+          "FXid_SE_PLife (aux->S2)"
         ],
         [
-          "tc Particular-0160",
+          "tc Particular-2081",
           43.51585388183594,
-          "FXid_SE_POpacity (alias)"
+          "FXid_SE_POpacity (aux->S2)"
         ],
         [
-          "tc Particular-0154",
+          "tc Particular-2075",
           9.063446044921875,
-          "FXid_SE_PSize (alias)"
+          "FXid_SE_PSize (aux->S2)"
         ],
         [
-          "tc Particular-0151",
+          "tc Particular-2751",
           4,
-          "FXid_SE_PType (alias+enumOffset)"
+          "FXid_SE_PType (aux->S2)+enumOffset"
         ],
         [
-          "tc Particular-0152",
+          "tc Particular-2059",
           12.688827514648438,
-          "FXid_SE_PVel (alias)"
+          "FXid_SE_PVel (aux->S2)"
         ],
         [
-          "tc Particular-0149",
+          "tc Particular-2194",
           60,
-          "FXid_SE_ParticlesPerSecF (alias)"
+          "FXid_SE_ParticlesPerSecF (aux->S2)"
+        ],
+        [
+          "tc Particular-2136",
+          1,
+          "Set Color S2: At Birth"
+        ],
+        [
+          "tc Particular-2118",
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          "Color S2 (classic aux default white)"
         ]
       ],
       "expressions": [
         [
           "tc Particular-0146",
-          "time < 0.1 ? 3000 : 0",
-          "Explode -> 0.1s burst spike"
+          "time < 0.1 ? 7500 : 0",
+          "Explode -> 0.1s burst spike (life-scaled)"
         ]
       ]
     }
   ],
   "camera": null,
   "renderFrames": [
-    0.15,
-    1.75
+    0.08,
+    1.6
   ]
 }

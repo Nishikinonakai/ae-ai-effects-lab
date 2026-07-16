@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Simple Dots.xbxc",
   "_pack": "TC14",
   "_category": "Basics",
-  "_map_coverage": "58 mapped / 92 unmapped / 0 curves",
+  "_map_coverage": "45 mapped / 83 unmapped / 0 curves",
   "_unmapped": {
     "FXid_Gen1EmitterSizeOption": 1,
     "FXid_Gen1Pos": [
@@ -685,36 +685,6 @@
         1
       ]
     },
-    "FXid_PColorOverLifeArb": {
-      "PosP": [
-        0,
-        50,
-        100,
-        150,
-        200
-      ],
-      "PosR": [
-        0.8700000047683716,
-        0.019999999552965164,
-        0.6600000262260437,
-        0.23999999463558197,
-        0.4000000059604645
-      ],
-      "PosG": [
-        0.09000000357627869,
-        0.8799999952316284,
-        0.47999998927116394,
-        0.15000000596046448,
-        0.3199999928474426
-      ],
-      "PosB": [
-        0.7799999713897705,
-        0.7200000286102295,
-        0.7200000286102295,
-        0.33000001311302185,
-        0.7200000286102295
-      ]
-    },
     "FXid_Options_SmokeletShadow_Color": {
       "r": 0,
       "g": 0,
@@ -728,7 +698,6 @@
     "FXid_PShadow_Dist": 100,
     "FXid_PShadow_Size": 134,
     "FXid_PShadow_ZPos": 0,
-    "FXid_SE_PShadow": 0,
     "FXid_PhTime": 1,
     "FXid_AirResistRotation": false,
     "FXid_AnimationSystem": 0,
@@ -766,12 +735,6 @@
     ],
     "FXid_DRadius": 100,
     "FXid_DStrength": 0,
-    "FXid_Options_Aux_AirPhysics_Resistance": 0,
-    "FXid_Options_Aux_AirPhysics_Wind": 0,
-    "FXid_Options_Aux_Control_StartEmit": 0,
-    "FXid_Options_Aux_Control_StopEmit": 100,
-    "FXid_Options_Aux_EmitProbability": 100,
-    "FXid_Options_Aux_Feather": 30,
     "FXid_PColorRnd_AUX": 0,
     "FXid_PColor_AUX": {
       "r": 255,
@@ -795,36 +758,6 @@
     "FXid_PRotateY_AUX": 0,
     "FXid_PRotateZ_AUX": 0,
     "FXid_PSetColor_AUX": 0,
-    "FXid_SE_PColorOverLifeArb": {
-      "PosB": [
-        0,
-        0,
-        0,
-        1,
-        1
-      ],
-      "PosG": [
-        0,
-        1,
-        1,
-        1,
-        0
-      ],
-      "PosP": [
-        0,
-        50,
-        100,
-        150,
-        200
-      ],
-      "PosR": [
-        1,
-        1,
-        0,
-        0,
-        0
-      ]
-    },
     "FXid_SE_POpacityOverLifeArb": {
       "curveX": [],
       "curveY": [],
@@ -1429,12 +1362,12 @@
         [
           "tc Particular-0070",
           [
-            1,
-            1,
-            1,
+            0.3887500064447522,
+            0.4287499971687794,
+            0.6300000175833702,
             1
           ],
-          "FXid_PColor (alias)"
+          "FXid_PColor (alias) [flattened col.life gradient]"
         ],
         [
           "tc Particular-0071",
@@ -1443,8 +1376,8 @@
         ],
         [
           "tc Particular-0088",
-          3,
-          "FXid_PSetColor (alias+enumOffset)"
+          1,
+          "FXid_PSetColor (alias+enumOffset) [forced At Birth: gradient unscriptable]"
         ],
         [
           "tc Particular-0017",
@@ -1495,71 +1428,6 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
-        ],
-        [
-          "tc Particular-0201",
-          0,
-          "FXid_Options_Aux_AirPhysics_Turbulence (alias)"
-        ],
-        [
-          "tc Particular-0194",
-          0,
-          "FXid_Options_Aux_Control_InheritVelocity (alias)"
-        ],
-        [
-          "tc Particular-0189",
-          0,
-          "FXid_Options_Aux_Gravity (alias)"
-        ],
-        [
-          "tc Particular-0204",
-          0,
-          "FXid_Options_Aux_Randomness_Life (alias)"
-        ],
-        [
-          "tc Particular-0206",
-          0,
-          "FXid_Options_Aux_Randomness_Opacity (alias)"
-        ],
-        [
-          "tc Particular-0205",
-          0,
-          "FXid_Options_Aux_Randomness_Size (alias)"
-        ],
-        [
-          "tc Particular-0190",
-          1,
-          "FXid_Options_Aux_TransferMode (alias+enumOffset)"
-        ],
-        [
-          "tc Particular-0150",
-          0.5,
-          "FXid_SE_PLife (alias)"
-        ],
-        [
-          "tc Particular-0160",
-          50,
-          "FXid_SE_POpacity (alias)"
-        ],
-        [
-          "tc Particular-0154",
-          5,
-          "FXid_SE_PSize (alias)"
-        ],
-        [
-          "tc Particular-0151",
-          1,
-          "FXid_SE_PType (alias+enumOffset)"
-        ],
-        [
-          "tc Particular-0152",
-          0,
-          "FXid_SE_PVel (alias)"
-        ],
-        [
-          "tc Particular-0149",
-          10,
-          "FXid_SE_ParticlesPerSecF (alias)"
         ]
       ],
       "expressions": []

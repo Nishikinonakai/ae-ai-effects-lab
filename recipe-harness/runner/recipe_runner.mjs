@@ -67,6 +67,30 @@ const AEX = String.raw`(function () {
       }
     }
 
+    // 2c) footage layers (find-or-import by file path, find-or-add layer by name): sprite
+    // textures for Particle Type=Sprite. The layer rides in the comp with video OFF —
+    // Particular samples it regardless. Recipes declare footage: [{path, layerName}].
+    if (R.footage) {
+      for (var fo = 0; fo < R.footage.length; fo++) {
+        var Fd = R.footage[fo];
+        try {
+          var foot = null;
+          for (var fj = 1; fj <= app.project.numItems; fj++) {
+            var fjt = app.project.item(fj);
+            if (fjt instanceof FootageItem && fjt.file && fjt.file.fsName === Fd.path) { foot = fjt; break; }
+          }
+          if (!foot) foot = app.project.importFile(new ImportOptions(new File(Fd.path)));
+          var flayer = findLayer(comp, Fd.layerName);
+          if (!flayer) { flayer = comp.layers.add(foot); flayer.name = Fd.layerName; }
+          flayer.enabled = false;
+          flayer.moveToEnd();
+          parts.push('{"p":"[footage] ' + esc(Fd.layerName) + '","ok":true}');
+        } catch (eF) {
+          parts.push('{"p":"[footage] ' + esc(Fd.layerName) + '","ok":false,"err":"' + esc(String(eF).substring(0,70)) + '"}');
+        }
+      }
+    }
+
     // 3) host layer: find (idempotent re-run) | clone from a curve-library master | new solid.
     // Masters carry CUSTOM_VALUE state (over-life curves, gradients) that setValue cannot
     // reach — layer copy is a full-state transfer, so curves ride along; the recipe's params
@@ -127,6 +151,15 @@ const AEX = String.raw`(function () {
         for (var k = 0; k < spec.params.length; k++) {
           var pr = spec.params[k];            // [matchName, value, label]
           var mn = pr[0], val = pr[1], lbl = tag + (pr[2] || pr[0]);
+          // layer-reference values: {"__layer": "<name>"} resolves to the layer's current
+          // index at set time (footage layers are added in 2c, before this pass; NOTE any
+          // later layer add/remove — e.g. a camera — would shift indices, so cameras are
+          // handled after params only for camera-less mined drafts or index-stable comps)
+          if (val && typeof val === 'object' && val.__layer) {
+            var lref = 0;
+            for (var LL = 1; LL <= comp.numLayers; LL++) if (comp.layer(LL).name === val.__layer) { lref = LL; break; }
+            val = lref;
+          }
           try {
             fx.property(mn).setValue(val);
             var rb = String(fx.property(mn).value).substring(0, 24);

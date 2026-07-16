@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Dust Hit 03.xbxc",
   "_pack": "TC14",
   "_category": "Explosive",
-  "_map_coverage": "52 mapped / 11 unmapped / 7 curves",
+  "_map_coverage": "55 mapped / 11 unmapped / 7 curves",
   "_unmapped": {
     "FXid_Gen1SubframePos": 0,
     "FXid_PLayerMultiClips": 2,
@@ -1128,6 +1128,11 @@
     0,
     0
   ],
+  "master": {
+    "library": "library/particular-masters.aep",
+    "comp": "MASTER_particular_S2",
+    "layer": 1
+  },
   "hostName": "Mined",
   "effects": [
     {
@@ -1334,83 +1339,103 @@
           "FXid_WindZ (exact)"
         ],
         [
-          "tc Particular-0201",
-          0,
-          "FXid_Options_Aux_AirPhysics_Turbulence (alias)"
-        ],
-        [
-          "tc Particular-0194",
-          60,
-          "FXid_Options_Aux_Control_InheritVelocity (alias)"
-        ],
-        [
-          "tc Particular-0189",
-          -62,
-          "FXid_Options_Aux_Gravity (alias)"
-        ],
-        [
-          "tc Particular-0204",
-          0,
-          "FXid_Options_Aux_Randomness_Life (alias)"
-        ],
-        [
-          "tc Particular-0206",
-          0,
-          "FXid_Options_Aux_Randomness_Opacity (alias)"
-        ],
-        [
-          "tc Particular-0205",
-          25,
-          "FXid_Options_Aux_Randomness_Size (alias)"
-        ],
-        [
-          "tc Particular-0190",
-          1,
-          "FXid_Options_Aux_TransferMode (alias+enumOffset)"
-        ],
-        [
-          "tc Particular-0150",
-          0.5,
-          "FXid_SE_PLife (alias)"
-        ],
-        [
-          "tc Particular-0160",
-          16.294647216796875,
-          "FXid_SE_POpacity (alias)"
-        ],
-        [
-          "tc Particular-0154",
-          4.017852783203125,
-          "FXid_SE_PSize (alias)"
-        ],
-        [
-          "tc Particular-0151",
-          5,
-          "FXid_SE_PType (alias+enumOffset)"
-        ],
-        [
-          "tc Particular-0152",
-          16,
-          "FXid_SE_PVel (alias)"
-        ],
-        [
-          "tc Particular-0149",
+          "tc Particular-2830",
           8,
-          "FXid_SE_ParticlesPerSecF (alias)"
+          "aux -> S2 Emitter Type: Emit from Parent (v18)"
+        ],
+        [
+          "tc Particular-2759",
+          0,
+          "FXid_Options_Aux_AirPhysics_Turbulence (aux->S2)"
+        ],
+        [
+          "tc Particular-2242",
+          60,
+          "FXid_Options_Aux_Control_InheritVelocity (aux->S2)"
+        ],
+        [
+          "tc Particular-2065",
+          -62,
+          "FXid_Options_Aux_Gravity (aux->S2)"
+        ],
+        [
+          "tc Particular-2113",
+          0,
+          "FXid_Options_Aux_Randomness_Life (aux->S2)"
+        ],
+        [
+          "tc Particular-2123",
+          0,
+          "FXid_Options_Aux_Randomness_Opacity (aux->S2)"
+        ],
+        [
+          "tc Particular-2122",
+          25,
+          "FXid_Options_Aux_Randomness_Size (aux->S2)"
+        ],
+        [
+          "tc Particular-2117",
+          1,
+          "FXid_Options_Aux_TransferMode (aux->S2)+enumOffset"
+        ],
+        [
+          "tc Particular-2050",
+          0.5,
+          "FXid_SE_PLife (aux->S2)"
+        ],
+        [
+          "tc Particular-2081",
+          16.294647216796875,
+          "FXid_SE_POpacity (aux->S2)"
+        ],
+        [
+          "tc Particular-2075",
+          4.017852783203125,
+          "FXid_SE_PSize (aux->S2)"
+        ],
+        [
+          "tc Particular-2751",
+          5,
+          "FXid_SE_PType (aux->S2)+enumOffset"
+        ],
+        [
+          "tc Particular-2059",
+          16,
+          "FXid_SE_PVel (aux->S2)"
+        ],
+        [
+          "tc Particular-2194",
+          8,
+          "FXid_SE_ParticlesPerSecF (aux->S2)"
+        ],
+        [
+          "tc Particular-2136",
+          1,
+          "Set Color S2: At Birth"
+        ],
+        [
+          "tc Particular-2118",
+          [
+            1,
+            0.6078431372549019,
+            0.25098039215686274,
+            1
+          ],
+          "Color S2 (inherit main (68%))"
         ]
       ],
       "expressions": [
         [
           "tc Particular-0146",
-          "time < 0.1 ? 100000 : 0",
-          "Explode -> 0.1s burst spike"
+          "time < 0.1 ? 154520 : 0",
+          "Explode -> 0.1s burst spike (life-scaled)"
         ]
       ]
     }
   ],
   "camera": null,
   "renderFrames": [
-    0.15,
-    1.0816375732421875
+    0.08,
+    1.027117919921875
   ]
 }

@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blowing Snow.xbxc",
   "_pack": "TC14",
   "_category": "Nature",
-  "_map_coverage": "48 mapped / 10 unmapped / 7 curves",
+  "_map_coverage": "35 mapped / 10 unmapped / 7 curves",
   "_dropped_inert": [
     [
       "tc Particular-0711",
@@ -1349,71 +1349,6 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
-        ],
-        [
-          "tc Particular-0201",
-          0,
-          "FXid_Options_Aux_AirPhysics_Turbulence (alias)"
-        ],
-        [
-          "tc Particular-0194",
-          0,
-          "FXid_Options_Aux_Control_InheritVelocity (alias)"
-        ],
-        [
-          "tc Particular-0189",
-          0,
-          "FXid_Options_Aux_Gravity (alias)"
-        ],
-        [
-          "tc Particular-0204",
-          0,
-          "FXid_Options_Aux_Randomness_Life (alias)"
-        ],
-        [
-          "tc Particular-0206",
-          0,
-          "FXid_Options_Aux_Randomness_Opacity (alias)"
-        ],
-        [
-          "tc Particular-0205",
-          0,
-          "FXid_Options_Aux_Randomness_Size (alias)"
-        ],
-        [
-          "tc Particular-0190",
-          1,
-          "FXid_Options_Aux_TransferMode (alias+enumOffset)"
-        ],
-        [
-          "tc Particular-0150",
-          0.5,
-          "FXid_SE_PLife (alias)"
-        ],
-        [
-          "tc Particular-0160",
-          50,
-          "FXid_SE_POpacity (alias)"
-        ],
-        [
-          "tc Particular-0154",
-          5,
-          "FXid_SE_PSize (alias)"
-        ],
-        [
-          "tc Particular-0151",
-          6,
-          "FXid_SE_PType (alias+enumOffset)"
-        ],
-        [
-          "tc Particular-0152",
-          0,
-          "FXid_SE_PVel (alias)"
-        ],
-        [
-          "tc Particular-0149",
-          10,
-          "FXid_SE_ParticlesPerSecF (alias)"
         ]
       ],
       "expressions": []

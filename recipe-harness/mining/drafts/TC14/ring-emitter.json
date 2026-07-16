@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Ring Emitter.xbxc",
   "_pack": "TC14",
   "_category": "Fluid",
-  "_map_coverage": "63 mapped / 118 unmapped / 0 curves",
+  "_map_coverage": "63 mapped / 95 unmapped / 0 curves",
   "_unmapped": {
     "FXid_Gen1EmitterSizeOption": 0,
     "FXid_Gen1Pos": [
@@ -676,28 +676,6 @@
       "curveX": [],
       "curveY": []
     },
-    "FXid_PColorOverLifeArb": {
-      "PosP": [
-        5,
-        97,
-        188
-      ],
-      "PosR": [
-        0.8666666746139526,
-        0.5372549295425415,
-        0
-      ],
-      "PosG": [
-        0.9686274528503418,
-        0.7764706015586853,
-        0.5686274766921997
-      ],
-      "PosB": [
-        0.7647058963775635,
-        0.6274510025978088,
-        0.6980392336845398
-      ]
-    },
     "FXid_Options_SmokeletShadow_Color": {
       "r": 0,
       "g": 0,
@@ -711,7 +689,6 @@
     "FXid_PShadow_Dist": 100,
     "FXid_PShadow_Size": 100,
     "FXid_PShadow_ZPos": 0,
-    "FXid_SE_PShadow": 0,
     "FXid_PhTime": 1,
     "FXid_AirResistRotation": false,
     "FXid_AnimationSystem": 2,
@@ -731,24 +708,6 @@
       "footage": ""
     },
     "FXid_FloorMode": 0,
-    "FXid_FluidDensity": 5,
-    "FXid_FluidDensityBlendMode": 2,
-    "FXid_FluidForceOption": 1,
-    "FXid_FluidMotionType": 1,
-    "FXid_FluidPhysicsTimeFactor": 1,
-    "FXid_FluidRandomSwirlOption": 0,
-    "FXid_FluidVortexCoreSize": 48,
-    "FXid_FluidVortexRelPos": [
-      0,
-      -0.062037037037037036,
-      0
-    ],
-    "FXid_FluidVortexRotate": 0,
-    "FXid_FluidVortexSize": 500,
-    "FXid_FluidVortexStrength": 6,
-    "FXid_FluidVortexTilt": 0,
-    "FXid_RandomSwirlSeed": 0,
-    "FXid_RandomSwirlX": 0,
     "FXid_SpinTime": 1,
     "FXid_WFBounce": 50,
     "FXid_WFBounceRnd": 30,
@@ -767,12 +726,6 @@
     ],
     "FXid_DRadius": 100,
     "FXid_DStrength": 0,
-    "FXid_Options_Aux_AirPhysics_Resistance": 0,
-    "FXid_Options_Aux_AirPhysics_Wind": 0,
-    "FXid_Options_Aux_Control_StartEmit": 0,
-    "FXid_Options_Aux_Control_StopEmit": 100,
-    "FXid_Options_Aux_EmitProbability": 100,
-    "FXid_Options_Aux_Feather": 30,
     "FXid_PColorRnd_AUX": 0,
     "FXid_PColor_AUX": {
       "r": 255,
@@ -796,36 +749,6 @@
     "FXid_PRotateY_AUX": 0,
     "FXid_PRotateZ_AUX": 0,
     "FXid_PSetColor_AUX": 0,
-    "FXid_SE_PColorOverLifeArb": {
-      "PosB": [
-        0,
-        0,
-        0,
-        1,
-        1
-      ],
-      "PosG": [
-        0,
-        1,
-        1,
-        1,
-        0
-      ],
-      "PosP": [
-        0,
-        50,
-        100,
-        150,
-        200
-      ],
-      "PosR": [
-        1,
-        1,
-        0,
-        0,
-        0
-      ]
-    },
     "FXid_SE_POpacityOverLifeArb": {
       "curveX": [],
       "curveY": [],
@@ -1265,6 +1188,11 @@
       "matchName": "tc Particular",
       "params": [
         [
+          "tc Particular-0638",
+          1,
+          "Enable Fluid Motion (fluid preset)"
+        ],
+        [
           "tc Particular-0014",
           500,
           "FXid_Gen1EmitterSizeX (alias)"
@@ -1431,12 +1359,12 @@
         [
           "tc Particular-0070",
           [
-            1,
-            1,
-            1,
+            0.48647810429171784,
+            0.7730954812198388,
+            0.6795028584902404,
             1
           ],
-          "FXid_PColor (alias)"
+          "FXid_PColor (alias) [flattened col.life gradient]"
         ],
         [
           "tc Particular-0071",
@@ -1445,8 +1373,8 @@
         ],
         [
           "tc Particular-0088",
-          3,
-          "FXid_PSetColor (alias+enumOffset)"
+          1,
+          "FXid_PSetColor (alias+enumOffset) [forced At Birth: gradient unscriptable]"
         ],
         [
           "tc Particular-0017",
@@ -1476,22 +1404,86 @@
         [
           "tc Particular-0628",
           4,
-          "FXid_FluidFidelity (fuzzy:fluid simulation fidelity)"
+          "FXid_FluidFidelity (alias)"
+        ],
+        [
+          "tc Particular-0636",
+          2,
+          "FXid_FluidForceOption (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0615",
+          2,
+          "FXid_FluidMotionType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0025",
+          1,
+          "FXid_FluidPhysicsTimeFactor (alias)"
+        ],
+        [
+          "tc Particular-0654",
+          1,
+          "FXid_FluidRandomSwirlOption (alias+enumOffset)"
         ],
         [
           "tc Particular-0621",
           2,
-          "FXid_FluidViscosity (exact)"
+          "FXid_FluidViscosity (alias)"
+        ],
+        [
+          "tc Particular-0617",
+          48,
+          "FXid_FluidVortexCoreSize (alias)"
+        ],
+        [
+          "tc Particular-0635",
+          [
+            0,
+            -0.062037037037037036,
+            0
+          ],
+          "FXid_FluidVortexRelPos (alias)"
+        ],
+        [
+          "tc Particular-0620",
+          0,
+          "FXid_FluidVortexRotate (alias)"
+        ],
+        [
+          "tc Particular-0618",
+          500,
+          "FXid_FluidVortexSize (alias)"
+        ],
+        [
+          "tc Particular-0616",
+          6,
+          "FXid_FluidVortexStrength (alias)"
+        ],
+        [
+          "tc Particular-0619",
+          0,
+          "FXid_FluidVortexTilt (alias)"
+        ],
+        [
+          "tc Particular-0637",
+          0,
+          "FXid_RandomSwirlSeed (alias)"
+        ],
+        [
+          "tc Particular-0630",
+          0,
+          "FXid_RandomSwirlX (alias)"
         ],
         [
           "tc Particular-0631",
           0,
-          "FXid_RandomSwirlY (exact)"
+          "FXid_RandomSwirlY (alias)"
         ],
         [
           "tc Particular-0632",
           0,
-          "FXid_RandomSwirlZ (exact)"
+          "FXid_RandomSwirlZ (alias)"
         ],
         [
           "tc Particular-0019",
@@ -1506,7 +1498,7 @@
         [
           "tc Particular-0653",
           7,
-          "FXid_SwirlScale (exact)"
+          "FXid_SwirlScale (alias)"
         ],
         [
           "tc Particular-0749",
@@ -1522,71 +1514,6 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
-        ],
-        [
-          "tc Particular-0201",
-          0,
-          "FXid_Options_Aux_AirPhysics_Turbulence (alias)"
-        ],
-        [
-          "tc Particular-0194",
-          0,
-          "FXid_Options_Aux_Control_InheritVelocity (alias)"
-        ],
-        [
-          "tc Particular-0189",
-          0,
-          "FXid_Options_Aux_Gravity (alias)"
-        ],
-        [
-          "tc Particular-0204",
-          0,
-          "FXid_Options_Aux_Randomness_Life (alias)"
-        ],
-        [
-          "tc Particular-0206",
-          0,
-          "FXid_Options_Aux_Randomness_Opacity (alias)"
-        ],
-        [
-          "tc Particular-0205",
-          0,
-          "FXid_Options_Aux_Randomness_Size (alias)"
-        ],
-        [
-          "tc Particular-0190",
-          1,
-          "FXid_Options_Aux_TransferMode (alias+enumOffset)"
-        ],
-        [
-          "tc Particular-0150",
-          0.5,
-          "FXid_SE_PLife (alias)"
-        ],
-        [
-          "tc Particular-0160",
-          50,
-          "FXid_SE_POpacity (alias)"
-        ],
-        [
-          "tc Particular-0154",
-          5,
-          "FXid_SE_PSize (alias)"
-        ],
-        [
-          "tc Particular-0151",
-          1,
-          "FXid_SE_PType (alias+enumOffset)"
-        ],
-        [
-          "tc Particular-0152",
-          0,
-          "FXid_SE_PVel (alias)"
-        ],
-        [
-          "tc Particular-0149",
-          10,
-          "FXid_SE_ParticlesPerSecF (alias)"
         ]
       ],
       "expressions": []

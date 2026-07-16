@@ -869,15 +869,15 @@
       "expressions": [
         [
           "tc Particular-0146",
-          "time < 0.1 ? 1000 : 0",
-          "Explode -> 0.1s burst spike"
+          "time < 0.1 ? 3000 : 0",
+          "Explode -> 0.1s burst spike (life-scaled)"
         ]
       ]
     }
   ],
   "camera": null,
   "renderFrames": [
-    0.15,
-    2
+    0.08,
+    1.9
   ]
 }
