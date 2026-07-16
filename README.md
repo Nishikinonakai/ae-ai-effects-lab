@@ -98,10 +98,20 @@ node introspect/enrich_card.mjs introspect/cards/<eff>.json introspect/enrichmen
 
 - ~~`.ffx` preset capture/apply for CUSTOM_VALUE curves~~ — SOLVED 2026-07-15: master-layer
   library (`recipe-harness/library/`, clone-into-comp carries curves) + `presets`/.ffx field,
-  both verified. Remaining: the artist curve pass on the masters + mining the 586 vendor
-  Designer presets (plain-JSON .xbxc) as recipe material.
-- Animated + context-conditioned probing (temporal enums; gated params like Overflow@Contrast)
+  both verified. Remaining: the artist curve pass on the masters.
+- ~~Sprite/textured particles~~ — SOLVED 2026-07-17: 0703=6 IS Sprite (an unconnected sprite
+  renders as a white card — the round-3 probe misread it as "Square"); runner `footage` field
+  + `{"__layer":name}` param values connect pack-shipped textures headless (53/58 refs on disk).
+- ~~Aux systems~~ — SOLVED 2026-07-16/17: v2023 multi-system S2 via MASTER_particular_S2
+  clone (system existence is plugin-private state; the master carries it) + Emit-from-Parent
+  2830=8 + the AUX_S2 param table (62 active-aux presets translated).
+- Fluid physics: enable switch 0638 found (Physics Model 0119 locked); param table pinned by
+  default-value pairs; color fixed via the PColorOverLifeArb flatten — SHAPE semantics
+  (buoyancy/vortex units) still unprobed (flame renders as a dot).
+- Animated + context-conditioned probing (temporal enums; gated params like Overflow@Contrast,
+  Emit Probability S2 gated by 2752)
 - Batch-enrich the native effect set into a browsable card library for the planner
-- Multi-layer/multi-system plans (portfolio tornado = core + wisps + debris + matte)
+- Multi-layer/multi-system plans (portfolio tornado = core + wisps + debris + matte); the
+  362 vendor .xbxs full scenes are the blueprint material
 - Brownfield: perceive existing projects (selection, layer stacks, non-destructive edits) —
   the wedge product is greenfield-on-selected-layer; arbitrary-project editing is the north star.

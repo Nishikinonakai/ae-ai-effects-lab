@@ -58,7 +58,16 @@ const ALIAS = {
   'p color': 'color', 'p color rnd': 'color random',
   'p feather': 'sphere feather',
   'p aspect ratio': 'aspect ratio',
-  'p rot x': 'rotation x', 'p rot y': 'rotation y', 'p rot z': 'rotation z',
+  // particle rotation (round-6: was 'p rot *' — Designer actually emits PRotate*, so these
+  // NEVER matched and 127 presets lost their tumble; ids read off the Rotation group rows)
+  'p rotate': '@tc Particular-0136',                // Rotate Z (the 2D one)
+  'p rotate x': '@tc Particular-0275', 'p rotate y': '@tc Particular-0276',
+  'p rotate rnd': '@tc Particular-0137',            // Random Rotation
+  'p rotate speed': '@tc Particular-0138',          // Rotation Speed Z
+  'p rotate speed x': '@tc Particular-0277', 'p rotate speed y': '@tc Particular-0278',
+  'p rotate rnd speed': '@tc Particular-0279',      // Random Speed Rotate
+  'p rotate rnd speed distr': '@tc Particular-0282',
+  'p rot auto': '@tc Particular-0726',              // Orient to Motion
   'vel': 'velocity', 'vel rnd': 'velocity random',
   'vel spread': '@tc Particular-0012',              // Velocity Random [%] — vendor values are 0-100, and VelRnd never appears in packs
   'vel emit': 'velocity from emitter mot',          // truncated dump name, prefix-matched below
@@ -67,16 +76,31 @@ const ALIAS = {
   'grid emitter particles in z': 'particles in z',
   'p set color': 'set color',
   'p unmult': 'unmult',
-  'subframe pos': 'position subframe',
   'dir spread': 'direction spread',
   'emitter dir': 'direction',
   'angle x': 'x rotation', 'angle y': 'y rotation', 'angle z': 'z rotation',
-  'f affect pos': 'affect position', 'f affect size': 'affect size',
-  'f scale': 'scale', 'f complexity': 'complexity',
-  'f evolution': 'evolution speed',                 // ASSUMED
+  // turbulence field (round-6): Designer F* is the TURBULENCE FIELD group — the old
+  // aliases hit the Air-Turbulence twins (0711 Affect Position is even in the inert-drop
+  // set, so fire/smoke presets silently lost their turbulence). Default-value pairs pin
+  // them: FAffectTime 0.5 = TF Fade-in Time 0045 (0.5), FScale 10 = TF Scale 0046 (10).
+  'f affect pos': '@tc Particular-0042',            // TF Displace XYZ (v18 name for position displacement)
+  'f affect size': '@tc Particular-0041',           // TF Affect Size
+  'f affect time': '@tc Particular-0045',           // TF Fade-in Time (seconds)
+  'f scale': '@tc Particular-0046', 'f complexity': '@tc Particular-0047',
+  'f evolution': '@tc Particular-0052',             // TF Evolution Speed
   'air resist': 'air resistance',
   'spin amp': 'spin amplitude', 'spin freq': 'spin frequency',
+  'spin time': '@tc Particular-0021',               // Fade-in Spin (seconds) — Designer default 1 = TSV default 1
   'grav': 'gravity',
+  // shading / shadowlets (round-6; values inert unless the vendor also authored the enables)
+  'p shade': '@tc Particular-0284',                 // Shading on/off
+  'p shade falloff adjust': '@tc Particular-0304',  // Nominal Distance — Designer default 250 = TSV default 250
+  'smokelet shadow color': '@tc Particular-0210',
+  'smokelet shadow color strength': '@tc Particular-0211',
+  'smokelet shadow opacity': '@tc Particular-0212',
+  'glow transfer mode': '@tc Particular-0218',      // Glow Blend Mode
+  'subframe pos': null,                             // no Position-Subframe param in v18 (removed)
+  'p layer time': null,                             // consumed by the sprite connect (0067)
   'p type': '@tc Particular-0703',                  // 0026 is a hidden legacy dupe
   'emitter type': 'emitter type',
   // aux system (Designer SE_* / Options_Aux_*): consumed by the S2 translation block in the
@@ -121,7 +145,7 @@ const ALIAS = {
 };
 // params whose Designer value is a 0-based enum while AE popups are 1-based
 const ENUM_OFFSET = new Set(['p type', 'emitter type', 'emitter dir', 'pt mode', 'p set color',
-  'fluid motion type', 'fluid force option', 'fluid random swirl option']);
+  'fluid motion type', 'fluid force option', 'fluid random swirl option', 'glow transfer mode']);
 
 // ---- aux → S2 translation (2026-07-17) ----
 // Classic Aux became multi-system "Emit from Parent" in v2023. S2 params are script-settable
