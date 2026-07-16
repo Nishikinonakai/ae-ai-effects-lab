@@ -13,11 +13,21 @@ from PIL import Image, ImageDraw
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VAL = os.path.join(HERE, "validation")
-SHEETS = os.path.join(VAL, "sheets")
+
+# optional: --only=<json with {"changed":[...],"new":[...]}> --outdir=<sheets dir name>
+only = None
+outname = "sheets"
+for a in sys.argv[1:]:
+    if a.startswith("--only="):
+        j = json.load(open(a.split("=", 1)[1]))
+        only = set(j.get("changed", [])) | set(j.get("new", []))
+    elif a.startswith("--outdir="):
+        outname = a.split("=", 1)[1]
+SHEETS = os.path.join(VAL, outname)
 os.makedirs(SHEETS, exist_ok=True)
 
 results = [json.loads(l) for l in open(os.path.join(VAL, "results.jsonl")) if l.strip()]
-results = [r for r in results if r.get("status") == "done"]
+results = [r for r in results if r.get("status") == "done" and (only is None or r["slug"] in only)]
 results.sort(key=lambda r: (r["pack"], r["category"], r["slug"]))
 
 def pixel_stats(path):
@@ -30,8 +40,9 @@ def pixel_stats(path):
 
 stats = {}
 for r in results:
-    t4 = next((f for f in r.get("frames", []) if "_t4" in f["path"]), None)
-    fp = os.path.join(VAL, t4["path"]) if t4 else None
+    fr = r.get("frames", [])
+    last = fr[-1] if fr else None          # renderFrames order -> last = latest comp time
+    fp = os.path.join(VAL, last["path"]) if last else None
     if not fp or not os.path.exists(fp):
         stats[r["slug"]] = {"flag": "no_frame"}
         continue
@@ -87,7 +98,7 @@ if cell:
     sheet.save(os.path.join(SHEETS, f"sheet_{sheet_idx:02d}.png"))
     sheet_idx += 1
 
-json.dump(manifest, open(os.path.join(VAL, "sheet_manifest.json"), "w"), indent=1)
+json.dump(manifest, open(os.path.join(SHEETS, "manifest.json"), "w"), indent=1)
 flags = {}
 for s in stats.values():
     flags[s.get("flag")] = flags.get(s.get("flag"), 0) + 1

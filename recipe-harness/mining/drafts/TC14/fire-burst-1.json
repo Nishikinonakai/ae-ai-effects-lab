@@ -827,8 +827,8 @@
         ],
         [
           "tc Particular-0703",
-          6,
-          "FXid_PType (alias+enumOffset)"
+          4,
+          "FXid_PType (alias+enumOffset) [sprite fallback -> Cloudlet]"
         ],
         [
           "tc Particular-0531",
@@ -866,12 +866,18 @@
           "FXid_POpacRnd (alias)"
         ]
       ],
-      "expressions": []
+      "expressions": [
+        [
+          "tc Particular-0146",
+          "time < 0.1 ? 5000 : 0",
+          "Explode -> 0.1s burst spike"
+        ]
+      ]
     }
   ],
   "camera": null,
   "renderFrames": [
-    1,
-    4
+    0.15,
+    1.4
   ]
 }

@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Spark Strings 3.xbxc",
   "_pack": "TC14",
   "_category": "Explosive",
-  "_map_coverage": "44 mapped / 94 unmapped / 0 curves",
+  "_map_coverage": "57 mapped / 79 unmapped / 0 curves",
   "_unmapped": {
     "FXid_Gen1EmitterSizeOption": 0,
     "FXid_Gen1SubframePos": 0,
@@ -721,18 +721,11 @@
     "FXid_DRadius": 100,
     "FXid_DStrength": 0,
     "FXid_Options_Aux_AirPhysics_Resistance": 0,
-    "FXid_Options_Aux_AirPhysics_Turbulence": 0,
     "FXid_Options_Aux_AirPhysics_Wind": 0,
-    "FXid_Options_Aux_Control_InheritVelocity": 0.001,
     "FXid_Options_Aux_Control_StartEmit": 0,
     "FXid_Options_Aux_Control_StopEmit": 100,
     "FXid_Options_Aux_EmitProbability": 100,
     "FXid_Options_Aux_Feather": 30,
-    "FXid_Options_Aux_Gravity": 0,
-    "FXid_Options_Aux_Randomness_Life": 0,
-    "FXid_Options_Aux_Randomness_Opacity": 0,
-    "FXid_Options_Aux_Randomness_Size": 0,
-    "FXid_Options_Aux_TransferMode": 1,
     "FXid_PColorRnd_AUX": 0,
     "FXid_PColor_AUX": {
       "r": 255,
@@ -754,8 +747,6 @@
     "FXid_PRotateY_AUX": 0,
     "FXid_PRotateZ_AUX": 0,
     "FXid_PSetColor_AUX": 0,
-    "FXid_SE_Emitter": 2,
-    "FXid_SE_PColorFromMain": 100,
     "FXid_SE_PColorOverLifeArb": {
       "PosP": [
         0
@@ -770,8 +761,6 @@
         0.48235294222831726
       ]
     },
-    "FXid_SE_PLife": 0.7373199462890625,
-    "FXid_SE_POpacity": 16.294647216796875,
     "FXid_SE_POpacityOverLifeArb": {
       "isCurveMode": false,
       "samples": [
@@ -980,7 +969,6 @@
       "curveX": [],
       "curveY": []
     },
-    "FXid_SE_PSize": 4.017852783203125,
     "FXid_SE_PSizeOverLifeArb": {
       "isCurveMode": false,
       "samples": [
@@ -1188,10 +1176,7 @@
       ],
       "curveX": [],
       "curveY": []
-    },
-    "FXid_SE_PType": 4,
-    "FXid_SE_PVel": 10,
-    "FXid_SE_ParticlesPerSecF": 200
+    }
   },
   "_curves": {},
   "intent": "vendor preset \"Spark Strings 3\" (Explosive) — validate against its thumbnail",
@@ -1437,14 +1422,85 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0201",
+          0,
+          "FXid_Options_Aux_AirPhysics_Turbulence (alias)"
+        ],
+        [
+          "tc Particular-0194",
+          0.001,
+          "FXid_Options_Aux_Control_InheritVelocity (alias)"
+        ],
+        [
+          "tc Particular-0189",
+          0,
+          "FXid_Options_Aux_Gravity (alias)"
+        ],
+        [
+          "tc Particular-0204",
+          0,
+          "FXid_Options_Aux_Randomness_Life (alias)"
+        ],
+        [
+          "tc Particular-0206",
+          0,
+          "FXid_Options_Aux_Randomness_Opacity (alias)"
+        ],
+        [
+          "tc Particular-0205",
+          0,
+          "FXid_Options_Aux_Randomness_Size (alias)"
+        ],
+        [
+          "tc Particular-0190",
+          2,
+          "FXid_Options_Aux_TransferMode (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0150",
+          0.7373199462890625,
+          "FXid_SE_PLife (alias)"
+        ],
+        [
+          "tc Particular-0160",
+          16.294647216796875,
+          "FXid_SE_POpacity (alias)"
+        ],
+        [
+          "tc Particular-0154",
+          4.017852783203125,
+          "FXid_SE_PSize (alias)"
+        ],
+        [
+          "tc Particular-0151",
+          5,
+          "FXid_SE_PType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0152",
+          10,
+          "FXid_SE_PVel (alias)"
+        ],
+        [
+          "tc Particular-0149",
+          200,
+          "FXid_SE_ParticlesPerSecF (alias)"
         ]
       ],
-      "expressions": []
+      "expressions": [
+        [
+          "tc Particular-0146",
+          "time < 0.1 ? 40000 : 0",
+          "Explode -> 0.1s burst spike"
+        ]
+      ]
     }
   ],
   "camera": null,
   "renderFrames": [
-    1,
-    4
+    0.15,
+    1.0816375732421875
   ]
 }

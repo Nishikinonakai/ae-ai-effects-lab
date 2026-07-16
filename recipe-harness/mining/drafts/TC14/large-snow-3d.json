@@ -625,8 +625,8 @@
         ],
         [
           "tc Particular-0703",
-          9,
-          "FXid_PType (alias+enumOffset)"
+          2,
+          "FXid_PType (alias+enumOffset) [sprite fallback -> Glow Sphere]"
         ],
         [
           "tc Particular-0531",

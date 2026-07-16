@@ -603,8 +603,8 @@
         ],
         [
           "tc Particular-0703",
-          6,
-          "FXid_PType (alias+enumOffset)"
+          4,
+          "FXid_PType (alias+enumOffset) [sprite fallback -> Cloudlet]"
         ],
         [
           "tc Particular-0531",

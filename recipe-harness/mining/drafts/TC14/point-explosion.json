@@ -851,12 +851,18 @@
           "FXid_POpacRnd (alias)"
         ]
       ],
-      "expressions": []
+      "expressions": [
+        [
+          "tc Particular-0146",
+          "time < 0.1 ? 100000 : 0",
+          "Explode -> 0.1s burst spike"
+        ]
+      ]
     }
   ],
   "camera": null,
   "renderFrames": [
-    1,
-    4
+    0.15,
+    2
   ]
 }

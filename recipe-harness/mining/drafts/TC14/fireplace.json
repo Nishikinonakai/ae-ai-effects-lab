@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Fireplace.xbxc",
   "_pack": "TC14",
   "_category": "Smoke and Fire",
-  "_map_coverage": "44 mapped / 100 unmapped / 0 curves",
+  "_map_coverage": "57 mapped / 85 unmapped / 0 curves",
   "_unmapped": {
     "FXid_Gen1EmitterSizeOption": 1,
     "FXid_Gen1Pos": [
@@ -752,18 +752,11 @@
     "FXid_DRadius": 100,
     "FXid_DStrength": 0,
     "FXid_Options_Aux_AirPhysics_Resistance": 0,
-    "FXid_Options_Aux_AirPhysics_Turbulence": 0,
     "FXid_Options_Aux_AirPhysics_Wind": 0,
-    "FXid_Options_Aux_Control_InheritVelocity": 0,
     "FXid_Options_Aux_Control_StartEmit": 0,
     "FXid_Options_Aux_Control_StopEmit": 100,
     "FXid_Options_Aux_EmitProbability": 100,
     "FXid_Options_Aux_Feather": 30,
-    "FXid_Options_Aux_Gravity": 0,
-    "FXid_Options_Aux_Randomness_Life": 0,
-    "FXid_Options_Aux_Randomness_Opacity": 0,
-    "FXid_Options_Aux_Randomness_Size": 0,
-    "FXid_Options_Aux_TransferMode": 0,
     "FXid_PColorRnd_AUX": 0,
     "FXid_PColor_AUX": {
       "r": 255,
@@ -786,8 +779,6 @@
     "FXid_PRotateY_AUX": 0,
     "FXid_PRotateZ_AUX": 0,
     "FXid_PSetColor_AUX": 0,
-    "FXid_SE_Emitter": 0,
-    "FXid_SE_PColorFromMain": 0,
     "FXid_SE_PColorOverLifeArb": {
       "PosP": [
         0,
@@ -818,8 +809,6 @@
         1
       ]
     },
-    "FXid_SE_PLife": 0.5,
-    "FXid_SE_POpacity": 50,
     "FXid_SE_POpacityOverLifeArb": {
       "isCurveMode": false,
       "samples": [
@@ -1028,7 +1017,6 @@
       "curveX": [],
       "curveY": []
     },
-    "FXid_SE_PSize": 5,
     "FXid_SE_PSizeOverLifeArb": {
       "isCurveMode": false,
       "samples": [
@@ -1236,10 +1224,7 @@
       ],
       "curveX": [],
       "curveY": []
-    },
-    "FXid_SE_PType": 0,
-    "FXid_SE_PVel": 0,
-    "FXid_SE_ParticlesPerSecF": 10
+    }
   },
   "_curves": {},
   "intent": "vendor preset \"Fireplace\" (Smoke and Fire) — validate against its thumbnail",
@@ -1378,8 +1363,8 @@
         ],
         [
           "tc Particular-0703",
-          6,
-          "FXid_PType (alias+enumOffset)"
+          4,
+          "FXid_PType (alias+enumOffset) [sprite fallback -> Cloudlet]"
         ],
         [
           "tc Particular-0531",
@@ -1485,6 +1470,71 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0201",
+          0,
+          "FXid_Options_Aux_AirPhysics_Turbulence (alias)"
+        ],
+        [
+          "tc Particular-0194",
+          0,
+          "FXid_Options_Aux_Control_InheritVelocity (alias)"
+        ],
+        [
+          "tc Particular-0189",
+          0,
+          "FXid_Options_Aux_Gravity (alias)"
+        ],
+        [
+          "tc Particular-0204",
+          0,
+          "FXid_Options_Aux_Randomness_Life (alias)"
+        ],
+        [
+          "tc Particular-0206",
+          0,
+          "FXid_Options_Aux_Randomness_Opacity (alias)"
+        ],
+        [
+          "tc Particular-0205",
+          0,
+          "FXid_Options_Aux_Randomness_Size (alias)"
+        ],
+        [
+          "tc Particular-0190",
+          1,
+          "FXid_Options_Aux_TransferMode (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0150",
+          0.5,
+          "FXid_SE_PLife (alias)"
+        ],
+        [
+          "tc Particular-0160",
+          50,
+          "FXid_SE_POpacity (alias)"
+        ],
+        [
+          "tc Particular-0154",
+          5,
+          "FXid_SE_PSize (alias)"
+        ],
+        [
+          "tc Particular-0151",
+          1,
+          "FXid_SE_PType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0152",
+          0,
+          "FXid_SE_PVel (alias)"
+        ],
+        [
+          "tc Particular-0149",
+          10,
+          "FXid_SE_ParticlesPerSecF (alias)"
         ]
       ],
       "expressions": []

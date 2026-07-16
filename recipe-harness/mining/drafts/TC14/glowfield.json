@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Glowfield.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "34 mapped / 26 unmapped / 7 curves",
+  "_map_coverage": "47 mapped / 11 unmapped / 7 curves",
   "_unmapped": {
     "FXid_Gen1SubframePos": 0,
     "FXid_PLayerTime": 0,
@@ -19,22 +19,7 @@
     "FXid_PShadeFalloffAdjust": 250,
     "FXid_PShadow": 0,
     "FXid_SE_PShadow": 0,
-    "FXid_SpinTime": 0.100006103515625,
-    "FXid_Options_Aux_AirPhysics_Turbulence": 0,
-    "FXid_Options_Aux_Control_InheritVelocity": 0,
-    "FXid_Options_Aux_Gravity": 0,
-    "FXid_Options_Aux_Randomness_Life": 50,
-    "FXid_Options_Aux_Randomness_Opacity": 0,
-    "FXid_Options_Aux_Randomness_Size": 50,
-    "FXid_Options_Aux_TransferMode": 1,
-    "FXid_SE_Emitter": 0,
-    "FXid_SE_PColorFromMain": 100,
-    "FXid_SE_PLife": 1.5,
-    "FXid_SE_POpacity": 100,
-    "FXid_SE_PSize": 5,
-    "FXid_SE_PType": 2,
-    "FXid_SE_PVel": 218,
-    "FXid_SE_ParticlesPerSecF": 10
+    "FXid_SpinTime": 0.100006103515625
   },
   "_curves": {
     "rg.custom.xfer.life": {
@@ -1351,6 +1336,71 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0201",
+          0,
+          "FXid_Options_Aux_AirPhysics_Turbulence (alias)"
+        ],
+        [
+          "tc Particular-0194",
+          0,
+          "FXid_Options_Aux_Control_InheritVelocity (alias)"
+        ],
+        [
+          "tc Particular-0189",
+          0,
+          "FXid_Options_Aux_Gravity (alias)"
+        ],
+        [
+          "tc Particular-0204",
+          50,
+          "FXid_Options_Aux_Randomness_Life (alias)"
+        ],
+        [
+          "tc Particular-0206",
+          0,
+          "FXid_Options_Aux_Randomness_Opacity (alias)"
+        ],
+        [
+          "tc Particular-0205",
+          50,
+          "FXid_Options_Aux_Randomness_Size (alias)"
+        ],
+        [
+          "tc Particular-0190",
+          2,
+          "FXid_Options_Aux_TransferMode (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0150",
+          1.5,
+          "FXid_SE_PLife (alias)"
+        ],
+        [
+          "tc Particular-0160",
+          100,
+          "FXid_SE_POpacity (alias)"
+        ],
+        [
+          "tc Particular-0154",
+          5,
+          "FXid_SE_PSize (alias)"
+        ],
+        [
+          "tc Particular-0151",
+          3,
+          "FXid_SE_PType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0152",
+          218,
+          "FXid_SE_PVel (alias)"
+        ],
+        [
+          "tc Particular-0149",
+          10,
+          "FXid_SE_ParticlesPerSecF (alias)"
         ]
       ],
       "expressions": []

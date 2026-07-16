@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Basic Magic.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "43 mapped / 94 unmapped / 0 curves",
+  "_map_coverage": "56 mapped / 79 unmapped / 0 curves",
   "_dropped_inert": [
     [
       "tc Particular-0711",
@@ -728,18 +728,11 @@
     "FXid_DRadius": 100,
     "FXid_DStrength": 0,
     "FXid_Options_Aux_AirPhysics_Resistance": 0,
-    "FXid_Options_Aux_AirPhysics_Turbulence": 114,
     "FXid_Options_Aux_AirPhysics_Wind": 0,
-    "FXid_Options_Aux_Control_InheritVelocity": 0.001,
     "FXid_Options_Aux_Control_StartEmit": 0,
     "FXid_Options_Aux_Control_StopEmit": 100,
     "FXid_Options_Aux_EmitProbability": 100,
     "FXid_Options_Aux_Feather": 30,
-    "FXid_Options_Aux_Gravity": 0,
-    "FXid_Options_Aux_Randomness_Life": 40,
-    "FXid_Options_Aux_Randomness_Opacity": 0,
-    "FXid_Options_Aux_Randomness_Size": 22.400000000000002,
-    "FXid_Options_Aux_TransferMode": 1,
     "FXid_PColorRnd_AUX": 0,
     "FXid_PColor_AUX": {
       "r": 255,
@@ -762,8 +755,6 @@
     "FXid_PRotateY_AUX": 0,
     "FXid_PRotateZ_AUX": 0,
     "FXid_PSetColor_AUX": 1,
-    "FXid_SE_Emitter": 2,
-    "FXid_SE_PColorFromMain": 0,
     "FXid_SE_PColorOverLifeArb": {
       "PosB": [
         0.054901961237192154,
@@ -786,8 +777,6 @@
         0.9900000095367432
       ]
     },
-    "FXid_SE_PLife": 0.600006103515625,
-    "FXid_SE_POpacity": 90,
     "FXid_SE_POpacityOverLifeArb": {
       "curveX": [],
       "curveY": [],
@@ -996,7 +985,6 @@
         1
       ]
     },
-    "FXid_SE_PSize": 1,
     "FXid_SE_PSizeOverLifeArb": {
       "curveX": [],
       "curveY": [],
@@ -1204,10 +1192,7 @@
         0.009950248524546623,
         0.004975124262273312
       ]
-    },
-    "FXid_SE_PType": 1,
-    "FXid_SE_PVel": 64,
-    "FXid_SE_ParticlesPerSecF": 144
+    }
   },
   "_curves": {},
   "intent": "vendor preset \"Basic Magic\" (Light and Magic) — validate against its thumbnail",
@@ -1448,6 +1433,71 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0201",
+          114,
+          "FXid_Options_Aux_AirPhysics_Turbulence (alias)"
+        ],
+        [
+          "tc Particular-0194",
+          0.001,
+          "FXid_Options_Aux_Control_InheritVelocity (alias)"
+        ],
+        [
+          "tc Particular-0189",
+          0,
+          "FXid_Options_Aux_Gravity (alias)"
+        ],
+        [
+          "tc Particular-0204",
+          40,
+          "FXid_Options_Aux_Randomness_Life (alias)"
+        ],
+        [
+          "tc Particular-0206",
+          0,
+          "FXid_Options_Aux_Randomness_Opacity (alias)"
+        ],
+        [
+          "tc Particular-0205",
+          22.400000000000002,
+          "FXid_Options_Aux_Randomness_Size (alias)"
+        ],
+        [
+          "tc Particular-0190",
+          2,
+          "FXid_Options_Aux_TransferMode (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0150",
+          0.600006103515625,
+          "FXid_SE_PLife (alias)"
+        ],
+        [
+          "tc Particular-0160",
+          90,
+          "FXid_SE_POpacity (alias)"
+        ],
+        [
+          "tc Particular-0154",
+          1,
+          "FXid_SE_PSize (alias)"
+        ],
+        [
+          "tc Particular-0151",
+          2,
+          "FXid_SE_PType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0152",
+          64,
+          "FXid_SE_PVel (alias)"
+        ],
+        [
+          "tc Particular-0149",
+          144,
+          "FXid_SE_ParticlesPerSecF (alias)"
         ]
       ],
       "expressions": []

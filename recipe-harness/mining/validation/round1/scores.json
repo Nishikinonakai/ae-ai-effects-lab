@@ -1,0 +1,742 @@
+{
+ "backend": "agent-vision",
+ "date": "2026-07-15",
+ "scores": {
+  "black-triangle-slabs": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "blue-icosas": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "bucky-balls": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "low-poly-spheres": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "multipoint-stars": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "orange-icosas": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "primitive-bits-directional": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "primitive-bits-uniform": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "rounded-cubes": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "stars-5-pt": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "stars-6-pt": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "stars-8-pt": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "triangles-2d": {
+   "verdict": "partial",
+   "class": "sprite-obj"
+  },
+  "wireframe-pyramids": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "yellow-tech-balls": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "aux-system-legacy": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "aux-system-new": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "basic-blue-particles": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "basic-glow-spheres": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "basic-stars": {
+   "verdict": "partial",
+   "class": "sprite-obj"
+  },
+  "clean-start": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "deep-box-area": {
+   "verdict": "match",
+   "class": "no-thumb"
+  },
+  "directional-intense": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "directional-mild": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "explosion-trail": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "explosion-trail-with-gravity": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "fire-motion": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "obj-emitter": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "pastel-dots": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "point-emitter-with-turbulence": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "point-explosion": {
+   "verdict": "fail",
+   "class": "burst-behavior"
+  },
+  "point-rise": {
+   "verdict": "partial",
+   "class": "ok"
+  },
+  "simple-dots": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "simple-light-path": {
+   "verdict": "fail",
+   "class": "path-motion"
+  },
+  "simple-point-emitter": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "single-glow": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "confetti": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "dust-in-the-wind": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "floating-dust": {
+   "verdict": "fail",
+   "class": "empty"
+  },
+  "glitter": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "horizontal-dust": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "moon-dust": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "sparkle-dust": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "blast-sparks-1": {
+   "verdict": "partial",
+   "class": "burst-behavior"
+  },
+  "blast-sparks-2": {
+   "verdict": "fail",
+   "class": "burst-behavior"
+  },
+  "dust-hit-02": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "dust-hit-03": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "explode-out": {
+   "verdict": "fail",
+   "class": "burst-behavior"
+  },
+  "explode-up": {
+   "verdict": "fail",
+   "class": "burst-behavior"
+  },
+  "explode-up-dark": {
+   "verdict": "fail",
+   "class": "burst-behavior"
+  },
+  "fire-burst-1": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "fire-burst-2": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "fire-trails-1": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "fire-trails-2": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "fireball-medium-1": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "fireball-medium-2": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "flare-flash-1": {
+   "verdict": "fail",
+   "class": "blowout"
+  },
+  "flare-flash-2": {
+   "verdict": "fail",
+   "class": "blowout"
+  },
+  "flare-flash-3": {
+   "verdict": "fail",
+   "class": "blowout"
+  },
+  "glass-bits": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "glass-shard-explosion-2": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "glass-shard-explosion-3": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "glow-spark-blast": {
+   "verdict": "match",
+   "class": "no-thumb"
+  },
+  "ignition": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "muzzle-flash-1": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "muzzle-flash-2": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "muzzle-flash-3": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "muzzle-flash-4": {
+   "verdict": "partial",
+   "class": "aux-trail"
+  },
+  "plasma-cloud-explosion-1": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "plasma-cloud-explosion-2": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "ring-explosion": {
+   "verdict": "fail",
+   "class": "blowout"
+  },
+  "smoke-explosion": {
+   "verdict": "fail",
+   "class": "burst-behavior"
+  },
+  "smoke-hit": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "smoke-puff-1": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "smoke-puff-2": {
+   "verdict": "partial",
+   "class": "white-square"
+  },
+  "spark-blast-1": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "spark-directional": {
+   "verdict": "partial",
+   "class": "aux-trail"
+  },
+  "spark-single": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "spark-strings-1": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "spark-strings-2": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "spark-strings-3": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "sparks-ignite": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "bow-shock": {
+   "verdict": "fail",
+   "class": "fluid-physics"
+  },
+  "brownian-motion": {
+   "verdict": "partial",
+   "class": "ok"
+  },
+  "candle-flame": {
+   "verdict": "fail",
+   "class": "fluid-physics"
+  },
+  "fumes": {
+   "verdict": "fail",
+   "class": "fluid-physics"
+  },
+  "grid-fluid": {
+   "verdict": "fail",
+   "class": "fluid-physics"
+  },
+  "horizontal-stream": {
+   "verdict": "fail",
+   "class": "fluid-physics"
+  },
+  "ink-drop": {
+   "verdict": "fail",
+   "class": "fluid-physics"
+  },
+  "melted": {
+   "verdict": "partial",
+   "class": "ok"
+  },
+  "orbit": {
+   "verdict": "fail",
+   "class": "emitter-enum"
+  },
+  "ring-emitter": {
+   "verdict": "fail",
+   "class": "emitter-enum"
+  },
+  "smolder": {
+   "verdict": "fail",
+   "class": "fluid-physics"
+  },
+  "swirl-tracers": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "basic-magic": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "blue-swarm-with-trail": {
+   "verdict": "partial",
+   "class": "aux-trail"
+  },
+  "electron-dance": {
+   "verdict": "partial",
+   "class": "light-emitter"
+  },
+  "energy-stream": {
+   "verdict": "partial",
+   "class": "aux-trail"
+  },
+  "ethereal-plane": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "falling-lights": {
+   "verdict": "partial",
+   "class": "ok"
+  },
+  "floating-streaks": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "flowing-strings": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "ghost-trail": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "glowfield": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "green-pixie": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "inverse-energy": {
+   "verdict": "partial",
+   "class": "aux-trail"
+  },
+  "light-blobs": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "light-streaks-blue": {
+   "verdict": "fail",
+   "class": "light-emitter"
+  },
+  "light-streaks-orange": {
+   "verdict": "fail",
+   "class": "light-emitter"
+  },
+  "love-hearts": {
+   "verdict": "partial",
+   "class": "sprite-obj"
+  },
+  "magic-disc": {
+   "verdict": "partial",
+   "class": "ok"
+  },
+  "magic-smoke-trail": {
+   "verdict": "partial",
+   "class": "aux-trail"
+  },
+  "magical": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "northern-lights": {
+   "verdict": "fail",
+   "class": "blowout"
+  },
+  "orange-stars": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "organic-lines": {
+   "verdict": "fail",
+   "class": "empty"
+  },
+  "organic-lines-2": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "particle-swarm": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "shooting-flares-1": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "shooting-flares-2": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "starflight": {
+   "verdict": "partial",
+   "class": "ok"
+  },
+  "swarm-fireflies": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "copper-patina": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "falling-flares": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "flickering-lights": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "flowy-green": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "glow-field": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "nebula-strings": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "outward-flow": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "phantom-trail": {
+   "verdict": "partial",
+   "class": "no-thumb"
+  },
+  "rose-spheres": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "serpent": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "shooting-flares": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "shooting-stars-1": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "streak-brush-1": {
+   "verdict": "partial",
+   "class": "white-square"
+  },
+  "streak-brush-2": {
+   "verdict": "partial",
+   "class": "white-square"
+  },
+  "streak-brush-3": {
+   "verdict": "partial",
+   "class": "white-square"
+  },
+  "streak-brush-4": {
+   "verdict": "partial",
+   "class": "white-square"
+  },
+  "tempest": {
+   "verdict": "fail",
+   "class": "empty"
+  },
+  "blizzard": {
+   "verdict": "partial",
+   "class": "ok"
+  },
+  "blowing-bubbles": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "blowing-maple-leaves": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "blowing-seeds-1": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "blowing-seeds-2": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "blowing-seeds-wide": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "blowing-snow": {
+   "verdict": "partial",
+   "class": "ok"
+  },
+  "chemtrails": {
+   "verdict": "fail",
+   "class": "aux-trail"
+  },
+  "cloud-cover": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "clouds": {
+   "verdict": "partial",
+   "class": "blowout"
+  },
+  "falling-feathers": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "fireflies": {
+   "verdict": "partial",
+   "class": "ok"
+  },
+  "floating-cells": {
+   "verdict": "fail",
+   "class": "blowout"
+  },
+  "large-snow-2d": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "large-snow-3d": {
+   "verdict": "partial",
+   "class": "ok"
+  },
+  "rain": {
+   "verdict": "partial",
+   "class": "ok"
+  },
+  "rising-bubbles": {
+   "verdict": "partial",
+   "class": "ok"
+  },
+  "rising-fizz": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "rising-fizz-slower": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "sea-creatures": {
+   "verdict": "fail",
+   "class": "sprite-obj"
+  },
+  "snowy-night-1": {
+   "verdict": "partial",
+   "class": "ok"
+  },
+  "snowy-night-2": {
+   "verdict": "fail",
+   "class": "empty"
+  },
+  "basic-rising-smoke": {
+   "verdict": "partial",
+   "class": "white-square"
+  },
+  "directional-fire-1": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "directional-fire-2": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "falling-sparks": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "fireplace": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "firestarter": {
+   "verdict": "fail",
+   "class": "color-gradient"
+  },
+  "hazy-fire": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "horizontal-fire": {
+   "verdict": "fail",
+   "class": "blowout"
+  },
+  "horizontal-smoke-1": {
+   "verdict": "partial",
+   "class": "white-square"
+  },
+  "horizontal-smoke-2": {
+   "verdict": "partial",
+   "class": "white-square"
+  },
+  "point-smoke": {
+   "verdict": "partial",
+   "class": "white-square"
+  },
+  "rising-embers": {
+   "verdict": "match",
+   "class": "ok"
+  },
+  "rocket-fire": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "simple-fire": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "simple-smoke": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "smoke-magic": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "smoke-magic-2": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "smoke-plume": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "smoke-rising-1": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "smoke-rising-2": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "smoke-trail": {
+   "verdict": "fail",
+   "class": "white-square"
+  },
+  "smoke-wizard": {
+   "verdict": "partial",
+   "class": "color-gradient"
+  },
+  "smokey-fire": {
+   "verdict": "fail",
+   "class": "white-square"
+  }
+ }
+}

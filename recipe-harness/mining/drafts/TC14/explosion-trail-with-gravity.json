@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/Explosion Trail with Gravity.xbxc",
   "_pack": "TC14",
   "_category": "Basics",
-  "_map_coverage": "45 mapped / 107 unmapped / 0 curves",
+  "_map_coverage": "58 mapped / 92 unmapped / 0 curves",
   "_unmapped": {
     "FXid_Gen1EmitterSizeOption": 0,
     "FXid_Gen1Pos": [
@@ -769,18 +769,11 @@
     "FXid_DRadius": 100,
     "FXid_DStrength": 0,
     "FXid_Options_Aux_AirPhysics_Resistance": 0,
-    "FXid_Options_Aux_AirPhysics_Turbulence": 0,
     "FXid_Options_Aux_AirPhysics_Wind": 0,
-    "FXid_Options_Aux_Control_InheritVelocity": 10,
     "FXid_Options_Aux_Control_StartEmit": 0,
     "FXid_Options_Aux_Control_StopEmit": 100,
     "FXid_Options_Aux_EmitProbability": 100,
     "FXid_Options_Aux_Feather": 30,
-    "FXid_Options_Aux_Gravity": 15,
-    "FXid_Options_Aux_Randomness_Life": 0,
-    "FXid_Options_Aux_Randomness_Opacity": 0,
-    "FXid_Options_Aux_Randomness_Size": 0,
-    "FXid_Options_Aux_TransferMode": 2,
     "FXid_PColorRnd_AUX": 0,
     "FXid_PColor_AUX": {
       "r": 255,
@@ -803,8 +796,6 @@
     "FXid_PRotateY_AUX": 0,
     "FXid_PRotateZ_AUX": 0,
     "FXid_PSetColor_AUX": 0,
-    "FXid_SE_Emitter": 2,
-    "FXid_SE_PColorFromMain": 100,
     "FXid_SE_PColorOverLifeArb": {
       "PosP": [
         0,
@@ -835,8 +826,6 @@
         1
       ]
     },
-    "FXid_SE_PLife": 0.5,
-    "FXid_SE_POpacity": 20,
     "FXid_SE_POpacityOverLifeArb": {
       "isCurveMode": false,
       "samples": [
@@ -1045,7 +1034,6 @@
       "curveX": [],
       "curveY": []
     },
-    "FXid_SE_PSize": 5,
     "FXid_SE_PSizeOverLifeArb": {
       "isCurveMode": false,
       "samples": [
@@ -1253,10 +1241,7 @@
       ],
       "curveX": [],
       "curveY": []
-    },
-    "FXid_SE_PType": 5,
-    "FXid_SE_PVel": 0,
-    "FXid_SE_ParticlesPerSecF": 500
+    }
   },
   "_curves": {},
   "intent": "vendor preset \"Explosion Trail w Gravity\" (Basics) — validate against its thumbnail",
@@ -1511,14 +1496,85 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0201",
+          0,
+          "FXid_Options_Aux_AirPhysics_Turbulence (alias)"
+        ],
+        [
+          "tc Particular-0194",
+          10,
+          "FXid_Options_Aux_Control_InheritVelocity (alias)"
+        ],
+        [
+          "tc Particular-0189",
+          15,
+          "FXid_Options_Aux_Gravity (alias)"
+        ],
+        [
+          "tc Particular-0204",
+          0,
+          "FXid_Options_Aux_Randomness_Life (alias)"
+        ],
+        [
+          "tc Particular-0206",
+          0,
+          "FXid_Options_Aux_Randomness_Opacity (alias)"
+        ],
+        [
+          "tc Particular-0205",
+          0,
+          "FXid_Options_Aux_Randomness_Size (alias)"
+        ],
+        [
+          "tc Particular-0190",
+          3,
+          "FXid_Options_Aux_TransferMode (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0150",
+          0.5,
+          "FXid_SE_PLife (alias)"
+        ],
+        [
+          "tc Particular-0160",
+          20,
+          "FXid_SE_POpacity (alias)"
+        ],
+        [
+          "tc Particular-0154",
+          5,
+          "FXid_SE_PSize (alias)"
+        ],
+        [
+          "tc Particular-0151",
+          6,
+          "FXid_SE_PType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0152",
+          0,
+          "FXid_SE_PVel (alias)"
+        ],
+        [
+          "tc Particular-0149",
+          500,
+          "FXid_SE_ParticlesPerSecF (alias)"
         ]
       ],
-      "expressions": []
+      "expressions": [
+        [
+          "tc Particular-0146",
+          "time < 0.1 ? 20000 : 0",
+          "Explode -> 0.1s burst spike"
+        ]
+      ]
     }
   ],
   "camera": null,
   "renderFrames": [
-    1,
-    4
+    0.15,
+    2
   ]
 }
