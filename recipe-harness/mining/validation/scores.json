@@ -3,64 +3,78 @@
  "date": "2026-07-15",
  "scores": {
   "black-triangle-slabs": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "blue-icosas": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "bucky-balls": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "low-poly-spheres": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "multipoint-stars": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "orange-icosas": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "primitive-bits-directional": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "primitive-bits-uniform": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "rounded-cubes": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "stars-5-pt": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "stars-6-pt": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "stars-8-pt": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "triangles-2d": {
    "verdict": "partial",
    "class": "sprite-obj"
   },
   "wireframe-pyramids": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "yellow-tech-balls": {
-   "verdict": "fail",
-   "class": "sprite-obj"
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
   },
   "aux-system-legacy": {
    "verdict": "fail",
@@ -103,8 +117,9 @@
    "class": "no-thumb"
   },
   "explosion-trail-with-gravity": {
-   "verdict": "partial",
-   "class": "no-thumb"
+   "verdict": "fail",
+   "class": "burst-timing",
+   "note": "r2 REGRESSION: spike+sampling misses; life-aware sampling needed"
   },
   "fire-motion": {
    "verdict": "match",
@@ -123,8 +138,9 @@
    "class": "ok"
   },
   "point-explosion": {
-   "verdict": "fail",
-   "class": "burst-behavior"
+   "verdict": "partial",
+   "class": "ok",
+   "note": "r2: density plausible now"
   },
   "point-rise": {
    "verdict": "partial",
@@ -180,7 +196,7 @@
   },
   "blast-sparks-2": {
    "verdict": "fail",
-   "class": "burst-behavior"
+   "class": "burst-timing"
   },
   "dust-hit-02": {
    "verdict": "partial",
@@ -192,39 +208,45 @@
   },
   "explode-out": {
    "verdict": "fail",
-   "class": "burst-behavior"
+   "class": "burst-timing"
   },
   "explode-up": {
    "verdict": "fail",
-   "class": "burst-behavior"
+   "class": "burst-timing"
   },
   "explode-up-dark": {
    "verdict": "fail",
-   "class": "burst-behavior"
+   "class": "burst-timing"
   },
   "fire-burst-1": {
    "verdict": "fail",
-   "class": "white-square"
+   "class": "texture-color",
+   "note": "r2: white mass \u2014 texture-colored preset loses hue on fallback; tint from thumb dominant color"
   },
   "fire-burst-2": {
    "verdict": "fail",
-   "class": "white-square"
+   "class": "texture-color",
+   "note": "r2: white mass \u2014 texture-colored preset loses hue on fallback; tint from thumb dominant color"
   },
   "fire-trails-1": {
    "verdict": "fail",
-   "class": "aux-trail"
+   "class": "aux-trail",
+   "note": "aux Emit enum (0148) semantics unprobed"
   },
   "fire-trails-2": {
    "verdict": "fail",
-   "class": "aux-trail"
+   "class": "aux-trail",
+   "note": "aux Emit enum (0148) semantics unprobed"
   },
   "fireball-medium-1": {
    "verdict": "fail",
-   "class": "white-square"
+   "class": "texture-color",
+   "note": "r2: white mass \u2014 texture-colored preset loses hue on fallback; tint from thumb dominant color"
   },
   "fireball-medium-2": {
    "verdict": "fail",
-   "class": "white-square"
+   "class": "texture-color",
+   "note": "r2: white mass \u2014 texture-colored preset loses hue on fallback; tint from thumb dominant color"
   },
   "flare-flash-1": {
    "verdict": "fail",
@@ -737,6 +759,16 @@
   "smokey-fire": {
    "verdict": "fail",
    "class": "white-square"
+  },
+  "abstract-and-geometric-triangles-2d": {
+   "verdict": "partial",
+   "class": "sprite-obj",
+   "note": "r2 fallback: clean glow-sphere field, particle identity still needs footage"
+  },
+  "basics-single-glow": {
+   "verdict": "match",
+   "class": "ok"
   }
- }
+ },
+ "round": "r2-partial (57/186 re-rendered; 129 pending AE)"
 }

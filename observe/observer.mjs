@@ -62,7 +62,13 @@ const SNAP = String.raw`(function () {
         var ly = ai.layer(L), fx = [];
         try {
           var eff = ly.property("ADBE Effect Parade");
-          if (eff) for (var e = 1; e <= Math.min(eff.numProperties, 20); e++) fx.push('"' + esc(eff.property(e).matchName) + '"');
+          // ":off" suffix = effect present but DISABLED (tested-and-rejected is a signal:
+          // learned 2026-07-16 when a Deep Glow was in the stack but turned off)
+          if (eff) for (var e = 1; e <= Math.min(eff.numProperties, 20); e++) {
+            var ep = eff.property(e);
+            var on = true; try { on = ep.enabled !== false; } catch (e5) {}
+            fx.push('"' + esc(ep.matchName) + (on ? '' : ':off') + '"');
+          }
         } catch (e1) {}
         layers.push('{"n":"' + esc(ly.name) + '","fx":[' + fx.join(",") + ']' + (ly.selected ? ',"sel":1' : '') + '}');
       }

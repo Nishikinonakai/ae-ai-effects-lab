@@ -1,0 +1,206 @@
+[
+ {
+  "sheet": 0,
+  "pos": 0,
+  "slug": "abstract-and-geometric-triangles-2d",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 1,
+  "slug": "black-triangle-slabs",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 2,
+  "slug": "blue-icosas",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 3,
+  "slug": "bucky-balls",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 4,
+  "slug": "low-poly-spheres",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 5,
+  "slug": "multipoint-stars",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 6,
+  "slug": "orange-icosas",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 7,
+  "slug": "primitive-bits-directional",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 0,
+  "slug": "primitive-bits-uniform",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 1,
+  "slug": "rounded-cubes",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 2,
+  "slug": "stars-5-pt",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 3,
+  "slug": "stars-6-pt",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 4,
+  "slug": "stars-8-pt",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 5,
+  "slug": "wireframe-pyramids",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 6,
+  "slug": "yellow-tech-balls",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 7,
+  "slug": "basics-single-glow",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 0,
+  "slug": "explosion-trail",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 1,
+  "slug": "explosion-trail-with-gravity",
+  "flag": "empty"
+ },
+ {
+  "sheet": 2,
+  "pos": 2,
+  "slug": "point-explosion",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 3,
+  "slug": "confetti",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 4,
+  "slug": "blast-sparks-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 5,
+  "slug": "blast-sparks-2",
+  "flag": "empty"
+ },
+ {
+  "sheet": 2,
+  "pos": 6,
+  "slug": "dust-hit-02",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 7,
+  "slug": "dust-hit-03",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 0,
+  "slug": "explode-out",
+  "flag": "empty"
+ },
+ {
+  "sheet": 3,
+  "pos": 1,
+  "slug": "explode-up",
+  "flag": "empty"
+ },
+ {
+  "sheet": 3,
+  "pos": 2,
+  "slug": "explode-up-dark",
+  "flag": "empty"
+ },
+ {
+  "sheet": 3,
+  "pos": 3,
+  "slug": "fire-burst-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 4,
+  "slug": "fire-burst-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 3,
+  "pos": 5,
+  "slug": "fire-trails-1",
+  "flag": "empty"
+ },
+ {
+  "sheet": 3,
+  "pos": 6,
+  "slug": "fire-trails-2",
+  "flag": "empty"
+ },
+ {
+  "sheet": 3,
+  "pos": 7,
+  "slug": "fireball-medium-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 0,
+  "slug": "fireball-medium-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 4,
+  "pos": 1,
+  "slug": "flare-flash-1",
+  "flag": "ok"
+ }
+]
