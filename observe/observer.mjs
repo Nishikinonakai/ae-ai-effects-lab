@@ -17,6 +17,7 @@
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
+import { spawnSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -89,8 +90,56 @@ const SNAP = String.raw`(function () {
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 function bridgeBusy() {
-  try { return JSON.parse(fs.readFileSync(CMD, 'utf8')).status === 'pending'; }
-  catch { return false; }
+  try {
+    const c = JSON.parse(fs.readFileSync(CMD, 'utf8'));
+    if (c.status !== 'pending') return false;
+    // a command left 'pending' >2min means AE died mid-execution — stale, doesn't block us
+    return (Date.now() - new Date(c.timestamp).getTime()) < 120000;
+  } catch { return false; }
+}
+
+// ---- self-healing across AE crashes / manual restarts ----
+const AE_PROC = 'After Effects 2022.app/Contents/MacOS/After Effects';
+const PANEL = '/Applications/Adobe After Effects 2022/Scripts/ScriptUI Panels/mcp-bridge-auto.jsx';
+const aePid = () => {
+  const r = spawnSync('pgrep', ['-f', AE_PROC], { encoding: 'utf8' });
+  return r.status === 0 ? r.stdout.trim().split('\n')[0] : null;
+};
+const launchPanel = () =>
+  spawnSync('osascript', ['-e', `tell application "Adobe After Effects 2022" to DoScriptFile "${PANEL}"`], { timeout: 15000 }).status === 0;
+
+let lastGoodPid = null;
+
+// Distinguish CRASH-RESTART (pid changed -> palette is gone, re-inject it) from a merely
+// BUSY AE (same pid -> the palette is alive; injecting again would open a SECOND poller
+// that double-executes commands — never do that). Blocks until the bridge answers again.
+async function heal() {
+  append({ type: 'bridge_down', ae_pid: aePid(), last_good_pid: lastGoodPid });
+  console.log(`[${new Date().toLocaleTimeString()}] bridge down — healing (waiting for AE)…`);
+  let samePidRetries = 0;
+  while (true) {
+    const pid = aePid();
+    if (!pid) { await sleep(15000); continue; }              // AE gone — wait for manual relaunch
+    if (pid !== lastGoodPid) {
+      await sleep(20000);                                    // boot grace: plugins loading
+      launchPanel();
+      await sleep(6000);
+    } else if (++samePidRetries >= 6) {
+      // same pid but silent for ~2min+ — maybe the user closed the palette; one re-inject
+      append({ type: 'heal_reinject_same_pid' });
+      launchPanel();
+      await sleep(6000);
+      samePidRetries = 0;
+    }
+    const s = await snapshot(20);
+    if (s?.status === 'ok') {
+      lastGoodPid = pid;
+      append({ type: 'bridge_healed', ae_pid: pid });
+      console.log(`[${new Date().toLocaleTimeString()}] bridge healed (AE pid ${pid}).`);
+      return s;
+    }
+    await sleep(20000);
+  }
 }
 
 async function snapshot(timeoutSec = 20) {
@@ -136,20 +185,27 @@ console.log('label intent anytime:  node observe/observer.mjs --note "<what you 
 append({ type: 'session_start', interval: intervalSec });
 let prev = null, ticks = 0;
 
-process.on('SIGINT', () => { append({ type: 'session_end' }); console.log('\nobserver stopped.'); process.exit(0); });
+const bye = sig => { append({ type: 'session_end', sig }); console.log('\nobserver stopped.'); process.exit(0); };
+process.on('SIGINT', () => bye('SIGINT'));
+process.on('SIGTERM', () => bye('SIGTERM'));
 
+let failStreak = 0;
 while (true) {
   if (bridgeBusy()) { await sleep(5000); continue; }   // someone else is using the bridge — stay out
   const t0 = Date.now();
-  const snap = await snapshot();
+  let snap = await snapshot();
   const took = Date.now() - t0;
-  if (snap?.status === 'ok') {
-    ticks++;
-    const d = diff(prev, snap);
-    if (d) { append({ type: 'diff', ...d }); console.log(`[${new Date().toLocaleTimeString()}] diff:`, Object.keys(d).join(', ')); }
-    if (ticks % 10 === 1) append({ type: 'snapshot', snap });   // periodic full state for reconstruction
-    prev = snap;
-    if (took > 2000 && intervalSec < 600) { intervalSec *= 2; console.log(`slow tick (${took}ms) — backing off to ${intervalSec}s`); }
+  if (!snap || snap.status !== 'ok') {
+    if (++failStreak >= 2) { snap = await heal(); failStreak = 0; }
+    else { await sleep(10000); continue; }
   }
+  failStreak = 0;
+  ticks++;
+  lastGoodPid = lastGoodPid || aePid();
+  const d = diff(prev, snap);
+  if (d) { append({ type: 'diff', ...d }); console.log(`[${new Date().toLocaleTimeString()}] diff:`, Object.keys(d).join(', ')); }
+  if (ticks % 10 === 1) append({ type: 'snapshot', snap });   // periodic full state for reconstruction
+  prev = snap;
+  if (took > 2000 && intervalSec < 600) { intervalSec *= 2; console.log(`slow tick (${took}ms) — backing off to ${intervalSec}s`); }
   await sleep(intervalSec * 1000);
 }
