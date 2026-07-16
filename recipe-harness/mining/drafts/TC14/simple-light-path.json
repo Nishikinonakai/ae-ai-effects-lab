@@ -1497,6 +1497,16 @@
     0,
     0
   ],
+  "lights": [
+    {
+      "name": "Emitter",
+      "position": [
+        640,
+        360,
+        0
+      ]
+    }
+  ],
   "hostName": "Mined",
   "effects": [
     {

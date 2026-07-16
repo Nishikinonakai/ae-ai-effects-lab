@@ -272,6 +272,10 @@ for (const file of files) {
     for (const d of droppedInert) params.splice(params.indexOf(d), 1);
   }
 
+  // light-emitter presets (AE 0782 == 5) need a light named "Emitter" or they render NOTHING
+  const emitType = params.find(p => p[0] === 'tc Particular-0782');
+  const needsLight = emitType && emitType[1] === 5;
+
   // thumbnail
   let thumb = null;
   if (d.preview?.b64data) {
@@ -294,6 +298,7 @@ for (const file of files) {
     compName: 'Mined_' + base.replace(/[^a-zA-Z0-9]+/g, ''),
     comp: { width: 1280, height: 720, fps: 30, duration: 6 },
     background: [0, 0, 0],
+    lights: needsLight ? [{ name: 'Emitter', position: [640, 360, 0] }] : undefined,
     hostName: 'Mined',
     effects: [{ matchName: 'tc Particular', params, expressions: expressionsOut }],
     camera: null,

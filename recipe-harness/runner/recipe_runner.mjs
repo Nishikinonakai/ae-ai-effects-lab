@@ -54,6 +54,19 @@ const AEX = String.raw`(function () {
       bg.moveToEnd();
     }
 
+    // 2b) light layers (find-or-create): Particular's Light(s) emitter type only uses lights
+    // whose names start with "Emitter" — without one it emits NOTHING and pops a modal in
+    // the UI. Recipes declare lights: [{name, position}].
+    if (R.lights) {
+      for (var li = 0; li < R.lights.length; li++) {
+        var Ld = R.lights[li];
+        var lt = findLayer(comp, Ld.name);
+        if (!lt) lt = comp.layers.addLight(Ld.name, [R.comp.width / 2, R.comp.height / 2]);
+        if (Ld.position) { try { lt.position.setValue(Ld.position); } catch (eL) {} }
+        parts.push('{"p":"[light] ' + esc(Ld.name) + '","ok":true}');
+      }
+    }
+
     // 3) host layer: find (idempotent re-run) | clone from a curve-library master | new solid.
     // Masters carry CUSTOM_VALUE state (over-life curves, gradients) that setValue cannot
     // reach — layer copy is a full-state transfer, so curves ride along; the recipe's params
