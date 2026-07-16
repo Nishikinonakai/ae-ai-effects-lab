@@ -116,7 +116,6 @@ let lastGoodPid = null;
 async function heal() {
   append({ type: 'bridge_down', ae_pid: aePid(), last_good_pid: lastGoodPid });
   console.log(`[${new Date().toLocaleTimeString()}] bridge down — healing (waiting for AE)…`);
-  let samePidRetries = 0;
   while (true) {
     const pid = aePid();
     if (!pid) { await sleep(15000); continue; }              // AE gone — wait for manual relaunch
@@ -124,13 +123,11 @@ async function heal() {
       await sleep(20000);                                    // boot grace: plugins loading
       launchPanel();
       await sleep(6000);
-    } else if (++samePidRetries >= 6) {
-      // same pid but silent for ~2min+ — maybe the user closed the palette; one re-inject
-      append({ type: 'heal_reinject_same_pid' });
-      launchPanel();
-      await sleep(6000);
-      samePidRetries = 0;
     }
+    // same pid + silent = AE is busy (previews/renders block scripting for MINUTES-HOURS) —
+    // NEVER re-inject here: a duplicate palette double-executes every future command.
+    // (Learned live 2026-07-16: the old 2-min escape hatch injected extra palettes during
+    // an ordinary preview. If the user really closed the palette, run bridge_up.sh.)
     const s = await snapshot(20);
     if (s?.status === 'ok') {
       lastGoodPid = pid;
