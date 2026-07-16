@@ -152,8 +152,10 @@
    "class": "color-gradient"
   },
   "simple-light-path": {
-   "verdict": "fail",
-   "class": "path-motion"
+   "verdict": "match",
+   "class": "ok",
+   "round": "r3-light",
+   "note": "v18 enum fix + auto light layer; single glow dot = vendor thumb exactly"
   },
   "simple-point-emitter": {
    "verdict": "match",
