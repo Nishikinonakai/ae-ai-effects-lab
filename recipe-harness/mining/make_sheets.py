@@ -15,6 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 VAL = os.path.join(HERE, "validation")
 
 # optional: --only=<json with {"changed":[...],"new":[...]}> --outdir=<sheets dir name>
+#           --val=<validation dir name> (e.g. validation_form — matches validate_drafts --val)
 only = None
 outname = "sheets"
 for a in sys.argv[1:]:
@@ -23,6 +24,8 @@ for a in sys.argv[1:]:
         only = set(j.get("changed", [])) | set(j.get("new", []))
     elif a.startswith("--outdir="):
         outname = a.split("=", 1)[1]
+    elif a.startswith("--val="):
+        VAL = os.path.join(HERE, a.split("=", 1)[1])
 SHEETS = os.path.join(VAL, outname)
 os.makedirs(SHEETS, exist_ok=True)
 
