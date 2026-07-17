@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/OBJ Emitter.xbxc",
   "_pack": "TC14",
   "_category": "Basics",
-  "_map_coverage": "68 mapped / 58 unmapped / 0 curves",
+  "_map_coverage": "73 mapped / 52 unmapped / 0 curves",
   "_unmapped": {
     "FXid_Gen1Pos": [
       0.5,
@@ -10,15 +10,6 @@
       0
     ],
     "FXid_IsPositionRelative": true,
-    "FXid_Options_OBJEmitFrom": 1,
-    "FXid_Options_OBJInvertZ": false,
-    "FXid_Options_OBJLayer": {
-      "uuid": "${RootAssetPack}/Objs/Common/Geometry/Icosa.obj",
-      "footage": "${RootAssetPack}/Objs/Common/Geometry/Icosa.obj"
-    },
-    "FXid_Options_OBJNormalize": true,
-    "FXid_Options_OBJSequenceOffset": 0,
-    "FXid_Options_OBJSequenceSpeed": 1,
     "FXid_PLayer": {
       "uuid": "",
       "footage": ""
@@ -1153,13 +1144,19 @@
     "width": 1280,
     "height": 720,
     "fps": 30,
-    "duration": 6
+    "duration": 4
   },
   "background": [
     0,
     0,
     0
   ],
+  "master": {
+    "library": "library/particular-masters.aep",
+    "comp": "MASTER_obj_icosa",
+    "layer": 1,
+    "mode": "use-comp"
+  },
   "hostName": "Mined",
   "effects": [
     {
@@ -1172,8 +1169,8 @@
         ],
         [
           "tc Particular-0782",
-          7,
-          "FXid_Gen1EmitterType (alias+enumOffset) [v18 enum: 8->7]"
+          6,
+          "FXid_Gen1EmitterType (alias+enumOffset) [v18 enum: 8->7] [forced 3D Model: OBJ master]"
         ],
         [
           "tc Particular-0703",
@@ -1214,6 +1211,31 @@
           "tc Particular-0223",
           1,
           "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+        ],
+        [
+          "tc Particular-0535",
+          2,
+          "FXid_Options_OBJEmitFrom (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0578",
+          0,
+          "FXid_Options_OBJInvertZ (alias)"
+        ],
+        [
+          "tc Particular-0539",
+          1,
+          "FXid_Options_OBJNormalize (alias)"
+        ],
+        [
+          "tc Particular-0538",
+          0,
+          "FXid_Options_OBJSequenceOffset (alias)"
+        ],
+        [
+          "tc Particular-0537",
+          1,
+          "FXid_Options_OBJSequenceSpeed (alias)"
         ],
         [
           "tc Particular-0607",
@@ -1526,6 +1548,6 @@
   "camera": null,
   "renderFrames": [
     1,
-    4
+    3
   ]
 }

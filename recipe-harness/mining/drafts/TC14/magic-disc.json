@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Magic Disc.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "85 mapped / 46 unmapped / 0 curves",
+  "_map_coverage": "85 mapped / 40 unmapped / 0 curves",
   "_dropped_inert": [
     [
       "tc Particular-2759",
@@ -11,15 +11,6 @@
     ]
   ],
   "_unmapped": {
-    "FXid_Options_OBJEmitFrom": 1,
-    "FXid_Options_OBJInvertZ": false,
-    "FXid_Options_OBJLayer": {
-      "uuid": "",
-      "footage": ""
-    },
-    "FXid_Options_OBJNormalize": true,
-    "FXid_Options_OBJSequenceOffset": 0,
-    "FXid_Options_OBJSequenceSpeed": 1,
     "FXid_PLayer": {
       "uuid": "",
       "footage": ""

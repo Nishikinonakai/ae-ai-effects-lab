@@ -9,7 +9,7 @@
       "draft": "drafts/TC14/black-triangle-slabs.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Black Triangle Slabs.png",
       "mapped": 69,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -20,7 +20,7 @@
       "draft": "drafts/TC14/blue-icosas.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Blue Icosas.png",
       "mapped": 69,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -31,7 +31,7 @@
       "draft": "drafts/TC14/bucky-balls.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Bucky Balls.png",
       "mapped": 69,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -42,7 +42,7 @@
       "draft": "drafts/TC14/low-poly-spheres.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Low Poly Spheres.png",
       "mapped": 70,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -71,7 +71,7 @@
       "draft": "drafts/TC14/orange-icosas.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Orange Icosas.png",
       "mapped": 69,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -82,7 +82,7 @@
       "draft": "drafts/TC14/primitive-bits-directional.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Primitive Bits Directional.png",
       "mapped": 69,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -93,7 +93,7 @@
       "draft": "drafts/TC14/primitive-bits-uniform.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Primitive Bits Uniform.png",
       "mapped": 69,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -104,7 +104,7 @@
       "draft": "drafts/TC14/rounded-cubes.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Rounded Cubes.png",
       "mapped": 70,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -115,7 +115,7 @@
       "draft": "drafts/TC14/stars-5-pt.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Stars 5 pt.png",
       "mapped": 70,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -126,7 +126,7 @@
       "draft": "drafts/TC14/stars-6-pt.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Stars 6 pt.png",
       "mapped": 70,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -137,7 +137,7 @@
       "draft": "drafts/TC14/stars-8-pt.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Stars 8 pt.png",
       "mapped": 70,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -148,7 +148,7 @@
       "draft": "drafts/TC14/abstract-and-geometric-triangles-2d.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Triangles 2D.png",
       "mapped": 70,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -175,7 +175,7 @@
       "draft": "drafts/TC14/yellow-tech-balls.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Yellow Tech Balls.png",
       "mapped": 69,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -186,7 +186,7 @@
       "draft": "drafts/TC14/aux-system-legacy.json",
       "thumb": "thumbs/TC14/Basics/Aux System Legacy.png",
       "mapped": 94,
-      "unmapped": 117,
+      "unmapped": 111,
       "curves": []
     },
     {
@@ -197,7 +197,7 @@
       "draft": "drafts/TC14/aux-system-new.json",
       "thumb": "thumbs/TC14/Basics/Aux System New.png",
       "mapped": 96,
-      "unmapped": 117,
+      "unmapped": 111,
       "curves": []
     },
     {
@@ -223,7 +223,7 @@
       "draft": "drafts/TC14/basic-glow-spheres.json",
       "thumb": "thumbs/TC14/Basics/Basic Glow Spheres.png",
       "mapped": 67,
-      "unmapped": 57,
+      "unmapped": 51,
       "curves": []
     },
     {
@@ -310,7 +310,7 @@
       "draft": "drafts/TC14/explosion-trail-with-gravity.json",
       "thumb": null,
       "mapped": 88,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -321,7 +321,7 @@
       "draft": "drafts/TC14/explosion-trail.json",
       "thumb": null,
       "mapped": 88,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -346,8 +346,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Basics/OBJ Emitter.xbxc",
       "draft": "drafts/TC14/obj-emitter.json",
       "thumb": "thumbs/TC14/Basics/OBJ Emitter.png",
-      "mapped": 68,
-      "unmapped": 58,
+      "mapped": 73,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -358,7 +358,7 @@
       "draft": "drafts/TC14/pastel-dots.json",
       "thumb": "thumbs/TC14/Basics/Pastel Dots.png",
       "mapped": 68,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -414,7 +414,7 @@
       "draft": "drafts/TC14/simple-dots.json",
       "thumb": "thumbs/TC14/Basics/Simple Dots.png",
       "mapped": 68,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -425,7 +425,7 @@
       "draft": "drafts/TC14/simple-light-path.json",
       "thumb": "thumbs/TC14/Basics/Simple Light Path.png",
       "mapped": 68,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -451,7 +451,7 @@
       "draft": "drafts/TC14/basics-single-glow.json",
       "thumb": "thumbs/TC14/Basics/Single Glow.png",
       "mapped": 93,
-      "unmapped": 106,
+      "unmapped": 100,
       "curves": []
     },
     {
@@ -462,7 +462,7 @@
       "draft": "drafts/TC14/confetti.json",
       "thumb": null,
       "mapped": 69,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -568,7 +568,7 @@
       "draft": "drafts/TC14/blast-sparks-1.json",
       "thumb": "thumbs/TC14/Explosive/Blast Sparks 1.png",
       "mapped": 85,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -579,7 +579,7 @@
       "draft": "drafts/TC14/blast-sparks-2.json",
       "thumb": "thumbs/TC14/Explosive/Blast Sparks 2.png",
       "mapped": 86,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -628,7 +628,7 @@
       "draft": "drafts/TC14/explode-out.json",
       "thumb": "thumbs/TC14/Explosive/Explode Out.png",
       "mapped": 88,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -691,7 +691,7 @@
       "draft": "drafts/TC14/fire-burst-2.json",
       "thumb": null,
       "mapped": 69,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -702,7 +702,7 @@
       "draft": "drafts/TC14/fire-trails-1.json",
       "thumb": "thumbs/TC14/Explosive/Fire Trails 1.png",
       "mapped": 86,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -713,7 +713,7 @@
       "draft": "drafts/TC14/fire-trails-2.json",
       "thumb": "thumbs/TC14/Explosive/Fire Trails 2.png",
       "mapped": 87,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -724,7 +724,7 @@
       "draft": "drafts/TC14/fireball-medium-1.json",
       "thumb": null,
       "mapped": 69,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -735,7 +735,7 @@
       "draft": "drafts/TC14/fireball-medium-2.json",
       "thumb": null,
       "mapped": 69,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -746,7 +746,7 @@
       "draft": "drafts/TC14/flare-flash-1.json",
       "thumb": null,
       "mapped": 69,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -757,7 +757,7 @@
       "draft": "drafts/TC14/flare-flash-2.json",
       "thumb": null,
       "mapped": 69,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -768,7 +768,7 @@
       "draft": "drafts/TC14/flare-flash-3.json",
       "thumb": null,
       "mapped": 69,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -779,7 +779,7 @@
       "draft": "drafts/TC14/glass-bits.json",
       "thumb": null,
       "mapped": 70,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -790,7 +790,7 @@
       "draft": "drafts/TC14/glass-shard-explosion-2.json",
       "thumb": null,
       "mapped": 68,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -801,7 +801,7 @@
       "draft": "drafts/TC14/glass-shard-explosion-3.json",
       "thumb": null,
       "mapped": 68,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -812,7 +812,7 @@
       "draft": "drafts/TC14/glow-spark-blast.json",
       "thumb": null,
       "mapped": 75,
-      "unmapped": 36,
+      "unmapped": 30,
       "curves": []
     },
     {
@@ -913,7 +913,7 @@
       "draft": "drafts/TC14/plasma-cloud-explosion-1.json",
       "thumb": null,
       "mapped": 69,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -924,7 +924,7 @@
       "draft": "drafts/TC14/plasma-cloud-explosion-2.json",
       "thumb": null,
       "mapped": 70,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -935,7 +935,7 @@
       "draft": "drafts/TC14/ring-explosion.json",
       "thumb": null,
       "mapped": 87,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -946,7 +946,7 @@
       "draft": "drafts/TC14/smoke-explosion.json",
       "thumb": "thumbs/TC14/Explosive/Smoke Explosion.png",
       "mapped": 86,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -957,7 +957,7 @@
       "draft": "drafts/TC14/smoke-hit.json",
       "thumb": null,
       "mapped": 70,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -968,7 +968,7 @@
       "draft": "drafts/TC14/smoke-puff-1.json",
       "thumb": "thumbs/TC14/Explosive/Smoke Puff 1.png",
       "mapped": 66,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -979,7 +979,7 @@
       "draft": "drafts/TC14/smoke-puff-2.json",
       "thumb": null,
       "mapped": 68,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -990,7 +990,7 @@
       "draft": "drafts/TC14/spark-blast-1.json",
       "thumb": null,
       "mapped": 87,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -1039,7 +1039,7 @@
       "draft": "drafts/TC14/spark-strings-1.json",
       "thumb": null,
       "mapped": 87,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -1050,7 +1050,7 @@
       "draft": "drafts/TC14/spark-strings-2.json",
       "thumb": null,
       "mapped": 87,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -1061,7 +1061,7 @@
       "draft": "drafts/TC14/spark-strings-3.json",
       "thumb": null,
       "mapped": 86,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1072,7 +1072,7 @@
       "draft": "drafts/TC14/sparks-ignite.json",
       "thumb": null,
       "mapped": 80,
-      "unmapped": 42,
+      "unmapped": 36,
       "curves": []
     },
     {
@@ -1083,7 +1083,7 @@
       "draft": "drafts/TC14/bow-shock.json",
       "thumb": "thumbs/TC14/Fluid/Bow Shock.png",
       "mapped": 86,
-      "unmapped": 70,
+      "unmapped": 64,
       "curves": []
     },
     {
@@ -1094,7 +1094,7 @@
       "draft": "drafts/TC14/brownian-motion.json",
       "thumb": "thumbs/TC14/Fluid/Brownian Motion.png",
       "mapped": 85,
-      "unmapped": 70,
+      "unmapped": 64,
       "curves": []
     },
     {
@@ -1105,7 +1105,7 @@
       "draft": "drafts/TC14/candle-flame.json",
       "thumb": "thumbs/TC14/Fluid/Candle Flame.png",
       "mapped": 86,
-      "unmapped": 70,
+      "unmapped": 64,
       "curves": []
     },
     {
@@ -1115,8 +1115,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Fumes.xbxc",
       "draft": "drafts/TC14/fumes.json",
       "thumb": "thumbs/TC14/Fluid/Fumes.png",
-      "mapped": 86,
-      "unmapped": 70,
+      "mapped": 91,
+      "unmapped": 64,
       "curves": []
     },
     {
@@ -1127,7 +1127,7 @@
       "draft": "drafts/TC14/grid-fluid.json",
       "thumb": "thumbs/TC14/Fluid/Grid Fluid.png",
       "mapped": 106,
-      "unmapped": 70,
+      "unmapped": 64,
       "curves": []
     },
     {
@@ -1138,7 +1138,7 @@
       "draft": "drafts/TC14/horizontal-stream.json",
       "thumb": "thumbs/TC14/Fluid/Horizontal Stream.png",
       "mapped": 86,
-      "unmapped": 70,
+      "unmapped": 64,
       "curves": []
     },
     {
@@ -1149,7 +1149,7 @@
       "draft": "drafts/TC14/ink-drop.json",
       "thumb": "thumbs/TC14/Fluid/Ink Drop.png",
       "mapped": 86,
-      "unmapped": 70,
+      "unmapped": 64,
       "curves": []
     },
     {
@@ -1160,7 +1160,7 @@
       "draft": "drafts/TC14/melted.json",
       "thumb": "thumbs/TC14/Fluid/Melted.png",
       "mapped": 106,
-      "unmapped": 70,
+      "unmapped": 64,
       "curves": []
     },
     {
@@ -1170,8 +1170,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Orbit.xbxc",
       "draft": "drafts/TC14/orbit.json",
       "thumb": "thumbs/TC14/Fluid/Orbit.png",
-      "mapped": 106,
-      "unmapped": 70,
+      "mapped": 111,
+      "unmapped": 64,
       "curves": []
     },
     {
@@ -1181,8 +1181,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Ring Emitter.xbxc",
       "draft": "drafts/TC14/ring-emitter.json",
       "thumb": "thumbs/TC14/Fluid/Ring Emitter.png",
-      "mapped": 86,
-      "unmapped": 70,
+      "mapped": 91,
+      "unmapped": 64,
       "curves": []
     },
     {
@@ -1193,7 +1193,7 @@
       "draft": "drafts/TC14/smolder.json",
       "thumb": "thumbs/TC14/Fluid/Smolder.png",
       "mapped": 86,
-      "unmapped": 70,
+      "unmapped": 64,
       "curves": []
     },
     {
@@ -1204,7 +1204,7 @@
       "draft": "drafts/TC14/swirl-tracers.json",
       "thumb": "thumbs/TC14/Fluid/Swirl Tracers.png",
       "mapped": 106,
-      "unmapped": 70,
+      "unmapped": 64,
       "curves": []
     },
     {
@@ -1215,7 +1215,7 @@
       "draft": "drafts/TC14/basic-magic.json",
       "thumb": "thumbs/TC14/Light and Magic/Basic Magic.png",
       "mapped": 85,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1226,7 +1226,7 @@
       "draft": "drafts/TC14/blue-swarm-with-trail.json",
       "thumb": "thumbs/TC14/Light and Magic/Blue Swarm with Trail.png",
       "mapped": 87,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -1275,7 +1275,7 @@
       "draft": "drafts/TC14/ethereal-plane.json",
       "thumb": "thumbs/TC14/Light and Magic/Ethereal Plane.png",
       "mapped": 67,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -1301,7 +1301,7 @@
       "draft": "drafts/TC14/floating-streaks.json",
       "thumb": "thumbs/TC14/Light and Magic/Floating Streaks.png",
       "mapped": 86,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -1312,7 +1312,7 @@
       "draft": "drafts/TC14/flowing-strings.json",
       "thumb": "thumbs/TC14/Light and Magic/Flowing Strings.png",
       "mapped": 86,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -1361,7 +1361,7 @@
       "draft": "drafts/TC14/green-pixie.json",
       "thumb": "thumbs/TC14/Light and Magic/Green Pixie.png",
       "mapped": 86,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -1458,7 +1458,7 @@
       "draft": "drafts/TC14/magic-disc.json",
       "thumb": "thumbs/TC14/Light and Magic/Magic Disc.png",
       "mapped": 85,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1507,7 +1507,7 @@
       "draft": "drafts/TC14/northern-lights.json",
       "thumb": "thumbs/TC14/Light and Magic/Northern Lights.png",
       "mapped": 70,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -1518,7 +1518,7 @@
       "draft": "drafts/TC14/orange-stars.json",
       "thumb": "thumbs/TC14/Light and Magic/Orange Stars.png",
       "mapped": 86,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -1547,7 +1547,7 @@
       "draft": "drafts/TC14/organic-lines.json",
       "thumb": null,
       "mapped": 88,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -1638,7 +1638,7 @@
       "draft": "drafts/TC14/copper-patina.json",
       "thumb": "thumbs/TC14/Motion Graphics/Copper Patina.png",
       "mapped": 66,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1649,7 +1649,7 @@
       "draft": "drafts/TC14/falling-flares.json",
       "thumb": "thumbs/TC14/Motion Graphics/Falling Flares.png",
       "mapped": 68,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1660,7 +1660,7 @@
       "draft": "drafts/TC14/flickering-lights.json",
       "thumb": "thumbs/TC14/Motion Graphics/Flickering Lights.png",
       "mapped": 69,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1671,7 +1671,7 @@
       "draft": "drafts/TC14/flowy-green.json",
       "thumb": "thumbs/TC14/Motion Graphics/Flowy Green.png",
       "mapped": 85,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1682,7 +1682,7 @@
       "draft": "drafts/TC14/glow-field.json",
       "thumb": "thumbs/TC14/Motion Graphics/Glow Field.png",
       "mapped": 67,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -1693,7 +1693,7 @@
       "draft": "drafts/TC14/nebula-strings.json",
       "thumb": "thumbs/TC14/Motion Graphics/Nebula Strings.png",
       "mapped": 86,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -1704,7 +1704,7 @@
       "draft": "drafts/TC14/outward-flow.json",
       "thumb": "thumbs/TC14/Motion Graphics/Outward Flow.png",
       "mapped": 85,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1715,7 +1715,7 @@
       "draft": "drafts/TC14/phantom-trail.json",
       "thumb": null,
       "mapped": 67,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -1745,7 +1745,7 @@
       "draft": "drafts/TC14/serpent.json",
       "thumb": "thumbs/TC14/Motion Graphics/Serpent.png",
       "mapped": 85,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1790,7 +1790,7 @@
       "draft": "drafts/TC14/motion-graphics-single-glow.json",
       "thumb": "thumbs/TC14/Motion Graphics/Single Glow.png",
       "mapped": 93,
-      "unmapped": 106,
+      "unmapped": 100,
       "curves": []
     },
     {
@@ -1800,8 +1800,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 1.xbxc",
       "draft": "drafts/TC14/streak-brush-1.json",
       "thumb": "thumbs/TC14/Motion Graphics/Streak Brush 1.png",
-      "mapped": 92,
-      "unmapped": 58,
+      "mapped": 97,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -1811,8 +1811,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 2.xbxc",
       "draft": "drafts/TC14/streak-brush-2.json",
       "thumb": "thumbs/TC14/Motion Graphics/Streak Brush 2.png",
-      "mapped": 92,
-      "unmapped": 58,
+      "mapped": 97,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -1822,8 +1822,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 3.xbxc",
       "draft": "drafts/TC14/streak-brush-3.json",
       "thumb": "thumbs/TC14/Motion Graphics/Streak Brush 3.png",
-      "mapped": 92,
-      "unmapped": 58,
+      "mapped": 97,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -1833,8 +1833,8 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 4.xbxc",
       "draft": "drafts/TC14/streak-brush-4.json",
       "thumb": "thumbs/TC14/Motion Graphics/Streak Brush 4.png",
-      "mapped": 92,
-      "unmapped": 58,
+      "mapped": 97,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -1845,7 +1845,7 @@
       "draft": "drafts/TC14/tempest.json",
       "thumb": null,
       "mapped": 86,
-      "unmapped": 50,
+      "unmapped": 44,
       "curves": []
     },
     {
@@ -1856,7 +1856,7 @@
       "draft": "drafts/TC14/motion-graphics-triangles-2d.json",
       "thumb": "thumbs/TC14/Motion Graphics/Triangles 2D.png",
       "mapped": 69,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1883,7 +1883,7 @@
       "draft": "drafts/TC14/blowing-bubbles.json",
       "thumb": "thumbs/TC14/Nature/Blowing Bubbles.png",
       "mapped": 68,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1894,7 +1894,7 @@
       "draft": "drafts/TC14/blowing-maple-leaves.json",
       "thumb": "thumbs/TC14/Nature/Blowing Maple Leaves.png",
       "mapped": 70,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -1905,7 +1905,7 @@
       "draft": "drafts/TC14/blowing-seeds-1.json",
       "thumb": "thumbs/TC14/Nature/Blowing Seeds 1.png",
       "mapped": 70,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -1916,7 +1916,7 @@
       "draft": "drafts/TC14/blowing-seeds-2.json",
       "thumb": "thumbs/TC14/Nature/Blowing Seeds 2.png",
       "mapped": 70,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -1927,7 +1927,7 @@
       "draft": "drafts/TC14/blowing-seeds-wide.json",
       "thumb": "thumbs/TC14/Nature/Blowing Seeds Wide.png",
       "mapped": 69,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -1957,7 +1957,7 @@
       "draft": "drafts/TC14/chemtrails.json",
       "thumb": "thumbs/TC14/Nature/Chemtrails.png",
       "mapped": 86,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1968,7 +1968,7 @@
       "draft": "drafts/TC14/cloud-cover.json",
       "thumb": "thumbs/TC14/Nature/Cloud Cover.png",
       "mapped": 66,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1979,7 +1979,7 @@
       "draft": "drafts/TC14/clouds.json",
       "thumb": "thumbs/TC14/Nature/Clouds.png",
       "mapped": 68,
-      "unmapped": 46,
+      "unmapped": 40,
       "curves": []
     },
     {
@@ -1990,7 +1990,7 @@
       "draft": "drafts/TC14/falling-feathers.json",
       "thumb": "thumbs/TC14/Nature/Falling Feathers.png",
       "mapped": 70,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -2035,7 +2035,7 @@
       "draft": "drafts/TC14/large-snow-2d.json",
       "thumb": "thumbs/TC14/Nature/Large Snow 2D.png",
       "mapped": 69,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -2189,7 +2189,7 @@
       "draft": "drafts/TC14/directional-fire-1.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Directional FIre 1.png",
       "mapped": 69,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -2200,7 +2200,7 @@
       "draft": "drafts/TC14/directional-fire-2.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Directional Fire 2.png",
       "mapped": 69,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -2226,7 +2226,7 @@
       "draft": "drafts/TC14/fireplace.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Fireplace.png",
       "mapped": 69,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -2271,7 +2271,7 @@
       "draft": "drafts/TC14/horizontal-fire.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Horizontal Fire.png",
       "mapped": 89,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -2282,7 +2282,7 @@
       "draft": "drafts/TC14/horizontal-smoke-1.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Horizontal Smoke 1.png",
       "mapped": 69,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -2293,7 +2293,7 @@
       "draft": "drafts/TC14/horizontal-smoke-2.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Horizontal Smoke 2.png",
       "mapped": 69,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -2339,7 +2339,7 @@
       "draft": "drafts/TC14/rocket-fire.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Rocket Fire.png",
       "mapped": 69,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -2350,7 +2350,7 @@
       "draft": "drafts/TC14/simple-fire.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Simple Fire.png",
       "mapped": 68,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -2377,7 +2377,7 @@
       "draft": "drafts/TC14/smoke-magic-2.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smoke Magic 2.png",
       "mapped": 87,
-      "unmapped": 58,
+      "unmapped": 52,
       "curves": []
     },
     {
@@ -2407,7 +2407,7 @@
       "draft": "drafts/TC14/smoke-plume.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smoke Plume.png",
       "mapped": 70,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     },
     {
@@ -2482,7 +2482,7 @@
       "draft": "drafts/TC14/smokey-fire.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smokey Fire.png",
       "mapped": 68,
-      "unmapped": 51,
+      "unmapped": 45,
       "curves": []
     }
   ],

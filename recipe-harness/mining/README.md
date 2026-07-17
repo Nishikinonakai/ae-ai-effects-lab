@@ -152,6 +152,34 @@ frames (another comp's buffer?) appeared. Mitigations for round-7: bump frame
 timeout for heavy drafts, close-project less aggressively, verify frame counts
 before scoring, restart AE between big batches (bridge_up.sh makes this free).
 
+## Round-7a: user-assisted session (2026-07-17 morning) — 45 match / 95 partial / 46 fail
+
+Three user reads + three clicks closed several fronts:
+- **2752 Emitter-from-Parent Behavior enum (user-read)**: 1 Continuous / 2 Emit on Parent
+  Bounce / 3 From Parent Speed / 4 At Parent End of Life. Classic aux "Continuously" = 1 =
+  default → no draft changes needed. Screenshot also surfaced **"Particles/sec are % of
+  Primary"** checkbox — the aux-burst-density lead (S2 psec semantics).
+- **Fluid viz all Off (user-read)**: Visualize Relative Density is a dropdown (Off/Opacity/
+  Brightness), Off; candle-cyan is therefore NOT a viz overlay → filed under the
+  saveFrameToPng buffer-misattribution class. Fluid Force enum confirmed: "Buoyancy & Swirl
+  Only" (our +1 mapping ✓).
+- **OBJ masters (user picked 3 models)**: model refs survive project IMPORT but NOT
+  copyToComp → runner gained `master.mode: 'use-comp'` (the imported master comp itself
+  becomes the recipe comp; layer renamed + outPoint extended). Two traps found and fixed:
+  (a) the mined emitter type must be FORCED to 6/3D-Model (Designer stores the artist's
+  last pre-OBJ type — orbit came back Point, ring-emitter Text/Mask, wiping the model);
+  (b) **a script-retimed comp stops rendering particles at its ORIGINAL duration** (probed:
+  t=3.9 lit / t=4.5 empty with duration/outPoint/workArea all extended — plugin-private
+  cap), so OBJ drafts render within the master's native 4s. Result: obj-emitter MATCH
+  (icosa edge wireframe), fumes/orbit/ring-emitter PARTIAL (geometry right; fluid melt /
+  streaklet trails are the residue). OBJ options mapped: 0535 Emit From (+1), 0539
+  Normalize, 0537/0538 Sequence, 0578 Invert Z — gated to OBJ drafts only.
+- **Licensing (user decision)**: mined recipes = local research; REWRITE as original
+  param-sets before productization (provenance markers kept). Strategic corollary from the
+  user: the product must generalize across AE/RG versions, languages, and translation
+  quality via MODEL REASONING over runtime introspection — tables are reference priors,
+  not the mechanism.
+
 ## Round-7 queue (by yield)
 
 1. **Bisect the render-hang class** (12 drafts) — binary-search the r6 param

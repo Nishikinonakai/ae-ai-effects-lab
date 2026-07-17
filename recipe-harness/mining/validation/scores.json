@@ -133,9 +133,9 @@
    "round": "r6"
   },
   "obj-emitter": {
-   "verdict": "fail",
+   "verdict": "match",
    "class": "obj",
-   "round": "r6"
+   "round": "r7a"
   },
   "pastel-dots": {
    "verdict": "partial",
@@ -420,7 +420,7 @@
   "fumes": {
    "verdict": "partial",
    "class": "obj",
-   "round": "r6"
+   "round": "r7a"
   },
   "grid-fluid": {
    "verdict": "fail",
@@ -443,14 +443,14 @@
    "round": "r6"
   },
   "orbit": {
-   "verdict": "fail",
+   "verdict": "partial",
    "class": "obj",
-   "round": "r6"
+   "round": "r7a"
   },
   "ring-emitter": {
-   "verdict": "fail",
+   "verdict": "partial",
    "class": "obj",
-   "round": "r6"
+   "round": "r7a"
   },
   "smolder": {
    "verdict": "match",

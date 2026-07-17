@@ -146,11 +146,28 @@ const ALIAS = {
   'fluid fidelity': '@tc Particular-0628',
   'fluid density': null,                            // no scriptable target found in the dump
   'fluid density blend mode': null,
+  // 3D Model emitter options (main system; the MODEL itself rides a use-comp master —
+  // model refs don't survive copyToComp, see runner). Designer OBJEmitFrom=1 → 0535
+  // default 2 (+1 ✓ pinned).
+  'obj emit from': '@tc Particular-0535',
+  'obj normalize': '@tc Particular-0539',
+  'obj sequence speed': '@tc Particular-0537',
+  'obj sequence offset': '@tc Particular-0538',
+  'obj invert z': '@tc Particular-0578',
+  'obj layer': null,                                // consumed by the OBJ-master lookup below
+};
+
+// OBJ model → the user-authored use-comp master (2026-07-17: Choose Model is plugin-UI-only;
+// the model ref survives project IMPORT but not layer copyToComp, hence mode:'use-comp')
+const OBJ_MASTER = {
+  'Tube_Short': 'MASTER_obj_tube',
+  'Icosa': 'MASTER_obj_icosa',
+  'Array_Octa': 'MASTER_obj_octa',
 };
 // params whose Designer value is a 0-based enum while AE popups are 1-based
 const ENUM_OFFSET = new Set(['p type', 'emitter type', 'emitter dir', 'pt mode', 'p set color',
   'fluid motion type', 'fluid force option', 'fluid random swirl option', 'glow transfer mode',
-  'emitter size option']);
+  'emitter size option', 'obj emit from']);
 
 // ---- aux → S2 translation (2026-07-17) ----
 // Classic Aux became multi-system "Emit from Parent" in v2023. S2 params are script-settable
@@ -468,6 +485,29 @@ for (const file of files) {
   }
   const needsLight = emitType && emitType[1] === 4;
 
+  // OBJ master: vendor model ref → the user-authored use-comp master. Takes precedence
+  // over the S2 master when both apply (one clone source per host; the model carries the
+  // primary look — e.g. orbit trades its aux trails for the tube geometry).
+  let objMaster = null;
+  const objRef = flat.FXid_Options_OBJLayer;
+  if (objRef && typeof objRef === 'object' && objRef.footage) {
+    const objBase = objRef.footage.split('/').pop().replace(/\.obj$/i, '');
+    if (OBJ_MASTER[objBase]) objMaster = OBJ_MASTER[objBase];
+  }
+  // OBJ options are hidden without a live model — every preset carries them at defaults,
+  // so emit them only on actual OBJ drafts (param-fail noise otherwise)
+  if (!objMaster) {
+    const OBJ_OPTS = new Set(['tc Particular-0535', 'tc Particular-0539', 'tc Particular-0537', 'tc Particular-0538', 'tc Particular-0578']);
+    for (let i = params.length - 1; i >= 0; i--) if (OBJ_OPTS.has(params[i][0])) params.splice(i, 1);
+  } else {
+    // the mined emitter type must not override the master's 3D Model (Designer stores
+    // whatever pre-OBJ type the artist last touched — orbit came back as Point, ring
+    // as Text/Mask, both wiping the model; round-7a lesson)
+    const et = params.find(p => p[0] === 'tc Particular-0782');
+    if (et) { et[1] = 6; et[2] += ' [forced 3D Model: OBJ master]'; }
+    else params.push(['tc Particular-0782', 6, 'Emitter Type: 3D Model (OBJ master)']);
+  }
+
   // thumbnail
   let thumb = null;
   if (d.preview?.b64data) {
@@ -478,6 +518,12 @@ for (const file of files) {
 
   let slug = base.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   if ((baseCount.get(base) || 0) > 1) slug = category.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '-' + slug;
+  // use-comp masters render within the master's native 4s: a script-retimed comp stops
+  // rendering particles at the ORIGINAL duration boundary (probed: t=3.9 lit, t=4.5 empty
+  // with duration/outPoint/workArea all at 6 — plugin-private time cap, unexplained)
+  const compDur = objMaster ? 4 : 6;
+  const frames = isBurst ? burstFrames : (objMaster ? [1, 3] : [1, 4]);
+
   const draft = {
     _mined_from: file,
     _pack: pack, _category: category,
@@ -488,17 +534,19 @@ for (const file of files) {
     intent: `vendor preset "${d.name || base}" (${category}) — validate against its thumbnail`,
     name: slug,
     compName: 'Mined_' + base.replace(/[^a-zA-Z0-9]+/g, ''),
-    comp: { width: 1280, height: 720, fps: 30, duration: 6 },
+    comp: { width: 1280, height: 720, fps: 30, duration: compDur },
     background: [0, 0, 0],
     lights: needsLight ? [{ name: 'Emitter', position: [640, 360, 0] }] : undefined,
     footage: footageOut || undefined,
-    master: hasAuxS2
-      ? { library: 'library/particular-masters.aep', comp: 'MASTER_particular_S2', layer: 1 }
-      : undefined,
+    master: objMaster
+      ? { library: 'library/particular-masters.aep', comp: objMaster, layer: 1, mode: 'use-comp' }
+      : hasAuxS2
+        ? { library: 'library/particular-masters.aep', comp: 'MASTER_particular_S2', layer: 1 }
+        : undefined,
     hostName: 'Mined',
     effects: [{ matchName: 'tc Particular', params, expressions: expressionsOut }],
     camera: null,
-    renderFrames: isBurst ? burstFrames : [1, 4],
+    renderFrames: frames,
   };
   const draftPath = path.join(DRAFTS, pack, slug + '.json');
   fs.mkdirSync(path.dirname(draftPath), { recursive: true });

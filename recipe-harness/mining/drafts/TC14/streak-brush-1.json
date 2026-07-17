@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Streak Brush 1.xbxc",
   "_pack": "TC14",
   "_category": "Motion Graphics",
-  "_map_coverage": "92 mapped / 58 unmapped / 0 curves",
+  "_map_coverage": "97 mapped / 52 unmapped / 0 curves",
   "_unmapped": {
     "FXid_Gen1Pos": [
       0.5,
@@ -10,15 +10,6 @@
       0
     ],
     "FXid_IsPositionRelative": true,
-    "FXid_Options_OBJEmitFrom": 1,
-    "FXid_Options_OBJInvertZ": false,
-    "FXid_Options_OBJLayer": {
-      "uuid": "${RootAssetPack}/Objs/Common/Geometry/Array_Octa.obj",
-      "footage": "${RootAssetPack}/Objs/Common/Geometry/Array_Octa.obj"
-    },
-    "FXid_Options_OBJNormalize": true,
-    "FXid_Options_OBJSequenceOffset": 0,
-    "FXid_Options_OBJSequenceSpeed": 1,
     "FXid_PLayer": {
       "uuid": "${RootAssetPack}/Sprites/Common/Streak Brushes/Streak Brush 1.png",
       "footage": "${RootAssetPack}/Sprites/Common/Streak Brushes/Streak Brush 1.png"
@@ -1290,7 +1281,7 @@
     "width": 1280,
     "height": 720,
     "fps": 30,
-    "duration": 6
+    "duration": 4
   },
   "background": [
     0,
@@ -1305,8 +1296,9 @@
   ],
   "master": {
     "library": "library/particular-masters.aep",
-    "comp": "MASTER_particular_S2",
-    "layer": 1
+    "comp": "MASTER_obj_octa",
+    "layer": 1,
+    "mode": "use-comp"
   },
   "hostName": "Mined",
   "effects": [
@@ -1320,8 +1312,8 @@
         ],
         [
           "tc Particular-0782",
-          3,
-          "FXid_Gen1EmitterType (alias+enumOffset)"
+          6,
+          "FXid_Gen1EmitterType (alias+enumOffset) [forced 3D Model: OBJ master]"
         ],
         [
           "tc Particular-0703",
@@ -1362,6 +1354,31 @@
           "tc Particular-0223",
           1,
           "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+        ],
+        [
+          "tc Particular-0535",
+          2,
+          "FXid_Options_OBJEmitFrom (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0578",
+          0,
+          "FXid_Options_OBJInvertZ (alias)"
+        ],
+        [
+          "tc Particular-0539",
+          1,
+          "FXid_Options_OBJNormalize (alias)"
+        ],
+        [
+          "tc Particular-0538",
+          0,
+          "FXid_Options_OBJSequenceOffset (alias)"
+        ],
+        [
+          "tc Particular-0537",
+          1,
+          "FXid_Options_OBJSequenceSpeed (alias)"
         ],
         [
           "tc Particular-0607",
@@ -1803,6 +1820,6 @@
   "camera": null,
   "renderFrames": [
     1,
-    4
+    3
   ]
 }

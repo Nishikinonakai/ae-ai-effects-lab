@@ -43,6 +43,35 @@ const AEX = String.raw`(function () {
       var it = app.project.item(i);
       if (it instanceof CompItem && it.name === R.compName) { comp = it; break; }
     }
+    // master mode 'use-comp': the imported master COMP itself becomes the recipe comp.
+    // Needed for plugin-private state that does NOT survive copyToComp across projects
+    // (3D Model refs — verified 2026-07-17: imported master renders the model, a layer
+    // clone renders black; S2 system existence by contrast DOES survive the clone).
+    if (!comp && R.master && R.master.mode === "use-comp") {
+      var uc = null;
+      for (var ui = 1; ui <= app.project.numItems; ui++) {
+        var uit = app.project.item(ui);
+        if (uit instanceof CompItem && uit.name === R.master.comp) { uc = uit; break; }
+      }
+      if (!uc) {
+        app.project.importFile(new ImportOptions(new File(R.master.library)));
+        for (var uj = 1; uj <= app.project.numItems; uj++) {
+          var ujt = app.project.item(uj);
+          if (ujt instanceof CompItem && ujt.name === R.master.comp) { uc = ujt; break; }
+        }
+      }
+      if (!uc) throw new Error("use-comp master not found after import: " + R.master.comp);
+      uc.name = R.compName;
+      try { uc.width = R.comp.width; uc.height = R.comp.height; } catch (eUC1) {}
+      try { uc.duration = R.comp.duration; uc.frameRate = R.comp.fps; } catch (eUC2) {}
+      try {
+        var ucL = uc.layer(R.master.layer || 1);
+        ucL.name = (R.hostName || "Host");
+        ucL.outPoint = R.comp.duration;   // retiming the comp does NOT extend its layers
+      } catch (eUC3) {}
+      comp = uc;
+      parts.push('{"p":"[master] use-comp ' + esc(R.master.comp) + '","ok":true}');
+    }
     if (!comp) comp = app.project.items.addComp(R.compName, R.comp.width, R.comp.height, 1, R.comp.duration, R.comp.fps);
     comp.openInViewer();
 

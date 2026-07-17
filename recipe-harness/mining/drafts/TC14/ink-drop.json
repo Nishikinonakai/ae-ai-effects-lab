@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Ink Drop.xbxc",
   "_pack": "TC14",
   "_category": "Fluid",
-  "_map_coverage": "86 mapped / 70 unmapped / 0 curves",
+  "_map_coverage": "86 mapped / 64 unmapped / 0 curves",
   "_unmapped": {
     "FXid_Gen1Pos": [
       0.5,
@@ -12,15 +12,6 @@
     "FXid_IsParticlesPerSecRelative": false,
     "FXid_IsPositionRelative": true,
     "FXid_OBJSequenceControlType": 0,
-    "FXid_Options_OBJEmitFrom": 1,
-    "FXid_Options_OBJInvertZ": false,
-    "FXid_Options_OBJLayer": {
-      "uuid": "",
-      "footage": ""
-    },
-    "FXid_Options_OBJNormalize": true,
-    "FXid_Options_OBJSequenceOffset": 0,
-    "FXid_Options_OBJSequenceSpeed": 1,
     "FXid_Options_TextEmitFrom": 1,
     "FXid_TextLayerSampling": 0,
     "FXid_TextPathEnd": 100,
