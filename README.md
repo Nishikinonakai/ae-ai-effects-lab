@@ -38,6 +38,7 @@ claim below is backed by a rendered frame or a machine-readable artifact in this
 | `recipe-harness/` | Declarative recipe/plan runner (effect **stacks**, ordered params, expressions, camera rigs, frame renders; idempotent) + **`tune_loop.mjs`, the auto visual-tune loop** (render → vision-score vs intent → mechanical nudges → re-render until pass). Recipes: golden-dust, tornado, embers (loop-produced). Plans: smoke-bg, embers. |
 | `introspect/` | Automatic effect-ontology pipeline: generic introspector (any effect → structural card) + visual causal probe (enum semantics from renders) + enrichment merger + production Claude-vision backend. |
 | `patches/` | The fork's diff vs upstream + reproduction instructions. |
+| `brownfield/` | Read-only .aep perception, no AE needed: `aep_scan.py` (RIFX static scan — effect census, per-layer chains, expressions, comp stats, XMP) + `aep_params.py` (per-instance effect param values). `AMV_SURVEY.md` = findings from the artist's 7 real AMV projects. |
 
 ## What was established (each with evidence)
 
@@ -113,5 +114,11 @@ node introspect/enrich_card.mjs introspect/cards/<eff>.json introspect/enrichmen
 - Batch-enrich the native effect set into a browsable card library for the planner
 - Multi-layer/multi-system plans (portfolio tornado = core + wisps + debris + matte); the
   362 vendor .xbxs full scenes are the blueprint material
-- Brownfield: perceive existing projects (selection, layer stacks, non-destructive edits) —
-  the wedge product is greenfield-on-selected-layer; arbitrary-project editing is the north star.
+- **Native-stack recipes from real AMV usage** (2026-07-18 survey): the artist's actual
+  backbone is Motion Tile→Transform scroll rigs, Tint→Emboss, Glow stacks, glitch chains —
+  native effects, LLM-tractable, no licensing. `brownfield/AMV_SURVEY.md` has the ranked list.
+- Form: first validation round ran 2026-07-18 (77 drafts via `mine_form.mjs`); score + iterate.
+- Brownfield: perceive existing projects — static perception LANDED 2026-07-18
+  (`brownfield/`, scanner + param extractor, surveyed 7 real projects); next = feed it to
+  the planner (selection, layer stacks, non-destructive edits). The wedge product is
+  greenfield-on-selected-layer; arbitrary-project editing is the north star.
