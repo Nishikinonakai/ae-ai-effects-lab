@@ -34,12 +34,16 @@ const drainSec = Number(flag('drain', 90));
 const limit = Number(flag('limit', 0)) || Infinity;
 const only = flag('only', '') ? new Set(flag('only', '').split(',')) : null;
 
-const VAL = path.join(__dirname, 'validation');
+// --val=<name> switches the whole validation universe (catalog+results+frames) so a
+// second effect's batch (e.g. Form via mine_form.mjs) can't clobber the Particular one
+const valName = flag('val', 'validation');
+const VAL = path.join(__dirname, valName);
 const FRAMES = path.join(VAL, 'frames');
 fs.mkdirSync(FRAMES, { recursive: true });
 const RESULTS = path.join(VAL, 'results.jsonl');
 
-const catalog = JSON.parse(fs.readFileSync(path.join(__dirname, 'catalog.json'), 'utf8'));
+const catalog = JSON.parse(fs.readFileSync(
+  path.join(__dirname, flag('catalog', 'catalog.json')), 'utf8'));
 const done = new Set(
   fs.existsSync(RESULTS)
     ? fs.readFileSync(RESULTS, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l).slug)
