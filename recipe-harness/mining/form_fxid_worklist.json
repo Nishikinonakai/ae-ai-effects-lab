@@ -1,0 +1,1279 @@
+{
+ "FXid_SizeCurveOffset": {
+  "n": 82,
+  "sample_values": [
+   "100"
+  ]
+ },
+ "FXid_BaseShape": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "2",
+   "3"
+  ]
+ },
+ "FXid_BaseShapeAngleX": {
+  "n": 77,
+  "sample_values": [
+   "-1",
+   "0",
+   "1",
+   "10",
+   "109.109",
+   "134"
+  ]
+ },
+ "FXid_BaseShapeAngleY": {
+  "n": 77,
+  "sample_values": [
+   "-42",
+   "-44",
+   "0",
+   "1",
+   "2",
+   "25"
+  ]
+ },
+ "FXid_BaseShapeAngleZ": {
+  "n": 77,
+  "sample_values": [
+   "-26",
+   "-9",
+   "0",
+   "147",
+   "16",
+   "20"
+  ]
+ },
+ "FXid_BaseShapeParticlesX": {
+  "n": 77,
+  "sample_values": [
+   "1",
+   "10",
+   "100",
+   "107",
+   "131",
+   "150"
+  ]
+ },
+ "FXid_BaseShapeParticlesY": {
+  "n": 77,
+  "sample_values": [
+   "1",
+   "10",
+   "100",
+   "113",
+   "115",
+   "12"
+  ]
+ },
+ "FXid_BaseShapeParticlesZ": {
+  "n": 77,
+  "sample_values": [
+   "1",
+   "12",
+   "200",
+   "25",
+   "3",
+   "300"
+  ]
+ },
+ "FXid_BaseShapeSizeOption": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1"
+  ]
+ },
+ "FXid_BaseShapeSizeX": {
+  "n": 77,
+  "sample_values": [
+   "1000",
+   "1030",
+   "1130",
+   "1180",
+   "1210",
+   "1410"
+  ]
+ },
+ "FXid_BaseShapeSizeY": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1000",
+   "1080",
+   "1360",
+   "1400",
+   "1470"
+  ]
+ },
+ "FXid_BaseShapeSizeZ": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1000",
+   "1500",
+   "200",
+   "2090",
+   "2340"
+  ]
+ },
+ "FXid_ModelInvertZ": {
+  "n": 77,
+  "sample_values": [
+   "False"
+  ]
+ },
+ "FXid_ModelOffset": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_ModelSpeed": {
+  "n": 77,
+  "sample_values": [
+   "1"
+  ]
+ },
+ "FXid_NormalizeObj": {
+  "n": 77,
+  "sample_values": [
+   "True"
+  ]
+ },
+ "FXid_Options_OBJDensity": {
+  "n": 77,
+  "sample_values": [
+   "10",
+   "100",
+   "46",
+   "53",
+   "59",
+   "6"
+  ]
+ },
+ "FXid_Options_OBJEmitFrom": {
+  "n": 77,
+  "sample_values": [
+   "1",
+   "2"
+  ]
+ },
+ "FXid_Options_OBJIgnoreImportedUV": {
+  "n": 77,
+  "sample_values": [
+   "False",
+   "True"
+  ]
+ },
+ "FXid_StringDensity": {
+  "n": 77,
+  "sample_values": [
+   "100",
+   "12",
+   "13",
+   "15",
+   "17",
+   "2"
+  ]
+ },
+ "FXid_StringSizeRnd": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "27",
+   "33",
+   "5",
+   "8"
+  ]
+ },
+ "FXid_StringSizeRndDistr": {
+  "n": 77,
+  "sample_values": [
+   "1.5",
+   "3",
+   "3.26"
+  ]
+ },
+ "FXid_StringTaperOpac": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1"
+  ]
+ },
+ "FXid_StringTaperSize": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "2"
+  ]
+ },
+ "FXid_PFeather": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "100",
+   "34",
+   "50"
+  ]
+ },
+ "FXid_PLayerMultiClips": {
+  "n": 77,
+  "sample_values": [
+   "2"
+  ]
+ },
+ "FXid_PLayerSubFrame": {
+  "n": 77,
+  "sample_values": [
+   "False",
+   "True"
+  ]
+ },
+ "FXid_PLayerTime": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "2"
+  ]
+ },
+ "FXid_PTMode": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "2"
+  ]
+ },
+ "FXid_PType": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "4",
+   "5",
+   "6",
+   "7"
+  ]
+ },
+ "FXid_SE_Emitter": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_Settings_Glow_Feather": {
+  "n": 77,
+  "sample_values": [
+   "100",
+   "25",
+   "4"
+  ]
+ },
+ "FXid_Settings_Glow_Opacity": {
+  "n": 77,
+  "sample_values": [
+   "14",
+   "24",
+   "25"
+  ]
+ },
+ "FXid_Settings_Glow_Size": {
+  "n": 77,
+  "sample_values": [
+   "300",
+   "331"
+  ]
+ },
+ "FXid_Settings_Glow_TransferMode": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "2"
+  ]
+ },
+ "FXid_Streaklet_NoSpheres": {
+  "n": 77,
+  "sample_values": [
+   "7",
+   "8.9"
+  ]
+ },
+ "FXid_Streaklet_RandomSeed": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "70"
+  ]
+ },
+ "FXid_Streaklet_Spread": {
+  "n": 77,
+  "sample_values": [
+   "15",
+   "60"
+  ]
+ },
+ "FXid_Time_RandomSeed": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1"
+  ]
+ },
+ "FXid_PRotate": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "180",
+   "19",
+   "45",
+   "90"
+  ]
+ },
+ "FXid_PRotateRnd": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "79"
+  ]
+ },
+ "FXid_PRotateRndSpeed": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_PRotateRndSpeedDistr": {
+  "n": 77,
+  "sample_values": [
+   "0.5"
+  ]
+ },
+ "FXid_PRotateSpeed": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_PRotateSpeedX": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_PRotateSpeedY": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_PRotateX": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_PRotateY": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_PSizeMax": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "0.3",
+   "1",
+   "1.5",
+   "100",
+   "1010.5"
+  ]
+ },
+ "FXid_PSizeRnd": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "19",
+   "4",
+   "46",
+   "56",
+   "99"
+  ]
+ },
+ "FXid_SizeOver": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "2"
+  ]
+ },
+ "FXid_OpacityCurveOffset": {
+  "n": 77,
+  "sample_values": [
+   "100",
+   "200"
+  ]
+ },
+ "FXid_OpacityCurveOver": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "2"
+  ]
+ },
+ "FXid_POpacMax": {
+  "n": 77,
+  "sample_values": [
+   "1",
+   "100",
+   "15",
+   "16",
+   "2",
+   "20"
+  ]
+ },
+ "FXid_POpacRnd": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "100",
+   "13",
+   "2",
+   "62"
+  ]
+ },
+ "FXid_ColorMapOver": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "2",
+   "4"
+  ]
+ },
+ "FXid_Options_SmokeletShadow_ColorStrength": {
+  "n": 77,
+  "sample_values": [
+   "100",
+   "50"
+  ]
+ },
+ "FXid_Options_SmokeletShadow_Opacity": {
+  "n": 77,
+  "sample_values": [
+   "5",
+   "50",
+   "6",
+   "63"
+  ]
+ },
+ "FXid_PShadow": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1"
+  ]
+ },
+ "FXid_PShadow_Dist": {
+  "n": 77,
+  "sample_values": [
+   "100",
+   "6"
+  ]
+ },
+ "FXid_PShadow_Size": {
+  "n": 77,
+  "sample_values": [
+   "100",
+   "15",
+   "65"
+  ]
+ },
+ "FXid_PShadow_ZPos": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "2"
+  ]
+ },
+ "FXid_BaseShapeDisperse": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "100",
+   "163.029",
+   "163.094",
+   "20",
+   "39"
+  ]
+ },
+ "FXid_DisperseStrengthCurveOffset": {
+  "n": 77,
+  "sample_values": [
+   "100"
+  ]
+ },
+ "FXid_DisperseStrengthOver": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "3"
+  ]
+ },
+ "FXid_SDTwisterAmount": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "1.5",
+   "10.9",
+   "2",
+   "2.0"
+  ]
+ },
+ "FXid_FAdd": {
+  "n": 77,
+  "sample_values": [
+   "-0.01",
+   "-0.05",
+   "-0.073",
+   "-0.154",
+   "-0.2",
+   "0"
+  ]
+ },
+ "FXid_FAffectOpac": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "11",
+   "143",
+   "24",
+   "25"
+  ]
+ },
+ "FXid_FAffectPosPopup": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "2"
+  ]
+ },
+ "FXid_FAffectPosX": {
+  "n": 77,
+  "sample_values": [
+   "-320",
+   "0",
+   "120",
+   "126",
+   "132",
+   "149"
+  ]
+ },
+ "FXid_FAffectPosY": {
+  "n": 77,
+  "sample_values": [
+   "-200",
+   "0",
+   "125"
+  ]
+ },
+ "FXid_FAffectPosZ": {
+  "n": 77,
+  "sample_values": [
+   "-510",
+   "0",
+   "179",
+   "2000"
+  ]
+ },
+ "FXid_FAffectSize": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "10.1",
+   "11",
+   "15",
+   "16",
+   "17"
+  ]
+ },
+ "FXid_FComplex": {
+  "n": 77,
+  "sample_values": [
+   "1",
+   "2",
+   "2.0",
+   "3",
+   "3.0",
+   "4"
+  ]
+ },
+ "FXid_FEvolution": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "10",
+   "100",
+   "141",
+   "15",
+   "20"
+  ]
+ },
+ "FXid_FGamma": {
+  "n": 77,
+  "sample_values": [
+   "0.027",
+   "0.4",
+   "1",
+   "1.2",
+   "1.49",
+   "1.58"
+  ]
+ },
+ "FXid_FLoop": {
+  "n": 77,
+  "sample_values": [
+   "False",
+   "True"
+  ]
+ },
+ "FXid_FLoopTime": {
+  "n": 77,
+  "sample_values": [
+   "10",
+   "20",
+   "3",
+   "40",
+   "5",
+   "6"
+  ]
+ },
+ "FXid_FMax": {
+  "n": 77,
+  "sample_values": [
+   "-0.01",
+   "0.86",
+   "0.9",
+   "1",
+   "1.78"
+  ]
+ },
+ "FXid_FMin": {
+  "n": 77,
+  "sample_values": [
+   "-1",
+   "0"
+  ]
+ },
+ "FXid_FOctMult": {
+  "n": 77,
+  "sample_values": [
+   "0.463",
+   "0.5",
+   "0.6",
+   "0.75",
+   "1.4",
+   "1.5"
+  ]
+ },
+ "FXid_FOctScale": {
+  "n": 77,
+  "sample_values": [
+   "1.327",
+   "1.5",
+   "1.613",
+   "1.75",
+   "1.8"
+  ]
+ },
+ "FXid_FOffsetE": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "12"
+  ]
+ },
+ "FXid_FScale": {
+  "n": 77,
+  "sample_values": [
+   "1",
+   "10",
+   "14",
+   "2",
+   "20",
+   "3"
+  ]
+ },
+ "FXid_FlowX": {
+  "n": 77,
+  "sample_values": [
+   "-20",
+   "-251",
+   "-50",
+   "0",
+   "100",
+   "108"
+  ]
+ },
+ "FXid_FlowY": {
+  "n": 77,
+  "sample_values": [
+   "-100",
+   "-123",
+   "-50",
+   "0",
+   "33",
+   "37"
+  ]
+ },
+ "FXid_FlowZ": {
+  "n": 77,
+  "sample_values": [
+   "-500",
+   "0",
+   "30",
+   "61"
+  ]
+ },
+ "FXid_FractalABS": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1"
+  ]
+ },
+ "FXid_FractalStrengthCurveOffset": {
+  "n": 77,
+  "sample_values": [
+   "100",
+   "73"
+  ]
+ },
+ "FXid_FractalStrengthOver": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1",
+   "2"
+  ]
+ },
+ "FXid_D1Feather": {
+  "n": 77,
+  "sample_values": [
+   "37",
+   "50",
+   "75"
+  ]
+ },
+ "FXid_D1Radius": {
+  "n": 77,
+  "sample_values": [
+   "100",
+   "160",
+   "219",
+   "320",
+   "368",
+   "438"
+  ]
+ },
+ "FXid_D1RotateX": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_D1RotateY": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_D1RotateZ": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_D1ScaleX": {
+  "n": 77,
+  "sample_values": [
+   "100"
+  ]
+ },
+ "FXid_D1ScaleY": {
+  "n": 77,
+  "sample_values": [
+   "100"
+  ]
+ },
+ "FXid_D1ScaleZ": {
+  "n": 77,
+  "sample_values": [
+   "100"
+  ]
+ },
+ "FXid_D1Strength": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "100",
+   "68"
+  ]
+ },
+ "FXid_D2Feather": {
+  "n": 77,
+  "sample_values": [
+   "50",
+   "87"
+  ]
+ },
+ "FXid_D2Radius": {
+  "n": 77,
+  "sample_values": [
+   "100",
+   "160",
+   "412",
+   "767"
+  ]
+ },
+ "FXid_D2RotateX": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_D2RotateY": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_D2RotateZ": {
+  "n": 77,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_D2ScaleX": {
+  "n": 77,
+  "sample_values": [
+   "100"
+  ]
+ },
+ "FXid_D2ScaleY": {
+  "n": 77,
+  "sample_values": [
+   "100"
+  ]
+ },
+ "FXid_D2ScaleZ": {
+  "n": 77,
+  "sample_values": [
+   "100"
+  ]
+ },
+ "FXid_D2Strength": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "63",
+   "74"
+  ]
+ },
+ "FXid_KBehaviour": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "1"
+  ]
+ },
+ "FXid_KMode": {
+  "n": 77,
+  "sample_values": [
+   "0",
+   "2"
+  ]
+ },
+ "FXid_RWPosX": {
+  "n": 74,
+  "sample_values": [
+   "-150",
+   "-300",
+   "0",
+   "20.16"
+  ]
+ },
+ "FXid_RWPosY": {
+  "n": 74,
+  "sample_values": [
+   "0",
+   "20",
+   "440"
+  ]
+ },
+ "FXid_RWPosZ": {
+  "n": 74,
+  "sample_values": [
+   "0",
+   "30"
+  ]
+ },
+ "FXid_RWScale": {
+  "n": 74,
+  "sample_values": [
+   "100",
+   "106",
+   "131",
+   "151",
+   "180",
+   "189"
+  ]
+ },
+ "FXid_RWX": {
+  "n": 74,
+  "sample_values": [
+   "0",
+   "10",
+   "11",
+   "30",
+   "38",
+   "39"
+  ]
+ },
+ "FXid_RWY": {
+  "n": 74,
+  "sample_values": [
+   "-1",
+   "-168",
+   "-34",
+   "-73",
+   "-90",
+   "0"
+  ]
+ },
+ "FXid_RWZ": {
+  "n": 74,
+  "sample_values": [
+   "-149",
+   "-5",
+   "0",
+   "154",
+   "34",
+   "43"
+  ]
+ },
+ "FXid_IsPositionRelative": {
+  "n": 7,
+  "sample_values": [
+   "True"
+  ]
+ },
+ "FXid_OBJSequenceControlType": {
+  "n": 7,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_PUnmult": {
+  "n": 7,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_RWIsRelative": {
+  "n": 7,
+  "sample_values": [
+   "False"
+  ]
+ },
+ "FXid_RWRelativePosX": {
+  "n": 7,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_RWRelativePosY": {
+  "n": 7,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_RWRelativePosZ": {
+  "n": 7,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_RWRelativeRotX": {
+  "n": 7,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_RWRelativeRotY": {
+  "n": 7,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_RWRelativeRotZ": {
+  "n": 7,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_RWRelativeScale": {
+  "n": 7,
+  "sample_values": [
+   "100"
+  ]
+ },
+ "FXid_FluidDensity": {
+  "n": 6,
+  "sample_values": [
+   "-11",
+   "-7",
+   "-77",
+   "0",
+   "2"
+  ]
+ },
+ "FXid_FluidDensityBlendMode": {
+  "n": 6,
+  "sample_values": [
+   "0",
+   "1",
+   "2"
+  ]
+ },
+ "FXid_FluidEnable": {
+  "n": 6,
+  "sample_values": [
+   "True"
+  ]
+ },
+ "FXid_FluidFidelity": {
+  "n": 6,
+  "sample_values": [
+   "4"
+  ]
+ },
+ "FXid_FluidFrame0Attribs": {
+  "n": 6,
+  "sample_values": [
+   "True"
+  ]
+ },
+ "FXid_FluidMotionType": {
+  "n": 6,
+  "sample_values": [
+   "0",
+   "1",
+   "2"
+  ]
+ },
+ "FXid_FluidPhysicsTimeFactor": {
+  "n": 6,
+  "sample_values": [
+   "1"
+  ]
+ },
+ "FXid_FluidViscosity": {
+  "n": 6,
+  "sample_values": [
+   "20",
+   "35",
+   "45",
+   "55"
+  ]
+ },
+ "FXid_FluidVortexCoreSize": {
+  "n": 6,
+  "sample_values": [
+   "23",
+   "50",
+   "50.3"
+  ]
+ },
+ "FXid_FluidVortexRotate": {
+  "n": 6,
+  "sample_values": [
+   "0",
+   "90"
+  ]
+ },
+ "FXid_FluidVortexScale": {
+  "n": 6,
+  "sample_values": [
+   "100",
+   "70"
+  ]
+ },
+ "FXid_FluidVortexStrength": {
+  "n": 6,
+  "sample_values": [
+   "100",
+   "46",
+   "96"
+  ]
+ },
+ "FXid_FluidVortexTilt": {
+  "n": 6,
+  "sample_values": [
+   "0",
+   "20"
+  ]
+ },
+ "FXid_RandomSwirlX": {
+  "n": 6,
+  "sample_values": [
+   "10",
+   "13",
+   "3",
+   "43",
+   "57"
+  ]
+ },
+ "FXid_RandomSwirlY": {
+  "n": 6,
+  "sample_values": [
+   "0",
+   "20",
+   "25",
+   "31"
+  ]
+ },
+ "FXid_RandomSwirlZ": {
+  "n": 6,
+  "sample_values": [
+   "0",
+   "12",
+   "25",
+   "41"
+  ]
+ },
+ "FXid_Options_TextEmitFrom": {
+  "n": 5,
+  "sample_values": [
+   "1"
+  ]
+ },
+ "FXid_TextDensity": {
+  "n": 5,
+  "sample_values": [
+   "100"
+  ]
+ },
+ "FXid_TextLayerSampling": {
+  "n": 5,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_TextPathEnd": {
+  "n": 5,
+  "sample_values": [
+   "100"
+  ]
+ },
+ "FXid_TextPathLoop": {
+  "n": 5,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_TextPathOffset": {
+  "n": 5,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_TextPathStart": {
+  "n": 5,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_TextRGBUsage": {
+  "n": 5,
+  "sample_values": [
+   "3"
+  ]
+ },
+ "FXid_TextStrokeSequentially": {
+  "n": 5,
+  "sample_values": [
+   "False"
+  ]
+ },
+ "FXid_FluidForceLife": {
+  "n": 5,
+  "sample_values": [
+   "15",
+   "5"
+  ]
+ },
+ "FXid_FluidForceOption": {
+  "n": 5,
+  "sample_values": [
+   "1"
+  ]
+ },
+ "FXid_FluidRandomSwirlOption": {
+  "n": 5,
+  "sample_values": [
+   "0"
+  ]
+ },
+ "FXid_RandomSwirlSeed": {
+  "n": 5,
+  "sample_values": [
+   "0",
+   "320"
+  ]
+ },
+ "FXid_SwirlScale": {
+  "n": 5,
+  "sample_values": [
+   "10",
+   "24",
+   "30"
+  ]
+ },
+ "FXid_FluidFlowSpeedX": {
+  "n": 2,
+  "sample_values": [
+   "0",
+   "115"
+  ]
+ },
+ "FXid_FluidFlowSpeedY": {
+  "n": 2,
+  "sample_values": [
+   "-28",
+   "0"
+  ]
+ },
+ "FXid_FluidFlowSpeedZ": {
+  "n": 2,
+  "sample_values": [
+   "0",
+   "45"
+  ]
+ }
+}
