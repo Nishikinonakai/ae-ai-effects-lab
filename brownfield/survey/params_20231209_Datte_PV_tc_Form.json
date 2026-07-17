@@ -1,0 +1,7676 @@
+[
+ {
+  "comp": "03",
+  "layer": "狂ってる 4",
+  "n_params_present": 3018,
+  "touched": {
+   "tc Form-0000": {
+    "name": "tc Form-0000",
+    "value": 0.0
+   },
+   "tc Form-0535": {
+    "name": "CompAssetPairs",
+    "value": 0.0
+   },
+   "tc Form-0003": {
+    "name": "Base Form",
+    "value": 5.0,
+    "default": "1"
+   },
+   "tc Form-0004": {
+    "name": "Base Form Size X",
+    "value": 1799.0,
+    "default": "500"
+   },
+   "tc Form-0005": {
+    "name": "Base Form Size Y",
+    "value": 1799.0,
+    "default": "500"
+   },
+   "tc Form-0006": {
+    "name": "Base Form Size Z",
+    "value": 0.0,
+    "default": "500"
+   },
+   "tc Form-0009": {
+    "name": "Particles in Z",
+    "value": 1.0,
+    "default": "3"
+   },
+   "tc Form-0517": {
+    "name": "Position",
+    "value": [
+     0.5,
+     0.551852,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-0010": {
+    "name": "Center XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0542": {
+    "name": "Relative Position",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-0597": {
+    "name": "Match Text/Mask Size",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Form-0025": {
+    "name": "Sphere Feather",
+    "value": 0.0,
+    "default": "50"
+   },
+   "tc Form-0493": {
+    "name": "Size Curve",
+    "value": 0.0
+   },
+   "tc Form-0481": {
+    "name": "Opacity Curve",
+    "value": 0.0
+   },
+   "tc Form-0482": {
+    "name": "Color Over",
+    "value": 0.0
+   },
+   "tc Form-0258": {
+    "name": "Color",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-0598": {
+    "name": "Match Particle Shape",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Form-0061": {
+    "name": "Functionality",
+    "value": 2.0,
+    "default": "1"
+   },
+   "tc Form-0503": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0506": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0509": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0512": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0515": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0159": {
+    "name": "Disperse",
+    "keyframed": true,
+    "default": "0"
+   },
+   "tc Form-0496": {
+    "name": "Disperse Strength Over",
+    "value": 3.0,
+    "default": "1"
+   },
+   "tc Form-0497": {
+    "name": "Disperse Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0498": {
+    "name": "Disperse Strength Offset",
+    "keyframed": true,
+    "default": "100"
+   },
+   "tc Form-0591": {
+    "name": "Apply Force",
+    "value": 1.0,
+    "default": "2"
+   },
+   "tc Form-0500": {
+    "name": "Fractal Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0169": {
+    "name": "Flow X",
+    "value": 602.0,
+    "default": "0"
+   },
+   "tc Form-0187": {
+    "name": "Strength",
+    "value": -90.0,
+    "default": "0"
+   },
+   "tc Form-0188": {
+    "name": "Sphere 1 Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0436": {
+    "name": "Scale X",
+    "value": 890.0,
+    "default": "100"
+   },
+   "tc Form-0437": {
+    "name": "Scale Y",
+    "value": 0.0,
+    "default": "100"
+   },
+   "tc Form-0438": {
+    "name": "Scale Z",
+    "value": 0.0,
+    "default": "100"
+   },
+   "tc Form-0196": {
+    "name": "Sphere 2 Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0206": {
+    "name": "Center XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2583": {
+    "name": "CompAssetPairs F2",
+    "value": 0.0
+   },
+   "tc Form-2565": {
+    "name": "Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2590": {
+    "name": "Relative Position F2",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-2541": {
+    "name": "Size Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2529": {
+    "name": "Opacity Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2084": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-2530": {
+    "name": "Color Over F2",
+    "value": 0.0
+   },
+   "tc Form-2306": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-2468": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-2551": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2554": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2557": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2560": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2563": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2545": {
+    "name": "Disperse Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2638": {
+    "name": "Force Relative Position F2",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-2548": {
+    "name": "Fractal Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2575": {
+    "name": "Sphere 1 Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2236": {
+    "name": "Sphere 1 Position XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2576": {
+    "name": "Sphere 2 Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2244": {
+    "name": "Sphere 2 Position XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2254": {
+    "name": "Center XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2656": {
+    "name": "Center Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4631": {
+    "name": "CompAssetPairs F3",
+    "value": 0.0
+   },
+   "tc Form-4613": {
+    "name": "Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4638": {
+    "name": "Relative Position F3",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-4589": {
+    "name": "Size Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4577": {
+    "name": "Opacity Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4132": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-4578": {
+    "name": "Color Over F3",
+    "value": 0.0
+   },
+   "tc Form-4354": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-4516": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-4599": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4602": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4605": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4608": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4611": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4593": {
+    "name": "Disperse Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4686": {
+    "name": "Force Relative Position F3",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-4596": {
+    "name": "Fractal Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4623": {
+    "name": "Sphere 1 Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4284": {
+    "name": "Sphere 1 Position XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4624": {
+    "name": "Sphere 2 Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4292": {
+    "name": "Sphere 2 Position XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4302": {
+    "name": "Center XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4704": {
+    "name": "Center Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6679": {
+    "name": "CompAssetPairs F4",
+    "value": 0.0
+   },
+   "tc Form-6661": {
+    "name": "Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6686": {
+    "name": "Relative Position F4",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-6637": {
+    "name": "Size Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6625": {
+    "name": "Opacity Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6180": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-6626": {
+    "name": "Color Over F4",
+    "value": 0.0
+   },
+   "tc Form-6402": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-6564": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-6647": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6650": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6653": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6656": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6659": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6641": {
+    "name": "Disperse Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6734": {
+    "name": "Force Relative Position F4",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-6644": {
+    "name": "Fractal Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6671": {
+    "name": "Sphere 1 Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6332": {
+    "name": "Sphere 1 Position XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6672": {
+    "name": "Sphere 2 Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6340": {
+    "name": "Sphere 2 Position XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6350": {
+    "name": "Center XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6752": {
+    "name": "Center Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8727": {
+    "name": "CompAssetPairs F5",
+    "value": 0.0
+   },
+   "tc Form-8709": {
+    "name": "Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8734": {
+    "name": "Relative Position F5",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-8685": {
+    "name": "Size Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8673": {
+    "name": "Opacity Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8228": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-8674": {
+    "name": "Color Over F5",
+    "value": 0.0
+   },
+   "tc Form-8450": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-8612": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-8695": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8698": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8701": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8704": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8707": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8689": {
+    "name": "Disperse Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8782": {
+    "name": "Force Relative Position F5",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-8692": {
+    "name": "Fractal Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8719": {
+    "name": "Sphere 1 Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8380": {
+    "name": "Sphere 1 Position XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8720": {
+    "name": "Sphere 2 Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8388": {
+    "name": "Sphere 2 Position XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8398": {
+    "name": "Center XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8800": {
+    "name": "Center Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10775": {
+    "name": "CompAssetPairs F6",
+    "value": 0.0
+   },
+   "tc Form-10757": {
+    "name": "Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10782": {
+    "name": "Relative Position F6",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-10733": {
+    "name": "Size Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10721": {
+    "name": "Opacity Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10276": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-10722": {
+    "name": "Color Over F6",
+    "value": 0.0
+   },
+   "tc Form-10498": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-10660": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-10743": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10746": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10749": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10752": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10755": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10737": {
+    "name": "Disperse Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10830": {
+    "name": "Force Relative Position F6",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-10740": {
+    "name": "Fractal Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10767": {
+    "name": "Sphere 1 Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10428": {
+    "name": "Sphere 1 Position XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10768": {
+    "name": "Sphere 2 Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10436": {
+    "name": "Sphere 2 Position XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10446": {
+    "name": "Center XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10848": {
+    "name": "Center Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12823": {
+    "name": "CompAssetPairs F7",
+    "value": 0.0
+   },
+   "tc Form-12805": {
+    "name": "Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12830": {
+    "name": "Relative Position F7",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-12781": {
+    "name": "Size Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12769": {
+    "name": "Opacity Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12324": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-12770": {
+    "name": "Color Over F7",
+    "value": 0.0
+   },
+   "tc Form-12546": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-12708": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-12791": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12794": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12797": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12800": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12803": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12785": {
+    "name": "Disperse Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12878": {
+    "name": "Force Relative Position F7",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-12788": {
+    "name": "Fractal Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12815": {
+    "name": "Sphere 1 Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12476": {
+    "name": "Sphere 1 Position XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12816": {
+    "name": "Sphere 2 Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12484": {
+    "name": "Sphere 2 Position XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12494": {
+    "name": "Center XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12896": {
+    "name": "Center Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14871": {
+    "name": "CompAssetPairs F8",
+    "value": 0.0
+   },
+   "tc Form-14853": {
+    "name": "Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14878": {
+    "name": "Relative Position F8",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-14829": {
+    "name": "Size Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14817": {
+    "name": "Opacity Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14372": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-14818": {
+    "name": "Color Over F8",
+    "value": 0.0
+   },
+   "tc Form-14594": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-14756": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-14839": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14842": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14845": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14848": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14851": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14833": {
+    "name": "Disperse Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14926": {
+    "name": "Force Relative Position F8",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-14836": {
+    "name": "Fractal Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14863": {
+    "name": "Sphere 1 Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14524": {
+    "name": "Sphere 1 Position XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14864": {
+    "name": "Sphere 2 Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14532": {
+    "name": "Sphere 2 Position XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14542": {
+    "name": "Center XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14944": {
+    "name": "Center Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-0536": {
+    "name": "Acceleration",
+    "value": 1.0,
+    "default": "2"
+   },
+   "tc Form-0480": {
+    "name": "BuilderData",
+    "value": 0.0
+   },
+   "tc Form-0540": {
+    "name": "InstanceControl",
+    "value": 0.0
+   }
+  }
+ },
+ {
+  "comp": "03",
+  "layer": "狂ってる 3",
+  "n_params_present": 2768,
+  "touched": {
+   "tc Form-0000": {
+    "name": "tc Form-0000",
+    "value": 0.0
+   },
+   "tc Form-0535": {
+    "name": "CompAssetPairs",
+    "value": 0.0
+   },
+   "tc Form-0003": {
+    "name": "Base Form",
+    "value": 5.0,
+    "default": "1"
+   },
+   "tc Form-0004": {
+    "name": "Base Form Size X",
+    "value": 1799.0,
+    "default": "500"
+   },
+   "tc Form-0005": {
+    "name": "Base Form Size Y",
+    "value": 1799.0,
+    "default": "500"
+   },
+   "tc Form-0006": {
+    "name": "Base Form Size Z",
+    "value": 0.0,
+    "default": "500"
+   },
+   "tc Form-0009": {
+    "name": "Particles in Z",
+    "value": 1.0,
+    "default": "3"
+   },
+   "tc Form-0517": {
+    "name": "Position",
+    "value": [
+     0.5,
+     0.551852,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-0010": {
+    "name": "Center XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0542": {
+    "name": "Relative Position",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-0597": {
+    "name": "Match Text/Mask Size",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Form-0025": {
+    "name": "Sphere Feather",
+    "value": 0.0,
+    "default": "50"
+   },
+   "tc Form-0493": {
+    "name": "Size Curve",
+    "value": 0.0
+   },
+   "tc Form-0481": {
+    "name": "Opacity Curve",
+    "value": 0.0
+   },
+   "tc Form-0482": {
+    "name": "Color Over",
+    "value": 0.0
+   },
+   "tc Form-0258": {
+    "name": "Color",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-0598": {
+    "name": "Match Particle Shape",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Form-0061": {
+    "name": "Functionality",
+    "value": 2.0,
+    "default": "1"
+   },
+   "tc Form-0503": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0506": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0509": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0512": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0515": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0159": {
+    "name": "Disperse",
+    "keyframed": true,
+    "default": "0"
+   },
+   "tc Form-0496": {
+    "name": "Disperse Strength Over",
+    "value": 3.0,
+    "default": "1"
+   },
+   "tc Form-0497": {
+    "name": "Disperse Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0498": {
+    "name": "Disperse Strength Offset",
+    "keyframed": true,
+    "default": "100"
+   },
+   "tc Form-0591": {
+    "name": "Apply Force",
+    "value": 1.0,
+    "default": "2"
+   },
+   "tc Form-0500": {
+    "name": "Fractal Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0169": {
+    "name": "Flow X",
+    "value": 602.0,
+    "default": "0"
+   },
+   "tc Form-0187": {
+    "name": "Strength",
+    "value": -90.0,
+    "default": "0"
+   },
+   "tc Form-0188": {
+    "name": "Sphere 1 Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0436": {
+    "name": "Scale X",
+    "value": 890.0,
+    "default": "100"
+   },
+   "tc Form-0437": {
+    "name": "Scale Y",
+    "value": 0.0,
+    "default": "100"
+   },
+   "tc Form-0438": {
+    "name": "Scale Z",
+    "value": 0.0,
+    "default": "100"
+   },
+   "tc Form-0196": {
+    "name": "Sphere 2 Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0206": {
+    "name": "Center XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2583": {
+    "name": "CompAssetPairs F2",
+    "value": 0.0
+   },
+   "tc Form-2565": {
+    "name": "Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2590": {
+    "name": "Relative Position F2",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-2541": {
+    "name": "Size Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2529": {
+    "name": "Opacity Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2084": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-2530": {
+    "name": "Color Over F2",
+    "value": 0.0
+   },
+   "tc Form-2306": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-2468": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-2551": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2554": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2557": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2560": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2563": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2545": {
+    "name": "Disperse Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2638": {
+    "name": "Force Relative Position F2",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-2548": {
+    "name": "Fractal Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2575": {
+    "name": "Sphere 1 Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2236": {
+    "name": "Sphere 1 Position XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2576": {
+    "name": "Sphere 2 Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2244": {
+    "name": "Sphere 2 Position XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2254": {
+    "name": "Center XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2656": {
+    "name": "Center Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4631": {
+    "name": "CompAssetPairs F3",
+    "value": 0.0
+   },
+   "tc Form-4613": {
+    "name": "Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4638": {
+    "name": "Relative Position F3",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-4589": {
+    "name": "Size Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4577": {
+    "name": "Opacity Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4132": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-4578": {
+    "name": "Color Over F3",
+    "value": 0.0
+   },
+   "tc Form-4354": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-4516": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-4599": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4602": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4605": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4608": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4611": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4593": {
+    "name": "Disperse Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4686": {
+    "name": "Force Relative Position F3",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-4596": {
+    "name": "Fractal Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4623": {
+    "name": "Sphere 1 Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4284": {
+    "name": "Sphere 1 Position XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4624": {
+    "name": "Sphere 2 Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4292": {
+    "name": "Sphere 2 Position XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4302": {
+    "name": "Center XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4704": {
+    "name": "Center Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6679": {
+    "name": "CompAssetPairs F4",
+    "value": 0.0
+   },
+   "tc Form-6661": {
+    "name": "Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6686": {
+    "name": "Relative Position F4",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-6637": {
+    "name": "Size Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6625": {
+    "name": "Opacity Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6180": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-6626": {
+    "name": "Color Over F4",
+    "value": 0.0
+   },
+   "tc Form-6402": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-6564": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-6647": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6650": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6653": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6656": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6659": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6641": {
+    "name": "Disperse Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6734": {
+    "name": "Force Relative Position F4",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-6644": {
+    "name": "Fractal Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6671": {
+    "name": "Sphere 1 Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6332": {
+    "name": "Sphere 1 Position XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6672": {
+    "name": "Sphere 2 Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6340": {
+    "name": "Sphere 2 Position XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6350": {
+    "name": "Center XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6752": {
+    "name": "Center Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8727": {
+    "name": "CompAssetPairs F5",
+    "value": 0.0
+   },
+   "tc Form-8709": {
+    "name": "Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8734": {
+    "name": "Relative Position F5",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-8685": {
+    "name": "Size Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8673": {
+    "name": "Opacity Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8228": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-8674": {
+    "name": "Color Over F5",
+    "value": 0.0
+   },
+   "tc Form-8450": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-8612": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-8695": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8698": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8701": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8704": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8707": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8689": {
+    "name": "Disperse Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8782": {
+    "name": "Force Relative Position F5",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-8692": {
+    "name": "Fractal Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8719": {
+    "name": "Sphere 1 Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8380": {
+    "name": "Sphere 1 Position XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8720": {
+    "name": "Sphere 2 Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8388": {
+    "name": "Sphere 2 Position XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8398": {
+    "name": "Center XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8800": {
+    "name": "Center Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10775": {
+    "name": "CompAssetPairs F6",
+    "value": 0.0
+   },
+   "tc Form-10757": {
+    "name": "Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10782": {
+    "name": "Relative Position F6",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-10733": {
+    "name": "Size Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10721": {
+    "name": "Opacity Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10276": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-10722": {
+    "name": "Color Over F6",
+    "value": 0.0
+   },
+   "tc Form-10498": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-10660": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-10743": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10746": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10749": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10752": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10755": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10737": {
+    "name": "Disperse Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10830": {
+    "name": "Force Relative Position F6",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-10740": {
+    "name": "Fractal Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10767": {
+    "name": "Sphere 1 Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10428": {
+    "name": "Sphere 1 Position XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10768": {
+    "name": "Sphere 2 Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10436": {
+    "name": "Sphere 2 Position XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10446": {
+    "name": "Center XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10848": {
+    "name": "Center Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12823": {
+    "name": "CompAssetPairs F7",
+    "value": 0.0
+   },
+   "tc Form-12805": {
+    "name": "Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12830": {
+    "name": "Relative Position F7",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-12781": {
+    "name": "Size Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12769": {
+    "name": "Opacity Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12324": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-12770": {
+    "name": "Color Over F7",
+    "value": 0.0
+   },
+   "tc Form-12546": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-12708": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-12791": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12794": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12797": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12800": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12803": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12785": {
+    "name": "Disperse Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12878": {
+    "name": "Force Relative Position F7",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-12788": {
+    "name": "Fractal Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12815": {
+    "name": "Sphere 1 Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12476": {
+    "name": "Sphere 1 Position XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12816": {
+    "name": "Sphere 2 Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12484": {
+    "name": "Sphere 2 Position XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12494": {
+    "name": "Center XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12896": {
+    "name": "Center Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14871": {
+    "name": "CompAssetPairs F8",
+    "value": 0.0
+   },
+   "tc Form-14853": {
+    "name": "Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14878": {
+    "name": "Relative Position F8",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-14829": {
+    "name": "Size Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14817": {
+    "name": "Opacity Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14372": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-14818": {
+    "name": "Color Over F8",
+    "value": 0.0
+   },
+   "tc Form-14594": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-14756": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-14839": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14842": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14845": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14848": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14851": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14833": {
+    "name": "Disperse Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14926": {
+    "name": "Force Relative Position F8",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-14836": {
+    "name": "Fractal Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14863": {
+    "name": "Sphere 1 Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14524": {
+    "name": "Sphere 1 Position XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14864": {
+    "name": "Sphere 2 Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14532": {
+    "name": "Sphere 2 Position XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14542": {
+    "name": "Center XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14944": {
+    "name": "Center Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-0536": {
+    "name": "Acceleration",
+    "value": 1.0,
+    "default": "2"
+   },
+   "tc Form-0480": {
+    "name": "BuilderData",
+    "value": 0.0
+   },
+   "tc Form-0540": {
+    "name": "InstanceControl",
+    "value": 0.0
+   }
+  }
+ },
+ {
+  "comp": "03",
+  "layer": "狂ってる 2",
+  "n_params_present": 2767,
+  "touched": {
+   "tc Form-0000": {
+    "name": "tc Form-0000",
+    "value": 0.0
+   },
+   "tc Form-0535": {
+    "name": "CompAssetPairs",
+    "value": 0.0
+   },
+   "tc Form-0003": {
+    "name": "Base Form",
+    "value": 5.0,
+    "default": "1"
+   },
+   "tc Form-0004": {
+    "name": "Base Form Size X",
+    "value": 1799.0,
+    "default": "500"
+   },
+   "tc Form-0005": {
+    "name": "Base Form Size Y",
+    "value": 1799.0,
+    "default": "500"
+   },
+   "tc Form-0006": {
+    "name": "Base Form Size Z",
+    "value": 0.0,
+    "default": "500"
+   },
+   "tc Form-0009": {
+    "name": "Particles in Z",
+    "value": 1.0,
+    "default": "3"
+   },
+   "tc Form-0010": {
+    "name": "Center XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0542": {
+    "name": "Relative Position",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-0597": {
+    "name": "Match Text/Mask Size",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Form-0025": {
+    "name": "Sphere Feather",
+    "value": 0.0,
+    "default": "50"
+   },
+   "tc Form-0493": {
+    "name": "Size Curve",
+    "value": 0.0
+   },
+   "tc Form-0481": {
+    "name": "Opacity Curve",
+    "value": 0.0
+   },
+   "tc Form-0482": {
+    "name": "Color Over",
+    "value": 0.0
+   },
+   "tc Form-0258": {
+    "name": "Color",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-0598": {
+    "name": "Match Particle Shape",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Form-0061": {
+    "name": "Functionality",
+    "value": 2.0,
+    "default": "1"
+   },
+   "tc Form-0503": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0506": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0509": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0512": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0515": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0159": {
+    "name": "Disperse",
+    "keyframed": true,
+    "default": "0"
+   },
+   "tc Form-0496": {
+    "name": "Disperse Strength Over",
+    "value": 3.0,
+    "default": "1"
+   },
+   "tc Form-0497": {
+    "name": "Disperse Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0498": {
+    "name": "Disperse Strength Offset",
+    "keyframed": true,
+    "default": "100"
+   },
+   "tc Form-0591": {
+    "name": "Apply Force",
+    "value": 1.0,
+    "default": "2"
+   },
+   "tc Form-0500": {
+    "name": "Fractal Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0169": {
+    "name": "Flow X",
+    "value": 602.0,
+    "default": "0"
+   },
+   "tc Form-0187": {
+    "name": "Strength",
+    "value": -90.0,
+    "default": "0"
+   },
+   "tc Form-0188": {
+    "name": "Sphere 1 Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0436": {
+    "name": "Scale X",
+    "value": 890.0,
+    "default": "100"
+   },
+   "tc Form-0437": {
+    "name": "Scale Y",
+    "value": 0.0,
+    "default": "100"
+   },
+   "tc Form-0438": {
+    "name": "Scale Z",
+    "value": 0.0,
+    "default": "100"
+   },
+   "tc Form-0196": {
+    "name": "Sphere 2 Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0206": {
+    "name": "Center XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2583": {
+    "name": "CompAssetPairs F2",
+    "value": 0.0
+   },
+   "tc Form-2565": {
+    "name": "Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2590": {
+    "name": "Relative Position F2",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-2541": {
+    "name": "Size Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2529": {
+    "name": "Opacity Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2084": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-2530": {
+    "name": "Color Over F2",
+    "value": 0.0
+   },
+   "tc Form-2306": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-2468": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-2551": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2554": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2557": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2560": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2563": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2545": {
+    "name": "Disperse Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2638": {
+    "name": "Force Relative Position F2",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-2548": {
+    "name": "Fractal Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2575": {
+    "name": "Sphere 1 Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2236": {
+    "name": "Sphere 1 Position XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2576": {
+    "name": "Sphere 2 Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2244": {
+    "name": "Sphere 2 Position XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2254": {
+    "name": "Center XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2656": {
+    "name": "Center Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4631": {
+    "name": "CompAssetPairs F3",
+    "value": 0.0
+   },
+   "tc Form-4613": {
+    "name": "Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4638": {
+    "name": "Relative Position F3",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-4589": {
+    "name": "Size Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4577": {
+    "name": "Opacity Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4132": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-4578": {
+    "name": "Color Over F3",
+    "value": 0.0
+   },
+   "tc Form-4354": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-4516": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-4599": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4602": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4605": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4608": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4611": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4593": {
+    "name": "Disperse Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4686": {
+    "name": "Force Relative Position F3",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-4596": {
+    "name": "Fractal Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4623": {
+    "name": "Sphere 1 Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4284": {
+    "name": "Sphere 1 Position XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4624": {
+    "name": "Sphere 2 Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4292": {
+    "name": "Sphere 2 Position XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4302": {
+    "name": "Center XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4704": {
+    "name": "Center Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6679": {
+    "name": "CompAssetPairs F4",
+    "value": 0.0
+   },
+   "tc Form-6661": {
+    "name": "Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6686": {
+    "name": "Relative Position F4",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-6637": {
+    "name": "Size Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6625": {
+    "name": "Opacity Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6180": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-6626": {
+    "name": "Color Over F4",
+    "value": 0.0
+   },
+   "tc Form-6402": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-6564": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-6647": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6650": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6653": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6656": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6659": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6641": {
+    "name": "Disperse Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6734": {
+    "name": "Force Relative Position F4",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-6644": {
+    "name": "Fractal Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6671": {
+    "name": "Sphere 1 Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6332": {
+    "name": "Sphere 1 Position XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6672": {
+    "name": "Sphere 2 Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6340": {
+    "name": "Sphere 2 Position XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6350": {
+    "name": "Center XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6752": {
+    "name": "Center Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8727": {
+    "name": "CompAssetPairs F5",
+    "value": 0.0
+   },
+   "tc Form-8709": {
+    "name": "Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8734": {
+    "name": "Relative Position F5",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-8685": {
+    "name": "Size Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8673": {
+    "name": "Opacity Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8228": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-8674": {
+    "name": "Color Over F5",
+    "value": 0.0
+   },
+   "tc Form-8450": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-8612": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-8695": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8698": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8701": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8704": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8707": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8689": {
+    "name": "Disperse Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8782": {
+    "name": "Force Relative Position F5",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-8692": {
+    "name": "Fractal Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8719": {
+    "name": "Sphere 1 Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8380": {
+    "name": "Sphere 1 Position XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8720": {
+    "name": "Sphere 2 Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8388": {
+    "name": "Sphere 2 Position XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8398": {
+    "name": "Center XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8800": {
+    "name": "Center Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10775": {
+    "name": "CompAssetPairs F6",
+    "value": 0.0
+   },
+   "tc Form-10757": {
+    "name": "Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10782": {
+    "name": "Relative Position F6",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-10733": {
+    "name": "Size Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10721": {
+    "name": "Opacity Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10276": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-10722": {
+    "name": "Color Over F6",
+    "value": 0.0
+   },
+   "tc Form-10498": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-10660": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-10743": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10746": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10749": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10752": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10755": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10737": {
+    "name": "Disperse Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10830": {
+    "name": "Force Relative Position F6",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-10740": {
+    "name": "Fractal Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10767": {
+    "name": "Sphere 1 Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10428": {
+    "name": "Sphere 1 Position XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10768": {
+    "name": "Sphere 2 Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10436": {
+    "name": "Sphere 2 Position XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10446": {
+    "name": "Center XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10848": {
+    "name": "Center Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12823": {
+    "name": "CompAssetPairs F7",
+    "value": 0.0
+   },
+   "tc Form-12805": {
+    "name": "Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12830": {
+    "name": "Relative Position F7",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-12781": {
+    "name": "Size Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12769": {
+    "name": "Opacity Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12324": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-12770": {
+    "name": "Color Over F7",
+    "value": 0.0
+   },
+   "tc Form-12546": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-12708": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-12791": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12794": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12797": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12800": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12803": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12785": {
+    "name": "Disperse Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12878": {
+    "name": "Force Relative Position F7",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-12788": {
+    "name": "Fractal Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12815": {
+    "name": "Sphere 1 Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12476": {
+    "name": "Sphere 1 Position XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12816": {
+    "name": "Sphere 2 Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12484": {
+    "name": "Sphere 2 Position XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12494": {
+    "name": "Center XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12896": {
+    "name": "Center Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14871": {
+    "name": "CompAssetPairs F8",
+    "value": 0.0
+   },
+   "tc Form-14853": {
+    "name": "Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14878": {
+    "name": "Relative Position F8",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-14829": {
+    "name": "Size Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14817": {
+    "name": "Opacity Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14372": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-14818": {
+    "name": "Color Over F8",
+    "value": 0.0
+   },
+   "tc Form-14594": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-14756": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-14839": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14842": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14845": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14848": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14851": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14833": {
+    "name": "Disperse Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14926": {
+    "name": "Force Relative Position F8",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-14836": {
+    "name": "Fractal Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14863": {
+    "name": "Sphere 1 Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14524": {
+    "name": "Sphere 1 Position XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14864": {
+    "name": "Sphere 2 Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14532": {
+    "name": "Sphere 2 Position XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14542": {
+    "name": "Center XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14944": {
+    "name": "Center Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-0536": {
+    "name": "Acceleration",
+    "value": 1.0,
+    "default": "2"
+   },
+   "tc Form-0480": {
+    "name": "BuilderData",
+    "value": 0.0
+   },
+   "tc Form-0540": {
+    "name": "InstanceControl",
+    "value": 0.0
+   }
+  }
+ },
+ {
+  "comp": "06",
+  "layer": "狂ってる 3",
+  "n_params_present": 2768,
+  "touched": {
+   "tc Form-0000": {
+    "name": "tc Form-0000",
+    "value": 0.0
+   },
+   "tc Form-0535": {
+    "name": "CompAssetPairs",
+    "value": 0.0
+   },
+   "tc Form-0003": {
+    "name": "Base Form",
+    "value": 5.0,
+    "default": "1"
+   },
+   "tc Form-0004": {
+    "name": "Base Form Size X",
+    "value": 1799.0,
+    "default": "500"
+   },
+   "tc Form-0005": {
+    "name": "Base Form Size Y",
+    "value": 1799.0,
+    "default": "500"
+   },
+   "tc Form-0006": {
+    "name": "Base Form Size Z",
+    "value": 0.0,
+    "default": "500"
+   },
+   "tc Form-0009": {
+    "name": "Particles in Z",
+    "value": 1.0,
+    "default": "3"
+   },
+   "tc Form-0517": {
+    "name": "Position",
+    "value": [
+     0.5,
+     0.551852,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-0010": {
+    "name": "Center XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0542": {
+    "name": "Relative Position",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-0597": {
+    "name": "Match Text/Mask Size",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Form-0025": {
+    "name": "Sphere Feather",
+    "value": 0.0,
+    "default": "50"
+   },
+   "tc Form-0493": {
+    "name": "Size Curve",
+    "value": 0.0
+   },
+   "tc Form-0481": {
+    "name": "Opacity Curve",
+    "value": 0.0
+   },
+   "tc Form-0482": {
+    "name": "Color Over",
+    "value": 0.0
+   },
+   "tc Form-0258": {
+    "name": "Color",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-0598": {
+    "name": "Match Particle Shape",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Form-0061": {
+    "name": "Functionality",
+    "value": 2.0,
+    "default": "1"
+   },
+   "tc Form-0503": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0506": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0509": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0512": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0515": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0159": {
+    "name": "Disperse",
+    "keyframed": true,
+    "default": "0"
+   },
+   "tc Form-0496": {
+    "name": "Disperse Strength Over",
+    "value": 3.0,
+    "default": "1"
+   },
+   "tc Form-0497": {
+    "name": "Disperse Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0498": {
+    "name": "Disperse Strength Offset",
+    "keyframed": true,
+    "default": "100"
+   },
+   "tc Form-0591": {
+    "name": "Apply Force",
+    "value": 1.0,
+    "default": "2"
+   },
+   "tc Form-0500": {
+    "name": "Fractal Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0169": {
+    "name": "Flow X",
+    "value": 602.0,
+    "default": "0"
+   },
+   "tc Form-0187": {
+    "name": "Strength",
+    "value": -90.0,
+    "default": "0"
+   },
+   "tc Form-0188": {
+    "name": "Sphere 1 Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0436": {
+    "name": "Scale X",
+    "value": 890.0,
+    "default": "100"
+   },
+   "tc Form-0437": {
+    "name": "Scale Y",
+    "value": 0.0,
+    "default": "100"
+   },
+   "tc Form-0438": {
+    "name": "Scale Z",
+    "value": 0.0,
+    "default": "100"
+   },
+   "tc Form-0196": {
+    "name": "Sphere 2 Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0206": {
+    "name": "Center XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2583": {
+    "name": "CompAssetPairs F2",
+    "value": 0.0
+   },
+   "tc Form-2565": {
+    "name": "Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2590": {
+    "name": "Relative Position F2",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-2541": {
+    "name": "Size Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2529": {
+    "name": "Opacity Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2084": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-2530": {
+    "name": "Color Over F2",
+    "value": 0.0
+   },
+   "tc Form-2306": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-2468": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-2551": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2554": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2557": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2560": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2563": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2545": {
+    "name": "Disperse Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2638": {
+    "name": "Force Relative Position F2",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-2548": {
+    "name": "Fractal Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2575": {
+    "name": "Sphere 1 Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2236": {
+    "name": "Sphere 1 Position XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2576": {
+    "name": "Sphere 2 Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2244": {
+    "name": "Sphere 2 Position XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2254": {
+    "name": "Center XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2656": {
+    "name": "Center Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4631": {
+    "name": "CompAssetPairs F3",
+    "value": 0.0
+   },
+   "tc Form-4613": {
+    "name": "Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4638": {
+    "name": "Relative Position F3",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-4589": {
+    "name": "Size Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4577": {
+    "name": "Opacity Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4132": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-4578": {
+    "name": "Color Over F3",
+    "value": 0.0
+   },
+   "tc Form-4354": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-4516": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-4599": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4602": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4605": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4608": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4611": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4593": {
+    "name": "Disperse Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4686": {
+    "name": "Force Relative Position F3",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-4596": {
+    "name": "Fractal Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4623": {
+    "name": "Sphere 1 Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4284": {
+    "name": "Sphere 1 Position XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4624": {
+    "name": "Sphere 2 Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4292": {
+    "name": "Sphere 2 Position XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4302": {
+    "name": "Center XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4704": {
+    "name": "Center Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6679": {
+    "name": "CompAssetPairs F4",
+    "value": 0.0
+   },
+   "tc Form-6661": {
+    "name": "Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6686": {
+    "name": "Relative Position F4",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-6637": {
+    "name": "Size Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6625": {
+    "name": "Opacity Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6180": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-6626": {
+    "name": "Color Over F4",
+    "value": 0.0
+   },
+   "tc Form-6402": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-6564": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-6647": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6650": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6653": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6656": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6659": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6641": {
+    "name": "Disperse Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6734": {
+    "name": "Force Relative Position F4",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-6644": {
+    "name": "Fractal Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6671": {
+    "name": "Sphere 1 Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6332": {
+    "name": "Sphere 1 Position XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6672": {
+    "name": "Sphere 2 Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6340": {
+    "name": "Sphere 2 Position XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6350": {
+    "name": "Center XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6752": {
+    "name": "Center Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8727": {
+    "name": "CompAssetPairs F5",
+    "value": 0.0
+   },
+   "tc Form-8709": {
+    "name": "Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8734": {
+    "name": "Relative Position F5",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-8685": {
+    "name": "Size Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8673": {
+    "name": "Opacity Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8228": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-8674": {
+    "name": "Color Over F5",
+    "value": 0.0
+   },
+   "tc Form-8450": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-8612": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-8695": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8698": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8701": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8704": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8707": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8689": {
+    "name": "Disperse Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8782": {
+    "name": "Force Relative Position F5",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-8692": {
+    "name": "Fractal Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8719": {
+    "name": "Sphere 1 Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8380": {
+    "name": "Sphere 1 Position XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8720": {
+    "name": "Sphere 2 Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8388": {
+    "name": "Sphere 2 Position XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8398": {
+    "name": "Center XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8800": {
+    "name": "Center Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10775": {
+    "name": "CompAssetPairs F6",
+    "value": 0.0
+   },
+   "tc Form-10757": {
+    "name": "Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10782": {
+    "name": "Relative Position F6",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-10733": {
+    "name": "Size Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10721": {
+    "name": "Opacity Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10276": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-10722": {
+    "name": "Color Over F6",
+    "value": 0.0
+   },
+   "tc Form-10498": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-10660": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-10743": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10746": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10749": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10752": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10755": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10737": {
+    "name": "Disperse Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10830": {
+    "name": "Force Relative Position F6",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-10740": {
+    "name": "Fractal Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10767": {
+    "name": "Sphere 1 Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10428": {
+    "name": "Sphere 1 Position XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10768": {
+    "name": "Sphere 2 Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10436": {
+    "name": "Sphere 2 Position XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10446": {
+    "name": "Center XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10848": {
+    "name": "Center Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12823": {
+    "name": "CompAssetPairs F7",
+    "value": 0.0
+   },
+   "tc Form-12805": {
+    "name": "Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12830": {
+    "name": "Relative Position F7",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-12781": {
+    "name": "Size Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12769": {
+    "name": "Opacity Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12324": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-12770": {
+    "name": "Color Over F7",
+    "value": 0.0
+   },
+   "tc Form-12546": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-12708": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-12791": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12794": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12797": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12800": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12803": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12785": {
+    "name": "Disperse Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12878": {
+    "name": "Force Relative Position F7",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-12788": {
+    "name": "Fractal Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12815": {
+    "name": "Sphere 1 Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12476": {
+    "name": "Sphere 1 Position XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12816": {
+    "name": "Sphere 2 Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12484": {
+    "name": "Sphere 2 Position XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12494": {
+    "name": "Center XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12896": {
+    "name": "Center Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14871": {
+    "name": "CompAssetPairs F8",
+    "value": 0.0
+   },
+   "tc Form-14853": {
+    "name": "Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14878": {
+    "name": "Relative Position F8",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-14829": {
+    "name": "Size Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14817": {
+    "name": "Opacity Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14372": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-14818": {
+    "name": "Color Over F8",
+    "value": 0.0
+   },
+   "tc Form-14594": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-14756": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-14839": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14842": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14845": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14848": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14851": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14833": {
+    "name": "Disperse Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14926": {
+    "name": "Force Relative Position F8",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-14836": {
+    "name": "Fractal Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14863": {
+    "name": "Sphere 1 Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14524": {
+    "name": "Sphere 1 Position XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14864": {
+    "name": "Sphere 2 Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14532": {
+    "name": "Sphere 2 Position XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14542": {
+    "name": "Center XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14944": {
+    "name": "Center Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-0536": {
+    "name": "Acceleration",
+    "value": 1.0,
+    "default": "2"
+   },
+   "tc Form-0480": {
+    "name": "BuilderData",
+    "value": 0.0
+   },
+   "tc Form-0540": {
+    "name": "InstanceControl",
+    "value": 0.0
+   }
+  }
+ },
+ {
+  "comp": "06",
+  "layer": "願ったのさ 3",
+  "n_params_present": 2767,
+  "touched": {
+   "tc Form-0000": {
+    "name": "tc Form-0000",
+    "value": 0.0
+   },
+   "tc Form-0535": {
+    "name": "CompAssetPairs",
+    "value": 0.0
+   },
+   "tc Form-0003": {
+    "name": "Base Form",
+    "value": 5.0,
+    "default": "1"
+   },
+   "tc Form-0004": {
+    "name": "Base Form Size X",
+    "value": 1799.0,
+    "default": "500"
+   },
+   "tc Form-0005": {
+    "name": "Base Form Size Y",
+    "value": 1799.0,
+    "default": "500"
+   },
+   "tc Form-0006": {
+    "name": "Base Form Size Z",
+    "value": 0.0,
+    "default": "500"
+   },
+   "tc Form-0009": {
+    "name": "Particles in Z",
+    "value": 1.0,
+    "default": "3"
+   },
+   "tc Form-0010": {
+    "name": "Center XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0542": {
+    "name": "Relative Position",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-0597": {
+    "name": "Match Text/Mask Size",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Form-0025": {
+    "name": "Sphere Feather",
+    "value": 0.0,
+    "default": "50"
+   },
+   "tc Form-0493": {
+    "name": "Size Curve",
+    "value": 0.0
+   },
+   "tc Form-0481": {
+    "name": "Opacity Curve",
+    "value": 0.0
+   },
+   "tc Form-0482": {
+    "name": "Color Over",
+    "value": 0.0
+   },
+   "tc Form-0258": {
+    "name": "Color",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-0598": {
+    "name": "Match Particle Shape",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Form-0061": {
+    "name": "Functionality",
+    "value": 2.0,
+    "default": "1"
+   },
+   "tc Form-0503": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0506": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0509": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0512": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0515": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0159": {
+    "name": "Disperse",
+    "keyframed": true,
+    "default": "0"
+   },
+   "tc Form-0496": {
+    "name": "Disperse Strength Over",
+    "value": 3.0,
+    "default": "1"
+   },
+   "tc Form-0497": {
+    "name": "Disperse Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0498": {
+    "name": "Disperse Strength Offset",
+    "keyframed": true,
+    "default": "100"
+   },
+   "tc Form-0591": {
+    "name": "Apply Force",
+    "value": 1.0,
+    "default": "2"
+   },
+   "tc Form-0500": {
+    "name": "Fractal Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0169": {
+    "name": "Flow X",
+    "value": 602.0,
+    "default": "0"
+   },
+   "tc Form-0187": {
+    "name": "Strength",
+    "value": -90.0,
+    "default": "0"
+   },
+   "tc Form-0188": {
+    "name": "Sphere 1 Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0436": {
+    "name": "Scale X",
+    "value": 890.0,
+    "default": "100"
+   },
+   "tc Form-0437": {
+    "name": "Scale Y",
+    "value": 0.0,
+    "default": "100"
+   },
+   "tc Form-0438": {
+    "name": "Scale Z",
+    "value": 0.0,
+    "default": "100"
+   },
+   "tc Form-0196": {
+    "name": "Sphere 2 Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0206": {
+    "name": "Center XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2583": {
+    "name": "CompAssetPairs F2",
+    "value": 0.0
+   },
+   "tc Form-2565": {
+    "name": "Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2590": {
+    "name": "Relative Position F2",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-2541": {
+    "name": "Size Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2529": {
+    "name": "Opacity Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2084": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-2530": {
+    "name": "Color Over F2",
+    "value": 0.0
+   },
+   "tc Form-2306": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-2468": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-2551": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2554": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2557": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2560": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2563": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2545": {
+    "name": "Disperse Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2638": {
+    "name": "Force Relative Position F2",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-2548": {
+    "name": "Fractal Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2575": {
+    "name": "Sphere 1 Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2236": {
+    "name": "Sphere 1 Position XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2576": {
+    "name": "Sphere 2 Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2244": {
+    "name": "Sphere 2 Position XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2254": {
+    "name": "Center XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2656": {
+    "name": "Center Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4631": {
+    "name": "CompAssetPairs F3",
+    "value": 0.0
+   },
+   "tc Form-4613": {
+    "name": "Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4638": {
+    "name": "Relative Position F3",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-4589": {
+    "name": "Size Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4577": {
+    "name": "Opacity Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4132": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-4578": {
+    "name": "Color Over F3",
+    "value": 0.0
+   },
+   "tc Form-4354": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-4516": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-4599": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4602": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4605": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4608": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4611": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4593": {
+    "name": "Disperse Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4686": {
+    "name": "Force Relative Position F3",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-4596": {
+    "name": "Fractal Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4623": {
+    "name": "Sphere 1 Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4284": {
+    "name": "Sphere 1 Position XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4624": {
+    "name": "Sphere 2 Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4292": {
+    "name": "Sphere 2 Position XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4302": {
+    "name": "Center XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4704": {
+    "name": "Center Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6679": {
+    "name": "CompAssetPairs F4",
+    "value": 0.0
+   },
+   "tc Form-6661": {
+    "name": "Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6686": {
+    "name": "Relative Position F4",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-6637": {
+    "name": "Size Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6625": {
+    "name": "Opacity Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6180": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-6626": {
+    "name": "Color Over F4",
+    "value": 0.0
+   },
+   "tc Form-6402": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-6564": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-6647": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6650": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6653": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6656": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6659": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6641": {
+    "name": "Disperse Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6734": {
+    "name": "Force Relative Position F4",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-6644": {
+    "name": "Fractal Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6671": {
+    "name": "Sphere 1 Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6332": {
+    "name": "Sphere 1 Position XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6672": {
+    "name": "Sphere 2 Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6340": {
+    "name": "Sphere 2 Position XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6350": {
+    "name": "Center XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6752": {
+    "name": "Center Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8727": {
+    "name": "CompAssetPairs F5",
+    "value": 0.0
+   },
+   "tc Form-8709": {
+    "name": "Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8734": {
+    "name": "Relative Position F5",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-8685": {
+    "name": "Size Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8673": {
+    "name": "Opacity Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8228": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-8674": {
+    "name": "Color Over F5",
+    "value": 0.0
+   },
+   "tc Form-8450": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-8612": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-8695": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8698": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8701": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8704": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8707": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8689": {
+    "name": "Disperse Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8782": {
+    "name": "Force Relative Position F5",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-8692": {
+    "name": "Fractal Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8719": {
+    "name": "Sphere 1 Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8380": {
+    "name": "Sphere 1 Position XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8720": {
+    "name": "Sphere 2 Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8388": {
+    "name": "Sphere 2 Position XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8398": {
+    "name": "Center XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8800": {
+    "name": "Center Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10775": {
+    "name": "CompAssetPairs F6",
+    "value": 0.0
+   },
+   "tc Form-10757": {
+    "name": "Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10782": {
+    "name": "Relative Position F6",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-10733": {
+    "name": "Size Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10721": {
+    "name": "Opacity Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10276": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-10722": {
+    "name": "Color Over F6",
+    "value": 0.0
+   },
+   "tc Form-10498": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-10660": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-10743": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10746": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10749": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10752": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10755": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10737": {
+    "name": "Disperse Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10830": {
+    "name": "Force Relative Position F6",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-10740": {
+    "name": "Fractal Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10767": {
+    "name": "Sphere 1 Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10428": {
+    "name": "Sphere 1 Position XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10768": {
+    "name": "Sphere 2 Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10436": {
+    "name": "Sphere 2 Position XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10446": {
+    "name": "Center XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10848": {
+    "name": "Center Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12823": {
+    "name": "CompAssetPairs F7",
+    "value": 0.0
+   },
+   "tc Form-12805": {
+    "name": "Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12830": {
+    "name": "Relative Position F7",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-12781": {
+    "name": "Size Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12769": {
+    "name": "Opacity Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12324": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-12770": {
+    "name": "Color Over F7",
+    "value": 0.0
+   },
+   "tc Form-12546": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-12708": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-12791": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12794": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12797": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12800": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12803": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12785": {
+    "name": "Disperse Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12878": {
+    "name": "Force Relative Position F7",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-12788": {
+    "name": "Fractal Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12815": {
+    "name": "Sphere 1 Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12476": {
+    "name": "Sphere 1 Position XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12816": {
+    "name": "Sphere 2 Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12484": {
+    "name": "Sphere 2 Position XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12494": {
+    "name": "Center XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12896": {
+    "name": "Center Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14871": {
+    "name": "CompAssetPairs F8",
+    "value": 0.0
+   },
+   "tc Form-14853": {
+    "name": "Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14878": {
+    "name": "Relative Position F8",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-14829": {
+    "name": "Size Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14817": {
+    "name": "Opacity Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14372": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-14818": {
+    "name": "Color Over F8",
+    "value": 0.0
+   },
+   "tc Form-14594": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-14756": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-14839": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14842": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14845": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14848": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14851": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14833": {
+    "name": "Disperse Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14926": {
+    "name": "Force Relative Position F8",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-14836": {
+    "name": "Fractal Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14863": {
+    "name": "Sphere 1 Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14524": {
+    "name": "Sphere 1 Position XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14864": {
+    "name": "Sphere 2 Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14532": {
+    "name": "Sphere 2 Position XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14542": {
+    "name": "Center XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14944": {
+    "name": "Center Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-0536": {
+    "name": "Acceleration",
+    "value": 1.0,
+    "default": "2"
+   },
+   "tc Form-0480": {
+    "name": "BuilderData",
+    "value": 0.0
+   },
+   "tc Form-0540": {
+    "name": "InstanceControl",
+    "value": 0.0
+   }
+  }
+ },
+ {
+  "comp": "06",
+  "layer": "狂ってる 4",
+  "n_params_present": 2768,
+  "touched": {
+   "tc Form-0000": {
+    "name": "tc Form-0000",
+    "value": 0.0
+   },
+   "tc Form-0535": {
+    "name": "CompAssetPairs",
+    "value": 0.0
+   },
+   "tc Form-0003": {
+    "name": "Base Form",
+    "value": 5.0,
+    "default": "1"
+   },
+   "tc Form-0004": {
+    "name": "Base Form Size X",
+    "value": 1799.0,
+    "default": "500"
+   },
+   "tc Form-0005": {
+    "name": "Base Form Size Y",
+    "value": 1799.0,
+    "default": "500"
+   },
+   "tc Form-0006": {
+    "name": "Base Form Size Z",
+    "value": 0.0,
+    "default": "500"
+   },
+   "tc Form-0009": {
+    "name": "Particles in Z",
+    "value": 1.0,
+    "default": "3"
+   },
+   "tc Form-0517": {
+    "name": "Position",
+    "value": [
+     0.5,
+     0.551852,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-0010": {
+    "name": "Center XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0542": {
+    "name": "Relative Position",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-0597": {
+    "name": "Match Text/Mask Size",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Form-0025": {
+    "name": "Sphere Feather",
+    "value": 0.0,
+    "default": "50"
+   },
+   "tc Form-0493": {
+    "name": "Size Curve",
+    "value": 0.0
+   },
+   "tc Form-0481": {
+    "name": "Opacity Curve",
+    "value": 0.0
+   },
+   "tc Form-0482": {
+    "name": "Color Over",
+    "value": 0.0
+   },
+   "tc Form-0258": {
+    "name": "Color",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-0598": {
+    "name": "Match Particle Shape",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Form-0061": {
+    "name": "Functionality",
+    "value": 2.0,
+    "default": "1"
+   },
+   "tc Form-0503": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0506": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0509": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0512": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0515": {
+    "name": "Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0159": {
+    "name": "Disperse",
+    "keyframed": true,
+    "default": "0"
+   },
+   "tc Form-0496": {
+    "name": "Disperse Strength Over",
+    "value": 3.0,
+    "default": "1"
+   },
+   "tc Form-0497": {
+    "name": "Disperse Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0498": {
+    "name": "Disperse Strength Offset",
+    "keyframed": true,
+    "default": "100"
+   },
+   "tc Form-0591": {
+    "name": "Apply Force",
+    "value": 1.0,
+    "default": "2"
+   },
+   "tc Form-0500": {
+    "name": "Fractal Strength Curve",
+    "value": 0.0
+   },
+   "tc Form-0169": {
+    "name": "Flow X",
+    "value": 602.0,
+    "default": "0"
+   },
+   "tc Form-0187": {
+    "name": "Strength",
+    "value": -90.0,
+    "default": "0"
+   },
+   "tc Form-0188": {
+    "name": "Sphere 1 Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0436": {
+    "name": "Scale X",
+    "value": 890.0,
+    "default": "100"
+   },
+   "tc Form-0437": {
+    "name": "Scale Y",
+    "value": 0.0,
+    "default": "100"
+   },
+   "tc Form-0438": {
+    "name": "Scale Z",
+    "value": 0.0,
+    "default": "100"
+   },
+   "tc Form-0196": {
+    "name": "Sphere 2 Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-0206": {
+    "name": "Center XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2583": {
+    "name": "CompAssetPairs F2",
+    "value": 0.0
+   },
+   "tc Form-2565": {
+    "name": "Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2590": {
+    "name": "Relative Position F2",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-2541": {
+    "name": "Size Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2529": {
+    "name": "Opacity Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2084": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-2530": {
+    "name": "Color Over F2",
+    "value": 0.0
+   },
+   "tc Form-2306": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-2468": {
+    "name": "Color F2",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-2551": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2554": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2557": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2560": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2563": {
+    "name": "Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2545": {
+    "name": "Disperse Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2638": {
+    "name": "Force Relative Position F2",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-2548": {
+    "name": "Fractal Strength Curve F2",
+    "value": 0.0
+   },
+   "tc Form-2575": {
+    "name": "Sphere 1 Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2236": {
+    "name": "Sphere 1 Position XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2576": {
+    "name": "Sphere 2 Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-2244": {
+    "name": "Sphere 2 Position XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2254": {
+    "name": "Center XY F2",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-2656": {
+    "name": "Center Position F2",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4631": {
+    "name": "CompAssetPairs F3",
+    "value": 0.0
+   },
+   "tc Form-4613": {
+    "name": "Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4638": {
+    "name": "Relative Position F3",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-4589": {
+    "name": "Size Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4577": {
+    "name": "Opacity Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4132": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-4578": {
+    "name": "Color Over F3",
+    "value": 0.0
+   },
+   "tc Form-4354": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-4516": {
+    "name": "Color F3",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-4599": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4602": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4605": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4608": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4611": {
+    "name": "Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4593": {
+    "name": "Disperse Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4686": {
+    "name": "Force Relative Position F3",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-4596": {
+    "name": "Fractal Strength Curve F3",
+    "value": 0.0
+   },
+   "tc Form-4623": {
+    "name": "Sphere 1 Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4284": {
+    "name": "Sphere 1 Position XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4624": {
+    "name": "Sphere 2 Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-4292": {
+    "name": "Sphere 2 Position XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4302": {
+    "name": "Center XY F3",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-4704": {
+    "name": "Center Position F3",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6679": {
+    "name": "CompAssetPairs F4",
+    "value": 0.0
+   },
+   "tc Form-6661": {
+    "name": "Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6686": {
+    "name": "Relative Position F4",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-6637": {
+    "name": "Size Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6625": {
+    "name": "Opacity Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6180": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-6626": {
+    "name": "Color Over F4",
+    "value": 0.0
+   },
+   "tc Form-6402": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-6564": {
+    "name": "Color F4",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-6647": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6650": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6653": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6656": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6659": {
+    "name": "Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6641": {
+    "name": "Disperse Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6734": {
+    "name": "Force Relative Position F4",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-6644": {
+    "name": "Fractal Strength Curve F4",
+    "value": 0.0
+   },
+   "tc Form-6671": {
+    "name": "Sphere 1 Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6332": {
+    "name": "Sphere 1 Position XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6672": {
+    "name": "Sphere 2 Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-6340": {
+    "name": "Sphere 2 Position XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6350": {
+    "name": "Center XY F4",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-6752": {
+    "name": "Center Position F4",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8727": {
+    "name": "CompAssetPairs F5",
+    "value": 0.0
+   },
+   "tc Form-8709": {
+    "name": "Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8734": {
+    "name": "Relative Position F5",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-8685": {
+    "name": "Size Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8673": {
+    "name": "Opacity Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8228": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-8674": {
+    "name": "Color Over F5",
+    "value": 0.0
+   },
+   "tc Form-8450": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-8612": {
+    "name": "Color F5",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-8695": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8698": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8701": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8704": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8707": {
+    "name": "Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8689": {
+    "name": "Disperse Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8782": {
+    "name": "Force Relative Position F5",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-8692": {
+    "name": "Fractal Strength Curve F5",
+    "value": 0.0
+   },
+   "tc Form-8719": {
+    "name": "Sphere 1 Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8380": {
+    "name": "Sphere 1 Position XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8720": {
+    "name": "Sphere 2 Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-8388": {
+    "name": "Sphere 2 Position XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8398": {
+    "name": "Center XY F5",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-8800": {
+    "name": "Center Position F5",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10775": {
+    "name": "CompAssetPairs F6",
+    "value": 0.0
+   },
+   "tc Form-10757": {
+    "name": "Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10782": {
+    "name": "Relative Position F6",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-10733": {
+    "name": "Size Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10721": {
+    "name": "Opacity Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10276": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-10722": {
+    "name": "Color Over F6",
+    "value": 0.0
+   },
+   "tc Form-10498": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-10660": {
+    "name": "Color F6",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-10743": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10746": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10749": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10752": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10755": {
+    "name": "Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10737": {
+    "name": "Disperse Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10830": {
+    "name": "Force Relative Position F6",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-10740": {
+    "name": "Fractal Strength Curve F6",
+    "value": 0.0
+   },
+   "tc Form-10767": {
+    "name": "Sphere 1 Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10428": {
+    "name": "Sphere 1 Position XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10768": {
+    "name": "Sphere 2 Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-10436": {
+    "name": "Sphere 2 Position XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10446": {
+    "name": "Center XY F6",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-10848": {
+    "name": "Center Position F6",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12823": {
+    "name": "CompAssetPairs F7",
+    "value": 0.0
+   },
+   "tc Form-12805": {
+    "name": "Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12830": {
+    "name": "Relative Position F7",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-12781": {
+    "name": "Size Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12769": {
+    "name": "Opacity Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12324": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-12770": {
+    "name": "Color Over F7",
+    "value": 0.0
+   },
+   "tc Form-12546": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-12708": {
+    "name": "Color F7",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-12791": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12794": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12797": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12800": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12803": {
+    "name": "Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12785": {
+    "name": "Disperse Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12878": {
+    "name": "Force Relative Position F7",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-12788": {
+    "name": "Fractal Strength Curve F7",
+    "value": 0.0
+   },
+   "tc Form-12815": {
+    "name": "Sphere 1 Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12476": {
+    "name": "Sphere 1 Position XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12816": {
+    "name": "Sphere 2 Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-12484": {
+    "name": "Sphere 2 Position XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12494": {
+    "name": "Center XY F7",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-12896": {
+    "name": "Center Position F7",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14871": {
+    "name": "CompAssetPairs F8",
+    "value": 0.0
+   },
+   "tc Form-14853": {
+    "name": "Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14878": {
+    "name": "Relative Position F8",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-14829": {
+    "name": "Size Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14817": {
+    "name": "Opacity Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14372": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     255.0,
+     255.0,
+     255.0
+    ],
+    "default": "1,1,1,1"
+   },
+   "tc Form-14818": {
+    "name": "Color Over F8",
+    "value": 0.0
+   },
+   "tc Form-14594": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     64.0,
+     64.0,
+     64.0
+    ],
+    "default": "0.25098039215686,0.25098039215686,0.2509"
+   },
+   "tc Form-14756": {
+    "name": "Color F8",
+    "value": [
+     255.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0,1"
+   },
+   "tc Form-14839": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14842": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14845": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14848": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14851": {
+    "name": "Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14833": {
+    "name": "Disperse Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14926": {
+    "name": "Force Relative Position F8",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Form-14836": {
+    "name": "Fractal Strength Curve F8",
+    "value": 0.0
+   },
+   "tc Form-14863": {
+    "name": "Sphere 1 Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14524": {
+    "name": "Sphere 1 Position XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14864": {
+    "name": "Sphere 2 Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-14532": {
+    "name": "Sphere 2 Position XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14542": {
+    "name": "Center XY F8",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "320,180"
+   },
+   "tc Form-14944": {
+    "name": "Center Position F8",
+    "value": [
+     0.5,
+     0.5,
+     0.0
+    ],
+    "default": "320,180,0"
+   },
+   "tc Form-0536": {
+    "name": "Acceleration",
+    "value": 1.0,
+    "default": "2"
+   },
+   "tc Form-0480": {
+    "name": "BuilderData",
+    "value": 0.0
+   },
+   "tc Form-0540": {
+    "name": "InstanceControl",
+    "value": 0.0
+   }
+  }
+ }
+]

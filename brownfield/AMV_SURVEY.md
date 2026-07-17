@@ -76,6 +76,27 @@ Sick-（进行中）：tc Particular ×3；其余四部为零。粒子用于高�
 OBJ 发射器工作线呼应）。表达式惯用法：checkbox 开关门(76) > wiggle(44) > random(31) >
 marker 同步(15) > loopOut(12) > linear 映射(10)。
 
+## 发现 6 — 艺术家的真实 Trapcode 配方（参数级，`aep_params.py`）
+
+对含 Trapcode 的三部工程做了 tdb4/cdat 参数值提取（弹窗原始值与 scripting 同为
+1-based；EfdG 工程级默认值缓存已排除）：
+
+- **hibana：19 实例 → 6 家族**。主力是"**环境光尘**"rig ×14：Box 发射器
+  2000×3000×2000、psec 1000、Life 5.1s±30%、Size 3±10%、Opacity ±12% ——
+  同一配方复制进每个镜头 comp（含 wallpaper comp）。另有"花瓣/飘落"家族：
+  **Particle Type=6 (Sprite) + Color Fill 100** + Size 44~361、Gravity ±15~1200、
+  Move with Wind 20、**Particles/sec 手动关键帧**（艺术家自己就在打 burst 关键帧——
+  与矿工的 spike 方案同构）。粉蓝色 [R46 G82 B234]。
+- **Datte：6 个 Form 实例 = 歌词文字消散 rig**：Base Form=5 (Text/Mask) +
+  Match Text/Mask Size + **Disperse 关键帧动画** + Apply Force + Flow X 602，
+  灰色 64。层名「狂ってる」×4 —— 同一 rig 复制微调。
+- **Sick-（进行中）：2 实例 = 长风尘**：Life 30s、Wind X 459/100、Velocity
+  Random 61 + Distribution 0.98、Type 4 (Cloudlet)、Size 3、一个 Gravity -980
+  （上升流）。当前审美：横风扫过的超长寿命大气粒子。
+
+这验证了两条管线优先级（sprite+fill、burst spike）**并给出 recipe 库的真实先验**：
+环境光尘 / 歌词消散 / 横风长尘三个"艺术家亲手写的配方"可直接转 recipe。
+
 ## 对产品的推论（按行动价值排序）
 
 1. **原生栈 recipes 优先扩容**：真实 AMV 骨干 = Motion Tile/Transform/Tint/Glow/

@@ -1,0 +1,1889 @@
+[
+ {
+  "comp": "03",
+  "layer": null,
+  "n_params_present": 7657,
+  "touched": {
+   "tc Particular-0000": {
+    "name": "tc Particular-0000",
+    "value": 0.0
+   },
+   "tc Particular-0576": {
+    "name": "CompAssetPairs",
+    "value": 0.0
+   },
+   "tc Particular-0782": {
+    "name": "Emitter Type",
+    "value": 3.0,
+    "default": "1"
+   },
+   "tc Particular-0699": {
+    "name": "Emission over Parent Life",
+    "value": 0.0
+   },
+   "tc Particular-0581": {
+    "name": "Position",
+    "value": [
+     -0.096591,
+     0.502525,
+     2.777778
+    ],
+    "default": "640,360,0"
+   },
+   "tc Particular-0003": {
+    "name": "Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "640,360"
+   },
+   "tc Particular-0607": {
+    "name": "Relative Position",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Particular-0014": {
+    "name": "Emitter Size XYZ",
+    "value": 1000.0,
+    "default": "500"
+   },
+   "tc Particular-0111": {
+    "name": "Y Rotation",
+    "value": 90.0,
+    "default": "0"
+   },
+   "tc Particular-0012": {
+    "name": "Velocity Random",
+    "value": 61.0,
+    "default": "20"
+   },
+   "tc Particular-0283": {
+    "name": "Velocity Distribution",
+    "value": 0.98,
+    "default": "0.5"
+   },
+   "tc Particular-0752": {
+    "name": "Velocity over Life",
+    "value": 0.0
+   },
+   "tc Particular-0002": {
+    "name": "Life (seconds)",
+    "value": 30.0,
+    "default": "3"
+   },
+   "tc Particular-0065": {
+    "name": "Life Random",
+    "value": 21.0,
+    "default": "0"
+   },
+   "tc Particular-0703": {
+    "name": "Particle Type",
+    "value": 4.0,
+    "default": "1"
+   },
+   "tc Particular-0027": {
+    "name": "Size",
+    "value": 3.0,
+    "default": "5"
+   },
+   "tc Particular-0074": {
+    "name": "Size Random",
+    "value": 25.0,
+    "default": "0"
+   },
+   "tc Particular-0569": {
+    "name": "Size Over Life",
+    "value": 0.0
+   },
+   "tc Particular-0075": {
+    "name": "Opacity Random",
+    "value": 10.0,
+    "default": "0"
+   },
+   "tc Particular-0570": {
+    "name": "Opacity Over Life",
+    "value": 0.0
+   },
+   "tc Particular-0088": {
+    "name": "Set Color",
+    "value": 2.0,
+    "default": "1"
+   },
+   "tc Particular-0571": {
+    "name": "Color Gradient",
+    "value": 0.0
+   },
+   "tc Particular-0572": {
+    "name": "Blend Mode over Life",
+    "value": 0.0
+   },
+   "tc Particular-0749": {
+    "name": "Wind X",
+    "value": 459.0,
+    "default": "0"
+   },
+   "tc Particular-0750": {
+    "name": "Wind Y",
+    "value": 106.0,
+    "default": "0"
+   },
+   "tc Particular-0751": {
+    "name": "Wind Z",
+    "value": 130.0,
+    "default": "0"
+   },
+   "tc Particular-0711": {
+    "name": "Affect Position",
+    "value": -165.0,
+    "default": "0"
+   },
+   "tc Particular-0715": {
+    "name": "Scale",
+    "value": 13.0,
+    "default": "10"
+   },
+   "tc Particular-0716": {
+    "name": "Complexity",
+    "value": 10.0,
+    "default": "3"
+   },
+   "tc Particular-0717": {
+    "name": "Octave Multiplier",
+    "value": 0.0,
+    "default": "0.5"
+   },
+   "tc Particular-0718": {
+    "name": "Octave Scale",
+    "value": 8.3,
+    "default": "1.5"
+   },
+   "tc Particular-0719": {
+    "name": "Evolution Speed",
+    "value": 71.0,
+    "default": "50"
+   },
+   "tc Particular-0662": {
+    "name": "Predator/Prey Behavior",
+    "value": 2.0,
+    "default": "1"
+   },
+   "tc Particular-0792": {
+    "name": "Disperse Strength Curve",
+    "value": 0.0
+   },
+   "tc Particular-0814": {
+    "name": "Fractal Strength Curve",
+    "value": 0.0
+   },
+   "tc Particular-0093": {
+    "name": "Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "640,360"
+   },
+   "tc Particular-0573": {
+    "name": "Size over Life",
+    "value": 0.0
+   },
+   "tc Particular-0574": {
+    "name": "Opacity over Life",
+    "value": 0.0
+   },
+   "tc Particular-0575": {
+    "name": "Color Gradient",
+    "value": 0.0
+   },
+   "tc Particular-0227": {
+    "name": "Pre Run (seconds)",
+    "value": 3.0,
+    "default": "0"
+   },
+   "tc Particular-0684": {
+    "name": "Enable Shadowlets",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Particular-2624": {
+    "name": "CompAssetPairs S2",
+    "value": 0.0
+   },
+   "tc Particular-2747": {
+    "name": "Emission over Parent Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2800": {
+    "name": "Velocity over Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2617": {
+    "name": "Size over Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2618": {
+    "name": "Opacity over Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2619": {
+    "name": "Color Gradient S2",
+    "value": 0.0
+   },
+   "tc Particular-2620": {
+    "name": "Blend Mode over Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2840": {
+    "name": "Disperse Strength Curve S2",
+    "value": 0.0
+   },
+   "tc Particular-2862": {
+    "name": "Fractal Strength Curve S2",
+    "value": 0.0
+   },
+   "tc Particular-2621": {
+    "name": "Size over Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2622": {
+    "name": "Opacity over Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2623": {
+    "name": "Color Gradient S2",
+    "value": 0.0
+   },
+   "tc Particular-4672": {
+    "name": "CompAssetPairs S3",
+    "value": 0.0
+   },
+   "tc Particular-4795": {
+    "name": "Emission over Parent Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4848": {
+    "name": "Velocity over Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4665": {
+    "name": "Size over Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4666": {
+    "name": "Opacity over Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4667": {
+    "name": "Color Gradient S3",
+    "value": 0.0
+   },
+   "tc Particular-4668": {
+    "name": "Blend Mode over Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4888": {
+    "name": "Disperse Strength Curve S3",
+    "value": 0.0
+   },
+   "tc Particular-4910": {
+    "name": "Fractal Strength Curve S3",
+    "value": 0.0
+   },
+   "tc Particular-4669": {
+    "name": "Size over Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4670": {
+    "name": "Opacity over Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4671": {
+    "name": "Color Gradient S3",
+    "value": 0.0
+   },
+   "tc Particular-6720": {
+    "name": "CompAssetPairs S4",
+    "value": 0.0
+   },
+   "tc Particular-6843": {
+    "name": "Emission over Parent Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6896": {
+    "name": "Velocity over Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6713": {
+    "name": "Size over Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6714": {
+    "name": "Opacity over Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6715": {
+    "name": "Color Gradient S4",
+    "value": 0.0
+   },
+   "tc Particular-6716": {
+    "name": "Blend Mode over Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6936": {
+    "name": "Disperse Strength Curve S4",
+    "value": 0.0
+   },
+   "tc Particular-6958": {
+    "name": "Fractal Strength Curve S4",
+    "value": 0.0
+   },
+   "tc Particular-6717": {
+    "name": "Size over Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6718": {
+    "name": "Opacity over Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6719": {
+    "name": "Color Gradient S4",
+    "value": 0.0
+   },
+   "tc Particular-8768": {
+    "name": "CompAssetPairs S5",
+    "value": 0.0
+   },
+   "tc Particular-8891": {
+    "name": "Emission over Parent Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8944": {
+    "name": "Velocity over Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8761": {
+    "name": "Size over Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8762": {
+    "name": "Opacity over Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8763": {
+    "name": "Color Gradient S5",
+    "value": 0.0
+   },
+   "tc Particular-8764": {
+    "name": "Blend Mode over Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8984": {
+    "name": "Disperse Strength Curve S5",
+    "value": 0.0
+   },
+   "tc Particular-9006": {
+    "name": "Fractal Strength Curve S5",
+    "value": 0.0
+   },
+   "tc Particular-8765": {
+    "name": "Size over Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8766": {
+    "name": "Opacity over Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8767": {
+    "name": "Color Gradient S5",
+    "value": 0.0
+   },
+   "tc Particular-10816": {
+    "name": "CompAssetPairs S6",
+    "value": 0.0
+   },
+   "tc Particular-10939": {
+    "name": "Emission over Parent Life S6",
+    "value": 0.0
+   },
+   "tc Particular-10992": {
+    "name": "Velocity over Life S6",
+    "value": 0.0
+   },
+   "tc Particular-10809": {
+    "name": "Size over Life S6",
+    "value": 0.0
+   },
+   "tc Particular-10810": {
+    "name": "Opacity over Life S6",
+    "value": 0.0
+   },
+   "tc Particular-10811": {
+    "name": "Color Gradient S6",
+    "value": 0.0
+   },
+   "tc Particular-10812": {
+    "name": "Blend Mode over Life S6",
+    "value": 0.0
+   },
+   "tc Particular-11032": {
+    "name": "Disperse Strength Curve S6",
+    "value": 0.0
+   },
+   "tc Particular-11054": {
+    "name": "Fractal Strength Curve S6",
+    "value": 0.0
+   },
+   "tc Particular-10813": {
+    "name": "Size over Life S6",
+    "value": 0.0
+   },
+   "tc Particular-10814": {
+    "name": "Opacity over Life S6",
+    "value": 0.0
+   },
+   "tc Particular-10815": {
+    "name": "Color Gradient S6",
+    "value": 0.0
+   },
+   "tc Particular-12864": {
+    "name": "CompAssetPairs S7",
+    "value": 0.0
+   },
+   "tc Particular-12987": {
+    "name": "Emission over Parent Life S7",
+    "value": 0.0
+   },
+   "tc Particular-13040": {
+    "name": "Velocity over Life S7",
+    "value": 0.0
+   },
+   "tc Particular-12857": {
+    "name": "Size over Life S7",
+    "value": 0.0
+   },
+   "tc Particular-12858": {
+    "name": "Opacity over Life S7",
+    "value": 0.0
+   },
+   "tc Particular-12859": {
+    "name": "Color Gradient S7",
+    "value": 0.0
+   },
+   "tc Particular-12860": {
+    "name": "Blend Mode over Life S7",
+    "value": 0.0
+   },
+   "tc Particular-13080": {
+    "name": "Disperse Strength Curve S7",
+    "value": 0.0
+   },
+   "tc Particular-13102": {
+    "name": "Fractal Strength Curve S7",
+    "value": 0.0
+   },
+   "tc Particular-12861": {
+    "name": "Size over Life S7",
+    "value": 0.0
+   },
+   "tc Particular-12862": {
+    "name": "Opacity over Life S7",
+    "value": 0.0
+   },
+   "tc Particular-12863": {
+    "name": "Color Gradient S7",
+    "value": 0.0
+   },
+   "tc Particular-14912": {
+    "name": "CompAssetPairs S8",
+    "value": 0.0
+   },
+   "tc Particular-15035": {
+    "name": "Emission over Parent Life S8",
+    "value": 0.0
+   },
+   "tc Particular-15088": {
+    "name": "Velocity over Life S8",
+    "value": 0.0
+   },
+   "tc Particular-14905": {
+    "name": "Size over Life S8",
+    "value": 0.0
+   },
+   "tc Particular-14906": {
+    "name": "Opacity over Life S8",
+    "value": 0.0
+   },
+   "tc Particular-14907": {
+    "name": "Color Gradient S8",
+    "value": 0.0
+   },
+   "tc Particular-14908": {
+    "name": "Blend Mode over Life S8",
+    "value": 0.0
+   },
+   "tc Particular-15128": {
+    "name": "Disperse Strength Curve S8",
+    "value": 0.0
+   },
+   "tc Particular-15150": {
+    "name": "Fractal Strength Curve S8",
+    "value": 0.0
+   },
+   "tc Particular-14909": {
+    "name": "Size over Life S8",
+    "value": 0.0
+   },
+   "tc Particular-14910": {
+    "name": "Opacity over Life S8",
+    "value": 0.0
+   },
+   "tc Particular-14911": {
+    "name": "Color Gradient S8",
+    "value": 0.0
+   },
+   "tc Particular-16960": {
+    "name": "CompAssetPairs S9",
+    "value": 0.0
+   },
+   "tc Particular-17083": {
+    "name": "Emission over Parent Life S9",
+    "value": 0.0
+   },
+   "tc Particular-17136": {
+    "name": "Velocity over Life S9",
+    "value": 0.0
+   },
+   "tc Particular-16953": {
+    "name": "Size over Life S9",
+    "value": 0.0
+   },
+   "tc Particular-16954": {
+    "name": "Opacity over Life S9",
+    "value": 0.0
+   },
+   "tc Particular-16955": {
+    "name": "Color Gradient S9",
+    "value": 0.0
+   },
+   "tc Particular-16956": {
+    "name": "Blend Mode over Life S9",
+    "value": 0.0
+   },
+   "tc Particular-17176": {
+    "name": "Disperse Strength Curve S9",
+    "value": 0.0
+   },
+   "tc Particular-17198": {
+    "name": "Fractal Strength Curve S9",
+    "value": 0.0
+   },
+   "tc Particular-16957": {
+    "name": "Size over Life S9",
+    "value": 0.0
+   },
+   "tc Particular-16958": {
+    "name": "Opacity over Life S9",
+    "value": 0.0
+   },
+   "tc Particular-16959": {
+    "name": "Color Gradient S9",
+    "value": 0.0
+   },
+   "tc Particular-19008": {
+    "name": "CompAssetPairs S10",
+    "value": 0.0
+   },
+   "tc Particular-19131": {
+    "name": "Emission over Parent Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19184": {
+    "name": "Velocity over Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19001": {
+    "name": "Size over Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19002": {
+    "name": "Opacity over Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19003": {
+    "name": "Color Gradient S10",
+    "value": 0.0
+   },
+   "tc Particular-19004": {
+    "name": "Blend Mode over Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19224": {
+    "name": "Disperse Strength Curve S10",
+    "value": 0.0
+   },
+   "tc Particular-19246": {
+    "name": "Fractal Strength Curve S10",
+    "value": 0.0
+   },
+   "tc Particular-19005": {
+    "name": "Size over Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19006": {
+    "name": "Opacity over Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19007": {
+    "name": "Color Gradient S10",
+    "value": 0.0
+   },
+   "tc Particular-21056": {
+    "name": "CompAssetPairs S11",
+    "value": 0.0
+   },
+   "tc Particular-21179": {
+    "name": "Emission over Parent Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21232": {
+    "name": "Velocity over Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21049": {
+    "name": "Size over Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21050": {
+    "name": "Opacity over Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21051": {
+    "name": "Color Gradient S11",
+    "value": 0.0
+   },
+   "tc Particular-21052": {
+    "name": "Blend Mode over Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21272": {
+    "name": "Disperse Strength Curve S11",
+    "value": 0.0
+   },
+   "tc Particular-21294": {
+    "name": "Fractal Strength Curve S11",
+    "value": 0.0
+   },
+   "tc Particular-21053": {
+    "name": "Size over Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21054": {
+    "name": "Opacity over Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21055": {
+    "name": "Color Gradient S11",
+    "value": 0.0
+   },
+   "tc Particular-23104": {
+    "name": "CompAssetPairs S12",
+    "value": 0.0
+   },
+   "tc Particular-23227": {
+    "name": "Emission over Parent Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23280": {
+    "name": "Velocity over Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23097": {
+    "name": "Size over Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23098": {
+    "name": "Opacity over Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23099": {
+    "name": "Color Gradient S12",
+    "value": 0.0
+   },
+   "tc Particular-23100": {
+    "name": "Blend Mode over Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23320": {
+    "name": "Disperse Strength Curve S12",
+    "value": 0.0
+   },
+   "tc Particular-23342": {
+    "name": "Fractal Strength Curve S12",
+    "value": 0.0
+   },
+   "tc Particular-23101": {
+    "name": "Size over Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23102": {
+    "name": "Opacity over Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23103": {
+    "name": "Color Gradient S12",
+    "value": 0.0
+   },
+   "tc Particular-25152": {
+    "name": "CompAssetPairs S13",
+    "value": 0.0
+   },
+   "tc Particular-25275": {
+    "name": "Emission over Parent Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25328": {
+    "name": "Velocity over Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25145": {
+    "name": "Size over Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25146": {
+    "name": "Opacity over Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25147": {
+    "name": "Color Gradient S13",
+    "value": 0.0
+   },
+   "tc Particular-25148": {
+    "name": "Blend Mode over Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25368": {
+    "name": "Disperse Strength Curve S13",
+    "value": 0.0
+   },
+   "tc Particular-25390": {
+    "name": "Fractal Strength Curve S13",
+    "value": 0.0
+   },
+   "tc Particular-25149": {
+    "name": "Size over Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25150": {
+    "name": "Opacity over Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25151": {
+    "name": "Color Gradient S13",
+    "value": 0.0
+   },
+   "tc Particular-27200": {
+    "name": "CompAssetPairs S14",
+    "value": 0.0
+   },
+   "tc Particular-27323": {
+    "name": "Emission over Parent Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27376": {
+    "name": "Velocity over Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27193": {
+    "name": "Size over Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27194": {
+    "name": "Opacity over Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27195": {
+    "name": "Color Gradient S14",
+    "value": 0.0
+   },
+   "tc Particular-27196": {
+    "name": "Blend Mode over Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27416": {
+    "name": "Disperse Strength Curve S14",
+    "value": 0.0
+   },
+   "tc Particular-27438": {
+    "name": "Fractal Strength Curve S14",
+    "value": 0.0
+   },
+   "tc Particular-27197": {
+    "name": "Size over Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27198": {
+    "name": "Opacity over Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27199": {
+    "name": "Color Gradient S14",
+    "value": 0.0
+   },
+   "tc Particular-29248": {
+    "name": "CompAssetPairs S15",
+    "value": 0.0
+   },
+   "tc Particular-29371": {
+    "name": "Emission over Parent Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29424": {
+    "name": "Velocity over Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29241": {
+    "name": "Size over Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29242": {
+    "name": "Opacity over Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29243": {
+    "name": "Color Gradient S15",
+    "value": 0.0
+   },
+   "tc Particular-29244": {
+    "name": "Blend Mode over Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29464": {
+    "name": "Disperse Strength Curve S15",
+    "value": 0.0
+   },
+   "tc Particular-29486": {
+    "name": "Fractal Strength Curve S15",
+    "value": 0.0
+   },
+   "tc Particular-29245": {
+    "name": "Size over Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29246": {
+    "name": "Opacity over Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29247": {
+    "name": "Color Gradient S15",
+    "value": 0.0
+   },
+   "tc Particular-31296": {
+    "name": "CompAssetPairs S16",
+    "value": 0.0
+   },
+   "tc Particular-31419": {
+    "name": "Emission over Parent Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31472": {
+    "name": "Velocity over Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31289": {
+    "name": "Size over Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31290": {
+    "name": "Opacity over Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31291": {
+    "name": "Color Gradient S16",
+    "value": 0.0
+   },
+   "tc Particular-31292": {
+    "name": "Blend Mode over Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31512": {
+    "name": "Disperse Strength Curve S16",
+    "value": 0.0
+   },
+   "tc Particular-31534": {
+    "name": "Fractal Strength Curve S16",
+    "value": 0.0
+   },
+   "tc Particular-31293": {
+    "name": "Size over Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31294": {
+    "name": "Opacity over Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31295": {
+    "name": "Color Gradient S16",
+    "value": 0.0
+   },
+   "tc Particular-0528": {
+    "name": "BuilderData",
+    "value": 0.0
+   },
+   "tc Particular-0566": {
+    "name": "InstanceControl",
+    "value": 0.0
+   }
+  }
+ },
+ {
+  "comp": "06",
+  "layer": null,
+  "n_params_present": 2413,
+  "touched": {
+   "tc Particular-0000": {
+    "name": "tc Particular-0000",
+    "value": 0.0
+   },
+   "tc Particular-0576": {
+    "name": "CompAssetPairs",
+    "value": 0.0
+   },
+   "tc Particular-0782": {
+    "name": "Emitter Type",
+    "value": 2.0,
+    "default": "1"
+   },
+   "tc Particular-0699": {
+    "name": "Emission over Parent Life",
+    "value": 0.0
+   },
+   "tc Particular-0581": {
+    "name": "Position",
+    "value": [
+     0.500813,
+     1.458654,
+     2.777778
+    ],
+    "default": "640,360,0"
+   },
+   "tc Particular-0003": {
+    "name": "Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "640,360"
+   },
+   "tc Particular-0607": {
+    "name": "Relative Position",
+    "value": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "default": "0,0,0"
+   },
+   "tc Particular-0014": {
+    "name": "Emitter Size XYZ",
+    "value": 3000.0,
+    "default": "500"
+   },
+   "tc Particular-0111": {
+    "name": "Y Rotation",
+    "value": 90.0,
+    "default": "0"
+   },
+   "tc Particular-0012": {
+    "name": "Velocity Random",
+    "value": 61.0,
+    "default": "20"
+   },
+   "tc Particular-0283": {
+    "name": "Velocity Distribution",
+    "value": 0.98,
+    "default": "0.5"
+   },
+   "tc Particular-0752": {
+    "name": "Velocity over Life",
+    "value": 0.0
+   },
+   "tc Particular-0002": {
+    "name": "Life (seconds)",
+    "value": 30.0,
+    "default": "3"
+   },
+   "tc Particular-0065": {
+    "name": "Life Random",
+    "value": 21.0,
+    "default": "0"
+   },
+   "tc Particular-0703": {
+    "name": "Particle Type",
+    "value": 4.0,
+    "default": "1"
+   },
+   "tc Particular-0027": {
+    "name": "Size",
+    "value": 3.0,
+    "default": "5"
+   },
+   "tc Particular-0074": {
+    "name": "Size Random",
+    "value": 25.0,
+    "default": "0"
+   },
+   "tc Particular-0569": {
+    "name": "Size Over Life",
+    "value": 0.0
+   },
+   "tc Particular-0075": {
+    "name": "Opacity Random",
+    "value": 10.0,
+    "default": "0"
+   },
+   "tc Particular-0570": {
+    "name": "Opacity Over Life",
+    "value": 0.0
+   },
+   "tc Particular-0088": {
+    "name": "Set Color",
+    "value": 2.0,
+    "default": "1"
+   },
+   "tc Particular-0571": {
+    "name": "Color Gradient",
+    "value": 0.0
+   },
+   "tc Particular-0572": {
+    "name": "Blend Mode over Life",
+    "value": 0.0
+   },
+   "tc Particular-0017": {
+    "name": "Gravity",
+    "value": -980.0,
+    "default": "0"
+   },
+   "tc Particular-0749": {
+    "name": "Wind X",
+    "value": 100.0,
+    "default": "0"
+   },
+   "tc Particular-0750": {
+    "name": "Wind Y",
+    "value": 198.0,
+    "default": "0"
+   },
+   "tc Particular-0751": {
+    "name": "Wind Z",
+    "value": 130.0,
+    "default": "0"
+   },
+   "tc Particular-0711": {
+    "name": "Affect Position",
+    "value": -165.0,
+    "default": "0"
+   },
+   "tc Particular-0715": {
+    "name": "Scale",
+    "value": 13.0,
+    "default": "10"
+   },
+   "tc Particular-0716": {
+    "name": "Complexity",
+    "value": 10.0,
+    "default": "3"
+   },
+   "tc Particular-0717": {
+    "name": "Octave Multiplier",
+    "value": 0.0,
+    "default": "0.5"
+   },
+   "tc Particular-0718": {
+    "name": "Octave Scale",
+    "value": 8.3,
+    "default": "1.5"
+   },
+   "tc Particular-0719": {
+    "name": "Evolution Speed",
+    "value": 71.0,
+    "default": "50"
+   },
+   "tc Particular-0662": {
+    "name": "Predator/Prey Behavior",
+    "value": 2.0,
+    "default": "1"
+   },
+   "tc Particular-0792": {
+    "name": "Disperse Strength Curve",
+    "value": 0.0
+   },
+   "tc Particular-0814": {
+    "name": "Fractal Strength Curve",
+    "value": 0.0
+   },
+   "tc Particular-0093": {
+    "name": "Position XY",
+    "value": [
+     0.5,
+     0.5
+    ],
+    "default": "640,360"
+   },
+   "tc Particular-0573": {
+    "name": "Size over Life",
+    "value": 0.0
+   },
+   "tc Particular-0574": {
+    "name": "Opacity over Life",
+    "value": 0.0
+   },
+   "tc Particular-0575": {
+    "name": "Color Gradient",
+    "value": 0.0
+   },
+   "tc Particular-0227": {
+    "name": "Pre Run (seconds)",
+    "value": 3.0,
+    "default": "0"
+   },
+   "tc Particular-0684": {
+    "name": "Enable Shadowlets",
+    "value": 1.0,
+    "default": "0"
+   },
+   "tc Particular-2624": {
+    "name": "CompAssetPairs S2",
+    "value": 0.0
+   },
+   "tc Particular-2747": {
+    "name": "Emission over Parent Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2800": {
+    "name": "Velocity over Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2617": {
+    "name": "Size over Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2618": {
+    "name": "Opacity over Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2619": {
+    "name": "Color Gradient S2",
+    "value": 0.0
+   },
+   "tc Particular-2620": {
+    "name": "Blend Mode over Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2840": {
+    "name": "Disperse Strength Curve S2",
+    "value": 0.0
+   },
+   "tc Particular-2862": {
+    "name": "Fractal Strength Curve S2",
+    "value": 0.0
+   },
+   "tc Particular-2621": {
+    "name": "Size over Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2622": {
+    "name": "Opacity over Life S2",
+    "value": 0.0
+   },
+   "tc Particular-2623": {
+    "name": "Color Gradient S2",
+    "value": 0.0
+   },
+   "tc Particular-4672": {
+    "name": "CompAssetPairs S3",
+    "value": 0.0
+   },
+   "tc Particular-4795": {
+    "name": "Emission over Parent Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4848": {
+    "name": "Velocity over Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4665": {
+    "name": "Size over Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4666": {
+    "name": "Opacity over Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4667": {
+    "name": "Color Gradient S3",
+    "value": 0.0
+   },
+   "tc Particular-4668": {
+    "name": "Blend Mode over Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4888": {
+    "name": "Disperse Strength Curve S3",
+    "value": 0.0
+   },
+   "tc Particular-4910": {
+    "name": "Fractal Strength Curve S3",
+    "value": 0.0
+   },
+   "tc Particular-4669": {
+    "name": "Size over Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4670": {
+    "name": "Opacity over Life S3",
+    "value": 0.0
+   },
+   "tc Particular-4671": {
+    "name": "Color Gradient S3",
+    "value": 0.0
+   },
+   "tc Particular-6720": {
+    "name": "CompAssetPairs S4",
+    "value": 0.0
+   },
+   "tc Particular-6843": {
+    "name": "Emission over Parent Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6896": {
+    "name": "Velocity over Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6713": {
+    "name": "Size over Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6714": {
+    "name": "Opacity over Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6715": {
+    "name": "Color Gradient S4",
+    "value": 0.0
+   },
+   "tc Particular-6716": {
+    "name": "Blend Mode over Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6936": {
+    "name": "Disperse Strength Curve S4",
+    "value": 0.0
+   },
+   "tc Particular-6958": {
+    "name": "Fractal Strength Curve S4",
+    "value": 0.0
+   },
+   "tc Particular-6717": {
+    "name": "Size over Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6718": {
+    "name": "Opacity over Life S4",
+    "value": 0.0
+   },
+   "tc Particular-6719": {
+    "name": "Color Gradient S4",
+    "value": 0.0
+   },
+   "tc Particular-8768": {
+    "name": "CompAssetPairs S5",
+    "value": 0.0
+   },
+   "tc Particular-8891": {
+    "name": "Emission over Parent Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8944": {
+    "name": "Velocity over Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8761": {
+    "name": "Size over Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8762": {
+    "name": "Opacity over Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8763": {
+    "name": "Color Gradient S5",
+    "value": 0.0
+   },
+   "tc Particular-8764": {
+    "name": "Blend Mode over Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8984": {
+    "name": "Disperse Strength Curve S5",
+    "value": 0.0
+   },
+   "tc Particular-9006": {
+    "name": "Fractal Strength Curve S5",
+    "value": 0.0
+   },
+   "tc Particular-8765": {
+    "name": "Size over Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8766": {
+    "name": "Opacity over Life S5",
+    "value": 0.0
+   },
+   "tc Particular-8767": {
+    "name": "Color Gradient S5",
+    "value": 0.0
+   },
+   "tc Particular-10816": {
+    "name": "CompAssetPairs S6",
+    "value": 0.0
+   },
+   "tc Particular-10939": {
+    "name": "Emission over Parent Life S6",
+    "value": 0.0
+   },
+   "tc Particular-10992": {
+    "name": "Velocity over Life S6",
+    "value": 0.0
+   },
+   "tc Particular-10809": {
+    "name": "Size over Life S6",
+    "value": 0.0
+   },
+   "tc Particular-10810": {
+    "name": "Opacity over Life S6",
+    "value": 0.0
+   },
+   "tc Particular-10811": {
+    "name": "Color Gradient S6",
+    "value": 0.0
+   },
+   "tc Particular-10812": {
+    "name": "Blend Mode over Life S6",
+    "value": 0.0
+   },
+   "tc Particular-11032": {
+    "name": "Disperse Strength Curve S6",
+    "value": 0.0
+   },
+   "tc Particular-11054": {
+    "name": "Fractal Strength Curve S6",
+    "value": 0.0
+   },
+   "tc Particular-10813": {
+    "name": "Size over Life S6",
+    "value": 0.0
+   },
+   "tc Particular-10814": {
+    "name": "Opacity over Life S6",
+    "value": 0.0
+   },
+   "tc Particular-10815": {
+    "name": "Color Gradient S6",
+    "value": 0.0
+   },
+   "tc Particular-12864": {
+    "name": "CompAssetPairs S7",
+    "value": 0.0
+   },
+   "tc Particular-12987": {
+    "name": "Emission over Parent Life S7",
+    "value": 0.0
+   },
+   "tc Particular-13040": {
+    "name": "Velocity over Life S7",
+    "value": 0.0
+   },
+   "tc Particular-12857": {
+    "name": "Size over Life S7",
+    "value": 0.0
+   },
+   "tc Particular-12858": {
+    "name": "Opacity over Life S7",
+    "value": 0.0
+   },
+   "tc Particular-12859": {
+    "name": "Color Gradient S7",
+    "value": 0.0
+   },
+   "tc Particular-12860": {
+    "name": "Blend Mode over Life S7",
+    "value": 0.0
+   },
+   "tc Particular-13080": {
+    "name": "Disperse Strength Curve S7",
+    "value": 0.0
+   },
+   "tc Particular-13102": {
+    "name": "Fractal Strength Curve S7",
+    "value": 0.0
+   },
+   "tc Particular-12861": {
+    "name": "Size over Life S7",
+    "value": 0.0
+   },
+   "tc Particular-12862": {
+    "name": "Opacity over Life S7",
+    "value": 0.0
+   },
+   "tc Particular-12863": {
+    "name": "Color Gradient S7",
+    "value": 0.0
+   },
+   "tc Particular-14912": {
+    "name": "CompAssetPairs S8",
+    "value": 0.0
+   },
+   "tc Particular-15035": {
+    "name": "Emission over Parent Life S8",
+    "value": 0.0
+   },
+   "tc Particular-15088": {
+    "name": "Velocity over Life S8",
+    "value": 0.0
+   },
+   "tc Particular-14905": {
+    "name": "Size over Life S8",
+    "value": 0.0
+   },
+   "tc Particular-14906": {
+    "name": "Opacity over Life S8",
+    "value": 0.0
+   },
+   "tc Particular-14907": {
+    "name": "Color Gradient S8",
+    "value": 0.0
+   },
+   "tc Particular-14908": {
+    "name": "Blend Mode over Life S8",
+    "value": 0.0
+   },
+   "tc Particular-15128": {
+    "name": "Disperse Strength Curve S8",
+    "value": 0.0
+   },
+   "tc Particular-15150": {
+    "name": "Fractal Strength Curve S8",
+    "value": 0.0
+   },
+   "tc Particular-14909": {
+    "name": "Size over Life S8",
+    "value": 0.0
+   },
+   "tc Particular-14910": {
+    "name": "Opacity over Life S8",
+    "value": 0.0
+   },
+   "tc Particular-14911": {
+    "name": "Color Gradient S8",
+    "value": 0.0
+   },
+   "tc Particular-16960": {
+    "name": "CompAssetPairs S9",
+    "value": 0.0
+   },
+   "tc Particular-17083": {
+    "name": "Emission over Parent Life S9",
+    "value": 0.0
+   },
+   "tc Particular-17136": {
+    "name": "Velocity over Life S9",
+    "value": 0.0
+   },
+   "tc Particular-16953": {
+    "name": "Size over Life S9",
+    "value": 0.0
+   },
+   "tc Particular-16954": {
+    "name": "Opacity over Life S9",
+    "value": 0.0
+   },
+   "tc Particular-16955": {
+    "name": "Color Gradient S9",
+    "value": 0.0
+   },
+   "tc Particular-16956": {
+    "name": "Blend Mode over Life S9",
+    "value": 0.0
+   },
+   "tc Particular-17176": {
+    "name": "Disperse Strength Curve S9",
+    "value": 0.0
+   },
+   "tc Particular-17198": {
+    "name": "Fractal Strength Curve S9",
+    "value": 0.0
+   },
+   "tc Particular-16957": {
+    "name": "Size over Life S9",
+    "value": 0.0
+   },
+   "tc Particular-16958": {
+    "name": "Opacity over Life S9",
+    "value": 0.0
+   },
+   "tc Particular-16959": {
+    "name": "Color Gradient S9",
+    "value": 0.0
+   },
+   "tc Particular-19008": {
+    "name": "CompAssetPairs S10",
+    "value": 0.0
+   },
+   "tc Particular-19131": {
+    "name": "Emission over Parent Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19184": {
+    "name": "Velocity over Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19001": {
+    "name": "Size over Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19002": {
+    "name": "Opacity over Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19003": {
+    "name": "Color Gradient S10",
+    "value": 0.0
+   },
+   "tc Particular-19004": {
+    "name": "Blend Mode over Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19224": {
+    "name": "Disperse Strength Curve S10",
+    "value": 0.0
+   },
+   "tc Particular-19246": {
+    "name": "Fractal Strength Curve S10",
+    "value": 0.0
+   },
+   "tc Particular-19005": {
+    "name": "Size over Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19006": {
+    "name": "Opacity over Life S10",
+    "value": 0.0
+   },
+   "tc Particular-19007": {
+    "name": "Color Gradient S10",
+    "value": 0.0
+   },
+   "tc Particular-21056": {
+    "name": "CompAssetPairs S11",
+    "value": 0.0
+   },
+   "tc Particular-21179": {
+    "name": "Emission over Parent Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21232": {
+    "name": "Velocity over Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21049": {
+    "name": "Size over Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21050": {
+    "name": "Opacity over Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21051": {
+    "name": "Color Gradient S11",
+    "value": 0.0
+   },
+   "tc Particular-21052": {
+    "name": "Blend Mode over Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21272": {
+    "name": "Disperse Strength Curve S11",
+    "value": 0.0
+   },
+   "tc Particular-21294": {
+    "name": "Fractal Strength Curve S11",
+    "value": 0.0
+   },
+   "tc Particular-21053": {
+    "name": "Size over Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21054": {
+    "name": "Opacity over Life S11",
+    "value": 0.0
+   },
+   "tc Particular-21055": {
+    "name": "Color Gradient S11",
+    "value": 0.0
+   },
+   "tc Particular-23104": {
+    "name": "CompAssetPairs S12",
+    "value": 0.0
+   },
+   "tc Particular-23227": {
+    "name": "Emission over Parent Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23280": {
+    "name": "Velocity over Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23097": {
+    "name": "Size over Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23098": {
+    "name": "Opacity over Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23099": {
+    "name": "Color Gradient S12",
+    "value": 0.0
+   },
+   "tc Particular-23100": {
+    "name": "Blend Mode over Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23320": {
+    "name": "Disperse Strength Curve S12",
+    "value": 0.0
+   },
+   "tc Particular-23342": {
+    "name": "Fractal Strength Curve S12",
+    "value": 0.0
+   },
+   "tc Particular-23101": {
+    "name": "Size over Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23102": {
+    "name": "Opacity over Life S12",
+    "value": 0.0
+   },
+   "tc Particular-23103": {
+    "name": "Color Gradient S12",
+    "value": 0.0
+   },
+   "tc Particular-25152": {
+    "name": "CompAssetPairs S13",
+    "value": 0.0
+   },
+   "tc Particular-25275": {
+    "name": "Emission over Parent Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25328": {
+    "name": "Velocity over Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25145": {
+    "name": "Size over Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25146": {
+    "name": "Opacity over Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25147": {
+    "name": "Color Gradient S13",
+    "value": 0.0
+   },
+   "tc Particular-25148": {
+    "name": "Blend Mode over Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25368": {
+    "name": "Disperse Strength Curve S13",
+    "value": 0.0
+   },
+   "tc Particular-25390": {
+    "name": "Fractal Strength Curve S13",
+    "value": 0.0
+   },
+   "tc Particular-25149": {
+    "name": "Size over Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25150": {
+    "name": "Opacity over Life S13",
+    "value": 0.0
+   },
+   "tc Particular-25151": {
+    "name": "Color Gradient S13",
+    "value": 0.0
+   },
+   "tc Particular-27200": {
+    "name": "CompAssetPairs S14",
+    "value": 0.0
+   },
+   "tc Particular-27323": {
+    "name": "Emission over Parent Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27376": {
+    "name": "Velocity over Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27193": {
+    "name": "Size over Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27194": {
+    "name": "Opacity over Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27195": {
+    "name": "Color Gradient S14",
+    "value": 0.0
+   },
+   "tc Particular-27196": {
+    "name": "Blend Mode over Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27416": {
+    "name": "Disperse Strength Curve S14",
+    "value": 0.0
+   },
+   "tc Particular-27438": {
+    "name": "Fractal Strength Curve S14",
+    "value": 0.0
+   },
+   "tc Particular-27197": {
+    "name": "Size over Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27198": {
+    "name": "Opacity over Life S14",
+    "value": 0.0
+   },
+   "tc Particular-27199": {
+    "name": "Color Gradient S14",
+    "value": 0.0
+   },
+   "tc Particular-29248": {
+    "name": "CompAssetPairs S15",
+    "value": 0.0
+   },
+   "tc Particular-29371": {
+    "name": "Emission over Parent Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29424": {
+    "name": "Velocity over Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29241": {
+    "name": "Size over Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29242": {
+    "name": "Opacity over Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29243": {
+    "name": "Color Gradient S15",
+    "value": 0.0
+   },
+   "tc Particular-29244": {
+    "name": "Blend Mode over Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29464": {
+    "name": "Disperse Strength Curve S15",
+    "value": 0.0
+   },
+   "tc Particular-29486": {
+    "name": "Fractal Strength Curve S15",
+    "value": 0.0
+   },
+   "tc Particular-29245": {
+    "name": "Size over Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29246": {
+    "name": "Opacity over Life S15",
+    "value": 0.0
+   },
+   "tc Particular-29247": {
+    "name": "Color Gradient S15",
+    "value": 0.0
+   },
+   "tc Particular-31296": {
+    "name": "CompAssetPairs S16",
+    "value": 0.0
+   },
+   "tc Particular-31419": {
+    "name": "Emission over Parent Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31472": {
+    "name": "Velocity over Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31289": {
+    "name": "Size over Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31290": {
+    "name": "Opacity over Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31291": {
+    "name": "Color Gradient S16",
+    "value": 0.0
+   },
+   "tc Particular-31292": {
+    "name": "Blend Mode over Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31512": {
+    "name": "Disperse Strength Curve S16",
+    "value": 0.0
+   },
+   "tc Particular-31534": {
+    "name": "Fractal Strength Curve S16",
+    "value": 0.0
+   },
+   "tc Particular-31293": {
+    "name": "Size over Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31294": {
+    "name": "Opacity over Life S16",
+    "value": 0.0
+   },
+   "tc Particular-31295": {
+    "name": "Color Gradient S16",
+    "value": 0.0
+   },
+   "tc Particular-0528": {
+    "name": "BuilderData",
+    "value": 0.0
+   },
+   "tc Particular-0566": {
+    "name": "InstanceControl",
+    "value": 0.0
+   }
+  }
+ }
+]
