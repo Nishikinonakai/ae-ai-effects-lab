@@ -343,8 +343,11 @@ for (const file of files) {
     ptype[2] += ` [Designer ${dsgn} -> Sprite + connected texture]`;
     ptype[1] = 6;
     params.push(['tc Particular-0066', { __layer: 'SpriteTex' }, 'Sprite texture layer (mined PLayer)']);
-    if (dsgn === 6 || dsgn === 9) params.push(['tc Particular-0700', 1, 'Colorize (Designer type variant)']);
-    if (dsgn === 7 || dsgn === 10) params.push(['tc Particular-0701', 1, 'Color Fill (Designer type variant)']);
+    // 0700/0701 are 0-100 AMOUNT sliders, not booleans (probed 2026-07-18: 1 -> 1% =
+    // invisible tint, white sprites; 100 -> full teal. Corroborated by the artist's own
+    // hibana project: petals rig authored Color Fill = 100).
+    if (dsgn === 6 || dsgn === 9) params.push(['tc Particular-0700', 100, 'Colorize (Designer type variant, 0-100)']);
+    if (dsgn === 7 || dsgn === 10) params.push(['tc Particular-0701', 100, 'Color Fill (Designer type variant, 0-100)']);
     const plTime = flat.FXid_PLayerTime;
     if (typeof plTime === 'number') params.push(['tc Particular-0067', plTime + 1, 'FXid_PLayerTime (+enumOffset)']);
     // keep the live unmult (0694) after the connect, and give fire-family luma sprites

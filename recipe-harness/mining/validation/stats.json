@@ -1,52 +1,192 @@
 {
- "falling-flares": {
-  "coverage": 0.1893,
+ "abstract-and-geometric-triangles-2d": {
+  "coverage": 0.0155,
   "mean_rgb": [
-   100,
-   55,
-   83
+   96,
+   145,
+   157
   ],
   "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/falling-flares/falling-flares_t4.png"
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/abstract-and-geometric-triangles-2d/abstract-and-geometric-triangles-2d_t4.png"
  },
- "fireplace": {
-  "coverage": 0.0192,
+ "low-poly-spheres": {
+  "coverage": 0.0374,
   "mean_rgb": [
-   200,
-   175,
-   132
+   53,
+   54,
+   53
   ],
   "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/fireplace/fireplace_t4.png"
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/low-poly-spheres/low-poly-spheres_t4.png"
  },
- "horizontal-fire": {
-  "coverage": 0.7607,
+ "rounded-cubes": {
+  "coverage": 0.1407,
   "mean_rgb": [
-   217,
-   187,
-   98
+   52,
+   52,
+   52
   ],
   "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/horizontal-fire/horizontal-fire_t4.png"
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/rounded-cubes/rounded-cubes_t4.png"
  },
- "horizontal-smoke-1": {
-  "coverage": 0.1269,
+ "stars-5-pt": {
+  "coverage": 0.0876,
   "mean_rgb": [
-   119,
-   119,
-   119
+   97,
+   97,
+   97
   ],
   "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/horizontal-smoke-1/horizontal-smoke-1_t4.png"
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/stars-5-pt/stars-5-pt_t4.png"
  },
- "horizontal-smoke-2": {
-  "coverage": 0.106,
+ "stars-6-pt": {
+  "coverage": 0.0839,
   "mean_rgb": [
-   128,
-   128,
-   128
+   92,
+   92,
+   92
   ],
   "flag": "ok",
-  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/horizontal-smoke-2/horizontal-smoke-2_t4.png"
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/stars-6-pt/stars-6-pt_t4.png"
+ },
+ "stars-8-pt": {
+  "coverage": 0.0669,
+  "mean_rgb": [
+   65,
+   65,
+   65
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/stars-8-pt/stars-8-pt_t4.png"
+ },
+ "confetti": {
+  "coverage": 0.0297,
+  "mean_rgb": [
+   36,
+   36,
+   32
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/confetti/confetti_t4.png"
+ },
+ "plasma-cloud-explosion-1": {
+  "coverage": 0.2085,
+  "mean_rgb": [
+   72,
+   27,
+   15
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/plasma-cloud-explosion-1/plasma-cloud-explosion-1_t0p7.png"
+ },
+ "plasma-cloud-explosion-2": {
+  "coverage": 0.1828,
+  "mean_rgb": [
+   74,
+   26,
+   19
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/plasma-cloud-explosion-2/plasma-cloud-explosion-2_t0p58000183105469.png"
+ },
+ "smoke-hit": {
+  "coverage": 0.0858,
+  "mean_rgb": [
+   63,
+   44,
+   30
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/smoke-hit/smoke-hit_t0p85.png"
+ },
+ "northern-lights": {
+  "coverage": 0.3484,
+  "mean_rgb": [
+   43,
+   58,
+   75
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/northern-lights/northern-lights_t4.png"
+ },
+ "flickering-lights": {
+  "coverage": 0.6978,
+  "mean_rgb": [
+   114,
+   57,
+   29
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/flickering-lights/flickering-lights_t4.png"
+ },
+ "motion-graphics-triangles-2d": {
+  "coverage": 0.0298,
+  "mean_rgb": [
+   98,
+   148,
+   160
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/motion-graphics-triangles-2d/motion-graphics-triangles-2d_t4.png"
+ },
+ "streak-brush-1": {
+  "coverage": 0.046,
+  "mean_rgb": [
+   61,
+   61,
+   61
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/streak-brush-1/streak-brush-1_t3.png"
+ },
+ "streak-brush-2": {
+  "coverage": 0.046,
+  "mean_rgb": [
+   61,
+   61,
+   61
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/streak-brush-2/streak-brush-2_t3.png"
+ },
+ "streak-brush-3": {
+  "coverage": 0.046,
+  "mean_rgb": [
+   61,
+   61,
+   61
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/streak-brush-3/streak-brush-3_t3.png"
+ },
+ "streak-brush-4": {
+  "coverage": 0.046,
+  "mean_rgb": [
+   61,
+   61,
+   61
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/streak-brush-4/streak-brush-4_t3.png"
+ },
+ "falling-feathers": {
+  "coverage": 0.1478,
+  "mean_rgb": [
+   14,
+   20,
+   25
+  ],
+  "flag": "ok",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/falling-feathers/falling-feathers_t4.png"
+ },
+ "smoke-plume": {
+  "coverage": 0.0,
+  "mean_rgb": [
+   0,
+   0,
+   0
+  ],
+  "flag": "empty",
+  "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation/frames/smoke-plume/smoke-plume_t2.png"
  }
 }

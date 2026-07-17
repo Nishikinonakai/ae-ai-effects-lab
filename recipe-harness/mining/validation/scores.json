@@ -1,6 +1,6 @@
 {
  "backend": "agent-vision",
- "date": "2026-07-16",
+ "date": "2026-07-18",
  "scores": {
   "black-triangle-slabs": {
    "verdict": "match",
@@ -44,8 +44,9 @@
   },
   "rounded-cubes": {
    "verdict": "match",
-   "class": "sprite-obj",
-   "round": "r6"
+   "class": "ok",
+   "round": "r8",
+   "note": "r8: cube swarm reproduces thumb structure+tone"
   },
   "stars-5-pt": {
    "verdict": "match",
@@ -64,8 +65,9 @@
   },
   "wireframe-pyramids": {
    "verdict": "fail",
-   "class": "sprite-obj",
-   "round": "r6"
+   "class": "obj-gated",
+   "round": "r8",
+   "note": "r8: soft blobs, needs OBJ master route"
   },
   "yellow-tech-balls": {
    "verdict": "match",
@@ -374,14 +376,16 @@
    "round": "r7"
   },
   "spark-directional": {
-   "verdict": "fail",
-   "class": "burst-sampling",
-   "round": "r7"
+   "verdict": "partial",
+   "class": "burst-streaks",
+   "round": "r8",
+   "note": "r8: clean-session render true directional cone; residue dots-vs-streaks"
   },
   "spark-single": {
-   "verdict": "fail",
-   "class": "burst-sampling",
-   "round": "r7"
+   "verdict": "partial",
+   "class": "burst-streaks",
+   "round": "r8",
+   "note": "r8: radial burst renders; residue dots-vs-streaks"
   },
   "spark-strings-1": {
    "verdict": "partial",
@@ -414,9 +418,10 @@
    "round": "r6"
   },
   "candle-flame": {
-   "verdict": "fail",
-   "class": "fluid-viz-suspect",
-   "round": "r6"
+   "verdict": "partial",
+   "class": "fluid-shape",
+   "round": "r8",
+   "note": "r8: cyan disc was buffer artifact — flame-orange core on clean session; shape residue"
   },
   "fumes": {
    "verdict": "partial",
@@ -667,22 +672,26 @@
   "streak-brush-1": {
    "verdict": "partial",
    "class": "aux-s2-color",
-   "round": "r6"
+   "round": "r6",
+   "note": "r8 lead: Color S2 name-twins 2118(set,inert?)/2598(add-test -> white flood); S2 gradient unscriptable"
   },
   "streak-brush-2": {
    "verdict": "partial",
    "class": "aux-s2-color",
-   "round": "r6"
+   "round": "r6",
+   "note": "r8 lead: Color S2 name-twins 2118(set,inert?)/2598(add-test -> white flood); S2 gradient unscriptable"
   },
   "streak-brush-3": {
    "verdict": "partial",
    "class": "aux-s2-color",
-   "round": "r6"
+   "round": "r6",
+   "note": "r8 lead: Color S2 name-twins 2118(set,inert?)/2598(add-test -> white flood); S2 gradient unscriptable"
   },
   "streak-brush-4": {
    "verdict": "partial",
    "class": "aux-s2-color",
-   "round": "r6"
+   "round": "r6",
+   "note": "r8 lead: Color S2 name-twins 2118(set,inert?)/2598(add-test -> white flood); S2 gradient unscriptable"
   },
   "tempest": {
    "verdict": "partial",
@@ -919,9 +928,10 @@
    "round": "r6"
   },
   "abstract-and-geometric-triangles-2d": {
-   "verdict": "fail",
-   "class": "sprite-missing",
-   "round": "r6"
+   "verdict": "partial",
+   "class": "sprite-color",
+   "round": "r8",
+   "note": "r8: 0700 Colorize is 0-100 amount — teal applies; size/opacity residue"
   },
   "basics-single-glow": {
    "verdict": "match",
@@ -929,9 +939,10 @@
    "round": "r6"
   },
   "motion-graphics-triangles-2d": {
-   "verdict": "fail",
-   "class": "sprite-missing",
-   "round": "r6"
+   "verdict": "partial",
+   "class": "sprite-color",
+   "round": "r8",
+   "note": "r8: same colorize fix; multicolor variation residue"
   },
   "motion-graphics-single-glow": {
    "verdict": "match",
@@ -939,5 +950,5 @@
    "round": "r6"
   }
  },
- "round": "r3-complete (186/186 at miner-v3+r3)"
+ "round": "r8-partial"
 }

@@ -219,6 +219,34 @@ instantly and scored old pixels). bridge_down.sh: kill -9 + verify-dead +
 queue-file reset (SIGTERM-surviving zombies raced the new instance on
 ae_command.json — the "poisoned fresh instance" mechanism).
 
+## Round-8 (2026-07-18): 49 match / 107 partial / 30 fail — colorize amount-slider discovery
+
+Clean-session re-validation of 6 stale fails + the 19 colorize-carrying sprite drafts:
+
+1. **0700 Colorize / 0701 Color Fill are 0-100 AMOUNT sliders, not booleans.** The r4
+   sprite chain wrote `1` = 1% tint = invisible → the whole sprite-color residue (white
+   triangles). Probed: 1 → white, 100 → full teal. **Corroborated by the artist's own
+   hibana project** (brownfield survey: petals rig authors Color Fill = 100). Miner fixed,
+   19 drafts regenerated + re-validated: triangles-2d ×2 fail→partial, stars ×3 / cubes
+   stay match, no regressions.
+2. **burst-sampling class CLOSED**: spark-directional/single render true cones/bursts on
+   a clean session (the r7 [0.01,0.08] sampling fix works); residue is dots-vs-streaks
+   (motion-blur/streaklet class), reclassed burst-streaks.
+3. **fluid-viz-suspect class CLOSED**: candle-flame's cyan disc never reproduced on a
+   clean session — it was the saveFrameToPng buffer-misattribution artifact. Renders a
+   flame-orange glow core; residue = fluid buoyancy shape (no teardrop rise) → fluid-shape.
+4. **sprite-missing reclassed**: the Triangle Fill.png refs EXIST on disk (import works;
+   classification predated the path fix). wireframe-pyramids → obj-gated (needs the
+   use-comp OBJ master route).
+5. **New lead — Color S2 name-twins 2118/2598**: the miner's flattened S2 color goes to
+   2118 (label sets fine, spray renders WHITE); the artist dump shows a second "Color S2"
+   at 2598; add-testing 2598 on streak-brush-1 produced a full-frame white flood (S2
+   psec interaction?). The streak-brush color route needs a settability/gradient probe —
+   round-9 queue.
+6. Brownfield note: `brownfield/aep_params.py` (new) extracts per-instance effect values
+   from real .aep files — the artist-recipe survey it produced is in
+   `brownfield/AMV_SURVEY.md` (ambient-dust / petals / text-dissolve / wind-dust rigs).
+
 ## Round-7 queue (by yield)
 
 1. **Render-hang class — SOLVED 2026-07-17 (reverse bisect): the drafts are

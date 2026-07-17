@@ -1490,8 +1490,8 @@
         ],
         [
           "tc Particular-0700",
-          1,
-          "Colorize (Designer type variant)"
+          100,
+          "Colorize (Designer type variant, 0-100)"
         ],
         [
           "tc Particular-0067",

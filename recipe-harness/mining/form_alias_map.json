@@ -1,0 +1,5800 @@
+{
+ "FXid_SizeCurveOffset": {
+  "norm": "size curve offset",
+  "modal_value": 100,
+  "n": 82,
+  "target": "tc Form-0494",
+  "targetName": "Size Curve Offset",
+  "group": "Particle",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0494",
+    "name": "Size Curve Offset",
+    "group": "Particle",
+    "default": "100",
+    "min": 0,
+    "max": 200,
+    "type": "1D"
+   }
+  ],
+  "note": "Size Curve Offset, default 100 (n=82: 5 presets carry a doubled Size/Rotation block). Curve itself = FXid_SizeCurveArb -> CUSTOM 0493 (out of scope).",
+  "designerGroup": "particle"
+ },
+ "FXid_BaseShape": {
+  "norm": "base shape",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0003",
+  "targetName": "Base Form",
+  "group": "Base Form",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0003",
+    "name": "Base Form",
+    "group": "Base Form",
+    "default": "1",
+    "min": 1,
+    "max": 5,
+    "type": "1D"
+   }
+  ],
+  "note": "Base Form popup [1..5]: Designer 0..4 (+1) = 1 Box-Grid / 2 Box-Strings / 3 Sphere-Layered / 4 OBJ Model / 5 Text-Mask. Modal 0->1 = card default. Observed 0,1,2,3 (Text never used by vendor). Gates the String/3D-Model/Text sub-blocks; set FIRST.",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "0": 48,
+   "1": 19,
+   "2": 4,
+   "3": 6
+  }
+ },
+ "FXid_BaseShapeAngleX": {
+  "norm": "base shape angle x",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0012",
+  "targetName": "X Rotation",
+  "group": "Base Form",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0012",
+    "name": "X Rotation",
+    "group": "Base Form",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0439",
+    "name": "X Rotation",
+    "group": "Spherical Field > Sphere 1",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0445",
+    "name": "X Rotation",
+    "group": "Spherical Field > Sphere 2",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Base Form > X Rotation. Same display name at Sphere1/2 (0439/0445) — group pins this one.",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "0": 57,
+   "1": 1,
+   "10": 1,
+   "19": 1,
+   "34": 1,
+   "49": 1,
+   "134": 1,
+   "183": 2,
+   "182.586669921875": 2,
+   "145.1999969482422": 2,
+   "175.586669921875": 2,
+   "2.100006103515625": 1
+  }
+ },
+ "FXid_BaseShapeAngleY": {
+  "norm": "base shape angle y",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0013",
+  "targetName": "Y Rotation",
+  "group": "Base Form",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0013",
+    "name": "Y Rotation",
+    "group": "Base Form",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0440",
+    "name": "Y Rotation",
+    "group": "Spherical Field > Sphere 1",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0446",
+    "name": "Y Rotation",
+    "group": "Spherical Field > Sphere 2",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Base Form > Y Rotation.",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "0": 57,
+   "1": 2,
+   "2": 1,
+   "25": 1,
+   "90": 11,
+   "328": 1,
+   "-44": 2,
+   "44.399993896484375": 1,
+   "-42": 1
+  }
+ },
+ "FXid_BaseShapeAngleZ": {
+  "norm": "base shape angle z",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0014",
+  "targetName": "Z Rotation",
+  "group": "Base Form",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0014",
+    "name": "Z Rotation",
+    "group": "Base Form",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0441",
+    "name": "Z Rotation",
+    "group": "Spherical Field > Sphere 1",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0447",
+    "name": "Z Rotation",
+    "group": "Spherical Field > Sphere 2",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Base Form > Z Rotation.",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "0": 65,
+   "6": 1,
+   "16": 1,
+   "20": 1,
+   "39": 1,
+   "63": 2,
+   "81": 1,
+   "90": 1,
+   "147": 1,
+   "248": 1,
+   "-26": 1,
+   "-9": 1
+  }
+ },
+ "FXid_BaseShapeParticlesX": {
+  "norm": "base shape particles x",
+  "modal_value": 70,
+  "n": 77,
+  "target": "tc Form-0007",
+  "targetName": "Particles in X",
+  "group": "Base Form",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0007",
+    "name": "Particles in X",
+    "group": "Base Form",
+    "default": "70",
+    "min": 1,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "Particles in X; default 70 = modal 70.",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "20": 3,
+   "34": 6,
+   "70": 21,
+   "76": 3,
+   "100": 2,
+   "131": 4,
+   "150": 2,
+   "200": 4,
+   "400": 2,
+   "500": 4,
+   "613": 2,
+   "800": 4
+  }
+ },
+ "FXid_BaseShapeParticlesY": {
+  "norm": "base shape particles y",
+  "modal_value": 70,
+  "n": 77,
+  "target": "tc Form-0008",
+  "targetName": "Particles in Y",
+  "group": "Base Form",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0008",
+    "name": "Particles in Y",
+    "group": "Base Form",
+    "default": "70",
+    "min": 1,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "Particles in Y.",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "1": 4,
+   "10": 3,
+   "20": 2,
+   "25": 3,
+   "30": 9,
+   "36": 2,
+   "40": 5,
+   "70": 10,
+   "80": 3,
+   "291": 2,
+   "400": 3,
+   "800": 2
+  }
+ },
+ "FXid_BaseShapeParticlesZ": {
+  "norm": "base shape particles z",
+  "modal_value": 1,
+  "n": 77,
+  "target": "tc Form-0009",
+  "targetName": "Particles in Z",
+  "group": "Base Form",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0009",
+    "name": "Particles in Z",
+    "group": "Base Form",
+    "default": "3",
+    "min": 1,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "Particles in Z; modal 1 (2D presets).",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "1": 50,
+   "3": 15,
+   "4": 1,
+   "6": 1,
+   "8": 4,
+   "12": 1,
+   "25": 1,
+   "200": 1,
+   "300": 3
+  }
+ },
+ "FXid_BaseShapeSizeOption": {
+  "norm": "base shape size option",
+  "modal_value": 1,
+  "n": 77,
+  "target": "tc Form-0489",
+  "targetName": "Base Form Size",
+  "group": "Base Form",
+  "via": "exact-name",
+  "confidence": "med",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0489",
+    "name": "Base Form Size",
+    "group": "Base Form",
+    "default": "1",
+    "min": 1,
+    "max": 2,
+    "type": "1D"
+   }
+  ],
+  "note": "Base Form Size mode [1..2] (+1: modal 1 -> 2 = Individual XYZ). Same trap class as Particular 0577: value 1 likely LOCKS/hides Size Y/Z — set BEFORE 0005/0006. Card default 1; vendor modal 2 after offset. PROBE gate behavior.",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "0": 13,
+   "1": 64
+  }
+ },
+ "FXid_BaseShapeSizeX": {
+  "norm": "base shape size x",
+  "modal_value": 3120,
+  "n": 77,
+  "target": "tc Form-0004",
+  "targetName": "Base Form Size X",
+  "group": "Base Form",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0004",
+    "name": "Base Form Size X",
+    "group": "Base Form",
+    "default": "500",
+    "min": 0,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "Base Form Size X (absolute px).",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "260": 2,
+   "300": 2,
+   "400": 2,
+   "500": 5,
+   "660": 2,
+   "800": 2,
+   "1180": 3,
+   "1920": 7,
+   "2000": 5,
+   "2500": 3,
+   "2510": 3,
+   "3120": 11
+  }
+ },
+ "FXid_BaseShapeSizeY": {
+  "norm": "base shape size y",
+  "modal_value": 500,
+  "n": 77,
+  "target": "tc Form-0005",
+  "targetName": "Base Form Size Y",
+  "group": "Base Form",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0005",
+    "name": "Base Form Size Y",
+    "group": "Base Form",
+    "default": "500",
+    "min": 0,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "Hidden/inert unless 0489=2 — order after 0489.",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "150": 1,
+   "200": 6,
+   "300": 8,
+   "400": 1,
+   "500": 16,
+   "600": 2,
+   "1080": 9,
+   "1360": 12,
+   "1400": 3,
+   "1470": 2,
+   "1950": 2,
+   "2200": 2
+  }
+ },
+ "FXid_BaseShapeSizeZ": {
+  "norm": "base shape size z",
+  "modal_value": 200,
+  "n": 77,
+  "target": "tc Form-0006",
+  "targetName": "Base Form Size Z",
+  "group": "Base Form",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0006",
+    "name": "Base Form Size Z",
+    "group": "Base Form",
+    "default": "500",
+    "min": 0,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "Hidden/inert unless 0489=2.",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "0": 7,
+   "80": 11,
+   "200": 20,
+   "240": 4,
+   "250": 1,
+   "300": 5,
+   "310": 1,
+   "500": 19,
+   "640": 1,
+   "1000": 1,
+   "1500": 3,
+   "2090": 1
+  }
+ },
+ "FXid_ModelInvertZ": {
+  "norm": "model invert z",
+  "modal_value": false,
+  "n": 77,
+  "target": "tc Form-0468",
+  "targetName": "Invert Z",
+  "group": "Base Form > 3D Model Settings",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0468",
+    "name": "Invert Z",
+    "group": "Base Form > 3D Model Settings",
+    "default": "0",
+    "min": 0,
+    "max": 1,
+    "type": "1D"
+   }
+  ],
+  "note": "3D Model > Invert Z bool 0/1; always false in packs.",
+  "designerGroup": "Base Form"
+ },
+ "FXid_ModelOffset": {
+  "norm": "model offset",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0460",
+  "targetName": "Sequence Offset",
+  "group": "Base Form > 3D Model Settings",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0460",
+    "name": "Sequence Offset",
+    "group": "Base Form > 3D Model Settings",
+    "default": "0",
+    "min": 0,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "3D Model > Sequence Offset, default 0 = modal.",
+  "designerGroup": "Base Form"
+ },
+ "FXid_ModelSpeed": {
+  "norm": "model speed",
+  "modal_value": 1,
+  "n": 77,
+  "target": "tc Form-0459",
+  "targetName": "Sequence Speed",
+  "group": "Base Form > 3D Model Settings",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0459",
+    "name": "Sequence Speed",
+    "group": "Base Form > 3D Model Settings",
+    "default": "1",
+    "min": 0,
+    "max": 50,
+    "type": "1D"
+   }
+  ],
+  "note": "3D Model > Sequence Speed, default 1 = modal.",
+  "designerGroup": "Base Form"
+ },
+ "FXid_NormalizeObj": {
+  "norm": "normalize obj",
+  "modal_value": true,
+  "n": 77,
+  "target": "tc Form-0469",
+  "targetName": "Normalize",
+  "group": "Base Form > 3D Model Settings",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0469",
+    "name": "Normalize",
+    "group": "Base Form > 3D Model Settings",
+    "default": "1",
+    "min": 0,
+    "max": 1,
+    "type": "1D"
+   }
+  ],
+  "note": "3D Model > Normalize bool, default 1 = modal true.",
+  "designerGroup": "Base Form"
+ },
+ "FXid_Options_OBJDensity": {
+  "norm": "obj density",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0487",
+  "targetName": "Particle Density",
+  "group": "Base Form > 3D Model Settings",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0487",
+    "name": "Particle Density",
+    "group": "Base Form > 3D Model Settings",
+    "default": "100",
+    "min": 0,
+    "max": 1000,
+    "type": "1D"
+   }
+  ],
+  "note": "3D Model > Particle Density, default 100 = modal.",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "6": 1,
+   "10": 1,
+   "46": 1,
+   "53": 1,
+   "59": 1,
+   "100": 72
+  }
+ },
+ "FXid_Options_OBJEmitFrom": {
+  "norm": "obj emit from",
+  "modal_value": 1,
+  "n": 77,
+  "target": "tc Form-0486",
+  "targetName": "Particles From",
+  "group": "Base Form > 3D Model Settings",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0486",
+    "name": "Particles From",
+    "group": "Base Form > 3D Model Settings",
+    "default": "2",
+    "min": 1,
+    "max": 4,
+    "type": "1D"
+   }
+  ],
+  "note": "Particles From [1..4] (+1: modal 1 -> 2 = card default; same pattern as Particular 0535: Vertices/Edges/Faces/Volume).",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "1": 74,
+   "2": 3
+  }
+ },
+ "FXid_Options_OBJIgnoreImportedUV": {
+  "norm": "obj ignore imported uv",
+  "modal_value": false,
+  "n": 77,
+  "target": "tc Form-0488",
+  "targetName": "Ignore Imported UVs",
+  "group": "Base Form > 3D Model Settings",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0488",
+    "name": "Ignore Imported UVs",
+    "group": "Base Form > 3D Model Settings",
+    "default": "1",
+    "min": 0,
+    "max": 1,
+    "type": "1D"
+   }
+  ],
+  "note": "Ignore Imported UVs bool. NOTE: card default 1 but Designer default false (72/77) — vendor intentionally writes 0; keep the write.",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "false": 72,
+   "true": 5
+  }
+ },
+ "FXid_StringDensity": {
+  "norm": "string density",
+  "modal_value": 15,
+  "n": 77,
+  "target": "tc Form-0016",
+  "targetName": "Density",
+  "group": "Base Form > String Settings",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0016",
+    "name": "Density",
+    "group": "Base Form > String Settings",
+    "default": "15",
+    "min": 0,
+    "max": 1000,
+    "type": "1D"
+   }
+  ],
+  "note": "String Settings > Density, default 15 = modal. Only live when Base Form=2 (Box-Strings).",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "2": 4,
+   "6": 2,
+   "7": 1,
+   "9": 1,
+   "12": 1,
+   "13": 5,
+   "15": 55,
+   "17": 1,
+   "20": 1,
+   "21": 4,
+   "80": 1,
+   "100": 1
+  }
+ },
+ "FXid_StringSizeRnd": {
+  "norm": "string size rnd",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0017",
+  "targetName": "Size Random",
+  "group": "Base Form > String Settings",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0017",
+    "name": "Size Random",
+    "group": "Base Form > String Settings",
+    "default": "0",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0034",
+    "name": "Size Random",
+    "group": "Particle",
+    "default": "0",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "String Settings > Size Random (0034 name-twin is Particle-level — group pins).",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "0": 68,
+   "1": 2,
+   "5": 1,
+   "8": 3,
+   "27": 2,
+   "33": 1
+  }
+ },
+ "FXid_StringSizeRndDistr": {
+  "norm": "string size rnd distr",
+  "modal_value": 3,
+  "n": 77,
+  "target": "tc Form-0018",
+  "targetName": "Size Rnd Distribution",
+  "group": "Base Form > String Settings",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0018",
+    "name": "Size Rnd Distribution",
+    "group": "Base Form > String Settings",
+    "default": "3",
+    "min": 1,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Size Rnd Distribution, default 3 = modal.",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "3": 70,
+   "3.2600000000000002": 6,
+   "1.5": 1
+  }
+ },
+ "FXid_StringTaperOpac": {
+  "norm": "string taper opac",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0020",
+  "targetName": "Taper Opacity",
+  "group": "Base Form > String Settings",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0020",
+    "name": "Taper Opacity",
+    "group": "Base Form > String Settings",
+    "default": "1",
+    "min": 1,
+    "max": 3,
+    "type": "1D"
+   }
+  ],
+  "note": "Taper Opacity popup [1..3] (+1).",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "0": 69,
+   "1": 8
+  }
+ },
+ "FXid_StringTaperSize": {
+  "norm": "string taper size",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0019",
+  "targetName": "Taper Size",
+  "group": "Base Form > String Settings",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0019",
+    "name": "Taper Size",
+    "group": "Base Form > String Settings",
+    "default": "1",
+    "min": 1,
+    "max": 3,
+    "type": "1D"
+   }
+  ],
+  "note": "Taper Size popup [1..3] (+1: 0 None/1/2 -> 1..3; modal 0->1=default).",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "0": 63,
+   "1": 12,
+   "2": 2
+  }
+ },
+ "FXid_PFeather": {
+  "norm": "p feather",
+  "modal_value": 50,
+  "n": 77,
+  "target": "tc Form-0025",
+  "targetName": "Sphere Feather",
+  "group": "Particle",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0025",
+    "name": "Sphere Feather",
+    "group": "Particle",
+    "default": "50",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere Feather, default 50 = modal.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 6,
+   "34": 4,
+   "50": 66,
+   "100": 1
+  }
+ },
+ "FXid_PLayerMultiClips": {
+  "norm": "p layer multi clips",
+  "modal_value": 2,
+  "n": 77,
+  "target": "tc Form-0029",
+  "targetName": "Number of Clips",
+  "group": "Particle > Texture",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0029",
+    "name": "Number of Clips",
+    "group": "Particle > Texture",
+    "default": "2",
+    "min": 2,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Texture > Number of Clips, default 2 = modal (always 2 in packs — inert).",
+  "designerGroup": "particle"
+ },
+ "FXid_PLayerSubFrame": {
+  "norm": "p layer sub frame",
+  "modal_value": false,
+  "n": 77,
+  "target": "tc Form-0030",
+  "targetName": "Subframe Sampling",
+  "group": "Particle > Texture",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0030",
+    "name": "Subframe Sampling",
+    "group": "Particle > Texture",
+    "default": "0",
+    "min": 0,
+    "max": 1,
+    "type": "1D"
+   }
+  ],
+  "note": "Texture > Subframe Sampling bool 0/1.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "false": 66,
+   "true": 11
+  }
+ },
+ "FXid_PLayerTime": {
+  "norm": "p layer time",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0028",
+  "targetName": "Time Sampling",
+  "group": "Particle > Texture",
+  "via": "ranked-candidate",
+  "confidence": "med",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0028",
+    "name": "Time Sampling",
+    "group": "Particle > Texture",
+    "default": "3",
+    "min": 1,
+    "max": 4,
+    "type": "1D"
+   }
+  ],
+  "note": "Texture > Time Sampling [1..4], card default 3; Designer 0,1,2 -> +1. Particular precedent (PLayerTime+1 -> 0067). Sprite-gated: hidden until the 0027 layer connect — set AFTER connect (Particular round-7 lesson).",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 56,
+   "1": 16,
+   "2": 5
+  }
+ },
+ "FXid_PTMode": {
+  "norm": "pt mode",
+  "modal_value": 1,
+  "n": 77,
+  "target": "tc Form-0037",
+  "targetName": "Blend Mode",
+  "group": "Particle",
+  "via": "ranked-candidate",
+  "confidence": "med",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0037",
+    "name": "Blend Mode",
+    "group": "Particle",
+    "default": "1",
+    "min": 1,
+    "max": 4,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0255",
+    "name": "Blend Mode",
+    "group": "Particle > Glow",
+    "default": "1",
+    "min": 1,
+    "max": 3,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0279",
+    "name": "Blend Mode",
+    "group": "Rendering",
+    "default": "1",
+    "min": 1,
+    "max": 22,
+    "type": "1D"
+   }
+  ],
+  "note": "Hypothesis: PTMode = Particle Transfer(Blend) Mode -> Blend Mode [1..4] (+1: 0 Normal/1 Add/2 Screen). Evidence: Particular PTMode spans 0..5 = its Transfer Mode [1..6]; Form shows 0..2 within [1..4]; mode 0 on solid-geometry presets, 1 on glow aesthetics (66/77), 2 on soft accumulations. Long-unresolved id — PROBE.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 8,
+   "1": 66,
+   "2": 3
+  }
+ },
+ "FXid_PType": {
+  "norm": "p type",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0024",
+  "targetName": "Particle Type",
+  "group": "Particle",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0024",
+    "name": "Particle Type",
+    "group": "Particle",
+    "default": "1",
+    "min": 1,
+    "max": 12,
+    "type": "1D"
+   }
+  ],
+  "note": "Particle Type [1..12] (+1). Unlike Particular v2023 (6 types + colorize/fill booleans), Form keeps the variants in the popup: presumed 1 Sphere / 2 Glow Sphere / 3 Star / 4 Cloudlet / 5 Streaklet / 6 Sprite / 7 Sprite Colorize / 8 Sprite Fill / 9-11 Textured Polygon variants / 12 Square. Pack evidence: Designer 4 = Streaklet (Streaklet Twist preset), 5/6/7 all carry sprite assets. PROBE the table live before trusting 5..8.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 42,
+   "1": 13,
+   "4": 1,
+   "5": 2,
+   "6": 17,
+   "7": 2
+  }
+ },
+ "FXid_SE_Emitter": {
+  "norm": "se emitter",
+  "modal_value": 0,
+  "n": 77,
+  "target": null,
+  "targetName": null,
+  "group": null,
+  "via": "skip",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [],
+  "note": "Aux/multi-system concept; always 0 (off) in all 77 presets. Form v2023 multi-form lives in Show Forms 0539 + F2..F8 blocks — nothing to map for a single-form preset.",
+  "designerGroup": "particle"
+ },
+ "FXid_Settings_Glow_Feather": {
+  "norm": "glow feather",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0254",
+  "targetName": "Feather",
+  "group": "Particle > Glow",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0254",
+    "name": "Feather",
+    "group": "Particle > Glow",
+    "default": "100",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0191",
+    "name": "Feather",
+    "group": "Spherical Field > Sphere 1",
+    "default": "50",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0199",
+    "name": "Feather",
+    "group": "Spherical Field > Sphere 2",
+    "default": "50",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Glow > Feather, default 100 = modal.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "4": 2,
+   "25": 1,
+   "100": 74
+  }
+ },
+ "FXid_Settings_Glow_Opacity": {
+  "norm": "glow opacity",
+  "modal_value": 25,
+  "n": 77,
+  "target": "tc Form-0253",
+  "targetName": "Opacity",
+  "group": "Particle > Glow",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0253",
+    "name": "Opacity",
+    "group": "Particle > Glow",
+    "default": "25",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0035",
+    "name": "Opacity",
+    "group": "Particle",
+    "default": "100",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0260",
+    "name": "Opacity",
+    "group": "Particle",
+    "default": "50",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0422",
+    "name": "Opacity",
+    "group": "Shading > Shadowlet Settings",
+    "default": "5",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0289",
+    "name": "Opacity",
+    "group": "Rendering",
+    "default": "100",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Glow > Opacity, default 25 = modal.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "14": 2,
+   "24": 1,
+   "25": 74
+  }
+ },
+ "FXid_Settings_Glow_Size": {
+  "norm": "glow size",
+  "modal_value": 300,
+  "n": 77,
+  "target": "tc Form-0252",
+  "targetName": "Size",
+  "group": "Particle > Glow",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0252",
+    "name": "Size",
+    "group": "Particle > Glow",
+    "default": "300",
+    "min": 0,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0033",
+    "name": "Size",
+    "group": "Particle",
+    "default": "2",
+    "min": 0,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "Glow > Size, default 300 = modal.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "300": 75,
+   "331": 2
+  }
+ },
+ "FXid_Settings_Glow_TransferMode": {
+  "norm": "glow transfer mode",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0255",
+  "targetName": "Blend Mode",
+  "group": "Particle > Glow",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0255",
+    "name": "Blend Mode",
+    "group": "Particle > Glow",
+    "default": "1",
+    "min": 1,
+    "max": 3,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0037",
+    "name": "Blend Mode",
+    "group": "Particle",
+    "default": "1",
+    "min": 1,
+    "max": 4,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0279",
+    "name": "Blend Mode",
+    "group": "Rendering",
+    "default": "1",
+    "min": 1,
+    "max": 22,
+    "type": "1D"
+   }
+  ],
+  "note": "Glow > Blend Mode [1..3] (+1: modal 0 -> 1 = default).",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 69,
+   "1": 5,
+   "2": 3
+  }
+ },
+ "FXid_Streaklet_NoSpheres": {
+  "norm": "streaklet no spheres",
+  "modal_value": 7,
+  "n": 77,
+  "target": "tc Form-0291",
+  "targetName": "Number of Streaks",
+  "group": "Particle > Streaklet",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0291",
+    "name": "Number of Streaks",
+    "group": "Particle > Streaklet",
+    "default": "7",
+    "min": 1,
+    "max": 50,
+    "type": "1D"
+   }
+  ],
+  "note": "Number of Streaks, default 7 = modal.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "7": 76,
+   "8.9": 1
+  }
+ },
+ "FXid_Streaklet_RandomSeed": {
+  "norm": "streaklet random seed",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0290",
+  "targetName": "Streaklet Random Seed",
+  "group": "Particle > Streaklet",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0290",
+    "name": "Streaklet Random Seed",
+    "group": "Particle > Streaklet",
+    "default": "0",
+    "min": 0,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "Streaklet Random Seed.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 76,
+   "70": 1
+  }
+ },
+ "FXid_Streaklet_Spread": {
+  "norm": "streaklet spread",
+  "modal_value": 60,
+  "n": 77,
+  "target": "tc Form-0292",
+  "targetName": "Streak Size",
+  "group": "Particle > Streaklet",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0292",
+    "name": "Streak Size",
+    "group": "Particle > Streaklet",
+    "default": "60",
+    "min": 0,
+    "max": 200,
+    "type": "1D"
+   }
+  ],
+  "note": "Streak Size, default 60 = modal.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "15": 1,
+   "60": 76
+  }
+ },
+ "FXid_Time_RandomSeed": {
+  "norm": "time random seed",
+  "modal_value": 1,
+  "n": 77,
+  "target": "tc Form-0301",
+  "targetName": "Random Seed",
+  "group": "Particle > Texture",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0301",
+    "name": "Random Seed",
+    "group": "Particle > Texture",
+    "default": "1",
+    "min": 0,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0604",
+    "name": "Random Seed",
+    "group": "Particle",
+    "default": "0",
+    "min": 0,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0290",
+    "name": "Streaklet Random Seed",
+    "group": "Particle > Streaklet",
+    "default": "0",
+    "min": 0,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0593",
+    "name": "Random Seed",
+    "group": "Fluid",
+    "default": "0",
+    "min": 0,
+    "max": 32767,
+    "type": "1D"
+   }
+  ],
+  "note": "Texture > Random Seed (default 1 = modal 1). Three other Random Seed params in F1 (0604 particle-level d=0, 0290 streaklet, 0593 fluid) — default-pair picks 0301; probe.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 23,
+   "1": 54
+  }
+ },
+ "FXid_PRotate": {
+  "norm": "p rotate",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0032",
+  "targetName": "Rotate Z",
+  "group": "Particle > Rotation",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0032",
+    "name": "Rotate Z",
+    "group": "Particle > Rotation",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Rotation > Rotate Z (Designer 2D rotate = Z, as in Particular 0136).",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 69,
+   "19": 2,
+   "45": 1,
+   "90": 1,
+   "180": 4
+  }
+ },
+ "FXid_PRotateRnd": {
+  "norm": "p rotate rnd",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0296",
+  "targetName": "Random Rotation",
+  "group": "Particle > Rotation",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0296",
+    "name": "Random Rotation",
+    "group": "Particle > Rotation",
+    "default": "0",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Random Rotation [0..100].",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 76,
+   "79": 1
+  }
+ },
+ "FXid_PRotateRndSpeed": {
+  "norm": "p rotate rnd speed",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0306",
+  "targetName": "Random Speed Rotate",
+  "group": "Particle > Rotation",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0306",
+    "name": "Random Speed Rotate",
+    "group": "Particle > Rotation",
+    "default": "0",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Random Speed Rotate.",
+  "designerGroup": "particle"
+ },
+ "FXid_PRotateRndSpeedDistr": {
+  "norm": "p rotate rnd speed distr",
+  "modal_value": 0.5,
+  "n": 77,
+  "target": "tc Form-0307",
+  "targetName": "Random Speed Distribution",
+  "group": "Particle > Rotation",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0307",
+    "name": "Random Speed Distribution",
+    "group": "Particle > Rotation",
+    "default": "0.5",
+    "min": 0.00999999977648,
+    "max": 5,
+    "type": "1D"
+   }
+  ],
+  "note": "Random Speed Distribution, default 0.5 = modal.",
+  "designerGroup": "particle"
+ },
+ "FXid_PRotateSpeed": {
+  "norm": "p rotate speed",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0297",
+  "targetName": "Rotation Speed Z",
+  "group": "Particle > Rotation",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0297",
+    "name": "Rotation Speed Z",
+    "group": "Particle > Rotation",
+    "default": "0",
+    "min": -20,
+    "max": 20,
+    "type": "1D"
+   }
+  ],
+  "note": "Rotation Speed Z.",
+  "designerGroup": "particle"
+ },
+ "FXid_PRotateSpeedX": {
+  "norm": "p rotate speed x",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0304",
+  "targetName": "Rotation Speed X",
+  "group": "Particle > Rotation",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0304",
+    "name": "Rotation Speed X",
+    "group": "Particle > Rotation",
+    "default": "0",
+    "min": -20,
+    "max": 20,
+    "type": "1D"
+   }
+  ],
+  "note": "Rotation Speed X.",
+  "designerGroup": "particle"
+ },
+ "FXid_PRotateSpeedY": {
+  "norm": "p rotate speed y",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0305",
+  "targetName": "Rotation Speed Y",
+  "group": "Particle > Rotation",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0305",
+    "name": "Rotation Speed Y",
+    "group": "Particle > Rotation",
+    "default": "0",
+    "min": -20,
+    "max": 20,
+    "type": "1D"
+   }
+  ],
+  "note": "Rotation Speed Y.",
+  "designerGroup": "particle"
+ },
+ "FXid_PRotateX": {
+  "norm": "p rotate x",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0302",
+  "targetName": "Rotate X",
+  "group": "Particle > Rotation",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0302",
+    "name": "Rotate X",
+    "group": "Particle > Rotation",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Rotate X.",
+  "designerGroup": "particle"
+ },
+ "FXid_PRotateY": {
+  "norm": "p rotate y",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0303",
+  "targetName": "Rotate Y",
+  "group": "Particle > Rotation",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0303",
+    "name": "Rotate Y",
+    "group": "Particle > Rotation",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Rotate Y.",
+  "designerGroup": "particle"
+ },
+ "FXid_PSizeMax": {
+  "norm": "p size max",
+  "modal_value": 1,
+  "n": 77,
+  "target": "tc Form-0033",
+  "targetName": "Size",
+  "group": "Particle",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0033",
+    "name": "Size",
+    "group": "Particle",
+    "default": "2",
+    "min": 0,
+    "max": 10000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0252",
+    "name": "Size",
+    "group": "Particle > Glow",
+    "default": "300",
+    "min": 0,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "Particle > Size (default 2; vendor modal 1). Name-twin Glow > Size 0252 — group pins.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "1": 22,
+   "2": 14,
+   "3": 6,
+   "4": 5,
+   "6": 2,
+   "8": 2,
+   "65": 2,
+   "100": 3,
+   "49.3": 3,
+   "52.3": 3,
+   "1.5": 2,
+   "0.3": 1
+  }
+ },
+ "FXid_PSizeRnd": {
+  "norm": "p size rnd",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0034",
+  "targetName": "Size Random",
+  "group": "Particle",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0034",
+    "name": "Size Random",
+    "group": "Particle",
+    "default": "0",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0017",
+    "name": "Size Random",
+    "group": "Base Form > String Settings",
+    "default": "0",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Particle > Size Random.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 71,
+   "4": 1,
+   "19": 1,
+   "46": 2,
+   "56": 1,
+   "99": 1
+  }
+ },
+ "FXid_SizeOver": {
+  "norm": "size over",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0492",
+  "targetName": "Size Over",
+  "group": "Particle",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0492",
+    "name": "Size Over",
+    "group": "Particle",
+    "default": "1",
+    "min": 1,
+    "max": 5,
+    "type": "1D"
+   }
+  ],
+  "note": "Size Over popup [1..5] (+1: modal 0 -> 1 = default).",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 71,
+   "1": 5,
+   "2": 1
+  }
+ },
+ "FXid_OpacityCurveOffset": {
+  "norm": "opacity curve offset",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0495",
+  "targetName": "Opacity Curve Offset",
+  "group": "Particle",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0495",
+    "name": "Opacity Curve Offset",
+    "group": "Particle",
+    "default": "100",
+    "min": 0,
+    "max": 200,
+    "type": "1D"
+   }
+  ],
+  "note": "Opacity Curve Offset, default 100. Curve = FXid_AlphaMapArb -> CUSTOM 0481.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "100": 76,
+   "200": 1
+  }
+ },
+ "FXid_OpacityCurveOver": {
+  "norm": "opacity curve over",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0531",
+  "targetName": "Opacity Over",
+  "group": "Particle",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0531",
+    "name": "Opacity Over",
+    "group": "Particle",
+    "default": "1",
+    "min": 1,
+    "max": 5,
+    "type": "1D"
+   }
+  ],
+  "note": "Opacity Over [1..5] (+1). (Form 0531 is unrelated to Particular’s locked 0531 Unmult.)",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 69,
+   "1": 5,
+   "2": 3
+  }
+ },
+ "FXid_POpacMax": {
+  "norm": "p opac max",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0035",
+  "targetName": "Opacity",
+  "group": "Particle",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0035",
+    "name": "Opacity",
+    "group": "Particle",
+    "default": "100",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0253",
+    "name": "Opacity",
+    "group": "Particle > Glow",
+    "default": "25",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0260",
+    "name": "Opacity",
+    "group": "Particle",
+    "default": "50",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0422",
+    "name": "Opacity",
+    "group": "Shading > Shadowlet Settings",
+    "default": "5",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0289",
+    "name": "Opacity",
+    "group": "Rendering",
+    "default": "100",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Particle > Opacity, default 100 = modal. Opacity name appears 5x in F1 — group pins.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "15": 2,
+   "16": 1,
+   "30": 5,
+   "35": 1,
+   "38": 4,
+   "40": 3,
+   "50": 10,
+   "64": 9,
+   "72": 2,
+   "73": 2,
+   "88": 5,
+   "100": 26
+  }
+ },
+ "FXid_POpacRnd": {
+  "norm": "p opac rnd",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0246",
+  "targetName": "Opacity Random",
+  "group": "Particle",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0246",
+    "name": "Opacity Random",
+    "group": "Particle",
+    "default": "0",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Opacity Random.",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 61,
+   "2": 1,
+   "13": 11,
+   "62": 3,
+   "100": 1
+  }
+ },
+ "FXid_ColorMapOver": {
+  "norm": "color map over",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0042",
+  "targetName": "Set Color",
+  "group": "Particle",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0042",
+    "name": "Set Color",
+    "group": "Particle",
+    "default": "1",
+    "min": 1,
+    "max": 6,
+    "type": "1D"
+   }
+  ],
+  "note": "Set Color [1..6] (+1: observed 0,1,2,4 -> 1,2,3,5; modal 0 -> 1 = default flat Color). Gradient itself = FXid_ColorMapArb -> CUSTOM 0482 Color Over (flatten route like Particular).",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "0": 29,
+   "1": 26,
+   "2": 12,
+   "4": 10
+  }
+ },
+ "FXid_Options_SmokeletShadow_ColorStrength": {
+  "norm": "smokelet shadow color strength",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0421",
+  "targetName": "Color Strength",
+  "group": "Shading > Shadowlet Settings",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0421",
+    "name": "Color Strength",
+    "group": "Shading > Shadowlet Settings",
+    "default": "100",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0259",
+    "name": "Color Strength",
+    "group": "Particle",
+    "default": "50",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "TWIN TRAP: Shadowlet Settings > Color Strength 0421 (default 100 = Designer modal 100) vs Particle-level 0259 (default 50). Default-pair picks 0421; Particular precedent picked the particle-level home (0211) — MUST settability/effect-probe.",
+  "designerGroup": "shading",
+  "valueSpread": {
+   "50": 23,
+   "100": 54
+  }
+ },
+ "FXid_Options_SmokeletShadow_Opacity": {
+  "norm": "smokelet shadow opacity",
+  "modal_value": 5,
+  "n": 77,
+  "target": "tc Form-0422",
+  "targetName": "Opacity",
+  "group": "Shading > Shadowlet Settings",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0422",
+    "name": "Opacity",
+    "group": "Shading > Shadowlet Settings",
+    "default": "5",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0260",
+    "name": "Opacity",
+    "group": "Particle",
+    "default": "50",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0035",
+    "name": "Opacity",
+    "group": "Particle",
+    "default": "100",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0253",
+    "name": "Opacity",
+    "group": "Particle > Glow",
+    "default": "25",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0289",
+    "name": "Opacity",
+    "group": "Rendering",
+    "default": "100",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "TWIN TRAP: Shadowlet Settings > Opacity 0422 (default 5 = Designer modal 5) vs Particle-level 0260 (default 50). Same probe as ColorStrength.",
+  "designerGroup": "shading",
+  "valueSpread": {
+   "5": 50,
+   "6": 2,
+   "50": 23,
+   "63": 2
+  }
+ },
+ "FXid_PShadow": {
+  "norm": "p shadow",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0417",
+  "targetName": "Shadowlet",
+  "group": "Shading",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0417",
+    "name": "Shadowlet",
+    "group": "Shading",
+    "default": "1",
+    "min": 1,
+    "max": 2,
+    "type": "1D"
+   }
+  ],
+  "note": "Shadowlet toggle [1..2] (+1: modal 0 -> 1 = default off). Designer block is form.shadowlets. OPEN QUESTION: parent Shading toggle 0310 (default 1 = off?) has NO FXid — shadowlets may need 0310=2 forced when PShadow=1 (5 presets). Probe.",
+  "designerGroup": "shading",
+  "valueSpread": {
+   "0": 72,
+   "1": 5
+  }
+ },
+ "FXid_PShadow_Dist": {
+  "norm": "p shadow dist",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0424",
+  "targetName": "Adjust Distance",
+  "group": "Shading > Shadowlet Settings",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0424",
+    "name": "Adjust Distance",
+    "group": "Shading > Shadowlet Settings",
+    "default": "100",
+    "min": 0,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "Shadowlet Settings > Adjust Distance, default 100 = modal.",
+  "designerGroup": "shading",
+  "valueSpread": {
+   "6": 1,
+   "100": 76
+  }
+ },
+ "FXid_PShadow_Size": {
+  "norm": "p shadow size",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0423",
+  "targetName": "Adjust Size",
+  "group": "Shading > Shadowlet Settings",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0423",
+    "name": "Adjust Size",
+    "group": "Shading > Shadowlet Settings",
+    "default": "100",
+    "min": 0,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "Shadowlet Settings > Adjust Size, default 100 = modal.",
+  "designerGroup": "shading",
+  "valueSpread": {
+   "15": 1,
+   "65": 2,
+   "100": 74
+  }
+ },
+ "FXid_PShadow_ZPos": {
+  "norm": "p shadow z pos",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0425",
+  "targetName": "Placement",
+  "group": "Shading > Shadowlet Settings",
+  "via": "ranked-candidate",
+  "confidence": "med",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0425",
+    "name": "Placement",
+    "group": "Shading > Shadowlet Settings",
+    "default": "1",
+    "min": 1,
+    "max": 4,
+    "type": "1D"
+   }
+  ],
+  "note": "Best candidate: Shadowlet Settings > Placement [1..4] (+1: observed 0,2 -> 1,3). \"ZPos\" naming leaves residual doubt but no numeric z-pos param exists in the group. Probe.",
+  "designerGroup": "shading",
+  "valueSpread": {
+   "0": 75,
+   "2": 2
+  }
+ },
+ "FXid_BaseShapeDisperse": {
+  "norm": "base shape disperse",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0159",
+  "targetName": "Disperse",
+  "group": "Disperse and Twist",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0159",
+    "name": "Disperse",
+    "group": "Disperse and Twist",
+    "default": "0",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "Disperse, default 0 = modal.",
+  "designerGroup": "Disperse and Twist",
+  "valueSpread": {
+   "0": 64,
+   "5": 1,
+   "20": 1,
+   "39": 1,
+   "49": 3,
+   "64": 1,
+   "81": 1,
+   "100": 2,
+   "163.02879895116405": 1,
+   "163.0939582507961": 1,
+   "89.9133333333333": 1
+  }
+ },
+ "FXid_DisperseStrengthCurveOffset": {
+  "norm": "disperse strength curve offset",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0498",
+  "targetName": "Disperse Strength Offset",
+  "group": "Disperse and Twist",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0498",
+    "name": "Disperse Strength Offset",
+    "group": "Disperse and Twist",
+    "default": "100",
+    "min": 0,
+    "max": 200,
+    "type": "1D"
+   }
+  ],
+  "note": "Disperse Strength Offset, default 100. Curve = FXid_DisperseStrengthCurveArb -> CUSTOM 0497.",
+  "designerGroup": "Disperse and Twist"
+ },
+ "FXid_DisperseStrengthOver": {
+  "norm": "disperse strength over",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0496",
+  "targetName": "Disperse Strength Over",
+  "group": "Disperse and Twist",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0496",
+    "name": "Disperse Strength Over",
+    "group": "Disperse and Twist",
+    "default": "1",
+    "min": 1,
+    "max": 5,
+    "type": "1D"
+   }
+  ],
+  "note": "Disperse Strength Over [1..5] (+1: observed 0,1,3 -> 1,2,4).",
+  "designerGroup": "Disperse and Twist",
+  "valueSpread": {
+   "0": 75,
+   "1": 1,
+   "3": 1
+  }
+ },
+ "FXid_SDTwisterAmount": {
+  "norm": "sd twister amount",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0160",
+  "targetName": "Twist",
+  "group": "Disperse and Twist",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0160",
+    "name": "Twist",
+    "group": "Disperse and Twist",
+    "default": "0",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "Twist, default 0 = modal (the only other param in the group; SD Twister = Designer name).",
+  "designerGroup": "Disperse and Twist",
+  "valueSpread": {
+   "0": 51,
+   "1": 3,
+   "2": 1,
+   "4": 1,
+   "7": 2,
+   "2.8000000000000003": 7,
+   "63.8": 3,
+   "3.4999999999999996": 2,
+   "3.5999999999999996": 2,
+   "2.0000000000000004": 2,
+   "10.900000000000002": 1,
+   "1.5": 1
+  }
+ },
+ "FXid_FAdd": {
+  "norm": "f add",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0177",
+  "targetName": "Add/Subtract",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0177",
+    "name": "Add/Subtract",
+    "group": "Fractal Field",
+    "default": "0",
+    "min": -10000,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "Add/Subtract, default 0.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 69,
+   "-0.2": 2,
+   "0.43999999999999995": 1,
+   "0.3400000000000001": 1,
+   "-0.010000000000000009": 1,
+   "-0.05": 1,
+   "-0.07333333333333336": 1,
+   "-0.1542372881355932": 1
+  }
+ },
+ "FXid_FAffectOpac": {
+  "norm": "f affect opac",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0164",
+  "targetName": "Affect Opacity",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0164",
+    "name": "Affect Opacity",
+    "group": "Fractal Field",
+    "default": "0",
+    "min": 0,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "Affect Opacity, default 0.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 54,
+   "1": 3,
+   "3": 1,
+   "6": 1,
+   "11": 1,
+   "24": 1,
+   "25": 1,
+   "35": 1,
+   "47": 9,
+   "49": 1,
+   "91": 2,
+   "143": 1
+  }
+ },
+ "FXid_FAffectPosPopup": {
+  "norm": "f affect pos popup",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0165",
+  "targetName": "Displacement Mode",
+  "group": "Fractal Field",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0165",
+    "name": "Displacement Mode",
+    "group": "Fractal Field",
+    "default": "1",
+    "min": 1,
+    "max": 3,
+    "type": "1D"
+   }
+  ],
+  "note": "Displacement Mode [1..3] (+1: observed 0,1,2 — exact cardinality match; modal 0 -> 1 = default).",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 63,
+   "1": 13,
+   "2": 1
+  }
+ },
+ "FXid_FAffectPosX": {
+  "norm": "f affect pos x",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0166",
+  "targetName": "X Displace",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0166",
+    "name": "X Displace",
+    "group": "Fractal Field",
+    "default": "0",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "X Displace.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 39,
+   "18": 2,
+   "20": 2,
+   "24": 1,
+   "42": 2,
+   "67": 1,
+   "74": 3,
+   "120": 2,
+   "126": 2,
+   "200": 2,
+   "244": 5,
+   "524": 2
+  }
+ },
+ "FXid_FAffectPosY": {
+  "norm": "f affect pos y",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0167",
+  "targetName": "Y Displace",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0167",
+    "name": "Y Displace",
+    "group": "Fractal Field",
+    "default": "0",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "Y Displace.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 72,
+   "125": 1,
+   "-200": 4
+  }
+ },
+ "FXid_FAffectPosZ": {
+  "norm": "f affect pos z",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0168",
+  "targetName": "Z Displace",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0168",
+    "name": "Z Displace",
+    "group": "Fractal Field",
+    "default": "0",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "Z Displace.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 73,
+   "179": 1,
+   "2000": 1,
+   "-510": 2
+  }
+ },
+ "FXid_FAffectSize": {
+  "norm": "f affect size",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0163",
+  "targetName": "Affect Size",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0163",
+    "name": "Affect Size",
+    "group": "Fractal Field",
+    "default": "0",
+    "min": 0,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "Affect Size, default 0.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 57,
+   "3": 1,
+   "5": 3,
+   "15": 1,
+   "16": 1,
+   "17": 2,
+   "21": 1,
+   "30.8": 2,
+   "29.800000000000004": 1,
+   "10.1": 1,
+   "2.2": 1,
+   "9.7": 1
+  }
+ },
+ "FXid_FComplex": {
+  "norm": "f complex",
+  "modal_value": 3,
+  "n": 77,
+  "target": "tc Form-0181",
+  "targetName": "Complexity",
+  "group": "Fractal Field",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0181",
+    "name": "Complexity",
+    "group": "Fractal Field",
+    "default": "3",
+    "min": 1,
+    "max": 10,
+    "type": "1D"
+   }
+  ],
+  "note": "Complexity, default 3 = modal.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "1": 3,
+   "2": 3,
+   "3": 62,
+   "4": 1,
+   "5": 2,
+   "6": 3,
+   "3.000000000000001": 2,
+   "2.000000000000001": 1
+  }
+ },
+ "FXid_FEvolution": {
+  "norm": "f evolution",
+  "modal_value": 50,
+  "n": 77,
+  "target": "tc Form-0172",
+  "targetName": "Flow Evolution",
+  "group": "Fractal Field",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0172",
+    "name": "Flow Evolution",
+    "group": "Fractal Field",
+    "default": "50",
+    "min": 0,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "Flow Evolution, default 50 = modal. NOTE: unlike Particular (F* = Turbulence Field 0052), Form’s F* IS its native Fractal Field.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 4,
+   "10": 5,
+   "15": 11,
+   "20": 7,
+   "30": 3,
+   "36": 1,
+   "50": 36,
+   "58": 1,
+   "75": 1,
+   "81": 1,
+   "100": 5,
+   "213": 1
+  }
+ },
+ "FXid_FGamma": {
+  "norm": "f gamma",
+  "modal_value": 1,
+  "n": 77,
+  "target": "tc Form-0176",
+  "targetName": "Gamma",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0176",
+    "name": "Gamma",
+    "group": "Fractal Field",
+    "default": "1",
+    "min": 0,
+    "max": 1000,
+    "type": "1D"
+   }
+  ],
+  "note": "Gamma, default 1.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "1": 68,
+   "2": 1,
+   "1.5866666666666667": 2,
+   "1.2000000000000002": 2,
+   "1.58": 1,
+   "0.40000000000000013": 1,
+   "1.49": 1,
+   "0.02666666666666667": 1
+  }
+ },
+ "FXid_FLoop": {
+  "norm": "f loop",
+  "modal_value": true,
+  "n": 77,
+  "target": "tc Form-0173",
+  "targetName": "Flow Loop",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0173",
+    "name": "Flow Loop",
+    "group": "Fractal Field",
+    "default": "0",
+    "min": 0,
+    "max": 1,
+    "type": "1D"
+   }
+  ],
+  "note": "Flow Loop bool 0/1 (modal true — vendor loves loops).",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "true": 46,
+   "false": 31
+  }
+ },
+ "FXid_FLoopTime": {
+  "norm": "f loop time",
+  "modal_value": 5,
+  "n": 77,
+  "target": "tc Form-0174",
+  "targetName": "Loop Time [sec]",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0174",
+    "name": "Loop Time [sec]",
+    "group": "Fractal Field",
+    "default": "5",
+    "min": 1,
+    "max": 1000,
+    "type": "1D"
+   }
+  ],
+  "note": "Loop Time [sec], default 5 = modal.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "3": 9,
+   "5": 39,
+   "6": 1,
+   "10": 10,
+   "20": 16,
+   "40": 2
+  }
+ },
+ "FXid_FMax": {
+  "norm": "f max",
+  "modal_value": 1,
+  "n": 77,
+  "target": "tc Form-0179",
+  "targetName": "Max",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0179",
+    "name": "Max",
+    "group": "Fractal Field",
+    "default": "1",
+    "min": -10000,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "Max, default 1.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "1": 73,
+   "1.7800000000000002": 1,
+   "0.8600000000000001": 1,
+   "-0.009999999999999997": 1,
+   "0.9": 1
+  }
+ },
+ "FXid_FMin": {
+  "norm": "f min",
+  "modal_value": -1,
+  "n": 77,
+  "target": "tc Form-0178",
+  "targetName": "Min",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0178",
+    "name": "Min",
+    "group": "Fractal Field",
+    "default": "-1",
+    "min": -10000,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "Min, default -1.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 4,
+   "-1": 73
+  }
+ },
+ "FXid_FOctMult": {
+  "norm": "f oct mult",
+  "modal_value": 0.5,
+  "n": 77,
+  "target": "tc Form-0182",
+  "targetName": "Octave Multiplier",
+  "group": "Fractal Field",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0182",
+    "name": "Octave Multiplier",
+    "group": "Fractal Field",
+    "default": "0.5",
+    "min": 0,
+    "max": 10,
+    "type": "1D"
+   }
+  ],
+  "note": "Octave Multiplier, default 0.5 = modal.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "2": 1,
+   "0.5": 68,
+   "0.4633333333333333": 3,
+   "0.6": 2,
+   "0.75": 1,
+   "1.5": 1,
+   "1.4": 1
+  }
+ },
+ "FXid_FOctScale": {
+  "norm": "f oct scale",
+  "modal_value": 1.5,
+  "n": 77,
+  "target": "tc Form-0183",
+  "targetName": "Octave Scale",
+  "group": "Fractal Field",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0183",
+    "name": "Octave Scale",
+    "group": "Fractal Field",
+    "default": "1.5",
+    "min": 0,
+    "max": 10,
+    "type": "1D"
+   }
+  ],
+  "note": "Octave Scale, default 1.5 = modal.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "1.5": 69,
+   "1.3266666666666667": 3,
+   "1.8": 3,
+   "1.75": 1,
+   "1.6133333333333333": 1
+  }
+ },
+ "FXid_FOffsetE": {
+  "norm": "f offset e",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0245",
+  "targetName": "Offset Evolution",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0245",
+    "name": "Offset Evolution",
+    "group": "Fractal Field",
+    "default": "0",
+    "min": 0,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "Offset Evolution, default 0.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 76,
+   "12": 1
+  }
+ },
+ "FXid_FScale": {
+  "norm": "f scale",
+  "modal_value": 10,
+  "n": 77,
+  "target": "tc Form-0180",
+  "targetName": "F Scale",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0180",
+    "name": "F Scale",
+    "group": "Fractal Field",
+    "default": "10",
+    "min": 0,
+    "max": 1000,
+    "type": "1D"
+   }
+  ],
+  "note": "F Scale (AE kept the Designer name), default 10 = modal.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "1": 4,
+   "2": 4,
+   "3": 4,
+   "5": 3,
+   "6": 2,
+   "7": 5,
+   "10": 49,
+   "14": 1,
+   "20": 1,
+   "8.666666666666668": 3,
+   "8.7": 1
+  }
+ },
+ "FXid_FlowX": {
+  "norm": "flow x",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0169",
+  "targetName": "Flow X",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0169",
+    "name": "Flow X",
+    "group": "Fractal Field",
+    "default": "0",
+    "min": -100000,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "Flow X.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 45,
+   "30": 3,
+   "45": 2,
+   "50": 3,
+   "58": 2,
+   "64": 2,
+   "88": 1,
+   "98": 3,
+   "100": 1,
+   "138": 1,
+   "-50": 4,
+   "-20": 1
+  }
+ },
+ "FXid_FlowY": {
+  "norm": "flow y",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0170",
+  "targetName": "Flow Y",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0170",
+    "name": "Flow Y",
+    "group": "Fractal Field",
+    "default": "0",
+    "min": -10000,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "Flow Y.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 52,
+   "33": 1,
+   "37": 2,
+   "39": 1,
+   "50": 1,
+   "52": 10,
+   "-100": 4,
+   "-50": 4,
+   "-123": 2
+  }
+ },
+ "FXid_FlowZ": {
+  "norm": "flow z",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0171",
+  "targetName": "Flow Z",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0171",
+    "name": "Flow Z",
+    "group": "Fractal Field",
+    "default": "0",
+    "min": -10000,
+    "max": 10000,
+    "type": "1D"
+   }
+  ],
+  "note": "Flow Z.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 68,
+   "30": 4,
+   "61": 1,
+   "-500": 4
+  }
+ },
+ "FXid_FractalABS": {
+  "norm": "fractal abs",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0175",
+  "targetName": "Fractal Sum",
+  "group": "Fractal Field",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0175",
+    "name": "Fractal Sum",
+    "group": "Fractal Field",
+    "default": "1",
+    "min": 1,
+    "max": 2,
+    "type": "1D"
+   }
+  ],
+  "note": "Fractal Sum [1..2] (+1: 0 Normal / 1 Abs(Noise); modal 0 -> 1 = default).",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 68,
+   "1": 9
+  }
+ },
+ "FXid_FractalStrengthCurveOffset": {
+  "norm": "fractal strength curve offset",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0501",
+  "targetName": "Fractal Strength Offset",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0501",
+    "name": "Fractal Strength Offset",
+    "group": "Fractal Field",
+    "default": "100",
+    "min": 0,
+    "max": 200,
+    "type": "1D"
+   }
+  ],
+  "note": "Fractal Strength Offset, default 100. Curve = FXid_FractalStrengthCurveArb -> CUSTOM 0500.",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "73": 1,
+   "100": 76
+  }
+ },
+ "FXid_FractalStrengthOver": {
+  "norm": "fractal strength over",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0499",
+  "targetName": "Fractal Strength Over",
+  "group": "Fractal Field",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0499",
+    "name": "Fractal Strength Over",
+    "group": "Fractal Field",
+    "default": "1",
+    "min": 1,
+    "max": 5,
+    "type": "1D"
+   }
+  ],
+  "note": "Fractal Strength Over [1..5] (+1).",
+  "designerGroup": "Fractal Field",
+  "valueSpread": {
+   "0": 70,
+   "1": 5,
+   "2": 2
+  }
+ },
+ "FXid_D1Feather": {
+  "norm": "d1 feather",
+  "modal_value": 50,
+  "n": 77,
+  "target": "tc Form-0191",
+  "targetName": "Feather",
+  "group": "Spherical Field > Sphere 1",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0191",
+    "name": "Feather",
+    "group": "Spherical Field > Sphere 1",
+    "default": "50",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0254",
+    "name": "Feather",
+    "group": "Particle > Glow",
+    "default": "100",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0199",
+    "name": "Feather",
+    "group": "Spherical Field > Sphere 2",
+    "default": "50",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 1 > Feather.",
+  "designerGroup": "Spherical Field",
+  "valueSpread": {
+   "37": 2,
+   "50": 71,
+   "75": 4
+  }
+ },
+ "FXid_D1Radius": {
+  "norm": "d1 radius",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0190",
+  "targetName": "Radius",
+  "group": "Spherical Field > Sphere 1",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0190",
+    "name": "Radius",
+    "group": "Spherical Field > Sphere 1",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0198",
+    "name": "Radius",
+    "group": "Spherical Field > Sphere 2",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 1 > Radius.",
+  "designerGroup": "Spherical Field",
+  "valueSpread": {
+   "100": 65,
+   "160": 3,
+   "219": 1,
+   "320": 1,
+   "368": 1,
+   "438": 1,
+   "440": 4,
+   "540": 1
+  }
+ },
+ "FXid_D1RotateX": {
+  "norm": "d1 rotate x",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0439",
+  "targetName": "X Rotation",
+  "group": "Spherical Field > Sphere 1",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0439",
+    "name": "X Rotation",
+    "group": "Spherical Field > Sphere 1",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0012",
+    "name": "X Rotation",
+    "group": "Base Form",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0445",
+    "name": "X Rotation",
+    "group": "Spherical Field > Sphere 2",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 1 > X Rotation.",
+  "designerGroup": "Spherical Field"
+ },
+ "FXid_D1RotateY": {
+  "norm": "d1 rotate y",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0440",
+  "targetName": "Y Rotation",
+  "group": "Spherical Field > Sphere 1",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0440",
+    "name": "Y Rotation",
+    "group": "Spherical Field > Sphere 1",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0013",
+    "name": "Y Rotation",
+    "group": "Base Form",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0446",
+    "name": "Y Rotation",
+    "group": "Spherical Field > Sphere 2",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 1 > Y Rotation.",
+  "designerGroup": "Spherical Field"
+ },
+ "FXid_D1RotateZ": {
+  "norm": "d1 rotate z",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0441",
+  "targetName": "Z Rotation",
+  "group": "Spherical Field > Sphere 1",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0441",
+    "name": "Z Rotation",
+    "group": "Spherical Field > Sphere 1",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0014",
+    "name": "Z Rotation",
+    "group": "Base Form",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0447",
+    "name": "Z Rotation",
+    "group": "Spherical Field > Sphere 2",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 1 > Z Rotation.",
+  "designerGroup": "Spherical Field"
+ },
+ "FXid_D1ScaleX": {
+  "norm": "d1 scale x",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0436",
+  "targetName": "Scale X",
+  "group": "Spherical Field > Sphere 1",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0436",
+    "name": "Scale X",
+    "group": "Spherical Field > Sphere 1",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0442",
+    "name": "Scale X",
+    "group": "Spherical Field > Sphere 2",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 1 > Scale X.",
+  "designerGroup": "Spherical Field"
+ },
+ "FXid_D1ScaleY": {
+  "norm": "d1 scale y",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0437",
+  "targetName": "Scale Y",
+  "group": "Spherical Field > Sphere 1",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0437",
+    "name": "Scale Y",
+    "group": "Spherical Field > Sphere 1",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0443",
+    "name": "Scale Y",
+    "group": "Spherical Field > Sphere 2",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 1 > Scale Y.",
+  "designerGroup": "Spherical Field"
+ },
+ "FXid_D1ScaleZ": {
+  "norm": "d1 scale z",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0438",
+  "targetName": "Scale Z",
+  "group": "Spherical Field > Sphere 1",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0438",
+    "name": "Scale Z",
+    "group": "Spherical Field > Sphere 1",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0444",
+    "name": "Scale Z",
+    "group": "Spherical Field > Sphere 2",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 1 > Scale Z.",
+  "designerGroup": "Spherical Field"
+ },
+ "FXid_D1Strength": {
+  "norm": "d1 strength",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0187",
+  "targetName": "Strength",
+  "group": "Spherical Field > Sphere 1",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0187",
+    "name": "Strength",
+    "group": "Spherical Field > Sphere 1",
+    "default": "0",
+    "min": -100,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0067",
+    "name": "Strength",
+    "group": "Layer Maps > Displacement",
+    "default": "50",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0455",
+    "name": "Strength",
+    "group": "Layer Maps > Rotate",
+    "default": "180",
+    "min": 0,
+    "max": 36000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0092",
+    "name": "Strength",
+    "group": "Audio React > Reactor 1",
+    "default": "100",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0106",
+    "name": "Strength",
+    "group": "Audio React > Reactor 2",
+    "default": "100",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0120",
+    "name": "Strength",
+    "group": "Audio React > Reactor 3",
+    "default": "100",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0134",
+    "name": "Strength",
+    "group": "Audio React > Reactor 4",
+    "default": "100",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0148",
+    "name": "Strength",
+    "group": "Audio React > Reactor 5",
+    "default": "100",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0195",
+    "name": "Strength",
+    "group": "Spherical Field > Sphere 2",
+    "default": "0",
+    "min": -100,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 1 > Strength (9 Strength params in F1; D1 + group pin it).",
+  "designerGroup": "Spherical Field",
+  "valueSpread": {
+   "0": 67,
+   "68": 2,
+   "100": 8
+  }
+ },
+ "FXid_D2Feather": {
+  "norm": "d2 feather",
+  "modal_value": 50,
+  "n": 77,
+  "target": "tc Form-0199",
+  "targetName": "Feather",
+  "group": "Spherical Field > Sphere 2",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0199",
+    "name": "Feather",
+    "group": "Spherical Field > Sphere 2",
+    "default": "50",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0254",
+    "name": "Feather",
+    "group": "Particle > Glow",
+    "default": "100",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0191",
+    "name": "Feather",
+    "group": "Spherical Field > Sphere 1",
+    "default": "50",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 2 > Feather.",
+  "designerGroup": "Spherical Field",
+  "valueSpread": {
+   "50": 75,
+   "87": 2
+  }
+ },
+ "FXid_D2Radius": {
+  "norm": "d2 radius",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0198",
+  "targetName": "Radius",
+  "group": "Spherical Field > Sphere 2",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0198",
+    "name": "Radius",
+    "group": "Spherical Field > Sphere 2",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0190",
+    "name": "Radius",
+    "group": "Spherical Field > Sphere 1",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 2 > Radius.",
+  "designerGroup": "Spherical Field",
+  "valueSpread": {
+   "100": 74,
+   "160": 1,
+   "412": 1,
+   "767": 1
+  }
+ },
+ "FXid_D2RotateX": {
+  "norm": "d2 rotate x",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0445",
+  "targetName": "X Rotation",
+  "group": "Spherical Field > Sphere 2",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0445",
+    "name": "X Rotation",
+    "group": "Spherical Field > Sphere 2",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0012",
+    "name": "X Rotation",
+    "group": "Base Form",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0439",
+    "name": "X Rotation",
+    "group": "Spherical Field > Sphere 1",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 2 > X Rotation.",
+  "designerGroup": "Spherical Field"
+ },
+ "FXid_D2RotateY": {
+  "norm": "d2 rotate y",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0446",
+  "targetName": "Y Rotation",
+  "group": "Spherical Field > Sphere 2",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0446",
+    "name": "Y Rotation",
+    "group": "Spherical Field > Sphere 2",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0013",
+    "name": "Y Rotation",
+    "group": "Base Form",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0440",
+    "name": "Y Rotation",
+    "group": "Spherical Field > Sphere 1",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 2 > Y Rotation.",
+  "designerGroup": "Spherical Field"
+ },
+ "FXid_D2RotateZ": {
+  "norm": "d2 rotate z",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0447",
+  "targetName": "Z Rotation",
+  "group": "Spherical Field > Sphere 2",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0447",
+    "name": "Z Rotation",
+    "group": "Spherical Field > Sphere 2",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0014",
+    "name": "Z Rotation",
+    "group": "Base Form",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0441",
+    "name": "Z Rotation",
+    "group": "Spherical Field > Sphere 1",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 2 > Z Rotation.",
+  "designerGroup": "Spherical Field"
+ },
+ "FXid_D2ScaleX": {
+  "norm": "d2 scale x",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0442",
+  "targetName": "Scale X",
+  "group": "Spherical Field > Sphere 2",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0442",
+    "name": "Scale X",
+    "group": "Spherical Field > Sphere 2",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0436",
+    "name": "Scale X",
+    "group": "Spherical Field > Sphere 1",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 2 > Scale X.",
+  "designerGroup": "Spherical Field"
+ },
+ "FXid_D2ScaleY": {
+  "norm": "d2 scale y",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0443",
+  "targetName": "Scale Y",
+  "group": "Spherical Field > Sphere 2",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0443",
+    "name": "Scale Y",
+    "group": "Spherical Field > Sphere 2",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0437",
+    "name": "Scale Y",
+    "group": "Spherical Field > Sphere 1",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 2 > Scale Y.",
+  "designerGroup": "Spherical Field"
+ },
+ "FXid_D2ScaleZ": {
+  "norm": "d2 scale z",
+  "modal_value": 100,
+  "n": 77,
+  "target": "tc Form-0444",
+  "targetName": "Scale Z",
+  "group": "Spherical Field > Sphere 2",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0444",
+    "name": "Scale Z",
+    "group": "Spherical Field > Sphere 2",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0438",
+    "name": "Scale Z",
+    "group": "Spherical Field > Sphere 1",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 2 > Scale Z.",
+  "designerGroup": "Spherical Field"
+ },
+ "FXid_D2Strength": {
+  "norm": "d2 strength",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0195",
+  "targetName": "Strength",
+  "group": "Spherical Field > Sphere 2",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0195",
+    "name": "Strength",
+    "group": "Spherical Field > Sphere 2",
+    "default": "0",
+    "min": -100,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0067",
+    "name": "Strength",
+    "group": "Layer Maps > Displacement",
+    "default": "50",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0455",
+    "name": "Strength",
+    "group": "Layer Maps > Rotate",
+    "default": "180",
+    "min": 0,
+    "max": 36000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0092",
+    "name": "Strength",
+    "group": "Audio React > Reactor 1",
+    "default": "100",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0106",
+    "name": "Strength",
+    "group": "Audio React > Reactor 2",
+    "default": "100",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0120",
+    "name": "Strength",
+    "group": "Audio React > Reactor 3",
+    "default": "100",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0134",
+    "name": "Strength",
+    "group": "Audio React > Reactor 4",
+    "default": "100",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0148",
+    "name": "Strength",
+    "group": "Audio React > Reactor 5",
+    "default": "100",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0187",
+    "name": "Strength",
+    "group": "Spherical Field > Sphere 1",
+    "default": "0",
+    "min": -100,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Sphere 2 > Strength.",
+  "designerGroup": "Spherical Field",
+  "valueSpread": {
+   "0": 75,
+   "63": 1,
+   "74": 1
+  }
+ },
+ "FXid_KBehaviour": {
+  "norm": "k behaviour",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0205",
+  "targetName": "Behaviour",
+  "group": "Kaleidospace",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0205",
+    "name": "Behaviour",
+    "group": "Kaleidospace",
+    "default": "1",
+    "min": 1,
+    "max": 2,
+    "type": "1D"
+   }
+  ],
+  "note": "Behaviour [1..2] (+1: 0,1 -> 1,2; modal 0 -> 1 = default).",
+  "designerGroup": "kaleidospace",
+  "valueSpread": {
+   "0": 71,
+   "1": 6
+  }
+ },
+ "FXid_KMode": {
+  "norm": "k mode",
+  "modal_value": 0,
+  "n": 77,
+  "target": "tc Form-0204",
+  "targetName": "Mirror Mode",
+  "group": "Kaleidospace",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0204",
+    "name": "Mirror Mode",
+    "group": "Kaleidospace",
+    "default": "1",
+    "min": 1,
+    "max": 4,
+    "type": "1D"
+   }
+  ],
+  "note": "Mirror Mode [1..4] (+1: observed 0,2 -> 1,3; modal 0 -> 1 = default).",
+  "designerGroup": "kaleidospace",
+  "valueSpread": {
+   "0": 75,
+   "2": 2
+  }
+ },
+ "FXid_RWPosX": {
+  "norm": "rw pos x",
+  "modal_value": 0,
+  "n": 74,
+  "target": "tc Form-0231",
+  "targetName": "X Offset",
+  "group": "Transform",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0231",
+    "name": "X Offset",
+    "group": "Transform",
+    "default": "0",
+    "min": -10000000,
+    "max": 10000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Transform > X Offset (Designer says Pos, card says Offset; trio+group+defaults pin it).",
+  "designerGroup": "Transform,World Transform",
+  "valueSpread": {
+   "0": 71,
+   "20.159598238035414": 1,
+   "-150": 1,
+   "-300": 1
+  }
+ },
+ "FXid_RWPosY": {
+  "norm": "rw pos y",
+  "modal_value": 0,
+  "n": 74,
+  "target": "tc Form-0232",
+  "targetName": "Y Offset",
+  "group": "Transform",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0232",
+    "name": "Y Offset",
+    "group": "Transform",
+    "default": "0",
+    "min": -10000000,
+    "max": 10000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Transform > Y Offset.",
+  "designerGroup": "Transform,World Transform",
+  "valueSpread": {
+   "0": 72,
+   "20": 1,
+   "440": 1
+  }
+ },
+ "FXid_RWPosZ": {
+  "norm": "rw pos z",
+  "modal_value": 0,
+  "n": 74,
+  "target": "tc Form-0233",
+  "targetName": "Z Offset",
+  "group": "Transform",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0233",
+    "name": "Z Offset",
+    "group": "Transform",
+    "default": "0",
+    "min": -10000000,
+    "max": 10000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Transform > Z Offset.",
+  "designerGroup": "Transform,World Transform",
+  "valueSpread": {
+   "0": 73,
+   "30": 1
+  }
+ },
+ "FXid_RWScale": {
+  "norm": "rw scale",
+  "modal_value": 100,
+  "n": 74,
+  "target": "tc Form-0234",
+  "targetName": "Scale",
+  "group": "Transform",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0234",
+    "name": "Scale",
+    "group": "Transform",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Transform > Scale, default 100 = modal.",
+  "designerGroup": "Transform,World Transform",
+  "valueSpread": {
+   "100": 65,
+   "106": 1,
+   "131": 1,
+   "151": 1,
+   "180": 1,
+   "189": 1,
+   "200": 2,
+   "226": 1,
+   "270": 1
+  }
+ },
+ "FXid_RWX": {
+  "norm": "rwx",
+  "modal_value": 0,
+  "n": 74,
+  "target": "tc Form-0210",
+  "targetName": "X Rotation W",
+  "group": "Transform",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0210",
+    "name": "X Rotation W",
+    "group": "Transform",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Transform > X Rotation W (RW = rotate-world).",
+  "designerGroup": "Transform,World Transform",
+  "valueSpread": {
+   "0": 62,
+   "4": 1,
+   "8": 1,
+   "10": 3,
+   "11": 1,
+   "30": 1,
+   "38": 1,
+   "39": 1,
+   "49": 1,
+   "85.30000305175781": 2
+  }
+ },
+ "FXid_RWY": {
+  "norm": "rwy",
+  "modal_value": 0,
+  "n": 74,
+  "target": "tc Form-0211",
+  "targetName": "Y Rotation W",
+  "group": "Transform",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0211",
+    "name": "Y Rotation W",
+    "group": "Transform",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Transform > Y Rotation W.",
+  "designerGroup": "Transform,World Transform",
+  "valueSpread": {
+   "0": 52,
+   "90": 14,
+   "198": 1,
+   "40.0400390625": 1,
+   "127.60000610351562": 1,
+   "-34": 1,
+   "-1": 1,
+   "-168": 1,
+   "-90": 1,
+   "-73": 1
+  }
+ },
+ "FXid_RWZ": {
+  "norm": "rwz",
+  "modal_value": 0,
+  "n": 74,
+  "target": "tc Form-0212",
+  "targetName": "Z Rotation W",
+  "group": "Transform",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0212",
+    "name": "Z Rotation W",
+    "group": "Transform",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Transform > Z Rotation W.",
+  "designerGroup": "Transform,World Transform",
+  "valueSpread": {
+   "0": 68,
+   "34": 1,
+   "43": 1,
+   "154": 1,
+   "-149": 2,
+   "-5": 1
+  }
+ },
+ "FXid_IsPositionRelative": {
+  "norm": "is position relative",
+  "modal_value": true,
+  "n": 7,
+  "target": "tc Form-0543",
+  "targetName": "Relative To Primary",
+  "group": "Base Form",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0543",
+    "name": "Relative To Primary",
+    "group": "Base Form",
+    "default": "1",
+    "min": 0,
+    "max": 1,
+    "type": "1D"
+   }
+  ],
+  "note": "Relative To Primary [0..1]; only in 7 TC15 presets, always true=1=card default (inert authoring). On the PRIMARY form this may be hidden/locked — probe before writing; safe to drop when value=default.",
+  "designerGroup": "Base Form"
+ },
+ "FXid_OBJSequenceControlType": {
+  "norm": "obj sequence control type",
+  "modal_value": 0,
+  "n": 7,
+  "target": "tc Form-0541",
+  "targetName": "Loop Sequence",
+  "group": "Base Form > 3D Model Settings",
+  "via": "ranked-candidate",
+  "confidence": "low",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0541",
+    "name": "Loop Sequence",
+    "group": "Base Form > 3D Model Settings",
+    "default": "1",
+    "min": 1,
+    "max": 2,
+    "type": "1D"
+   }
+  ],
+  "note": "Only candidate: Loop Sequence [1..2] (+1: modal 0 -> 1 = default, inert in packs). Name suggests a speed-vs-offset control switch that may be Designer-only. Probe before use.",
+  "designerGroup": "Base Form"
+ },
+ "FXid_PUnmult": {
+  "norm": "p unmult",
+  "modal_value": 0,
+  "n": 7,
+  "target": "tc Form-0538",
+  "targetName": "Unmult",
+  "group": "Particle",
+  "via": "exact-name",
+  "confidence": "med",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0538",
+    "name": "Unmult",
+    "group": "Particle",
+    "default": "1",
+    "min": 1,
+    "max": 2,
+    "type": "1D"
+   }
+  ],
+  "note": "Unmult [1..2] (+1: 0 -> 1 = default off). Single Unmult in the F1 block (the name-twins are F2..F8 clones) — but Particular’s 0531-locked/0694-live twin history makes this a mandatory settability probe. Only authored by the 7 TC15 presets, always 0.",
+  "designerGroup": "particle"
+ },
+ "FXid_RWIsRelative": {
+  "norm": "rw is relative",
+  "modal_value": false,
+  "n": 7,
+  "target": "tc Form-0544",
+  "targetName": "Position Relative To Primary",
+  "group": "Transform",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0544",
+    "name": "Position Relative To Primary",
+    "group": "Transform",
+    "default": "0",
+    "min": 0,
+    "max": 1,
+    "type": "1D"
+   }
+  ],
+  "note": "Position Relative To Primary [0..1], default 0 = modal false (7 TC15 presets, inert). Primary-form oddity — probe or drop-at-default.",
+  "designerGroup": "Transform"
+ },
+ "FXid_RWRelativePosX": {
+  "norm": "rw relative pos x",
+  "modal_value": 0,
+  "n": 7,
+  "target": "tc Form-0549",
+  "targetName": "Relative X Offset",
+  "group": "Transform",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0549",
+    "name": "Relative X Offset",
+    "group": "Transform",
+    "default": "0",
+    "min": -10000000,
+    "max": 10000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Relative X Offset (Pos->Offset), default 0 (inert).",
+  "designerGroup": "Transform"
+ },
+ "FXid_RWRelativePosY": {
+  "norm": "rw relative pos y",
+  "modal_value": 0,
+  "n": 7,
+  "target": "tc Form-0550",
+  "targetName": "Relative Y Offset",
+  "group": "Transform",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0550",
+    "name": "Relative Y Offset",
+    "group": "Transform",
+    "default": "0",
+    "min": -10000000,
+    "max": 10000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Relative Y Offset.",
+  "designerGroup": "Transform"
+ },
+ "FXid_RWRelativePosZ": {
+  "norm": "rw relative pos z",
+  "modal_value": 0,
+  "n": 7,
+  "target": "tc Form-0551",
+  "targetName": "Relative Z Offset",
+  "group": "Transform",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0551",
+    "name": "Relative Z Offset",
+    "group": "Transform",
+    "default": "0",
+    "min": -10000000,
+    "max": 10000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Relative Z Offset.",
+  "designerGroup": "Transform"
+ },
+ "FXid_RWRelativeRotX": {
+  "norm": "rw relative rot x",
+  "modal_value": 0,
+  "n": 7,
+  "target": "tc Form-0545",
+  "targetName": "Relative X Rotation W",
+  "group": "Transform",
+  "via": "exact-name",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0545",
+    "name": "Relative X Rotation W",
+    "group": "Transform",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Relative X Rotation W; authored only at default 0 (inert).",
+  "designerGroup": "Transform"
+ },
+ "FXid_RWRelativeRotY": {
+  "norm": "rw relative rot y",
+  "modal_value": 0,
+  "n": 7,
+  "target": "tc Form-0546",
+  "targetName": "Relative Y Rotation W",
+  "group": "Transform",
+  "via": "exact-name",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0546",
+    "name": "Relative Y Rotation W",
+    "group": "Transform",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Relative Y Rotation W.",
+  "designerGroup": "Transform"
+ },
+ "FXid_RWRelativeRotZ": {
+  "norm": "rw relative rot z",
+  "modal_value": 0,
+  "n": 7,
+  "target": "tc Form-0547",
+  "targetName": "Relative Z Rotation W",
+  "group": "Transform",
+  "via": "exact-name",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0547",
+    "name": "Relative Z Rotation W",
+    "group": "Transform",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Relative Z Rotation W.",
+  "designerGroup": "Transform"
+ },
+ "FXid_RWRelativeScale": {
+  "norm": "rw relative scale",
+  "modal_value": 100,
+  "n": 7,
+  "target": "tc Form-0548",
+  "targetName": "Relative Scale",
+  "group": "Transform",
+  "via": "exact-name",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0548",
+    "name": "Relative Scale",
+    "group": "Transform",
+    "default": "100",
+    "min": 0,
+    "max": 1000000,
+    "type": "1D"
+   }
+  ],
+  "note": "Relative Scale, default 100 (inert authoring).",
+  "designerGroup": "Transform"
+ },
+ "FXid_FluidDensity": {
+  "norm": "fluid density",
+  "modal_value": 0,
+  "n": 6,
+  "target": "tc Form-0570",
+  "targetName": "Buoyancy",
+  "group": "Fluid",
+  "via": "ranked-candidate",
+  "confidence": "low",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0570",
+    "name": "Buoyancy",
+    "group": "Fluid",
+    "default": "5",
+    "min": -200,
+    "max": 200,
+    "type": "1D"
+   }
+  ],
+  "note": "Only plausible scalar: Buoyancy [-200..200] (default 5 vs Designer modal 0 — NO default pair; possible sign inversion dense=sink). Particular’s FluidDensity was left unmapped. Values -77..2 in packs. Probe or drop.",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "0": 2,
+   "2": 1,
+   "-7": 1,
+   "-77": 1,
+   "-11": 1
+  }
+ },
+ "FXid_FluidDensityBlendMode": {
+  "norm": "fluid density blend mode",
+  "modal_value": 0,
+  "n": 6,
+  "target": null,
+  "targetName": null,
+  "group": null,
+  "via": "skip",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [],
+  "note": "No runtime popup counterpart in Fluid/Global groups ({0,1,2} in packs). Likely pairs with the Designer-side density concept — Designer-only until probed otherwise.",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "0": 2,
+   "1": 2,
+   "2": 2
+  }
+ },
+ "FXid_FluidEnable": {
+  "norm": "fluid enable",
+  "modal_value": true,
+  "n": 6,
+  "target": "tc Form-0553",
+  "targetName": "Fluid Motion",
+  "group": "Fluid",
+  "via": "ranked-candidate",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0553",
+    "name": "Fluid Motion",
+    "group": "Fluid",
+    "default": "0",
+    "min": 0,
+    "max": 1,
+    "type": "1D"
+   }
+  ],
+  "note": "Fluid Motion [0..1] — the per-form fluid switch (write 1). PROBE FIRST: Particular’s name-matched Physics Model 0119 was WRITE-LOCKED; its live switch was 0638 Enable Fluid Motion. 0553 is the structural analog but settability is unverified.",
+  "designerGroup": "Fluid"
+ },
+ "FXid_FluidFidelity": {
+  "norm": "fluid fidelity",
+  "modal_value": 4,
+  "n": 6,
+  "target": "tc Form-0573",
+  "targetName": "Simulation Fidelity",
+  "group": "Global Fluid Controls",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0573",
+    "name": "Simulation Fidelity",
+    "group": "Global Fluid Controls",
+    "default": "4",
+    "min": 1,
+    "max": 10,
+    "type": "1D"
+   }
+  ],
+  "note": "GLOBAL > Simulation Fidelity, default 4 = modal.",
+  "designerGroup": "Fluid"
+ },
+ "FXid_FluidFrame0Attribs": {
+  "norm": "fluid frame0 attribs",
+  "modal_value": true,
+  "n": 6,
+  "target": null,
+  "targetName": null,
+  "group": null,
+  "via": "skip",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [],
+  "note": "Always true; no card param (\"use frame-0 attributes\" sim option). Designer-only.",
+  "designerGroup": "Fluid"
+ },
+ "FXid_FluidMotionType": {
+  "norm": "fluid motion type",
+  "modal_value": 0,
+  "n": 6,
+  "target": "tc Form-0555",
+  "targetName": "Fluid Force",
+  "group": "Fluid",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0555",
+    "name": "Fluid Force",
+    "group": "Fluid",
+    "default": "1",
+    "min": 1,
+    "max": 4,
+    "type": "1D"
+   }
+  ],
+  "note": "Fluid Force [1..4] (+1: modal 0 -> 1 = default; mirrors Particular MotionType+1 -> 0615 Fluid Force).",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "0": 3,
+   "1": 1,
+   "2": 2
+  }
+ },
+ "FXid_FluidPhysicsTimeFactor": {
+  "norm": "fluid physics time factor",
+  "modal_value": 1,
+  "n": 6,
+  "target": "tc Form-0554",
+  "targetName": "Fluid Time Factor",
+  "group": "Global Fluid Controls",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0554",
+    "name": "Fluid Time Factor",
+    "group": "Global Fluid Controls",
+    "default": "1",
+    "min": 0,
+    "max": 10,
+    "type": "1D"
+   }
+  ],
+  "note": "GLOBAL > Fluid Time Factor, default 1 = modal.",
+  "designerGroup": "Fluid"
+ },
+ "FXid_FluidViscosity": {
+  "norm": "fluid viscosity",
+  "modal_value": 20,
+  "n": 6,
+  "target": "tc Form-0566",
+  "targetName": "Viscosity",
+  "group": "Global Fluid Controls",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0566",
+    "name": "Viscosity",
+    "group": "Global Fluid Controls",
+    "default": "20",
+    "min": 1,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "GLOBAL Fluid Controls > Viscosity, default 20 = modal. Global: affects all forms on the instance.",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "20": 3,
+   "35": 1,
+   "45": 1,
+   "55": 1
+  }
+ },
+ "FXid_FluidVortexCoreSize": {
+  "norm": "fluid vortex core size",
+  "modal_value": 50,
+  "n": 6,
+  "target": "tc Form-0557",
+  "targetName": "Vortex Core Size",
+  "group": "Fluid",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0557",
+    "name": "Vortex Core Size",
+    "group": "Fluid",
+    "default": "50",
+    "min": 0,
+    "max": 80,
+    "type": "1D"
+   }
+  ],
+  "note": "Vortex Core Size, default 50 = modal.",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "23": 1,
+   "50": 4,
+   "50.29999999999999": 1
+  }
+ },
+ "FXid_FluidVortexRotate": {
+  "norm": "fluid vortex rotate",
+  "modal_value": 0,
+  "n": 6,
+  "target": "tc Form-0560",
+  "targetName": "Vortex Rotate",
+  "group": "Fluid",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0560",
+    "name": "Vortex Rotate",
+    "group": "Fluid",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Vortex Rotate.",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "0": 5,
+   "90": 1
+  }
+ },
+ "FXid_FluidVortexScale": {
+  "norm": "fluid vortex scale",
+  "modal_value": 100,
+  "n": 6,
+  "target": "tc Form-0558",
+  "targetName": "Force Region Scale",
+  "group": "Fluid",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0558",
+    "name": "Force Region Scale",
+    "group": "Fluid",
+    "default": "100",
+    "min": 1,
+    "max": 400,
+    "type": "1D"
+   }
+  ],
+  "note": "Force Region Scale [1..400]%, default 100 = modal (Designer VortexScale; Particular precedent VortexSize -> Force Region Size).",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "70": 1,
+   "100": 5
+  }
+ },
+ "FXid_FluidVortexStrength": {
+  "norm": "fluid vortex strength",
+  "modal_value": 100,
+  "n": 6,
+  "target": "tc Form-0556",
+  "targetName": "Vortex Strength",
+  "group": "Fluid",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0556",
+    "name": "Vortex Strength",
+    "group": "Fluid",
+    "default": "100",
+    "min": -400,
+    "max": 400,
+    "type": "1D"
+   }
+  ],
+  "note": "Vortex Strength, default 100 = modal.",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "46": 1,
+   "96": 1,
+   "100": 4
+  }
+ },
+ "FXid_FluidVortexTilt": {
+  "norm": "fluid vortex tilt",
+  "modal_value": 0,
+  "n": 6,
+  "target": "tc Form-0559",
+  "targetName": "Vortex Tilt",
+  "group": "Fluid",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0559",
+    "name": "Vortex Tilt",
+    "group": "Fluid",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "1D"
+   }
+  ],
+  "note": "Vortex Tilt.",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "0": 5,
+   "20": 1
+  }
+ },
+ "FXid_RandomSwirlX": {
+  "norm": "random swirl x",
+  "modal_value": 43,
+  "n": 6,
+  "target": "tc Form-0563",
+  "targetName": "Random Swirl X",
+  "group": "Fluid",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0563",
+    "name": "Random Swirl X",
+    "group": "Fluid",
+    "default": "0",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Random Swirl X. (Particular’s Designer X doubled as the uniform slider — if Form mirrors that, X may drive XYZ-linked mode; probe if Y/Z look dead.)",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "3": 1,
+   "10": 1,
+   "13": 1,
+   "43": 2,
+   "57": 1
+  }
+ },
+ "FXid_RandomSwirlY": {
+  "norm": "random swirl y",
+  "modal_value": 0,
+  "n": 6,
+  "target": "tc Form-0564",
+  "targetName": "Random Swirl Y",
+  "group": "Fluid",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0564",
+    "name": "Random Swirl Y",
+    "group": "Fluid",
+    "default": "0",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Random Swirl Y.",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "0": 2,
+   "20": 1,
+   "25": 1,
+   "31": 2
+  }
+ },
+ "FXid_RandomSwirlZ": {
+  "norm": "random swirl z",
+  "modal_value": 0,
+  "n": 6,
+  "target": "tc Form-0565",
+  "targetName": "Random Swirl Z",
+  "group": "Fluid",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0565",
+    "name": "Random Swirl Z",
+    "group": "Fluid",
+    "default": "0",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Random Swirl Z.",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "0": 2,
+   "12": 1,
+   "25": 1,
+   "41": 2
+  }
+ },
+ "FXid_Options_TextEmitFrom": {
+  "norm": "text emit from",
+  "modal_value": 1,
+  "n": 5,
+  "target": "tc Form-0578",
+  "targetName": "Emit From",
+  "group": "Base Form > Text/Mask Settings",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0578",
+    "name": "Emit From",
+    "group": "Base Form > Text/Mask Settings",
+    "default": "2",
+    "min": 1,
+    "max": 2,
+    "type": "1D"
+   }
+  ],
+  "note": "Text/Mask > Emit From [1..2] (+1: 1 -> 2 = card default). 2-option popup, semantics (Edges/Faces order) unverified. All text FXids inert in packs (no preset uses Text base form).",
+  "designerGroup": "Base Form"
+ },
+ "FXid_TextDensity": {
+  "norm": "text density",
+  "modal_value": 100,
+  "n": 5,
+  "target": "tc Form-0579",
+  "targetName": "Particle Density Edges",
+  "group": "Base Form > Text/Mask Settings",
+  "via": "ranked-candidate",
+  "confidence": "low",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0579",
+    "name": "Particle Density Edges",
+    "group": "Base Form > Text/Mask Settings",
+    "default": "100",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0596",
+    "name": "Particle Density Faces",
+    "group": "Base Form > Text/Mask Settings",
+    "default": "100",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Two density twins: 0579 Particle Density Edges vs 0596 Particle Density Faces, both default 100 = modal (inert). Choose per Emit From once probed.",
+  "designerGroup": "Base Form"
+ },
+ "FXid_TextLayerSampling": {
+  "norm": "text layer sampling",
+  "modal_value": 0,
+  "n": 5,
+  "target": null,
+  "targetName": null,
+  "group": null,
+  "via": "skip",
+  "confidence": "low",
+  "enumOffsetSuspect": false,
+  "candidates": [],
+  "note": "No runtime counterpart found in Text/Mask Settings (Layer/Use Primary/Match Size/Emit From/densities/RGB Usage/stroke/path/loop all accounted for). Likely Designer-side text rasterization option. Always 0 in packs.",
+  "designerGroup": "Base Form"
+ },
+ "FXid_TextPathEnd": {
+  "norm": "text path end",
+  "modal_value": 100,
+  "n": 5,
+  "target": "tc Form-0584",
+  "targetName": "Path End",
+  "group": "Base Form > Text/Mask Settings",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0584",
+    "name": "Path End",
+    "group": "Base Form > Text/Mask Settings",
+    "default": "100",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Path End, default 100.",
+  "designerGroup": "Base Form"
+ },
+ "FXid_TextPathLoop": {
+  "norm": "text path loop",
+  "modal_value": 0,
+  "n": 5,
+  "target": "tc Form-0586",
+  "targetName": "Loop",
+  "group": "Base Form > Text/Mask Settings",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0586",
+    "name": "Loop",
+    "group": "Base Form > Text/Mask Settings",
+    "default": "1",
+    "min": 1,
+    "max": 2,
+    "type": "1D"
+   }
+  ],
+  "note": "Loop popup [1..2] (+1: 0 -> 1 = default).",
+  "designerGroup": "Base Form"
+ },
+ "FXid_TextPathOffset": {
+  "norm": "text path offset",
+  "modal_value": 0,
+  "n": 5,
+  "target": "tc Form-0585",
+  "targetName": "Path Offset",
+  "group": "Base Form > Text/Mask Settings",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0585",
+    "name": "Path Offset",
+    "group": "Base Form > Text/Mask Settings",
+    "default": "0",
+    "min": -30000,
+    "max": 30000,
+    "type": "1D"
+   }
+  ],
+  "note": "Path Offset, default 0.",
+  "designerGroup": "Base Form"
+ },
+ "FXid_TextPathStart": {
+  "norm": "text path start",
+  "modal_value": 0,
+  "n": 5,
+  "target": "tc Form-0583",
+  "targetName": "Path Start",
+  "group": "Base Form > Text/Mask Settings",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0583",
+    "name": "Path Start",
+    "group": "Base Form > Text/Mask Settings",
+    "default": "0",
+    "min": 0,
+    "max": 100,
+    "type": "1D"
+   }
+  ],
+  "note": "Path Start, default 0.",
+  "designerGroup": "Base Form"
+ },
+ "FXid_TextRGBUsage": {
+  "norm": "text rgb usage",
+  "modal_value": 3,
+  "n": 5,
+  "target": "tc Form-0581",
+  "targetName": "Layer RGB Usage",
+  "group": "Base Form > Text/Mask Settings",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0581",
+    "name": "Layer RGB Usage",
+    "group": "Base Form > Text/Mask Settings",
+    "default": "4",
+    "min": 1,
+    "max": 4,
+    "type": "1D"
+   }
+  ],
+  "note": "Layer RGB Usage [1..4] (+1: modal 3 -> 4 = card default).",
+  "designerGroup": "Base Form"
+ },
+ "FXid_TextStrokeSequentially": {
+  "norm": "text stroke sequentially",
+  "modal_value": false,
+  "n": 5,
+  "target": "tc Form-0582",
+  "targetName": "Stroke Edges Sequentially",
+  "group": "Base Form > Text/Mask Settings",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0582",
+    "name": "Stroke Edges Sequentially",
+    "group": "Base Form > Text/Mask Settings",
+    "default": "0",
+    "min": 0,
+    "max": 1,
+    "type": "1D"
+   }
+  ],
+  "note": "Stroke Edges Sequentially bool 0/1.",
+  "designerGroup": "Base Form"
+ },
+ "FXid_FluidForceLife": {
+  "norm": "fluid force life",
+  "modal_value": 15,
+  "n": 5,
+  "target": "tc Form-0592",
+  "targetName": "Force Lifetime",
+  "group": "Fluid",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0592",
+    "name": "Force Lifetime",
+    "group": "Fluid",
+    "default": "15",
+    "min": 0.10000000149012,
+    "max": 60,
+    "type": "1D"
+   }
+  ],
+  "note": "Force Lifetime, default 15 = modal.",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "5": 2,
+   "15": 3
+  }
+ },
+ "FXid_FluidForceOption": {
+  "norm": "fluid force option",
+  "modal_value": 1,
+  "n": 5,
+  "target": "tc Form-0591",
+  "targetName": "Apply Force",
+  "group": "Fluid",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0591",
+    "name": "Apply Force",
+    "group": "Fluid",
+    "default": "2",
+    "min": 1,
+    "max": 2,
+    "type": "1D"
+   }
+  ],
+  "note": "Apply Force [1..2] (+1: 1 -> 2 = default; mirrors Particular 0636).",
+  "designerGroup": "Fluid"
+ },
+ "FXid_FluidRandomSwirlOption": {
+  "norm": "fluid random swirl option",
+  "modal_value": 0,
+  "n": 5,
+  "target": "tc Form-0595",
+  "targetName": "Random Swirl",
+  "group": "Fluid",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": true,
+  "candidates": [
+   {
+    "matchName": "tc Form-0595",
+    "name": "Random Swirl",
+    "group": "Fluid",
+    "default": "1",
+    "min": 1,
+    "max": 2,
+    "type": "1D"
+   }
+  ],
+  "note": "Random Swirl popup [1..2] (+1: modal 0 -> 1 = default).",
+  "designerGroup": "Fluid"
+ },
+ "FXid_RandomSwirlSeed": {
+  "norm": "random swirl seed",
+  "modal_value": 0,
+  "n": 5,
+  "target": "tc Form-0593",
+  "targetName": "Random Seed",
+  "group": "Fluid",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0593",
+    "name": "Random Seed",
+    "group": "Fluid",
+    "default": "0",
+    "min": 0,
+    "max": 32767,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0301",
+    "name": "Random Seed",
+    "group": "Particle > Texture",
+    "default": "1",
+    "min": 0,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0604",
+    "name": "Random Seed",
+    "group": "Particle",
+    "default": "0",
+    "min": 0,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "Fluid > Random Seed (group pins vs 0301/0604/0290).",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "0": 4,
+   "320": 1
+  }
+ },
+ "FXid_SwirlScale": {
+  "norm": "swirl scale",
+  "modal_value": 10,
+  "n": 5,
+  "target": "tc Form-0594",
+  "targetName": "Swirl Scale",
+  "group": "Fluid",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0594",
+    "name": "Swirl Scale",
+    "group": "Fluid",
+    "default": "10",
+    "min": 1,
+    "max": 1000,
+    "type": "1D"
+   }
+  ],
+  "note": "Swirl Scale, default 10 = modal.",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "10": 3,
+   "24": 1,
+   "30": 1
+  }
+ },
+ "FXid_FluidFlowSpeedX": {
+  "norm": "fluid flow speed x",
+  "modal_value": 115,
+  "n": 2,
+  "target": "tc Form-0567",
+  "targetName": "Flow Speed X",
+  "group": "Global Fluid Controls",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0567",
+    "name": "Flow Speed X",
+    "group": "Global Fluid Controls",
+    "default": "0",
+    "min": -1000,
+    "max": 1000,
+    "type": "1D"
+   }
+  ],
+  "note": "GLOBAL > Flow Speed X (2 presets author real flow).",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "0": 1,
+   "115": 1
+  }
+ },
+ "FXid_FluidFlowSpeedY": {
+  "norm": "fluid flow speed y",
+  "modal_value": -28,
+  "n": 2,
+  "target": "tc Form-0568",
+  "targetName": "Flow Speed Y",
+  "group": "Global Fluid Controls",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0568",
+    "name": "Flow Speed Y",
+    "group": "Global Fluid Controls",
+    "default": "0",
+    "min": -1000,
+    "max": 1000,
+    "type": "1D"
+   }
+  ],
+  "note": "GLOBAL > Flow Speed Y.",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "0": 1,
+   "-28": 1
+  }
+ },
+ "FXid_FluidFlowSpeedZ": {
+  "norm": "fluid flow speed z",
+  "modal_value": 45,
+  "n": 2,
+  "target": "tc Form-0569",
+  "targetName": "Flow Speed Z",
+  "group": "Global Fluid Controls",
+  "via": "exact-name",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0569",
+    "name": "Flow Speed Z",
+    "group": "Global Fluid Controls",
+    "default": "0",
+    "min": -1000,
+    "max": 1000,
+    "type": "1D"
+   }
+  ],
+  "note": "GLOBAL > Flow Speed Z.",
+  "designerGroup": "Fluid",
+  "valueSpread": {
+   "0": 1,
+   "45": 1
+  }
+ },
+ "FXid_PColor": {
+  "norm": "p color",
+  "modal_value": {
+   "r": 255,
+   "g": 255,
+   "b": 255
+  },
+  "n": 77,
+  "target": "tc Form-0036",
+  "targetName": "Color",
+  "group": "Particle",
+  "via": "default-pair",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0036",
+    "name": "Color",
+    "group": "Particle",
+    "default": "1,1,1,1",
+    "min": -3921568.62745098,
+    "max": 3921568.62745098,
+    "type": "COLOR"
+   },
+   {
+    "matchName": "tc Form-0258",
+    "name": "Color",
+    "group": "Particle",
+    "default": "0.25098039215686,0.25098039215686,0.2509",
+    "min": -3921568.62745098,
+    "max": 3921568.62745098,
+    "type": "COLOR"
+   },
+   {
+    "matchName": "tc Form-0420",
+    "name": "Color",
+    "group": "Shading > Shadowlet Settings",
+    "default": "0,0,0,1",
+    "min": -3921568.62745098,
+    "max": 3921568.62745098,
+    "type": "COLOR"
+   }
+  ],
+  "note": "EXTRA (not in worklist recon). Particle > Color (COLOR). Flat color home for the ColorMapArb flatten route (Set Color 0042 must be 1/Color for it to show).",
+  "designerGroup": "particle",
+  "valueSpread": {
+   "{\"r\":255,\"g\":255,\"b\":255}": 28,
+   "{\"r\":255,\"g\":255,\"b\":255,\"a\":255}": 9,
+   "{\"r\":161,\"g\":123,\"b\":236,\"a\":255}": 5,
+   "{\"r\":148,\"g\":72,\"b\":46,\"a\":255}": 4,
+   "{\"r\":113,\"g\":179,\"b\":240,\"a\":255}": 4,
+   "{\"r\":221,\"g\":50,\"b\":50,\"a\":255}": 3,
+   "{\"r\":184,\"g\":90,\"b\":49,\"a\":255}": 3,
+   "{\"r\":122,\"g\":35,\"b\":204,\"a\":255}": 3,
+   "{\"r\":252,\"g\":3,\"b\":3,\"a\":255}": 3,
+   "{\"r\":48,\"g\":232,\"b\":255,\"a\":255}": 1,
+   "{\"r\":0,\"g\":223,\"b\":255,\"a\":255}": 1,
+   "{\"r\":43,\"g\":113,\"b\":179,\"a\":255}": 1
+  }
+ },
+ "FXid_BaseShapeCenter": {
+  "norm": "base shape center",
+  "modal_value": [
+   0.5,
+   0.5,
+   0
+  ],
+  "n": 77,
+  "target": "tc Form-0010",
+  "targetName": "Center XY",
+  "group": "Base Form",
+  "via": "ranked-candidate",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0010",
+    "name": "Center XY",
+    "group": "Base Form",
+    "default": "320,180",
+    "min": null,
+    "max": null,
+    "type": "2D_SPATIAL"
+   },
+   {
+    "matchName": "tc Form-0517",
+    "name": "Position",
+    "group": "Base Form",
+    "default": "320,180,0",
+    "min": null,
+    "max": null,
+    "type": "3D_SPATIAL"
+   },
+   {
+    "matchName": "tc Form-0011",
+    "name": "Center Z",
+    "group": "Base Form",
+    "default": "0",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   },
+   {
+    "matchName": "tc Form-0206",
+    "name": "Center XY",
+    "group": "Kaleidospace",
+    "default": "320,180",
+    "min": null,
+    "max": null,
+    "type": "2D_SPATIAL"
+   }
+  ],
+  "note": "EXTRA. Designer stores NORMALIZED comp coords ([0.5,0.5,0] = center): x*width, y*height -> Center XY 0010 + Center Z 0011 (px). 3D twin 0517 Position also exists — probe which is live for scripting (two-homes class).",
+  "designerGroup": "Base Form",
+  "valueSpread": {
+   "[0.5,0.5,0]": 74,
+   "[0.5,0.059259259259259275,0]": 1,
+   "[0.658333333333334,0.5,0]": 1,
+   "[0.7489583333333336,0.3638888888888888,0]": 1
+  }
+ },
+ "FXid_D1Pos": {
+  "norm": "d1 pos",
+  "modal_value": [
+   0.5,
+   0.5,
+   0
+  ],
+  "n": 77,
+  "target": "tc Form-0527",
+  "targetName": "Sphere 1 Position",
+  "group": "Spherical Field > Sphere 1",
+  "via": "ranked-candidate",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0527",
+    "name": "Sphere 1 Position",
+    "group": "Spherical Field > Sphere 1",
+    "default": "320,180,0",
+    "min": null,
+    "max": null,
+    "type": "3D_SPATIAL"
+   },
+   {
+    "matchName": "tc Form-0188",
+    "name": "Sphere 1 Position XY",
+    "group": "Spherical Field > Sphere 1",
+    "default": "320,180",
+    "min": null,
+    "max": null,
+    "type": "2D_SPATIAL"
+   },
+   {
+    "matchName": "tc Form-0189",
+    "name": "Sphere 1 Position Z",
+    "group": "Spherical Field > Sphere 1",
+    "default": "0",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "EXTRA. Sphere 1 Position (3D) vs legacy XY 0188 + Z 0189 twins. Same normalized convention; inactive presets park it at sentinel [-960,-540,540] — do NOT translate blindly.",
+  "designerGroup": "Spherical Field",
+  "valueSpread": {
+   "[0.5,0.5,0]": 29,
+   "[-960,-540,540]": 26,
+   "[-480,-270,270]": 17,
+   "[-320,-180,180]": 3,
+   "[-960,-540,763]": 1,
+   "[-240,-135,135]": 1
+  }
+ },
+ "FXid_D2Pos": {
+  "norm": "d2 pos",
+  "modal_value": [
+   -960,
+   -540,
+   540
+  ],
+  "n": 77,
+  "target": "tc Form-0528",
+  "targetName": "Sphere 2 Position",
+  "group": "Spherical Field > Sphere 2",
+  "via": "ranked-candidate",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0528",
+    "name": "Sphere 2 Position",
+    "group": "Spherical Field > Sphere 2",
+    "default": "320,180,0",
+    "min": null,
+    "max": null,
+    "type": "3D_SPATIAL"
+   },
+   {
+    "matchName": "tc Form-0196",
+    "name": "Sphere 2 Position XY",
+    "group": "Spherical Field > Sphere 2",
+    "default": "320,180",
+    "min": null,
+    "max": null,
+    "type": "2D_SPATIAL"
+   },
+   {
+    "matchName": "tc Form-0197",
+    "name": "Sphere 2 Position Z",
+    "group": "Spherical Field > Sphere 2",
+    "default": "0",
+    "min": -100000,
+    "max": 100000,
+    "type": "1D"
+   }
+  ],
+  "note": "EXTRA. Sphere 2 Position; sentinel [-960,-540,540] is the modal (sphere 2 unused in most packs).",
+  "designerGroup": "Spherical Field",
+  "valueSpread": {
+   "[-960,-540,540]": 26,
+   "[0.5,0.5,0]": 24,
+   "[-480,-270,270]": 23,
+   "[-320,-180,180]": 3,
+   "[-240,-135,135]": 1
+  }
+ },
+ "FXid_KCenter": {
+  "norm": "k center",
+  "modal_value": [
+   -960,
+   -540,
+   540
+  ],
+  "n": 66,
+  "target": "tc Form-0608",
+  "targetName": "Center Position",
+  "group": "Kaleidospace",
+  "via": "ranked-candidate",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0608",
+    "name": "Center Position",
+    "group": "Kaleidospace",
+    "default": "320,180,0",
+    "min": null,
+    "max": null,
+    "type": "3D_SPATIAL"
+   },
+   {
+    "matchName": "tc Form-0206",
+    "name": "Center XY",
+    "group": "Kaleidospace",
+    "default": "320,180",
+    "min": null,
+    "max": null,
+    "type": "2D_SPATIAL"
+   }
+  ],
+  "note": "EXTRA. Kaleidospace Center Position (3D) vs Center XY 0206. Mixed conventions in packs: normalized [0.5,0.5] (KCenterXY) and sentinel [-960,-540,540].",
+  "designerGroup": "kaleidospace",
+  "valueSpread": {
+   "[-960,-540,540]": 26,
+   "[-480,-270,270]": 20,
+   "[0.5,0.5,0]": 16,
+   "[-240,-135,135]": 2,
+   "[0.46927083333333297,0.5,0]": 2
+  }
+ },
+ "FXid_KCenterXY": {
+  "norm": "k center xy",
+  "modal_value": [
+   0.5,
+   0.5
+  ],
+  "n": 16,
+  "target": "tc Form-0206",
+  "targetName": "Center XY",
+  "group": "Kaleidospace",
+  "via": "ranked-candidate",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0206",
+    "name": "Center XY",
+    "group": "Kaleidospace",
+    "default": "320,180",
+    "min": null,
+    "max": null,
+    "type": "2D_SPATIAL"
+   },
+   {
+    "matchName": "tc Form-0608",
+    "name": "Center Position",
+    "group": "Kaleidospace",
+    "default": "320,180,0",
+    "min": null,
+    "max": null,
+    "type": "3D_SPATIAL"
+   },
+   {
+    "matchName": "tc Form-0010",
+    "name": "Center XY",
+    "group": "Base Form",
+    "default": "320,180",
+    "min": null,
+    "max": null,
+    "type": "2D_SPATIAL"
+   }
+  ],
+  "note": "EXTRA. 2D variant of KCenter (n=16, TC14-era). Normalized -> x*W, y*H.",
+  "designerGroup": "kaleidospace",
+  "valueSpread": {
+   "[0.5,0.5]": 12,
+   "[-960,-540]": 4
+  }
+ },
+ "FXid_RelativePosition": {
+  "norm": "relative position",
+  "modal_value": [
+   0,
+   0,
+   0
+  ],
+  "n": 7,
+  "target": "tc Form-0542",
+  "targetName": "Relative Position",
+  "group": "Base Form",
+  "via": "exact-name",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0542",
+    "name": "Relative Position",
+    "group": "Base Form",
+    "default": "0,0,0",
+    "min": null,
+    "max": null,
+    "type": "3D_SPATIAL"
+   }
+  ],
+  "note": "EXTRA. Base Form > Relative Position (3D), authored only at default [0,0,0] by TC15 presets (inert).",
+  "designerGroup": "Base Form"
+ },
+ "FXid_FluidVortexRelPos": {
+  "norm": "fluid vortex rel pos",
+  "modal_value": [
+   0,
+   0,
+   0
+  ],
+  "n": 5,
+  "target": "tc Form-0590",
+  "targetName": "Force Relative Position",
+  "group": "Fluid",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0590",
+    "name": "Force Relative Position",
+    "group": "Fluid",
+    "default": "0,0,0",
+    "min": null,
+    "max": null,
+    "type": "3D_SPATIAL"
+   }
+  ],
+  "note": "EXTRA. Fluid > Force Relative Position (3D), default 0,0,0 = modal (mirrors Particular 0635 Rel Pos).",
+  "designerGroup": "Fluid"
+ },
+ "FXid_Options_SmokeletShadow_Color": {
+  "norm": "smokelet shadow color",
+  "modal_value": {
+   "r": 0,
+   "g": 0,
+   "b": 0
+  },
+  "n": 77,
+  "target": "tc Form-0420",
+  "targetName": "Color",
+  "group": "Shading > Shadowlet Settings",
+  "via": "default-pair",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0420",
+    "name": "Color",
+    "group": "Shading > Shadowlet Settings",
+    "default": "0,0,0,1",
+    "min": -3921568.62745098,
+    "max": 3921568.62745098,
+    "type": "COLOR"
+   },
+   {
+    "matchName": "tc Form-0258",
+    "name": "Color",
+    "group": "Particle",
+    "default": "0.25098039215686,0.25098039215686,0.2509",
+    "min": -3921568.62745098,
+    "max": 3921568.62745098,
+    "type": "COLOR"
+   },
+   {
+    "matchName": "tc Form-0036",
+    "name": "Color",
+    "group": "Particle",
+    "default": "1,1,1,1",
+    "min": -3921568.62745098,
+    "max": 3921568.62745098,
+    "type": "COLOR"
+   }
+  ],
+  "note": "EXTRA (COLOR {r,g,b}). TWIN TRAP like the strength/opacity twins: Shadowlet Settings > Color 0420 (default black = Designer modal black) vs Particle-level 0258 (default grey 0.25). Same probe.",
+  "designerGroup": "shading",
+  "valueSpread": {
+   "{\"r\":0,\"g\":0,\"b\":0}": 53,
+   "{\"r\":64,\"g\":64,\"b\":64,\"a\":255}": 23,
+   "{\"r\":0,\"g\":0,\"b\":0,\"a\":255}": 1
+  }
+ },
+ "FXid_PLayer": {
+  "norm": "p layer",
+  "modal_value": {
+   "uuid": "",
+   "footage": ""
+  },
+  "n": 7,
+  "target": "tc Form-0027",
+  "targetName": "Layer",
+  "group": "Particle > Texture",
+  "via": "layer-connect",
+  "confidence": "high",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0027",
+    "name": "Layer",
+    "group": "Particle > Texture",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "LAYER_INDEX"
+   },
+   {
+    "matchName": "tc Form-0577",
+    "name": "Layer",
+    "group": "Base Form > Text/Mask Settings",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "LAYER_INDEX"
+   },
+   {
+    "matchName": "tc Form-0055",
+    "name": "Layer",
+    "group": "Layer Maps > Color and Alpha",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "LAYER_INDEX"
+   },
+   {
+    "matchName": "tc Form-0070",
+    "name": "Layer",
+    "group": "Layer Maps > Size",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "LAYER_INDEX"
+   },
+   {
+    "matchName": "tc Form-0075",
+    "name": "Layer",
+    "group": "Layer Maps > Fractal Strength",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "LAYER_INDEX"
+   },
+   {
+    "matchName": "tc Form-0080",
+    "name": "Layer",
+    "group": "Layer Maps > Disperse",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "LAYER_INDEX"
+   }
+  ],
+  "note": "EXTRA. Sprite texture layer (Particle > Texture > Layer, LAYER_INDEX). Actual asset path rides the non-FXid key \"rg.p.sprite.id\" {uuid,footage} with ${RootAssetPack} — import footage, add as hidden layer, connect by index (Particular 0066 route). Texture opts (0028-0030, 0301) unhide AFTER the connect.",
+  "layerConnect": true,
+  "designerGroup": "particle"
+ },
+ "FXid_OBJLayer": {
+  "norm": "obj layer",
+  "modal_value": {
+   "uuid": "",
+   "footage": ""
+  },
+  "n": 7,
+  "target": "tc Form-0465",
+  "targetName": "Model",
+  "group": "Base Form > 3D Model Settings",
+  "via": "layer-connect",
+  "confidence": "med",
+  "enumOffsetSuspect": false,
+  "candidates": [
+   {
+    "matchName": "tc Form-0465",
+    "name": "Model",
+    "group": "Base Form > 3D Model Settings",
+    "default": "0",
+    "min": null,
+    "max": null,
+    "type": "LAYER_INDEX"
+   }
+  ],
+  "note": "EXTRA. 3D Model > Model (LAYER_INDEX). Path rides non-FXid \"rg.bf.obj.id\" (.obj under ${RootAssetPack}); AE cannot script-import OBJ — expect the use-comp master route (Particular round-7a). Refresh is a button (0466). Probe.",
+  "layerConnect": true,
+  "designerGroup": "Base Form"
+ }
+}

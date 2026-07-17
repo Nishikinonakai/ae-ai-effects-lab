@@ -12,6 +12,8 @@ BRIDGE_DIR="$HOME/Documents/ae-mcp-bridge"
 
 pkill -9 -f "After Effects 2022.app/Contents/MacOS/After Effects" 2>/dev/null || true
 pkill -9 -f "After Effects 2022.app/Contents/MacOS/aerendercore" 2>/dev/null || true
+# orphan crash reporters from dead sessions (harmless but they pile up)
+pkill -9 -f "After Effects 2022.app/Contents/MacOS/crashpad_handler" 2>/dev/null || true
 
 for i in $(seq 1 15); do
   if ! pgrep -f "After Effects 2022.app/Contents/MacOS/(After Effects|aerendercore)" > /dev/null; then
