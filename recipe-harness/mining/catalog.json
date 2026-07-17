@@ -690,7 +690,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire Burst 2.xbxc",
       "draft": "drafts/TC14/fire-burst-2.json",
       "thumb": null,
-      "mapped": 69,
+      "mapped": 70,
       "unmapped": 44,
       "curves": []
     },
@@ -723,7 +723,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fireball Medium 1.xbxc",
       "draft": "drafts/TC14/fireball-medium-1.json",
       "thumb": null,
-      "mapped": 69,
+      "mapped": 70,
       "unmapped": 44,
       "curves": []
     },
@@ -734,7 +734,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fireball Medium 2.xbxc",
       "draft": "drafts/TC14/fireball-medium-2.json",
       "thumb": null,
-      "mapped": 69,
+      "mapped": 70,
       "unmapped": 44,
       "curves": []
     },
@@ -745,7 +745,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Flare Flash 1.xbxc",
       "draft": "drafts/TC14/flare-flash-1.json",
       "thumb": null,
-      "mapped": 69,
+      "mapped": 70,
       "unmapped": 44,
       "curves": []
     },
@@ -756,7 +756,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Flare Flash 2.xbxc",
       "draft": "drafts/TC14/flare-flash-2.json",
       "thumb": null,
-      "mapped": 69,
+      "mapped": 70,
       "unmapped": 44,
       "curves": []
     },
@@ -767,7 +767,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Flare Flash 3.xbxc",
       "draft": "drafts/TC14/flare-flash-3.json",
       "thumb": null,
-      "mapped": 69,
+      "mapped": 70,
       "unmapped": 44,
       "curves": []
     },
@@ -1648,7 +1648,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Falling Flares.xbxc",
       "draft": "drafts/TC14/falling-flares.json",
       "thumb": "thumbs/TC14/Motion Graphics/Falling Flares.png",
-      "mapped": 68,
+      "mapped": 69,
       "unmapped": 40,
       "curves": []
     },
@@ -2188,7 +2188,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Directional FIre 1.xbxc",
       "draft": "drafts/TC14/directional-fire-1.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Directional FIre 1.png",
-      "mapped": 69,
+      "mapped": 70,
       "unmapped": 45,
       "curves": []
     },
@@ -2199,7 +2199,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Directional Fire 2.xbxc",
       "draft": "drafts/TC14/directional-fire-2.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Directional Fire 2.png",
-      "mapped": 69,
+      "mapped": 70,
       "unmapped": 45,
       "curves": []
     },
@@ -2225,7 +2225,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Fireplace.xbxc",
       "draft": "drafts/TC14/fireplace.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Fireplace.png",
-      "mapped": 69,
+      "mapped": 70,
       "unmapped": 45,
       "curves": []
     },
@@ -2270,7 +2270,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Horizontal Fire.xbxc",
       "draft": "drafts/TC14/horizontal-fire.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Horizontal Fire.png",
-      "mapped": 89,
+      "mapped": 90,
       "unmapped": 52,
       "curves": []
     },
@@ -2338,7 +2338,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Rocket Fire.xbxc",
       "draft": "drafts/TC14/rocket-fire.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Rocket Fire.png",
-      "mapped": 69,
+      "mapped": 70,
       "unmapped": 45,
       "curves": []
     },
@@ -2481,7 +2481,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smokey Fire.xbxc",
       "draft": "drafts/TC14/smokey-fire.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smokey Fire.png",
-      "mapped": 68,
+      "mapped": 69,
       "unmapped": 45,
       "curves": []
     }

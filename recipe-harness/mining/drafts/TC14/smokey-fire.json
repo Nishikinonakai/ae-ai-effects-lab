@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smokey Fire.xbxc",
   "_pack": "TC14",
   "_category": "Smoke and Fire",
-  "_map_coverage": "68 mapped / 45 unmapped / 0 curves",
+  "_map_coverage": "69 mapped / 45 unmapped / 0 curves",
   "_dropped_inert": [
     [
       "tc Particular-0750",
@@ -1268,11 +1268,6 @@
           "FXid_PLifeRnd (alias)"
         ],
         [
-          "tc Particular-0531",
-          1,
-          "FXid_PUnmult (alias)"
-        ],
-        [
           "tc Particular-0314",
           7,
           "FXid_Streaklet_NoSpheres (alias)"
@@ -1483,6 +1478,16 @@
           "tc Particular-0067",
           3,
           "FXid_PLayerTime (+enumOffset)"
+        ],
+        [
+          "tc Particular-0694",
+          1,
+          "FXid_PUnmult (alias) [after sprite connect]"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Mode: Add (curated — fire-family luma sprite)"
         ]
       ],
       "expressions": []

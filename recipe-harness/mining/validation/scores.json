@@ -344,63 +344,64 @@
   },
   "ring-explosion": {
    "verdict": "partial",
-   "class": "render-hang",
-   "round": "r6"
+   "class": "slow-frame",
+   "round": "r7",
+   "note": "t0.08 ok; t1.9 grinds 15+min — needs cheaper second sample"
   },
   "smoke-explosion": {
-   "verdict": "fail",
-   "class": "render-hang",
-   "round": "r6"
+   "verdict": "partial",
+   "class": "blowout",
+   "round": "r7"
   },
   "smoke-hit": {
-   "verdict": "fail",
-   "class": "render-hang",
-   "round": "r6"
+   "verdict": "partial",
+   "class": "no-thumb",
+   "round": "r7"
   },
   "smoke-puff-1": {
-   "verdict": "fail",
-   "class": "render-hang",
-   "round": "r6"
+   "verdict": "partial",
+   "class": "cloud-merge",
+   "round": "r7"
   },
   "smoke-puff-2": {
-   "verdict": "fail",
-   "class": "render-hang",
-   "round": "r6"
+   "verdict": "partial",
+   "class": "no-thumb",
+   "round": "r7"
   },
   "spark-blast-1": {
-   "verdict": "fail",
-   "class": "render-hang",
-   "round": "r6"
+   "verdict": "partial",
+   "class": "no-thumb",
+   "round": "r7"
   },
   "spark-directional": {
    "verdict": "fail",
-   "class": "render-hang",
-   "round": "r6"
+   "class": "burst-sampling",
+   "round": "r7"
   },
   "spark-single": {
    "verdict": "fail",
-   "class": "render-hang",
-   "round": "r6"
+   "class": "burst-sampling",
+   "round": "r7"
   },
   "spark-strings-1": {
-   "verdict": "fail",
-   "class": "render-hang",
-   "round": "r6"
+   "verdict": "partial",
+   "class": "no-thumb",
+   "round": "r7"
   },
   "spark-strings-2": {
-   "verdict": "fail",
-   "class": "render-hang",
-   "round": "r6"
+   "verdict": "partial",
+   "class": "no-thumb",
+   "round": "r7"
   },
   "spark-strings-3": {
-   "verdict": "fail",
-   "class": "render-hang",
-   "round": "r6"
+   "verdict": "partial",
+   "class": "no-thumb",
+   "round": "r7"
   },
   "sparks-ignite": {
-   "verdict": "fail",
-   "class": "render-hang",
-   "round": "r6"
+   "verdict": "partial",
+   "class": "no-thumb",
+   "round": "r7"
   },
   "bow-shock": {
    "verdict": "partial",
@@ -608,9 +609,10 @@
    "round": "r6"
   },
   "falling-flares": {
-   "verdict": "partial",
-   "class": "sprite-alpha",
-   "round": "r6"
+   "verdict": "match",
+   "class": "sprite-luma",
+   "round": "r7",
+   "note": "unmult 0694 + Add"
   },
   "flickering-lights": {
    "verdict": "partial",
@@ -713,9 +715,9 @@
    "round": "r6"
   },
   "blowing-seeds-wide": {
-   "verdict": "fail",
-   "class": "render-hang",
-   "round": "r6"
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "r7"
   },
   "blowing-snow": {
    "verdict": "match",
@@ -818,9 +820,10 @@
    "round": "r6"
   },
   "fireplace": {
-   "verdict": "partial",
-   "class": "sprite-alpha",
-   "round": "r6"
+   "verdict": "match",
+   "class": "sprite-luma",
+   "round": "r7",
+   "note": "unmult 0694 + Add"
   },
   "firestarter": {
    "verdict": "partial",
@@ -833,19 +836,22 @@
    "round": "r6"
   },
   "horizontal-fire": {
-   "verdict": "partial",
-   "class": "sprite-alpha",
-   "round": "r6"
+   "verdict": "match",
+   "class": "sprite-luma",
+   "round": "r7",
+   "note": "unmult 0694 + Add; Y-height residue (EmitterSize gate)"
   },
   "horizontal-smoke-1": {
    "verdict": "partial",
-   "class": "sprite-alpha",
-   "round": "r6"
+   "class": "ok-partial",
+   "round": "r7",
+   "note": "unmult clean; bank narrower than thumb (emitter width)"
   },
   "horizontal-smoke-2": {
-   "verdict": "fail",
-   "class": "sprite-alpha",
-   "round": "r6"
+   "verdict": "match",
+   "class": "sprite-luma",
+   "round": "r7",
+   "note": "unmult 0694, Normal blend"
   },
   "point-smoke": {
    "verdict": "match",

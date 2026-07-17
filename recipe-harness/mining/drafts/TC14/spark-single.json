@@ -1409,8 +1409,8 @@
         ],
         [
           "tc Particular-2194",
-          4185,
-          "FXid_SE_ParticlesPerSecF (aux->S2)"
+          419,
+          "FXid_SE_ParticlesPerSecF (aux->S2) [/10 burst-spike normalization]"
         ],
         [
           "tc Particular-2136",
@@ -1439,7 +1439,7 @@
   ],
   "camera": null,
   "renderFrames": [
-    0.08,
-    0.11200256347656251
+    0.01,
+    0.08
   ]
 }

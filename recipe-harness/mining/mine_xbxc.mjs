@@ -79,7 +79,11 @@ const ALIAS = {
   'grid emitter particles in y': 'particles in y',
   'grid emitter particles in z': 'particles in z',
   'p set color': 'set color',
-  'p unmult': 'unmult',
+  // Unmult twins (probed 2026-07-17 on live instance): 0531 "Unmult" reads 1 but is
+  // WRITE-LOCKED and inert — the LIVE toggle is 0694 (default 0/off). With 0694=0 luma
+  // sprites composite as OPAQUE cards: invisible over the black bg, hard black occlusion
+  // rectangles wherever particles overlap (the whole r6 "sprite-alpha" class).
+  'p unmult': '@tc Particular-0694',
   'dir spread': 'direction spread',
   'emitter dir': 'direction',
   'angle x': 'x rotation', 'angle y': 'y rotation', 'angle z': 'z rotation',
@@ -343,6 +347,17 @@ for (const file of files) {
     if (dsgn === 7 || dsgn === 10) params.push(['tc Particular-0701', 1, 'Color Fill (Designer type variant)']);
     const plTime = flat.FXid_PLayerTime;
     if (typeof plTime === 'number') params.push(['tc Particular-0067', plTime + 1, 'FXid_PLayerTime (+enumOffset)']);
+    // keep the live unmult (0694) after the connect, and give fire-family luma sprites
+    // the additive accumulation Designer's own preview shows (white-hot overlap cores on
+    // Horizontal Fire); smoke banks stay Normal — unmult alone matches their thumbs.
+    const unmIdx = params.findIndex(p => p[0] === 'tc Particular-0694');
+    if (unmIdx >= 0) {
+      const unm = params.splice(unmIdx, 1)[0];
+      unm[2] += ' [after sprite connect]';
+      params.push(unm);
+      if (unm[1] === 1 && /fire|flare|spark|flame|ember/i.test(base))
+        params.push(['tc Particular-0069', 2, 'Blend Mode: Add (curated — fire-family luma sprite)']);
+    }
   } else if (ptype && ptype[1] >= 6) {
     const names = category + ' ' + base;
     ptype[1] = /star/i.test(names) ? 3 : SMOKEISH.test(names) ? 4 : 2;
@@ -394,8 +409,11 @@ for (const file of files) {
     expressionsOut.push(['tc Particular-0146', `time < 0.1 ? ${spikeRate} : 0`, 'Explode -> 0.1s burst spike']);
     // frame 1 INSIDE the emission window (0.08 — alive whatever the life is; round-3's
     // life*0.5 sat exactly on the window edge for 0.2s lives), frame 2 mid-flight of the
-    // last-born particles
-    burstFrames = [0.08, Math.min(2, 0.1 + life * 0.6)];
+    // last-born particles. EXCEPT instant flashes (life < 0.1s: muzzle-flash/spark-single
+    // family): emission ticks at 0, 1/30, 2/30 and everything is dead life-seconds later,
+    // so any post-window sample is EMPTY (r7: spark-directional t0.112 rendered 0 px while
+    // t0.08 had 38k lit px). Sample two in-window instants instead.
+    burstFrames = life < 0.1 ? [0.01, 0.08] : [0.08, Math.min(2, 0.1 + life * 0.6)];
   }
 
   // physics guard: the engine ignores Wind AND Air Turbulence when Air Resistance == 0,
@@ -461,6 +479,19 @@ for (const file of files) {
     }
     params.push(['tc Particular-2136', 1, 'Set Color S2: At Birth']);
     params.push(['tc Particular-2118', col2, `Color S2 (${colSrc})`]);
+    // S2-psec burst normalization (r6 'aux-burst-density' + r7 'slow-frame'): each PARENT
+    // emits the aux rate, so children/sec scale with parents alive — a Designer-Explode
+    // spike (19k parents at once on ring-explosion) turns a vendor-tuned 450/s trail into
+    // white walls and multi-million-particle mid-flight frames (19k × 450/s × 1s child
+    // life ≈ 8.6M at t1.9 — the 15-min frame). Divide the S2 rate by the same ×10 the
+    // spike applies to the parent rate; the visual loop is the arbiter of the ratio.
+    if (isBurst) {
+      const s2psec = params.find(p => p[0] === 'tc Particular-2194');
+      if (s2psec && typeof s2psec[1] === 'number' && s2psec[1] > 0) {
+        s2psec[1] = Math.max(1, Math.round(s2psec[1] / 10));
+        s2psec[2] += ' [/10 burst-spike normalization]';
+      }
+    }
     // S2 physics guard — same engine rule as main: wind/turbulence are inert at
     // Air Resistance 0 and setting them anyway pops the bridge-stalling modal
     const air2 = params.find(p => p[0] === 'tc Particular-2066');

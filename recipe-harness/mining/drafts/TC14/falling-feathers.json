@@ -1283,11 +1283,6 @@
           "FXid_PLifeRnd (alias)"
         ],
         [
-          "tc Particular-0531",
-          0,
-          "FXid_PUnmult (alias)"
-        ],
-        [
           "tc Particular-0314",
           7,
           "FXid_Streaklet_NoSpheres (alias)"
@@ -1508,6 +1503,11 @@
           "tc Particular-0067",
           7,
           "FXid_PLayerTime (+enumOffset)"
+        ],
+        [
+          "tc Particular-0694",
+          0,
+          "FXid_PUnmult (alias) [after sprite connect]"
         ]
       ],
       "expressions": []

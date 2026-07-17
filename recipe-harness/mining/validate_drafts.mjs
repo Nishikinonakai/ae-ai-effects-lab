@@ -9,7 +9,13 @@
 //   - 3 consecutive stuck drafts → abort with exit 3 (re-run to resume)
 //   - every 30 drafts the AE project is closed (comps are regenerable; keeps AE lean)
 //
-// usage: node mining/validate_drafts.mjs [--timeout=150] [--limit=N] [--only=slug1,slug2]
+// usage: node mining/validate_drafts.mjs [--timeout=150] [--limit=N] [--only=slug1,slug2] [--drain=90]
+//
+// --drain=SEC (default 90): after each draft, if async frames are still missing, keep
+// polling up to SEC more before starting the next draft. saveFrameToPng renders continue
+// AFTER the script returns; starting the next draft on a saturated queue is what produced
+// the r6 "render-hang" cascade (13 contiguous false fails). Late arrivals are recorded
+// as ready — a slow frame is a slow frame, not a missing one.
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
@@ -24,6 +30,7 @@ const RES = path.join(BRIDGE, 'ae_mcp_result.json');
 
 const flag = (n, d) => (process.argv.find(a => a.startsWith(`--${n}=`)) || '').split('=')[1] || d;
 const timeoutSec = Number(flag('timeout', 150));
+const drainSec = Number(flag('drain', 90));
 const limit = Number(flag('limit', 0)) || Infinity;
 const only = flag('only', '') ? new Set(flag('only', '').split(',')) : null;
 
@@ -81,10 +88,26 @@ for (const entry of todo) {
   const slug = path.basename(entry.draft, '.json');
   const draft = JSON.parse(fs.readFileSync(path.join(__dirname, entry.draft), 'utf8'));
   const outDir = path.join(FRAMES, slug);
+  // pre-delete this run's target frames: a stale same-name PNG from an earlier round
+  // satisfies the ready-poll INSTANTLY and the record/scoring reads old pixels
+  for (const t of draft.renderFrames || []) {
+    const fp = path.join(outDir, `${draft.name}_t${String(t).replace('.', 'p')}.png`);
+    fs.rmSync(fp, { force: true });
+  }
   const t0 = Date.now();
   let rec;
   try {
-    const { report, frames } = await runRecipe(draft, { outDir, timeoutSec, frameTimeoutMs: 20000 });
+    const { report, frames } = await runRecipe(draft, { outDir, timeoutSec, frameTimeoutMs: 45000 });
+    // drain: don't start the next draft while this one's async renders still grind
+    const missing = frames.filter(f => !f.ready);
+    if (missing.length && drainSec > 0) {
+      const dEnd = Date.now() + drainSec * 1000;
+      while (missing.some(f => !f.ready) && Date.now() < dEnd) {
+        await sleep(2000);
+        for (const f of missing) if (!f.ready && fs.existsSync(f.path) && fs.statSync(f.path).size > 0) f.ready = true;
+      }
+      if (missing.some(f => !f.ready)) console.log(`  ${slug}: frames still pending after +${drainSec}s drain — queue may be saturated`);
+    }
     const okP = (report.params || []).filter(p => p.ok).length;
     rec = {
       slug, pack: entry.pack, category: entry.category,

@@ -1,0 +1,32 @@
+[
+ {
+  "sheet": 0,
+  "pos": 0,
+  "slug": "falling-flares",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 1,
+  "slug": "fireplace",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 2,
+  "slug": "horizontal-fire",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 3,
+  "slug": "horizontal-smoke-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 4,
+  "slug": "horizontal-smoke-2",
+  "flag": "ok"
+ }
+]

@@ -1,0 +1,104 @@
+[
+ {
+  "sheet": 0,
+  "pos": 0,
+  "slug": "blue-icosas",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 1,
+  "slug": "yellow-tech-balls",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 2,
+  "slug": "explosion-trail",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 3,
+  "slug": "fire-trails-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 4,
+  "slug": "fire-trails-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 5,
+  "slug": "muzzle-flash-1",
+  "flag": "faint"
+ },
+ {
+  "sheet": 0,
+  "pos": 6,
+  "slug": "muzzle-flash-2",
+  "flag": "ok"
+ },
+ {
+  "sheet": 0,
+  "pos": 7,
+  "slug": "muzzle-flash-3",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 0,
+  "slug": "muzzle-flash-4",
+  "flag": "faint"
+ },
+ {
+  "sheet": 1,
+  "pos": 1,
+  "slug": "ring-explosion",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 2,
+  "slug": "spark-directional",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 3,
+  "slug": "spark-single",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 4,
+  "slug": "falling-flares",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 5,
+  "slug": "fireplace",
+  "flag": "faint"
+ },
+ {
+  "sheet": 1,
+  "pos": 6,
+  "slug": "horizontal-fire",
+  "flag": "ok"
+ },
+ {
+  "sheet": 1,
+  "pos": 7,
+  "slug": "horizontal-smoke-1",
+  "flag": "ok"
+ },
+ {
+  "sheet": 2,
+  "pos": 0,
+  "slug": "horizontal-smoke-2",
+  "flag": "ok"
+ }
+]

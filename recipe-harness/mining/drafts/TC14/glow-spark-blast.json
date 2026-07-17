@@ -1242,7 +1242,7 @@
           "FXid_PLifeRnd (alias)"
         ],
         [
-          "tc Particular-0531",
+          "tc Particular-0694",
           0,
           "FXid_PUnmult (alias)"
         ],
@@ -1478,8 +1478,8 @@
         ],
         [
           "tc Particular-2194",
-          235,
-          "FXid_SE_ParticlesPerSecF (aux->S2)"
+          24,
+          "FXid_SE_ParticlesPerSecF (aux->S2) [/10 burst-spike normalization]"
         ],
         [
           "tc Particular-2136",

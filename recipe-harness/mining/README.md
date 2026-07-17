@@ -180,27 +180,74 @@ Three user reads + three clicks closed several fronts:
   quality via MODEL REASONING over runtime introspection — tables are reference priors,
   not the mechanism.
 
+## Round-7 RESULTS (2026-07-17): 49 match / 102 partial / 35 fail
+
+Trajectory: r1 23/71/90 → r3 32/107/48 → r6 44/93/49 → **r7 49/102/35**; 49
+recipes promoted. Three fronts closed in one session:
+
+1. **Render-hang dissolved** (13 drafts): the class was a harness artifact, not
+   params — see the postmortem in queue item 1 below. All 12 "hang" drafts
+   re-validated 2/2 frames in 4–15s on a clean session; verdicts: 10 partial
+   (smoke/spark bursts render true), 2 burst-sampling fails → fixed (below).
+   ring-explosion's genuinely slow frame traced to the S2-psec bug (next).
+2. **S2-psec burst normalization**: parents each emit the aux rate, so spiked
+   bursts multiplied child counts (ring-explosion: 19k parents × 450/s × 1s ≈
+   8.6M particles at t1.9 = the "15-min frame"). 2194 ÷10 when isBurst →
+   ring-explosion renders in 12s, a clean teal turbulent ring (partial,
+   no-thumb).
+3. **sprite-alpha SOLVED — the Unmult twin trap**: 0531 "Unmult" reads 1 but is
+   WRITE-LOCKED and **inert**; the LIVE toggle is **0694** (default off). With it
+   off, luma sprites composite as opaque cards: invisible on black, hard black
+   occlusion rectangles at overlaps — which also HID most of the fire wall
+   (foreground cards blacked out everything behind). 0694=1 + curated
+   **0069 Blend Mode=Add** for fire-named luma sprites (Designer's preview is
+   additive: white-hot overlap cores; smoke banks stay Normal) →
+   falling-flares/fireplace/horizontal-fire/horizontal-smoke-2 all **match**.
+   Probe methodology that found it: sweep all 7657 effect properties for
+   name-matches and settability — Designer FXids can map to LOCKED display
+   twins; the live param lives at a different id (S2 twin pair: 2579 locked /
+   2742 live). Footage alphaMode was a red herring (fire .movs carry no alpha).
+4. **Instant-flash sampling** (spark-single/directional + muzzle-flash family):
+   life < 0.1s means everything is dead after the emission window (ticks at 0,
+   1/30, 2/30) — post-window samples render empty (t0.112: 0 px; t0.08: 38k px).
+   Burst sampling now uses [0.01, 0.08] when life < 0.1.
+
+Validator hardening: 20s frame poll → 45s; `--drain=SEC` (default 90) keeps the
+next draft off a saturated async queue and records late frames as ready;
+pre-delete of target frame files (stale same-name PNGs satisfied the ready-poll
+instantly and scored old pixels). bridge_down.sh: kill -9 + verify-dead +
+queue-file reset (SIGTERM-surviving zombies raced the new instance on
+ae_command.json — the "poisoned fresh instance" mechanism).
+
 ## Round-7 queue (by yield)
 
-1. **Bisect the render-hang class** (12 drafts) — IN PROGRESS, two hypotheses
-   already ELIMINATED (2026-07-17 trials on smoke-puff-1, fresh AE each):
-   (a) TF params stripped → still no frames; (b) full params with POST-window
-   sampling [0.15, 1.9] (r5's working times) → still no frames after 300s.
-   Streaklet 0314/0315 also excluded (draft carries pure defaults 7/60).
-   The r5-era draft rendered fine on the same machine → the killer is among the
-   REMAINING r6 additions: rotation statics (0136/0275/0276/0137), shading
-   0284=0 + smokelet-shadow colors 0210/0211/0212, spin fade 0021, glow blend
-   0218, or the r6b 0577+EmitterSizeY/Z reveal (huge 3D emitter volumes).
-   2026-07-17 continued: shading-misc, rotation, and 0577/sizes strips ALL still
-   hang — every single-group hypothesis is now eliminated (r5's 30000-spike also
-   rendered, killing the magnitude theory; exact r5→r6 param delta enumerated via
-   git diff). Conclusion: INTERACTION effect. Next: REVERSE bisect — start from
-   the r5-era draft (git show 1e443cb:...smoke-puff-1.json, verified working) and
-   ADD r6 param groups until it breaks; guaranteed to converge in ≤3 trials.
-   Note: each failed trial wedges AE (pkill + bridge_up.sh between trials).
-2. **Sprite alpha/blend** (4+ drafts, improves the whole fire/smoke sprite family):
-   probe footage alphaMode + particle blend mode on horizontal-fire.
-3. **S2-psec burst normalization** (3) — divide S2 psec by spike factor.
+1. **Render-hang class — SOLVED 2026-07-17 (reverse bisect): the drafts are
+   innocent.** Reverse-bisect from the r5 draft converged in 4 trials, all
+   RENDER: r5+all-25-r6-params ✓, +r6 spike ✓, =r6 param set ✓, and finally the
+   **verbatim r6 draft rendered in 11s** on a healthy session. The "class" was
+   two compounding harness artifacts, not params:
+   (a) **batch cascade** — in the r6 batch the 13 "hangs" are results.jsonl
+   lines 151–162, a perfectly CONTIGUOUS run starting at ring-explosion, whose
+   pathologically slow second frame (t1.9; still grinding after 10+ min solo)
+   saturated AE's async saveFrameToPng queue; every draft behind it starved.
+   (b) **poisoned "fresh" instances** — overnight single-draft repro trials ran
+   after `pkill` (SIGTERM): a wedged AE that ignores SIGTERM survives alongside
+   the new instance, BOTH panels poll the same ae_command.json, and the zombie
+   swallows commands → "still no frames" on every trial regardless of params
+   (4 orphan crashpad handlers found this morning corroborate). All of last
+   night's single-group "eliminations" were this artifact.
+   Fixes: frame poll 20s→45s in validate_drafts; ring-explosion needs its own
+   treatment (cheaper second sample or per-draft frame budget); bridge_up.sh
+   should kill -9 and VERIFY death before relaunch.
+2. **Sprite alpha/blend** — root cause found 2026-07-17: the drafts already mine
+   `FXid_PUnmult=1` → 0531, but **0531 lives in Sprite Controls and stays HIDDEN
+   until the 0066 layer connect**, which the miner appended AFTER it → "Can not
+   set value" → black cards. Miner now relocates 0531 past the connect (52 sprite
+   drafts regenerated). Validation pending on the 5 sprite-alpha drafts.
+3. **S2-psec burst normalization** (3) — divide S2 psec by spike factor. DONE
+   2026-07-17: each parent emits the aux rate, so a spiked ring-explosion ran
+   19k parents × 450/s × 1s child life ≈ 8.6M particles at t1.9 — the "slow
+   frame" was this bug's render bill. 2194 ÷10 when isBurst.
 4. **OBJ emitters** (4) — 3D Model group needs the model file connect; likely
   UI-gated (Choose Model button); check 2581 "3D Model S2"/main twin for a
   layer-param route (OBJ import into AE unsupported → may need the user once).

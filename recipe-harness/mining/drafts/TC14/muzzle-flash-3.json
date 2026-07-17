@@ -1293,7 +1293,7 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0531",
+          "tc Particular-0694",
           0,
           "FXid_PUnmult (alias)"
         ],
@@ -1419,8 +1419,8 @@
         ],
         [
           "tc Particular-2194",
-          20,
-          "FXid_SE_ParticlesPerSecF (aux->S2)"
+          2,
+          "FXid_SE_ParticlesPerSecF (aux->S2) [/10 burst-spike normalization]"
         ],
         [
           "tc Particular-2136",
@@ -1449,7 +1449,7 @@
   ],
   "camera": null,
   "renderFrames": [
-    0.08,
-    0.13479597167968752
+    0.01,
+    0.08
   ]
 }
