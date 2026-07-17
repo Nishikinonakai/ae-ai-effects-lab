@@ -191,7 +191,12 @@ Three user reads + three clicks closed several fronts:
    REMAINING r6 additions: rotation statics (0136/0275/0276/0137), shading
    0284=0 + smokelet-shadow colors 0210/0211/0212, spin fade 0021, glow blend
    0218, or the r6b 0577+EmitterSizeY/Z reveal (huge 3D emitter volumes).
-   Next trials: strip shading group → strip 0577/sizes → strip rotation.
+   2026-07-17 continued: shading-misc, rotation, and 0577/sizes strips ALL still
+   hang — every single-group hypothesis is now eliminated (r5's 30000-spike also
+   rendered, killing the magnitude theory; exact r5→r6 param delta enumerated via
+   git diff). Conclusion: INTERACTION effect. Next: REVERSE bisect — start from
+   the r5-era draft (git show 1e443cb:...smoke-puff-1.json, verified working) and
+   ADD r6 param groups until it breaks; guaranteed to converge in ≤3 trials.
    Note: each failed trial wedges AE (pkill + bridge_up.sh between trials).
 2. **Sprite alpha/blend** (4+ drafts, improves the whole fire/smoke sprite family):
    probe footage alphaMode + particle blend mode on horizontal-fire.
