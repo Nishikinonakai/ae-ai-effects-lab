@@ -1,0 +1,623 @@
+{
+ "file": "20250219 KillKiss PV/20250219_KillKiss_PV.aep",
+ "size_mb": 6.5,
+ "mtime": "2025-02-23T20:30:47.844958",
+ "xmp": {
+  "CreateDate": "2025-02-18T09:11:28Z",
+  "ModifyDate": "2025-02-23T12:30:47Z",
+  "agents": [
+   "\n               ",
+   "\n                  ",
+   "Adobe Photoshop 23.2 (20220128.orig.527 28d5e1a)  (Macintosh)"
+  ],
+  "first_save": "\n                  ",
+  "last_save": "2025-02-23T12:30:47Z",
+  "n_saves": 6
+ },
+ "items": {
+  "comps": 8,
+  "folders": 2,
+  "footage": 17
+ },
+ "n_layers": 302,
+ "comp_names": [
+  "killkiss_FinalComp",
+  "lrc part 御和盛 1",
+  "lrc part 御和盛 2",
+  "lrc precomp 2",
+  "lrc precomp 3",
+  "月亮comp",
+  "紛れもなく真実 Comp",
+  "鸟笼 Comp 1"
+ ],
+ "effects": {
+  "BCC_CAMERASHAKE": {
+   "name": " BCC+Camera Shake",
+   "n": 54
+  },
+  "BCC Cross Glitch": {
+   "name": "BCC Cross Glitch",
+   "n": 49
+  },
+  "ADBE Fill": {
+   "name": "Fill",
+   "n": 43
+  },
+  "ADBE Ramp": {
+   "name": "Gradient Ramp",
+   "n": 25
+  },
+  "BCC_TEXTURES": {
+   "name": " BCC+Textures",
+   "n": 25
+  },
+  "PEDG": {
+   "name": "Deep Glow",
+   "n": 10
+  },
+  "ADBE Lumetri": {
+   "name": "Lumetri Color",
+   "n": 5
+  },
+  "CC RepeTile": {
+   "name": "CC RepeTile",
+   "n": 3
+  },
+  "BCC Fast Film Glow": {
+   "name": "BCC Fast Film Glow",
+   "n": 2
+  },
+  "BCC4Damaged TV": {
+   "name": "BCC Damaged TV",
+   "n": 2
+  }
+ },
+ "ghost_effect_groups": {},
+ "unknown_tdmn_top": {
+  "dropShadow/enabled": 210,
+  "innerShadow/enabled": 210,
+  "outerGlow/enabled": 210,
+  "innerGlow/enabled": 210,
+  "bevelEmboss/enabled": 210,
+  "chromeFX/enabled": 210,
+  "solidFill/enabled": 210,
+  "gradientFill/enabled": 210,
+  "patternFill/enabled": 210,
+  "frameFX/enabled": 210,
+  "dropShadow/blur": 74,
+  "dropShadow/opacity": 73,
+  "dropShadow/distance": 73,
+  "dropShadow/chokeMatte": 73,
+  "BCC Cross Glitch-7405631": 51,
+  "BCC Cross Glitch-10682374": 51,
+  "BCC Cross Glitch-10682378": 51,
+  "BCC Cross Glitch-10682397": 51,
+  "BCC Cross Glitch-10682399": 51,
+  "BCC Cross Glitch-10682408": 51,
+  "BCC Cross Glitch-10682410": 51,
+  "BCC Cross Glitch-10682422": 51,
+  "BCC Cross Glitch-10682424": 51,
+  "BCC Cross Glitch-10682432": 51,
+  "BCC Cross Glitch-7405744": 51,
+  "BCC Cross Glitch-7405745": 51,
+  "BCC Cross Glitch-10682376": 49,
+  "BCC Cross Glitch-7405624": 48,
+  "BCC Cross Glitch-10682373": 48,
+  "BCC Cross Glitch-10682419": 48,
+  "frameFX/size": 21,
+  "BCC Fast Film Glow-10158085": 4,
+  "BCC Fast Film Glow-10158083": 4,
+  "BCC Fast Film Glow-10158087": 4,
+  "BCC Fast Film Glow-10158086": 4,
+  "BCC Fast Film Glow-7995650": 4,
+  "BCC Fast Film Glow-7995647": 4,
+  "BCC Fast Film Glow-7995591": 4,
+  "BCC Fast Film Glow-7995540": 4,
+  "BCC Fast Film Glow-7995654": 4
+ },
+ "n_expressions": 163,
+ "expressions_unique": [
+  "//GENERATED VIA ATOM EXTENSION BY ANIOM\ntry{activeIn = 0;activeOut = 0;mcpn = \"ATOM_EXTENSION_BY_ANIOM\";for(var i = 1; i <= marker.numKeys; i++){if(marker.key(i).comment == \"IN\" && marker.key(i).cuePointName == mcpn){activeIn = i;}if(marker.key(i).comment == \"OUT\" && marker.key(i).cuePointName == mcpn){activeOut = i;}}\ninTime_int1 = 0;inTime_int2 = 0;if(activeIn){linear(time, (inPoint+inTime_int1), (marker.key(activeIn).time-inTime_int2), -100, 100);}else{100}}catch(ex){}",
+  "//GENERATED VIA ATOM EXTENSION BY ANIOM\rtry{activeIn = 0;activeOut = 0;mcpn = \"ATOM_EXTENSION_BY_ANIOM\";for(var i = 1; i <= marker.numKeys; i++){if(marker.key(i).comment == \"IN\" && marker.key(i).cuePointName == mcpn){activeIn = i;}if(marker.key(i).comment == \"OUT\" && marker.key(i).cuePointName == mcpn){activeOut = i;}}\rinTime_int1 = 0;inTime_int2 = 0;if(activeIn){linear(time, (inPoint+inTime_int1), (marker.key(activeIn).time-inTime_int2), -100, 100);}else{100}}catch(ex){}",
+  "loopOut('continue')",
+  "thisComp.layer(\"lrc001\").text.sourceText;",
+  "thisComp.layer(\"lrc001\").text.sourceText;\r",
+  "thisComp.layer(\"lrc002\").text.sourceText;",
+  "thisComp.layer(\"lrc002\").text.sourceText;\r",
+  "thisComp.layer(\"lrc003\").text.sourceText;",
+  "thisComp.layer(\"lrc003\").text.sourceText;\r",
+  "thisComp.layer(\"lrc004\").text.sourceText;",
+  "thisComp.layer(\"lrc004\").text.sourceText;\r",
+  "thisComp.layer(\"lrc005\").text.sourceText;",
+  "thisComp.layer(\"lrc005\").text.sourceText;\r",
+  "thisComp.layer(\"lrc006\").text.sourceText;",
+  "thisComp.layer(\"lrc007\").text.sourceText;",
+  "thisComp.layer(\"紛れもなく真実\").text.sourceText;\r"
+ ],
+ "footage_paths": [
+  "/Volumes/nnk_TiPlus7100 2/警惕虚拟主播零元购陷阱/20250219 KillKiss PV",
+  "/Volumes/nnk_TiPlus7100 2/警惕虚拟主播零元购陷阱/20250219 KillKiss PV/Killkiss/KiLLKiSS.wav",
+  "/Volumes/nnk_TiPlus7100 2/警惕虚拟主播零元购陷阱/20250219 KillKiss PV/Killkiss/killkiss.psd",
+  "/Volumes/nnk_TiPlus7100 2/警惕虚拟主播零元购陷阱/20250219 KillKiss PV/Killkiss/鸟笼补充.png"
+ ],
+ "footage_ext": {
+  ".psd": 5,
+  "": 2,
+  ".wav": 1,
+  ".png": 1
+ },
+ "layer_name_sample": [
+  "Null 10",
+  "Camera 11",
+  "抱きしめて 2",
+  "juda” 8",
+  "juda” 7",
+  "Kill-kiss 18",
+  "Kill-kiss 17",
+  "jude 8",
+  "jude 7",
+  "Kill-kiss 16",
+  "Kill-kiss 15",
+  "judy 8",
+  "judy 7",
+  "“Kill-kiss 8",
+  "“Kill-kiss 7",
+  "欺いて 2",
+  "juda” 6",
+  "juda” 5",
+  "Kill-kiss 14",
+  "Kill-kiss 13",
+  "jude 6",
+  "jude 5",
+  "Kill-kiss 12",
+  "Kill-kiss 11",
+  "judy 6",
+  "judy 5",
+  "“Kill-kiss 6",
+  "“Kill-kiss 5",
+  "Null 14",
+  "Null 9",
+  "Camera 10",
+  "Null 8",
+  "Camera 9",
+  "天の五線譜を書き換えれば",
+  "希え",
+  "手を挙げ",
+  "噛み締めてもまだ痛むなら",
+  "'Cause we're all alone (Alone)",
+  "Null 13",
+  "Camera 8",
+  "Null 7",
+  "Camera 7",
+  "抱きしめて",
+  "juda” 4",
+  "juda” 3",
+  "Kill-kiss 10",
+  "Kill-kiss 9",
+  "jude 4",
+  "jude 3",
+  "Kill-kiss 8",
+  "Kill-kiss 7",
+  "judy 4",
+  "judy 3",
+  "“Kill-kiss 4",
+  "“Kill-kiss 3",
+  "欺いて",
+  "juda”",
+  "juda” 2",
+  "Kill-kiss 6",
+  "Kill-kiss 5"
+ ],
+ "comp_dims_raw": {
+  "140:3840x2160": 7,
+  "140:3840x3840": 1
+ },
+ "effect_chains": [
+  [
+   "BCC Fast Film Glow"
+  ],
+  [
+   "BCC4Damaged TV"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Ramp",
+   "BCC_TEXTURES",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch",
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "ADBE Fill",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "CC RepeTile",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "BCC Cross Glitch"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "BCC Cross Glitch",
+   "PEDG"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "BCC Cross Glitch",
+   "PEDG"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "BCC Cross Glitch",
+   "PEDG"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "BCC Cross Glitch",
+   "PEDG"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "BCC Cross Glitch",
+   "PEDG"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "BCC Cross Glitch",
+   "PEDG"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "BCC Cross Glitch",
+   "PEDG"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "BCC Cross Glitch",
+   "PEDG"
+  ],
+  [
+   "BCC Cross Glitch"
+  ]
+ ]
+}

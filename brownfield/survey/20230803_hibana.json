@@ -1,0 +1,8378 @@
+{
+ "file": "20230803 hibana PV/20230803 hibana.aep",
+ "size_mb": 105.2,
+ "mtime": "2023-08-17T15:24:22.215861",
+ "xmp": {
+  "CreateDate": "2023-08-03T19:22:46+08:00",
+  "ModifyDate": "2023-08-17T15:24:22+08:00",
+  "agents": [
+   "\n               ",
+   "\n                  ",
+   "Adobe Photoshop 23.2 (20220128.orig.527 28d5e1a)  (Macintosh)"
+  ],
+  "first_save": "\n                  ",
+  "last_save": "2023-08-17T15:24:22+08:00",
+  "n_saves": 6
+ },
+ "items": {
+  "comps": 175,
+  "folders": 46,
+  "footage": 108
+ },
+ "n_layers": 4634,
+ "comp_names": [
+  "00",
+  "01",
+  "02",
+  "03",
+  "04",
+  "05",
+  "06",
+  "07",
+  "08",
+  "09",
+  "10",
+  "11",
+  "12",
+  "Comp 1",
+  "lrc 01",
+  "lrc 02",
+  "lrc 03",
+  "lrc 04",
+  "lrc 05",
+  "lrc 06",
+  "lrc 07",
+  "lrc 08",
+  "lrc 09",
+  "lrc 10",
+  "lrd 01",
+  "lrd 02",
+  "lrd 03",
+  "lrd 04",
+  "lrd 05",
+  "lrd 06",
+  "lrd 07",
+  "lrd 08",
+  "lre 09",
+  "lre 09",
+  "lre 10",
+  "lre 10",
+  "lrf 10",
+  "lrf 11",
+  "Map [Blur]",
+  "Fade Alpha [Blur]",
+  "Fade Alpha [Blur] [Dark]",
+  "Fade Alpha [Blur] [Light]",
+  "Fade Alpha [Ease]",
+  "Fade Alpha [Linear]",
+  "Fade Blur [Basic]",
+  "Fade Blur [Blink]",
+  "Fade Blur [Directional]",
+  "Fade Blur [Pan]",
+  "Fade Blur [Pan] [Lens]",
+  "Fade Blur [Radial]",
+  "Fade Exposure [Dark-Light] [Ease]",
+  "Fade Exposure [Dark-Light] [Linear]",
+  "Fade Exposure [Dark] [Ease]",
+  "Fade Exposure [Dark] [Linear]",
+  "Fade Exposure [Light-Dark] [Ease]",
+  "Fade Exposure [Light-Dark] [Linear]",
+  "Fade Exposure [Light] [Ease]",
+  "Fade Exposure [Light] [Linear]",
+  "Fade Luma [Simple]",
+  "Fade Luma [Smooth]",
+  "Fade Matte [Circle] [In]",
+  "Fade Matte [Circle] [Out]",
+  "Fade Matte [Direction]",
+  "Fade Matte [Square] [In]",
+  "Fade Matte [Square] [Out]",
+  "Fade Matte [Vignette] [In]",
+  "Fade Matte [Vignette] [Out]",
+  "Fade Pixel [1x]",
+  "Fade Pixel [2x]",
+  "Fade Pixel [3x]",
+  "Fade Pixel [4x]",
+  "Fade Pixel [5x]",
+  "Fade RGB [Basic]",
+  "Fade RGB [Shake]",
+  "Fade RGB [Tint]",
+  "Fade Solid [Basic]",
+  "Fade Solid [Blink]",
+  "Fade Solid [Direction]",
+  "Fade Solid [Radial]",
+  "Map",
+  "Flare [A]",
+  "Flare [B]",
+  "Flare [C]",
+  "Flare [D]",
+  "Particle [Circle]",
+  "Particle [Diamond]",
+  "Particle [Heptagon]",
+  "Particle [Rectangle]",
+  "Particle [Triangle]",
+  "Bokeh [A]",
+  "Bokeh [B]",
+  "Bokeh [C]",
+  "Bokeh [D]",
+  "Blur Map",
+  "Distortion Map",
+  "Particles",
+  "RGB Split",
+  "Elements_Grid_01",
+  "Elements_Grid_21",
+  "Parallax Bokeh A [Down]",
+  "Parallax Bokeh A [Left Down]",
+  "Parallax Bokeh A [Left Up]",
+  "Parallax Bokeh A [Left]",
+  "Parallax Bokeh A [Left] [Spin]",
+  "Parallax Bokeh A [Right Down]",
+  "Parallax Bokeh A [Right Up]",
+  "Parallax Bokeh A [Right]",
+  "Parallax Bokeh A [Right] [Spin]",
+  "Parallax Bokeh A [Up]",
+  "Parallax Bokeh A [Zoom]",
+  "Parallax Bokeh B [Down]",
+  "Parallax Bokeh B [Left Down]",
+  "Parallax Bokeh B [Left Up]",
+  "Parallax Bokeh B [Left]",
+  "Parallax Bokeh B [Left] [Spin]",
+  "Parallax Bokeh B [Right Down]",
+  "Parallax Bokeh B [Right Up]",
+  "Parallax Bokeh B [Right]",
+  "Parallax Bokeh B [Right] [Spin]",
+  "Parallax Bokeh B [Up]",
+  "Parallax Bokeh B [Zoom]",
+  "Parallax Bokeh C [Down]",
+  "Parallax Bokeh C [Left Down]",
+  "Parallax Bokeh C [Left Up]",
+  "Parallax Bokeh C [Left]",
+  "Parallax Bokeh C [Left] [Spin]",
+  "Parallax Bokeh C [Right Down]",
+  "Parallax Bokeh C [Right Up]",
+  "Parallax Bokeh C [Right]",
+  "Parallax Bokeh C [Right] [Spin]",
+  "Parallax Bokeh C [Up]",
+  "Parallax Bokeh C [Zoom]",
+  "Parallax Bokeh D [Down]",
+  "Parallax Bokeh D [Left Down]",
+  "Parallax Bokeh D [Left Up]",
+  "Parallax Bokeh D [Left]",
+  "Parallax Bokeh D [Left] [Spin]",
+  "Parallax Bokeh D [Right Down]",
+  "Parallax Bokeh D [Right Up]",
+  "Parallax Bokeh D [Right]",
+  "Parallax Bokeh D [Right] [Spin]",
+  "Parallax Bokeh D [Up]",
+  "Parallax Bokeh D [Zoom]",
+  "wallpaper comp",
+  "04 lrc precomp 1",
+  "04 lre precomp 1",
+  "04 lre precomp 1",
+  "05 Pre-comp 1",
+  "05 Pre-comp 2",
+  "06 lrd eng 01",
+  "09 Pre-comp 1",
+  "10 Pre-comp 1",
+  "11 lrf precomp 2",
+  "11 Pre-comp 1",
+  "na Comp 1",
+  "nanananana belt",
+  "nanananana belt",
+  "nanananana belt",
+  "nanananana belt",
+  "nanananana belt still",
+  "staffs",
+  "stf1",
+  "stf2",
+  "stf3",
+  "stf4",
+  "title comp",
+  "人 3 Comp 1",
+  "曲绘",
+  "瞄准镜",
+  "瞄准镜",
+  "瞄准镜",
+  "瞄准镜",
+  "瞄准镜",
+  "瞄准镜",
+  "瞄准镜"
+ ],
+ "effects": {
+  "ADBE Geometry2": {
+   "name": "Transform",
+   "n": 821
+  },
+  "ADBE Slider Control": {
+   "name": "Slider Control",
+   "n": 638
+  },
+  "ADBE Tile": {
+   "name": "Motion Tile",
+   "n": 566
+  },
+  "ADBE Checkbox Control": {
+   "name": "Checkbox Control",
+   "n": 452
+  },
+  "ADBE Color Control": {
+   "name": "Color Control",
+   "n": 236
+  },
+  "ADBE Tint": {
+   "name": "Tint",
+   "n": 232
+  },
+  "ADBE Point Control": {
+   "name": "Point Control",
+   "n": 179
+  },
+  "ADBE CurvesCustom": {
+   "name": "Curves",
+   "n": 178
+  },
+  "ADBE Fill": {
+   "name": "Fill",
+   "n": 104
+  },
+  "ADBE Angle Control": {
+   "name": "Angle Control",
+   "n": 104
+  },
+  "ADBE Exposure2": {
+   "name": "Exposure",
+   "n": 100
+  },
+  "CC RepeTile": {
+   "name": "CC RepeTile",
+   "n": 98
+  },
+  "ADBE Gaussian Blur 2": {
+   "name": "Gaussian Blur",
+   "n": 97
+  },
+  "ADBE Brightness & Contrast 2": {
+   "name": "Brightness & Contrast",
+   "n": 94
+  },
+  "ADBE Glo2": {
+   "name": "Glow",
+   "n": 76
+  },
+  "PEDG": {
+   "name": "Deep Glow",
+   "n": 61
+  },
+  "ADBE Unsharp Mask2": {
+   "name": "Unsharp Mask",
+   "n": 50
+  },
+  "ADBE Invert": {
+   "name": "Invert",
+   "n": 49
+  },
+  "ADBE Optics Compensation": {
+   "name": "Optics Compensation",
+   "n": 49
+  },
+  "ADBE Displacement Map": {
+   "name": "Displacement Map",
+   "n": 49
+  },
+  "ADBE Gaussian Blur": {
+   "name": "Gaussian Blur (Legacy)",
+   "n": 47
+  },
+  "ADBE Lumetri": {
+   "name": "Lumetri Color",
+   "n": 40
+  },
+  "ADBE Shift Channels": {
+   "name": "Shift Channels",
+   "n": 21
+  },
+  "tc Particular": {
+   "name": "Particular",
+   "n": 20
+  },
+  "BCC_PRISMBLUR": {
+   "name": " BCC+Prism",
+   "n": 19
+  },
+  "ADBE Twirl": {
+   "name": "Twirl",
+   "n": 17
+  },
+  "ADBE Linear Wipe": {
+   "name": "Linear Wipe",
+   "n": 14
+  },
+  "ADBE Compound Blur": {
+   "name": "Compound Blur",
+   "n": 12
+  },
+  "ADBE Emboss": {
+   "name": "Emboss",
+   "n": 12
+  },
+  "ADBE Camera Lens Blur": {
+   "name": "Camera Lens Blur",
+   "n": 9
+  },
+  "ADBE Solid Composite": {
+   "name": "Solid Composite",
+   "n": 8
+  },
+  "ADBE Black&White": {
+   "name": "Black & White",
+   "n": 8
+  },
+  "ADBE Drop Shadow": {
+   "name": "Drop Shadow",
+   "n": 8
+  },
+  "APC Caustics": {
+   "name": "Caustics",
+   "n": 7
+  },
+  "CC Particle World": {
+   "name": "CC Particle World",
+   "n": 7
+  },
+  "tc Shine": {
+   "name": "Shine",
+   "n": 6
+  },
+  "BCC_VIDEOGLITCH": {
+   "name": " BCC+Video Glitch",
+   "n": 6
+  },
+  "ADBE Box Blur2": {
+   "name": "Fast Box Blur",
+   "n": 6
+  },
+  "ADBE Mosaic": {
+   "name": "Mosaic",
+   "n": 6
+  },
+  "ADBE Grid": {
+   "name": "Grid",
+   "n": 6
+  },
+  "BCC_CAMERASHAKE": {
+   "name": " BCC+Camera Shake",
+   "n": 5
+  },
+  "ADBE Vibrance": {
+   "name": "Vibrance",
+   "n": 5
+  },
+  "ADBE AudSpect": {
+   "name": "Audio Spectrum",
+   "n": 4
+  },
+  "BCC_GLOW": {
+   "name": " BCC+Glow",
+   "n": 4
+  },
+  "ADBE Fractal Noise": {
+   "name": "Fractal Noise",
+   "n": 4
+  },
+  "ADBE IRIS_WIPE": {
+   "name": "Iris Wipe",
+   "n": 4
+  },
+  "ADBE Turbulent Displace": {
+   "name": "Turbulent Displace",
+   "n": 4
+  },
+  "ADBE Extract": {
+   "name": "Extract",
+   "n": 3
+  },
+  "ADBE Motion Blur": {
+   "name": "Directional Blur",
+   "n": 2
+  },
+  "BCC4Damaged TV": {
+   "name": "BCC Damaged TV",
+   "n": 2
+  }
+ },
+ "ghost_effect_groups": {
+  "Pseudo/0e3wiwbivl": 196,
+  "Pseudo/060uhhyz3w": 33
+ },
+ "unknown_tdmn_top": {
+  "dropShadow/enabled": 2842,
+  "innerShadow/enabled": 2842,
+  "outerGlow/enabled": 2842,
+  "innerGlow/enabled": 2842,
+  "bevelEmboss/enabled": 2842,
+  "chromeFX/enabled": 2842,
+  "solidFill/enabled": 2842,
+  "gradientFill/enabled": 2842,
+  "patternFill/enabled": 2842,
+  "frameFX/enabled": 2842,
+  "Pseudo/0e3wiwbivl": 53,
+  "Pseudo/060uhhyz3w": 27,
+  "tc Particular-10816": 22,
+  "tc Particular-10297": 22,
+  "tc Particular-11022": 22,
+  "tc Particular-10245": 22,
+  "tc Particular-10849": 22,
+  "tc Particular-10925": 22,
+  "tc Particular-10769": 22,
+  "tc Particular-10944": 22,
+  "tc Particular-10939": 22,
+  "tc Particular-10386": 22,
+  "tc Particular-10428": 22,
+  "tc Particular-10425": 22,
+  "tc Particular-10853": 22,
+  "tc Particular-10821": 22,
+  "tc Particular-10847": 22,
+  "tc Particular-10848": 22,
+  "tc Particular-10946": 22,
+  "tc Particular-11067": 22,
+  "tc Particular-10817": 22,
+  "tc Particular-10254": 22,
+  "tc Particular-10255": 22,
+  "tc Particular-10256": 22,
+  "tc Particular-11009": 22,
+  "tc Particular-11011": 22,
+  "tc Particular-11023": 22,
+  "tc Particular-10461": 22,
+  "tc Particular-10462": 22,
+  "tc Particular-10463": 22
+ },
+ "n_expressions": 4317,
+ "expressions_unique": [
+  "Math.round(effect(\"Animator\")(\"ADBE Slider Control-0001\"))*2",
+  "a=effect(\"Animator\")(\"ADBE Slider Control-0001\");\r\nif(a>0){a} else{1}",
+  "blinkSpeed=90;\r\nn=Math.sin(time*blinkSpeed);\r\nif (n<=0) 80\r\nelse 100;",
+  "blinkSpeed=90;\r\nn=Math.sin(time*blinkSpeed);\r\nif(n<=0) 80\r\nelse 100;",
+  "clamp(value,min=0,max=100)",
+  "clamp(value,min=0,max=20)",
+  "clamp(value,min=0,max=3000)",
+  "clamp(value,min=0,max=50)",
+  "clamp(value,min=0,max=600)",
+  "clamp(value,min=100,max=1000)",
+  "clamp(value,min=20,max=1200)",
+  "clamp(value,min=20,max=300)",
+  "comp(\"Bokeh [A]\").layer(\"Controls\").effect(\"Color A\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [A]\").layer(\"Controls\").effect(\"Color B\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [A]\").layer(\"Controls\").effect(\"Color C\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [A]\").layer(\"Controls\").effect(\"Color D\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [B]\").layer(\"Controls\").effect(\"Color A\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [B]\").layer(\"Controls\").effect(\"Color B\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [B]\").layer(\"Controls\").effect(\"Color C\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [B]\").layer(\"Controls\").effect(\"Color D\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [C]\").layer(\"Controls\").effect(\"Color A\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [C]\").layer(\"Controls\").effect(\"Color B\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [C]\").layer(\"Controls\").effect(\"Color C\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [C]\").layer(\"Controls\").effect(\"Color D\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [D]\").layer(\"Controls\").effect(\"Color A\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [D]\").layer(\"Controls\").effect(\"Color B\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [D]\").layer(\"Controls\").effect(\"Color C\")(\"ADBE Color Control-0001\")",
+  "comp(\"Bokeh [D]\").layer(\"Controls\").effect(\"Color D\")(\"ADBE Color Control-0001\")",
+  "effect(\"Position\")(\"Pseudo/0e3wiwbivl-0003\")",
+  "effect(\"Tint 1\")(\"ADBE Tint-0002\")",
+  "if( thisComp.layer(\"Controls\").effect(\"Exposure\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if( thisComp.layer(\"Controls\").effect(\"Optics\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if( thisComp.layer(\"Controls\").effect(\"Sharpen\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Black & White\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Blur\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Distortion\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Exposure Down\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Exposure Up\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Fade Enabled\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Fade On\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Grid 1 - On\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Grid 2 - On\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Optics Enabled\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Particles - On\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"RGB\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Scaling\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Shadow On\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Shake On\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Shake\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "if(thisComp.layer(\"Controls\").effect(\"Tint\")(\"ADBE Checkbox Control-0001\") > 0) {100} else {0}",
+  "loopOut('continue')",
+  "ratio=thisLayer.width/thisLayer.height;\r\neffect(\"Mosaic 1\")(\"ADBE Mosaic-0001\")/ratio",
+  "ratio=thisLayer.width/thisLayer.height;\r\nthisLayer.height/Math.round(effect(\"Mosaic 1\")(\"ADBE Mosaic-0001\")/ratio)",
+  "seedRandom(index, true)\r\na = [-1000, -1000, -1000];\r\nb = [1000, 1000, 1000];\r\nrandom(a,b);",
+  "seedRandom(index, true)\ra = [-1000, -1000, -1000];\rb = [1000, 1000, 1000];\rrandom(a,b);",
+  "thisComp.layer(\"Animator\").effect(\"RGB Optics\")(\"ADBE Slider Control-0001\")*1.5",
+  "thisComp.layer(\"Animator\").effect(\"RGB Optics\")(\"ADBE Slider Control-0001\")*3.5",
+  "thisComp.layer(\"Animator\").effect(\"RGB Optics\")(\"ADBE Slider Control-0001\")*5.5",
+  "thisComp.layer(\"Animator\").effect(\"Scale\")(\"Pseudo/060uhhyz3w-0001\")",
+  "thisComp.layer(\"Animator\").effect(\"Scale\")(\"Pseudo/060uhhyz3w-0002\")",
+  "thisComp.layer(\"Controls\").effect(\"Blur Amount\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Blur Direction\")(\"ADBE Angle Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Direction\")(\"ADBE Angle Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Direction\")(\"ADBE Angle Control-0001\")-180",
+  "thisComp.layer(\"Controls\").effect(\"Distortion Amount\")(\"ADBE Slider Control-0001\")*0.01",
+  "thisComp.layer(\"Controls\").effect(\"Exposure Amount\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Fade Amount\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Fade Color\")(\"ADBE Color Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Feather\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Feather\")(\"ADBE Slider Control-0001\")/2",
+  "thisComp.layer(\"Controls\").effect(\"Flares Add Amount\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Flares Screen Amount\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Grid 1 - Color\")(\"ADBE Color Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Grid 2 - Color\")(\"ADBE Color Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Grid Amount\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Grid Border\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Grid Color\")(\"ADBE Color Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Light Leaks Amount\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Lights Amount\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Motion Blur Amount\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Particles - Color\")(\"ADBE Color Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Particles Amount\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Position\")(\"ADBE Point Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"RGB Amount\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"RGB Angle\")(\"ADBE Angle Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"RGB Color 1\")(\"ADBE Color Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"RGB Color 2\")(\"ADBE Color Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Shadow Amount\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Shadow Color\")(\"ADBE Color Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Sharp Colors\")(\"ADBE Checkbox Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Tint Amount\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Tint Color\")(\"ADBE Color Control-0001\")",
+  "thisComp.layer(\"Controls\").effect(\"Vignette Feather\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"In - Animator\").effect(\"Position [AP]\")(\"ADBE Point Control-0001\")",
+  "thisComp.layer(\"In - Animator\").effect(\"Position\")(\"ADBE Point Control-0001\")",
+  "thisComp.layer(\"In - Animator\").effect(\"Rotation\")(\"ADBE Angle Control-0001\")",
+  "thisComp.layer(\"In - Animator\").effect(\"Scale\")(\"ADBE Slider Control-0001\")",
+  "thisComp.layer(\"Out - Animator\").effect(\"Position [AP]\")(\"ADBE Point Control-0001\")",
+  "thisComp.layer(\"Out - Animator\").effect(\"Position\")(\"ADBE Point Control-0001\")",
+  "thisComp.layer(\"Out - Animator\").effect(\"Rotation\")(\"ADBE Angle Control-0001\")",
+  "thisComp.layer(\"Out - Animator\").effect(\"Scale\")(\"ADBE Slider Control-0001\")",
+  "thisLayer.width/(Math.round(effect(\"Animator\")(\"ADBE Slider Control-0001\"))*2)",
+  "try{\r\nclamp(value,min=0, max=100)\r\n}catch(e){value};\r\n",
+  "try{\r\nclamp(value,min=0, max=360)\r\n}catch(e){value};\r\n",
+  "try{\r\nclamp(value,min=0, max=40)\r\n}catch(e){value};\r\n",
+  "try{\r\nclamp(value,min=0, max=500)\r\n}catch(e){value};\r\n",
+  "try{\r\nclamp(value,min=50, max=100)\r\n}catch(e){value};\r\n",
+  "try{\r\nvalue*thisComp.layer(\"Controls\").effect(\"RGB Amount\")(\"ADBE Slider Control-0001\")*0.1\r\n}catch(e){value};\r\n",
+  "try{\r\nx = thisComp.width; y = thisComp.height; aspect = 1920/1080; if(x / y >= aspect){[x, x]}else{[y*aspect, y*aspect]}\r\n}catch(e){value};\r\n",
+  "try{effect(\"Shake\")(1)*thisComp.layer(\"Controls\").effect(\"Shake Amount\")(\"ADBE Slider Control-0001\")}catch(e){value};\r\n",
+  "try{mTime = marker.key(1).time;kOneTime = key(1).time;kSecTime = key(2).time;a = mTime - inPoint;b = outPoint - mTime;aK = kSecTime - kOneTime;bK = key(numKeys).time - kSecTime;aD = a / aK;bD = b / bK;if (time < mTime) {valueAtTime(kOneTime + (time - inPoint) / aD);} else {valueAtTime(kSecTime + (time - kSecTime) / bD);}}catch(e){}",
+  "try{r=1920/thisComp.width;\r\nseedRandom(thisComp.layer(\"Controls\").effect(\"Shake Random\")(\"ADBE Slider Control-0001\"))\r\nwiggle(12,thisComp.layer(\"Animator\").effect(\"Shake\")(\"ADBE Slider Control-0001\")/r)\r\n}catch(e){value};\r\n",
+  "try{r=1920/thisComp.width;\r\nseedRandom(thisComp.layer(\"Controls\").effect(\"Shake Random\")(\"ADBE Slider Control-0001\"))\r\nwiggle(2,thisComp.layer(\"Animator\").effect(\"Shake\")(\"ADBE Slider Control-0001\")/r)\r\n}catch(e){value};\r\n",
+  "try{r=1920/thisComp.width;\r\nseedRandom(thisComp.layer(\"Controls\").effect(\"Shake Random\")(\"ADBE Slider Control-0001\"))\r\nwiggle(3,thisComp.layer(\"Animator\").effect(\"Shake\")(\"ADBE Slider Control-0001\")/r)\r\n}catch(e){value};\r\n",
+  "try{r=1920/thisComp.width;\r\nseedRandom(thisComp.layer(\"Controls\").effect(\"Shake Random\")(\"ADBE Slider Control-0001\"))\r\nwiggle(4,thisComp.layer(\"Animator\").effect(\"Shake\")(\"ADBE Slider Control-0001\")/r)\r\n}catch(e){value};\r\n",
+  "try{r=1920/thisComp.width;\r\nseedRandom(thisComp.layer(\"Controls\").effect(\"Shake Random\")(\"ADBE Slider Control-0001\"))\r\nwiggle(6,thisComp.layer(\"Animator\").effect(\"Shake\")(\"ADBE Slider Control-0001\")/r)\r\n}catch(e){value};\r\n",
+  "try{r=1920/thisComp.width;\r\nseedRandom(thisComp.layer(\"Controls\").effect(\"Shake Random\")(\"ADBE Slider Control-0001\"))\r\nwiggle(8,thisComp.layer(\"Animator\").effect(\"Shake\")(\"ADBE Slider Control-0001\")/r)\r\n}catch(e){value};\r\n",
+  "try{r=1920/thisComp.width;\r\nseedRandom(thisComp.layer(\"Controls\").effect(\"Shake Variation\")(\"ADBE Slider Control-0001\"))\r\nwiggle(2,thisComp.layer(\"Shake Animator\").effect(\"Shake\")(\"ADBE Slider Control-0001\")/r)\r\n}catch(e){value};\r\n",
+  "x=thisComp.width/2+effect(\"Position\")('Pseudo/0e3wiwbivl-0001'); \r\ny=thisComp.height/2+effect(\"Position\")('Pseudo/0e3wiwbivl-0002');\r\n[x,y]",
+  "x=thisComp.width/2+effect(\"Position\")('Pseudo/0e3wiwbivl-0001'); \ry=thisComp.height/2+effect(\"Position\")('Pseudo/0e3wiwbivl-0002');\r[x,y]",
+  "x=thisComp.width/2;\r\ny=thisComp.height/2;\r\n[x,y]",
+  "x=thisComp.width/2;\ry=thisComp.height/2;\r[x,y]",
+  "x=thisComp.width;\ry=thisComp.height;\r[x,y]"
+ ],
+ "footage_paths": [
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Media/Img_Guy.png",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Media/Img_Jump.png",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Media/Img_Nature_A.png",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Media/Img_Nature_B.png",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Alpha_Ease.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Alpha_Linear.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Blur_Basic.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Blur_Blink.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Blur_Directional.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Blur_Pan.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Blur_Radial.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Exposure_Ease.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Exposure_Linear.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Luma.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Matte_Direction.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Matte_In.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Matte_Out.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Pixel.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_RGB_Basic.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_RGB_Shake.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Solid_Basic.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Fade/Fade_Solid_Blink.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Parallax/Parallax_Bokeh_A.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Parallax/Parallax_Bokeh_B.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Parallax/Parallax_Bokeh_C.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Parallax/Parallax_Bokeh_D.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Textures/Texture.jpg",
+  "/Users/Shared/Red Giant/Trapcode Packs/TC14/Sprites/Common/Organic Matter/Spinning Leaf 2.mov",
+  "/Volumes/nnk_TiPlus7100/20230803 hibana PV/rendered",
+  "/Volumes/nnk_TiPlus7100/20230803 hibana PV/rendered/replacement",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20230803 hibana PV/客户素材/Jul-31 3943[321] hbnTU07【S17】.mp3",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20230803 hibana PV/客户素材/hbn.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20230803 hibana PV/客户素材/hibana.wav",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20230803 hibana PV/客户素材/scope-creating-sniper-rifle-shooter-tutorial-9.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20230803 hibana PV/客户素材/火花/曲绘.psd"
+ ],
+ "footage_ext": {
+  ".mp3": 23,
+  ".psd": 7,
+  "": 7,
+  ".png": 6,
+  ".jpg": 1,
+  ".mov": 1,
+  ".wav": 1
+ },
+ "layer_name_sample": [
+  "Camera 1",
+  "bg",
+  "con con main",
+  "cam con 5",
+  "Camera 4",
+  "cam con 4",
+  "Camera 3",
+  "cam con 2",
+  "Camera 2",
+  "cam con 1",
+  "Camera 1",
+  "粒子1",
+  "特效2",
+  "人",
+  "特效1",
+  "bg",
+  "あっはっは 5",
+  "あっはっは 4",
+  "あっはっは 3",
+  "あっはっは 2",
+  "あっはっは",
+  "答えはどこだろう",
+  "con con main",
+  "cam con 2",
+  "Camera 2",
+  "cam con 1",
+  "Camera 1",
+  "粒子1",
+  "特效2",
+  "人 2",
+  "人",
+  "特效1",
+  "bg",
+  "その  頭を",
+  "「わかってくれるでしょ」",
+  "「そんなわけないや」",
+  "嗚呼、厭 5",
+  "嗚呼、厭 4",
+  "嗚呼、厭 3",
+  "嗚呼、厭 2",
+  "嗚呼、厭 9",
+  "嗚呼、厭 8",
+  "嗚呼、厭 7",
+  "嗚呼、厭 6",
+  "con con main",
+  "cam con 3",
+  "Camera 3",
+  "cam con 2",
+  "Camera 2",
+  "cam con 1",
+  "Camera 1",
+  "人 2",
+  "撃ち        抜いて",
+  "粒子1",
+  "特效2",
+  "人",
+  "特效1",
+  "bg",
+  "con con main",
+  "cam con 4"
+ ],
+ "comp_dims_raw": {
+  "140:1920x1080": 147,
+  "140:2560x1080": 12,
+  "140:2340x1080": 7,
+  "140:1920x1920": 5,
+  "140:4273x1972": 2,
+  "140:3840x2160": 1,
+  "140:250x250": 1
+ },
+ "effect_chains": [
+  [
+   "tc Particular"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "ADBE AudSpect",
+   "PEDG"
+  ],
+  [
+   "ADBE AudSpect",
+   "PEDG"
+  ],
+  [
+   "ADBE AudSpect",
+   "PEDG"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile",
+   "ADBE Fill"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "BCC_GLOW"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "tc Shine",
+   "PEDG"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Gaussian Blur 2",
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile",
+   "ADBE Fill"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "BCC_GLOW"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "tc Shine",
+   "PEDG"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Gaussian Blur 2",
+   "ADBE Lumetri"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "BCC_GLOW"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "tc Shine",
+   "PEDG"
+  ],
+  [
+   "ADBE Invert",
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "tc Shine",
+   "PEDG"
+  ],
+  [
+   "ADBE Invert",
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "tc Shine",
+   "PEDG"
+  ],
+  [
+   "tc Particular",
+   "PEDG"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Linear Wipe",
+   "ADBE Box Blur2"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Geometry2",
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Linear Wipe",
+   "ADBE Box Blur2"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Geometry2",
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Compound Blur",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Compound Blur",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Compound Blur",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Camera Lens Blur"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Camera Lens Blur"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Angle Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Motion Blur",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Angle Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Linear Wipe",
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Linear Wipe",
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Camera Lens Blur"
+  ],
+  [
+   "ADBE Camera Lens Blur"
+  ],
+  [
+   "ADBE Linear Wipe"
+  ],
+  [
+   "ADBE Linear Wipe"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Camera Lens Blur",
+   "APC Caustics"
+  ],
+  [
+   "ADBE Camera Lens Blur",
+   "APC Caustics"
+  ],
+  [
+   "ADBE Linear Wipe",
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Linear Wipe",
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Linear Wipe"
+  ],
+  [
+   "ADBE Linear Wipe"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Point Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE IRIS_WIPE",
+   "ADBE Box Blur2",
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Camera Lens Blur"
+  ],
+  [
+   "ADBE Camera Lens Blur"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE IRIS_WIPE",
+   "ADBE Box Blur2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control"
+  ],
+  [
+   "ADBE Black&White"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Extract"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control"
+  ],
+  [
+   "ADBE Black&White"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Extract"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Drop Shadow"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Drop Shadow"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Angle Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Drop Shadow"
+  ],
+  [
+   "ADBE Linear Wipe"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Drop Shadow"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Drop Shadow"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Drop Shadow"
+  ],
+  [
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Drop Shadow"
+  ],
+  [
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Mosaic",
+   "ADBE Grid",
+   "ADBE Slider Control",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Mosaic",
+   "ADBE Grid",
+   "ADBE Slider Control",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Mosaic",
+   "ADBE Grid",
+   "ADBE Slider Control",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Mosaic",
+   "ADBE Grid",
+   "ADBE Slider Control",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Mosaic",
+   "ADBE Grid",
+   "ADBE Slider Control",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Angle Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Linear Wipe",
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Linear Wipe",
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE IRIS_WIPE",
+   "ADBE Box Blur2",
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Tile",
+   "ADBE Geometry2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Geometry2",
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Glo2",
+   "ADBE Gaussian Blur 2",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Black&White",
+   "ADBE Unsharp Mask2",
+   "ADBE Brightness & Contrast 2"
+  ],
+  [
+   "ADBE Black&White",
+   "ADBE Unsharp Mask2",
+   "ADBE Brightness & Contrast 2"
+  ],
+  [
+   "ADBE Black&White",
+   "ADBE Unsharp Mask2",
+   "ADBE Brightness & Contrast 2"
+  ],
+  [
+   "ADBE Black&White",
+   "ADBE Unsharp Mask2",
+   "ADBE Brightness & Contrast 2"
+  ],
+  [
+   "ADBE Black&White",
+   "ADBE Unsharp Mask2",
+   "ADBE Brightness & Contrast 2"
+  ],
+  [
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Gaussian Blur 2",
+   "ADBE Vibrance"
+  ],
+  [
+   "ADBE Compound Blur",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Compound Blur",
+   "ADBE Shift Channels"
+  ],
+  [
+   "APC Caustics",
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Gaussian Blur 2",
+   "ADBE Vibrance"
+  ],
+  [
+   "ADBE Compound Blur",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Compound Blur",
+   "ADBE Shift Channels"
+  ],
+  [
+   "APC Caustics",
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Gaussian Blur 2",
+   "ADBE Vibrance"
+  ],
+  [
+   "ADBE Compound Blur",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Compound Blur",
+   "ADBE Shift Channels"
+  ],
+  [
+   "APC Caustics",
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Color Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Gaussian Blur 2",
+   "ADBE Vibrance"
+  ],
+  [
+   "ADBE Compound Blur",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Compound Blur",
+   "ADBE Shift Channels"
+  ],
+  [
+   "APC Caustics",
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Exposure2"
+  ],
+  [
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "CC Particle World",
+   "ADBE Fill",
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "CC Particle World",
+   "ADBE Fill",
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "CC Particle World",
+   "ADBE Fill",
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "CC Particle World",
+   "ADBE Fill",
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "CC Particle World",
+   "ADBE Fill",
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "CC Particle World",
+   "ADBE Fill"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Shift Channels",
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Shift Channels",
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Shift Channels",
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Twirl"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Checkbox Control",
+   "ADBE Slider Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control",
+   "ADBE Checkbox Control",
+   "ADBE Color Control"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Optics Compensation"
+  ],
+  [
+   "ADBE Exposure2",
+   "ADBE Unsharp Mask2"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Point Control",
+   "ADBE Point Control",
+   "ADBE Slider Control",
+   "ADBE Angle Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE CurvesCustom",
+   "ADBE Fill",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom"
+  ],
+  [
+   "ADBE Tint",
+   "ADBE Brightness & Contrast 2",
+   "ADBE Geometry2",
+   "ADBE CurvesCustom",
+   "ADBE Gaussian Blur"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Geometry2"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "BCC_VIDEOGLITCH",
+   "BCC4Damaged TV"
+  ],
+  [
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "tc Particular"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG",
+   "ADBE Fill",
+   "ADBE Turbulent Displace"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "CC RepeTile",
+   "ADBE Lumetri"
+  ],
+  [
+   "tc Particular",
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Turbulent Displace"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Turbulent Displace"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG",
+   "ADBE Fill"
+  ],
+  [
+   "CC RepeTile",
+   "ADBE Lumetri"
+  ],
+  [
+   "tc Particular",
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "PEDG",
+   "ADBE Fill"
+  ],
+  [
+   "CC RepeTile",
+   "ADBE Lumetri"
+  ],
+  [
+   "tc Particular",
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "ADBE Gaussian Blur 2"
+  ],
+  [
+   "ADBE Gaussian Blur 2"
+  ]
+ ]
+}

@@ -1,0 +1,3894 @@
+{
+ "file": "20231209 Datte PV/20231209_Datte_PV.aep",
+ "size_mb": 40.2,
+ "mtime": "2023-12-15T23:21:26.292012",
+ "xmp": {
+  "CreateDate": "2023-12-09T19:01:12+08:00",
+  "ModifyDate": "2023-12-15T23:21:26+08:00",
+  "agents": [
+   "\n               ",
+   "\n                  ",
+   "Adobe Photoshop 23.2 (20220128.orig.527 28d5e1a)  (Macintosh)"
+  ],
+  "first_save": "\n                  ",
+  "last_save": "2023-12-15T23:21:26+08:00",
+  "n_saves": 6
+ },
+ "items": {
+  "comps": 123,
+  "folders": 40,
+  "footage": 57
+ },
+ "n_layers": 2798,
+ "comp_names": [
+  "01",
+  "02",
+  "03",
+  "04",
+  "05",
+  "06",
+  "   ぜんぶ    Comp 1",
+  "BG ele last Pre-comp 1",
+  "BG elements diappearing comp",
+  "BG elements Pre-comp2",
+  "character comp",
+  "Dattes",
+  "I を灯してたいとPre-comp",
+  "L elements/main chara.psd Comp 1",
+  "L elements/main chara.psd Comp 2",
+  "lrc Pre-comp 1",
+  "lrc Pre-comp 2",
+  "lrc Pre-comp 3",
+  "main chara",
+  "Glitch Analog 1 [Clean]",
+  "Glitch Analog 1 [Fast]",
+  "Glitch Analog 1 [Intense]",
+  "Glitch Analog 1 [Long]",
+  "Glitch Analog 1 [Normal]",
+  "Glitch Analog 2 [Clean]",
+  "Glitch Analog 2 [Fast]",
+  "Glitch Analog 2 [Intense]",
+  "Glitch Analog 2 [Long]",
+  "Glitch Analog 2 [Normal]",
+  "Glitch Analog 3 [Clean]",
+  "Glitch Analog 3 [Fast]",
+  "Glitch Analog 3 [Intense]",
+  "Glitch Analog 3 [Long]",
+  "Glitch Analog 3 [Normal]",
+  "Glitch Analog 4 [Clean]",
+  "Glitch Analog 4 [Fast]",
+  "Glitch Analog 4 [Intense]",
+  "Glitch Analog 4 [Long]",
+  "Glitch Analog 4 [Normal]",
+  "Glitch Analog 5 [Clean]",
+  "Glitch Analog 5 [Fast]",
+  "Glitch Analog 5 [Intense]",
+  "Glitch Analog 5 [Long]",
+  "Glitch Analog 5 [Normal]",
+  "Glitch Analog 6 [Clean]",
+  "Glitch Analog 6 [Fast]",
+  "Glitch Analog 6 [Intense]",
+  "Glitch Analog 6 [Long]",
+  "Glitch Analog 6 [Normal]",
+  "Glitch Analog 7 [Clean]",
+  "Glitch Analog 7 [Fast]",
+  "Glitch Analog 7 [Intense]",
+  "Glitch Analog 7 [Long]",
+  "Glitch Analog 7 [Normal]",
+  "Glitch Analog 8 [Clean]",
+  "Glitch Analog 8 [Fast]",
+  "Glitch Analog 8 [Intense]",
+  "Glitch Analog 8 [Long]",
+  "Glitch Analog 8 [Normal]",
+  "Glitch Analog 9 [Clean]",
+  "Glitch Analog 9 [Fast]",
+  "Glitch Analog 9 [Intense]",
+  "Glitch Analog 9 [Long]",
+  "Glitch Analog 9 [Normal]",
+  "Glitch Analog 10 [Clean]",
+  "Glitch Analog 10 [Fast]",
+  "Glitch Analog 10 [Intense]",
+  "Glitch Analog 10 [Long]",
+  "Glitch Analog 10 [Normal]",
+  "Glich Stripes 1",
+  "Glich Stripes 2",
+  "Leak 1",
+  "Noise 1",
+  "Noise Stripes 1",
+  "Noise Stripes 2",
+  "Pixel Grid",
+  "Venetian Blinds",
+  "Glitch VHS 1 [Fast]",
+  "Glitch VHS 1 [Intense]",
+  "Glitch VHS 1 [Medium]",
+  "Glitch VHS 1 [Soft]",
+  "Glitch VHS 2 [Fast]",
+  "Glitch VHS 2 [Intense]",
+  "Glitch VHS 2 [Medium]",
+  "Glitch VHS 2 [Soft]",
+  "Glitch VHS 3 [Fast]",
+  "Glitch VHS 3 [Intense]",
+  "Glitch VHS 3 [Medium]",
+  "Glitch VHS 3 [Soft]",
+  "Glitch VHS 4 [Fast]",
+  "Glitch VHS 4 [Intense]",
+  "Glitch VHS 4 [Medium]",
+  "Glitch VHS 4 [Soft]",
+  "Glitch VHS 5 [Fast]",
+  "Glitch VHS 5 [Intense]",
+  "Glitch VHS 5 [Medium]",
+  "Glitch VHS 5 [Soft]",
+  "Glitch VHS 6 [Fast]",
+  "Glitch VHS 6 [Intense]",
+  "Glitch VHS 6 [Medium]",
+  "Glitch VHS 6 [Soft]",
+  "Glitch VHS 7 [Fast]",
+  "Glitch VHS 7 [Intense]",
+  "Glitch VHS 7 [Medium]",
+  "Glitch VHS 7 [Soft]",
+  "Glitch VHS 8 [Fast]",
+  "Glitch VHS 8 [Intense]",
+  "Glitch VHS 8 [Medium]",
+  "Glitch VHS 8 [Soft]",
+  "Glitch VHS 9 [Fast]",
+  "Glitch VHS 9 [Intense]",
+  "Glitch VHS 9 [Medium]",
+  "Glitch VHS 9 [Soft]",
+  "Glitch VHS 10 [Fast]",
+  "Glitch VHS 10 [Intense]",
+  "Glitch VHS 10 [Medium]",
+  "Glitch VHS 10 [Soft]",
+  "pop-ups",
+  "R elements/main chara.psd Comp 1",
+  "title&casts",
+  "報われないなら最期に解の側Pre-comp",
+  "Datte Main Comp",
+  "intro"
+ ],
+ "effects": {
+  "ADBE Tile": {
+   "name": "Motion Tile",
+   "n": 428
+  },
+  "ADBE Shift Channels": {
+   "name": "Shift Channels",
+   "n": 194
+  },
+  "ADBE Wave Warp": {
+   "name": "Wave Warp",
+   "n": 159
+  },
+  "ADBE Slider Control": {
+   "name": "Slider Control",
+   "n": 147
+  },
+  "ADBE Noise HLS Auto2": {
+   "name": "Noise HLS Auto",
+   "n": 80
+  },
+  "ADBE Displacement Map": {
+   "name": "Displacement Map",
+   "n": 67
+  },
+  "ADBE Noise": {
+   "name": "Noise",
+   "n": 60
+  },
+  "AESweetsGlitch7in1": {
+   "name": "Glitch 7in1",
+   "n": 55
+  },
+  "ADBE Emboss": {
+   "name": "Emboss",
+   "n": 41
+  },
+  "ADBE Tint": {
+   "name": "Tint",
+   "n": 41
+  },
+  "BCC_VIDEOGLITCH": {
+   "name": " BCC+Video Glitch",
+   "n": 29
+  },
+  "ADBE Solid Composite": {
+   "name": "Solid Composite",
+   "n": 29
+  },
+  "ADBE Fast Blur": {
+   "name": "Fast Blur (Legacy)",
+   "n": 27
+  },
+  "ADBE Fill": {
+   "name": "Fill",
+   "n": 26
+  },
+  "ADBE Invert": {
+   "name": "Invert",
+   "n": 24
+  },
+  "ADBE Fractal Noise": {
+   "name": "Fractal Noise",
+   "n": 24
+  },
+  "BCC4Prism": {
+   "name": "BCC Prism",
+   "n": 21
+  },
+  "ADBE Block Dissolve": {
+   "name": "Block Dissolve",
+   "n": 19
+  },
+  "ADBE Lumetri": {
+   "name": "Lumetri Color",
+   "n": 17
+  },
+  "CC RepeTile": {
+   "name": "CC RepeTile",
+   "n": 13
+  },
+  "BCC4Damaged TV": {
+   "name": "BCC Damaged TV",
+   "n": 11
+  },
+  "ADBE Mosaic": {
+   "name": "Mosaic",
+   "n": 11
+  },
+  "ADBE Geometry2": {
+   "name": "Transform",
+   "n": 11
+  },
+  "ADBE Channel Blur": {
+   "name": "Channel Blur",
+   "n": 11
+  },
+  "ADBE Motion Blur": {
+   "name": "Directional Blur",
+   "n": 11
+  },
+  "tc Form": {
+   "name": "Form",
+   "n": 7
+  },
+  "BCC_BLUR": {
+   "name": " BCC+Blur",
+   "n": 7
+  },
+  "BCC_PRISMBLUR": {
+   "name": " BCC+Prism",
+   "n": 6
+  },
+  "ADBE Tritone": {
+   "name": "Tritone",
+   "n": 6
+  },
+  "BCC3Emboss": {
+   "name": "BCC Emboss",
+   "n": 5
+  },
+  "ADBE AIF Perlin Noise 3D": {
+   "name": "Turbulent Noise",
+   "n": 4
+  },
+  "ADBE Easy Levels2": {
+   "name": "Levels",
+   "n": 4
+  },
+  "BCC_VIDEOGLITCHDISSOLVE": {
+   "name": " BCC+Video Glitch Dissolve",
+   "n": 3
+  },
+  "BCC3RGB Pixel Noise": {
+   "name": "BCC RGB Pixel Noise",
+   "n": 3
+  },
+  "PEDG": {
+   "name": "Deep Glow",
+   "n": 3
+  },
+  "ADBE Turbulent Displace": {
+   "name": "Turbulent Displace",
+   "n": 3
+  },
+  "ADBE Unsharp Mask2": {
+   "name": "Unsharp Mask",
+   "n": 3
+  },
+  "ADBE Glo2": {
+   "name": "Glow",
+   "n": 3
+  },
+  "E5XWCiylQ1W7KKvi3VUeTw==": {
+   "name": "Analog TV",
+   "n": 2
+  },
+  "RG_UNI_Stylize_Analog": {
+   "name": "uni.Analog",
+   "n": 2
+  },
+  "ADBE Ramp": {
+   "name": "Gradient Ramp",
+   "n": 2
+  },
+  "Universe_Utilities_Unmult_Premi": {
+   "name": "uni.Unmult",
+   "n": 2
+  },
+  "ADBE Offset": {
+   "name": "Offset",
+   "n": 2
+  },
+  "ADBE Noise HLS2": {
+   "name": "Noise HLS",
+   "n": 2
+  },
+  "CC Radial Blur": {
+   "name": "CC Radial Blur",
+   "n": 2
+  },
+  "ADBE Venetian Blinds": {
+   "name": "Venetian Blinds",
+   "n": 2
+  },
+  "Universe_Stylize_Noir_Moderne": {
+   "name": "uni.Noir",
+   "n": 2
+  },
+  "ADBE Checkerboard": {
+   "name": "Checkerboard",
+   "n": 2
+  },
+  "ADBE Noise2": {
+   "name": "Noise",
+   "n": 2
+  },
+  "BCC Video Glitch": {
+   "name": "BCC Video Glitch",
+   "n": 2
+  }
+ },
+ "ghost_effect_groups": {
+  "Pseudo/0h0rxm3bcv": 33
+ },
+ "unknown_tdmn_top": {
+  "dropShadow/enabled": 1566,
+  "innerShadow/enabled": 1566,
+  "outerGlow/enabled": 1566,
+  "innerGlow/enabled": 1566,
+  "bevelEmboss/enabled": 1566,
+  "chromeFX/enabled": 1566,
+  "solidFill/enabled": 1566,
+  "gradientFill/enabled": 1566,
+  "patternFill/enabled": 1566,
+  "frameFX/enabled": 1566,
+  "Pseudo/0h0rxm3bcv": 29,
+  "BCC4Prism-8323101": 23,
+  "BCC4Prism-8323102": 23,
+  "BCC4Prism-11010050": 23,
+  "BCC4Prism-11010068": 23,
+  "BCC4Prism-11010052": 23,
+  "BCC4Prism-11010065": 23,
+  "BCC4Prism-11010125": 23,
+  "BCC4Prism-11010066": 23,
+  "BCC4Prism-11010093": 23,
+  "BCC4Prism-11010096": 23,
+  "BCC4Prism-11010094": 23,
+  "BCC4Prism-11010051": 23,
+  "BCC4Prism-6356997": 23,
+  "BCC4Prism-6356999": 23,
+  "BCC4Prism-6357009": 23,
+  "BCC4Prism-10092915": 23,
+  "BCC4Damaged TV-8192003": 13,
+  "BCC4Damaged TV-8192004": 13,
+  "BCC4Damaged TV-8192007": 13,
+  "BCC4Damaged TV-8192024": 13,
+  "BCC4Damaged TV-8192028": 13,
+  "BCC4Damaged TV-8192029": 13,
+  "BCC4Damaged TV-8192039": 13,
+  "BCC4Damaged TV-8192040": 13,
+  "BCC4Damaged TV-8192044": 13,
+  "BCC4Damaged TV-8192020": 13,
+  "BCC4Damaged TV-8192023": 13,
+  "BCC4Damaged TV-8192045": 13,
+  "BCC4Damaged TV-8192050": 13
+ },
+ "n_expressions": 833,
+ "expressions_unique": [
+  "effect(\"Glitch 7in1\")(160)\rloopOut('continue')",
+  "effect(\"Noise Control\")(\"ADBE Slider Control-0001\")",
+  "loopOut('continue')",
+  "loopOut('cycle')",
+  "try{mTime = marker.key(1).time;kOneTime = key(1).time;kSecTime = key(2).time;a = mTime - inPoint;b = outPoint - mTime;aK = kSecTime - kOneTime;bK = key(numKeys).time - kSecTime;aD = a / aK;bD = b / bK;if (time < mTime) {valueAtTime(kOneTime + (time - inPoint) / aD);} else {valueAtTime(kSecTime + (time - kSecTime) / bD);}}catch(e){}",
+  "wiggle(10,10)",
+  "wiggle(12,22)",
+  "wiggle(2,2)",
+  "wiggle(2,34)",
+  "wiggle(20,10);",
+  "wiggle(22,22)",
+  "wiggle(22,effect(\"Light Amount\")(\"Pseudo/0h0rxm3bcv-0001\"))",
+  "wiggle(222,122);",
+  "wiggle(222,222)",
+  "wiggle(222,2222)",
+  "wiggle(35,thisComp.layer(\"ChromaControl\").effect(\"ChromaControl\")(\"ADBE Slider Control-0001\"));",
+  "wiggle(55,55)",
+  "x=thisComp.width/2;\ry=thisComp.height/2;\r[x,y]",
+  "x=thisComp.width;\ry=thisComp.height;\r[x,y]"
+ ],
+ "footage_paths": [
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Glitch Mattes/glitch_digital1",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Glitch Mattes/glitch_tv7",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Glitch Mattes/glitch_tv8",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Analog A Soft.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Analog B Soft.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Analog C Soft.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Design 1.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Design 2.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Design 3.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Electric 1.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Electric 2.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Electric 3.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Electric 4.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Off-Air 1.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Off-Air 2.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Off-Air 3.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Off-Air 4.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Off-Air 5.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch Rewind 4.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch VHS 1.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch VHS 2.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch VHS 3.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch VHS 4.mp3",
+  "/Library/Application Support/Adobe/CEP/extensions/MYFX 3.0.2/presets/Transitions/(footage)/Sound FX/Glitch/Glitch VHS 5.mp3",
+  "/Volumes/nnk_TiPlus7100",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20231209 Datte PV/customer source meterials/1气泡.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20231209 Datte PV/customer source meterials/Dec-01 3943K3 datte(调一轨)TU07-s11.wav",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20231209 Datte PV/customer source meterials/main chara.psd",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20231209 Datte PV/customer source meterials/弹窗.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20231209 Datte PV/footage/3.mov",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20231209 Datte PV/footage/Broken VHS Light Noise - Scan Effects - Free Static TV Effect Layer.mp4",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20231209 Datte PV/footage/vhs overlay _ vhs effect _ tv scan lines overlay _ red screen.mp4",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20231209 Datte PV/footage/videoplayback.mp4",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20231209 Datte PV/references/夏色花梨原创《Datte》___ゆよゆっぺ.夏色花梨原创《Datte》___ゆよゆっぺ.576488191.mp4"
+ ],
+ "footage_ext": {
+  ".mp3": 21,
+  "": 4,
+  ".mp4": 4,
+  ".psd": 4,
+  ".png": 2,
+  ".mov": 1,
+  ".wav": 1
+ },
+ "layer_name_sample": [
+  "脊髄で返す言葉は「だって」",
+  "メイクを取って取り繕って",
+  "貴方の言う正常が知りたくて",
+  "また繰り返している Bad Day",
+  "Glitch Analog 1 [Clean]",
+  "Tilinme",
+  "Tilinme",
+  "だって",
+  "Tilinme 2",
+  "わかってる",
+  "縋っていた",
+  "サマ",
+  "カミ",
+  "常識に",
+  "解をまた",
+  "怠惰の",
+  "Liteな",
+  "あなたは",
+  "狂ってる 4",
+  "狂ってる 3",
+  "狂ってる 2",
+  "狂ってる",
+  "讃美歌が流れてる",
+  "美しく忌々しい",
+  "この箱の中にいて",
+  "生まれてから消えるまで",
+  "楽だって",
+  "黙り込んでしまえば",
+  "Shape Layer 1",
+  "Tilinme",
+  "全   部 2",
+  "わかってる 2",
+  "全   部",
+  "奴隷になって",
+  "ピエロになって",
+  "自分勝手",
+  "ほら",
+  "開けば",
+  "口を",
+  "できないよって",
+  "駆け引きなんて",
+  "雑音の中で眠る",
+  "イ",
+  "夢くて禍々しい",
+  "Shape Layer 1",
+  "僕には難しくて",
+  "生きてくのは",
+  "ありのままに",
+  "願ったのさ",
+  "Tilinme",
+  "Shape Layer 1",
+  "あなたは",
+  "Liteな",
+  "怠惰の",
+  "解をまた",
+  "常識に",
+  "カミ",
+  "サマ",
+  "縋っていた",
+  "わかってる"
+ ],
+ "comp_dims_raw": {
+  "140:1920x1080": 118,
+  "140:3508x2480": 4,
+  "140:115x77": 1
+ },
+ "effect_chains": [
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "BCC_PRISMBLUR",
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "E5XWCiylQ1W7KKvi3VUeTw==",
+   "RG_UNI_Stylize_Analog"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Ramp"
+  ],
+  [
+   "AESweetsGlitch7in1",
+   "BCC4Damaged TV"
+  ],
+  [
+   "BCC4Prism",
+   "BCC_VIDEOGLITCHDISSOLVE"
+  ],
+  [
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "AESweetsGlitch7in1",
+   "BCC4Damaged TV"
+  ],
+  [
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "tc Form",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "tc Form",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "tc Form",
+   "AESweetsGlitch7in1",
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "BCC4Prism"
+  ],
+  [
+   "CC RepeTile",
+   "ADBE Invert",
+   "BCC_BLUR"
+  ],
+  [
+   "CC RepeTile",
+   "ADBE Invert",
+   "BCC_BLUR"
+  ],
+  [
+   "CC RepeTile",
+   "ADBE Invert",
+   "BCC_BLUR"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "BCC3RGB Pixel Noise"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "ADBE Tritone",
+   "ADBE Lumetri",
+   "ADBE Invert",
+   "PEDG",
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "ADBE Block Dissolve"
+  ],
+  [
+   "BCC4Damaged TV"
+  ],
+  [
+   "AESweetsGlitch7in1",
+   "BCC4Damaged TV"
+  ],
+  [
+   "ADBE Lumetri",
+   "AESweetsGlitch7in1",
+   "BCC4Prism"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "BCC_PRISMBLUR",
+   "ADBE Lumetri"
+  ],
+  [
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Tritone"
+  ],
+  [
+   "ADBE Tritone"
+  ],
+  [
+   "BCC4Prism",
+   "BCC3Emboss"
+  ],
+  [
+   "BCC4Prism",
+   "BCC3Emboss"
+  ],
+  [
+   "ADBE Tritone"
+  ],
+  [
+   "ADBE Tritone"
+  ],
+  [
+   "BCC4Prism",
+   "BCC3Emboss"
+  ],
+  [
+   "BCC4Prism",
+   "BCC3Emboss"
+  ],
+  [
+   "PEDG"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "AESweetsGlitch7in1",
+   "BCC4Damaged TV"
+  ],
+  [
+   "AESweetsGlitch7in1",
+   "BCC4Damaged TV"
+  ],
+  [
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "tc Form",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "AESweetsGlitch7in1",
+   "BCC4Damaged TV"
+  ],
+  [
+   "BCC4Prism",
+   "BCC_VIDEOGLITCHDISSOLVE"
+  ],
+  [
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "BCC4Prism"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "tc Form",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Turbulent Displace"
+  ],
+  [
+   "BCC4Prism"
+  ],
+  [
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "CC RepeTile",
+   "ADBE Invert",
+   "BCC_BLUR"
+  ],
+  [
+   "CC RepeTile",
+   "ADBE Invert",
+   "BCC_BLUR"
+  ],
+  [
+   "CC RepeTile",
+   "ADBE Invert",
+   "BCC_BLUR"
+  ],
+  [
+   "tc Form",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "BCC4Prism",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "BCC4Prism",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "BCC4Prism"
+  ],
+  [
+   "BCC4Prism"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "BCC4Prism",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "BCC4Prism",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "Universe_Utilities_Unmult_Premi"
+  ],
+  [
+   "AESweetsGlitch7in1",
+   "BCC4Damaged TV"
+  ],
+  [
+   "AESweetsGlitch7in1",
+   "BCC4Damaged TV"
+  ],
+  [
+   "AESweetsGlitch7in1",
+   "BCC4Damaged TV"
+  ],
+  [
+   "ADBE Turbulent Displace",
+   "ADBE Mosaic",
+   "ADBE Fill"
+  ],
+  [
+   "BCC4Prism"
+  ],
+  [
+   "BCC4Prism"
+  ],
+  [
+   "BCC4Prism"
+  ],
+  [
+   "BCC4Prism"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "BCC_VIDEOGLITCH"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile",
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Channel Blur"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Channel Blur"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Channel Blur"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Channel Blur"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Channel Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Channel Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Motion Blur"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Motion Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Motion Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Motion Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Motion Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Motion Blur"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Motion Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Motion Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Motion Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Geometry2"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Channel Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Channel Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Channel Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Solid Composite"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Noise HLS Auto2",
+   "ADBE Noise"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Channel Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE AIF Perlin Noise 3D",
+   "ADBE Mosaic"
+  ],
+  [
+   "ADBE AIF Perlin Noise 3D",
+   "ADBE Mosaic"
+  ],
+  [
+   "ADBE AIF Perlin Noise 3D",
+   "ADBE Mosaic"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Mosaic"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Mosaic"
+  ],
+  [
+   "ADBE Motion Blur",
+   "ADBE Offset",
+   "ADBE Noise HLS2"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Easy Levels2"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Unsharp Mask2",
+   "ADBE Mosaic"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Fast Blur",
+   "ADBE Glo2",
+   "CC Radial Blur"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Unsharp Mask2",
+   "ADBE Mosaic"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Fast Blur",
+   "ADBE Glo2"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Mosaic",
+   "ADBE Easy Levels2"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Mosaic",
+   "ADBE Easy Levels2"
+  ],
+  [
+   "ADBE Venetian Blinds"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Invert"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Fill",
+   "ADBE Noise",
+   "ADBE Fast Blur"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Slider Control",
+   "ADBE Wave Warp",
+   "ADBE Noise HLS Auto2"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Tile"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Shift Channels"
+  ],
+  [
+   "ADBE Tint"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Displacement Map"
+  ],
+  [
+   "ADBE Tile",
+   "ADBE Wave Warp"
+  ],
+  [
+   "ADBE Emboss"
+  ],
+  [
+   "AESweetsGlitch7in1",
+   "ADBE Lumetri",
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "AESweetsGlitch7in1"
+  ],
+  [
+   "ADBE Lumetri",
+   "Universe_Stylize_Noir_Moderne"
+  ],
+  [
+   "ADBE Checkerboard",
+   "BCC3RGB Pixel Noise",
+   "ADBE Noise2"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Fractal Noise"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Fractal Noise"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Fractal Noise"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Fractal Noise"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Fractal Noise"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Fractal Noise"
+  ],
+  [
+   "ADBE Fractal Noise",
+   "ADBE Fractal Noise"
+  ]
+ ]
+}

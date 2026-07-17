@@ -1,0 +1,608 @@
+{
+ "file": "20260714 Sick- PV/20260714_Sick-_PV.aep",
+ "size_mb": 14.7,
+ "mtime": "2026-07-18T00:13:42.342708",
+ "xmp": {
+  "CreateDate": "2026-07-14T12:52:52+08:00",
+  "ModifyDate": "2026-07-18T00:13:42+08:00",
+  "agents": [
+   "\n               ",
+   "\n                  ",
+   "Adobe Photoshop 23.2 (20220128.orig.527 28d5e1a)  (Macintosh)"
+  ],
+  "first_save": "\n                  ",
+  "last_save": "2026-07-18T00:13:42+08:00",
+  "n_saves": 6
+ },
+ "items": {
+  "comps": 8,
+  "folders": 4,
+  "footage": 30
+ },
+ "n_layers": 327,
+ "comp_names": [
+  "01",
+  "02",
+  "03",
+  "04",
+  "05",
+  "06",
+  "07",
+  "main"
+ ],
+ "effects": {
+  "BCC Video Glitch": {
+   "name": "BCC Video Glitch",
+   "n": 54
+  },
+  "CC RepeTile": {
+   "name": "CC RepeTile",
+   "n": 27
+  },
+  "ADBE Lumetri": {
+   "name": "Lumetri Color",
+   "n": 12
+  },
+  "BCC_PRISMBLUR": {
+   "name": " BCC+Prism",
+   "n": 6
+  },
+  "BCC3Spotlight": {
+   "name": "BCC Spotlight",
+   "n": 5
+  },
+  "PEDG2": {
+   "name": "Deep Glow 2",
+   "n": 5
+  },
+  "BCC_VIDEOGLITCHDISSOLVE": {
+   "name": " BCC+Video Glitch Dissolve",
+   "n": 4
+  },
+  "ADBE AudSpect": {
+   "name": "Audio Spectrum",
+   "n": 4
+  },
+  "ADBE Fill": {
+   "name": "Fill",
+   "n": 4
+  },
+  "BCC3Alpha Pixel Noise": {
+   "name": "BCC Alpha Pixel Noise OBS",
+   "n": 3
+  },
+  "AESweetsGlitch7in1": {
+   "name": "Glitch 7in1",
+   "n": 3
+  },
+  "ADBE Posterize Time": {
+   "name": "Posterize Time",
+   "n": 3
+  },
+  "ADBE Slider Control": {
+   "name": "Slider Control",
+   "n": 3
+  },
+  "tc Particular": {
+   "name": "Particular",
+   "n": 3
+  },
+  "S_Monochrome": {
+   "name": "S_Monochrome",
+   "n": 3
+  },
+  "S_FreeLens": {
+   "name": "S_FreeLens",
+   "n": 2
+  },
+  "BCC_CAMERASHAKE": {
+   "name": " BCC+Camera Shake",
+   "n": 2
+  },
+  "S_TVDamage": {
+   "name": "S_TVDamage",
+   "n": 2
+  },
+  "BCC Damaged TV Dissolve": {
+   "name": "BCC Damaged TV Dissolve",
+   "n": 2
+  }
+ },
+ "ghost_effect_groups": {},
+ "unknown_tdmn_top": {
+  "dropShadow/enabled": 230,
+  "innerShadow/enabled": 230,
+  "outerGlow/enabled": 230,
+  "innerGlow/enabled": 230,
+  "bevelEmboss/enabled": 230,
+  "chromeFX/enabled": 230,
+  "solidFill/enabled": 230,
+  "gradientFill/enabled": 230,
+  "patternFill/enabled": 230,
+  "frameFX/enabled": 230,
+  "dropShadow/mode2": 96,
+  "dropShadow/color": 96,
+  "dropShadow/localLightingAngle": 96,
+  "dropShadow/distance": 96,
+  "dropShadow/blur": 96,
+  "outerGlow/mode2": 96,
+  "outerGlow/color": 96,
+  "outerGlow/chokeMatte": 96,
+  "BCC Video Glitch-10682374": 56,
+  "BCC Video Glitch-10682375": 56,
+  "BCC Video Glitch-10682378": 56,
+  "BCC Video Glitch-10682397": 56,
+  "BCC Video Glitch-10682399": 56,
+  "BCC Video Glitch-10682408": 56,
+  "BCC Video Glitch-10682410": 56,
+  "BCC Video Glitch-10682422": 56,
+  "BCC Video Glitch-10682424": 56,
+  "BCC Video Glitch-10682432": 56,
+  "BCC Video Glitch-10682461": 56,
+  "BCC Video Glitch-10682462": 56,
+  "BCC Video Glitch-10092915": 56,
+  "BCC Video Glitch-10682369": 53,
+  "BCC Video Glitch-10682370": 53,
+  "BCC Video Glitch-10682437": 53,
+  "BCC3Spotlight-4194306": 7,
+  "BCC3Spotlight-11927553": 7,
+  "BCC3Spotlight-11927578": 7,
+  "BCC3Spotlight-11010125": 7,
+  "BCC3Spotlight-11927554": 7,
+  "BCC3Spotlight-10092915": 7
+ },
+ "n_expressions": 28,
+ "expressions_unique": [
+  "// 每個詞組的字元數,對應「今日は/とても/良い/天気です」\rvar groups = [3, 3, 2, 3, 2];\rvar t = effect(\"進度\")(1); // (1) = 效果的第一個屬性,不受界面語言影響\rvar idx = textIndex - 1;\rvar g = 0, acc = 0;\rfor (var i = 0; i < groups.length; i++){\r  acc += groups[i];\r  if (idx < acc){ g = i; break; }\r}\r// 該詞組的顯示進度:0=完全出現,100=完全隱藏\r(g < t) ? 0 : 100;",
+  "effect(\"進度\")(1)",
+  "loopOut(\"offset\")",
+  "txt = value;\rn = txt.length;\rdur = (outPoint - inPoint) * 0.3;   // 只用前 20% 时长来打字\rt = clamp((time - inPoint) / dur, 0, 1);\rtxt.substr(0, Math.floor(t * n));",
+  "txt = value;\rn = txt.length;\rdur = (outPoint - inPoint) * 0.4;   // 只用前 20% 时长来打字\rt = clamp((time - inPoint) / dur, 0, 1);\rtxt.substr(0, Math.floor(t * n));",
+  "txt = value;\rn = txt.length;\rdur = (outPoint - inPoint) * 0.5;   // 只用前 20% 时长来打字\rt = clamp((time - inPoint) / dur, 0, 1);\rtxt.substr(0, Math.floor(t * n));",
+  "txt = value;\rn = txt.length;\rdur = (outPoint - inPoint) * 0.5;   // 只用前 80% 时长来打字\rt = clamp((time - inPoint) / dur, 0, 1);\rtxt.substr(0, Math.floor(t * n));",
+  "txt = value;\rn = txt.length;\rdur = (outPoint - inPoint) * 0.6;   // 只用前 20% 时长来打字\rt = clamp((time - inPoint) / dur, 0, 1);\rtxt.substr(0, Math.floor(t * n));"
+ ],
+ "footage_paths": [
+  "/Users/Shared/Red Giant/Trapcode Packs/TC14/Objs/Common/Geometry/Sphere.obj",
+  "/Users/Shared/Red Giant/Trapcode Packs/TC14/Sprites/Common/Smoke and Fire/Luma Fire 1.mov",
+  "/Volumes/nnk_TiPlus7100/5737_projects/练成2/Post_Effects/5737画面遮幅.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20260714 Sick- PV/Layers/2026-02-25 000902.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20260714 Sick- PV/Layers/2026-02-25 000923.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20260714 Sick- PV/Layers/BG.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20260714 Sick- PV/Layers/Char_shadow.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20260714 Sick- PV/Layers/Sick-font.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20260714 Sick- PV/Layers/Sparkles_on_BG.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20260714 Sick- PV/Layers/char_main.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20260714 Sick- PV/Layers/char_main_tinted.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20260714 Sick- PV/Layers/corner_darken.png",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20260714 Sick- PV/Sick-/Sick-.psd",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20260714 Sick- PV/Sick-/sick-MIX.wav",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20260714 Sick- PV/pre-rendered",
+  "/Volumes/nnk_TiPlus7100/警惕虚拟主播零元购陷阱/20260714 Sick- PV/render"
+ ],
+ "footage_ext": {
+  "": 11,
+  ".png": 10,
+  ".mov": 1,
+  ".obj": 1,
+  ".psd": 1,
+  ".wav": 1
+ },
+ "layer_name_sample": [
+  "何もしないでってば 2",
+  "何もしないでってば 3",
+  "何もしないでってば",
+  "何もしないで",
+  "居たいだけだよ",
+  "鬱々する部屋に",
+  "解ってくる",
+  "誰がうそつきだか",
+  "俯いた春",
+  "くるくるくる廻る",
+  "Camera 1",
+  "Camera 2",
+  "痛い痛い痛い",
+  "渡された優しさが",
+  "なにも変わらない",
+  "まるでまるで",
+  "反省したって",
+  "何千何万回だって",
+  "Camera 2",
+  "いや",
+  "無理だって",
+  "嫌嫌嫌嫌嫌 8",
+  "嫌嫌嫌嫌 3",
+  "嫌嫌嫌 3",
+  "嫌嫌 3",
+  "嫌 3",
+  "嫌嫌嫌嫌嫌 7",
+  "嫌嫌嫌嫌 2",
+  "嫌嫌嫌 2",
+  "嫌嫌 2",
+  "嫌 2",
+  "期待はしちゃいないな",
+  "嫌嫌嫌嫌嫌 6",
+  "嫌嫌嫌嫌",
+  "嫌嫌嫌",
+  "嫌嫌",
+  "嫌",
+  "死にそうなくらい 2",
+  "死にそうなくらい",
+  "時間が憎い",
+  "躊躇う素振り無く汚れてくる",
+  "移ろい変わる",
+  "くるくるくる廻る",
+  "Camera 6",
+  "Camera 4",
+  "Camera 5",
+  "Camera 3",
+  "Camera 2",
+  "吐きそうなくらい",
+  "黙々と過ぎる",
+  "笑って 2",
+  "黙って",
+  "笑って",
+  "Camera 2",
+  "イヤイヤ",
+  "イヤ",
+  "何も変わらないや",
+  "この部屋は",
+  "散々後悔をして",
+  "散々肯定をして"
+ ],
+ "comp_dims_raw": {
+  "140:1920x1080": 8
+ },
+ "effect_chains": [
+  [
+   "ADBE Lumetri",
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC_VIDEOGLITCHDISSOLVE"
+  ],
+  [
+   "BCC_VIDEOGLITCHDISSOLVE"
+  ],
+  [
+   "BCC3Alpha Pixel Noise",
+   "AESweetsGlitch7in1",
+   "ADBE Posterize Time"
+  ],
+  [
+   "BCC3Spotlight"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE AudSpect"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "BCC3Spotlight"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "tc Particular",
+   "PEDG2"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "CC RepeTile",
+   "ADBE Fill"
+  ],
+  [
+   "PEDG2"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE AudSpect"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Lumetri",
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC_VIDEOGLITCHDISSOLVE"
+  ],
+  [
+   "S_FreeLens"
+  ],
+  [
+   "BCC3Alpha Pixel Noise",
+   "AESweetsGlitch7in1",
+   "ADBE Posterize Time"
+  ],
+  [
+   "BCC3Spotlight"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch",
+   "BCC_CAMERASHAKE"
+  ],
+  [
+   "S_Monochrome",
+   "ADBE Lumetri"
+  ],
+  [
+   "ADBE Fill"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "ADBE Slider Control"
+  ],
+  [
+   "BCC3Spotlight"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "BCC Video Glitch"
+  ],
+  [
+   "S_Monochrome",
+   "ADBE Lumetri"
+  ],
+  [
+   "tc Particular",
+   "PEDG2"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Lumetri",
+   "CC RepeTile"
+  ],
+  [
+   "S_TVDamage"
+  ],
+  [
+   "BCC_PRISMBLUR"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "CC RepeTile",
+   "ADBE Fill"
+  ],
+  [
+   "PEDG2"
+  ],
+  [
+   "ADBE AudSpect"
+  ],
+  [
+   "CC RepeTile"
+  ],
+  [
+   "ADBE Lumetri"
+  ],
+  [
+   "BCC Damaged TV Dissolve"
+  ]
+ ]
+}
