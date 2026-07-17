@@ -182,9 +182,17 @@ Three user reads + three clicks closed several fronts:
 
 ## Round-7 queue (by yield)
 
-1. **Bisect the render-hang class** (12 drafts) — binary-search the r6 param
-   additions on smoke-puff-1; prime suspects: streaklet 0314/0315, TF displace,
-   shading 0284=0 with smokelet shadow params.
+1. **Bisect the render-hang class** (12 drafts) — IN PROGRESS, two hypotheses
+   already ELIMINATED (2026-07-17 trials on smoke-puff-1, fresh AE each):
+   (a) TF params stripped → still no frames; (b) full params with POST-window
+   sampling [0.15, 1.9] (r5's working times) → still no frames after 300s.
+   Streaklet 0314/0315 also excluded (draft carries pure defaults 7/60).
+   The r5-era draft rendered fine on the same machine → the killer is among the
+   REMAINING r6 additions: rotation statics (0136/0275/0276/0137), shading
+   0284=0 + smokelet-shadow colors 0210/0211/0212, spin fade 0021, glow blend
+   0218, or the r6b 0577+EmitterSizeY/Z reveal (huge 3D emitter volumes).
+   Next trials: strip shading group → strip 0577/sizes → strip rotation.
+   Note: each failed trial wedges AE (pkill + bridge_up.sh between trials).
 2. **Sprite alpha/blend** (4+ drafts, improves the whole fire/smoke sprite family):
    probe footage alphaMode + particle blend mode on horizontal-fire.
 3. **S2-psec burst normalization** (3) — divide S2 psec by spike factor.
