@@ -121,7 +121,11 @@ for (const file of files) {
     const pcol = params.find(p => p[0] === 'tc Form-0036');
     if (pcol) { pcol[1] = flatCol; pcol[2] += ' [flattened ColorMapArb]'; }
     else params.push(['tc Form-0036', flatCol, 'flattened ColorMapArb']);
+    // the mode switch MUST land too, or the unscriptable default teal-green gradient
+    // keeps rendering over the flat color (the r1 "green bias": red-shard came out green
+    // because ColorMapOver had been dropped as inert-at-default upstream)
     if (setColor) { setColor[1] = 1; setColor[2] += ' [forced flat: gradient unscriptable]'; }
+    else params.push(['tc Form-0042', 1, 'Set Color -> flat (gradient unscriptable)']);
   }
 
   // sprite connect: PType >= 6 (post-offset) + shipped texture → footage + 0027

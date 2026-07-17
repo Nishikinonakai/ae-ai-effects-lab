@@ -247,6 +247,37 @@ Clean-session re-validation of 6 stale fails + the 19 colorize-carrying sprite d
    from real .aep files — the artist-recipe survey it produced is in
    `brownfield/AMV_SURVEY.md` (ambient-dust / petals / text-dissolve / wind-dust rigs).
 
+## FORM round-1 (2026-07-18): 25 match / 46 partial / 6 fail — 32% match on the FIRST round
+
+`mine_form.mjs` + the offline-curated `form_alias_map.json` (157/161 FXids, see
+FORM_ALIAS_NOTES.md) translated all 77 Form presets; two validation passes same night
+(the second after the color-mode fix). Compare Particular r1: 12% match — the compounding
+of five rounds of Particular lessons (write-order gates, enum offsets, sprite connects,
+gradient flattens, physics/dialog hygiene) transfers across effects.
+
+What worked first try: **sprite pipeline** (0024 6-11 + 0027 connect — Shape Grids
+category went 10/16 match: chevrons/brackets/circles/arrows/hex render their true
+textures), **fluid** (0553 enable — TC15 Fluid renders headless; single-drop close to
+thumb), landscapes/spin-dots (dot-twister/sideways-twist/spiral-dots match), bokeh, the
+gradient flatten (genesis red silk = match), string/fractal bases.
+
+Fixed mid-round: **the r1 "green bias"** — flatten wrote 0036 but ColorMapOver 0042 had
+been dropped as inert-at-default upstream, so Form's unscriptable DEFAULT teal-green
+gradient kept rendering over the flat color (red-shard came out green). Forcing 0042=1
+whenever the flatten runs re-colored 29 drafts.
+
+Residue classes (round-2 queue):
+1. **form-gradient-color (25 partial)** — color still rides a gradient the flatten didn't
+   reach (plasma-things/red-shard/joy-division/flight-* stay default-green). Suspects:
+   a second gradient home (Kaleidospace KColorArb? per-mode color maps?), or 0042=1
+   lands a mode that ignores 0036. Needs one live probe of the 0042 option list + a
+   raw-preset key census for color curves outside FXid_ColorMapArb.
+2. **obj-gated (6 fail)** — Geometry category = BaseShape 3D-Model; use-comp master route
+   (user picks models once, like Particular round-7a).
+3. **form-blend-blowout (2)** — horizon-twist/ominous white-clip; test 0037 Add
+   hypothesis vs Screen/Normal on one draft.
+4. dim-faint (4) + ok-partials (15) — tune-loop material.
+
 ## Round-7 queue (by yield)
 
 1. **Render-hang class — SOLVED 2026-07-17 (reverse bisect): the drafts are

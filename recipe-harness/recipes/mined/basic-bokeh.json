@@ -1,0 +1,233 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Bokeh/Basic Bokeh.xbxc",
+  "_effect": "tc Form",
+  "_notes": [],
+  "intent": "Reproduce the vendor Form preset \"Basic Bokeh\" (Bokeh); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Bokeh/Basic Bokeh.png",
+  "name": "basic-bokeh",
+  "compName": "MinedForm_BasicBokeh",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "footage": [
+    {
+      "path": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Sprites/Common/Bokeh/Bokeh 2.png",
+      "layerName": "SpriteTex"
+    }
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0024",
+          7,
+          "FXid_PType (default-pair+enumOffset, med)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0007",
+          20,
+          "FXid_BaseShapeParticlesX (exact-name, high)"
+        ],
+        [
+          "tc Form-0008",
+          25,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          1,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          1920,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0005",
+          1080,
+          "FXid_BaseShapeSizeY (exact-name, high)"
+        ],
+        [
+          "tc Form-0006",
+          200,
+          "FXid_BaseShapeSizeZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0025",
+          34,
+          "FXid_PFeather (default-pair, high)"
+        ],
+        [
+          "tc Form-0028",
+          1,
+          "FXid_PLayerTime (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0032",
+          19,
+          "FXid_PRotate (default-pair, high)"
+        ],
+        [
+          "tc Form-0033",
+          100,
+          "FXid_PSizeMax (exact-name, high)"
+        ],
+        [
+          "tc Form-0035",
+          2,
+          "FXid_POpacMax (default-pair, high)"
+        ],
+        [
+          "tc Form-0246",
+          62,
+          "FXid_POpacRnd (exact-name, high)"
+        ],
+        [
+          "tc Form-0042",
+          1,
+          "FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.9194497201711901,
+            0.2781467465383391,
+            0.12432005250030348,
+            1
+          ],
+          "FXid_PColor (default-pair, high) [flattened ColorMapArb]"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0159",
+          49,
+          "FXid_BaseShapeDisperse (default-pair, high)"
+        ],
+        [
+          "tc Form-0160",
+          1,
+          "FXid_SDTwisterAmount (default-pair, high)"
+        ],
+        [
+          "tc Form-0177",
+          -0.2,
+          "FXid_FAdd (exact-name, high)"
+        ],
+        [
+          "tc Form-0164",
+          91,
+          "FXid_FAffectOpac (exact-name, high)"
+        ],
+        [
+          "tc Form-0166",
+          42,
+          "FXid_FAffectPosX (exact-name, high)"
+        ],
+        [
+          "tc Form-0172",
+          10,
+          "FXid_FEvolution (default-pair, high)"
+        ],
+        [
+          "tc Form-0173",
+          1,
+          "FXid_FLoop (exact-name, high)"
+        ],
+        [
+          "tc Form-0174",
+          10,
+          "FXid_FLoopTime (exact-name, high)"
+        ],
+        [
+          "tc Form-0171",
+          30,
+          "FXid_FlowZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0527",
+          [
+            -409600,
+            -129600,
+            129600
+          ],
+          "FXid_D1Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0528",
+          [
+            -409600,
+            -129600,
+            129600
+          ],
+          "FXid_D2Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0608",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_KCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0027",
+          {
+            "__layer": "SpriteTex"
+          },
+          "Sprite texture layer (rg.p.sprite.id)"
+        ],
+        [
+          "tc Form-0028",
+          1,
+          "FXid_PLayerTime (+enumOffset)"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_validated": {
+    "round": "form-r1",
+    "verdict": "match",
+    "backend": "agent-vision"
+  }
+}

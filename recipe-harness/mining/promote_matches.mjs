@@ -14,9 +14,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
 const OUT = path.join(REPO, 'recipes', 'mined');
 const dry = process.argv.includes('--dry');
+const flag = (n, d) => (process.argv.find(a => a.startsWith(`--${n}=`)) || '').split('=')[1] || d;
+const valDir = flag('val', 'validation');
+const catName = flag('catalog', 'catalog.json');
 
-const scores = JSON.parse(fs.readFileSync(path.join(__dirname, 'validation', 'scores.json'), 'utf8'));
-const catalog = JSON.parse(fs.readFileSync(path.join(__dirname, 'catalog.json'), 'utf8'));
+const scores = JSON.parse(fs.readFileSync(path.join(__dirname, valDir, 'scores.json'), 'utf8'));
+const catalog = JSON.parse(fs.readFileSync(path.join(__dirname, catName), 'utf8'));
 const draftBySlug = new Map(catalog.presets.map(p => [path.basename(p.draft, '.json'), p.draft]));
 
 fs.mkdirSync(OUT, { recursive: true });

@@ -20,7 +20,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Basic Fractal Sphere.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Basic Fractal Sphere.png",
    "draft": "drafts_form/TC14/basic-fractal-sphere.json",
-   "params": 15,
+   "params": 16,
    "unmapped": 0,
    "objGated": false
   },
@@ -42,7 +42,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Basic Grid.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Basic Grid.png",
    "draft": "drafts_form/TC14/basic-grid.json",
-   "params": 10,
+   "params": 11,
    "unmapped": 0,
    "objGated": false
   },
@@ -53,7 +53,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Flaxen.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Flaxen.png",
    "draft": "drafts_form/TC14/flaxen.json",
-   "params": 28,
+   "params": 29,
    "unmapped": 0,
    "objGated": false
   },
@@ -64,7 +64,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Flow Strings.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Flow Strings.png",
    "draft": "drafts_form/TC14/flow-strings.json",
-   "params": 26,
+   "params": 27,
    "unmapped": 0,
    "objGated": false
   },
@@ -75,7 +75,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Glow Banner.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Glow Banner.png",
    "draft": "drafts_form/TC14/glow-banner.json",
-   "params": 34,
+   "params": 35,
    "unmapped": 0,
    "objGated": false
   },
@@ -86,7 +86,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Metallic Loop.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Metallic Loop.png",
    "draft": "drafts_form/TC14/metallic-loop.json",
-   "params": 34,
+   "params": 35,
    "unmapped": 0,
    "objGated": false
   },
@@ -97,7 +97,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Plasma Thing 1.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Plasma Thing 1.png",
    "draft": "drafts_form/TC14/plasma-thing-1.json",
-   "params": 22,
+   "params": 23,
    "unmapped": 0,
    "objGated": false
   },
@@ -108,7 +108,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Plasma Thing 2.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Plasma Thing 2.png",
    "draft": "drafts_form/TC14/plasma-thing-2.json",
-   "params": 21,
+   "params": 22,
    "unmapped": 0,
    "objGated": false
   },
@@ -119,7 +119,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Plasma Thing 3.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Plasma Thing 3.png",
    "draft": "drafts_form/TC14/plasma-thing-3.json",
-   "params": 23,
+   "params": 24,
    "unmapped": 0,
    "objGated": false
   },
@@ -130,7 +130,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Plasma Thing 4.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Plasma Thing 4.png",
    "draft": "drafts_form/TC14/plasma-thing-4.json",
-   "params": 23,
+   "params": 24,
    "unmapped": 0,
    "objGated": false
   },
@@ -141,7 +141,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Plasma Thing 5.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Plasma Thing 5.png",
    "draft": "drafts_form/TC14/plasma-thing-5.json",
-   "params": 22,
+   "params": 23,
    "unmapped": 0,
    "objGated": false
   },
@@ -152,7 +152,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Red Kaleidospace.xbxc",
    "thumb": null,
    "draft": "drafts_form/TC14/red-kaleidospace.json",
-   "params": 28,
+   "params": 29,
    "unmapped": 0,
    "objGated": false
   },
@@ -163,7 +163,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Red Shard.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Red Shard.png",
    "draft": "drafts_form/TC14/red-shard.json",
-   "params": 26,
+   "params": 27,
    "unmapped": 0,
    "objGated": false
   },
@@ -174,7 +174,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Screen Banner.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Screen Banner.png",
    "draft": "drafts_form/TC14/screen-banner.json",
-   "params": 35,
+   "params": 36,
    "unmapped": 0,
    "objGated": false
   },
@@ -185,7 +185,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/String Cluster.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/String Cluster.png",
    "draft": "drafts_form/TC14/string-cluster.json",
-   "params": 23,
+   "params": 24,
    "unmapped": 0,
    "objGated": false
   },
@@ -229,7 +229,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Bokeh/Deep Orange Bokeh.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Bokeh/Deep Orange Bokeh.png",
    "draft": "drafts_form/TC14/deep-orange-bokeh.json",
-   "params": 28,
+   "params": 29,
    "unmapped": 0,
    "objGated": false
   },
@@ -273,7 +273,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Fractals/Flight Plasma.xbxc",
    "thumb": null,
    "draft": "drafts_form/TC14/flight-plasma.json",
-   "params": 27,
+   "params": 28,
    "unmapped": 0,
    "objGated": false
   },
@@ -328,7 +328,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Geometry/Displaced Array.xbxc",
    "thumb": null,
    "draft": "drafts_form/TC14/displaced-array.json",
-   "params": 15,
+   "params": 16,
    "unmapped": 0,
    "objGated": true
   },
@@ -372,7 +372,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Geometry/Sine Wave Flow.xbxc",
    "thumb": null,
    "draft": "drafts_form/TC14/sine-wave-flow.json",
-   "params": 23,
+   "params": 24,
    "unmapped": 0,
    "objGated": true
   },
@@ -383,7 +383,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Landscape/Ethereal Landscape.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Landscape/Ethereal Landscape.png",
    "draft": "drafts_form/TC14/ethereal-landscape.json",
-   "params": 38,
+   "params": 39,
    "unmapped": 0,
    "objGated": false
   },
@@ -394,7 +394,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Landscape/Flight Landscape.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Landscape/Flight Landscape.png",
    "draft": "drafts_form/TC14/flight-landscape.json",
-   "params": 30,
+   "params": 31,
    "unmapped": 0,
    "objGated": false
   },
@@ -405,7 +405,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Landscape/Flight Mountain.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Landscape/Flight Mountain.png",
    "draft": "drafts_form/TC14/flight-mountain.json",
-   "params": 28,
+   "params": 29,
    "unmapped": 0,
    "objGated": false
   },
@@ -438,7 +438,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Lines/Joy Division.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Lines/Joy Division.png",
    "draft": "drafts_form/TC14/joy-division.json",
-   "params": 32,
+   "params": 33,
    "unmapped": 0,
    "objGated": false
   },
@@ -603,7 +603,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Shape Grids/Deco Strokes.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Shape Grids/Deco Strokes.png",
    "draft": "drafts_form/TC14/deco-strokes.json",
-   "params": 38,
+   "params": 39,
    "unmapped": 0,
    "objGated": false
   },
@@ -614,7 +614,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Shape Grids/Digital Stream.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Shape Grids/Digital Stream.png",
    "draft": "drafts_form/TC14/digital-stream.json",
-   "params": 39,
+   "params": 40,
    "unmapped": 0,
    "objGated": false
   },
@@ -680,7 +680,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Shape Grids/Primitive Arrows.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Shape Grids/Primitive Arrows.png",
    "draft": "drafts_form/TC14/primitive-arrows.json",
-   "params": 27,
+   "params": 28,
    "unmapped": 0,
    "objGated": false
   },
@@ -812,7 +812,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC15/Presets/Form/Fluid/Sphere Drop.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC15/Form/Fluid/Sphere Drop.png",
    "draft": "drafts_form/TC15/sphere-drop.json",
-   "params": 12,
+   "params": 13,
    "unmapped": 0,
    "objGated": false
   },
@@ -823,7 +823,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC15/Presets/Form/Fluid/String Swirl.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC15/Form/Fluid/String Swirl.png",
    "draft": "drafts_form/TC15/string-swirl.json",
-   "params": 23,
+   "params": 24,
    "unmapped": 0,
    "objGated": false
   },
@@ -834,7 +834,7 @@
    "file": "/Users/Shared/Red Giant/Trapcode Packs/TC15/Presets/Form/Fluid/Vortex Burst.xbxc",
    "thumb": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC15/Form/Fluid/Vortex Burst.png",
    "draft": "drafts_form/TC15/vortex-burst.json",
-   "params": 13,
+   "params": 14,
    "unmapped": 0,
    "objGated": false
   },

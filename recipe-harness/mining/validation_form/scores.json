@@ -1,0 +1,419 @@
+{
+ "backend": "agent-vision",
+ "date": "2026-07-18",
+ "round": "form-r1",
+ "scores": {
+  "basic-fractal-grid": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "basic-fractal-sphere": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "basic-fractal-strings": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "basic-grid": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "flaxen": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "flow-strings": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "glow-banner": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "metallic-loop": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "plasma-thing-1": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "plasma-thing-2": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "plasma-thing-3": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "plasma-thing-4": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "plasma-thing-5": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "red-kaleidospace": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "red-shard": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "screen-banner": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "string-cluster": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "wild-world": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "basic-bokeh": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "bokeh-purple": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "deep-orange-bokeh": {
+   "verdict": "partial",
+   "class": "dim-faint",
+   "round": "form-r1"
+  },
+  "hex-bokeh": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "classic-fractal": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "data-flow": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "flight-plasma": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "genesis": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "soft-fractal": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "virus": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "colorful-square": {
+   "verdict": "fail",
+   "class": "obj-gated",
+   "round": "form-r1"
+  },
+  "displaced-array": {
+   "verdict": "fail",
+   "class": "obj-gated",
+   "round": "form-r1"
+  },
+  "icosa-spheres": {
+   "verdict": "fail",
+   "class": "obj-gated",
+   "round": "form-r1"
+  },
+  "octa-interior": {
+   "verdict": "fail",
+   "class": "obj-gated",
+   "round": "form-r1"
+  },
+  "pulsing-icosa": {
+   "verdict": "fail",
+   "class": "obj-gated",
+   "round": "form-r1"
+  },
+  "sine-wave-flow": {
+   "verdict": "fail",
+   "class": "obj-gated",
+   "round": "form-r1"
+  },
+  "ethereal-landscape": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "flight-landscape": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "flight-mountain": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "fractal-lines": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "horns": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "joy-division": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "left-frame": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "lower-frame": {
+   "verdict": "partial",
+   "class": "dim-faint",
+   "round": "form-r1"
+  },
+  "mapped-strings": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "massive-strings": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "slashes-1": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "slashes-2": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "streaklet-twist": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "string-twist-1": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "string-twist-2": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "argyle": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "bracket-grid": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "chevron-cascade": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "circle-grid": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "deco-circles": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "deco-strokes": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "digital-stream": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "flowing-rectangle-grid": {
+   "verdict": "partial",
+   "class": "dim-faint",
+   "round": "form-r1"
+  },
+  "hex-grid": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "holiday-bulbs": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "mosaic-grid": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "overlapping-chevrons": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "primitive-arrows": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "quarter-round-grid": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "slash-flow": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "thin-chevrons": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "dot-twister": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "horizon-twist": {
+   "verdict": "partial",
+   "class": "form-blend-blowout",
+   "note": "white overexposure \u2014 0037 PTMode+1 Add hypothesis overdriving dense sheets?",
+   "round": "form-r1"
+  },
+  "ocean-wave": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "ominous": {
+   "verdict": "partial",
+   "class": "form-blend-blowout",
+   "note": "white overexposure \u2014 0037 PTMode+1 Add hypothesis overdriving dense sheets?",
+   "round": "form-r1"
+  },
+  "sideways-twist": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "spiral-dots-center": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  },
+  "random-swirl-grid": {
+   "verdict": "partial",
+   "class": "dim-faint",
+   "round": "form-r1"
+  },
+  "single-drop": {
+   "verdict": "partial",
+   "class": "ok-partial",
+   "round": "form-r1"
+  },
+  "sphere-drop": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "string-swirl": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "vortex-burst": {
+   "verdict": "partial",
+   "class": "form-gradient-color",
+   "note": "structure right; color rides an unflattened/secondary gradient (default teal-green shows)",
+   "round": "form-r1"
+  },
+  "washing-machine": {
+   "verdict": "match",
+   "class": "ok",
+   "round": "form-r1"
+  }
+ }
+}
