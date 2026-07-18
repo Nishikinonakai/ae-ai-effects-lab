@@ -139,11 +139,14 @@ function applySuggestions(plan, sugs, forIter) {
 
 function scoreViaApi(n) {
   const req = path.join(iterDir(n), 'review_request.json');
-  const scorer = path.join(REPO, 'vision', 'claude_score.mjs');
-  console.log(`scoring iter ${n} via claude_score.mjs ...`);
+  // scorer pick: Anthropic if its key is present; else the OpenAI-compatible twin
+  // (key from env or the gitignored .env.api that gpt_score.mjs self-loads).
+  const useClaude = !!process.env.ANTHROPIC_API_KEY;
+  const scorer = path.join(REPO, 'vision', useClaude ? 'claude_score.mjs' : 'gpt_score.mjs');
+  console.log(`scoring iter ${n} via ${path.basename(scorer)} ...`);
   const r = spawnSync('node', [scorer, req], { stdio: 'inherit' });
   if (r.status !== 0 || !fs.existsSync(path.join(iterDir(n), 'review.json'))) {
-    die('api scorer failed to produce review.json (need ANTHROPIC_API_KEY + @anthropic-ai/sdk)');
+    die('api scorer failed to produce review.json (see scorer output above)');
   }
 }
 
