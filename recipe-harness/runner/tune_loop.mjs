@@ -41,6 +41,9 @@ if (!planPath) die('usage: node runner/tune_loop.mjs <plan.json> [--max-iters=4]
 const flag = (name, dflt) => (process.argv.find(a => a.startsWith(`--${name}=`)) || '').split('=')[1] || dflt;
 const maxIters = Number(flag('max-iters', 4));
 const backend = flag('backend', 'agent');
+// pass-bar normalization: backends calibrate verdicts differently (gpt-terra fails 8/10s
+// the agent passes). score >= pass-at promotes a fail verdict to pass. 0 disables.
+const passAt = Number(flag('pass-at', 8));
 const timeoutSec = Number(flag('timeout', 180));
 const fresh = process.argv.includes('--fresh');
 
@@ -115,8 +118,14 @@ function applySuggestions(plan, sugs, forIter) {
   for (const s of (sugs || [])) {
     try {
       if (s.type === 'param' || s.type === 'expression') {
-        const eff = p.effects.find(e => e.matchName === s.effect);
-        if (!eff) { skipped.push({ s, why: 'effect not in stack' }); continue; }
+        // "tc Particular#2" targets the 2nd instance of that matchName (multi-instance
+        // stacks; planner-eval e20 finding: first-match-only left twins untunable)
+        const im = String(s.effect || '').match(/^(.*?)#(\d+)$/);
+        const wantName = im ? im[1] : s.effect;
+        const wantIdx = im ? Number(im[2]) : 1;
+        let seen = 0, eff = null;
+        for (const e of p.effects) if (e.matchName === wantName && ++seen === wantIdx) { eff = e; break; }
+        if (!eff) { skipped.push({ s, why: 'effect (instance) not in stack' }); continue; }
         const list = s.type === 'param' ? (eff.params = eff.params || []) : (eff.expressions = eff.expressions || []);
         const val = s.type === 'param' ? s.value : s.expression;
         const row = list.find(r => r[0] === s.matchName);
@@ -190,10 +199,27 @@ while (true) {
   const errs = validateReview(review);
   if (errs.length) die(`iter ${n} review.json invalid: ${errs.join('; ')}`);
 
+  if (passAt > 0 && review.verdict !== 'pass' && review.score >= passAt) {
+    console.log(`pass-bar: iter ${n} scored ${review.score} >= ${passAt} — normalizing verdict to pass`);
+    review.verdict = 'pass'; review._normalized_pass_at = passAt;
+    writeJ(revPath, review);
+  }
+
   if (review.verdict === 'pass') { finalize('pass'); process.exit(0); }
   if (n >= maxIters) { finalize('fail_max_iters'); process.exit(1); }
 
-  const { plan: nextPlan, applied, skipped } = applySuggestions(readJ(path.join(iterDir(n), 'plan.json')), review.suggestions, n + 1);
+  // revert-on-decline: if this iter scored below the best prior iter, base the next plan
+  // on the BEST plan instead of the declined one (suggestions are absolute values, so
+  // applying this review's fixes onto the best state is coherent). dim-gpt-r1 evidence:
+  // fractal-lines 6→5→4 under cumulative nudges.
+  const prior = trajectory(n);
+  const bestPrior = prior.reduce((a, b) => (b.score > (a?.score ?? -1) ? b : a), null);
+  let baseIter = n;
+  if (bestPrior && review.score < bestPrior.score) {
+    baseIter = bestPrior.iter;
+    console.log(`revert-on-decline: iter ${n} (${review.score}) < best iter ${bestPrior.iter} (${bestPrior.score}) — basing iter ${n + 1} on the best plan`);
+  }
+  const { plan: nextPlan, applied, skipped } = applySuggestions(readJ(path.join(iterDir(baseIter), 'plan.json')), review.suggestions, n + 1);
   if (skipped.length) for (const sk of skipped) console.log(`  skipped suggestion: ${JSON.stringify(sk.s).slice(0, 80)} — ${sk.why}`);
   if (applied.length === 0) { finalize('fail_no_applicable_suggestions'); process.exit(1); }
   console.log(`\niter ${n} → ${n + 1}: applying ${applied.length} suggestion(s)`);

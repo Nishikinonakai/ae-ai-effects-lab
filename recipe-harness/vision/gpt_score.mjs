@@ -69,16 +69,28 @@ for (const fp of req.frames) {
   content.push({ type: 'image_url', image_url: { url: `data:image/png;base64,${b64(fp)}`, detail: 'high' } });
 }
 
-const resp = await fetch(`${BASE}/chat/completions`, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${API_KEY}` },
-  body: JSON.stringify({ model, max_completion_tokens: 2048, messages: [{ role: 'user', content }] }),
-});
-if (!resp.ok) {
-  console.error(`API ${resp.status}: ${(await resp.text()).slice(0, 400)}`);
+// retry: headless batches die on one transient socket error otherwise (horns, dim-gpt-r1)
+async function callWithRetry(body, tries = 3) {
+  for (let a = 1; a <= tries; a++) {
+    try {
+      const resp = await fetch(`${BASE}/chat/completions`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${API_KEY}` },
+        body,
+      });
+      if (resp.ok) return resp.json();
+      const errText = (await resp.text()).slice(0, 400);
+      if (resp.status < 500 && resp.status !== 429) { console.error(`API ${resp.status}: ${errText}`); process.exit(1); }
+      console.error(`API ${resp.status} (attempt ${a}/${tries}): ${errText.slice(0, 120)}`);
+    } catch (e) {
+      console.error(`fetch error (attempt ${a}/${tries}): ${String(e).slice(0, 160)}`);
+    }
+    if (a < tries) await new Promise(r => setTimeout(r, a * 4000));
+  }
+  console.error('API unreachable after retries');
   process.exit(1);
 }
-const data = await resp.json();
+const data = await callWithRetry(JSON.stringify({ model, max_completion_tokens: 2048, messages: [{ role: 'user', content }] }));
 const text = (data.choices?.[0]?.message?.content || '').trim();
 const json = text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1);
 const review = JSON.parse(json);

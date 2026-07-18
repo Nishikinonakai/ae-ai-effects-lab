@@ -20,6 +20,7 @@ export function schemaPrompt() {
     '  {"type":"background","value":[r,g,b],"why":"..."}',
     '',
     'Only reference param matchNames visible in the request\'s plan (for type:"effect", well-known AE matchNames are allowed).',
+    'If the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: "effect":"tc Particular#2" (1-based; no suffix = first instance).',
     'Prefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still.',
   ].join('\n');
 }
