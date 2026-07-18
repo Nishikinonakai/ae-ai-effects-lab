@@ -1,0 +1,166 @@
+{
+  "_planner_rationale": [
+    "base = recipes/mined/rising-fizz.json (validated match: soft rising bubbles) — its mechanics carry over: sphere particles + feather for the soft bubble read, negative Gravity for rise, Turbulence Field displace for sway",
+    "从画面底部升起 — rising-fizz emits from a huge volume; move to a bottom BAND: Box emitter at y=760, size 1300×120×200 (0577=2 hoisted BEFORE Size Y/Z per the mode-gate rule)",
+    "蓝青色 + 深蓝近黑背景 — PColor [0.45,0.8,0.95], bg [0.004,0.02,0.05]; keep Normal blend (bubbles are bodies, not light) but raise opacity for pop",
+    "轻微左右摇摆 — rising-fizz's own mechanism: TF Affect Position 120 with small F Scale 9 + slow Evolution; Air Resistance untouched (default 0.5 keeps the field live — physics guard)",
+    "小气泡 — Size 3.5 with 35% random, Feather 40; Gravity -180 (moderate rise, fizz's -415 is too fast for 深海 mood), Life 4 so bubbles cross most of the frame"
+  ],
+  "_planner_sources": [
+    "recipes/mined/rising-fizz.json",
+    "recipes/golden-dust.json"
+  ],
+  "intent": "深海气泡：蓝青色小气泡从画面底部升起，轻微左右摇摆，深蓝近黑背景",
+  "pass_criteria": [
+    "small round bubble-like particles rising from the bottom region",
+    "blue-cyan palette on a deep dark blue background",
+    "lateral sway visible — trajectories not perfectly vertical",
+    "moderate density; individual bubbles readable"
+  ],
+  "name": "eval-e02_i1",
+  "compName": "Eval_E02_DeepSeaBubbles",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.004,
+    0.02,
+    0.05
+  ],
+  "hostName": "Bubbles",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          2,
+          "Emitter Type (Box)"
+        ],
+        [
+          "tc Particular-0581",
+          [
+            640,
+            760,
+            0
+          ],
+          "Position (bottom band)"
+        ],
+        [
+          "tc Particular-0577",
+          2,
+          "Emitter Size mode (XYZ) — gate before Y/Z"
+        ],
+        [
+          "tc Particular-0014",
+          1300,
+          "Emitter Size X"
+        ],
+        [
+          "tc Particular-0015",
+          120,
+          "Emitter Size Y"
+        ],
+        [
+          "tc Particular-0016",
+          200,
+          "Emitter Size Z"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "Particle Type (Sphere)"
+        ],
+        [
+          "tc Particular-0146",
+          220,
+          "Particles/sec"
+        ],
+        [
+          "tc Particular-0011",
+          20,
+          "Velocity"
+        ],
+        [
+          "tc Particular-0012",
+          40,
+          "Velocity Random %"
+        ],
+        [
+          "tc Particular-0002",
+          4,
+          "Life (sec)"
+        ],
+        [
+          "tc Particular-0065",
+          30,
+          "Life Random %"
+        ],
+        [
+          "tc Particular-0017",
+          -180,
+          "Gravity (buoyant rise)"
+        ],
+        [
+          "tc Particular-0027",
+          3.5,
+          "Size (small bubbles)"
+        ],
+        [
+          "tc Particular-0074",
+          35,
+          "Size Random %"
+        ],
+        [
+          "tc Particular-0029",
+          40,
+          "Feather (soft bubble edge)"
+        ],
+        [
+          "tc Particular-0033",
+          95,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0075",
+          30,
+          "Opacity Random %"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.45,
+            0.8,
+            0.95,
+            1
+          ],
+          "Color (blue-cyan)"
+        ],
+        [
+          "tc Particular-0042",
+          120,
+          "TF Affect Position (sway)"
+        ],
+        [
+          "tc Particular-0046",
+          9,
+          "TF Scale (small features = gentle sway)"
+        ],
+        [
+          "tc Particular-0052",
+          4,
+          "TF Evolution (slow)"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ]
+}

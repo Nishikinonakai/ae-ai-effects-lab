@@ -1,0 +1,171 @@
+{
+  "_planner_rationale": [
+    "no firefly recipe exists — composed from golden-dust mechanics (glow motes) with three causal deltas:",
+    "漂浮 not 上升 — Gravity 0, no Wind; wander comes from Turbulence->Position 130 with TF-independent legacy scale 0715=14 (larger noise features = slow wandering paths, embers used 6 for fine jitter); Air Resistance untouched (default 0.5 keeps turbulence live)",
+    "忽明忽暗 — per-particle blink curves are CUSTOM_VALUE (unscriptable), so approximate at population level: Opacity Random 100 + short-ish Life 2.5±60% = individuals fade in/out asynchronously; stills show it as mixed bright/dim population",
+    "萤火虫稀疏感 — psec 25 (sparse, countable), whole-frame Box emitter 1300×520 so they inhabit the space",
+    "暖黄绿 — PColor [0.72,1,0.3], Add blend + strong glow (0216=80, 0215=300) = soft halos"
+  ],
+  "_planner_sources": [
+    "recipes/golden-dust.json",
+    "plans/plan-embers.json"
+  ],
+  "intent": "萤火虫：暖黄绿色的光点在黑暗中缓慢漂浮，忽明忽暗地闪烁",
+  "pass_criteria": [
+    "sparse warm yellow-green glow points on near-black",
+    "slow wandering motion (not directional rain/snow)",
+    "brightness variation across the population (some dim, some bright = blink feel)",
+    "soft glow halos, not hard dots"
+  ],
+  "name": "eval-e05_i1",
+  "compName": "Eval_E05_Fireflies",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.008,
+    0.012,
+    0.004
+  ],
+  "hostName": "Fireflies",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          2,
+          "Emitter Type (Box)"
+        ],
+        [
+          "tc Particular-0581",
+          [
+            640,
+            380,
+            0
+          ],
+          "Position (frame center)"
+        ],
+        [
+          "tc Particular-0577",
+          2,
+          "Emitter Size mode (XYZ)"
+        ],
+        [
+          "tc Particular-0014",
+          1300,
+          "Emitter Size X"
+        ],
+        [
+          "tc Particular-0015",
+          520,
+          "Emitter Size Y"
+        ],
+        [
+          "tc Particular-0016",
+          300,
+          "Emitter Size Z"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Particle Type (Glow Sphere)"
+        ],
+        [
+          "tc Particular-0146",
+          25,
+          "Particles/sec (sparse)"
+        ],
+        [
+          "tc Particular-0011",
+          12,
+          "Velocity (near-still)"
+        ],
+        [
+          "tc Particular-0012",
+          50,
+          "Velocity Random %"
+        ],
+        [
+          "tc Particular-0002",
+          2.5,
+          "Life (short = async fade in/out)"
+        ],
+        [
+          "tc Particular-0065",
+          60,
+          "Life Random %"
+        ],
+        [
+          "tc Particular-0017",
+          0,
+          "Gravity (float)"
+        ],
+        [
+          "tc Particular-0027",
+          3,
+          "Size"
+        ],
+        [
+          "tc Particular-0074",
+          45,
+          "Size Random %"
+        ],
+        [
+          "tc Particular-0033",
+          90,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0075",
+          100,
+          "Opacity Random % (blink proxy)"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.72,
+            1,
+            0.3,
+            1
+          ],
+          "Color (warm yellow-green)"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Mode (Add)"
+        ],
+        [
+          "tc Particular-0216",
+          80,
+          "Glow Opacity"
+        ],
+        [
+          "tc Particular-0215",
+          300,
+          "Glow Size (halo)"
+        ],
+        [
+          "tc Particular-0711",
+          130,
+          "Turbulence -> Position (wander)"
+        ],
+        [
+          "tc Particular-0715",
+          14,
+          "Turbulence Scale (broad wander)"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ]
+}

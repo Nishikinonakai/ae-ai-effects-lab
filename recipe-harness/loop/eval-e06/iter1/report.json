@@ -1,0 +1,135 @@
+{
+  "status": "done",
+  "name": "eval-e06_i1",
+  "params": [
+    {
+      "p": "[1:tc Form] Base Shape Size option",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] Base Shape Center",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] Particles in X",
+      "ok": true,
+      "v": "720"
+    },
+    {
+      "p": "[1:tc Form] Particles in Y",
+      "ok": true,
+      "v": "580"
+    },
+    {
+      "p": "[1:tc Form] Particles in Z (sheet)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] Size X",
+      "ok": true,
+      "v": "900"
+    },
+    {
+      "p": "[1:tc Form] Size Y",
+      "ok": true,
+      "v": "700"
+    },
+    {
+      "p": "[1:tc Form] Size Z",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:tc Form] PTMode",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] Particle Size",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] Particle Opacity",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Form] Set Color (Solid — must pair with PColor)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] Particle Color (crimson)",
+      "ok": true,
+      "v": "0.78899997472763,0.17299"
+    },
+    {
+      "p": "[1:tc Form] Smokelet Shadow Color",
+      "ok": true,
+      "v": "0.2509999871254,0.250999"
+    },
+    {
+      "p": "[1:tc Form] Shadow Color Strength",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Form] Shadow Opacity",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Form] Field Affect Pos X (the silk waves)",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:tc Form] Field Evolution (slow undulation)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Form] Field Loop",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] Field Loop Time",
+      "ok": true,
+      "v": "6"
+    },
+    {
+      "p": "[1:tc Form] Octave Scale",
+      "ok": true,
+      "v": "1.75"
+    },
+    {
+      "p": "[1:tc Form] Field Scale",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Form] Flow X",
+      "ok": true,
+      "v": "-20"
+    },
+    {
+      "p": "[1:tc Form] Flow Y",
+      "ok": true,
+      "v": "-100"
+    },
+    {
+      "p": "[1:tc Form] RW Scale",
+      "ok": true,
+      "v": "226"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e06/iter1/eval-e06_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e06/iter1/eval-e06_i1_t4.png"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "Palette and mood right (pale blue-cyan on deep dark blue), bottom-band birth at t1 with clear rise by t4, moderate readable density. But the particles read as generic small dots rather than BUBBLES (too small/dim for a round-body read), and lateral sway is not evidenced between the frames (scatter looks near-uniform, no wavy trajectories or population lean).",
+  "suggestions": [
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0027", "value": 5, "why": "bigger round bodies = bubble read instead of dust dots" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0070", "value": [0.55, 0.88, 1, 1], "why": "brighter cyan lifts bubbles off the dark bg" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0042", "value": 220, "why": "stronger Turbulence Field displacement makes the lateral sway readable in stills" }
+  ]
+}

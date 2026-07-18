@@ -1,0 +1,78 @@
+{
+  "status": "done",
+  "name": "eval-e03_i3",
+  "params": [
+    {
+      "p": "[1:ADBE Fractal Noise] Fractal Type (soft clouds)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Noise Type (smoothest)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Contrast",
+      "ok": true,
+      "v": "125"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Brightness (dark)",
+      "ok": true,
+      "v": "-28"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Scale (nebula masses)",
+      "ok": true,
+      "v": "260"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Evolution (slow churn) (expr)",
+      "ok": true
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Offset (slow drift) (expr)",
+      "ok": true
+    },
+    {
+      "p": "[2:ADBE Tint] Map Black To (deep violet)",
+      "ok": true,
+      "v": "0.02999999932945,0.00999"
+    },
+    {
+      "p": "[2:ADBE Tint] Map White To (purple)",
+      "ok": true,
+      "v": "0.55000001192093,0.34999"
+    },
+    {
+      "p": "[2:ADBE Tint] Amount",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[3:ADBE Noise HLS Auto2] Noise type (grain)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[3:ADBE Noise HLS Auto2] Lightness noise (subtle)",
+      "ok": true,
+      "v": "7"
+    },
+    {
+      "p": "[3:ADBE Noise HLS Auto2] Grain Size (fine)",
+      "ok": true,
+      "v": "0.80000001192093"
+    },
+    {
+      "p": "[3:ADBE Noise HLS Auto2] Noise Animation Speed",
+      "ok": true,
+      "v": "20"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e03/iter3/eval-e03_i3_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e03/iter3/eval-e03_i3_t4.png"
+  ]
+}

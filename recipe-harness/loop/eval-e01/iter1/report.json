@@ -1,0 +1,110 @@
+{
+  "status": "done",
+  "name": "eval-e01_i1",
+  "params": [
+    {
+      "p": "[1:tc Particular] Emitter Type (Box)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Position (low center)",
+      "ok": true,
+      "v": "640,640,0"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size mode (XYZ)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size X",
+      "ok": true,
+      "v": "1300"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec",
+      "ok": true,
+      "v": "350"
+    },
+    {
+      "p": "[1:tc Particular] Velocity",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Life (sec)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] Life Random %",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Particular] Gravity (up drift)",
+      "ok": true,
+      "v": "-8"
+    },
+    {
+      "p": "[1:tc Particular] Wind Y (rise)",
+      "ok": true,
+      "v": "-60"
+    },
+    {
+      "p": "[1:tc Particular] Wind X (drift)",
+      "ok": true,
+      "v": "15"
+    },
+    {
+      "p": "[1:tc Particular] Size (fine dust)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Size Random %",
+      "ok": true,
+      "v": "70"
+    },
+    {
+      "p": "[1:tc Particular] Opacity",
+      "ok": true,
+      "v": "80"
+    },
+    {
+      "p": "[1:tc Particular] Opacity Random %",
+      "ok": true,
+      "v": "60"
+    },
+    {
+      "p": "[1:tc Particular] Color (gold)",
+      "ok": true,
+      "v": "1,0.77999997138977,0.349"
+    },
+    {
+      "p": "[1:tc Particular] Blend Mode (Add)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Glow Opacity",
+      "ok": true,
+      "v": "60"
+    },
+    {
+      "p": "[1:tc Particular] Glow Size",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:tc Particular] Turbulence -> Position",
+      "ok": true,
+      "v": "40"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e01/iter1/eval-e01_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e01/iter1/eval-e01_i1_t4.png"
+  ]
+}

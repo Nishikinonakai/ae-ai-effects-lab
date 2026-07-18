@@ -1,0 +1,160 @@
+{
+  "_planner_rationale": [
+    "pattern = plans/plan-smoke-bg.json (one-shot-passed native stack): Fractal Noise soft clouds + Tint recolor + evolution/offset expressions — same structure, new palette + grain layer",
+    "星云状 — Fractal Type 1 ('soft billowy clouds' per the enriched card) + Scale 260 (bigger billows than smoke-bg's 220 = nebula masses), Contrast 125 for cloud/void separation",
+    "暗紫色 — Tint maps black->[0.03,0.01,0.06] deep violet, white->[0.55,0.35,0.75]; Brightness -18 keeps it background-grade dark",
+    "缓慢演化 — Evolution time*30 (slower than smoke-bg's 40) + slight Offset drift",
+    "颗粒感 — stack ADBE Noise HLS Auto2 (card: 0001 Noise type max 3 = grain-most, 0003 Lightness amount, 0005 Grain Size, 0006 animation speed): Lightness 60, Grain Size 0.8, animated so grain shimmers"
+  ],
+  "_planner_sources": [
+    "plans/plan-smoke-bg.json",
+    "introspect/enrichment/ADBE_Fractal_Noise.enriched.json",
+    "introspect/cards/ADBE_Noise_HLS_Auto2.json",
+    "introspect/cards/ADBE_Tint.json"
+  ],
+  "intent": "暗紫色的星云状流动背景，缓慢演化，带少量颗粒感",
+  "pass_criteria": [
+    "soft cloud/nebula structure filling the frame (no hard edges)",
+    "dark purple/violet palette, dark overall (background-grade luminance)",
+    "evolution between t1 and t4 (structure moved/morphed)",
+    "subtle grain visible on close inspection"
+  ],
+  "name": "eval-e03_i2",
+  "compName": "Eval_E03_Nebula",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": null,
+  "hostName": "Nebula",
+  "effects": [
+    {
+      "matchName": "ADBE Fractal Noise",
+      "params": [
+        [
+          "ADBE Fractal Noise-0001",
+          1,
+          "Fractal Type (soft clouds)"
+        ],
+        [
+          "ADBE Fractal Noise-0002",
+          3,
+          "Noise Type (smoothest)"
+        ],
+        [
+          "ADBE Fractal Noise-0004",
+          125,
+          "Contrast"
+        ],
+        [
+          "ADBE Fractal Noise-0005",
+          -28,
+          "Brightness (dark)"
+        ],
+        [
+          "ADBE Fractal Noise-0010",
+          260,
+          "Scale (nebula masses)"
+        ]
+      ],
+      "expressions": [
+        [
+          "ADBE Fractal Noise-0023",
+          "time*30",
+          "Evolution (slow churn)"
+        ],
+        [
+          "ADBE Fractal Noise-0013",
+          "[320 + time*12, 180 + time*4]",
+          "Offset (slow drift)"
+        ]
+      ]
+    },
+    {
+      "matchName": "ADBE Tint",
+      "params": [
+        [
+          "ADBE Tint-0001",
+          [
+            0.03,
+            0.01,
+            0.06,
+            1
+          ],
+          "Map Black To (deep violet)"
+        ],
+        [
+          "ADBE Tint-0002",
+          [
+            0.55,
+            0.35,
+            0.75,
+            1
+          ],
+          "Map White To (purple)"
+        ],
+        [
+          "ADBE Tint-0003",
+          100,
+          "Amount"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Noise HLS Auto2",
+      "params": [
+        [
+          "ADBE Noise HLS Auto2-0001",
+          3,
+          "Noise type (grain)"
+        ],
+        [
+          "ADBE Noise HLS Auto2-0003",
+          15,
+          "Lightness noise (subtle)"
+        ],
+        [
+          "ADBE Noise HLS Auto2-0005",
+          0.8,
+          "Grain Size (fine)"
+        ],
+        [
+          "ADBE Noise HLS Auto2-0006",
+          20,
+          "Noise Animation Speed"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "ADBE Noise HLS Auto2",
+          "matchName": "ADBE Noise HLS Auto2-0003",
+          "value": 15,
+          "why": "drop lightness-noise amount to a subtle film-grain level"
+        },
+        {
+          "type": "param",
+          "effect": "ADBE Fractal Noise",
+          "matchName": "ADBE Fractal Noise-0005",
+          "value": -28,
+          "why": "darken the base so the bright billows sit at background luminance"
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "intent": "萤火虫：暖黄绿色的光点在黑暗中缓慢漂浮，忽明忽暗地闪烁",
+  "backend": "agent",
+  "outcome": "pass",
+  "best_iter": 2,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "Wandering float (no directional lean between t1/t4), population brightness variation (bright/dim mix = blink feel), and soft-edged glow points all read. Two degree-misses: color is green-dominant and slightly cold where 暖黄绿 was asked (fireflies want warmer chartreuse), and steady-state density at t4 (~70 points) drifts toward starfield — the sparse countable-fireflies read of t1 is better."
+    },
+    {
+      "iter": 2,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "Both nudges landed: color is now warm chartreuse-yellow (firefly warmth) and steady-state density (~40 at t4) keeps the sparse countable read. Wandering float without directional lean, clear bright/dim population mix for the blink feel, soft-edged glows on near-black. Satisfies the request as-is."
+    }
+  ]
+}

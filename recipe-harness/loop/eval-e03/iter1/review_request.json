@@ -1,0 +1,126 @@
+{
+  "intent": "暗紫色的星云状流动背景，缓慢演化，带少量颗粒感",
+  "pass_criteria": [
+    "soft cloud/nebula structure filling the frame (no hard edges)",
+    "dark purple/violet palette, dark overall (background-grade luminance)",
+    "evolution between t1 and t4 (structure moved/morphed)",
+    "subtle grain visible on close inspection"
+  ],
+  "iteration": 1,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "ADBE Fractal Noise",
+        "params": [
+          [
+            "ADBE Fractal Noise-0001",
+            1,
+            "Fractal Type (soft clouds)"
+          ],
+          [
+            "ADBE Fractal Noise-0002",
+            3,
+            "Noise Type (smoothest)"
+          ],
+          [
+            "ADBE Fractal Noise-0004",
+            125,
+            "Contrast"
+          ],
+          [
+            "ADBE Fractal Noise-0005",
+            -18,
+            "Brightness (dark)"
+          ],
+          [
+            "ADBE Fractal Noise-0010",
+            260,
+            "Scale (nebula masses)"
+          ]
+        ],
+        "expressions": [
+          [
+            "ADBE Fractal Noise-0023",
+            "time*30",
+            "Evolution (slow churn)"
+          ],
+          [
+            "ADBE Fractal Noise-0013",
+            "[320 + time*12, 180 + time*4]",
+            "Offset (slow drift)"
+          ]
+        ]
+      },
+      {
+        "matchName": "ADBE Tint",
+        "params": [
+          [
+            "ADBE Tint-0001",
+            [
+              0.03,
+              0.01,
+              0.06,
+              1
+            ],
+            "Map Black To (deep violet)"
+          ],
+          [
+            "ADBE Tint-0002",
+            [
+              0.55,
+              0.35,
+              0.75,
+              1
+            ],
+            "Map White To (purple)"
+          ],
+          [
+            "ADBE Tint-0003",
+            100,
+            "Amount"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE Noise HLS Auto2",
+        "params": [
+          [
+            "ADBE Noise HLS Auto2-0001",
+            3,
+            "Noise type (grain)"
+          ],
+          [
+            "ADBE Noise HLS Auto2-0003",
+            60,
+            "Lightness noise (subtle)"
+          ],
+          [
+            "ADBE Noise HLS Auto2-0005",
+            0.8,
+            "Grain Size (fine)"
+          ],
+          [
+            "ADBE Noise HLS Auto2-0006",
+            20,
+            "Noise Animation Speed"
+          ]
+        ],
+        "expressions": []
+      }
+    ],
+    "camera": null,
+    "background": null,
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e03/iter1/eval-e03_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e03/iter1/eval-e03_i1_t4.png"
+  ],
+  "prior_iterations": [],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

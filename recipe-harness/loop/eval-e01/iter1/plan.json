@@ -1,0 +1,154 @@
+{
+  "_planner_rationale": [
+    "in-dist hit: recipes/golden-dust.json IS this request (slow-rising warm golden dust, verified T1 recipe) — correct planner behavior is to reuse it, re-tuned only where the prompt differs",
+    "prompt says 黑背景 — keep the recipe's near-black warm bg [0.02,0.015,0.01]",
+    "微微发光 — recipe already has Blend Add + Glow 60/200; unchanged",
+    "renderFrames [1,4] per eval defaults so the scorer can read the upward drift"
+  ],
+  "_planner_sources": [
+    "recipes/golden-dust.json"
+  ],
+  "intent": "金色的细小尘埃粒子在黑背景上缓慢上升，微微发光",
+  "pass_criteria": [
+    "small golden/amber glowing particles on a near-black background",
+    "upward drift readable between t1 and t4 frames",
+    "fine dust scale — many small particles, not few large blobs",
+    "soft glow, additive feel; no flat matte dots"
+  ],
+  "name": "eval-e01_i1",
+  "compName": "Eval_E01_GoldenDust",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.02,
+    0.015,
+    0.01
+  ],
+  "hostName": "Dust",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          2,
+          "Emitter Type (Box)"
+        ],
+        [
+          "tc Particular-0581",
+          [
+            640,
+            640,
+            0
+          ],
+          "Position (low center)"
+        ],
+        [
+          "tc Particular-0577",
+          2,
+          "Emitter Size mode (XYZ)"
+        ],
+        [
+          "tc Particular-0014",
+          1300,
+          "Emitter Size X"
+        ],
+        [
+          "tc Particular-0146",
+          350,
+          "Particles/sec"
+        ],
+        [
+          "tc Particular-0011",
+          40,
+          "Velocity"
+        ],
+        [
+          "tc Particular-0002",
+          5,
+          "Life (sec)"
+        ],
+        [
+          "tc Particular-0065",
+          30,
+          "Life Random %"
+        ],
+        [
+          "tc Particular-0017",
+          -8,
+          "Gravity (up drift)"
+        ],
+        [
+          "tc Particular-0750",
+          -60,
+          "Wind Y (rise)"
+        ],
+        [
+          "tc Particular-0749",
+          15,
+          "Wind X (drift)"
+        ],
+        [
+          "tc Particular-0027",
+          2,
+          "Size (fine dust)"
+        ],
+        [
+          "tc Particular-0074",
+          70,
+          "Size Random %"
+        ],
+        [
+          "tc Particular-0033",
+          80,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0075",
+          60,
+          "Opacity Random %"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            1,
+            0.78,
+            0.35,
+            1
+          ],
+          "Color (gold)"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Mode (Add)"
+        ],
+        [
+          "tc Particular-0216",
+          60,
+          "Glow Opacity"
+        ],
+        [
+          "tc Particular-0215",
+          200,
+          "Glow Size"
+        ],
+        [
+          "tc Particular-0711",
+          40,
+          "Turbulence -> Position"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ]
+}

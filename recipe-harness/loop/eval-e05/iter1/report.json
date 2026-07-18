@@ -1,0 +1,125 @@
+{
+  "status": "done",
+  "name": "eval-e05_i1",
+  "params": [
+    {
+      "p": "[1:tc Particular] Emitter Type (Box)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Position (frame center)",
+      "ok": true,
+      "v": "640,380,0"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size mode (XYZ)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size X",
+      "ok": true,
+      "v": "1300"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Y",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Z",
+      "ok": true,
+      "v": "300"
+    },
+    {
+      "p": "[1:tc Particular] Particle Type (Glow Sphere)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec (sparse)",
+      "ok": true,
+      "v": "25"
+    },
+    {
+      "p": "[1:tc Particular] Velocity (near-still)",
+      "ok": true,
+      "v": "12"
+    },
+    {
+      "p": "[1:tc Particular] Velocity Random %",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] Life (short = async fade in/out)",
+      "ok": true,
+      "v": "2.5"
+    },
+    {
+      "p": "[1:tc Particular] Life Random %",
+      "ok": true,
+      "v": "60"
+    },
+    {
+      "p": "[1:tc Particular] Gravity (float)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Size",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Particular] Size Random %",
+      "ok": true,
+      "v": "45"
+    },
+    {
+      "p": "[1:tc Particular] Opacity",
+      "ok": true,
+      "v": "90"
+    },
+    {
+      "p": "[1:tc Particular] Opacity Random % (blink proxy)",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Particular] Color (warm yellow-green)",
+      "ok": true,
+      "v": "0.72000002861023,1,0.300"
+    },
+    {
+      "p": "[1:tc Particular] Blend Mode (Add)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Glow Opacity",
+      "ok": true,
+      "v": "80"
+    },
+    {
+      "p": "[1:tc Particular] Glow Size (halo)",
+      "ok": true,
+      "v": "300"
+    },
+    {
+      "p": "[1:tc Particular] Turbulence -> Position (wander)",
+      "ok": true,
+      "v": "130"
+    },
+    {
+      "p": "[1:tc Particular] Turbulence Scale (broad wander)",
+      "ok": true,
+      "v": "14"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e05/iter1/eval-e05_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e05/iter1/eval-e05_i1_t4.png"
+  ]
+}

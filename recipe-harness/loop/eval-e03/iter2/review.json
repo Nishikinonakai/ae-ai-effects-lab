@@ -1,0 +1,8 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "Both nudges moved it: cloud masses now read as a proper dark-purple nebula with deep voids (background-grade luminance ok), evolution clear between frames. Remaining miss is degree, not absence: grain is still visible everywhere at normal viewing distance — the request said 少量颗粒感 (subtle, close-inspection level), and at animation speed 20 this amount would shimmer hard on a background layer.",
+  "suggestions": [
+    { "type": "param", "effect": "ADBE Noise HLS Auto2", "matchName": "ADBE Noise HLS Auto2-0003", "value": 7, "why": "halve the grain again — target film-grain subtlety, not visible texture" }
+  ]
+}

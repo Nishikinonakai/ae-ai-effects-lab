@@ -1,0 +1,183 @@
+{
+  "_planner_rationale": [
+    "in-dist hit: recipes/mined/genesis.json is literally 'red silk' (Form Fractals preset, validated match) — reuse its verified param set",
+    "缓缓起伏 — already present in the recipe: FAffectPosX 200 displacement + FEvolution 20 + FLoop, plus Flow X/Y drift; no changes needed",
+    "planner pruning: dropped the three park-sentinel spatial params (D1Pos/D2Pos/KCenter at [-614400,...] = parked-UI positions, ranked-candidate/med confidence, inert without disperse strength) — if the look regresses the loop will say so",
+    "kept the flattened PColor (crimson) + ColorMapOver=Solid pairing — the r2 lesson: 0042 must accompany 0036 or the default teal gradient overrides"
+  ],
+  "_planner_sources": [
+    "recipes/mined/genesis.json"
+  ],
+  "intent": "红色丝绸质感的抽象波浪曲面，缓缓起伏",
+  "pass_criteria": [
+    "continuous undulating surface/sheet made of particles (Form-style), not scattered particles",
+    "red/crimson palette with smooth luminance gradations (silk feel)",
+    "wave structure changed between t1 and t4",
+    "fills a wide band of the frame"
+  ],
+  "name": "eval-e06_i1",
+  "compName": "Eval_E06_RedSilk",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "hostName": "Silk",
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0489",
+          2,
+          "Base Shape Size option"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "Base Shape Center"
+        ],
+        [
+          "tc Form-0007",
+          720,
+          "Particles in X"
+        ],
+        [
+          "tc Form-0008",
+          580,
+          "Particles in Y"
+        ],
+        [
+          "tc Form-0009",
+          1,
+          "Particles in Z (sheet)"
+        ],
+        [
+          "tc Form-0004",
+          900,
+          "Size X"
+        ],
+        [
+          "tc Form-0005",
+          700,
+          "Size Y"
+        ],
+        [
+          "tc Form-0006",
+          200,
+          "Size Z"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "PTMode"
+        ],
+        [
+          "tc Form-0033",
+          1,
+          "Particle Size"
+        ],
+        [
+          "tc Form-0035",
+          50,
+          "Particle Opacity"
+        ],
+        [
+          "tc Form-0042",
+          1,
+          "Set Color (Solid — must pair with PColor)"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.789,
+            0.173,
+            0.189,
+            1
+          ],
+          "Particle Color (crimson)"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0.251,
+            0.251,
+            0.251,
+            1
+          ],
+          "Smokelet Shadow Color"
+        ],
+        [
+          "tc Form-0421",
+          50,
+          "Shadow Color Strength"
+        ],
+        [
+          "tc Form-0422",
+          50,
+          "Shadow Opacity"
+        ],
+        [
+          "tc Form-0166",
+          200,
+          "Field Affect Pos X (the silk waves)"
+        ],
+        [
+          "tc Form-0172",
+          20,
+          "Field Evolution (slow undulation)"
+        ],
+        [
+          "tc Form-0173",
+          1,
+          "Field Loop"
+        ],
+        [
+          "tc Form-0174",
+          6,
+          "Field Loop Time"
+        ],
+        [
+          "tc Form-0183",
+          1.75,
+          "Octave Scale"
+        ],
+        [
+          "tc Form-0180",
+          5,
+          "Field Scale"
+        ],
+        [
+          "tc Form-0169",
+          -20,
+          "Flow X"
+        ],
+        [
+          "tc Form-0170",
+          -100,
+          "Flow Y"
+        ],
+        [
+          "tc Form-0234",
+          226,
+          "RW Scale"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "_doc": "Planner-eval prompt set v1 (2026-07-18). 24 NL requests measuring the PRODUCT loop: NL -> model-planned recipe (reasoning over cards + recipe library) -> render -> vision score -> tune. Axes: tier (T1 texture / T2 path-rig / T3 compositional), family (particular/form/native/mixed), dist (in = a library recipe covers it, near = recombination of library elements, ood = no close recipe, vague = underspecified on purpose). See eval/README.md for protocol.",
+  "defaults": {
+    "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 6 },
+    "renderFrames": [1, 4],
+    "maxIters": 3
+  },
+  "prompts": [
+    {
+      "id": "e01", "tier": "T1", "family": "particular", "dist": "in",
+      "prompt": "金色的细小尘埃粒子在黑背景上缓慢上升，微微发光",
+      "pass_criteria": [
+        "small golden/amber glowing particles on a near-black background",
+        "upward drift readable between t1 and t4 frames",
+        "fine dust scale — many small particles, not few large blobs",
+        "soft glow, additive feel; no flat matte dots"
+      ],
+      "notes": "Sanity floor: golden-dust recipe is a direct hit. Failure here = harness problem, not planner."
+    },
+    {
+      "id": "e02", "tier": "T1", "family": "particular", "dist": "near",
+      "prompt": "深海气泡：蓝青色小气泡从画面底部升起，轻微左右摇摆，深蓝近黑背景",
+      "pass_criteria": [
+        "small round bubble-like particles rising from the bottom region",
+        "blue-cyan palette on a deep dark blue background",
+        "lateral sway visible — trajectories not perfectly vertical",
+        "moderate density; individual bubbles readable"
+      ],
+      "notes": "rising-fizz + palette shift + sway (turbulence or wind wiggle)."
+    },
+    {
+      "id": "e03", "tier": "T1", "family": "native", "dist": "near",
+      "prompt": "暗紫色的星云状流动背景，缓慢演化，带少量颗粒感",
+      "pass_criteria": [
+        "soft cloud/nebula structure filling the frame (no hard edges)",
+        "dark purple/violet palette, dark overall (background-grade luminance)",
+        "evolution between t1 and t4 (structure moved/morphed)",
+        "subtle grain visible on close inspection"
+      ],
+      "notes": "plan-smoke-bg pattern (Fractal Noise + Tint) + new palette + Noise grain layer."
+    },
+    {
+      "id": "e04", "tier": "T1", "family": "native", "dist": "near",
+      "prompt": "老胶片效果的抽象背景：柔和的灰阶云雾底，叠加胶片颗粒噪点、轻微亮度闪烁、整体偏褐色调",
+      "pass_criteria": [
+        "soft greyscale cloud base readable under the treatment",
+        "film grain clearly present",
+        "sepia/brown tint over the whole frame",
+        "brightness differs slightly between t1 and t4 (flicker)"
+      ],
+      "notes": "Look-stack composition: FN base + Noise + Exposure expression + Tint. Cards exist for all four."
+    },
+    {
+      "id": "e05", "tier": "T1", "family": "particular", "dist": "near",
+      "prompt": "萤火虫：暖黄绿色的光点在黑暗中缓慢漂浮，忽明忽暗地闪烁",
+      "pass_criteria": [
+        "sparse warm yellow-green glow points on near-black",
+        "slow wandering motion (not directional rain/snow)",
+        "brightness variation across the population (some dim, some bright = blink feel)",
+        "soft glow halos, not hard dots"
+      ],
+      "notes": "Causal-reasoning test: per-particle blink isn't a scriptable curve — expect Opacity Random + short life + turbulence wander to approximate."
+    },
+    {
+      "id": "e06", "tier": "T1", "family": "form", "dist": "in",
+      "prompt": "红色丝绸质感的抽象波浪曲面，缓缓起伏",
+      "pass_criteria": [
+        "continuous undulating surface/sheet made of particles (Form-style), not scattered particles",
+        "red/crimson palette with smooth luminance gradations (silk feel)",
+        "wave structure changed between t1 and t4",
+        "fills a wide band of the frame"
+      ],
+      "notes": "Sanity floor for Form: genesis (red silk) is a direct hit."
+    },
+    {
+      "id": "e07", "tier": "T1", "family": "particular", "dist": "in",
+      "prompt": "大片雪花缓缓飘落，轻微左右飘动，深灰蓝背景",
+      "pass_criteria": [
+        "white soft flakes falling downward",
+        "large-flake scale readable (not fine dust)",
+        "slight lateral drift/wander",
+        "dark grey-blue background"
+      ],
+      "notes": "blowing-snow / large-snow-2d in-dist."
+    },
+    {
+      "id": "e08", "tier": "T1", "family": "native", "dist": "in",
+      "prompt": "信号故障效果：彩色抽象底图上，画面周期性轻微抖动、RGB 通道错位",
+      "pass_criteria": [
+        "chromatic base image visible (colorful, not greyscale)",
+        "RGB channel separation/fringing visible at edges",
+        "frame content offset/jitter differs between sampled frames",
+        "glitch reads as intentional style, not broken render"
+      ],
+      "notes": "native-chroma-glitch in-dist; the chromatic-base gotcha is already encoded in the recipe."
+    },
+    {
+      "id": "e09", "tier": "T2", "family": "particular", "dist": "near",
+      "prompt": "蓝白色发光光束拖着长尾，在画面上缓慢画出一个大大的 S 形轨迹",
+      "pass_criteria": [
+        "a continuous glowing trail (persistent tail), not a moving dot",
+        "trail shape reads as an S/serpentine curve spanning much of the frame",
+        "blue-white glow palette on dark background",
+        "head position advanced between t1 and t4"
+      ],
+      "notes": "T2 gap-test class + round-10 light-path knowledge (0581 live Position + 0005 live psec, long life for persistent tail)."
+    },
+    {
+      "id": "e10", "tier": "T2", "family": "particular", "dist": "near",
+      "prompt": "光点沿圆形轨道匀速运动，留下渐隐的轨迹，像发光表盘的外圈",
+      "pass_criteria": [
+        "circular arc trail centered in frame (ring geometry readable)",
+        "fading tail — older segments dimmer than the head",
+        "head advanced along the circle between t1 and t4",
+        "clean dark background, glow palette"
+      ],
+      "notes": "Circular path expression on 0581; fade = particle life."
+    },
+    {
+      "id": "e11", "tier": "T2", "family": "native", "dist": "in",
+      "prompt": "无缝循环的向上滚动背景（歌词 PV 用的循环滚动装置），内容用简单几何图案即可",
+      "pass_criteria": [
+        "patterned content fills the frame with no empty band at any edge",
+        "vertical scroll between t1 and t4 (pattern displaced upward)",
+        "pattern repeats seamlessly — no visible seam/tear",
+        "geometry crisp (not smeared)"
+      ],
+      "notes": "native-loop-scroll in-dist; Motion Tile TILE CENTER animation (not Transform position) is the encoded gotcha."
+    },
+    {
+      "id": "e12", "tier": "T2", "family": "form", "dist": "near",
+      "prompt": "由粒子构成的球体在画面中央缓慢自转",
+      "pass_criteria": [
+        "particle-built sphere silhouette centered in frame",
+        "3D volume readable (shading/density variation, not a flat disc)",
+        "rotation evidence between t1 and t4 (feature moved around the axis)",
+        "background dark and clean"
+      ],
+      "notes": "Form Sphere-Layered base form + rotation params. Near: base-form switch away from library's box/grid majority."
+    },
+    {
+      "id": "e13", "tier": "T2", "family": "particular", "dist": "ood",
+      "prompt": "粒子聚集成文字 AE 的形状，轻微呼吸浮动",
+      "pass_criteria": [
+        "particles form readable glyphs 'AE'",
+        "letterforms hold together (not dissolved past legibility)",
+        "slight organic float/breathing between t1 and t4",
+        "particles glow against dark background"
+      ],
+      "notes": "OOD MECHANISM: Emitter Type 0782=7 (Text/Mask) never exercised headless — needs a text layer + connect. Expected to need the loop or fail; the point is to measure the frontier."
+    },
+    {
+      "id": "e14", "tier": "T2", "family": "native", "dist": "near",
+      "prompt": "画面中央的圆形光斑像心跳一样有节奏地放大缩小、亮度脉动",
+      "pass_criteria": [
+        "single soft circular light blob centered",
+        "size and/or brightness clearly differs between t1 and t4 (pulse)",
+        "smooth falloff (light, not a hard-edged circle)",
+        "dark surroundings"
+      ],
+      "notes": "Degrees-of-freedom test: Ramp/solid + Glow + scale expression, or a single-glow Particular — planner's choice."
+    },
+    {
+      "id": "e15", "tier": "T3", "family": "particular", "dist": "in",
+      "prompt": "荒野上的龙卷风：漏斗状的烟尘柱旋转，带 3D 透视感",
+      "pass_criteria": [
+        "vertical funnel/column of particles, wider top narrower base (or readable taper)",
+        "dense enough to read as a coherent volume, not a coil/spring",
+        "rotation/sweep evidence between frames",
+        "3D perspective feel (camera looking at the funnel, not flat 2D)"
+      ],
+      "notes": "tornado.json exists — measures whether the planner LEVERAGES the library recipe (swept-emitter expression + camera rig) instead of re-deriving physics."
+    },
+    {
+      "id": "e16", "tier": "T3", "family": "particular", "dist": "ood",
+      "prompt": "夜空烟花：一朵烟花绽放成球形的彩色光点，然后拖尾下坠消散",
+      "pass_criteria": [
+        "spherical burst of many colored glow points from a single origin",
+        "later frame shows expansion + gravity droop (arcs bending down) + fading",
+        "reads as fireworks (radial structure), not random scatter",
+        "night-sky dark background"
+      ],
+      "notes": "Burst spike + sphere emitter + gravity; trails would need S2. Custom renderFrames needed (burst timing). OOD compositional.",
+      "renderFrames": [0.4, 1.6]
+    },
+    {
+      "id": "e17", "tier": "T3", "family": "mixed", "dist": "ood",
+      "prompt": "魔法传送门：悬浮的发光圆环缓缓旋转，边缘散出粒子光尘",
+      "pass_criteria": [
+        "ring/annulus of light readable as the portal",
+        "particle dust emanating near the ring edge",
+        "some rotation/animation evidence between frames",
+        "mystical glow palette on dark background"
+      ],
+      "notes": "Compositional: ring (Particular sphere-shell/ring reference: ring-explosion recipe) + edge dust; may stack native Glow."
+    },
+    {
+      "id": "e18", "tier": "T3", "family": "particular", "dist": "ood",
+      "prompt": "浓密的白烟从画面底部滚滚升起，逐渐弥漫到画面上方",
+      "pass_criteria": [
+        "smoke reads as connected billowing VOLUME (overlapping puffs), not discrete dots",
+        "rising motion between t1 and t4 with spread",
+        "white/grey palette with internal shading",
+        "no hard particle edges breaking the smoke illusion"
+      ],
+      "notes": "Honest stress test of the known-weak cloudlet-texture class (round-10 residue). Curve masters (MASTER_particular_cloud) are the library's best lever."
+    },
+    {
+      "id": "e19", "tier": "T3", "family": "mixed", "dist": "ood",
+      "prompt": "赛博朋克雨夜氛围：密集的雨丝落下，青色与品红的霓虹色调，偶发轻微的故障闪烁",
+      "pass_criteria": [
+        "dense streak-like rain falling",
+        "teal/cyan + magenta neon grade clearly present",
+        "some glitch/flicker artifact between sampled frames",
+        "cohesive moody composite — elements read as one scene"
+      ],
+      "notes": "Cross-family composition: rain recipe + CC Toner/Tint grade + glitch stack. Tests multi-effect planning."
+    },
+    {
+      "id": "e20", "tier": "T3", "family": "particular", "dist": "ood",
+      "prompt": "雨滴落到水面上，溅起一圈圈小小的涟漪",
+      "pass_criteria": [
+        "falling drops AND expanding rings both present",
+        "rings appear in a consistent 'water surface' zone (lower frame band)",
+        "rings expand over time (compare frames)",
+        "causal feel — rings where drops land (approximate is acceptable)"
+      ],
+      "notes": "Hardest: two linked systems (impact-triggered rings). Expected fail even at pass@3 — headroom marker for the eval."
+    },
+    {
+      "id": "e21", "tier": "T1", "family": "particular", "dist": "near",
+      "prompt": "sparse teal snowfall drifting slowly to the left, dark background",
+      "pass_criteria": [
+        "sparse population (clearly countable flakes)",
+        "teal-tinted flakes on dark background",
+        "downward fall with leftward drift between frames",
+        "soft flake rendering"
+      ],
+      "notes": "Language axis: English prompt over the same library (snow recipes + palette + wind sign flip)."
+    },
+    {
+      "id": "e22", "tier": "T1", "family": "any", "dist": "vague",
+      "prompt": "来点好看的科技感粒子背景",
+      "pass_criteria": [
+        "coherent, polished particle background (no debug look, no default-blue accident)",
+        "reads as 'tech' (e.g. grids, data streams, clean geometry, cool palette — planner's taste)",
+        "usable as a background: not overpowering, decent negative space",
+        "motion present between frames"
+      ],
+      "notes": "Underspecified on purpose — tests defaults + curated taste. Any family allowed; library has data-flow/digital-stream/hex-grid as taste anchors."
+    },
+    {
+      "id": "e23", "tier": "T2", "family": "form", "dist": "near",
+      "prompt": "均衡器波形山脉：粒子构成的地形像音乐可视化一样起伏",
+      "pass_criteria": [
+        "particle terrain/landscape band across the frame (Form-style surface)",
+        "peaks/valleys structure readable",
+        "undulation between t1 and t4 (peaks moved/changed)",
+        "clean palette against dark sky"
+      ],
+      "notes": "flight-landscape/ethereal-landscape family + displacement/disperse animation."
+    },
+    {
+      "id": "e24", "tier": "T1", "family": "native", "dist": "near",
+      "prompt": "复古双色调印刷海报感：抽象几何底图，画面转为深蓝与米白双色，带浮雕纹理线条",
+      "pass_criteria": [
+        "abstract geometric base readable",
+        "strict two-tone palette (deep blue + cream), no full-color leakage",
+        "emboss/relief line texture visible",
+        "poster-like graphic cohesion"
+      ],
+      "notes": "The artist's own Tint→Emboss signature stack (AMV survey) — native look composition."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "Nebula cloud structure is right (soft billows, whole-frame, clear morph between t1 and t4) and the palette is violet/purple. Two misses: the grain is far from '少量/subtle' — coarse noise dominates every pixel and competes with the cloud read (Lightness 60 renders much stronger than the intended 6%); and overall luminance is mid-bright in large areas, above background grade for 暗紫色.",
+  "suggestions": [
+    { "type": "param", "effect": "ADBE Noise HLS Auto2", "matchName": "ADBE Noise HLS Auto2-0003", "value": 15, "why": "drop lightness-noise amount to a subtle film-grain level" },
+    { "type": "param", "effect": "ADBE Fractal Noise", "matchName": "ADBE Fractal Noise-0005", "value": -28, "why": "darken the base so the bright billows sit at background luminance" }
+  ]
+}

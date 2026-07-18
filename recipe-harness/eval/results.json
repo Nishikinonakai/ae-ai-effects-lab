@@ -1,0 +1,321 @@
+{
+  "generated": null,
+  "rows": [
+    {
+      "id": "e01",
+      "tier": "T1",
+      "family": "particular",
+      "dist": "in",
+      "status": "pass",
+      "iters": 1,
+      "scores": [
+        9
+      ],
+      "verdicts": [
+        "pass"
+      ],
+      "passIter": 1,
+      "sources": 1
+    },
+    {
+      "id": "e02",
+      "tier": "T1",
+      "family": "particular",
+      "dist": "near",
+      "status": "pass",
+      "iters": 2,
+      "scores": [
+        7,
+        8
+      ],
+      "verdicts": [
+        "fail",
+        "pass"
+      ],
+      "passIter": 2,
+      "sources": 2
+    },
+    {
+      "id": "e03",
+      "tier": "T1",
+      "family": "native",
+      "dist": "near",
+      "status": "pass",
+      "iters": 3,
+      "scores": [
+        6,
+        7,
+        9
+      ],
+      "verdicts": [
+        "fail",
+        "fail",
+        "pass"
+      ],
+      "passIter": 3,
+      "sources": 4
+    },
+    {
+      "id": "e04",
+      "tier": "T1",
+      "family": "native",
+      "dist": "near",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e05",
+      "tier": "T1",
+      "family": "particular",
+      "dist": "near",
+      "status": "pass",
+      "iters": 2,
+      "scores": [
+        7,
+        8
+      ],
+      "verdicts": [
+        "fail",
+        "pass"
+      ],
+      "passIter": 2,
+      "sources": 2
+    },
+    {
+      "id": "e06",
+      "tier": "T1",
+      "family": "form",
+      "dist": "in",
+      "status": "pass",
+      "iters": 1,
+      "scores": [
+        9
+      ],
+      "verdicts": [
+        "pass"
+      ],
+      "passIter": 1,
+      "sources": 1
+    },
+    {
+      "id": "e07",
+      "tier": "T1",
+      "family": "particular",
+      "dist": "in",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e08",
+      "tier": "T1",
+      "family": "native",
+      "dist": "in",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e09",
+      "tier": "T2",
+      "family": "particular",
+      "dist": "near",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e10",
+      "tier": "T2",
+      "family": "particular",
+      "dist": "near",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e11",
+      "tier": "T2",
+      "family": "native",
+      "dist": "in",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e12",
+      "tier": "T2",
+      "family": "form",
+      "dist": "near",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e13",
+      "tier": "T2",
+      "family": "particular",
+      "dist": "ood",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e14",
+      "tier": "T2",
+      "family": "native",
+      "dist": "near",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e15",
+      "tier": "T3",
+      "family": "particular",
+      "dist": "in",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e16",
+      "tier": "T3",
+      "family": "particular",
+      "dist": "ood",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e17",
+      "tier": "T3",
+      "family": "mixed",
+      "dist": "ood",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e18",
+      "tier": "T3",
+      "family": "particular",
+      "dist": "ood",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e19",
+      "tier": "T3",
+      "family": "mixed",
+      "dist": "ood",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e20",
+      "tier": "T3",
+      "family": "particular",
+      "dist": "ood",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e21",
+      "tier": "T1",
+      "family": "particular",
+      "dist": "near",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e22",
+      "tier": "T1",
+      "family": "any",
+      "dist": "vague",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e23",
+      "tier": "T2",
+      "family": "form",
+      "dist": "near",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    },
+    {
+      "id": "e24",
+      "tier": "T1",
+      "family": "native",
+      "dist": "near",
+      "status": "not_run",
+      "iters": 0,
+      "scores": [],
+      "verdicts": [],
+      "passIter": null,
+      "sources": null
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "Wandering float (no directional lean between t1/t4), population brightness variation (bright/dim mix = blink feel), and soft-edged glow points all read. Two degree-misses: color is green-dominant and slightly cold where 暖黄绿 was asked (fireflies want warmer chartreuse), and steady-state density at t4 (~70 points) drifts toward starfield — the sparse countable-fireflies read of t1 is better.",
+  "suggestions": [
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0070", "value": [0.92, 0.98, 0.22, 1], "why": "shift toward warm chartreuse-yellow — firefly warmth" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0146", "value": 15, "why": "steady-state count ~38 keeps the sparse firefly read at t4" }
+  ]
+}

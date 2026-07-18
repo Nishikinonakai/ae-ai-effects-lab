@@ -1,0 +1,120 @@
+{
+  "status": "done",
+  "name": "eval-e02_i1",
+  "params": [
+    {
+      "p": "[1:tc Particular] Emitter Type (Box)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Position (bottom band)",
+      "ok": true,
+      "v": "640,760,0"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size mode (XYZ) — gate before Y/Z",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size X",
+      "ok": true,
+      "v": "1300"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Y",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Z",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:tc Particular] Particle Type (Sphere)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec",
+      "ok": true,
+      "v": "220"
+    },
+    {
+      "p": "[1:tc Particular] Velocity",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] Velocity Random %",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Life (sec)",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[1:tc Particular] Life Random %",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Particular] Gravity (buoyant rise)",
+      "ok": true,
+      "v": "-180"
+    },
+    {
+      "p": "[1:tc Particular] Size (small bubbles)",
+      "ok": true,
+      "v": "3.5"
+    },
+    {
+      "p": "[1:tc Particular] Size Random %",
+      "ok": true,
+      "v": "35"
+    },
+    {
+      "p": "[1:tc Particular] Feather (soft bubble edge)",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Opacity",
+      "ok": true,
+      "v": "95"
+    },
+    {
+      "p": "[1:tc Particular] Opacity Random %",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Particular] Color (blue-cyan)",
+      "ok": true,
+      "v": "0.44999998807907,0.80000"
+    },
+    {
+      "p": "[1:tc Particular] TF Affect Position (sway)",
+      "ok": true,
+      "v": "120"
+    },
+    {
+      "p": "[1:tc Particular] TF Scale (small features = gentle sway)",
+      "ok": true,
+      "v": "9"
+    },
+    {
+      "p": "[1:tc Particular] TF Evolution (slow)",
+      "ok": true,
+      "v": "4"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e02/iter1/eval-e02_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e02/iter1/eval-e02_i1_t4.png"
+  ]
+}

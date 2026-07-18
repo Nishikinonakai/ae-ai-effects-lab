@@ -1,0 +1,14 @@
+{
+  "intent": "金色的细小尘埃粒子在黑背景上缓慢上升，微微发光",
+  "backend": "agent",
+  "outcome": "pass",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 9,
+      "verdict": "pass",
+      "critique": "All four criteria met: fine golden/amber motes on near-black; population clearly risen between t1 (lower 45% band) and t4 (fills to upper quarter); hundreds of small particles at dust scale, no blobs; warm soft-edged additive dots with subtle halos. Matches the request as-is — usable frame."
+    }
+  ]
+}
