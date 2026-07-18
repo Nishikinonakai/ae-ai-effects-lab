@@ -1,0 +1,116 @@
+{
+ "_provenance": "AMV survey 2026-07-18 signature stacks (user's own projects) — original param set",
+ "intent": "硬双色调海报+8fps卡帧抖动（MAD节奏卡帧 idiom, Posterize Time×3工程）。两帧构图应跳变。",
+ "name": "native-duotone-stutter",
+ "compName": "Native_duotone_stutter",
+ "comp": {
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 6
+ },
+ "background": [
+  0,
+  0,
+  0
+ ],
+ "hostName": "Artwork",
+ "effects": [
+  {
+   "matchName": "ADBE Fractal Noise",
+   "params": [
+    [
+     "ADBE Fractal Noise-0001",
+     1,
+     "Fractal Type soft clouds"
+    ],
+    [
+     "ADBE Fractal Noise-0002",
+     3,
+     "Noise Type spline"
+    ],
+    [
+     "ADBE Fractal Noise-0004",
+     420,
+     "Contrast"
+    ],
+    [
+     "ADBE Fractal Noise-0010",
+     160,
+     "Scale"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Fractal Noise-0023",
+     "time*35",
+     "Evolution churn"
+    ]
+   ]
+  },
+  {
+   "matchName": "ADBE Tint",
+   "params": [
+    [
+     "ADBE Tint-0001",
+     [
+      1.0,
+      0.15,
+      0.45,
+      1
+     ],
+     "Map Black To"
+    ],
+    [
+     "ADBE Tint-0002",
+     [
+      0.06,
+      0.0,
+      0.1,
+      1
+     ],
+     "Map White To"
+    ],
+    [
+     "ADBE Tint-0003",
+     100,
+     "Amount"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Posterize Time",
+   "params": [
+    [
+     "ADBE Posterize Time-0001",
+     8,
+     "8fps stutter"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Geometry2",
+   "params": [
+    [
+     "ADBE Geometry2-0011",
+     1,
+     "Uniform"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Geometry2-0002",
+     "wiggle(8,25)",
+     "jitter"
+    ]
+   ]
+  }
+ ],
+ "camera": null,
+ "renderFrames": [
+  1,
+  4
+ ]
+}

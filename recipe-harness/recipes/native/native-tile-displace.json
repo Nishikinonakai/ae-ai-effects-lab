@@ -1,0 +1,131 @@
+{
+ "_provenance": "AMV survey 2026-07-18 signature stacks (user's own projects) — original param set",
+ "intent": "平铺+湍流置换（Motion Tile→Displacement 家族76次的单层版）。纹理呈流动扭曲。",
+ "name": "native-tile-displace",
+ "compName": "Native_tile_displace",
+ "comp": {
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 6
+ },
+ "background": [
+  0,
+  0,
+  0
+ ],
+ "hostName": "Artwork",
+ "effects": [
+  {
+   "matchName": "ADBE Fractal Noise",
+   "params": [
+    [
+     "ADBE Fractal Noise-0001",
+     1,
+     "Fractal Type soft clouds"
+    ],
+    [
+     "ADBE Fractal Noise-0002",
+     3,
+     "Noise Type spline"
+    ],
+    [
+     "ADBE Fractal Noise-0004",
+     120,
+     "Contrast"
+    ],
+    [
+     "ADBE Fractal Noise-0010",
+     160,
+     "Scale"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Fractal Noise-0023",
+     "time*35",
+     "Evolution churn"
+    ]
+   ]
+  },
+  {
+   "matchName": "ADBE Tint",
+   "params": [
+    [
+     "ADBE Tint-0001",
+     [
+      0.02,
+      0.09,
+      0.06,
+      1
+     ],
+     "Map Black To"
+    ],
+    [
+     "ADBE Tint-0002",
+     [
+      0.8,
+      0.95,
+      0.75,
+      1
+     ],
+     "Map White To"
+    ],
+    [
+     "ADBE Tint-0003",
+     100,
+     "Amount"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Tile",
+   "params": [
+    [
+     "ADBE Tile-0004",
+     220,
+     "Output W"
+    ],
+    [
+     "ADBE Tile-0005",
+     220,
+     "Output H"
+    ],
+    [
+     "ADBE Tile-0006",
+     1,
+     "Mirror"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Turbulent Displace",
+   "params": [
+    [
+     "ADBE Turbulent Displace-0002",
+     65,
+     "Amount"
+    ],
+    [
+     "ADBE Turbulent Displace-0003",
+     140,
+     "Size"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Turbulent Displace-0006",
+     "time*72",
+     "Evolution"
+    ]
+   ]
+  }
+ ],
+ "camera": null,
+ "renderFrames": [
+  1,
+  4
+ ]
+}

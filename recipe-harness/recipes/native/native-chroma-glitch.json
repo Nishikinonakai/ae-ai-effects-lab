@@ -1,0 +1,151 @@
+{
+ "_provenance": "AMV survey 2026-07-18 signature stacks (user's own projects) — original param set",
+ "intent": "通道交换色偏+细波撕裂（Motion Tile→Shift Channels 261次 + 故障感）。应见红蓝对调的错色纹理与横向锯齿。",
+ "name": "native-chroma-glitch",
+ "compName": "Native_chroma_glitch",
+ "comp": {
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 6
+ },
+ "background": [
+  0,
+  0,
+  0
+ ],
+ "hostName": "Artwork",
+ "effects": [
+  {
+   "matchName": "ADBE Fractal Noise",
+   "params": [
+    [
+     "ADBE Fractal Noise-0001",
+     1,
+     "Fractal Type soft clouds"
+    ],
+    [
+     "ADBE Fractal Noise-0002",
+     3,
+     "Noise Type spline"
+    ],
+    [
+     "ADBE Fractal Noise-0004",
+     200,
+     "Contrast"
+    ],
+    [
+     "ADBE Fractal Noise-0010",
+     160,
+     "Scale"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Fractal Noise-0023",
+     "time*35",
+     "Evolution churn"
+    ]
+   ]
+  },
+  {
+   "matchName": "ADBE Tint",
+   "params": [
+    [
+     "ADBE Tint-0001",
+     [
+      0.0,
+      0.35,
+      0.5,
+      1
+     ],
+     "Map Black To teal"
+    ],
+    [
+     "ADBE Tint-0002",
+     [
+      1.0,
+      0.55,
+      0.15,
+      1
+     ],
+     "Map White To orange"
+    ],
+    [
+     "ADBE Tint-0003",
+     100,
+     "Amount"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Tile",
+   "params": [
+    [
+     "ADBE Tile-0004",
+     160,
+     "Output W"
+    ],
+    [
+     "ADBE Tile-0006",
+     1,
+     "Mirror"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Shift Channels",
+   "params": [
+    [
+     "ADBE Shift Channels-0002",
+     4,
+     "Red<-Blue"
+    ],
+    [
+     "ADBE Shift Channels-0004",
+     2,
+     "Blue<-Red"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Wave Warp",
+   "params": [
+    [
+     "ADBE Wave Warp-0001",
+     5,
+     "Wave Type square?"
+    ],
+    [
+     "ADBE Wave Warp-0002",
+     6,
+     "Height"
+    ],
+    [
+     "ADBE Wave Warp-0003",
+     18,
+     "Width"
+    ],
+    [
+     "ADBE Wave Warp-0004",
+     0,
+     "Direction 0"
+    ],
+    [
+     "ADBE Wave Warp-0005",
+     2.5,
+     "Speed"
+    ]
+   ],
+   "expressions": []
+  }
+ ],
+ "camera": null,
+ "renderFrames": [
+  1,
+  4
+ ]
+}

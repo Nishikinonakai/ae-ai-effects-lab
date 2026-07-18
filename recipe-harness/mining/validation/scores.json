@@ -186,10 +186,10 @@
    "round": "r6"
   },
   "floating-dust": {
-   "verdict": "fail",
-   "class": "empty",
-   "round": "r9",
-   "note": "cloud master did not cure; emptiness is elsewhere"
+   "verdict": "partial",
+   "class": "dust-column",
+   "round": "r9b",
+   "note": "visibility floor: credible dust motes now"
   },
   "glitter": {
    "verdict": "partial",
@@ -199,7 +199,8 @@
   "horizontal-dust": {
    "verdict": "partial",
    "class": "no-thumb",
-   "round": "r6"
+   "round": "r9b",
+   "note": "visibility floor applied (class-scored)"
   },
   "moon-dust": {
    "verdict": "partial",
@@ -209,7 +210,8 @@
   "sparkle-dust": {
    "verdict": "partial",
    "class": "no-thumb",
-   "round": "r6"
+   "round": "r9b",
+   "note": "visibility floor applied (class-scored)"
   },
   "blast-sparks-1": {
    "verdict": "partial",
@@ -219,7 +221,8 @@
   "blast-sparks-2": {
    "verdict": "partial",
    "class": "burst-streaks",
-   "round": "r6"
+   "round": "r9b",
+   "note": "visibility floor applied (class-scored)"
   },
   "dust-hit-02": {
    "verdict": "partial",
@@ -420,7 +423,8 @@
   "brownian-motion": {
    "verdict": "partial",
    "class": "ok",
-   "round": "r6"
+   "round": "r9b",
+   "note": "visibility floor applied (class-scored)"
   },
   "candle-flame": {
    "verdict": "partial",
@@ -507,7 +511,8 @@
   "floating-streaks": {
    "verdict": "partial",
    "class": "aux-s2",
-   "round": "r6"
+   "round": "r9b",
+   "note": "visibility floor applied (class-scored)"
   },
   "flowing-strings": {
    "verdict": "fail",
@@ -636,7 +641,8 @@
   "flowy-green": {
    "verdict": "partial",
    "class": "aux-s2",
-   "round": "r6"
+   "round": "r9b",
+   "note": "visibility floor applied (class-scored)"
   },
   "glow-field": {
    "verdict": "partial",
@@ -712,7 +718,8 @@
   "blizzard": {
    "verdict": "partial",
    "class": "ok",
-   "round": "r6"
+   "round": "r9b",
+   "note": "visibility floor applied (class-scored)"
   },
   "blowing-bubbles": {
    "verdict": "match",
@@ -818,10 +825,10 @@
    "round": "r6"
   },
   "snowy-night-2": {
-   "verdict": "fail",
-   "class": "empty",
-   "round": "r9",
-   "note": "same"
+   "verdict": "partial",
+   "class": "dust-column",
+   "round": "r9b",
+   "note": "visibility floor: real snowfall, column-limited by authored 440-wide box"
   },
   "basic-rising-smoke": {
    "verdict": "partial",

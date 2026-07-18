@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Floating Streaks.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "86 mapped / 44 unmapped / 0 curves",
+  "_map_coverage": "87 mapped / 44 unmapped / 0 curves",
   "_dropped_inert": [
     [
       "tc Particular-0749",
@@ -1339,8 +1339,8 @@
         ],
         [
           "tc Particular-0027",
-          1.1999969482421875,
-          "FXid_PSizeMax (alias)"
+          4.79998779296875,
+          "FXid_PSizeMax (alias) [visibility floor: sub-pixel dust]"
         ],
         [
           "tc Particular-0074",
@@ -1466,6 +1466,11 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0005",
+          500,
+          "Particles/sec [visibility floor]"
         ],
         [
           "tc Particular-2830",

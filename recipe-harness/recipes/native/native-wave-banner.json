@@ -1,0 +1,130 @@
+{
+ "_provenance": "AMV survey 2026-07-18 signature stacks (user's own projects) — original param set",
+ "intent": "绸带状大波浪横幅+辉光（Wave Warp大参数+Glow, 歌词横幅底 idiom）。应见大幅波动的绸带纹理。",
+ "name": "native-wave-banner",
+ "compName": "Native_wave_banner",
+ "comp": {
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 6
+ },
+ "background": [
+  0,
+  0,
+  0
+ ],
+ "hostName": "Artwork",
+ "effects": [
+  {
+   "matchName": "ADBE Fractal Noise",
+   "params": [
+    [
+     "ADBE Fractal Noise-0001",
+     1,
+     "Fractal Type soft clouds"
+    ],
+    [
+     "ADBE Fractal Noise-0002",
+     3,
+     "Noise Type spline"
+    ],
+    [
+     "ADBE Fractal Noise-0004",
+     180,
+     "Contrast"
+    ],
+    [
+     "ADBE Fractal Noise-0010",
+     160,
+     "Scale"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Fractal Noise-0023",
+     "time*35",
+     "Evolution churn"
+    ]
+   ]
+  },
+  {
+   "matchName": "ADBE Tint",
+   "params": [
+    [
+     "ADBE Tint-0001",
+     [
+      0.03,
+      0.07,
+      0.05,
+      1
+     ],
+     "Map Black To"
+    ],
+    [
+     "ADBE Tint-0002",
+     [
+      0.7,
+      1.0,
+      0.8,
+      1
+     ],
+     "Map White To"
+    ],
+    [
+     "ADBE Tint-0003",
+     100,
+     "Amount"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Wave Warp",
+   "params": [
+    [
+     "ADBE Wave Warp-0002",
+     60,
+     "Height big"
+    ],
+    [
+     "ADBE Wave Warp-0003",
+     260,
+     "Width"
+    ],
+    [
+     "ADBE Wave Warp-0005",
+     0.8,
+     "Speed"
+    ],
+    [
+     "ADBE Wave Warp-0006",
+     3,
+     "Pinning?"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Glo2",
+   "params": [
+    [
+     "ADBE Glo2-0002",
+     140,
+     "Threshold"
+    ],
+    [
+     "ADBE Glo2-0003",
+     30,
+     "Radius"
+    ]
+   ],
+   "expressions": []
+  }
+ ],
+ "camera": null,
+ "renderFrames": [
+  1,
+  4
+ ]
+}

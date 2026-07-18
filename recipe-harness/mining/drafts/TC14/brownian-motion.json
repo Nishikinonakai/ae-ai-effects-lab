@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Fluid/Brownian Motion.xbxc",
   "_pack": "TC14",
   "_category": "Fluid",
-  "_map_coverage": "85 mapped / 64 unmapped / 0 curves",
+  "_map_coverage": "86 mapped / 64 unmapped / 0 curves",
   "_dropped_inert": [
     [
       "tc Particular-0749",
@@ -1404,8 +1404,8 @@
         ],
         [
           "tc Particular-0027",
-          1,
-          "FXid_PSizeMax (alias)"
+          4,
+          "FXid_PSizeMax (alias) [visibility floor: sub-pixel dust]"
         ],
         [
           "tc Particular-0074",
@@ -1620,6 +1620,11 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0005",
+          500,
+          "Particles/sec [visibility floor]"
         ]
       ],
       "expressions": []

@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Blizzard.xbxc",
   "_pack": "TC14",
   "_category": "Nature",
-  "_map_coverage": "47 mapped / 7 unmapped / 4 curves",
+  "_map_coverage": "48 mapped / 7 unmapped / 4 curves",
   "_unmapped": {
     "FXid_PLayerMultiClips": 2,
     "FXid_PTMode": 0,
@@ -794,8 +794,8 @@
         ],
         [
           "tc Particular-0027",
-          0.649993896484375,
-          "FXid_PSizeMax (alias)"
+          2.5999755859375,
+          "FXid_PSizeMax (alias) [visibility floor: sub-pixel dust]"
         ],
         [
           "tc Particular-0074",
@@ -931,6 +931,11 @@
           "tc Particular-0751",
           -1200,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0005",
+          500,
+          "Particles/sec [visibility floor]"
         ]
       ],
       "expressions": []

@@ -1,0 +1,142 @@
+{
+ "_provenance": "AMV survey 2026-07-18 signature stacks (user's own projects) — original param set",
+ "intent": "速度线/集中流（Directional Blur→Tile→高速滚动，AMV冲刺感）。应见水平拉丝纹理高速横移。",
+ "name": "native-speedlines",
+ "compName": "Native_speedlines",
+ "comp": {
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 6
+ },
+ "background": [
+  0,
+  0,
+  0
+ ],
+ "hostName": "Artwork",
+ "effects": [
+  {
+   "matchName": "ADBE Fractal Noise",
+   "params": [
+    [
+     "ADBE Fractal Noise-0001",
+     1,
+     "Fractal Type soft clouds"
+    ],
+    [
+     "ADBE Fractal Noise-0002",
+     3,
+     "Noise Type spline"
+    ],
+    [
+     "ADBE Fractal Noise-0004",
+     300,
+     "Contrast"
+    ],
+    [
+     "ADBE Fractal Noise-0010",
+     160,
+     "Scale"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Fractal Noise-0023",
+     "time*35",
+     "Evolution churn"
+    ]
+   ]
+  },
+  {
+   "matchName": "ADBE Tint",
+   "params": [
+    [
+     "ADBE Tint-0001",
+     [
+      0.02,
+      0.02,
+      0.02,
+      1
+     ],
+     "Map Black To"
+    ],
+    [
+     "ADBE Tint-0002",
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     "Map White To"
+    ],
+    [
+     "ADBE Tint-0003",
+     100,
+     "Amount"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Motion Blur",
+   "params": [
+    [
+     "ADBE Motion Blur-0001",
+     90,
+     "Direction"
+    ],
+    [
+     "ADBE Motion Blur-0002",
+     70,
+     "Length"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Tile",
+   "params": [
+    [
+     "ADBE Tile-0004",
+     300,
+     "Output W"
+    ],
+    [
+     "ADBE Tile-0005",
+     300,
+     "Output H"
+    ],
+    [
+     "ADBE Tile-0006",
+     1,
+     "Mirror"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Tile-0001",
+     "[320 + time*420, 180]",
+     "Tile Center fast scroll"
+    ]
+   ]
+  },
+  {
+   "matchName": "ADBE Geometry2",
+   "params": [
+    [
+     "ADBE Geometry2-0011",
+     1,
+     "u"
+    ]
+   ],
+   "expressions": []
+  }
+ ],
+ "camera": null,
+ "renderFrames": [
+  1,
+  4
+ ]
+}

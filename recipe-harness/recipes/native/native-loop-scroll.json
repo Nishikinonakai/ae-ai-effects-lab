@@ -1,0 +1,131 @@
+{
+ "_provenance": "AMV survey 2026-07-18 signature stacks (user's own projects) — original param set",
+ "intent": "静止画MAD核心rig：画面无缝平铺后匀速横移（Motion Tile→Transform，签名栈2037次）。帧间应见纹理横移且无接缝。",
+ "name": "native-loop-scroll",
+ "compName": "Native_loop_scroll",
+ "comp": {
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 6
+ },
+ "background": [
+  0,
+  0,
+  0
+ ],
+ "hostName": "Artwork",
+ "effects": [
+  {
+   "matchName": "ADBE Fractal Noise",
+   "params": [
+    [
+     "ADBE Fractal Noise-0001",
+     1,
+     "Fractal Type soft clouds"
+    ],
+    [
+     "ADBE Fractal Noise-0002",
+     3,
+     "Noise Type spline"
+    ],
+    [
+     "ADBE Fractal Noise-0004",
+     120,
+     "Contrast"
+    ],
+    [
+     "ADBE Fractal Noise-0010",
+     160,
+     "Scale"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Fractal Noise-0023",
+     "time*35",
+     "Evolution churn"
+    ]
+   ]
+  },
+  {
+   "matchName": "ADBE Tint",
+   "params": [
+    [
+     "ADBE Tint-0001",
+     [
+      0.08,
+      0.05,
+      0.12,
+      1
+     ],
+     "Map Black To"
+    ],
+    [
+     "ADBE Tint-0002",
+     [
+      0.95,
+      0.8,
+      0.62,
+      1
+     ],
+     "Map White To"
+    ],
+    [
+     "ADBE Tint-0003",
+     100,
+     "Amount"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Tile",
+   "params": [
+    [
+     "ADBE Tile-0004",
+     300,
+     "Output Width"
+    ],
+    [
+     "ADBE Tile-0005",
+     300,
+     "Output Height"
+    ],
+    [
+     "ADBE Tile-0006",
+     1,
+     "Mirror Edges"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Tile-0001",
+     "[320 + time*140, 180]",
+     "Tile Center scroll (infinite loop)"
+    ]
+   ]
+  },
+  {
+   "matchName": "ADBE Geometry2",
+   "params": [
+    [
+     "ADBE Geometry2-0011",
+     1,
+     "Uniform Scale"
+    ],
+    [
+     "ADBE Geometry2-0003",
+     125,
+     "Scale"
+    ]
+   ],
+   "expressions": []
+  }
+ ],
+ "camera": null,
+ "renderFrames": [
+  1,
+  4
+ ]
+}

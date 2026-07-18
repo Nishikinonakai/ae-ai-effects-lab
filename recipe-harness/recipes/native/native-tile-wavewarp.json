@@ -1,0 +1,130 @@
+{
+ "_provenance": "AMV survey 2026-07-18 signature stacks (user's own projects) — original param set",
+ "intent": "平铺+波浪扭曲（Motion Tile→Wave Warp 99次）。波形随时间流动，两帧相位不同。",
+ "name": "native-tile-wavewarp",
+ "compName": "Native_tile_wavewarp",
+ "comp": {
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 6
+ },
+ "background": [
+  0,
+  0,
+  0
+ ],
+ "hostName": "Artwork",
+ "effects": [
+  {
+   "matchName": "ADBE Fractal Noise",
+   "params": [
+    [
+     "ADBE Fractal Noise-0001",
+     1,
+     "Fractal Type soft clouds"
+    ],
+    [
+     "ADBE Fractal Noise-0002",
+     3,
+     "Noise Type spline"
+    ],
+    [
+     "ADBE Fractal Noise-0004",
+     120,
+     "Contrast"
+    ],
+    [
+     "ADBE Fractal Noise-0010",
+     160,
+     "Scale"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Fractal Noise-0023",
+     "time*35",
+     "Evolution churn"
+    ]
+   ]
+  },
+  {
+   "matchName": "ADBE Tint",
+   "params": [
+    [
+     "ADBE Tint-0001",
+     [
+      0.03,
+      0.06,
+      0.1,
+      1
+     ],
+     "Map Black To"
+    ],
+    [
+     "ADBE Tint-0002",
+     [
+      0.75,
+      0.85,
+      0.92,
+      1
+     ],
+     "Map White To"
+    ],
+    [
+     "ADBE Tint-0003",
+     100,
+     "Amount"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Tile",
+   "params": [
+    [
+     "ADBE Tile-0004",
+     200,
+     "Output Width"
+    ],
+    [
+     "ADBE Tile-0005",
+     200,
+     "Output Height"
+    ],
+    [
+     "ADBE Tile-0006",
+     1,
+     "Mirror"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Wave Warp",
+   "params": [
+    [
+     "ADBE Wave Warp-0002",
+     28,
+     "Height"
+    ],
+    [
+     "ADBE Wave Warp-0003",
+     90,
+     "Width"
+    ],
+    [
+     "ADBE Wave Warp-0005",
+     1.2,
+     "Speed"
+    ]
+   ],
+   "expressions": []
+  }
+ ],
+ "camera": null,
+ "renderFrames": [
+  1,
+  4
+ ]
+}

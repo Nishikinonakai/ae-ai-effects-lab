@@ -1,0 +1,109 @@
+{
+ "_provenance": "AMV survey 2026-07-18 signature stacks (user's own projects) — original param set",
+ "intent": "径向暖芯天空+云雾漂移+压边（Gradient Ramp 4/7工程 + 调色idiom）。应见暖芯紫边的径向渐变与浮云。",
+ "name": "native-radial-sky",
+ "compName": "Native_radial_sky",
+ "comp": {
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 6
+ },
+ "background": [
+  0,
+  0,
+  0
+ ],
+ "hostName": "Artwork",
+ "effects": [
+  {
+   "matchName": "ADBE Ramp",
+   "params": [
+    [
+     "ADBE Ramp-0001",
+     [
+      640,
+      300
+     ],
+     "Start center"
+    ],
+    [
+     "ADBE Ramp-0002",
+     [
+      0.95,
+      0.72,
+      0.55,
+      1
+     ],
+     "warm core"
+    ],
+    [
+     "ADBE Ramp-0003",
+     [
+      640,
+      900
+     ],
+     "End"
+    ],
+    [
+     "ADBE Ramp-0004",
+     [
+      0.08,
+      0.05,
+      0.15,
+      1
+     ],
+     "violet edge"
+    ],
+    [
+     "ADBE Ramp-0005",
+     2,
+     "Radial"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Fractal Noise",
+   "params": [
+    [
+     "ADBE Fractal Noise-0001",
+     1,
+     "clouds"
+    ],
+    [
+     "ADBE Fractal Noise-0010",
+     240,
+     "Scale"
+    ],
+    [
+     "ADBE Fractal Noise-0004",
+     90,
+     "Contrast"
+    ],
+    [
+     "ADBE Fractal Noise-0029",
+     40,
+     "Opacity (cloud veil over ramp)"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Fractal Noise-0023",
+     "time*28",
+     "Evolution"
+    ],
+    [
+     "ADBE Fractal Noise-0013",
+     "[320+time*12,180]",
+     "drift"
+    ]
+   ]
+  }
+ ],
+ "camera": null,
+ "renderFrames": [
+  1,
+  4
+ ]
+}

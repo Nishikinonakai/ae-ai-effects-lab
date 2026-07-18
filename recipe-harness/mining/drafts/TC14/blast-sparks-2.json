@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Blast Sparks 2.xbxc",
   "_pack": "TC14",
   "_category": "Explosive",
-  "_map_coverage": "86 mapped / 44 unmapped / 0 curves",
+  "_map_coverage": "87 mapped / 44 unmapped / 0 curves",
   "_dropped_inert": [
     [
       "tc Particular-2759",
@@ -1339,8 +1339,8 @@
         ],
         [
           "tc Particular-0027",
-          0,
-          "FXid_PSizeMax (alias)"
+          2.5,
+          "FXid_PSizeMax (alias) [visibility floor: sub-pixel dust]"
         ],
         [
           "tc Particular-0074",
@@ -1471,6 +1471,11 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0005",
+          500,
+          "Particles/sec [visibility floor]"
         ],
         [
           "tc Particular-2830",

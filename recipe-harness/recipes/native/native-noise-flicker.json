@@ -1,0 +1,114 @@
+{
+ "_provenance": "AMV survey 2026-07-18 signature stacks (user's own projects) — original param set",
+ "intent": "胶片噪点闪烁（Noise HLS Auto 签名rig 73次）。两帧噪点分布应不同。",
+ "name": "native-noise-flicker",
+ "compName": "Native_noise_flicker",
+ "comp": {
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 6
+ },
+ "background": [
+  0,
+  0,
+  0
+ ],
+ "hostName": "Artwork",
+ "effects": [
+  {
+   "matchName": "ADBE Fractal Noise",
+   "params": [
+    [
+     "ADBE Fractal Noise-0001",
+     1,
+     "Fractal Type soft clouds"
+    ],
+    [
+     "ADBE Fractal Noise-0002",
+     3,
+     "Noise Type spline"
+    ],
+    [
+     "ADBE Fractal Noise-0004",
+     120,
+     "Contrast"
+    ],
+    [
+     "ADBE Fractal Noise-0010",
+     160,
+     "Scale"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Fractal Noise-0023",
+     "time*35",
+     "Evolution churn"
+    ]
+   ]
+  },
+  {
+   "matchName": "ADBE Tint",
+   "params": [
+    [
+     "ADBE Tint-0001",
+     [
+      0.06,
+      0.06,
+      0.09,
+      1
+     ],
+     "Map Black To"
+    ],
+    [
+     "ADBE Tint-0002",
+     [
+      0.85,
+      0.88,
+      0.95,
+      1
+     ],
+     "Map White To"
+    ],
+    [
+     "ADBE Tint-0003",
+     100,
+     "Amount"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Noise HLS Auto2",
+   "params": [
+    [
+     "ADBE Noise HLS Auto2-0001",
+     2,
+     "Noise type"
+    ],
+    [
+     "ADBE Noise HLS Auto2-0003",
+     180,
+     "Lightness noise"
+    ],
+    [
+     "ADBE Noise HLS Auto2-0005",
+     1.6,
+     "Grain"
+    ],
+    [
+     "ADBE Noise HLS Auto2-0006",
+     80,
+     "Anim speed"
+    ]
+   ],
+   "expressions": []
+  }
+ ],
+ "camera": null,
+ "renderFrames": [
+  1,
+  4
+ ]
+}

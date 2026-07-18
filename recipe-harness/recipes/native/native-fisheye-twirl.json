@@ -1,0 +1,142 @@
+{
+ "_provenance": "AMV survey 2026-07-18 signature stacks (user's own projects) — original param set",
+ "intent": "鱼眼膨胀+旋转扭曲（Motion Tile→Optics Compensation→Twirl 36次）。中心应见桶形膨胀与旋涡，两帧角度不同。",
+ "name": "native-fisheye-twirl",
+ "compName": "Native_fisheye_twirl",
+ "comp": {
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 6
+ },
+ "background": [
+  0,
+  0,
+  0
+ ],
+ "hostName": "Artwork",
+ "effects": [
+  {
+   "matchName": "ADBE Fractal Noise",
+   "params": [
+    [
+     "ADBE Fractal Noise-0001",
+     1,
+     "Fractal Type soft clouds"
+    ],
+    [
+     "ADBE Fractal Noise-0002",
+     3,
+     "Noise Type spline"
+    ],
+    [
+     "ADBE Fractal Noise-0004",
+     120,
+     "Contrast"
+    ],
+    [
+     "ADBE Fractal Noise-0010",
+     160,
+     "Scale"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Fractal Noise-0023",
+     "time*35",
+     "Evolution churn"
+    ]
+   ]
+  },
+  {
+   "matchName": "ADBE Tint",
+   "params": [
+    [
+     "ADBE Tint-0001",
+     [
+      0.1,
+      0.04,
+      0.02,
+      1
+     ],
+     "Map Black To"
+    ],
+    [
+     "ADBE Tint-0002",
+     [
+      1.0,
+      0.85,
+      0.55,
+      1
+     ],
+     "Map White To"
+    ],
+    [
+     "ADBE Tint-0003",
+     100,
+     "Amount"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Tile",
+   "params": [
+    [
+     "ADBE Tile-0004",
+     200,
+     "W"
+    ],
+    [
+     "ADBE Tile-0005",
+     200,
+     "H"
+    ],
+    [
+     "ADBE Tile-0006",
+     1,
+     "Mirror"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Optics Compensation",
+   "params": [
+    [
+     "ADBE Optics Compensation-0001",
+     118,
+     "FOV bulge"
+    ],
+    [
+     "ADBE Optics Compensation-0002",
+     1,
+     "Reverse"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Twirl",
+   "params": [
+    [
+     "ADBE Twirl-0002",
+     55,
+     "Radius"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Twirl-0001",
+     "time*40",
+     "Angle spin"
+    ]
+   ]
+  }
+ ],
+ "camera": null,
+ "renderFrames": [
+  1,
+  4
+ ]
+}

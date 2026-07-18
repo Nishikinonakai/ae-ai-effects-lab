@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Snowy NIght 2.xbxc",
   "_pack": "TC14",
   "_category": "Nature",
-  "_map_coverage": "47 mapped / 7 unmapped / 3 curves",
+  "_map_coverage": "48 mapped / 7 unmapped / 3 curves",
   "_unmapped": {
     "FXid_PLayerMultiClips": 2,
     "FXid_PTMode": 0,
@@ -591,8 +591,8 @@
         ],
         [
           "tc Particular-0027",
-          0.5,
-          "FXid_PSizeMax (alias)"
+          2.5,
+          "FXid_PSizeMax (alias) [visibility floor: sub-pixel dust]"
         ],
         [
           "tc Particular-0074",
@@ -728,6 +728,11 @@
           "tc Particular-0751",
           -120,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0005",
+          500,
+          "Particles/sec [visibility floor]"
         ]
       ],
       "expressions": []

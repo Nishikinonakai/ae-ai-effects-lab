@@ -408,6 +408,25 @@ for (const file of files) {
     else params.push(['tc Particular-0070', flat, 'flattened col.life gradient']);
   }
 
+  // visibility floor (probed 2026-07-18 on floating-dust): sub-pixel Size (0.5) sprayed
+  // through a room-scale emitter box renders ZERO coverage at 1280×720 — the vendor look
+  // relies on DOF/exposure we don't reproduce. Clamp size up and densify when the box is
+  // huge and the size sub-pixel; the probe (size 3 / psec 600) renders proper dust motes.
+  {
+    const sx = params.find(p => p[0] === 'tc Particular-0014');
+    const sy = params.find(p => p[0] === 'tc Particular-0015');
+    const sz = params.find(p => p[0] === 'tc Particular-0016');
+    const volume = (sx?.[1] || 500) * (sy?.[1] || 500) * (sz?.[1] || 500);
+    const psize = params.find(p => p[0] === 'tc Particular-0027');
+    if (psize && ((volume > 5e8 && psize[1] < 1.5) || (volume > 1e7 && psize[1] < 0.8))) {
+      psize[1] = Math.max(2.5, psize[1] * 4);
+      psize[2] += ' [visibility floor: sub-pixel dust]';
+      if (!params.find(p => p[0] === 'tc Particular-0005')) {
+        params.push(['tc Particular-0005', 500, 'Particles/sec [visibility floor]']);
+      }
+    }
+  }
+
   // burst translation: Designer EmitterBehaviour 1 = Explode (probed: 0=continuous 139×,
   // 1=explode on all 45 explosion-named presets). AE has no explode enum — emit the whole
   // burst in the first 0.1s via an expression spike, and sample earlier frames.

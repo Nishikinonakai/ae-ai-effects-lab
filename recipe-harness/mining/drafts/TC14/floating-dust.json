@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Dust and Debris/Floating Dust.xbxc",
   "_pack": "TC14",
   "_category": "Dust and Debris",
-  "_map_coverage": "36 mapped / 2 unmapped / 4 curves",
+  "_map_coverage": "37 mapped / 2 unmapped / 4 curves",
   "_dropped_inert": [
     [
       "tc Particular-0749",
@@ -823,8 +823,8 @@
         ],
         [
           "tc Particular-0027",
-          0.5,
-          "FXid_PSizeMax (alias)"
+          2.5,
+          "FXid_PSizeMax (alias) [visibility floor: sub-pixel dust]"
         ],
         [
           "tc Particular-0074",
@@ -900,6 +900,11 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0005",
+          500,
+          "Particles/sec [visibility floor]"
         ]
       ],
       "expressions": []

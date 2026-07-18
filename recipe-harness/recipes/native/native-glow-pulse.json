@@ -1,0 +1,131 @@
+{
+ "_provenance": "AMV survey 2026-07-18 signature stacks (user's own projects) — original param set",
+ "intent": "发光脉冲：高对比纹理青色辉光+呼吸缩放（Glow→Transform 签名栈607次）。两帧缩放/角度应不同。",
+ "name": "native-glow-pulse",
+ "compName": "Native_glow_pulse",
+ "comp": {
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "duration": 6
+ },
+ "background": [
+  0,
+  0,
+  0
+ ],
+ "hostName": "Artwork",
+ "effects": [
+  {
+   "matchName": "ADBE Fractal Noise",
+   "params": [
+    [
+     "ADBE Fractal Noise-0001",
+     1,
+     "Fractal Type soft clouds"
+    ],
+    [
+     "ADBE Fractal Noise-0002",
+     3,
+     "Noise Type spline"
+    ],
+    [
+     "ADBE Fractal Noise-0004",
+     260,
+     "Contrast"
+    ],
+    [
+     "ADBE Fractal Noise-0010",
+     160,
+     "Scale"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Fractal Noise-0023",
+     "time*35",
+     "Evolution churn"
+    ]
+   ]
+  },
+  {
+   "matchName": "ADBE Tint",
+   "params": [
+    [
+     "ADBE Tint-0001",
+     [
+      0.01,
+      0.1,
+      0.12,
+      1
+     ],
+     "Map Black To"
+    ],
+    [
+     "ADBE Tint-0002",
+     [
+      0.72,
+      0.98,
+      1.0,
+      1
+     ],
+     "Map White To"
+    ],
+    [
+     "ADBE Tint-0003",
+     100,
+     "Amount"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Glo2",
+   "params": [
+    [
+     "ADBE Glo2-0002",
+     120,
+     "Threshold"
+    ],
+    [
+     "ADBE Glo2-0003",
+     42,
+     "Radius"
+    ],
+    [
+     "ADBE Glo2-0004",
+     1.6,
+     "Intensity"
+    ]
+   ],
+   "expressions": []
+  },
+  {
+   "matchName": "ADBE Geometry2",
+   "params": [
+    [
+     "ADBE Geometry2-0011",
+     1,
+     "Uniform Scale"
+    ]
+   ],
+   "expressions": [
+    [
+     "ADBE Geometry2-0003",
+     "105+8*Math.sin(time*3.6)",
+     "scale pulse"
+    ],
+    [
+     "ADBE Geometry2-0007",
+     "Math.sin(time*1.2)*3",
+     "sway"
+    ]
+   ]
+  }
+ ],
+ "camera": null,
+ "renderFrames": [
+  1,
+  4
+ ]
+}
