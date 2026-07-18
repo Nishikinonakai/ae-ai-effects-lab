@@ -1,0 +1,7 @@
+{
+  "verdict": "pass",
+  "score": 9,
+  "critique": "The render convincingly matches a glowing diagonal-slash Form preset: dense gold/orange parallel streaks sweep from lower-left to upper-right over black, with a layered mix of hairline slashes, soft broad trails, and bright yellow-white cores. The frame-to-frame evolution is coherent: the concentrated luminous band travels toward the lower-left between t1 and t4 while preserving the same slash direction and texture.",
+  "suggestions": [],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

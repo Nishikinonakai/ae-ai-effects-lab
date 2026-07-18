@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The black background and warm orange circular bokeh direction are correct, and the field evolves between t1 and t4 rather than remaining static. However, it still does not resemble a rich Deep Orange Bokeh preset: t1 is especially underpopulated, both frames contain large empty black regions, and the visible discs are mostly muddy dark brown rather than luminous deep orange. The circles are also too uniformly oversized, with faint dark center texture artifacts becoming conspicuous instead of reading as a layered, soft bokeh field. Motion produces a fuller t4, but the density is not sufficiently consistent across the sampled frames.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0007",
+      "value": 8,
+      "why": "Increase the particle grid horizontally so the bokeh field has substantially more overlapping elements and fewer empty black areas."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0008",
+      "value": 6,
+      "why": "Increase vertical particle density to sustain a fuller bokeh composition at both sampled times."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0033",
+      "value": 430,
+      "why": "Reduce the maximum disc scale so the increased particle count forms a layered bokeh field rather than only a few dominant oversized circles."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0035",
+      "value": 100,
+      "why": "Raise maximum particle opacity so the intended deep-orange color reads clearly instead of collapsing into near-black brown discs."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

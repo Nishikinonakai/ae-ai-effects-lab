@@ -1,0 +1,26 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Single Drop\" (Fluid); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC15/Form/Fluid/Single Drop.png",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render convincingly reads as a luminous gold/orange Form-fluid particle mass on black, with fine dotted detail and clearly evolving motion between frames. However, it is more like a broad, multi-lobed turbulent cloud than a distinct single fluid drop: frame 1 is compact but split into several rounded lobes, and by frame 4 the silhouette has opened into a tall, irregular mass with a detached-looking left protrusion. The bright internal ribbons are attractive but the overall form lacks a clean, cohesive drop-like core."
+    },
+    {
+      "iter": 2,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The gold/orange particle rendering, black background, fine point density, and frame-to-frame fluid evolution are convincing. The mass is more centralized than before, but it still does not read as one cohesive drop: t1 contains several separated rolled lobes around a busy center, while t4 stretches into a ragged vertical plume with multiple curled protrusions and an open, broken interior. The Single Drop intent needs a denser, smoother, more unified core with less turbulent splitting."
+    },
+    {
+      "iter": 3,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The black background, luminous amber particle color, and dense filament/dot rendering are convincing. Frame 1 is relatively compact, but it reads as a folded rosette with multiple rolled lobes rather than a unified liquid drop. By frame 4 it breaks into a tall, stringy turbulent plume with separated curls and a porous interior. The motion is substantially too violent and deforming for the intended cohesive Single Drop behavior."
+    }
+  ]
+}

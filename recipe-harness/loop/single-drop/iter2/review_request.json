@@ -1,0 +1,235 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Single Drop\" (Fluid); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC15/Form/Fluid/Single Drop.png",
+  "pass_criteria": [],
+  "iteration": 2,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Form",
+        "params": [
+          [
+            "tc Form-0003",
+            3,
+            "FXid_BaseShape (default-pair+enumOffset, high)"
+          ],
+          [
+            "tc Form-0553",
+            1,
+            "FXid_FluidEnable (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0010",
+            [
+              640,
+              42.66666666666668
+            ],
+            "FXid_BaseShapeCenter (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0007",
+            173,
+            "FXid_BaseShapeParticlesX (exact-name, high)"
+          ],
+          [
+            "tc Form-0008",
+            383,
+            "FXid_BaseShapeParticlesY (exact-name, high)"
+          ],
+          [
+            "tc Form-0009",
+            1,
+            "FXid_BaseShapeParticlesZ (exact-name, high)"
+          ],
+          [
+            "tc Form-0004",
+            190,
+            "FXid_BaseShapeSizeX (exact-name, high)"
+          ],
+          [
+            "tc Form-0542",
+            [
+              0,
+              0,
+              0
+            ],
+            "FXid_RelativePosition (exact-name, med)"
+          ],
+          [
+            "tc Form-0037",
+            3,
+            "FXid_PTMode (ranked-candidate+enumOffset, med)"
+          ],
+          [
+            "tc Form-0033",
+            1,
+            "FXid_PSizeMax (exact-name, high)"
+          ],
+          [
+            "tc Form-0042",
+            1,
+            "FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]"
+          ],
+          [
+            "tc Form-0036",
+            [
+              1,
+              0.5856085944007028,
+              0.1573930232721211,
+              1
+            ],
+            "FXid_PColor (default-pair, high) [flattened ColorMapArb]"
+          ],
+          [
+            "tc Form-0420",
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+          ],
+          [
+            "tc Form-0567",
+            85,
+            "FXid_FluidFlowSpeedX (exact-name, high)"
+          ],
+          [
+            "tc Form-0568",
+            -28,
+            "FXid_FluidFlowSpeedY (exact-name, high)"
+          ],
+          [
+            "tc Form-0569",
+            45,
+            "FXid_FluidFlowSpeedZ (exact-name, high)"
+          ],
+          [
+            "tc Form-0592",
+            5,
+            "FXid_FluidForceLife (default-pair, high)"
+          ],
+          [
+            "tc Form-0566",
+            55,
+            "FXid_FluidViscosity (default-pair, high)"
+          ],
+          [
+            "tc Form-0557",
+            50.29999999999999,
+            "FXid_FluidVortexCoreSize (exact-name, high)"
+          ],
+          [
+            "tc Form-0590",
+            [
+              0,
+              0,
+              0
+            ],
+            "FXid_FluidVortexRelPos (default-pair, med)"
+          ],
+          [
+            "tc Form-0560",
+            90,
+            "FXid_FluidVortexRotate (exact-name, high)"
+          ],
+          [
+            "tc Form-0558",
+            70,
+            "FXid_FluidVortexScale (default-pair, med)"
+          ],
+          [
+            "tc Form-0556",
+            96,
+            "FXid_FluidVortexStrength (exact-name, high)"
+          ],
+          [
+            "tc Form-0559",
+            20,
+            "FXid_FluidVortexTilt (exact-name, high)"
+          ],
+          [
+            "tc Form-0593",
+            320,
+            "FXid_RandomSwirlSeed (default-pair, high)"
+          ],
+          [
+            "tc Form-0563",
+            40,
+            "FXid_RandomSwirlX (exact-name, high)"
+          ],
+          [
+            "tc Form-0564",
+            25,
+            "FXid_RandomSwirlY (exact-name, high)"
+          ],
+          [
+            "tc Form-0565",
+            25,
+            "FXid_RandomSwirlZ (exact-name, high)"
+          ],
+          [
+            "tc Form-0594",
+            24,
+            "FXid_SwirlScale (exact-name, high)"
+          ],
+          [
+            "tc Form-0166",
+            24,
+            "FXid_FAffectPosX (exact-name, high)"
+          ],
+          [
+            "tc Form-0527",
+            [
+              640,
+              360,
+              0
+            ],
+            "FXid_D1Pos (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0528",
+            [
+              640,
+              360,
+              0
+            ],
+            "FXid_D2Pos (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0206",
+            [
+              640,
+              360
+            ],
+            "FXid_KCenterXY (ranked-candidate, med)"
+          ]
+        ]
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/single-drop/iter2/single-drop_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/single-drop/iter2/single-drop_i2_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render convincingly reads as a luminous gold/orange Form-fluid particle mass on black, with fine dotted detail and clearly evolving motion between frames. However, it is more like a broad, multi-lobed turbulent cloud than a distinct single fluid drop: frame 1 is compact but split into several rounded lobes, and by frame 4 the silhouette has opened into a tall, irregular mass with a detached-looking left protrusion. The bright internal ribbons are attractive but the overall form lacks a clean, cohesive drop-like core."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

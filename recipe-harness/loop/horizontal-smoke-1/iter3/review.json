@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The render retains the intended black background, centered wide horizontal white-smoke band, soft volumetric texture, and subtle evolution from t1 to t4. However, it still reads as a chain of individually placed smoke sprites: pronounced dark vertical pinches separate the bright lobes, particularly through the middle and before the right end. The preset thumbnail intent is a more continuously merged, drifting plume, without this repeated bead-like segmentation.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0221",
+      "value": 16,
+      "why": "Increase the grid's horizontal particle count so adjacent sprite sources overlap at finer intervals, reducing the visible repeated columns and dark seams."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 125,
+      "why": "Slightly enlarge particles to bridge the remaining gaps between adjacent grid samples and form a more continuous smoke stream."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

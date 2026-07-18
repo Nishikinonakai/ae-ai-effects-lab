@@ -1,0 +1,19 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render has a strong Wild World-like look: dense magenta particle ribbons on black, broad organic wave arcs, bright tangled foreground filaments, and visible evolution between frames 1 and 4 rather than a static pattern. However, the field is excessively displaced/cropped at the frame edges and reads more like an enlarged partial section of the world than a balanced preset composition. The extremely large Kaleidospace center value is the most likely cause of the unstable framing and oversized off-screen geometry.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0608",
+      "value": [
+        -320,
+        -270,
+        270
+      ],
+      "why": "The current Kaleidospace center is orders of magnitude outside the composition/particle-space scale (-307200, -97200, 97200), likely from an incorrect coordinate conversion. Restoring it to the corresponding unscaled 3D coordinates should bring the distortion back into the visible world and reduce the severe edge cropping."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

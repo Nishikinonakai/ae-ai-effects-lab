@@ -1,0 +1,160 @@
+{
+  "status": "done",
+  "name": "fractal-lines_i2",
+  "params": [
+    {
+      "p": "[1:tc Form] FXid_BaseShape (default-pair+enumOffset, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeOption (exact-name+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PType (default-pair+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeAngleX (exact-name, high)",
+      "ok": true,
+      "v": "180"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeAngleZ (exact-name, high)",
+      "ok": true,
+      "v": "248"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeCenter (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesY (exact-name, high)",
+      "ok": true,
+      "v": "80"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesZ (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeX (exact-name, high)",
+      "ok": true,
+      "v": "4300"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeY (exact-name, high)",
+      "ok": true,
+      "v": "2950"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeZ (exact-name, high)",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:tc Form] FXid_StringDensity (default-pair, high)",
+      "ok": true,
+      "v": "9"
+    },
+    {
+      "p": "[1:tc Form] FXid_StringSizeRnd (exact-name, high)",
+      "ok": true,
+      "v": "27"
+    },
+    {
+      "p": "[1:tc Form] FXid_StringTaperOpac (exact-name+enumOffset, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_StringTaperSize (exact-name+enumOffset, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PTMode (ranked-candidate+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PSizeMax (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_POpacMax (default-pair, high)",
+      "ok": true,
+      "v": "15"
+    },
+    {
+      "p": "[1:tc Form] FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_PColor (default-pair, high) [flattened ColorMapArb]",
+      "ok": true,
+      "v": "0.94889503717422,0.38052"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Color (default-pair, med)",
+      "ok": true,
+      "v": "0,0,0,1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeDisperse (default-pair, high)",
+      "ok": true,
+      "v": "60"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectSize (exact-name, high)",
+      "ok": true,
+      "v": "30.2999992370605"
+    },
+    {
+      "p": "[1:tc Form] FXid_FComplex (default-pair, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_FEvolution (default-pair, high)",
+      "ok": true,
+      "v": "75"
+    },
+    {
+      "p": "[1:tc Form] FXid_FLoop (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_FLoopTime (exact-name, high)",
+      "ok": true,
+      "v": "10"
+    },
+    {
+      "p": "[1:tc Form] FXid_FScale (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_FlowX (exact-name, high)",
+      "ok": true,
+      "v": "120"
+    },
+    {
+      "p": "[1:tc Form] FXid_KCenter (ranked-candidate, med)",
+      "ok": true,
+      "v": "640,360,0"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/fractal-lines/iter2/fractal-lines_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/fractal-lines/iter2/fractal-lines_i2_t4.png"
+  ]
+}

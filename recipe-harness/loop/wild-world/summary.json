@@ -1,0 +1,26 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Wild World\" (Basics); reference thumbnail: none shipped",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 3,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render has a strong Wild World-like look: dense magenta particle ribbons on black, broad organic wave arcs, bright tangled foreground filaments, and visible evolution between frames 1 and 4 rather than a static pattern. However, the field is excessively displaced/cropped at the frame edges and reads more like an enlarged partial section of the world than a balanced preset composition. The extremely large Kaleidospace center value is the most likely cause of the unstable framing and oversized off-screen geometry."
+    },
+    {
+      "iter": 2,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render strongly captures the Wild World character: fine magenta particle filaments form a large organic, turbulent ribbon-field on black, with a bright tangled interior and clear motion between frames 1 and 4. Compared with the prior result, the mass is more coherently centered. However, the world remains oversized and heavily clipped along the bottom and both sides, so it reads as a close-up slice rather than a complete, balanced preset composition. The asymmetric off-frame displacement is still apparent in both frames."
+    },
+    {
+      "iter": 3,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The result now has a coherent, centered Wild World-style particle field: fine magenta contour ribbons, a bright tangled interior, broad organic arches, and clear evolution from frame 1 to frame 4. Framing is substantially improved over the earlier oversized result. However, the world still occupies too much of the frame vertically, with multiple lower ribbons clipped at the bottom edge and the full silhouette reading slightly more like a constrained close-up than a comfortably contained preset composition."
+    }
+  ]
+}

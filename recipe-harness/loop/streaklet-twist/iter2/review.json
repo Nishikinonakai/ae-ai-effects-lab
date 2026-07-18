@@ -1,0 +1,15 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "Motion is now clearly present: frame 4 has rotated into a substantially different swept/twisted configuration from frame 1. The lime-on-black line treatment and dense streaklet layering read correctly. However, the visible structure is dominated by very long, broad arcs that run off both sides of frame; the actual twist/curl is small and pushed toward the left edge in frame 4. A Streaklet Twist preset should retain a more compact, legible twisted focal mass within the frame rather than reading primarily as cropped parallel ribbons.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0004",
+      "value": 3000,
+      "why": "Reduce the excessive horizontal extent so more of the streaklet curl and crossing structure remains visible as a centered, readable twist instead of exiting the frame as long broad arcs."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

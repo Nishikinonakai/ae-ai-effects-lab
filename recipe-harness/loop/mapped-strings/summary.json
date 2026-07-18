@@ -1,0 +1,26 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Mapped Strings\" (Lines); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Lines/Mapped Strings.png",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The render strongly matches the Mapped Strings look: a black field filled with pale aqua particle strings, distinct dotted trails, dense fractal tangles, and clearly evolving geometry between t1 and t4. The main mismatch is tonal: the strings are very uniformly mint/white with frequent clipped-white knots, whereas the preset reference's mapped coloration is better represented by a more controlled cyan/teal range. The densest intersections also obscure some of the cleaner individual string paths."
+    },
+    {
+      "iter": 2,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The two frames convincingly reproduce the core Mapped Strings behavior: an edge-to-edge black field, animated looping particle paths, alternating dotted and continuous string segments, and dense turbulent clusters that shift substantially between t1 and t4. The remaining mismatch is primarily tonal and separation-related. The render is still overly bright mint/near-white at tight intersections, making the dense regions bloom together instead of retaining the reference's more controlled teal/cyan mapped appearance and clearer individual strands."
+    },
+    {
+      "iter": 3,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The render strongly captures the intended Mapped Strings structure and motion: black background, full-frame wandering particle paths, a convincing mix of dotted and continuous strands, and turbulent clusters that reorganize substantially from t1 to t4. The current hue is much closer to the intended cyan/teal character. However, dense knots and several continuous segments still reach bright cyan-white, reducing strand separation compared with the more controlled, darker mapped-color appearance of the preset reference."
+    }
+  ]
+}

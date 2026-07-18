@@ -1,0 +1,154 @@
+{
+  "status": "done",
+  "name": "flowing-rectangle-grid_i1",
+  "params": [
+    {
+      "p": "[footage] SpriteTex",
+      "ok": true
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeOption (exact-name+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PType (default-pair+enumOffset, med)",
+      "ok": true,
+      "v": "8"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeCenter (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesX (exact-name, high)",
+      "ok": true,
+      "v": "56"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesY (exact-name, high)",
+      "ok": true,
+      "v": "10"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesZ (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeX (exact-name, high)",
+      "ok": true,
+      "v": "1920"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeY (exact-name, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeZ (exact-name, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_PLayerTime (ranked-candidate+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PTMode (ranked-candidate+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PSizeMax (exact-name, high)",
+      "ok": true,
+      "v": "15.3000001907349"
+    },
+    {
+      "p": "[1:tc Form] FXid_POpacMax (default-pair, high)",
+      "ok": true,
+      "v": "73"
+    },
+    {
+      "p": "[1:tc Form] FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_PColor (default-pair, high) [flattened ColorMapArb]",
+      "ok": true,
+      "v": "1,0.31764706969261,0,1"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Color (default-pair, med)",
+      "ok": true,
+      "v": "0,0,0,1"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAdd (exact-name, high)",
+      "ok": true,
+      "v": "-0.05000000074506"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectOpac (exact-name, high)",
+      "ok": true,
+      "v": "91"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectPosPopup (default-pair+enumOffset, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_FGamma (exact-name, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_FLoop (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_FLoopTime (exact-name, high)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Form] FXid_FMax (exact-name, high)",
+      "ok": true,
+      "v": "-0.00999999977648"
+    },
+    {
+      "p": "[1:tc Form] FXid_FlowX (exact-name, high)",
+      "ok": true,
+      "v": "45"
+    },
+    {
+      "p": "[1:tc Form] FXid_D2Pos (ranked-candidate, med)",
+      "ok": true,
+      "v": "640,360,0"
+    },
+    {
+      "p": "[1:tc Form] FXid_D2Radius (exact-name, high)",
+      "ok": true,
+      "v": "412"
+    },
+    {
+      "p": "[1:tc Form] Sprite texture layer (rg.p.sprite.id)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_PLayerTime (+enumOffset)",
+      "ok": true,
+      "v": "2"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/flowing-rectangle-grid/iter1/flowing-rectangle-grid_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/flowing-rectangle-grid/iter1/flowing-rectangle-grid_i1_t4.png"
+  ]
+}

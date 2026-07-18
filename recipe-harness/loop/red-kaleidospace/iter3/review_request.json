@@ -1,0 +1,215 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Red Kaleidospace\" (Basics); reference thumbnail: none shipped",
+  "pass_criteria": [],
+  "iteration": 3,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Form",
+        "params": [
+          [
+            "tc Form-0489",
+            2,
+            "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+          ],
+          [
+            "tc Form-0013",
+            -44,
+            "FXid_BaseShapeAngleY (exact-name, high)"
+          ],
+          [
+            "tc Form-0010",
+            [
+              640,
+              360
+            ],
+            "FXid_BaseShapeCenter (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0007",
+            150,
+            "FXid_BaseShapeParticlesX (exact-name, high)"
+          ],
+          [
+            "tc Form-0008",
+            400,
+            "FXid_BaseShapeParticlesY (exact-name, high)"
+          ],
+          [
+            "tc Form-0004",
+            260,
+            "FXid_BaseShapeSizeX (exact-name, high)"
+          ],
+          [
+            "tc Form-0005",
+            680,
+            "FXid_BaseShapeSizeY (exact-name, high)"
+          ],
+          [
+            "tc Form-0006",
+            250,
+            "FXid_BaseShapeSizeZ (exact-name, high)"
+          ],
+          [
+            "tc Form-0037",
+            2,
+            "FXid_PTMode (ranked-candidate+enumOffset, med)"
+          ],
+          [
+            "tc Form-0033",
+            1,
+            "FXid_PSizeMax (exact-name, high)"
+          ],
+          [
+            "tc Form-0035",
+            50,
+            "FXid_POpacMax (default-pair, high)"
+          ],
+          [
+            "tc Form-0036",
+            [
+              0.8666666666666667,
+              0.19607843137254902,
+              0.19607843137254902,
+              1
+            ],
+            "FXid_PColor (default-pair, high)"
+          ],
+          [
+            "tc Form-0420",
+            [
+              0.25098039215686274,
+              0.25098039215686274,
+              0.25098039215686274,
+              1
+            ],
+            "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+          ],
+          [
+            "tc Form-0421",
+            50,
+            "FXid_Options_SmokeletShadow_ColorStrength (default-pair, med)"
+          ],
+          [
+            "tc Form-0422",
+            50,
+            "FXid_Options_SmokeletShadow_Opacity (default-pair, med)"
+          ],
+          [
+            "tc Form-0166",
+            120,
+            "FXid_FAffectPosX (exact-name, high)"
+          ],
+          [
+            "tc Form-0172",
+            20,
+            "FXid_FEvolution (default-pair, high)"
+          ],
+          [
+            "tc Form-0173",
+            1,
+            "FXid_FLoop (exact-name, high)"
+          ],
+          [
+            "tc Form-0174",
+            3,
+            "FXid_FLoopTime (exact-name, high)"
+          ],
+          [
+            "tc Form-0170",
+            -50,
+            "FXid_FlowY (exact-name, high)"
+          ],
+          [
+            "tc Form-0191",
+            37,
+            "FXid_D1Feather (exact-name, high)"
+          ],
+          [
+            "tc Form-0527",
+            [
+              640,
+              360,
+              0
+            ],
+            "FXid_D1Pos (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0190",
+            438,
+            "FXid_D1Radius (exact-name, high)"
+          ],
+          [
+            "tc Form-0187",
+            68,
+            "FXid_D1Strength (default-pair, high)"
+          ],
+          [
+            "tc Form-0528",
+            [
+              -614400,
+              -194400,
+              194400
+            ],
+            "FXid_D2Pos (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0205",
+            2,
+            "FXid_KBehaviour (default-pair+enumOffset, high)"
+          ],
+          [
+            "tc Form-0206",
+            [
+              640,
+              360
+            ],
+            "FXid_KCenterXY (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0204",
+            3,
+            "FXid_KMode (default-pair+enumOffset, high)"
+          ]
+        ],
+        "expressions": [
+          [
+            "tc Form-0172",
+            "time*10",
+            "Drive Evolution continuously so the fold [i2]"
+          ]
+        ]
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/red-kaleidospace/iter3/red-kaleidospace_i3_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/red-kaleidospace/iter3/red-kaleidospace_i3_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The still design strongly matches the intended Red Kaleidospace look: a dense red particle-mesh ring with bright folded filaments, dark central void, and black background. However, frames 1 and 4 appear visually identical, so the preset's organic evolving/kaleidoscopic motion is not coming through. The render currently reads as a strong static frame rather than a living Form preset animation."
+    },
+    {
+      "iter": 2,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The render now convincingly delivers the red-on-black Form aesthetic: dense point-grid surfaces, luminous red folded filaments, and clearly different configurations between t1 and t4 establish active evolving motion. It is less distinctly kaleidoscopic than the preset name suggests, reading more as a large organic particle sphere. The form is also cropped at the top and bottom, which weakens the silhouette and makes the composition feel oversized rather than deliberately framed. The t1-to-t4 structural change is quite large, so the evolution may feel more like rapid reshuffling than continuous folding."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

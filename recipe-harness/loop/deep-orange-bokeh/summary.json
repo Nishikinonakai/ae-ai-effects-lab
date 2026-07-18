@@ -1,0 +1,26 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Deep Orange Bokeh\" (Bokeh); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Bokeh/Deep Orange Bokeh.png",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 2,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render establishes the intended black-field, deep-orange bokeh look, with large soft circular sprites and clear drift between t1 and t4. However, it is substantially too sparse and underexposed visually: most of each frame is empty black, the discs read as very dark brown rather than deep orange, and the abrupt travel leaves t4 nearly devoid of meaningful bokeh. The sparse oversized circles also expose faint central sprite artifacts instead of producing a richer layered bokeh field."
+    },
+    {
+      "iter": 2,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The black background and warm orange circular bokeh direction are correct, and the field evolves between t1 and t4 rather than remaining static. However, it still does not resemble a rich Deep Orange Bokeh preset: t1 is especially underpopulated, both frames contain large empty black regions, and the visible discs are mostly muddy dark brown rather than luminous deep orange. The circles are also too uniformly oversized, with faint dark center texture artifacts becoming conspicuous instead of reading as a layered, soft bokeh field. Motion produces a fuller t4, but the density is not sufficiently consistent across the sampled frames."
+    },
+    {
+      "iter": 3,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The black background, warm orange palette, soft circular sprite treatment, and subtle motion between t1 and t4 are directionally correct. However, both frames remain too sparse for a rich Deep Orange Bokeh field, with large uninterrupted black areas and a very uniform distribution of oversized discs. The orange is still muddy and low-luminance rather than glowing deep orange, while several particles retain visible dark center/sprite texture artifacts. The t1-to-t4 evolution is modest and consistent, but density and layered size variation need improvement more than additional travel."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Left Frame\" (Lines); reference thumbnail: none shipped",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 9,
+      "verdict": "pass",
+      "critique": "The render convincingly reads as the Form “Left Frame” Lines preset: a dense pink/magenta field of parallel luminous strings occupies and frames the left side, leaving a clean black negative-space area on the right. The ribbon has the characteristic pinched, twisting silhouette with bright overlapping line intersections and soft glow. Across frames 1 and 4, the deformation advances subtly while preserving the anchored left-frame composition and continuous line structure."
+    }
+  ]
+}

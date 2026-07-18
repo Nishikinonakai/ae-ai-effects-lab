@@ -1,0 +1,26 @@
+{
+  "intent": "Reproduce the vendor Form preset \"String Twist 1\" (Lines); reference thumbnail: none shipped",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The render has a convincing String Twist appearance: many fine mint/cyan parallel strings form a broad, symmetric pinched wave against clean black, with clear twist crossings at both side edges. However, frames 1 and 4 are visually identical, so the preset currently has no observable motion. A String Twist preset should read as flowing/twisting rather than as a completely frozen string lattice."
+    },
+    {
+      "iter": 2,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The still design strongly reads as a String Twist: thin luminous mint/cyan lines form a clean, broad symmetric wave, pinch tightly at the left and right twist nodes, and sit well against black. However, t1 and t4 remain visually identical. The attempted Flow X animation is not producing any observable deformation or travel, leaving the result frozen rather than behaving like an animated Form preset."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The result now has clear temporal change, but the motion is far too violent and unstable for a polished String Twist preset. At t1, the mint particle strings form recognizable looping/twisting waves on black. By t4, the coherent string structure has largely collapsed into a dense, noisy particle field with only a thin central oscillation remaining. The desired flowing twist should preserve the legible parallel strings while their pinch points and waves travel smoothly."
+    }
+  ]
+}

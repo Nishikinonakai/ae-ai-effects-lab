@@ -1,0 +1,15 @@
+{
+  "verdict": "fail",
+  "score": 8,
+  "critique": "The render strongly matches the Classic Fractal character: dense orderly particle strings on black, broad flowing fractal ribbons, a central circular void, and clearly evolving geometry between t1 and t4. The cool-blue palette is substantially closer than the initial pass. The remaining visual mismatch is tonal compression at the brightest convergence points and ribbon edges: these areas still rise to pale cyan/near-white, flattening the fine particle detail and reducing the darker layered blue separation expected from the preset.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0035",
+      "value": 38,
+      "why": "Lowering maximum particle opacity should preserve the blue line structure at intense ribbon crossings, reducing pale clipped highlights and restoring more dimensional cool-blue tonal layering."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

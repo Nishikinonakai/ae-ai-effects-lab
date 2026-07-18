@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The render has the right botanical/dandelion-like source imagery on black, but it reads as a field of intact dandelion heads with stems rather than loose seeds blowing outward. At t1 the frame is very sparse; by t4 it abruptly becomes crowded with large, upright full flowers distributed across the entire image. The temporal change is primarily accumulation/population, not a coherent wind-driven plume or wide dispersal from a seed source. The near-comp-sized emitter makes particles appear everywhere instead of traveling outward from a localized origin.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 180,
+      "why": "Localize the X emitter extent so particles originate from a seed source instead of appearing across the full frame."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0015",
+      "value": 120,
+      "why": "Localize the Y emitter extent to establish a readable blowing origin and plume."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 10,
+      "why": "Make the sprite instances much smaller so they read closer to airborne seed material than large intact dandelion heads."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 65,
+      "why": "Broaden the directional spread after localizing the emitter, producing the requested wide blown-out distribution rather than a uniform full-frame field."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

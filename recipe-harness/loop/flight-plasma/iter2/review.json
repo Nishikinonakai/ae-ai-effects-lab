@@ -1,0 +1,20 @@
+{
+  "verdict": "fail",
+  "score": 8,
+  "critique": "The render strongly matches the expected Flight Plasma character: a wide, dense magenta-violet fractal particle ribbon on black with layered flowing sheets and bright plasma filaments. Unlike the prior iteration, frames 1 and 4 now have clearly different contour layouts, confirming active animated evolution. The remaining issue is that the dense central overlaps clip toward near-white, making the middle read as a blown-out luminous band and obscuring some of the fine particle structure that is visible around the edges.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0036",
+      "value": [
+        0.40784313725490196,
+        0.11372549019607843,
+        0.68,
+        1
+      ],
+      "why": "Slightly reduce the particle color intensity so dense intersecting particle sheets retain magenta detail rather than clipping into a broad white-hot center."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

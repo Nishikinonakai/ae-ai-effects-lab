@@ -1,0 +1,7 @@
+{
+  "verdict": "pass",
+  "score": 9,
+  "critique": "The render convincingly matches a Basic Fractal Sphere: a dense cyan-blue point-field sphere on black, with layered fractal-like ripples, bright contour ridges, and organic surface deformation. The sphere remains centered and consistently scaled between frames while its internal folds and outer silhouette evolve naturally, giving the intended animated procedural motion.",
+  "suggestions": [],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

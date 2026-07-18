@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The ornate gold ornament sprite, black field, and animated Form behavior strongly evoke the Holiday Bulbs preset. Individual bulbs are now mostly legible and the movement between t1 and t4 is present without becoming completely chaotic. However, the particle field still breaks into broad, irregular black channels and dense clumps rather than reading as a consistently organized Shape Grids pattern. The remaining twister/flow deformation is creating disconnected bands, while the randomized bulb scale makes the local grid spacing feel uneven.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0160",
+      "value": 12,
+      "why": "Reduce the Twister amount so the particle lattice retains a clearer continuous grid/form structure instead of splitting into large voids and isolated dense bands."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0034",
+      "value": 10,
+      "why": "Lower particle size randomness to make neighboring ornament rows more uniform and reinforce the deliberate Shape Grids spacing."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

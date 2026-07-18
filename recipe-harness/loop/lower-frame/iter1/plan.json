@@ -1,0 +1,217 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Lines/Lower Frame.xbxc",
+  "_pack": "TC14",
+  "_category": "Lines",
+  "_effect": "tc Form",
+  "_map_coverage": "34 mapped / 0 unmapped / 5 curves",
+  "_unmapped": [],
+  "_notes": [],
+  "intent": "Reproduce the vendor Form preset \"Lower Frame\" (Lines); reference thumbnail: none shipped",
+  "name": "lower-frame_i1",
+  "compName": "MinedForm_LowerFrame",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0003",
+          2,
+          "FXid_BaseShape (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0024",
+          2,
+          "FXid_PType (default-pair+enumOffset, med)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0008",
+          40,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          1,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          3750,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0005",
+          1730,
+          "FXid_BaseShapeSizeY (exact-name, high)"
+        ],
+        [
+          "tc Form-0006",
+          300,
+          "FXid_BaseShapeSizeZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0016",
+          6,
+          "FXid_StringDensity (default-pair, high)"
+        ],
+        [
+          "tc Form-0019",
+          2,
+          "FXid_StringTaperSize (exact-name+enumOffset, high)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0254",
+          4,
+          "FXid_Settings_Glow_Feather (default-pair, high)"
+        ],
+        [
+          "tc Form-0253",
+          14,
+          "FXid_Settings_Glow_Opacity (default-pair, high)"
+        ],
+        [
+          "tc Form-0252",
+          331,
+          "FXid_Settings_Glow_Size (default-pair, high)"
+        ],
+        [
+          "tc Form-0255",
+          3,
+          "FXid_Settings_Glow_TransferMode (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0033",
+          3,
+          "FXid_PSizeMax (exact-name, high)"
+        ],
+        [
+          "tc Form-0531",
+          3,
+          "FXid_OpacityCurveOver (exact-name+enumOffset, high)"
+        ],
+        [
+          "tc Form-0035",
+          40,
+          "FXid_POpacMax (default-pair, high)"
+        ],
+        [
+          "tc Form-0042",
+          1,
+          "FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.45331397247903144,
+            0.6669172105597861,
+            0.5946453794101139,
+            1
+          ],
+          "FXid_PColor (default-pair, high) [flattened ColorMapArb]"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0160",
+          1.5,
+          "FXid_SDTwisterAmount (default-pair, high)"
+        ],
+        [
+          "tc Form-0166",
+          40,
+          "FXid_FAffectPosX (exact-name, high)"
+        ],
+        [
+          "tc Form-0173",
+          1,
+          "FXid_FLoop (exact-name, high)"
+        ],
+        [
+          "tc Form-0180",
+          3,
+          "FXid_FScale (exact-name, high)"
+        ],
+        [
+          "tc Form-0169",
+          64,
+          "FXid_FlowX (exact-name, high)"
+        ],
+        [
+          "tc Form-0499",
+          3,
+          "FXid_FractalStrengthOver (exact-name+enumOffset, high)"
+        ],
+        [
+          "tc Form-0231",
+          -150,
+          "FXid_RWPosX (default-pair, high)"
+        ],
+        [
+          "tc Form-0232",
+          440,
+          "FXid_RWPosY (default-pair, high)"
+        ],
+        [
+          "tc Form-0234",
+          131,
+          "FXid_RWScale (default-pair, high)"
+        ],
+        [
+          "tc Form-0210",
+          85.30000305175781,
+          "FXid_RWX (default-pair, high)"
+        ],
+        [
+          "tc Form-0211",
+          -168,
+          "FXid_RWY (default-pair, high)"
+        ],
+        [
+          "tc Form-0212",
+          -149,
+          "FXid_RWZ (default-pair, high)"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "status": "done",
+  "name": "streaklet-twist_i2",
+  "params": [
+    {
+      "p": "[1:tc Form] FXid_BaseShape (default-pair+enumOffset, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeOption (exact-name+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PType (default-pair+enumOffset, med)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeAngleX (exact-name, high)",
+      "ok": true,
+      "v": "109.109115600586"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeAngleZ (exact-name, high)",
+      "ok": true,
+      "v": "6"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeCenter (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesY (exact-name, high)",
+      "ok": true,
+      "v": "9"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesZ (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeX (exact-name, high)",
+      "ok": true,
+      "v": "4140"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeY (exact-name, high)",
+      "ok": true,
+      "v": "350"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeZ (exact-name, high)",
+      "ok": true,
+      "v": "300"
+    },
+    {
+      "p": "[1:tc Form] FXid_StringDensity (default-pair, high)",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Form] FXid_StringSizeRndDistr (exact-name, high)",
+      "ok": true,
+      "v": "1.5"
+    },
+    {
+      "p": "[1:tc Form] FXid_StringTaperSize (exact-name+enumOffset, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_Streaklet_NoSpheres (default-pair, high)",
+      "ok": true,
+      "v": "8.89999961853027"
+    },
+    {
+      "p": "[1:tc Form] FXid_Streaklet_RandomSeed (exact-name, high)",
+      "ok": true,
+      "v": "70"
+    },
+    {
+      "p": "[1:tc Form] FXid_Streaklet_Spread (default-pair, high)",
+      "ok": true,
+      "v": "15"
+    },
+    {
+      "p": "[1:tc Form] FXid_PSizeMax (exact-name, high)",
+      "ok": true,
+      "v": "56"
+    },
+    {
+      "p": "[1:tc Form] FXid_POpacMax (default-pair, high)",
+      "ok": true,
+      "v": "73"
+    },
+    {
+      "p": "[1:tc Form] FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_PColor (default-pair, high) [flattened ColorMapArb]",
+      "ok": true,
+      "v": "0.58373528718948,0.83777"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Color (default-pair, med)",
+      "ok": true,
+      "v": "0,0,0,1"
+    },
+    {
+      "p": "[1:tc Form] FXid_PShadow (default-pair+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PShadow_Dist (default-pair, med)",
+      "ok": true,
+      "v": "6"
+    },
+    {
+      "p": "[1:tc Form] FXid_PShadow_Size (default-pair, med)",
+      "ok": true,
+      "v": "15"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeDisperse (default-pair, high)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Form] FXid_SDTwisterAmount (default-pair, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_FScale (exact-name, high)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_D1Pos (ranked-candidate, med)",
+      "ok": true,
+      "v": "-614400,-194400,194400"
+    },
+    {
+      "p": "[1:tc Form] FXid_D2Pos (ranked-candidate, med)",
+      "ok": true,
+      "v": "-614400,-194400,194400"
+    },
+    {
+      "p": "[1:tc Form] FXid_KCenter (ranked-candidate, med)",
+      "ok": true,
+      "v": "-614400,-194400,194400"
+    },
+    {
+      "p": "[1:tc Form] FXid_KCenterXY (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_RWX (default-pair, high)",
+      "ok": true,
+      "v": "11"
+    },
+    {
+      "p": "[1:tc Form] FXid_RWY (default-pair, high)",
+      "ok": true,
+      "v": "-73"
+    },
+    {
+      "p": "[1:tc Form] FXid_RWZ (default-pair, high)",
+      "ok": true,
+      "v": "-5"
+    },
+    {
+      "p": "[1:tc Form] Animate World Rotation Y so the twisted  [i2] (expr)",
+      "ok": true
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/streaklet-twist/iter2/streaklet-twist_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/streaklet-twist/iter2/streaklet-twist_i2_t4.png"
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Bokeh/Deep Orange Bokeh.xbxc",
+  "_pack": "TC14",
+  "_category": "Bokeh",
+  "_effect": "tc Form",
+  "_map_coverage": "28 mapped / 0 unmapped / 5 curves",
+  "_unmapped": [],
+  "_notes": [],
+  "intent": "Reproduce the vendor Form preset \"Deep Orange Bokeh\" (Bokeh); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Bokeh/Deep Orange Bokeh.png",
+  "name": "deep-orange-bokeh_i2",
+  "compName": "MinedForm_DeepOrangeBokeh",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "footage": [
+    {
+      "path": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Sprites/Common/Bokeh/Bokeh 2.png",
+      "layerName": "SpriteTex"
+    }
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0024",
+          7,
+          "FXid_PType (default-pair+enumOffset, med)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0007",
+          5,
+          "FXid_BaseShapeParticlesX (exact-name, high)"
+        ],
+        [
+          "tc Form-0008",
+          4,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          1,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          1920,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0005",
+          1080,
+          "FXid_BaseShapeSizeY (exact-name, high)"
+        ],
+        [
+          "tc Form-0006",
+          200,
+          "FXid_BaseShapeSizeZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0025",
+          34,
+          "FXid_PFeather (default-pair, high)"
+        ],
+        [
+          "tc Form-0028",
+          1,
+          "FXid_PLayerTime (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0033",
+          650,
+          "FXid_PSizeMax (exact-name, high)"
+        ],
+        [
+          "tc Form-0034",
+          46,
+          "FXid_PSizeRnd (exact-name, high)"
+        ],
+        [
+          "tc Form-0035",
+          65,
+          "FXid_POpacMax (default-pair, high)"
+        ],
+        [
+          "tc Form-0246",
+          100,
+          "FXid_POpacRnd (exact-name, high)"
+        ],
+        [
+          "tc Form-0036",
+          [
+            1,
+            0.4196078431372549,
+            0.10196078431372549,
+            1
+          ],
+          "FXid_PColor (default-pair, high)"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0159",
+          81,
+          "FXid_BaseShapeDisperse (default-pair, high)"
+        ],
+        [
+          "tc Form-0164",
+          25,
+          "FXid_FAffectOpac (exact-name, high)"
+        ],
+        [
+          "tc Form-0166",
+          126,
+          "FXid_FAffectPosX (exact-name, high)"
+        ],
+        [
+          "tc Form-0163",
+          30.8,
+          "FXid_FAffectSize (exact-name, high)"
+        ],
+        [
+          "tc Form-0172",
+          10,
+          "FXid_FEvolution (default-pair, high)"
+        ],
+        [
+          "tc Form-0173",
+          1,
+          "FXid_FLoop (exact-name, high)"
+        ],
+        [
+          "tc Form-0174",
+          10,
+          "FXid_FLoopTime (exact-name, high)"
+        ],
+        [
+          "tc Form-0171",
+          15,
+          "FXid_FlowZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0027",
+          {
+            "__layer": "SpriteTex"
+          },
+          "Sprite texture layer (rg.p.sprite.id)"
+        ],
+        [
+          "tc Form-0028",
+          1,
+          "FXid_PLayerTime (+enumOffset)"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0033",
+          "value": 650,
+          "why": "Reduce the extremely oversized particle diameter so more of the 5x4 particle field can remain visible at once and the composition reads as layered bokeh rather than a few cropped circles."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0035",
+          "value": 65,
+          "why": "Raise maximum opacity to make the orange bokeh read clearly as deep orange against black instead of near-black brown."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0171",
+          "value": 15,
+          "why": "Slow Z flow so particles do not vacate the frame so dramatically between t1 and t4, preserving a denser and more stable bokeh composition."
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

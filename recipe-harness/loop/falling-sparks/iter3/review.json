@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render now clearly reads as fiery falling sparks: it has a black background, dense yellow/orange/red embers, visible glow, and the t4 frame shows the particle mass descending. However, it remains a tight, centered column rather than the wider, more dispersed falling-sparks shower indicated by the preset thumbnail. The source and trail are still compact, with small bead-like particles and insufficient lateral spread; the field should occupy substantially more width and persist farther downward.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 380,
+      "why": "Widen the emitter so sparks originate across a broader horizontal area instead of a narrow centered plume."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 62,
+      "why": "Increase directional spread to create a more naturally dispersed shower and break up the rigid vertical column."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 3.2,
+      "why": "Extend particle lifetime so the descending spark field forms a longer, more convincing falling trail."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 8,
+      "why": "Make individual glowing embers more substantial at frame scale, closer to the visible spark size in the preset thumbnail."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

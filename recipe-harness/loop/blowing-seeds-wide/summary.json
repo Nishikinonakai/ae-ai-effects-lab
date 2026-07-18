@@ -1,0 +1,26 @@
+{
+  "intent": "vendor preset \"Blowing Seeds Wide\" (Nature) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 3,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The render has the right botanical/dandelion-like source imagery on black, but it reads as a field of intact dandelion heads with stems rather than loose seeds blowing outward. At t1 the frame is very sparse; by t4 it abruptly becomes crowded with large, upright full flowers distributed across the entire image. The temporal change is primarily accumulation/population, not a coherent wind-driven plume or wide dispersal from a seed source. The near-comp-sized emitter makes particles appear everywhere instead of traveling outward from a localized origin."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The sprite imagery now reads as individual dandelion seeds rather than intact flower heads, which is closer to the intended botanical look. However, both frames still show seeds born across a broad, nearly full-comp band. From t1 to t4 the dominant change is a denser random field, not a clearly wind-driven dispersal plume emerging from one source and traveling wide. The visible long seed stems also make the drift feel mostly upright/static rather than carried laterally by air."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "This is now clearly a localized release of dandelion seeds that expands into a broad rightward plume: t1 has a compact source cluster and t4 shows the same material dispersed widely across the right half of the frame. That is a substantial match to the intended blowing-seeds motion, and it avoids the prior full-frame birth field. The result remains somewhat too sparse and faint, however; the t4 plume has large empty gaps and lacks the fuller, more visually legible seed cloud expected from a preset thumbnail."
+    }
+  ]
+}

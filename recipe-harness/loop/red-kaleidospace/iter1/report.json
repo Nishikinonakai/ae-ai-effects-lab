@@ -1,0 +1,150 @@
+{
+  "status": "done",
+  "name": "red-kaleidospace_i1",
+  "params": [
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeOption (exact-name+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeAngleY (exact-name, high)",
+      "ok": true,
+      "v": "-44"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeCenter (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesX (exact-name, high)",
+      "ok": true,
+      "v": "150"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesY (exact-name, high)",
+      "ok": true,
+      "v": "400"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeX (exact-name, high)",
+      "ok": true,
+      "v": "260"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeY (exact-name, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeZ (exact-name, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_PTMode (ranked-candidate+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PSizeMax (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_POpacMax (default-pair, high)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Form] FXid_PColor (default-pair, high)",
+      "ok": true,
+      "v": "0.86666667461395,0.19607"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Color (default-pair, med)",
+      "ok": true,
+      "v": "0.25098040699959,0.25098"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_ColorStrength (default-pair, med)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Opacity (default-pair, med)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectPosX (exact-name, high)",
+      "ok": true,
+      "v": "120"
+    },
+    {
+      "p": "[1:tc Form] FXid_FEvolution (default-pair, high)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Form] FXid_FLoop (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_FLoopTime (exact-name, high)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_FlowY (exact-name, high)",
+      "ok": true,
+      "v": "-50"
+    },
+    {
+      "p": "[1:tc Form] FXid_D1Feather (exact-name, high)",
+      "ok": true,
+      "v": "37"
+    },
+    {
+      "p": "[1:tc Form] FXid_D1Pos (ranked-candidate, med)",
+      "ok": true,
+      "v": "640,360,0"
+    },
+    {
+      "p": "[1:tc Form] FXid_D1Radius (exact-name, high)",
+      "ok": true,
+      "v": "438"
+    },
+    {
+      "p": "[1:tc Form] FXid_D1Strength (default-pair, high)",
+      "ok": true,
+      "v": "68"
+    },
+    {
+      "p": "[1:tc Form] FXid_D2Pos (ranked-candidate, med)",
+      "ok": true,
+      "v": "-614400,-194400,194400"
+    },
+    {
+      "p": "[1:tc Form] FXid_KBehaviour (default-pair+enumOffset, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_KCenterXY (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_KMode (default-pair+enumOffset, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/red-kaleidospace/iter1/red-kaleidospace_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/red-kaleidospace/iter1/red-kaleidospace_i1_t4.png"
+  ]
+}

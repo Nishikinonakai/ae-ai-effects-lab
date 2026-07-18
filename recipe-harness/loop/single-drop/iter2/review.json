@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The gold/orange particle rendering, black background, fine point density, and frame-to-frame fluid evolution are convincing. The mass is more centralized than before, but it still does not read as one cohesive drop: t1 contains several separated rolled lobes around a busy center, while t4 stretches into a ragged vertical plume with multiple curled protrusions and an open, broken interior. The Single Drop intent needs a denser, smoother, more unified core with less turbulent splitting.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0566",
+      "value": 85,
+      "why": "Higher fluid viscosity should hold the particles together longer, reducing the separated lobe structure and making the silhouette read as one denser drop."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0556",
+      "value": 55,
+      "why": "Reducing vortex strength will lessen the strong rolling folds that tear the mass into multiple bulbous protrusions."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0563",
+      "value": 18,
+      "why": "Lower X random swirl to reduce sideways fragmentation and keep the drop centered as it evolves."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0564",
+      "value": 12,
+      "why": "Lower Y random swirl to prevent the tall, ragged plume-like breakup visible by t4."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0565",
+      "value": 12,
+      "why": "Lower Z random swirl so the particle volume remains a coherent body rather than opening into multiple depth-separated curls."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

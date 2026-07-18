@@ -384,3 +384,29 @@ Default-value-pair method (Designer default == TSV default pins the target) reso
 - Shading: PShade→0284, PShadeFalloffAdjust→0304 Nominal Distance (250=250), smokelet
   shadow color/strength/opacity → 0210/0211/0212. Glow_TransferMode+1 → 0218.
 - Dropped: Gen1SubframePos (param removed in v18), PLayerTime (consumed by sprite connect).
+
+## dim-gpt-r1 (2026-07-18 night): first HEADLESS tune-loop batch — Form 52/25/0
+
+The dim-faint + ok-partial classes went through the tune loop end-to-end with NO
+agent in the loop: `--backend=api` → `vision/gpt_score.mjs` (new third seam impl,
+plain-fetch chat-completions, default `gpt-5.6-terra`, key in gitignored
+`.env.api`) judging renders AGAINST THE VENDOR THUMB (auto-attached from the
+draft intent's "reference thumbnail:" path).
+
+22 drafts (19 Form + 3 Particular), 3-iter cap: **8 converted to match** —
+basic-fractal-sphere 9, flight-plasma 7→8→9, left-frame 9, lower-frame 8,
+slashes-1 9, flowing-rectangle-grid 6→9, ocean-wave 9, random-swirl-grid
+7→5→9 — all promoted to recipes/mined/ with their TUNED plans (_validated:
+dim-gpt-r1). **Form: 44→52 match / 25 partial / 0 fail; mined library 107.**
+
+Residue: 11 climbing-but-short (7-8/10 at max-iters; GPT-terra's pass bar is
+stricter than the in-session agent — it re-scored eval-e18's 9/10 as 6/10 with
+a defensible critique), fractal-lines DECLINED under nudges (6→5→4,
+non-monotonic — revert-on-decline missing from the loop), horns crashed
+between iters (no summary.json — investigate), Particular trio (blowing-seeds
+3→5→7, falling-sparks 3→5→6, horizontal-smoke-1 6→7→7) all climbing: worth a
+5-iter re-run. Cost of the whole batch: ~$2 of gpt-5.6-terra.
+
+Next knobs: --max-iters=5 for the climbers, best-iter revert on decline,
+per-backend pass-bar calibration (or verdict = score>=8), multi-instance
+suggestion targeting (from the planner-eval worklist).

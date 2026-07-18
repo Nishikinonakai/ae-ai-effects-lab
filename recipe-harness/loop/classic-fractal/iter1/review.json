@@ -1,0 +1,20 @@
+{
+  "verdict": "fail",
+  "score": 8,
+  "critique": "The render strongly captures the Classic Fractal character: a dense black-field particle lattice, thin flowing string contours, bright caustic-like crossings, and substantial organic evolution between frames. The central circular void/field feature also remains coherently placed through the motion. The main visible compromise is color: the result is largely white/gray-blue, so it lacks the richer cool-blue separation and tonal depth associated with the preset thumbnail; the brightest contours clip toward white and flatten the particle detail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0036",
+      "value": [
+        0.3,
+        0.48,
+        0.82,
+        1
+      ],
+      "why": "Use a more saturated cool-blue particle color so the dense fractal strands retain blue tonal identity instead of reading predominantly white/gray."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The render has the correct black-background ember palette and the particles do drift downward between t1 and t4, but it reads as a tiny, sparse cluster of pixel-sized dots near the center rather than the visibly substantial falling-sparks shower expected from the preset thumbnail. Spark coverage, brightness, and apparent particle scale are all far too low; the short lifetime also keeps the falling trail compact.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 3,
+      "why": "Increase the one-pixel particle size so the fire-gradient sparks read as visible glowing embers rather than near-invisible pinpoints."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 0.9,
+      "why": "Lengthen particle lifetime to build a sustained downward shower and a more pronounced falling trail under gravity."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 700,
+      "why": "Raise emission density so the effect resembles a continuous cascade of sparks instead of a small scattered clump."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

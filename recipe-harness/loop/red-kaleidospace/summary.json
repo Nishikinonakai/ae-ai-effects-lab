@@ -1,0 +1,26 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Red Kaleidospace\" (Basics); reference thumbnail: none shipped",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 2,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The still design strongly matches the intended Red Kaleidospace look: a dense red particle-mesh ring with bright folded filaments, dark central void, and black background. However, frames 1 and 4 appear visually identical, so the preset's organic evolving/kaleidoscopic motion is not coming through. The render currently reads as a strong static frame rather than a living Form preset animation."
+    },
+    {
+      "iter": 2,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The render now convincingly delivers the red-on-black Form aesthetic: dense point-grid surfaces, luminous red folded filaments, and clearly different configurations between t1 and t4 establish active evolving motion. It is less distinctly kaleidoscopic than the preset name suggests, reading more as a large organic particle sphere. The form is also cropped at the top and bottom, which weakens the silhouette and makes the composition feel oversized rather than deliberately framed. The t1-to-t4 structural change is quite large, so the evolution may feel more like rapid reshuffling than continuous folding."
+    },
+    {
+      "iter": 3,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The render has a strong Red Kaleidospace foundation: dense red point-grid surfaces, bright red filament folds, a black field, and clearly evolving geometry between t1 and t4. The silhouette remains overly spherical and is cropped at both the top and bottom, making it feel like an enlarged organic globe rather than a deliberately framed kaleidoscopic structure. The t1-to-t4 changes are active but still read as broad surface reshuffling more than a controlled, continuous kaleidoscopic fold."
+    }
+  ]
+}

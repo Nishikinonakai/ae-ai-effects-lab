@@ -1,0 +1,234 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Fractals/Flight Plasma.xbxc",
+  "_pack": "TC14",
+  "_category": "Fractals",
+  "_effect": "tc Form",
+  "_map_coverage": "27 mapped / 0 unmapped / 5 curves",
+  "_unmapped": [],
+  "_notes": [],
+  "intent": "Reproduce the vendor Form preset \"Flight Plasma\" (Fractals); reference thumbnail: none shipped",
+  "name": "flight-plasma_i3",
+  "compName": "MinedForm_FlightPlasma",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0007",
+          300,
+          "FXid_BaseShapeParticlesX (exact-name, high)"
+        ],
+        [
+          "tc Form-0008",
+          1,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          300,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          1000,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0005",
+          200,
+          "FXid_BaseShapeSizeY (exact-name, high)"
+        ],
+        [
+          "tc Form-0006",
+          1000,
+          "FXid_BaseShapeSizeZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.40784313725490196,
+            0.11372549019607843,
+            0.68,
+            1
+          ],
+          "FXid_PColor (default-pair, high)"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0.25098039215686274,
+            0.25098039215686274,
+            0.25098039215686274,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0421",
+          50,
+          "FXid_Options_SmokeletShadow_ColorStrength (default-pair, med)"
+        ],
+        [
+          "tc Form-0422",
+          50,
+          "FXid_Options_SmokeletShadow_Opacity (default-pair, med)"
+        ],
+        [
+          "tc Form-0166",
+          -320,
+          "FXid_FAffectPosX (exact-name, high)"
+        ],
+        [
+          "tc Form-0167",
+          -200,
+          "FXid_FAffectPosY (exact-name, high)"
+        ],
+        [
+          "tc Form-0168",
+          179,
+          "FXid_FAffectPosZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0181",
+          4,
+          "FXid_FComplex (default-pair, high)"
+        ],
+        [
+          "tc Form-0172",
+          30,
+          "FXid_FEvolution (default-pair, high)"
+        ],
+        [
+          "tc Form-0173",
+          1,
+          "FXid_FLoop (exact-name, high)"
+        ],
+        [
+          "tc Form-0174",
+          3,
+          "FXid_FLoopTime (exact-name, high)"
+        ],
+        [
+          "tc Form-0179",
+          1.7800000000000002,
+          "FXid_FMax (exact-name, high)"
+        ],
+        [
+          "tc Form-0180",
+          5,
+          "FXid_FScale (exact-name, high)"
+        ],
+        [
+          "tc Form-0171",
+          -500,
+          "FXid_FlowZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0527",
+          [
+            -614400,
+            -194400,
+            194400
+          ],
+          "FXid_D1Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0528",
+          [
+            -614400,
+            -194400,
+            194400
+          ],
+          "FXid_D2Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0608",
+          [
+            -614400,
+            -194400,
+            194400
+          ],
+          "FXid_KCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0210",
+          10,
+          "FXid_RWX (default-pair, high)"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Form-0172",
+          "time*30",
+          "Drive Fractal Evolution continuously so  [i2]"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "expression",
+          "effect": "tc Form",
+          "matchName": "tc Form-0172",
+          "expression": "time*30",
+          "why": "Drive Fractal Evolution continuously so the plasma surface visibly evolves and travels between rendered frames instead of remaining static."
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "for_iter": 3,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0036",
+          "value": [
+            0.40784313725490196,
+            0.11372549019607843,
+            0.68,
+            1
+          ],
+          "why": "Slightly reduce the particle color intensity so dense intersecting particle sheets retain magenta detail rather than clipping into a broad white-hot center."
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render has the core look of the preset: a black field of orange vertical rectangular particles with animated, flowing areas of reduced visibility. Motion is present between frames, with the dark flow regions and brighter bars shifting organically. However, the grid reads substantially too sparse and oversized for the 1280×720 composition: only about 35 columns are visible despite the intended 56-particle horizontal grid, suggesting the 1920×1080 base-shape dimensions were not adapted to the current comp. This makes the pattern feel cropped rather than like a full rectangle grid.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0004",
+      "value": 1280,
+      "why": "Match Base Shape Size X to the 1280px comp width so all 56 horizontal grid particles distribute across the visible frame rather than extending offscreen."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0005",
+      "value": 720,
+      "why": "Match Base Shape Size Y to the 720px comp height, keeping the grid proportionate to the composition and preserving the intended rectangular-grid coverage."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

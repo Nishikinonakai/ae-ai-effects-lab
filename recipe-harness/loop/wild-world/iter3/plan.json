@@ -1,0 +1,247 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Wild World.xbxc",
+  "_pack": "TC14",
+  "_category": "Basics",
+  "_effect": "tc Form",
+  "_map_coverage": "29 mapped / 0 unmapped / 5 curves",
+  "_unmapped": [],
+  "_notes": [],
+  "intent": "Reproduce the vendor Form preset \"Wild World\" (Basics); reference thumbnail: none shipped",
+  "name": "wild-world_i3",
+  "compName": "MinedForm_WildWorld",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0013",
+          44.399993896484375,
+          "FXid_BaseShapeAngleY (exact-name, high)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0007",
+          907,
+          "FXid_BaseShapeParticlesX (exact-name, high)"
+        ],
+        [
+          "tc Form-0008",
+          8,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          25,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          360,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0005",
+          200,
+          "FXid_BaseShapeSizeY (exact-name, high)"
+        ],
+        [
+          "tc Form-0006",
+          200,
+          "FXid_BaseShapeSizeZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0033",
+          0.3,
+          "FXid_PSizeMax (exact-name, high)"
+        ],
+        [
+          "tc Form-0042",
+          1,
+          "FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.9482882177388227,
+            0.3650741819193754,
+            0.6753890447801462,
+            1
+          ],
+          "FXid_PColor (default-pair, high) [flattened ColorMapArb]"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0.25098039215686274,
+            0.25098039215686274,
+            0.25098039215686274,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0421",
+          50,
+          "FXid_Options_SmokeletShadow_ColorStrength (default-pair, med)"
+        ],
+        [
+          "tc Form-0422",
+          50,
+          "FXid_Options_SmokeletShadow_Opacity (default-pair, med)"
+        ],
+        [
+          "tc Form-0160",
+          10.900000000000002,
+          "FXid_SDTwisterAmount (default-pair, high)"
+        ],
+        [
+          "tc Form-0166",
+          78,
+          "FXid_FAffectPosX (exact-name, high)"
+        ],
+        [
+          "tc Form-0501",
+          73,
+          "FXid_FractalStrengthCurveOffset (exact-name, high)"
+        ],
+        [
+          "tc Form-0499",
+          2,
+          "FXid_FractalStrengthOver (exact-name+enumOffset, high)"
+        ],
+        [
+          "tc Form-0527",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_D1Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0187",
+          100,
+          "FXid_D1Strength (default-pair, high)"
+        ],
+        [
+          "tc Form-0199",
+          87,
+          "FXid_D2Feather (exact-name, high)"
+        ],
+        [
+          "tc Form-0528",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_D2Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0198",
+          160,
+          "FXid_D2Radius (exact-name, high)"
+        ],
+        [
+          "tc Form-0195",
+          63,
+          "FXid_D2Strength (default-pair, high)"
+        ],
+        [
+          "tc Form-0608",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_KCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0234",
+          210,
+          "FXid_RWScale (default-pair, high)"
+        ],
+        [
+          "tc Form-0211",
+          127.60000610351562,
+          "FXid_RWY (default-pair, high)"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0608",
+          "value": [
+            -320,
+            -270,
+            270
+          ],
+          "why": "The current Kaleidospace center is orders of magnitude outside the composition/particle-space scale (-307200, -97200, 97200), likely from an incorrect coordinate conversion. Restoring it to the corresponding unscaled 3D coordinates should bring the distortion back into the visible world and reduce the severe edge cropping."
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "for_iter": 3,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0608",
+          "value": [
+            640,
+            360,
+            0
+          ],
+          "why": "Recenter the Kaleidospace/world center at the comp center; the current large negative X/Y center is the most likely source of the persistent asymmetric, cropped framing."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0234",
+          "value": 210,
+          "why": "Reduce the world scale moderately after recentering so more of the organic structure fits within frame boundaries while preserving the dense Wild World filament character."
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

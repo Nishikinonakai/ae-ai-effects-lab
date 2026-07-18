@@ -1,0 +1,220 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Red Kaleidospace.xbxc",
+  "_pack": "TC14",
+  "_category": "Basics",
+  "_effect": "tc Form",
+  "_map_coverage": "28 mapped / 0 unmapped / 5 curves",
+  "_unmapped": [],
+  "_notes": [],
+  "intent": "Reproduce the vendor Form preset \"Red Kaleidospace\" (Basics); reference thumbnail: none shipped",
+  "name": "red-kaleidospace_i2",
+  "compName": "MinedForm_RedKaleidospace",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0013",
+          -44,
+          "FXid_BaseShapeAngleY (exact-name, high)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0007",
+          150,
+          "FXid_BaseShapeParticlesX (exact-name, high)"
+        ],
+        [
+          "tc Form-0008",
+          400,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          260,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0005",
+          810,
+          "FXid_BaseShapeSizeY (exact-name, high)"
+        ],
+        [
+          "tc Form-0006",
+          250,
+          "FXid_BaseShapeSizeZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0033",
+          1,
+          "FXid_PSizeMax (exact-name, high)"
+        ],
+        [
+          "tc Form-0035",
+          50,
+          "FXid_POpacMax (default-pair, high)"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.8666666666666667,
+            0.19607843137254902,
+            0.19607843137254902,
+            1
+          ],
+          "FXid_PColor (default-pair, high)"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0.25098039215686274,
+            0.25098039215686274,
+            0.25098039215686274,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0421",
+          50,
+          "FXid_Options_SmokeletShadow_ColorStrength (default-pair, med)"
+        ],
+        [
+          "tc Form-0422",
+          50,
+          "FXid_Options_SmokeletShadow_Opacity (default-pair, med)"
+        ],
+        [
+          "tc Form-0166",
+          120,
+          "FXid_FAffectPosX (exact-name, high)"
+        ],
+        [
+          "tc Form-0172",
+          20,
+          "FXid_FEvolution (default-pair, high)"
+        ],
+        [
+          "tc Form-0173",
+          1,
+          "FXid_FLoop (exact-name, high)"
+        ],
+        [
+          "tc Form-0174",
+          3,
+          "FXid_FLoopTime (exact-name, high)"
+        ],
+        [
+          "tc Form-0170",
+          -50,
+          "FXid_FlowY (exact-name, high)"
+        ],
+        [
+          "tc Form-0191",
+          37,
+          "FXid_D1Feather (exact-name, high)"
+        ],
+        [
+          "tc Form-0527",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_D1Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0190",
+          438,
+          "FXid_D1Radius (exact-name, high)"
+        ],
+        [
+          "tc Form-0187",
+          68,
+          "FXid_D1Strength (default-pair, high)"
+        ],
+        [
+          "tc Form-0528",
+          [
+            -614400,
+            -194400,
+            194400
+          ],
+          "FXid_D2Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0205",
+          2,
+          "FXid_KBehaviour (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0206",
+          [
+            640,
+            360
+          ],
+          "FXid_KCenterXY (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0204",
+          3,
+          "FXid_KMode (default-pair+enumOffset, high)"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Form-0172",
+          "time*20",
+          "Drive Evolution continuously so the fold [i2]"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "expression",
+          "effect": "tc Form",
+          "matchName": "tc Form-0172",
+          "expression": "time*20",
+          "why": "Drive Evolution continuously so the folded particle mesh visibly morphs between frames while retaining the existing red kaleidoscopic form."
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

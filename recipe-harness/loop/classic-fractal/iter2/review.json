@@ -1,0 +1,15 @@
+{
+  "verdict": "fail",
+  "score": 8,
+  "critique": "The render closely matches the Classic Fractal look: dense blue particle-line fields on black, sweeping fractal-like ribbons, crisp bright convergence points, and a clearly animated evolving structure between t1 and t4. The remaining mismatch is tonal: several ribbon intersections and edge contours blow out to near-white, reducing the layered cool-blue depth and making parts of the particle lattice look flatter than the preset's richer blue separation.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0035",
+      "value": 48,
+      "why": "Lower maximum particle opacity so dense overlaps retain blue tonal detail instead of clipping into white contour bands."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

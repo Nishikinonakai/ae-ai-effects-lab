@@ -1,0 +1,145 @@
+{
+  "status": "done",
+  "name": "flight-plasma_i1",
+  "params": [
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeOption (exact-name+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeCenter (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesX (exact-name, high)",
+      "ok": true,
+      "v": "300"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesY (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesZ (exact-name, high)",
+      "ok": true,
+      "v": "300"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeX (exact-name, high)",
+      "ok": true,
+      "v": "1000"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeY (exact-name, high)",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeZ (exact-name, high)",
+      "ok": true,
+      "v": "1000"
+    },
+    {
+      "p": "[1:tc Form] FXid_PTMode (ranked-candidate+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PColor (default-pair, high)",
+      "ok": true,
+      "v": "0.47843137383461,0.13725"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Color (default-pair, med)",
+      "ok": true,
+      "v": "0.25098040699959,0.25098"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_ColorStrength (default-pair, med)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Opacity (default-pair, med)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectPosX (exact-name, high)",
+      "ok": true,
+      "v": "-320"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectPosY (exact-name, high)",
+      "ok": true,
+      "v": "-200"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectPosZ (exact-name, high)",
+      "ok": true,
+      "v": "179"
+    },
+    {
+      "p": "[1:tc Form] FXid_FComplex (default-pair, high)",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[1:tc Form] FXid_FEvolution (default-pair, high)",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Form] FXid_FLoop (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_FLoopTime (exact-name, high)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_FMax (exact-name, high)",
+      "ok": true,
+      "v": "1.77999997138977"
+    },
+    {
+      "p": "[1:tc Form] FXid_FScale (exact-name, high)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Form] FXid_FlowZ (exact-name, high)",
+      "ok": true,
+      "v": "-500"
+    },
+    {
+      "p": "[1:tc Form] FXid_D1Pos (ranked-candidate, med)",
+      "ok": true,
+      "v": "-614400,-194400,194400"
+    },
+    {
+      "p": "[1:tc Form] FXid_D2Pos (ranked-candidate, med)",
+      "ok": true,
+      "v": "-614400,-194400,194400"
+    },
+    {
+      "p": "[1:tc Form] FXid_KCenter (ranked-candidate, med)",
+      "ok": true,
+      "v": "-614400,-194400,194400"
+    },
+    {
+      "p": "[1:tc Form] FXid_RWX (default-pair, high)",
+      "ok": true,
+      "v": "10"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/flight-plasma/iter1/flight-plasma_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/flight-plasma/iter1/flight-plasma_i1_t4.png"
+  ]
+}

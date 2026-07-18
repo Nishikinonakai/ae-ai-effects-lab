@@ -1,0 +1,26 @@
+{
+  "intent": "vendor preset \"Horizontal Smoke 1\" (Smoke and Fire) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 2,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render has the correct overall ingredients for Horizontal Smoke 1: a centered, wide horizontal white smoke band on black, soft smoky breakup, and visible evolution between t1 and t4. However, it reads as a row of bright, discrete sprite clumps rather than one continuous drifting smoke plume. Strong dark seams and repeated bright lobes are especially visible across the center and at the right edge, making the result look tiled/segmented instead of naturally blended like the preset thumbnail."
+    },
+    {
+      "iter": 2,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render now has a convincing soft white smoke texture, centered horizontal composition, black background, and visible evolution between t1 and t4. It is closer to the intended preset, but the plume still visibly resolves into a small number of repeated bright columns: dark vertical seams divide the center, while the left and right ends form overly distinct bulbs. The thumbnail intent should read as one more continuously blended horizontal smoke stream rather than a segmented row of sprite clusters."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render retains the intended black background, centered wide horizontal white-smoke band, soft volumetric texture, and subtle evolution from t1 to t4. However, it still reads as a chain of individually placed smoke sprites: pronounced dark vertical pinches separate the bright lobes, particularly through the middle and before the right end. The preset thumbnail intent is a more continuously merged, drifting plume, without this repeated bead-like segmentation."
+    }
+  ]
+}

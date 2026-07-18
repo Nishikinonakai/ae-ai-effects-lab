@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render has the essential Horns (Lines) character: luminous mint-white line strands, dotted particle traces, black field, and clearly changing geometry between t1 and t4. However, the composition is dominated by several oversized, clipped ribbons crossing through the frame, so the paired horn-like structure does not read cleanly. The brightest intersections also collapse into broad white bands, obscuring the finer line detail that makes the preset legible.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0016",
+      "value": 14,
+      "why": "Reduce string density so overlapping strands separate visually and the horn contours read more distinctly instead of becoming solid white crossings."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0160",
+      "value": 3,
+      "why": "Slightly reduce twister amount to keep the sweeping horn arcs while reducing the competing crisscrossing ribbons."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

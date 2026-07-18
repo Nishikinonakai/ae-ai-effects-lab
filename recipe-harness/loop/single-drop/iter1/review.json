@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The render convincingly reads as a luminous gold/orange Form-fluid particle mass on black, with fine dotted detail and clearly evolving motion between frames. However, it is more like a broad, multi-lobed turbulent cloud than a distinct single fluid drop: frame 1 is compact but split into several rounded lobes, and by frame 4 the silhouette has opened into a tall, irregular mass with a detached-looking left protrusion. The bright internal ribbons are attractive but the overall form lacks a clean, cohesive drop-like core.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0563",
+      "value": 40,
+      "why": "Reduce X-axis random swirl so the particle body remains more cohesive and does not form the pronounced side lobe."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0567",
+      "value": 85,
+      "why": "Lower the strong horizontal fluid flow to preserve a centered, singular drop silhouette while retaining visible fluid motion."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

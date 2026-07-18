@@ -1,0 +1,184 @@
+{
+  "status": "done",
+  "name": "holiday-bulbs_i1",
+  "params": [
+    {
+      "p": "[footage] SpriteTex",
+      "ok": true
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeOption (exact-name+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PType (default-pair+enumOffset, med)",
+      "ok": true,
+      "v": "7"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeAngleY (exact-name, high)",
+      "ok": true,
+      "v": "90"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeCenter (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesX (exact-name, high)",
+      "ok": true,
+      "v": "76"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesY (exact-name, high)",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesZ (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeX (exact-name, high)",
+      "ok": true,
+      "v": "3120"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeY (exact-name, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeZ (exact-name, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_PLayerSubFrame (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_PLayerTime (ranked-candidate+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PSizeMax (exact-name, high)",
+      "ok": true,
+      "v": "52.2999992370605"
+    },
+    {
+      "p": "[1:tc Form] FXid_PSizeRnd (exact-name, high)",
+      "ok": true,
+      "v": "56"
+    },
+    {
+      "p": "[1:tc Form] FXid_POpacMax (default-pair, high)",
+      "ok": true,
+      "v": "64"
+    },
+    {
+      "p": "[1:tc Form] FXid_POpacRnd (exact-name, high)",
+      "ok": true,
+      "v": "13"
+    },
+    {
+      "p": "[1:tc Form] FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_PColor (default-pair, high) [flattened ColorMapArb]",
+      "ok": true,
+      "v": "0.73670023679733,0.36770"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Color (default-pair, med)",
+      "ok": true,
+      "v": "0,0,0,1"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Opacity (default-pair, med)",
+      "ok": true,
+      "v": "63"
+    },
+    {
+      "p": "[1:tc Form] FXid_PShadow (default-pair+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PShadow_Size (default-pair, med)",
+      "ok": true,
+      "v": "65"
+    },
+    {
+      "p": "[1:tc Form] FXid_PShadow_ZPos (ranked-candidate+enumOffset, med)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_SDTwisterAmount (default-pair, high)",
+      "ok": true,
+      "v": "63.7999992370605"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectOpac (exact-name, high)",
+      "ok": true,
+      "v": "47"
+    },
+    {
+      "p": "[1:tc Form] FXid_FEvolution (default-pair, high)",
+      "ok": true,
+      "v": "15"
+    },
+    {
+      "p": "[1:tc Form] FXid_FLoop (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_FLoopTime (exact-name, high)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Form] FXid_FlowY (exact-name, high)",
+      "ok": true,
+      "v": "52"
+    },
+    {
+      "p": "[1:tc Form] FXid_D1Pos (ranked-candidate, med)",
+      "ok": true,
+      "v": "640,360,0"
+    },
+    {
+      "p": "[1:tc Form] FXid_D2Pos (ranked-candidate, med)",
+      "ok": true,
+      "v": "640,360,0"
+    },
+    {
+      "p": "[1:tc Form] FXid_RWY (default-pair, high)",
+      "ok": true,
+      "v": "90"
+    },
+    {
+      "p": "[1:tc Form] Sprite texture layer (rg.p.sprite.id)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_PLayerTime (+enumOffset)",
+      "ok": true,
+      "v": "2"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/holiday-bulbs/iter1/holiday-bulbs_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/holiday-bulbs/iter1/holiday-bulbs_i1_t4.png"
+  ]
+}

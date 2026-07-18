@@ -1,0 +1,14 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Slashes 1\" (Lines); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Lines/Slashes 1.png",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 9,
+      "verdict": "pass",
+      "critique": "The render convincingly matches a glowing diagonal-slash Form preset: dense gold/orange parallel streaks sweep from lower-left to upper-right over black, with a layered mix of hairline slashes, soft broad trails, and bright yellow-white cores. The frame-to-frame evolution is coherent: the concentrated luminous band travels toward the lower-left between t1 and t4 while preserving the same slash direction and texture."
+    }
+  ]
+}

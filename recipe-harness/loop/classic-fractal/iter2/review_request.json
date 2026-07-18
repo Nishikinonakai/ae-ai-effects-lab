@@ -1,0 +1,176 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Classic Fractal\" (Fractals); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Fractals/Classic Fractal.png",
+  "pass_criteria": [],
+  "iteration": 2,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Form",
+        "params": [
+          [
+            "tc Form-0489",
+            2,
+            "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+          ],
+          [
+            "tc Form-0012",
+            182.586669921875,
+            "FXid_BaseShapeAngleX (exact-name, high)"
+          ],
+          [
+            "tc Form-0010",
+            [
+              640,
+              360
+            ],
+            "FXid_BaseShapeCenter (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0007",
+            800,
+            "FXid_BaseShapeParticlesX (exact-name, high)"
+          ],
+          [
+            "tc Form-0008",
+            800,
+            "FXid_BaseShapeParticlesY (exact-name, high)"
+          ],
+          [
+            "tc Form-0009",
+            1,
+            "FXid_BaseShapeParticlesZ (exact-name, high)"
+          ],
+          [
+            "tc Form-0004",
+            2500,
+            "FXid_BaseShapeSizeX (exact-name, high)"
+          ],
+          [
+            "tc Form-0005",
+            1400,
+            "FXid_BaseShapeSizeY (exact-name, high)"
+          ],
+          [
+            "tc Form-0006",
+            200,
+            "FXid_BaseShapeSizeZ (exact-name, high)"
+          ],
+          [
+            "tc Form-0016",
+            13,
+            "FXid_StringDensity (default-pair, high)"
+          ],
+          [
+            "tc Form-0017",
+            8,
+            "FXid_StringSizeRnd (exact-name, high)"
+          ],
+          [
+            "tc Form-0020",
+            2,
+            "FXid_StringTaperOpac (exact-name+enumOffset, high)"
+          ],
+          [
+            "tc Form-0019",
+            2,
+            "FXid_StringTaperSize (exact-name+enumOffset, high)"
+          ],
+          [
+            "tc Form-0037",
+            2,
+            "FXid_PTMode (ranked-candidate+enumOffset, med)"
+          ],
+          [
+            "tc Form-0033",
+            1,
+            "FXid_PSizeMax (exact-name, high)"
+          ],
+          [
+            "tc Form-0035",
+            64,
+            "FXid_POpacMax (default-pair, high)"
+          ],
+          [
+            "tc Form-0042",
+            1,
+            "FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]"
+          ],
+          [
+            "tc Form-0036",
+            [
+              0.3,
+              0.48,
+              0.82,
+              1
+            ],
+            "FXid_PColor (default-pair, high) [flattened ColorMapArb]"
+          ],
+          [
+            "tc Form-0420",
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+          ],
+          [
+            "tc Form-0166",
+            524,
+            "FXid_FAffectPosX (exact-name, high)"
+          ],
+          [
+            "tc Form-0173",
+            1,
+            "FXid_FLoop (exact-name, high)"
+          ],
+          [
+            "tc Form-0174",
+            10,
+            "FXid_FLoopTime (exact-name, high)"
+          ],
+          [
+            "tc Form-0180",
+            3,
+            "FXid_FScale (exact-name, high)"
+          ],
+          [
+            "tc Form-0170",
+            -100,
+            "FXid_FlowY (exact-name, high)"
+          ],
+          [
+            "tc Form-0187",
+            100,
+            "FXid_D1Strength (default-pair, high)"
+          ]
+        ]
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/classic-fractal/iter2/classic-fractal_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/classic-fractal/iter2/classic-fractal_i2_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The render strongly captures the Classic Fractal character: a dense black-field particle lattice, thin flowing string contours, bright caustic-like crossings, and substantial organic evolution between frames. The central circular void/field feature also remains coherently placed through the motion. The main visible compromise is color: the result is largely white/gray-blue, so it lacks the richer cool-blue separation and tonal depth associated with the preset thumbnail; the brightest contours clip toward white and flatten the particle detail."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

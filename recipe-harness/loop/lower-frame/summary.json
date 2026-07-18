@@ -1,0 +1,14 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Lower Frame\" (Lines); reference thumbnail: none shipped",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "Recognizable Lower Frame (Lines) treatment: a luminous mint/cyan bundle of fine parallel lines sweeps from the lower-left corner in a soft curved frame shape against clean black. The glow and dense white leading edge read well, and the t1-to-t4 displacement is subtle, smooth, and appropriate for an ambient Form preset motion."
+    }
+  ]
+}

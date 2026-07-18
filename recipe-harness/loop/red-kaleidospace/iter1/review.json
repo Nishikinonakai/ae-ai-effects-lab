@@ -1,0 +1,15 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The still design strongly matches the intended Red Kaleidospace look: a dense red particle-mesh ring with bright folded filaments, dark central void, and black background. However, frames 1 and 4 appear visually identical, so the preset's organic evolving/kaleidoscopic motion is not coming through. The render currently reads as a strong static frame rather than a living Form preset animation.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Form",
+      "matchName": "tc Form-0172",
+      "expression": "time*20",
+      "why": "Drive Evolution continuously so the folded particle mesh visibly morphs between frames while retaining the existing red kaleidoscopic form."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

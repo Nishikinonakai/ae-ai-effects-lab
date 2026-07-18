@@ -1,0 +1,175 @@
+{
+  "status": "done",
+  "name": "left-frame_i1",
+  "params": [
+    {
+      "p": "[1:tc Form] FXid_BaseShape (default-pair+enumOffset, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeOption (exact-name+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PType (default-pair+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeCenter (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesY (exact-name, high)",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesZ (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeX (exact-name, high)",
+      "ok": true,
+      "v": "2510"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeY (exact-name, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeZ (exact-name, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_StringDensity (default-pair, high)",
+      "ok": true,
+      "v": "6"
+    },
+    {
+      "p": "[1:tc Form] FXid_StringTaperSize (exact-name+enumOffset, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PTMode (ranked-candidate+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_Settings_Glow_Feather (default-pair, high)",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[1:tc Form] FXid_Settings_Glow_Opacity (default-pair, high)",
+      "ok": true,
+      "v": "14"
+    },
+    {
+      "p": "[1:tc Form] FXid_Settings_Glow_Size (default-pair, high)",
+      "ok": true,
+      "v": "331"
+    },
+    {
+      "p": "[1:tc Form] FXid_Settings_Glow_TransferMode (default-pair+enumOffset, high)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_PSizeMax (exact-name, high)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_OpacityCurveOver (exact-name+enumOffset, high)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_POpacMax (default-pair, high)",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Form] FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_PColor (default-pair, high) [flattened ColorMapArb]",
+      "ok": true,
+      "v": "0.95375001430511,0.375,0"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Color (default-pair, med)",
+      "ok": true,
+      "v": "0,0,0,1"
+    },
+    {
+      "p": "[1:tc Form] FXid_SDTwisterAmount (default-pair, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectPosX (exact-name, high)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Form] FXid_FLoop (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_FScale (exact-name, high)",
+      "ok": true,
+      "v": "7"
+    },
+    {
+      "p": "[1:tc Form] FXid_FlowX (exact-name, high)",
+      "ok": true,
+      "v": "64"
+    },
+    {
+      "p": "[1:tc Form] FXid_FractalStrengthOver (exact-name+enumOffset, high)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_RWPosX (default-pair, high)",
+      "ok": true,
+      "v": "-300"
+    },
+    {
+      "p": "[1:tc Form] FXid_RWScale (default-pair, high)",
+      "ok": true,
+      "v": "106"
+    },
+    {
+      "p": "[1:tc Form] FXid_RWX (default-pair, high)",
+      "ok": true,
+      "v": "85.3000030517578"
+    },
+    {
+      "p": "[1:tc Form] FXid_RWY (default-pair, high)",
+      "ok": true,
+      "v": "-90"
+    },
+    {
+      "p": "[1:tc Form] FXid_RWZ (default-pair, high)",
+      "ok": true,
+      "v": "-149"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/left-frame/iter1/left-frame_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/left-frame/iter1/left-frame_i1_t4.png"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Streaklet Twist\" (Lines); reference thumbnail: none shipped",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 2,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render convincingly produces the core Streaklet Twist look: many thin lime-green line streaks sweep through a tight curled/twisted formation against clean black, with good density and depth layering. However, frames 1 and 4 are visually identical, so the result has no discernible motion. A preset named Streaklet Twist should read as an actively rotating/twisting streak system rather than a static line sculpture."
+    },
+    {
+      "iter": 2,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "Motion is now clearly present: frame 4 has rotated into a substantially different swept/twisted configuration from frame 1. The lime-on-black line treatment and dense streaklet layering read correctly. However, the visible structure is dominated by very long, broad arcs that run off both sides of frame; the actual twist/curl is small and pushed toward the left edge in frame 4. A Streaklet Twist preset should retain a more compact, legible twisted focal mass within the frame rather than reading primarily as cropped parallel ribbons."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The lime-green-on-black Streaklet line treatment is clean and the frames now show clear rotation between t1 and t4. However, the visible result is still dominated by long, smooth ribbon arcs that are heavily cropped by both horizontal edges. The actual twisted convergence is weak and displaced leftward, especially at t4, so it reads more like flowing parallel strands than a compact Streaklet Twist focal mass."
+    }
+  ]
+}

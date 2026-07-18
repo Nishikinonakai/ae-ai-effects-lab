@@ -1,0 +1,26 @@
+{
+  "intent": "vendor preset \"Falling Sparks\" (Smoke and Fire) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 3,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The render has the correct black-background ember palette and the particles do drift downward between t1 and t4, but it reads as a tiny, sparse cluster of pixel-sized dots near the center rather than the visibly substantial falling-sparks shower expected from the preset thumbnail. Spark coverage, brightness, and apparent particle scale are all far too low; the short lifetime also keeps the falling trail compact."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The black background, fiery yellow/orange/red palette, and clearly downward motion from t1 to t4 now read as falling sparks. Density is improved, but the effect remains a narrow, centered vertical plume with very small dot-like particles. It lacks the broader, more substantial shower and longer descending field expected of the Falling Sparks thumbnail; the bright source cluster is also too compact relative to the frame."
+    },
+    {
+      "iter": 3,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render now clearly reads as fiery falling sparks: it has a black background, dense yellow/orange/red embers, visible glow, and the t4 frame shows the particle mass descending. However, it remains a tight, centered column rather than the wider, more dispersed falling-sparks shower indicated by the preset thumbnail. The source and trail are still compact, with small bead-like particles and insufficient lateral spread; the field should occupy substantially more width and persist farther downward."
+    }
+  ]
+}

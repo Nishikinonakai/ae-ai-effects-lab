@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render has the core preset language: luminous magenta/pink diagonal particle strings on black, with fine secondary strands and some fractal breakup. However, it reads more as a set of broad, nearly parallel light bars than a controlled fractal-line field. The composition is very uneven across time: frame 1 is mostly empty black with a few isolated streak groups, while frame 4 becomes heavily packed and clips into a very bright central-right mass. The motion between frames is therefore an excessive lateral sweep/repopulation rather than a more consistently distributed evolving fractal texture.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0169",
+      "value": 120,
+      "why": "Reduce the extreme fractal-flow displacement so the line field evolves without sweeping most of the composition from sparse to overloaded."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0159",
+      "value": 60,
+      "why": "Lower dispersion to keep the strings visually related as a fractal line structure and reduce the large empty-black gaps between clusters."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0172",
+      "value": 75,
+      "why": "Slow the evolution phase so brightness and line placement change more smoothly between sampled times instead of producing a drastic composition shift."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

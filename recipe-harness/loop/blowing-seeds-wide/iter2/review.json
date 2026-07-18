@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The sprite imagery now reads as individual dandelion seeds rather than intact flower heads, which is closer to the intended botanical look. However, both frames still show seeds born across a broad, nearly full-comp band. From t1 to t4 the dominant change is a denser random field, not a clearly wind-driven dispersal plume emerging from one source and traveling wide. The visible long seed stems also make the drift feel mostly upright/static rather than carried laterally by air.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 10,
+      "why": "Collapse the grid emitter's broad horizontal birth area so the seeds originate from a localized source instead of appearing everywhere at once."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0015",
+      "value": 10,
+      "why": "Collapse the vertical birth area to make the motion read as dispersal from one source."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0016",
+      "value": 10,
+      "why": "Remove the very deep emitter volume, preventing particles from being initially distributed throughout the frame at different depths."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 35,
+      "why": "Tighten the directional spread so the particles form a recognizable wind-blown plume before widening downstream."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

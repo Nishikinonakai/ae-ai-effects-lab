@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The black background, luminous amber particle color, and dense filament/dot rendering are convincing. Frame 1 is relatively compact, but it reads as a folded rosette with multiple rolled lobes rather than a unified liquid drop. By frame 4 it breaks into a tall, stringy turbulent plume with separated curls and a porous interior. The motion is substantially too violent and deforming for the intended cohesive Single Drop behavior.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0567",
+      "value": 20,
+      "why": "Reducing the very strong X fluid flow will prevent the compact mass from shearing into the broad, vertically ragged plume seen at t4."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0556",
+      "value": 20,
+      "why": "Lower vortex strength so the particle field retains one rounded core instead of repeatedly rolling into distinct lobes and protruding tendrils."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0563",
+      "value": 5,
+      "why": "Reduce random X swirl, which is contributing to the broken outer contour and detached-looking curls."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0564",
+      "value": 4,
+      "why": "Reduce random Y swirl to keep the drop compact rather than stretching it into a tall irregular mass over time."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

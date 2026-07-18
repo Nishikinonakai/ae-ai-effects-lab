@@ -1,0 +1,14 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Basic Fractal Sphere\" (Basics); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Basic Fractal Sphere.png",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 9,
+      "verdict": "pass",
+      "critique": "The render convincingly matches a Basic Fractal Sphere: a dense cyan-blue point-field sphere on black, with layered fractal-like ripples, bright contour ridges, and organic surface deformation. The sphere remains centered and consistently scaled between frames while its internal folds and outer silhouette evolve naturally, giving the intended animated procedural motion."
+    }
+  ]
+}

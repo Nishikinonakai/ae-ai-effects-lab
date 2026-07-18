@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render successfully uses ornate gold holiday-ornament sprites on black, with a broad Form-style field and visible evolving deformation between t1 and t4. However, the particles are substantially overpacked: many bulbs merge into dense, muddy vertical piles, obscuring the individual bulb silhouette and leaving irregular large black voids. The result reads more like clustered ornament debris than a clean, intentionally structured Shape Grids preset. Motion is present, but the rapid rearrangement of the dense clusters makes the grid/form structure hard to perceive.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0033",
+      "value": 40,
+      "why": "Reduce maximum particle size so individual bulbs separate from one another, restoring recognizable ornament silhouettes and a clearer Shape Grids structure."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0034",
+      "value": 42,
+      "why": "Lower size randomness to prevent oversized bulbs from dominating and collapsing the field into uneven clumps."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

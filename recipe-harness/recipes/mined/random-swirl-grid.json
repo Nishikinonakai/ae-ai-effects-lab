@@ -1,0 +1,274 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC15/Presets/Form/Fluid/Random Swirl Grid.xbxc",
+  "_pack": "TC15",
+  "_category": "Fluid",
+  "_effect": "tc Form",
+  "_map_coverage": "31 mapped / 0 unmapped / 5 curves",
+  "_unmapped": [],
+  "_notes": [
+    "low-conf skipped: FXid_OBJSequenceControlType",
+    "low-conf skipped: FXid_TextDensity",
+    "low-conf skipped: FXid_FluidDensity"
+  ],
+  "intent": "Reproduce the vendor Form preset \"Random Swirl Grid\" (Fluid); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC15/Form/Fluid/Random Swirl Grid.png",
+  "name": "random-swirl-grid",
+  "compName": "MinedForm_RandomSwirlGrid",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0553",
+          1,
+          "FXid_FluidEnable (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0007",
+          100,
+          "FXid_BaseShapeParticlesX (exact-name, high)"
+        ],
+        [
+          "tc Form-0008",
+          100,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          1,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          2500,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0005",
+          1400,
+          "FXid_BaseShapeSizeY (exact-name, high)"
+        ],
+        [
+          "tc Form-0006",
+          0,
+          "FXid_BaseShapeSizeZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0542",
+          [
+            0,
+            0,
+            0
+          ],
+          "FXid_RelativePosition (exact-name, med)"
+        ],
+        [
+          "tc Form-0016",
+          13,
+          "FXid_StringDensity (default-pair, high)"
+        ],
+        [
+          "tc Form-0017",
+          4,
+          "FXid_StringSizeRnd (exact-name, high)"
+        ],
+        [
+          "tc Form-0020",
+          2,
+          "FXid_StringTaperOpac (exact-name+enumOffset, high)"
+        ],
+        [
+          "tc Form-0019",
+          2,
+          "FXid_StringTaperSize (exact-name+enumOffset, high)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0035",
+          72,
+          "FXid_POpacMax (default-pair, high)"
+        ],
+        [
+          "tc Form-0042",
+          1,
+          "FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.42499999701976776,
+            0.5150000117719173,
+            0.6800000071525574,
+            1
+          ],
+          "FXid_PColor (default-pair, high) [flattened ColorMapArb]"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0592",
+          5,
+          "FXid_FluidForceLife (default-pair, high)"
+        ],
+        [
+          "tc Form-0566",
+          45,
+          "FXid_FluidViscosity (default-pair, high)"
+        ],
+        [
+          "tc Form-0590",
+          [
+            0,
+            0,
+            0
+          ],
+          "FXid_FluidVortexRelPos (default-pair, med)"
+        ],
+        [
+          "tc Form-0563",
+          4,
+          "FXid_RandomSwirlX (exact-name, high)"
+        ],
+        [
+          "tc Form-0594",
+          30,
+          "FXid_SwirlScale (exact-name, high)"
+        ],
+        [
+          "tc Form-0166",
+          67,
+          "FXid_FAffectPosX (exact-name, high)"
+        ],
+        [
+          "tc Form-0173",
+          1,
+          "FXid_FLoop (exact-name, high)"
+        ],
+        [
+          "tc Form-0174",
+          10,
+          "FXid_FLoopTime (exact-name, high)"
+        ],
+        [
+          "tc Form-0180",
+          3,
+          "FXid_FScale (exact-name, high)"
+        ],
+        [
+          "tc Form-0170",
+          -100,
+          "FXid_FlowY (exact-name, high)"
+        ],
+        [
+          "tc Form-0187",
+          100,
+          "FXid_D1Strength (default-pair, high)"
+        ],
+        [
+          "tc Form-0206",
+          [
+            640,
+            360
+          ],
+          "FXid_KCenterXY (ranked-candidate, med)"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0017",
+          "value": 4,
+          "why": "Reduce the extreme particle/string size variation so the underlying swirling grid structure remains readable instead of being dominated by scattered large bright dots."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0035",
+          "value": 72,
+          "why": "Slightly raise particle opacity to retain visible fine swirl strands after reducing the oversized-particle emphasis."
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "for_iter": 3,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0009",
+          "value": 1,
+          "why": "Collapse the six depth layers into a single lattice so the grid reads as a coherent surface instead of a volumetric starfield."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0006",
+          "value": 0,
+          "why": "Remove the very large Z extent that creates oversized near particles and obscures the underlying XY grid structure."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0563",
+          "value": 4,
+          "why": "Reduce random swirl displacement so the fluid motion bends the grid into legible swirling bands rather than rapidly breaking it into scattered clumps."
+        }
+      ],
+      "skipped": []
+    }
+  ],
+  "_validated": {
+    "round": "dim-gpt-r1",
+    "verdict": "match",
+    "backend": "gpt-api:gpt-5.6-terra",
+    "score": 9,
+    "tuned_by": "tune_loop headless",
+    "pass_iter": 3
+  }
+}

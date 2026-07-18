@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The render has the correct black-background, cool blue particle-field character and does show fluid-driven random swirls that change substantially between the two frames. However, it reads more as a dense, noisy starfield than a clearly legible swirling grid: the organized grid/strand structure is weak, with large uneven clumps and many oversized bright particles competing with the finer motion. The forced single slate-blue color also reduces the richer vendor-preset-style tonal separation.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0017",
+      "value": 4,
+      "why": "Reduce the extreme particle/string size variation so the underlying swirling grid structure remains readable instead of being dominated by scattered large bright dots."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0035",
+      "value": 72,
+      "why": "Slightly raise particle opacity to retain visible fine swirl strands after reducing the oversized-particle emphasis."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

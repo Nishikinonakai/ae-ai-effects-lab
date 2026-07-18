@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render has the correct overall ingredients for Horizontal Smoke 1: a centered, wide horizontal white smoke band on black, soft smoky breakup, and visible evolution between t1 and t4. However, it reads as a row of bright, discrete sprite clumps rather than one continuous drifting smoke plume. Strong dark seams and repeated bright lobes are especially visible across the center and at the right edge, making the result look tiled/segmented instead of naturally blended like the preset thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 50,
+      "why": "Increase particle density so adjacent smoke sprites overlap more fully and reduce the conspicuous separated bright lobes."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 100,
+      "why": "Slightly reduce individual particle size so the large hard-edged sprite interiors do not form dominant repeated knots while the higher birth rate fills the plume continuously."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

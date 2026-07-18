@@ -1,0 +1,26 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Fractal Lines\" (Lines); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Lines/Fractal Lines.png",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render has the core preset language: luminous magenta/pink diagonal particle strings on black, with fine secondary strands and some fractal breakup. However, it reads more as a set of broad, nearly parallel light bars than a controlled fractal-line field. The composition is very uneven across time: frame 1 is mostly empty black with a few isolated streak groups, while frame 4 becomes heavily packed and clips into a very bright central-right mass. The motion between frames is therefore an excessive lateral sweep/repopulation rather than a more consistently distributed evolving fractal texture."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render retains the intended black-and-magenta Form string aesthetic, and motion from t1 to t4 is now relatively stable rather than the severe repopulation seen previously. However, the image is still dominated by long, smooth, evenly spaced parallel bars. It reads as a cropped diagonal line grid, not a dense fractal-line field: the visible size modulation is too subtle, the strands have little internal variation, and several thick foreground strings are visually overpowering. The lower-edge spike groups also create an accidental clipped look rather than an evenly distributed fractal texture."
+    },
+    {
+      "iter": 3,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The black background and hot magenta Form-string palette are on target, and the two frames show a reasonably continuous evolving field rather than the severe empty-to-overpacked jump seen earlier. However, both frames still read primarily as long, smooth, uniformly angled streaks with repeated tapered capsules. The large bright strings dominate the image, especially at left in t1 and right/center in t4, while much of the frame remains empty black. There is very little visible fine-scale branching, turbulent fragmentation, or layered fractal detail, so it does not yet resemble the dense, intricate Fractal Lines preset."
+    }
+  ]
+}

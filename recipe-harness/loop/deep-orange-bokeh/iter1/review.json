@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The render establishes the intended black-field, deep-orange bokeh look, with large soft circular sprites and clear drift between t1 and t4. However, it is substantially too sparse and underexposed visually: most of each frame is empty black, the discs read as very dark brown rather than deep orange, and the abrupt travel leaves t4 nearly devoid of meaningful bokeh. The sparse oversized circles also expose faint central sprite artifacts instead of producing a richer layered bokeh field.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0033",
+      "value": 650,
+      "why": "Reduce the extremely oversized particle diameter so more of the 5x4 particle field can remain visible at once and the composition reads as layered bokeh rather than a few cropped circles."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0035",
+      "value": 65,
+      "why": "Raise maximum opacity to make the orange bokeh read clearly as deep orange against black instead of near-black brown."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0171",
+      "value": 15,
+      "why": "Slow Z flow so particles do not vacate the frame so dramatically between t1 and t4, preserving a denser and more stable bokeh composition."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

@@ -1,0 +1,26 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Holiday Bulbs\" (Shape Grids); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Shape Grids/Holiday Bulbs.png",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 2,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render successfully uses ornate gold holiday-ornament sprites on black, with a broad Form-style field and visible evolving deformation between t1 and t4. However, the particles are substantially overpacked: many bulbs merge into dense, muddy vertical piles, obscuring the individual bulb silhouette and leaving irregular large black voids. The result reads more like clustered ornament debris than a clean, intentionally structured Shape Grids preset. Motion is present, but the rapid rearrangement of the dense clusters makes the grid/form structure hard to perceive."
+    },
+    {
+      "iter": 2,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The gold ornament sprite, black background, and animated Form-field behavior are convincingly in the Holiday Bulbs direction. Compared with the prior render, individual bulb silhouettes are much clearer and the frames retain visible time-based movement. However, the field is still dominated by pronounced irregular black voids and bands of tightly packed bulbs, so it reads as a heavily distorted particle cloud rather than a clean Shape Grids arrangement. The very strong twister deformation is the main cause of the fragmented grid structure; size randomness also makes local rows feel uneven."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The ornate gold ornament sprite, black field, and animated Form behavior strongly evoke the Holiday Bulbs preset. Individual bulbs are now mostly legible and the movement between t1 and t4 is present without becoming completely chaotic. However, the particle field still breaks into broad, irregular black channels and dense clumps rather than reading as a consistently organized Shape Grids pattern. The remaining twister/flow deformation is creating disconnected bands, while the randomized bulb scale makes the local grid spacing feel uneven."
+    }
+  ]
+}

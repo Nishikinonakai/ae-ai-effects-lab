@@ -1,0 +1,26 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Flight Plasma\" (Fractals); reference thumbnail: none shipped",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 3,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render has a strong Flight Plasma look: dense magenta/purple particle ribbons, luminous white-hot intersections, black background, and broad flowing fractal contours. However, frames 1 and 4 are visually identical, so the essential animated plasma/flight motion is absent. The form also reads slightly over-bright in the central crossing areas, reducing some of the fine particle definition."
+    },
+    {
+      "iter": 2,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The render strongly matches the expected Flight Plasma character: a wide, dense magenta-violet fractal particle ribbon on black with layered flowing sheets and bright plasma filaments. Unlike the prior iteration, frames 1 and 4 now have clearly different contour layouts, confirming active animated evolution. The remaining issue is that the dense central overlaps clip toward near-white, making the middle read as a blown-out luminous band and obscuring some of the fine particle structure that is visible around the edges."
+    },
+    {
+      "iter": 3,
+      "score": 9,
+      "verdict": "pass",
+      "critique": "The result convincingly delivers the Flight Plasma look: dense magenta-violet fractal particle sheets, bright energetic plasma filaments, deep black negative space, and broad flowing ribbon contours. Frames 1 and 4 have clearly different formations, confirming active fractal animation rather than a static render. The brightest crossings are appropriately plasma-like while retaining substantial surrounding particle detail."
+    }
+  ]
+}

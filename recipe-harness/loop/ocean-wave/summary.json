@@ -1,0 +1,14 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Ocean Wave\" (Spin Dots); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Spin Dots/Ocean Wave.png",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 9,
+      "verdict": "pass",
+      "critique": "The render convincingly matches an Ocean Wave / Spin Dots look: a dense teal particle-field wave on black, sweeping inward through a narrow central pinch and expanding toward the edges. The fine dotted strands and brighter curled detail along the upper-right crest give it the characteristic spinning, flowing behavior. Across frames 1 and 4, the wave deformation advances subtly and coherently without a static or popping appearance."
+    }
+  ]
+}

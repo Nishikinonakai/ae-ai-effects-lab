@@ -1,0 +1,26 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Random Swirl Grid\" (Fluid); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC15/Form/Fluid/Random Swirl Grid.png",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 3,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render has the correct black-background, cool blue particle-field character and does show fluid-driven random swirls that change substantially between the two frames. However, it reads more as a dense, noisy starfield than a clearly legible swirling grid: the organized grid/strand structure is weak, with large uneven clumps and many oversized bright particles competing with the finer motion. The forced single slate-blue color also reduces the richer vendor-preset-style tonal separation."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The cool blue-on-black Form particle treatment and evolving fluid motion are present, but the result still reads primarily as a deep noisy starfield. At t1 there are only faint hints of a grid, while by t4 the structure has fragmented into uneven clumps and scattered large foreground particles. The intended organized, planar grid being warped into readable random swirl patterns is not yet visually dominant."
+    },
+    {
+      "iter": 3,
+      "score": 9,
+      "verdict": "pass",
+      "critique": "The render now clearly reads as a planar particle grid being organically warped by fluid random-swirl forces. Both frames retain orderly dot rows while showing large, smooth vortex-like bends and voids that evolve substantially from t1 to t4. The sparse cool-blue particles on black match the intended Form fluid-preset character without the earlier noisy starfield/clumping problem."
+    }
+  ]
+}

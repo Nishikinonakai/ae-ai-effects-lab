@@ -1,0 +1,205 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Flight Plasma\" (Fractals); reference thumbnail: none shipped",
+  "pass_criteria": [],
+  "iteration": 2,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Form",
+        "params": [
+          [
+            "tc Form-0489",
+            2,
+            "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+          ],
+          [
+            "tc Form-0010",
+            [
+              640,
+              360
+            ],
+            "FXid_BaseShapeCenter (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0007",
+            300,
+            "FXid_BaseShapeParticlesX (exact-name, high)"
+          ],
+          [
+            "tc Form-0008",
+            1,
+            "FXid_BaseShapeParticlesY (exact-name, high)"
+          ],
+          [
+            "tc Form-0009",
+            300,
+            "FXid_BaseShapeParticlesZ (exact-name, high)"
+          ],
+          [
+            "tc Form-0004",
+            1000,
+            "FXid_BaseShapeSizeX (exact-name, high)"
+          ],
+          [
+            "tc Form-0005",
+            200,
+            "FXid_BaseShapeSizeY (exact-name, high)"
+          ],
+          [
+            "tc Form-0006",
+            1000,
+            "FXid_BaseShapeSizeZ (exact-name, high)"
+          ],
+          [
+            "tc Form-0037",
+            2,
+            "FXid_PTMode (ranked-candidate+enumOffset, med)"
+          ],
+          [
+            "tc Form-0036",
+            [
+              0.47843137254901963,
+              0.13725490196078433,
+              0.8,
+              1
+            ],
+            "FXid_PColor (default-pair, high)"
+          ],
+          [
+            "tc Form-0420",
+            [
+              0.25098039215686274,
+              0.25098039215686274,
+              0.25098039215686274,
+              1
+            ],
+            "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+          ],
+          [
+            "tc Form-0421",
+            50,
+            "FXid_Options_SmokeletShadow_ColorStrength (default-pair, med)"
+          ],
+          [
+            "tc Form-0422",
+            50,
+            "FXid_Options_SmokeletShadow_Opacity (default-pair, med)"
+          ],
+          [
+            "tc Form-0166",
+            -320,
+            "FXid_FAffectPosX (exact-name, high)"
+          ],
+          [
+            "tc Form-0167",
+            -200,
+            "FXid_FAffectPosY (exact-name, high)"
+          ],
+          [
+            "tc Form-0168",
+            179,
+            "FXid_FAffectPosZ (exact-name, high)"
+          ],
+          [
+            "tc Form-0181",
+            4,
+            "FXid_FComplex (default-pair, high)"
+          ],
+          [
+            "tc Form-0172",
+            30,
+            "FXid_FEvolution (default-pair, high)"
+          ],
+          [
+            "tc Form-0173",
+            1,
+            "FXid_FLoop (exact-name, high)"
+          ],
+          [
+            "tc Form-0174",
+            3,
+            "FXid_FLoopTime (exact-name, high)"
+          ],
+          [
+            "tc Form-0179",
+            1.7800000000000002,
+            "FXid_FMax (exact-name, high)"
+          ],
+          [
+            "tc Form-0180",
+            5,
+            "FXid_FScale (exact-name, high)"
+          ],
+          [
+            "tc Form-0171",
+            -500,
+            "FXid_FlowZ (exact-name, high)"
+          ],
+          [
+            "tc Form-0527",
+            [
+              -614400,
+              -194400,
+              194400
+            ],
+            "FXid_D1Pos (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0528",
+            [
+              -614400,
+              -194400,
+              194400
+            ],
+            "FXid_D2Pos (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0608",
+            [
+              -614400,
+              -194400,
+              194400
+            ],
+            "FXid_KCenter (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0210",
+            10,
+            "FXid_RWX (default-pair, high)"
+          ]
+        ],
+        "expressions": [
+          [
+            "tc Form-0172",
+            "time*30",
+            "Drive Fractal Evolution continuously so  [i2]"
+          ]
+        ]
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/flight-plasma/iter2/flight-plasma_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/flight-plasma/iter2/flight-plasma_i2_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render has a strong Flight Plasma look: dense magenta/purple particle ribbons, luminous white-hot intersections, black background, and broad flowing fractal contours. However, frames 1 and 4 are visually identical, so the essential animated plasma/flight motion is absent. The form also reads slightly over-bright in the central crossing areas, reducing some of the fine particle definition."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

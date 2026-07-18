@@ -1,0 +1,26 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Classic Fractal\" (Fractals); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Fractals/Classic Fractal.png",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The render strongly captures the Classic Fractal character: a dense black-field particle lattice, thin flowing string contours, bright caustic-like crossings, and substantial organic evolution between frames. The central circular void/field feature also remains coherently placed through the motion. The main visible compromise is color: the result is largely white/gray-blue, so it lacks the richer cool-blue separation and tonal depth associated with the preset thumbnail; the brightest contours clip toward white and flatten the particle detail."
+    },
+    {
+      "iter": 2,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The render closely matches the Classic Fractal look: dense blue particle-line fields on black, sweeping fractal-like ribbons, crisp bright convergence points, and a clearly animated evolving structure between t1 and t4. The remaining mismatch is tonal: several ribbon intersections and edge contours blow out to near-white, reducing the layered cool-blue depth and making parts of the particle lattice look flatter than the preset's richer blue separation."
+    },
+    {
+      "iter": 3,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The render strongly matches the Classic Fractal character: dense orderly particle strings on black, broad flowing fractal ribbons, a central circular void, and clearly evolving geometry between t1 and t4. The cool-blue palette is substantially closer than the initial pass. The remaining visual mismatch is tonal compression at the brightest convergence points and ribbon edges: these areas still rise to pale cyan/near-white, flattening the fine particle detail and reducing the darker layered blue separation expected from the preset."
+    }
+  ]
+}

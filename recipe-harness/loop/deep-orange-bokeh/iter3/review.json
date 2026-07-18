@@ -1,0 +1,48 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The black background, warm orange palette, soft circular sprite treatment, and subtle motion between t1 and t4 are directionally correct. However, both frames remain too sparse for a rich Deep Orange Bokeh field, with large uninterrupted black areas and a very uniform distribution of oversized discs. The orange is still muddy and low-luminance rather than glowing deep orange, while several particles retain visible dark center/sprite texture artifacts. The t1-to-t4 evolution is modest and consistent, but density and layered size variation need improvement more than additional travel.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0007",
+      "value": 12,
+      "why": "Increase horizontal particle population so the field remains visually full rather than leaving broad empty black regions."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0008",
+      "value": 9,
+      "why": "Increase vertical particle population to create the richer, more continuous bokeh layering expected from the preset."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0033",
+      "value": 330,
+      "why": "Reduce the dominant maximum disc size so the increased population reads as a layered bokeh field instead of a small number of uniformly oversized circles."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0034",
+      "value": 70,
+      "why": "Broaden size randomness to introduce a more natural mix of small and large bokeh discs and reduce the uniform-circle appearance."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0036",
+      "value": [
+        1,
+        0.55,
+        0.16,
+        1
+      ],
+      "why": "Lift the orange toward a more luminous saturated deep-orange appearance rather than the current muddy brown."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}
