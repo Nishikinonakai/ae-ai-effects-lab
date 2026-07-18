@@ -1257,12 +1257,12 @@
         [
           "tc Particular-0070",
           [
-            0.375,
-            0.75,
-            0.375,
+            1,
+            1,
+            1,
             1
           ],
-          "FXid_PColor (alias) [flattened col.life gradient]"
+          "FXid_PColor (alias)"
         ],
         [
           "tc Particular-0071",
@@ -1271,8 +1271,8 @@
         ],
         [
           "tc Particular-0088",
-          1,
-          "FXid_PSetColor (alias+enumOffset) [forced At Birth: gradient unscriptable]"
+          4,
+          "FXid_PSetColor (alias+enumOffset)"
         ],
         [
           "tc Particular-0033",

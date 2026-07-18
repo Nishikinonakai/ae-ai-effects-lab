@@ -392,7 +392,18 @@ for (const file of files) {
   // The gradient lives in EITHER rg.custom.col.life OR FXid_PColorOverLifeArb (same
   // PosP/PosR/PosG/PosB shape; candle-flame-class presets use the FXid form — found 2026-07-17).
   const setColor = params.find(p => p[0] === 'tc Particular-0088');
-  const colLife = curves['rg.custom.col.life'] || flat.FXid_PColorOverLifeArb;
+  let colLife = curves['rg.custom.col.life'] || flat.FXid_PColorOverLifeArb;
+  // untouched-default guard (rising-bubbles 2026-07-18): Designer serializes a default
+  // RAINBOW col.life gradient (red→green→blue; its weighted mean is the notorious
+  // [0.375,0.75,0.375] green) even when the artist never opened the widget. Flattening
+  // or sweeping it destroys the authored flat PColor — treat default as absent.
+  if (colLife?.PosP?.length > 1) {
+    const mAll = ch => { const P = colLife.PosP, span = P[P.length - 1] - P[0] || 1; let s = 0;
+      for (let i = 0; i < P.length - 1; i++) s += (((ch[i] ?? 0) + (ch[i + 1] ?? 0)) / 2) * (P[i + 1] - P[i]);
+      return s / span; };
+    const m = [mAll(colLife.PosR || []), mAll(colLife.PosG || []), mAll(colLife.PosB || [])];
+    if (Math.abs(m[0] - 0.375) < 0.01 && Math.abs(m[1] - 0.75) < 0.01 && Math.abs(m[2] - 0.375) < 0.01) colLife = null;
+  }
   if (setColor && setColor[1] >= 2 && colLife?.PosP?.length > 1) {
     const P = colLife.PosP, span = P[P.length - 1] - P[0] || 1;
     const mean = ch => {
@@ -406,6 +417,20 @@ for (const file of files) {
     const pcol = params.find(p => p[0] === 'tc Particular-0070');
     if (pcol) { pcol[1] = flat; pcol[2] += ' [flattened col.life gradient]'; }
     else params.push(['tc Particular-0070', flat, 'flattened col.life gradient']);
+    // two-tone upgrade: when the gradient's ends differ meaningfully, sweep the BIRTH
+    // color across them over the emission window (population-level two-tone; a mean
+    // can't do teal→orange). Expression rides on top of the static mean fallback.
+    const R = colLife.PosR || [], G = colLife.PosG || [], B = colLife.PosB || [];
+    if (R.length > 1) {
+      const a = [R[0], G[0] ?? 0, B[0] ?? 0], b = [R[R.length - 1], G[G.length - 1] ?? 0, B[B.length - 1] ?? 0];
+      const dist = Math.abs(a[0] - b[0]) + Math.abs(a[1] - b[1]) + Math.abs(a[2] - b[2]);
+      if (dist > 0.25) {
+        const f = v => v.map(x => Math.round(x * 1000) / 1000).join(',');
+        expressionsOut.push(['tc Particular-0070',
+          `linear(time,0,4,[${f(a)},1],[${f(b)},1])`,
+          'birth-color sweep across gradient ends (two-tone)']);
+      }
+    }
   }
 
   // visibility floor (probed 2026-07-18 on floating-dust): sub-pixel Size (0.5) sprayed
@@ -608,6 +633,20 @@ for (const file of files) {
     'rocket-fire': 'MASTER_particular_fire', 'simple-fire': 'MASTER_particular_fire',
     'falling-sparks': 'MASTER_particular_fire',
   };
+  // light-path class: Designer's previews animate the emitter along a built-in demo
+  // path — the presets carry NO path data (verified: no keyframes in the xbxc). A
+  // synthesized lissajous sweep lets the streaklets paint their light ribbons.
+  if (['light-streaks-blue', 'light-streaks-orange', 'chemtrails'].includes(slug)) {
+    // probed 2026-07-18: 0581 Position (3D) is the LIVE emitter position (0003 XY is a
+    // dormant twin — expressions on it are inert), and 0005 is the live Particles/sec
+    // (the aliased 0146 'ParticlesPerSecF' alone leaves near-zero emission; blue ribbon
+    // painted perfectly with 0005+0581). 0146-vs-0005 semantics = round-11 worklist.
+    expressionsOut.push(['tc Particular-0581',
+      '[640 + 380*Math.sin(time*1.3), 360 + 190*Math.sin(time*2.6 + 1.2), 0]',
+      'synthesized light-painting sweep (presets ship no emitter path)']);
+    const f146 = params.find(p => p[0] === 'tc Particular-0146');
+    params.push(['tc Particular-0005', f146 ? f146[1] : 2000, 'live psec (0146 twin insufficient)']);
+  }
   const curveMaster = (!objMaster && !hasAuxS2 && CURVE_MASTER[slug]) || null;
   if (curveMaster === 'MASTER_particular_fire') {
     // the master's gradient is the point — drop the flatten's At-Birth forcing and any

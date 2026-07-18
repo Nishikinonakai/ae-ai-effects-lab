@@ -1598,7 +1598,13 @@
           "FXid_WindZ (exact)"
         ]
       ],
-      "expressions": []
+      "expressions": [
+        [
+          "tc Particular-0070",
+          "linear(time,0,4,[1,0.961,0.996,1],[1,0.176,0.02,1])",
+          "birth-color sweep across gradient ends (two-tone)"
+        ]
+      ]
     }
   ],
   "camera": null,

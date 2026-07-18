@@ -1411,7 +1411,13 @@
           "Color S2 (classic aux default white)"
         ]
       ],
-      "expressions": []
+      "expressions": [
+        [
+          "tc Particular-0070",
+          "linear(time,0,4,[1,0.4,0.251,1],[0.651,0.651,0.651,1])",
+          "birth-color sweep across gradient ends (two-tone)"
+        ]
+      ]
     }
   ],
   "camera": null,

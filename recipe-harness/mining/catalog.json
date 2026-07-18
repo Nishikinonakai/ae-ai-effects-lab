@@ -1409,7 +1409,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Light Streaks Blue.xbxc",
       "draft": "drafts/TC14/light-streaks-blue.json",
       "thumb": "thumbs/TC14/Light and Magic/Light Streaks Blue.png",
-      "mapped": 38,
+      "mapped": 39,
       "unmapped": 2,
       "curves": [
         "rg.custom.xfer.life",
@@ -1424,7 +1424,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Light Streaks Orange.xbxc",
       "draft": "drafts/TC14/light-streaks-orange.json",
       "thumb": "thumbs/TC14/Light and Magic/Light Streaks Orange.png",
-      "mapped": 38,
+      "mapped": 39,
       "unmapped": 2,
       "curves": [
         "rg.custom.xfer.life",
@@ -1956,7 +1956,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Chemtrails.xbxc",
       "draft": "drafts/TC14/chemtrails.json",
       "thumb": "thumbs/TC14/Nature/Chemtrails.png",
-      "mapped": 86,
+      "mapped": 87,
       "unmapped": 40,
       "curves": []
     },

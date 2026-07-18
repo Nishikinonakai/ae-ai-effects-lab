@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Light Streaks Orange.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "38 mapped / 2 unmapped / 3 curves",
+  "_map_coverage": "39 mapped / 2 unmapped / 3 curves",
   "_unmapped": {
     "FXid_PLayerMultiClips": 2,
     "FXid_PTMode": 2
@@ -690,9 +690,20 @@
           "tc Particular-0276",
           0,
           "FXid_PRotateY (alias)"
+        ],
+        [
+          "tc Particular-0005",
+          2000,
+          "live psec (0146 twin insufficient)"
         ]
       ],
-      "expressions": []
+      "expressions": [
+        [
+          "tc Particular-0581",
+          "[640 + 380*Math.sin(time*1.3), 360 + 190*Math.sin(time*2.6 + 1.2), 0]",
+          "synthesized light-painting sweep (presets ship no emitter path)"
+        ]
+      ]
     }
   ],
   "camera": null,

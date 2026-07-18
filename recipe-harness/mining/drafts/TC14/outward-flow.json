@@ -1356,7 +1356,13 @@
           "Color S2 (inherit main (100%))"
         ]
       ],
-      "expressions": []
+      "expressions": [
+        [
+          "tc Particular-0070",
+          "linear(time,0,4,[0.443,0.886,0.875,1],[0.57,0.32,0.16,1])",
+          "birth-color sweep across gradient ends (two-tone)"
+        ]
+      ]
     }
   ],
   "camera": null,

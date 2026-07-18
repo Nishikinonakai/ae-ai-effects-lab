@@ -1604,6 +1604,11 @@
       ],
       "expressions": [
         [
+          "tc Particular-0070",
+          "linear(time,0,4,[0.988,0.678,0.263,1],[0.886,0.427,0.012,1])",
+          "birth-color sweep across gradient ends (two-tone)"
+        ],
+        [
           "tc Particular-0146",
           "time < 0.1 ? 9830 : 0",
           "Explode -> 0.1s burst spike"

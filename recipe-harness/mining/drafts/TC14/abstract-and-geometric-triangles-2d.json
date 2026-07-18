@@ -1505,7 +1505,13 @@
           "FXid_PUnmult (alias) [after sprite connect]"
         ]
       ],
-      "expressions": []
+      "expressions": [
+        [
+          "tc Particular-0070",
+          "linear(time,0,4,[0.49,0.81,0.71,1],[0.34,0.93,0.19,1])",
+          "birth-color sweep across gradient ends (two-tone)"
+        ]
+      ]
     }
   ],
   "camera": null,

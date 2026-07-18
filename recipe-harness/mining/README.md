@@ -315,6 +315,25 @@ two-tone gradients (flatten mean can't do teal→orange; needs curve-master grad
 Random-from-Gradient translation), light-path class (needs animated light positions),
 dim-faint batch through the tune loop.
 
+## Round-10 continuation (2026-07-18 late-2): light-path cracked, Particular 55/120/11
+
+- **Light-path class SOLVED structurally**: presets ship NO emitter path (Designer's
+  preview animates a demo path). One probe frame settled two twin-pairs at once:
+  **0581 Position (3D) is LIVE** (0003 Position XY is a dormant twin — expressions on
+  it are inert) and **0005 Particles/sec is LIVE** (the aliased 0146 'ParticlesPerSecF'
+  alone leaves near-zero emission). A synthesized lissajous on 0581 + live psec paints
+  a clean blue light ribbon. 0146-vs-0005 semantics = round-11 worklist (burst spike
+  currently targets 0146 and bursts DO fire — the two may be multiplicative).
+- **Second untouched-default gradient home found**: the main col.life flatten had no
+  guard, so rising-bubbles' DEFAULT RAINBOW gradient (mean = exactly the notorious
+  [0.375,0.75,0.375] green) overwrote its authored colors — and the new birth-color
+  sweep then painted red→blue nonsense. Guard added (default ≈ absent); bubbles
+  restored. The green-mean fingerprint is now the universal untouched-default detector
+  across all three gradient homes (Form ColorMapArb, aux SE curve, main col.life).
+- **Birth-color sweep (two-tone) landed**: gradients with genuinely different ends now
+  emit `linear(time,0,4,endA,endB)` on 0070 — population-level two-tone the mean can't
+  express (floating-cells and the string/tracer family picked it up cleanly).
+
 ## Round-7 queue (by yield)
 
 1. **Render-hang class — SOLVED 2026-07-17 (reverse bisect): the drafts are

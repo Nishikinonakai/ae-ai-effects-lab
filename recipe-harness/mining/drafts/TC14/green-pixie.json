@@ -1597,7 +1597,13 @@
           "Color S2 (flattened SE color curve)"
         ]
       ],
-      "expressions": []
+      "expressions": [
+        [
+          "tc Particular-0070",
+          "linear(time,0,4,[1,0.961,0.996,1],[0.298,0.871,0.11,1])",
+          "birth-color sweep across gradient ends (two-tone)"
+        ]
+      ]
     }
   ],
   "camera": null,

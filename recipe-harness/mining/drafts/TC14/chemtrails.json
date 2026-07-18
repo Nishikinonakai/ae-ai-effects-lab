@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Chemtrails.xbxc",
   "_pack": "TC14",
   "_category": "Nature",
-  "_map_coverage": "86 mapped / 40 unmapped / 0 curves",
+  "_map_coverage": "87 mapped / 40 unmapped / 0 curves",
   "_unmapped": {
     "FXid_PLayer": {
       "uuid": "",
@@ -1582,9 +1582,20 @@
             1
           ],
           "Color S2 (inherit main (SE curve untouched default))"
+        ],
+        [
+          "tc Particular-0005",
+          2,
+          "live psec (0146 twin insufficient)"
         ]
       ],
-      "expressions": []
+      "expressions": [
+        [
+          "tc Particular-0581",
+          "[640 + 380*Math.sin(time*1.3), 360 + 190*Math.sin(time*2.6 + 1.2), 0]",
+          "synthesized light-painting sweep (presets ship no emitter path)"
+        ]
+      ]
     }
   ],
   "camera": null,

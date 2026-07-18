@@ -545,14 +545,16 @@
    "round": "r6"
   },
   "light-streaks-blue": {
-   "verdict": "fail",
+   "verdict": "partial",
    "class": "light-path",
-   "round": "r6"
+   "round": "r10",
+   "note": "blue light ribbon painted via 0581 path + 0005 psec \u2014 class cracked; path shape simpler than thumb loops"
   },
   "light-streaks-orange": {
-   "verdict": "fail",
+   "verdict": "partial",
    "class": "light-path",
-   "round": "r6"
+   "round": "r10",
+   "note": "same solution"
   },
   "love-hearts": {
    "verdict": "match",
@@ -753,9 +755,9 @@
   },
   "chemtrails": {
    "verdict": "partial",
-   "class": "dim-faint",
-   "round": "r9",
-   "note": "aux color inherit; faint"
+   "class": "light-path",
+   "round": "r10",
+   "note": "path + live psec applied"
   },
   "cloud-cover": {
    "verdict": "match",
@@ -802,7 +804,8 @@
   "rising-bubbles": {
    "verdict": "partial",
    "class": "ok",
-   "round": "r6"
+   "round": "r10",
+   "note": "rainbow-default guard restored authored colors"
   },
   "rising-fizz": {
    "verdict": "match",
