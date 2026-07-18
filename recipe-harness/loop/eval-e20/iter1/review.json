@@ -1,10 +1,36 @@
 {
   "verdict": "fail",
-  "score": 5,
-  "critique": "Half the miracle landed: the ripple RINGS work — concentric dotted ellipses expanding on the water plane (Disc direction 0113=4 + horizontal disc + elevated camera), with two generations visible and clear expansion between frames. But the falling DROPS are invisible — the upper frame is empty, so the 'drops AND rings' and causality criteria fail. Drops need presence.",
+  "score": 4,
+  "critique": "The render shows pale dotted expanding circular/arc patterns across the lower half, and their larger extent at 3.6s suggests expansion. However, there are no clearly readable falling rain streaks in either frame: the upper frame is almost entirely empty. The ripple pattern is also very large and dispersed rather than small, distinct impact ripples, so the connection between a raindrop landing and a ring forming is not visually convincing.",
   "suggestions": [
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0146", "value": 240, "why": "first-match = drops instance; ~3x rate makes the rain readable" },
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0027", "value": 4, "why": "bigger drops visible at speed" },
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0002", "value": 0.5, "why": "longer life = drops visible over a 950px fall to the waterline" }
-  ]
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 0.6,
+      "why": "Extend drop lifetime so the falling particles remain visible from the emitter through the waterline instead of disappearing before they read as rain."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 3.5,
+      "why": "Make the falling particles visibly readable as thin rain streaks against the dark background."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0011",
+      "value": 85,
+      "why": "Reduce ripple particle speed so each generation forms a small local ripple instead of a very large frame-spanning dotted ring."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0002",
+      "value": 0.9,
+      "why": "Shorten the visible ripple duration with the lower expansion speed, keeping rings compact and concentrated near their water-surface origin."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

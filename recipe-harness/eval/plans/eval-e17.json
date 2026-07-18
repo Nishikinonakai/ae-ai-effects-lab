@@ -1,9 +1,9 @@
 {
   "_planner_rationale": [
-    "portal ring = the e10 circular light-path at steady state: 4s/rev sweep with Life 4.2 keeps a FULL glowing ring persistent; psec modulated by a time-sine paints brighter/dimmer arc segments that travel around the circle = readable slow rotation",
-    "边缘光尘 — second Particular instance on the same host (multi-instance stacks render additively): same circular path but Velocity 70 + Uniform direction + short life = dust shed outward along the rim",
-    "bloom — native Glow (ADBE Glo2) on top of both instances; mystical teal-violet palette",
-    "dual psec homes set on both instances (animated-emitter rule)"
+    "PLAN REVISION r2 (structural, from the round-1 mechanism finding): 0005 psec is STATEFUL — rejects setExpression always, rejects setValue once the position carries an expression. Fix = psec as PARAMS (runner applies params BEFORE expressions on the fresh comp), position expression after. Segment-modulation idea dropped.",
+    "portal ring = e10 circular light-path at steady state: 4s/rev sweep with Life 4.2 keeps a FULL glowing ring persistent",
+    "边缘光尘 — second Particular instance on the same host: same circular path (offset phase) + Velocity 70 Uniform + short life = dust shed along the rim; the rotating dust cloud is the rotation evidence",
+    "bloom — native Glow (ADBE Glo2) on top; mystical teal-violet palette"
   ],
   "_planner_sources": ["eval/plans/eval-e10.json", "introspect/cards/ADBE_Glo2.json", "recipes/mined/ring-explosion.json (by catalog)"],
   "intent": "魔法传送门：悬浮的发光圆环缓缓旋转，边缘散出粒子光尘",
@@ -23,6 +23,8 @@
       "matchName": "tc Particular",
       "params": [
         ["tc Particular-0703", 2,                  "Particle Type (Glow Sphere)"],
+        ["tc Particular-0146", 1400,                "Particles/sec (aliased home — param BEFORE position expr)"],
+        ["tc Particular-0005", 1400,                "Particles/sec (live twin — param BEFORE position expr)"],
         ["tc Particular-0011", 0,                   "Velocity (ring stays)"],
         ["tc Particular-0012", 0,                   "Velocity Random"],
         ["tc Particular-0013", 0,                   "Velocity from Motion"],
@@ -36,15 +38,15 @@
         ["tc Particular-0215", 260,                 "Glow Size"]
       ],
       "expressions": [
-        ["tc Particular-0581", "a=time*(2*Math.PI/4); [640+250*Math.sin(a), 360-250*Math.cos(a), 0]", "Position (circular sweep)"],
-        ["tc Particular-0146", "520+380*Math.sin(time*5)", "psec modulation (rotating arc segments)"],
-        ["tc Particular-0005", "520+380*Math.sin(time*5)", "psec live twin (same modulation)"]
+        ["tc Particular-0581", "a=time*(2*Math.PI/4); [640+250*Math.sin(a), 360-250*Math.cos(a), 0]", "Position (circular sweep)"]
       ]
     },
     {
       "matchName": "tc Particular",
       "params": [
         ["tc Particular-0703", 2,                  "Dust Particle Type (Glow Sphere)"],
+        ["tc Particular-0146", 260,                 "Dust psec (param before position expr)"],
+        ["tc Particular-0005", 260,                 "Dust psec live twin"],
         ["tc Particular-0113", 1,                   "Direction (Uniform shed)"],
         ["tc Particular-0011", 70,                  "Velocity (outward dust)"],
         ["tc Particular-0012", 60,                  "Velocity Random %"],
@@ -59,9 +61,7 @@
         ["tc Particular-0711", 60,                  "Turbulence (dust waver)"]
       ],
       "expressions": [
-        ["tc Particular-0581", "a=time*(2*Math.PI/4)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]", "Position (offset sweep)"],
-        ["tc Particular-0146", "260", "psec (steady shed)"],
-        ["tc Particular-0005", "260", "psec live twin"]
+        ["tc Particular-0581", "a=time*(2*Math.PI/4)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]", "Position (offset sweep)"]
       ]
     },
     {

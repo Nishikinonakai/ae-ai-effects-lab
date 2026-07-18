@@ -6,7 +6,7 @@
     "some rotation/animation evidence between frames",
     "mystical glow palette on dark background"
   ],
-  "iteration": 1,
+  "iteration": 3,
   "max_iters": 5,
   "plan": {
     "effects": [
@@ -20,12 +20,12 @@
           ],
           [
             "tc Particular-0146",
-            1400,
+            2800,
             "Particles/sec (aliased home — param BEFORE position expr)"
           ],
           [
             "tc Particular-0005",
-            1400,
+            2800,
             "Particles/sec (live twin — param BEFORE position expr)"
           ],
           [
@@ -45,7 +45,7 @@
           ],
           [
             "tc Particular-0002",
-            4.2,
+            5.2,
             "Life (full ring persists)"
           ],
           [
@@ -55,7 +55,7 @@
           ],
           [
             "tc Particular-0027",
-            4.5,
+            6.5,
             "Size"
           ],
           [
@@ -92,7 +92,7 @@
         "expressions": [
           [
             "tc Particular-0581",
-            "a=time*(2*Math.PI/4); [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+            "a=time*(2*Math.PI/1); [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
             "Position (circular sweep)"
           ]
         ]
@@ -142,7 +142,7 @@
           ],
           [
             "tc Particular-0027",
-            2,
+            1.3,
             "Size (fine dust)"
           ],
           [
@@ -184,7 +184,7 @@
         "expressions": [
           [
             "tc Particular-0581",
-            "a=time*(2*Math.PI/4)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+            "a=time*(2*Math.PI/1)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
             "Position (offset sweep)"
           ]
         ]
@@ -223,9 +223,22 @@
     ]
   },
   "frames": [
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e17/iter1/eval-e17_i1_t1.png",
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e17/iter1/eval-e17_i1_t4.png"
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e17/iter3/eval-e17_i3_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e17/iter3/eval-e17_i3_t4.png"
   ],
-  "prior_iterations": [],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The dark violet/blue palette and luminous particle quality are appropriate, and the two frames clearly differ, showing animation. However, the portal is not yet readable as a complete glowing annulus: both frames show only partial particle arcs/swept trails, with large missing sections of the circle. The dust is visible but reads as the main arc itself rather than fine debris emanating from an already-established ring edge."
+    },
+    {
+      "iter": 2,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The dark violet-black background and blue/violet luminous particles create an appropriate mystical palette. Both frames show a clearly circular, rotating/sweeping particle formation, so animation is evident. However, the portal still reads primarily as a sparse dotted circle rather than a strong, continuous glowing annulus. The edge dust is not visually distinct from the ring itself: most particles sit on the same circular path, with too little dense core-versus-loose-debris separation."
+    }
+  ],
   "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
 }

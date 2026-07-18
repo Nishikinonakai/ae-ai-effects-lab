@@ -17,7 +17,7 @@
     "rings expand over time (compare frames)",
     "causal feel — rings where drops land (approximate is acceptable)"
   ],
-  "name": "eval-e20_i3",
+  "name": "eval-e20_i4",
   "compName": "Eval_E20_RainRipples",
   "comp": {
     "width": 1280,
@@ -56,7 +56,7 @@
         ],
         [
           "tc Particular-0014",
-          260,
+          70,
           "Emitter Size X"
         ],
         [
@@ -96,12 +96,12 @@
         ],
         [
           "tc Particular-0011",
-          1050,
+          1900,
           "Velocity"
         ],
         [
           "tc Particular-0002",
-          0.55,
+          0.8,
           "Life (dies at waterline y~560)"
         ],
         [
@@ -111,7 +111,7 @@
         ],
         [
           "tc Particular-0027",
-          5,
+          10,
           "Size (thin drops)"
         ],
         [
@@ -191,7 +191,7 @@
         ],
         [
           "tc Particular-0011",
-          260,
+          110,
           "Velocity (ring expansion)"
         ],
         [
@@ -238,12 +238,12 @@
       "expressions": [
         [
           "tc Particular-0146",
-          "(time%0.8<0.025)?4000:0",
+          "(time%0.65<0.025)?2200:0",
           "psec (ring generations)"
         ],
         [
           "tc Particular-0005",
-          "(time%0.8<0.025)?4000:0",
+          "(time%0.65<0.025)?2200:0",
           "psec live twin"
         ]
       ]
@@ -267,49 +267,49 @@
   ],
   "_loop_history": [
     {
-      "for_iter": 3,
+      "for_iter": 4,
       "applied": [
         {
           "type": "param",
-          "effect": "tc Particular#1",
-          "matchName": "tc Particular-0011",
-          "value": 1050,
-          "why": "Slow the falling particles enough that individual drops remain visibly readable in-frame instead of becoming extremely faint fast motion-blur traces."
-        },
-        {
-          "type": "param",
-          "effect": "tc Particular#1",
+          "effect": "tc Particular",
           "matchName": "tc Particular-0002",
-          "value": 0.55,
-          "why": "With the reduced downward velocity, end drop life near the y~560 waterline so drops visually terminate at the ripple zone."
+          "value": 0.8,
+          "why": "The rain particles need enough lifetime to travel from the emitter above the frame down to the waterline and become visible before impact."
         },
         {
           "type": "param",
-          "effect": "tc Particular#1",
+          "effect": "tc Particular",
           "matchName": "tc Particular-0027",
-          "value": 5,
-          "why": "Make the falling rain particles bright and legible against the very dark background."
+          "value": 10,
+          "why": "Larger rain particles will make the falling drops and motion-blurred streaks legible against the dark background."
         },
         {
           "type": "param",
-          "effect": "tc Particular#1",
+          "effect": "tc Particular",
           "matchName": "tc Particular-0014",
-          "value": 260,
-          "why": "Concentrate rainfall around the existing central ripple source so visible drops can plausibly land where rings form."
+          "value": 70,
+          "why": "Narrowing the rain emitter width keeps the visible falling drops near the ripple source, improving the perceived landing relationship."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular#2",
+          "matchName": "tc Particular-0011",
+          "value": 110,
+          "why": "Reducing ripple particle velocity keeps each burst as a smaller, more readable impact ripple instead of a broad dotted oval."
         },
         {
           "type": "expression",
           "effect": "tc Particular#2",
           "matchName": "tc Particular-0146",
-          "expression": "(time%0.8<0.025)?4000:0",
-          "why": "Keep approximately 100 ripple particles per impact but emit them in a much shorter burst, producing a thinner, more readable expanding ring rather than a filled dot cloud."
+          "expression": "(time%0.65<0.025)?2200:0",
+          "why": "Use less dense, more frequent ripple bursts with a period that does not align identically between the two review times, making changing expansion states clearer."
         },
         {
           "type": "expression",
           "effect": "tc Particular#2",
           "matchName": "tc Particular-0005",
-          "expression": "(time%0.8<0.025)?4000:0",
-          "why": "Keep the linked live particle-rate control synchronized with the shorter ring-generation burst."
+          "expression": "(time%0.65<0.025)?2200:0",
+          "why": "Keep the paired live emission synchronized with the revised ripple generations."
         }
       ],
       "skipped": []

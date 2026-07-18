@@ -1,9 +1,29 @@
 {
   "verdict": "fail",
   "score": 4,
-  "critique": "Only sparse violet dust arcs render — the persistent ring is missing. Root cause from the report: 0005 (live psec twin) REJECTS setExpression on both instances (it accepts setValue — new twin fact), so the ring instance runs on the 0146 expression alone, which on an animated emitter yields near-zero effective emission (the r10 light-path rule). The few larger dots along the arc are the ring instance at starvation density. Dust instance and Glow render fine; instance indexing works.",
+  "critique": "The dark violet/blue palette and luminous particle quality are appropriate, and the two frames clearly differ, showing animation. However, the portal is not yet readable as a complete glowing annulus: both frames show only partial particle arcs/swept trails, with large missing sections of the circle. The dust is visible but reads as the main arc itself rather than fine debris emanating from an already-established ring edge.",
   "suggestions": [
-    { "type": "expression", "effect": "tc Particular", "matchName": "tc Particular-0146", "expression": "1400", "why": "constant high rate on the ring instance (first match) — segment modulation sacrificed for a solid ring" },
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0005", "value": 1400, "why": "0005 accepts setValue — drive the LIVE psec home so the animated emitter actually emits" }
-  ]
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0581",
+      "expression": "a=time*(2*Math.PI/1); [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+      "why": "Complete a full circular emitter sweep within one second so the persistent particles establish a readable full portal ring rather than a short arc."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 5.2,
+      "why": "Retain particles for longer than a full sweep so the annulus remains continuous and bright while the emitter keeps circulating."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0581",
+      "expression": "a=time*(2*Math.PI/1)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+      "why": "Distribute the short-lived violet dust around the entire established ring edge instead of concentrating it along one partial sweep."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

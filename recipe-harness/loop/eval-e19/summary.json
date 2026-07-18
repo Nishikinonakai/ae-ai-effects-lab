@@ -1,7 +1,7 @@
 {
   "intent": "赛博朋克雨夜氛围：密集的雨丝落下，青色与品红的霓虹色调，偶发轻微的故障闪烁",
-  "backend": "agent",
-  "outcome": "fail_max_iters",
+  "backend": "api",
+  "outcome": "fail_no_applicable_suggestions",
   "best_iter": 3,
   "iterations": [
     {

@@ -1,6 +1,50 @@
 {
   "verdict": "fail",
-  "score": 5,
-  "critique": "Third identical render: none of the three iterations' suggestions produced any pixel change — a HARNESS finding, not a look finding: tune_loop's mechanical applier does not reach the intended instance in a multi-instance effect stack (both instances share the matchName 'tc Particular'; the applier needs index-aware targeting). The look itself: rings excellent (Disc-direction ripple mechanism verified headless — a new ontology fact), drops invisible (motion-blur dilution hypothesis untested because the nudge never landed). Expected-fail marker confirmed at the harness level: linked-system looks need multi-instance-aware suggestion targeting plus the drop/ring causality that scripting cannot express.",
-  "suggestions": []
+  "score": 3,
+  "critique": "A pale dotted oval/ripple-like particle pattern is visible in a stable lower-frame zone, but it reads as a single loose cloud of dots rather than small, clean water ripples. There are still no visible falling drops or rain streaks in the upper frame, so the required drop-to-impact causality is absent. The two sampled frames also show nearly the same ring state, making expansion difficult to read.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 0.8,
+      "why": "The rain particles need enough lifetime to travel from the emitter above the frame down to the waterline and become visible before impact."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 10,
+      "why": "Larger rain particles will make the falling drops and motion-blurred streaks legible against the dark background."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 70,
+      "why": "Narrowing the rain emitter width keeps the visible falling drops near the ripple source, improving the perceived landing relationship."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0011",
+      "value": 110,
+      "why": "Reducing ripple particle velocity keeps each burst as a smaller, more readable impact ripple instead of a broad dotted oval."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0146",
+      "expression": "(time%0.65<0.025)?2200:0",
+      "why": "Use less dense, more frequent ripple bursts with a period that does not align identically between the two review times, making changing expansion states clearer."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0005",
+      "expression": "(time%0.65<0.025)?2200:0",
+      "why": "Keep the paired live emission synchronized with the revised ripple generations."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

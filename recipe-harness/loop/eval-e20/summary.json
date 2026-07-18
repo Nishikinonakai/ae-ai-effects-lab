@@ -1,26 +1,38 @@
 {
   "intent": "雨滴落到水面上，溅起一圈圈小小的涟漪",
-  "backend": "agent",
+  "backend": "api",
   "outcome": "fail_max_iters",
   "best_iter": 1,
   "iterations": [
     {
       "iter": 1,
-      "score": 5,
+      "score": 4,
       "verdict": "fail",
-      "critique": "Half the miracle landed: the ripple RINGS work — concentric dotted ellipses expanding on the water plane (Disc direction 0113=4 + horizontal disc + elevated camera), with two generations visible and clear expansion between frames. But the falling DROPS are invisible — the upper frame is empty, so the 'drops AND rings' and causality criteria fail. Drops need presence."
+      "critique": "The render shows pale dotted expanding circular/arc patterns across the lower half, and their larger extent at 3.6s suggests expansion. However, there are no clearly readable falling rain streaks in either frame: the upper frame is almost entirely empty. The ripple pattern is also very large and dispersed rather than small, distinct impact ripples, so the connection between a raindrop landing and a ring forming is not visually convincing."
     },
     {
       "iter": 2,
-      "score": 5,
+      "score": 3,
       "verdict": "fail",
-      "critique": "Identical frames — density/size/life nudges changed nothing visible, which points at the real mechanism: the drops instance has Motion Blur ON at 1900px/s — a 32px smear per frame dilutes an 85%-opacity dot to ~7% per pixel = invisible regardless of count. The rings remain correct. Kill the blur on the drops (first-match instance) to reveal them."
+      "critique": "The lower-frame water-impact zone is present, but it currently reads as a small cloud of bright particle dots rather than clean expanding ripple rings. The two frames do not provide a clear readable ring expansion. More importantly, there are no visible falling rain drops or streaks anywhere above the water zone, so the intended drop-to-impact causality is absent. The ripple source is centered while the rain emitter is extremely wide, which would also weaken the landing connection once rain becomes visible."
     },
     {
       "iter": 3,
-      "score": 5,
+      "score": 3,
       "verdict": "fail",
-      "critique": "Third identical render: none of the three iterations' suggestions produced any pixel change — a HARNESS finding, not a look finding: tune_loop's mechanical applier does not reach the intended instance in a multi-instance effect stack (both instances share the matchName 'tc Particular'; the applier needs index-aware targeting). The look itself: rings excellent (Disc-direction ripple mechanism verified headless — a new ontology fact), drops invisible (motion-blur dilution hypothesis untested because the nudge never landed). Expected-fail marker confirmed at the harness level: linked-system looks need multi-instance-aware suggestion targeting plus the drop/ring causality that scripting cannot express."
+      "critique": "A pale dotted oval/ripple-like particle pattern is visible in a stable lower-frame zone, but it reads as a single loose cloud of dots rather than small, clean water ripples. There are still no visible falling drops or rain streaks in the upper frame, so the required drop-to-impact causality is absent. The two sampled frames also show nearly the same ring state, making expansion difficult to read."
+    },
+    {
+      "iter": 4,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "涟漪粒子稳定地出现在画面下方，且3.6秒时的覆盖范围比1.2秒更大，存在一定扩张迹象。但它们仍是松散、随机分布的亮点云团，不像清晰的小型同心水波环。两帧上半部均没有可辨认的下落雨滴或雨丝，因此无法建立雨滴落点与涟漪之间的因果关系。"
+    },
+    {
+      "iter": 5,
+      "score": 1,
+      "verdict": "fail",
+      "critique": "两帧几乎全黑，仅在下方偏中央出现一小团青蓝色亮点。它既不是可读的同心水波环，也没有足够范围或清晰的帧间半径变化来证明扩张。上半部及水面上方完全没有可辨认的雨滴或雨丝，因此“雨滴落下—落点产生涟漪”的因果关系完全缺失。当前环形发射速率表达式在采样时刻恰好重新触发，导致两帧都主要显示刚生成的小点团，而不是不同年龄、不同半径的涟漪。"
     }
   ]
 }

@@ -17,7 +17,7 @@
     "rings expand over time (compare frames)",
     "causal feel — rings where drops land (approximate is acceptable)"
   ],
-  "name": "eval-e20_i3",
+  "name": "eval-e20_i5",
   "compName": "Eval_E20_RainRipples",
   "comp": {
     "width": 1280,
@@ -44,7 +44,7 @@
           "tc Particular-0581",
           [
             640,
-            -40,
+            120,
             0
           ],
           "Position (above frame)"
@@ -56,7 +56,7 @@
         ],
         [
           "tc Particular-0014",
-          260,
+          1300,
           "Emitter Size X"
         ],
         [
@@ -96,12 +96,12 @@
         ],
         [
           "tc Particular-0011",
-          1050,
+          1900,
           "Velocity"
         ],
         [
           "tc Particular-0002",
-          0.55,
+          1.2,
           "Life (dies at waterline y~560)"
         ],
         [
@@ -111,7 +111,7 @@
         ],
         [
           "tc Particular-0027",
-          5,
+          18,
           "Size (thin drops)"
         ],
         [
@@ -201,7 +201,7 @@
         ],
         [
           "tc Particular-0002",
-          1.5,
+          1.1,
           "Life"
         ],
         [
@@ -238,12 +238,12 @@
       "expressions": [
         [
           "tc Particular-0146",
-          "(time%0.8<0.025)?4000:0",
+          "(time%1.2<0.025)?900:0",
           "psec (ring generations)"
         ],
         [
           "tc Particular-0005",
-          "(time%0.8<0.025)?4000:0",
+          "(time%0.8<0.1)?1100:0",
           "psec live twin"
         ]
       ]
@@ -267,49 +267,46 @@
   ],
   "_loop_history": [
     {
-      "for_iter": 3,
+      "for_iter": 5,
       "applied": [
         {
           "type": "param",
-          "effect": "tc Particular#1",
-          "matchName": "tc Particular-0011",
-          "value": 1050,
-          "why": "Slow the falling particles enough that individual drops remain visibly readable in-frame instead of becoming extremely faint fast motion-blur traces."
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0581",
+          "value": [
+            640,
+            120,
+            0
+          ],
+          "why": "将雨滴发射位置移入可见画面上方，避免发射器位于画外后雨滴在可见前消失。"
         },
         {
           "type": "param",
-          "effect": "tc Particular#1",
+          "effect": "tc Particular",
           "matchName": "tc Particular-0002",
-          "value": 0.55,
-          "why": "With the reduced downward velocity, end drop life near the y~560 waterline so drops visually terminate at the ripple zone."
+          "value": 1.2,
+          "why": "延长雨滴寿命，使其从上方持续可见并能到达下方水面区域。"
         },
         {
           "type": "param",
-          "effect": "tc Particular#1",
+          "effect": "tc Particular",
           "matchName": "tc Particular-0027",
-          "value": 5,
-          "why": "Make the falling rain particles bright and legible against the very dark background."
-        },
-        {
-          "type": "param",
-          "effect": "tc Particular#1",
-          "matchName": "tc Particular-0014",
-          "value": 260,
-          "why": "Concentrate rainfall around the existing central ripple source so visible drops can plausibly land where rings form."
+          "value": 18,
+          "why": "当前雨滴完全不可读；增大粒径可让运动模糊后的下落雨丝在深色背景上可见。"
         },
         {
           "type": "expression",
           "effect": "tc Particular#2",
           "matchName": "tc Particular-0146",
-          "expression": "(time%0.8<0.025)?4000:0",
-          "why": "Keep approximately 100 ripple particles per impact but emit them in a much shorter burst, producing a thinner, more readable expanding ring rather than a filled dot cloud."
+          "expression": "(time%1.2<0.025)?900:0",
+          "why": "降低每次涟漪爆发的粒子量并拉长爆发间隔，减少多代粒子叠成云团，让单次落点形成的圆环边缘更可辨认。"
         },
         {
-          "type": "expression",
+          "type": "param",
           "effect": "tc Particular#2",
-          "matchName": "tc Particular-0005",
-          "expression": "(time%0.8<0.025)?4000:0",
-          "why": "Keep the linked live particle-rate control synchronized with the shorter ring-generation burst."
+          "matchName": "tc Particular-0002",
+          "value": 1.1,
+          "why": "缩短涟漪存活时间，防止多个旧环同时堆积为散点云，同时仍保留可比较的扩张过程。"
         }
       ],
       "skipped": []

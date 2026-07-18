@@ -1,0 +1,47 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "涟漪粒子稳定地出现在画面下方，且3.6秒时的覆盖范围比1.2秒更大，存在一定扩张迹象。但它们仍是松散、随机分布的亮点云团，不像清晰的小型同心水波环。两帧上半部均没有可辨认的下落雨滴或雨丝，因此无法建立雨滴落点与涟漪之间的因果关系。",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0581",
+      "value": [
+        640,
+        120,
+        0
+      ],
+      "why": "将雨滴发射位置移入可见画面上方，避免发射器位于画外后雨滴在可见前消失。"
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 1.2,
+      "why": "延长雨滴寿命，使其从上方持续可见并能到达下方水面区域。"
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 18,
+      "why": "当前雨滴完全不可读；增大粒径可让运动模糊后的下落雨丝在深色背景上可见。"
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0146",
+      "expression": "(time%1.2<0.025)?900:0",
+      "why": "降低每次涟漪爆发的粒子量并拉长爆发间隔，减少多代粒子叠成云团，让单次落点形成的圆环边缘更可辨认。"
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0002",
+      "value": 1.1,
+      "why": "缩短涟漪存活时间，防止多个旧环同时堆积为散点云，同时仍保留可比较的扩张过程。"
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

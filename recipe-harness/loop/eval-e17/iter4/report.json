@@ -1,6 +1,6 @@
 {
   "status": "done",
-  "name": "eval-e17_i2",
+  "name": "eval-e17_i4",
   "params": [
     {
       "p": "[1:tc Particular] Particle Type (Glow Sphere)",
@@ -10,7 +10,7 @@
     {
       "p": "[1:tc Particular] Particles/sec (aliased home — param BEFORE position expr)",
       "ok": true,
-      "v": "1400"
+      "v": "8000"
     },
     {
       "p": "[1:tc Particular] Particles/sec (live twin — param BEFORE position expr)",
@@ -45,7 +45,7 @@
     {
       "p": "[1:tc Particular] Size",
       "ok": true,
-      "v": "4.5"
+      "v": "10"
     },
     {
       "p": "[1:tc Particular] Opacity",
@@ -119,7 +119,7 @@
     {
       "p": "[2:tc Particular] Size (fine dust)",
       "ok": true,
-      "v": "2"
+      "v": "1.29999995231628"
     },
     {
       "p": "[2:tc Particular] Size Random %",
@@ -158,7 +158,7 @@
     {
       "p": "[3:ADBE Glo2] Glow Threshold",
       "ok": true,
-      "v": "140"
+      "v": "25"
     },
     {
       "p": "[3:ADBE Glo2] Glow Radius",
@@ -168,11 +168,11 @@
     {
       "p": "[3:ADBE Glo2] Glow Intensity",
       "ok": true,
-      "v": "1.20000004768372"
+      "v": "2.20000004768372"
     }
   ],
   "frames": [
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e17/iter2/eval-e17_i2_t1.png",
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e17/iter2/eval-e17_i2_t4.png"
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e17/iter4/eval-e17_i4_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e17/iter4/eval-e17_i4_t4.png"
   ]
 }

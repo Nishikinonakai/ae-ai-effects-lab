@@ -6,7 +6,7 @@
     "rings expand over time (compare frames)",
     "causal feel — rings where drops land (approximate is acceptable)"
   ],
-  "iteration": 1,
+  "iteration": 4,
   "max_iters": 5,
   "plan": {
     "effects": [
@@ -34,7 +34,7 @@
           ],
           [
             "tc Particular-0014",
-            1300,
+            70,
             "Emitter Size X"
           ],
           [
@@ -79,7 +79,7 @@
           ],
           [
             "tc Particular-0002",
-            0.34,
+            0.8,
             "Life (dies at waterline y~560)"
           ],
           [
@@ -89,7 +89,7 @@
           ],
           [
             "tc Particular-0027",
-            2.4,
+            10,
             "Size (thin drops)"
           ],
           [
@@ -169,7 +169,7 @@
           ],
           [
             "tc Particular-0011",
-            260,
+            110,
             "Velocity (ring expansion)"
           ],
           [
@@ -216,12 +216,12 @@
         "expressions": [
           [
             "tc Particular-0146",
-            "(time%0.8<0.1)?1100:0",
+            "(time%0.65<0.025)?2200:0",
             "psec (ring generations)"
           ],
           [
             "tc Particular-0005",
-            "(time%0.8<0.1)?1100:0",
+            "(time%0.65<0.025)?2200:0",
             "psec live twin"
           ]
         ]
@@ -250,9 +250,28 @@
     ]
   },
   "frames": [
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e20/iter1/eval-e20_i1_t1p2.png",
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e20/iter1/eval-e20_i1_t3p6.png"
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e20/iter4/eval-e20_i4_t1p2.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e20/iter4/eval-e20_i4_t3p6.png"
   ],
-  "prior_iterations": [],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The render shows pale dotted expanding circular/arc patterns across the lower half, and their larger extent at 3.6s suggests expansion. However, there are no clearly readable falling rain streaks in either frame: the upper frame is almost entirely empty. The ripple pattern is also very large and dispersed rather than small, distinct impact ripples, so the connection between a raindrop landing and a ring forming is not visually convincing."
+    },
+    {
+      "iter": 2,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The lower-frame water-impact zone is present, but it currently reads as a small cloud of bright particle dots rather than clean expanding ripple rings. The two frames do not provide a clear readable ring expansion. More importantly, there are no visible falling rain drops or streaks anywhere above the water zone, so the intended drop-to-impact causality is absent. The ripple source is centered while the rain emitter is extremely wide, which would also weaken the landing connection once rain becomes visible."
+    },
+    {
+      "iter": 3,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "A pale dotted oval/ripple-like particle pattern is visible in a stable lower-frame zone, but it reads as a single loose cloud of dots rather than small, clean water ripples. There are still no visible falling drops or rain streaks in the upper frame, so the required drop-to-impact causality is absent. The two sampled frames also show nearly the same ring state, making expansion difficult to read."
+    }
+  ],
   "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
 }

@@ -17,7 +17,7 @@
     "some rotation/animation evidence between frames",
     "mystical glow palette on dark background"
   ],
-  "name": "eval-e17_i2",
+  "name": "eval-e17_i5",
   "compName": "Eval_E17_Portal",
   "comp": {
     "width": 1280,
@@ -42,12 +42,12 @@
         ],
         [
           "tc Particular-0146",
-          1400,
+          8000,
           "Particles/sec (aliased home — param BEFORE position expr)"
         ],
         [
           "tc Particular-0005",
-          1400,
+          8000,
           "Particles/sec (live twin — param BEFORE position expr)"
         ],
         [
@@ -77,12 +77,12 @@
         ],
         [
           "tc Particular-0027",
-          4.5,
+          38,
           "Size"
         ],
         [
           "tc Particular-0033",
-          90,
+          100,
           "Opacity"
         ],
         [
@@ -164,7 +164,7 @@
         ],
         [
           "tc Particular-0027",
-          2,
+          1.3,
           "Size (fine dust)"
         ],
         [
@@ -216,17 +216,17 @@
       "params": [
         [
           "ADBE Glo2-0002",
-          140,
+          0,
           "Glow Threshold"
         ],
         [
           "ADBE Glo2-0003",
-          60,
+          100,
           "Glow Radius"
         ],
         [
           "ADBE Glo2-0004",
-          1.2,
+          2.2,
           "Glow Intensity"
         ]
       ],
@@ -262,6 +262,115 @@
           "matchName": "tc Particular-0581",
           "expression": "a=time*(2*Math.PI/1)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
           "why": "Distribute the short-lived violet dust around the entire established ring edge instead of concentrating it along one partial sweep."
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "for_iter": 3,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0146",
+          "value": 2800,
+          "why": "A substantially denser primary emission trail will fill the remaining gaps and establish a readable luminous annulus beneath the dust."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0005",
+          "value": 2800,
+          "why": "Keep the live aliased particles-per-second control matched so the ring core becomes consistently dense."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0027",
+          "value": 6.5,
+          "why": "Slightly larger primary particles will merge into a brighter, more continuous portal rim instead of isolated dots."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular#2",
+          "matchName": "tc Particular-0027",
+          "value": 1.3,
+          "why": "Make the secondary particles visibly finer than the ring core so they read as shed magical dust rather than the portal outline."
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "for_iter": 4,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0146",
+          "value": 8000,
+          "why": "Greatly increase core emission density so neighboring ring particles visually join into a solid annular light band rather than isolated dots."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0005",
+          "value": 8000,
+          "why": "Keep the live aliased particles/sec control synchronized with the denser ring emission."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0027",
+          "value": 10,
+          "why": "Enlarge core particles enough for the denser emission to overlap and establish a readable continuous glowing portal edge."
+        },
+        {
+          "type": "param",
+          "effect": "ADBE Glo2",
+          "matchName": "ADBE Glo2-0002",
+          "value": 25,
+          "why": "Lower the glow threshold so the blue-violet ring particles actually generate a visible mystical halo."
+        },
+        {
+          "type": "param",
+          "effect": "ADBE Glo2",
+          "matchName": "ADBE Glo2-0004",
+          "value": 2.2,
+          "why": "Strengthen the newly activated glow, making the dense core clearly distinct from the fine surrounding dust."
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "for_iter": 5,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0027",
+          "value": 38,
+          "why": "Enlarge the persistent core particles enough for adjacent emissions to overlap into a readable continuous annulus instead of isolated dots."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0033",
+          "value": 100,
+          "why": "Raise the ring core brightness so it establishes a clearly dominant portal edge over the secondary dust."
+        },
+        {
+          "type": "param",
+          "effect": "ADBE Glo2",
+          "matchName": "ADBE Glo2-0002",
+          "value": 0,
+          "why": "Lower the glow threshold so the now-brighter ring particles contribute to a visible continuous magical halo."
+        },
+        {
+          "type": "param",
+          "effect": "ADBE Glo2",
+          "matchName": "ADBE Glo2-0003",
+          "value": 100,
+          "why": "Broaden bloom around the merged ring core, visually unifying it as a radiant portal rim while leaving the small dust as distinct debris."
         }
       ],
       "skipped": []

@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 1,
+  "critique": "两帧几乎全黑，仅在下方偏中央出现一小团青蓝色亮点。它既不是可读的同心水波环，也没有足够范围或清晰的帧间半径变化来证明扩张。上半部及水面上方完全没有可辨认的雨滴或雨丝，因此“雨滴落下—落点产生涟漪”的因果关系完全缺失。当前环形发射速率表达式在采样时刻恰好重新触发，导致两帧都主要显示刚生成的小点团，而不是不同年龄、不同半径的涟漪。",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0146",
+      "expression": "55",
+      "why": "以连续且较低的粒子速率保留不同年龄的径向粒子；同一时刻会同时存在小、中、大半径的环，帧间才能读出环的扩张，而不会在采样时刻反复只看到新生点团。"
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 1.8,
+      "why": "延长雨滴寿命，使从上方发射到下方水面区域的下落轨迹在画面中保持可见。"
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 32,
+      "why": "增大雨滴粒子尺寸，提高深色背景上的可见性，使其能被读作下落雨丝而不是完全消失。"
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0033",
+      "value": 100,
+      "why": "提高雨滴不透明度，确保上半帧存在清晰可见的降雨。"
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0002",
+      "value": 1.6,
+      "why": "延长涟漪粒子寿命，让连续生成的不同半径环在下方水面带累积并可被读作扩张中的同心水波。"
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

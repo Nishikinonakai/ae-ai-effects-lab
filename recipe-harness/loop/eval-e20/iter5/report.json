@@ -1,6 +1,6 @@
 {
   "status": "done",
-  "name": "eval-e20_i3",
+  "name": "eval-e20_i5",
   "params": [
     {
       "p": "[1:tc Particular] Drops: Box emitter",
@@ -10,7 +10,7 @@
     {
       "p": "[1:tc Particular] Position (above frame)",
       "ok": true,
-      "v": "640,-40,0"
+      "v": "640,120,0"
     },
     {
       "p": "[1:tc Particular] Emitter Size mode",
@@ -20,7 +20,7 @@
     {
       "p": "[1:tc Particular] Emitter Size X",
       "ok": true,
-      "v": "260"
+      "v": "1300"
     },
     {
       "p": "[1:tc Particular] Emitter Size Y",
@@ -40,7 +40,7 @@
     {
       "p": "[1:tc Particular] Particles/sec (readable drops)",
       "ok": true,
-      "v": "1100"
+      "v": "2200"
     },
     {
       "p": "[1:tc Particular] Direction (Directional)",
@@ -60,12 +60,12 @@
     {
       "p": "[1:tc Particular] Velocity",
       "ok": true,
-      "v": "1050"
+      "v": "1900"
     },
     {
       "p": "[1:tc Particular] Life (dies at waterline y~560)",
       "ok": true,
-      "v": "0.55000001192093"
+      "v": "1.20000004768372"
     },
     {
       "p": "[1:tc Particular] Life Random %",
@@ -75,7 +75,7 @@
     {
       "p": "[1:tc Particular] Size (thin drops)",
       "ok": true,
-      "v": "5"
+      "v": "18"
     },
     {
       "p": "[1:tc Particular] Aspect Ratio",
@@ -150,7 +150,7 @@
     {
       "p": "[2:tc Particular] Life",
       "ok": true,
-      "v": "1.5"
+      "v": "1.10000002384186"
     },
     {
       "p": "[2:tc Particular] Life Random %",
@@ -188,7 +188,7 @@
     }
   ],
   "frames": [
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e20/iter3/eval-e20_i3_t1p2.png",
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e20/iter3/eval-e20_i3_t3p6.png"
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e20/iter5/eval-e20_i5_t1p2.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e20/iter5/eval-e20_i5_t3p6.png"
   ]
 }

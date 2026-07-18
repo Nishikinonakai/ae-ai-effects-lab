@@ -76,7 +76,7 @@
         ],
         [
           "tc Particular-0146",
-          240,
+          90,
           "Particles/sec (readable drops)"
         ],
         [
@@ -101,7 +101,7 @@
         ],
         [
           "tc Particular-0002",
-          0.5,
+          0.6,
           "Life (dies at waterline y~560)"
         ],
         [
@@ -111,7 +111,7 @@
         ],
         [
           "tc Particular-0027",
-          4,
+          3.5,
           "Size (thin drops)"
         ],
         [
@@ -191,7 +191,7 @@
         ],
         [
           "tc Particular-0011",
-          260,
+          85,
           "Velocity (ring expansion)"
         ],
         [
@@ -201,7 +201,7 @@
         ],
         [
           "tc Particular-0002",
-          1.5,
+          0.9,
           "Life"
         ],
         [
@@ -272,23 +272,30 @@
         {
           "type": "param",
           "effect": "tc Particular",
-          "matchName": "tc Particular-0146",
-          "value": 240,
-          "why": "first-match = drops instance; ~3x rate makes the rain readable"
+          "matchName": "tc Particular-0002",
+          "value": 0.6,
+          "why": "Extend drop lifetime so the falling particles remain visible from the emitter through the waterline instead of disappearing before they read as rain."
         },
         {
           "type": "param",
           "effect": "tc Particular",
           "matchName": "tc Particular-0027",
-          "value": 4,
-          "why": "bigger drops visible at speed"
+          "value": 3.5,
+          "why": "Make the falling particles visibly readable as thin rain streaks against the dark background."
         },
         {
           "type": "param",
-          "effect": "tc Particular",
+          "effect": "tc Particular#2",
+          "matchName": "tc Particular-0011",
+          "value": 85,
+          "why": "Reduce ripple particle speed so each generation forms a small local ripple instead of a very large frame-spanning dotted ring."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular#2",
           "matchName": "tc Particular-0002",
-          "value": 0.5,
-          "why": "longer life = drops visible over a 950px fall to the waterline"
+          "value": 0.9,
+          "why": "Shorten the visible ripple duration with the lower expansion speed, keeping rings compact and concentrated near their water-surface origin."
         }
       ],
       "skipped": []

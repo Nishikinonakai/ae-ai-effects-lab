@@ -1,8 +1,50 @@
 {
   "verdict": "fail",
-  "score": 5,
-  "critique": "Identical frames — density/size/life nudges changed nothing visible, which points at the real mechanism: the drops instance has Motion Blur ON at 1900px/s — a 32px smear per frame dilutes an 85%-opacity dot to ~7% per pixel = invisible regardless of count. The rings remain correct. Kill the blur on the drops (first-match instance) to reveal them.",
+  "score": 3,
+  "critique": "The lower-frame water-impact zone is present, but it currently reads as a small cloud of bright particle dots rather than clean expanding ripple rings. The two frames do not provide a clear readable ring expansion. More importantly, there are no visible falling rain drops or streaks anywhere above the water zone, so the intended drop-to-impact causality is absent. The ripple source is centered while the rain emitter is extremely wide, which would also weaken the landing connection once rain becomes visible.",
   "suggestions": [
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0035", "value": 1, "why": "motion blur off on the drops instance — fast small particles vanish under smear; crisp dashes read as rain" }
-  ]
+    {
+      "type": "param",
+      "effect": "tc Particular#1",
+      "matchName": "tc Particular-0011",
+      "value": 1050,
+      "why": "Slow the falling particles enough that individual drops remain visibly readable in-frame instead of becoming extremely faint fast motion-blur traces."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular#1",
+      "matchName": "tc Particular-0002",
+      "value": 0.55,
+      "why": "With the reduced downward velocity, end drop life near the y~560 waterline so drops visually terminate at the ripple zone."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular#1",
+      "matchName": "tc Particular-0027",
+      "value": 5,
+      "why": "Make the falling rain particles bright and legible against the very dark background."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular#1",
+      "matchName": "tc Particular-0014",
+      "value": 260,
+      "why": "Concentrate rainfall around the existing central ripple source so visible drops can plausibly land where rings form."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0146",
+      "expression": "(time%0.8<0.025)?4000:0",
+      "why": "Keep approximately 100 ripple particles per impact but emit them in a much shorter burst, producing a thinner, more readable expanding ring rather than a filled dot cloud."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0005",
+      "expression": "(time%0.8<0.025)?4000:0",
+      "why": "Keep the linked live particle-rate control synchronized with the shorter ring-generation burst."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

@@ -7,7 +7,7 @@
     "mystical glow palette on dark background"
   ],
   "iteration": 2,
-  "max_iters": 3,
+  "max_iters": 5,
   "plan": {
     "effects": [
       {
@@ -17,6 +17,16 @@
             "tc Particular-0703",
             2,
             "Particle Type (Glow Sphere)"
+          ],
+          [
+            "tc Particular-0146",
+            1400,
+            "Particles/sec (aliased home — param BEFORE position expr)"
+          ],
+          [
+            "tc Particular-0005",
+            1400,
+            "Particles/sec (live twin — param BEFORE position expr)"
           ],
           [
             "tc Particular-0011",
@@ -35,7 +45,7 @@
           ],
           [
             "tc Particular-0002",
-            4.2,
+            5.2,
             "Life (full ring persists)"
           ],
           [
@@ -77,28 +87,13 @@
             "tc Particular-0215",
             260,
             "Glow Size"
-          ],
-          [
-            "tc Particular-0005",
-            1400,
-            "0005 accepts setValue — drive the LIVE p [i2]"
           ]
         ],
         "expressions": [
           [
             "tc Particular-0581",
-            "a=time*(2*Math.PI/4); [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+            "a=time*(2*Math.PI/1); [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
             "Position (circular sweep)"
-          ],
-          [
-            "tc Particular-0146",
-            "1400",
-            "psec modulation (rotating arc segments)"
-          ],
-          [
-            "tc Particular-0005",
-            "520+380*Math.sin(time*5)",
-            "psec live twin (same modulation)"
           ]
         ]
       },
@@ -109,6 +104,16 @@
             "tc Particular-0703",
             2,
             "Dust Particle Type (Glow Sphere)"
+          ],
+          [
+            "tc Particular-0146",
+            260,
+            "Dust psec (param before position expr)"
+          ],
+          [
+            "tc Particular-0005",
+            260,
+            "Dust psec live twin"
           ],
           [
             "tc Particular-0113",
@@ -179,18 +184,8 @@
         "expressions": [
           [
             "tc Particular-0581",
-            "a=time*(2*Math.PI/4)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+            "a=time*(2*Math.PI/1)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
             "Position (offset sweep)"
-          ],
-          [
-            "tc Particular-0146",
-            "260",
-            "psec (steady shed)"
-          ],
-          [
-            "tc Particular-0005",
-            "260",
-            "psec live twin"
           ]
         ]
       },
@@ -236,8 +231,8 @@
       "iter": 1,
       "score": 4,
       "verdict": "fail",
-      "critique": "Only sparse violet dust arcs render — the persistent ring is missing. Root cause from the report: 0005 (live psec twin) REJECTS setExpression on both instances (it accepts setValue — new twin fact), so the ring instance runs on the 0146 expression alone, which on an animated emitter yields near-zero effective emission (the r10 light-path rule). The few larger dots along the arc are the ring instance at starvation density. Dust instance and Glow render fine; instance indexing works."
+      "critique": "The dark violet/blue palette and luminous particle quality are appropriate, and the two frames clearly differ, showing animation. However, the portal is not yet readable as a complete glowing annulus: both frames show only partial particle arcs/swept trails, with large missing sections of the circle. The dust is visible but reads as the main arc itself rather than fine debris emanating from an already-established ring edge."
     }
   ],
-  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
 }

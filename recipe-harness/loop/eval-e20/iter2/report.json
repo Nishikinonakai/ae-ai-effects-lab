@@ -65,7 +65,7 @@
     {
       "p": "[1:tc Particular] Life (dies at waterline y~560)",
       "ok": true,
-      "v": "0.5"
+      "v": "0.60000002384186"
     },
     {
       "p": "[1:tc Particular] Life Random %",
@@ -75,7 +75,7 @@
     {
       "p": "[1:tc Particular] Size (thin drops)",
       "ok": true,
-      "v": "4"
+      "v": "3.5"
     },
     {
       "p": "[1:tc Particular] Aspect Ratio",
@@ -140,7 +140,7 @@
     {
       "p": "[2:tc Particular] Velocity (ring expansion)",
       "ok": true,
-      "v": "260"
+      "v": "85"
     },
     {
       "p": "[2:tc Particular] Velocity Random %",
@@ -150,7 +150,7 @@
     {
       "p": "[2:tc Particular] Life",
       "ok": true,
-      "v": "1.5"
+      "v": "0.89999997615814"
     },
     {
       "p": "[2:tc Particular] Life Random %",
