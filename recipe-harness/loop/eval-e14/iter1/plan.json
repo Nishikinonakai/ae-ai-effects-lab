@@ -1,0 +1,134 @@
+{
+  "_planner_rationale": [
+    "degrees-of-freedom choice: all-native 3-effect stack — radial Ramp (white core at center -> black at radius 320) + Glow for bloom + two synchronized 1 Hz pulse expressions",
+    "size pulse — Geometry2 Uniform Scale expression 100+14*sin(2πt); brightness pulse — Exposure2 Master 0.55+0.5*sin(2πt) (cards: Ramp 0005 Shape=2 radial; Exposure2 0003 stops; Geometry2 0011 uniform + 0003 scale)",
+    "sampling: renderFrames [1.25, 1.75] = sin=+1 vs sin=-1, exact antiphase — the pulse difference is maximally visible in two stills",
+    "心跳 — 1 Hz with both size and brightness in phase reads as a beat; smooth falloff from the radial ramp = light blob, not a hard circle"
+  ],
+  "_planner_sources": [
+    "introspect/cards/ADBE_Ramp.json",
+    "introspect/cards/ADBE_Glo2.json",
+    "introspect/cards/ADBE_Geometry2.json",
+    "introspect/cards/ADBE_Exposure2.json"
+  ],
+  "intent": "画面中央的圆形光斑像心跳一样有节奏地放大缩小、亮度脉动",
+  "pass_criteria": [
+    "single soft circular light blob centered",
+    "size and/or brightness clearly differs between t1 and t4 (pulse)",
+    "smooth falloff (light, not a hard-edged circle)",
+    "dark surroundings"
+  ],
+  "name": "eval-e14_i1",
+  "compName": "Eval_E14_Heartbeat",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": null,
+  "hostName": "Pulse",
+  "effects": [
+    {
+      "matchName": "ADBE Ramp",
+      "params": [
+        [
+          "ADBE Ramp-0001",
+          [
+            640,
+            360
+          ],
+          "Start of Ramp (center)"
+        ],
+        [
+          "ADBE Ramp-0002",
+          [
+            1,
+            0.92,
+            0.85,
+            1
+          ],
+          "Start Color (warm white)"
+        ],
+        [
+          "ADBE Ramp-0003",
+          [
+            640,
+            40
+          ],
+          "End of Ramp (radius 320)"
+        ],
+        [
+          "ADBE Ramp-0004",
+          [
+            0.01,
+            0.01,
+            0.02,
+            1
+          ],
+          "End Color (near-black)"
+        ],
+        [
+          "ADBE Ramp-0005",
+          2,
+          "Ramp Shape (Radial)"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Glo2",
+      "params": [
+        [
+          "ADBE Glo2-0002",
+          120,
+          "Glow Threshold"
+        ],
+        [
+          "ADBE Glo2-0003",
+          120,
+          "Glow Radius"
+        ],
+        [
+          "ADBE Glo2-0004",
+          1.4,
+          "Glow Intensity"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Geometry2",
+      "params": [
+        [
+          "ADBE Geometry2-0011",
+          1,
+          "Uniform Scale"
+        ]
+      ],
+      "expressions": [
+        [
+          "ADBE Geometry2-0003",
+          "100 + 14*Math.sin(time*2*Math.PI)",
+          "Scale pulse (1 Hz)"
+        ]
+      ]
+    },
+    {
+      "matchName": "ADBE Exposure2",
+      "params": [],
+      "expressions": [
+        [
+          "ADBE Exposure2-0003",
+          "0.55 + 0.5*Math.sin(time*2*Math.PI)",
+          "Brightness pulse (in phase)"
+        ]
+      ]
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1.25,
+    1.75
+  ]
+}

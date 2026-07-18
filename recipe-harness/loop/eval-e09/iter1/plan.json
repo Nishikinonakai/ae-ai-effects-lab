@@ -1,0 +1,128 @@
+{
+  "_planner_rationale": [
+    "light-path class, cracked in round-10: the preset library ships NO emitter paths — the technique is a synthesized expression on 0581 Position (the LIVE twin; 0003 is dormant) plus BOTH psec homes set (0005 live + 0146 aliased — r10: 0146 alone leaves near-zero emission on an animated emitter)",
+    "S 形 — head sweeps left->right over 5s while Y runs 1.5 sine periods: [140+1000*t, 360+230*sin(3πt)]",
+    "拖着长尾 — trail = particles that STAY where born: Velocity 0, Velocity-from-Motion 0 (T3 lesson: fast-swept emitters eject particles at emitter-speed×% — kills the ribbon), Life 6 outlives the sweep so the whole path persists",
+    "蓝白发光 — small Glow Spheres, Add blend, strong glow; near-black bg"
+  ],
+  "_planner_sources": [
+    "recipes/golden-dust.json",
+    "memory: round-10 light-path probe (0581/0005 live twins)",
+    "memory: T3 VelocityFromMotion lesson"
+  ],
+  "intent": "蓝白色发光光束拖着长尾，在画面上缓慢画出一个大大的 S 形轨迹",
+  "pass_criteria": [
+    "a continuous glowing trail (persistent tail), not a moving dot",
+    "trail shape reads as an S/serpentine curve spanning much of the frame",
+    "blue-white glow palette on dark background",
+    "head position advanced between t1 and t4"
+  ],
+  "name": "eval-e09_i1",
+  "compName": "Eval_E09_SPath",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.01,
+    0.012,
+    0.03
+  ],
+  "hostName": "Beam",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0703",
+          2,
+          "Particle Type (Glow Sphere)"
+        ],
+        [
+          "tc Particular-0146",
+          350,
+          "Particles/sec (aliased home)"
+        ],
+        [
+          "tc Particular-0005",
+          350,
+          "Particles/sec (live twin)"
+        ],
+        [
+          "tc Particular-0011",
+          0,
+          "Velocity (ribbon stays)"
+        ],
+        [
+          "tc Particular-0012",
+          0,
+          "Velocity Random"
+        ],
+        [
+          "tc Particular-0013",
+          0,
+          "Velocity from Motion (no ejection)"
+        ],
+        [
+          "tc Particular-0002",
+          6,
+          "Life (outlives the sweep)"
+        ],
+        [
+          "tc Particular-0027",
+          4,
+          "Size"
+        ],
+        [
+          "tc Particular-0074",
+          30,
+          "Size Random %"
+        ],
+        [
+          "tc Particular-0033",
+          90,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.6,
+            0.8,
+            1,
+            1
+          ],
+          "Color (blue-white)"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Mode (Add)"
+        ],
+        [
+          "tc Particular-0216",
+          80,
+          "Glow Opacity"
+        ],
+        [
+          "tc Particular-0215",
+          280,
+          "Glow Size"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0581",
+          "t=Math.min(time/5,1); x=140+1000*t; y=360+230*Math.sin(t*Math.PI*3); [x,y,0]",
+          "Position (S sweep over 5s)"
+        ]
+      ]
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "Third identical render: none of the three iterations' suggestions produced any pixel change — a HARNESS finding, not a look finding: tune_loop's mechanical applier does not reach the intended instance in a multi-instance effect stack (both instances share the matchName 'tc Particular'; the applier needs index-aware targeting). The look itself: rings excellent (Disc-direction ripple mechanism verified headless — a new ontology fact), drops invisible (motion-blur dilution hypothesis untested because the nudge never landed). Expected-fail marker confirmed at the harness level: linked-system looks need multi-instance-aware suggestion targeting plus the drop/ring causality that scripting cannot express.",
+  "suggestions": []
+}

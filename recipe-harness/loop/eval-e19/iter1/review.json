@@ -1,0 +1,10 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "Palette bug: the R<->B channel swap runs AFTER the Tint, converting the neon cyan into olive-yellow specks on plum — the cyberpunk grade is gone (planner error: swap composes with the grade). Rain also reads as dot specks, not streaks (motion blur alone too subtle at size 2). Density and mood-darkness are fine.",
+  "suggestions": [
+    { "type": "param", "effect": "ADBE Shift Channels", "matchName": "ADBE Shift Channels-0002", "value": 2, "why": "Red from Red — neutralize the hue swap; Wave Warp alone carries the glitch" },
+    { "type": "param", "effect": "ADBE Shift Channels", "matchName": "ADBE Shift Channels-0004", "value": 4, "why": "Blue from Blue — restore the cyan/magenta grade" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0524", "value": 5, "why": "aspect ratio 5 stretches drops into vertical rain streaks" }
+  ]
+}

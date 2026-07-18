@@ -1,0 +1,72 @@
+{
+  "_planner_rationale": [
+    "in-dist hit: recipes/native/native-chroma-glitch.json IS this request — reused verbatim (FN+Tint chromatic base, RepeTile-style Tile mirror, Shift Channels RGB crossover, Wave Warp square-jitter)",
+    "the recipe already encodes the r10 gotcha: channel-swap glitch needs a CHROMATIC base (identity on greyscale) — hence the teal/orange Tint before Shift Channels",
+    "Wave Warp speed 2.5 guarantees different offsets at t1 vs t4 (jitter criterion)"
+  ],
+  "_planner_sources": ["recipes/native/native-chroma-glitch.json"],
+  "intent": "信号故障效果：彩色抽象底图上，画面周期性轻微抖动、RGB 通道错位",
+  "pass_criteria": [
+    "chromatic base image visible (colorful, not greyscale)",
+    "RGB channel separation/fringing visible at edges",
+    "frame content offset/jitter differs between sampled frames",
+    "glitch reads as intentional style, not broken render"
+  ],
+  "name": "eval-e08",
+  "compName": "Eval_E08_ChromaGlitch",
+  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 6 },
+  "background": [0, 0, 0],
+  "hostName": "Glitch",
+  "effects": [
+    {
+      "matchName": "ADBE Fractal Noise",
+      "params": [
+        ["ADBE Fractal Noise-0001", 1,   "Fractal Type (soft clouds)"],
+        ["ADBE Fractal Noise-0002", 3,   "Noise Type (spline)"],
+        ["ADBE Fractal Noise-0004", 200, "Contrast"],
+        ["ADBE Fractal Noise-0010", 160, "Scale"]
+      ],
+      "expressions": [
+        ["ADBE Fractal Noise-0023", "time*35", "Evolution churn"]
+      ]
+    },
+    {
+      "matchName": "ADBE Tint",
+      "params": [
+        ["ADBE Tint-0001", [0.0, 0.35, 0.5, 1],  "Map Black To (teal)"],
+        ["ADBE Tint-0002", [1.0, 0.55, 0.15, 1], "Map White To (orange)"],
+        ["ADBE Tint-0003", 100, "Amount"]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Tile",
+      "params": [
+        ["ADBE Tile-0004", 160, "Output Width"],
+        ["ADBE Tile-0006", 1,   "Mirror Edges"]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Shift Channels",
+      "params": [
+        ["ADBE Shift Channels-0002", 4, "Take Red From Blue"],
+        ["ADBE Shift Channels-0004", 2, "Take Blue From Red"]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Wave Warp",
+      "params": [
+        ["ADBE Wave Warp-0001", 5,   "Wave Type (square)"],
+        ["ADBE Wave Warp-0002", 6,   "Wave Height"],
+        ["ADBE Wave Warp-0003", 18,  "Wave Width"],
+        ["ADBE Wave Warp-0004", 0,   "Direction"],
+        ["ADBE Wave Warp-0005", 2.5, "Wave Speed"]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [1, 4]
+}

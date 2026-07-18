@@ -1,0 +1,138 @@
+{
+  "intent": "无缝循环的向上滚动背景（歌词 PV 用的循环滚动装置），内容用简单几何图案即可",
+  "pass_criteria": [
+    "patterned content fills the frame with no empty band at any edge",
+    "vertical scroll between t1 and t4 (pattern displaced upward)",
+    "pattern repeats seamlessly — no visible seam/tear",
+    "geometry crisp (not smeared)"
+  ],
+  "iteration": 2,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "ADBE Fractal Noise",
+        "params": [
+          [
+            "ADBE Fractal Noise-0001",
+            1,
+            "Fractal Type"
+          ],
+          [
+            "ADBE Fractal Noise-0002",
+            1,
+            "Noise Type (spline)"
+          ],
+          [
+            "ADBE Fractal Noise-0004",
+            280,
+            "Contrast (pattern blocks)"
+          ],
+          [
+            "ADBE Fractal Noise-0010",
+            90,
+            "Scale"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE Tint",
+        "params": [
+          [
+            "ADBE Tint-0001",
+            [
+              0.08,
+              0.05,
+              0.12,
+              1
+            ],
+            "Map Black To (deep plum)"
+          ],
+          [
+            "ADBE Tint-0002",
+            [
+              0.95,
+              0.8,
+              0.62,
+              1
+            ],
+            "Map White To (warm cream)"
+          ],
+          [
+            "ADBE Tint-0003",
+            100,
+            "Amount"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE Tile",
+        "params": [
+          [
+            "ADBE Tile-0004",
+            300,
+            "Output Width"
+          ],
+          [
+            "ADBE Tile-0005",
+            300,
+            "Output Height"
+          ],
+          [
+            "ADBE Tile-0006",
+            1,
+            "Mirror Edges"
+          ]
+        ],
+        "expressions": [
+          [
+            "ADBE Tile-0001",
+            "[320, 180 - time*120]",
+            "Tile Center (upward scroll)"
+          ]
+        ]
+      },
+      {
+        "matchName": "ADBE Geometry2",
+        "params": [
+          [
+            "ADBE Geometry2-0011",
+            1,
+            "Uniform Scale"
+          ],
+          [
+            "ADBE Geometry2-0003",
+            125,
+            "Scale (hide tile borders)"
+          ]
+        ],
+        "expressions": []
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e11/iter2/eval-e11_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e11/iter2/eval-e11_i2_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The rig works: full-frame coverage with no empty band, clear upward displacement of trackable motifs between t1 and t4 (~360px, matching 120px/s), and the mirror-tile joins show no tear. But the CONTENT misses '简单几何图案' — soft cloudy noise upscaled 125% reads mushy/organic, not crisp geometry."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

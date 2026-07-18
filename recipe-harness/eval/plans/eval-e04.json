@@ -1,0 +1,69 @@
+{
+  "_planner_rationale": [
+    "look-stack composition, all native: FN soft-grey cloud base (smoke-bg pattern, no Tint yet = greyscale) -> film grain -> luminance flicker -> sepia grade",
+    "胶片颗粒 is a FEATURE here (not a defect): Noise HLS Auto2 0001=3 grain mode, Lightness 20 (e03 lesson: this param renders ~6x stronger than its range suggests; 20 = clearly-visible film grain, 60 = overwhelming), animated at 24 so grain refreshes per frame",
+    "轻微亮度闪烁 — Exposure2 Master Exposure (0003, stops): two incommensurate sines ±0.25 stop = organic projector flicker, guaranteed different at t1 vs t4",
+    "偏褐色调 — Tint LAST so base + grain both take the sepia (black->warm dark brown, white->aged paper)"
+  ],
+  "_planner_sources": [
+    "plans/plan-smoke-bg.json",
+    "introspect/cards/ADBE_Noise_HLS_Auto2.json",
+    "introspect/cards/ADBE_Exposure2.json",
+    "introspect/cards/ADBE_Tint.json"
+  ],
+  "intent": "老胶片效果的抽象背景：柔和的灰阶云雾底，叠加胶片颗粒噪点、轻微亮度闪烁、整体偏褐色调",
+  "pass_criteria": [
+    "soft greyscale cloud base readable under the treatment",
+    "film grain clearly present",
+    "sepia/brown tint over the whole frame",
+    "brightness differs slightly between t1 and t4 (flicker)"
+  ],
+  "name": "eval-e04",
+  "compName": "Eval_E04_OldFilm",
+  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 6 },
+  "background": null,
+  "hostName": "Film",
+  "effects": [
+    {
+      "matchName": "ADBE Fractal Noise",
+      "params": [
+        ["ADBE Fractal Noise-0001", 1,   "Fractal Type (soft clouds)"],
+        ["ADBE Fractal Noise-0002", 3,   "Noise Type (smoothest)"],
+        ["ADBE Fractal Noise-0004", 105, "Contrast (soft)"],
+        ["ADBE Fractal Noise-0005", -6,  "Brightness"],
+        ["ADBE Fractal Noise-0010", 210, "Scale (big soft billows)"]
+      ],
+      "expressions": [
+        ["ADBE Fractal Noise-0023", "time*25", "Evolution (slow)"]
+      ]
+    },
+    {
+      "matchName": "ADBE Noise HLS Auto2",
+      "params": [
+        ["ADBE Noise HLS Auto2-0001", 3,   "Noise type (grain)"],
+        ["ADBE Noise HLS Auto2-0003", 20,  "Lightness noise (visible film grain)"],
+        ["ADBE Noise HLS Auto2-0005", 0.9, "Grain Size"],
+        ["ADBE Noise HLS Auto2-0006", 24,  "Noise Animation Speed (per-frame refresh)"]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Exposure2",
+      "params": [],
+      "expressions": [
+        ["ADBE Exposure2-0003", "0.22*Math.sin(time*13) + 0.14*Math.sin(time*29+1.7)", "Master Exposure flicker (stops)"]
+      ]
+    },
+    {
+      "matchName": "ADBE Tint",
+      "params": [
+        ["ADBE Tint-0001", [0.09, 0.055, 0.03, 1],  "Map Black To (warm dark brown)"],
+        ["ADBE Tint-0002", [0.89, 0.79, 0.62, 1],   "Map White To (aged paper)"],
+        ["ADBE Tint-0003", 100, "Amount"]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [1, 4]
+}

@@ -1,0 +1,63 @@
+{
+  "status": "done",
+  "name": "eval-e14_i2",
+  "params": [
+    {
+      "p": "[1:ADBE Ramp] Start of Ramp (center)",
+      "ok": true,
+      "v": "640,360"
+    },
+    {
+      "p": "[1:ADBE Ramp] Start Color (warm white)",
+      "ok": true,
+      "v": "1,0.9200000166893,0.8500"
+    },
+    {
+      "p": "[1:ADBE Ramp] End of Ramp (radius 320)",
+      "ok": true,
+      "v": "640,40"
+    },
+    {
+      "p": "[1:ADBE Ramp] End Color (near-black)",
+      "ok": true,
+      "v": "0,0,0,1"
+    },
+    {
+      "p": "[1:ADBE Ramp] Ramp Shape (Radial)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[2:ADBE Glo2] Glow Threshold",
+      "ok": true,
+      "v": "120"
+    },
+    {
+      "p": "[2:ADBE Glo2] Glow Radius",
+      "ok": true,
+      "v": "120"
+    },
+    {
+      "p": "[2:ADBE Glo2] Glow Intensity",
+      "ok": true,
+      "v": "1.39999997615814"
+    },
+    {
+      "p": "[3:ADBE Geometry2] Uniform Scale",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[3:ADBE Geometry2] Scale pulse (1 Hz) (expr)",
+      "ok": true
+    },
+    {
+      "p": "[4:ADBE Exposure2] Brightness pulse (in phase) (expr)",
+      "ok": true
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e14/iter2/eval-e14_i2_t1p25.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e14/iter2/eval-e14_i2_t1p75.png"
+  ]
+}

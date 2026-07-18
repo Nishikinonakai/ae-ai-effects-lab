@@ -1,0 +1,9 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The sphere itself is excellent: three concentric particle shells (Sphere-Layered confirmed), fine grid texture, strong volume read from nested shells and limb density, centered on clean black. But rotation is unverifiable between t1 and t4 — a near-perfectly symmetric sphere is rotation-invariant in stills; the FAffectPosX 15 surface features are too subtle to track. The criterion needs visible asymmetric features that travel.",
+  "suggestions": [
+    { "type": "param", "effect": "tc Form", "matchName": "tc Form-0166", "value": 75, "why": "stronger field displacement = visible lumps/streams on the shells that the Y-rotation carries around" },
+    { "type": "param", "effect": "tc Form", "matchName": "tc Form-0180", "value": 6, "why": "larger field scale = coherent continent-sized features instead of uniform ripple" }
+  ]
+}

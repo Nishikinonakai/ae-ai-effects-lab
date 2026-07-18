@@ -1,0 +1,46 @@
+{
+  "_planner_rationale": [
+    "same light-path mechanism as e09 (0581 expression + dual psec homes), circular parametrization: one revolution per 4s starting at 12 o'clock, radius 240 centered in frame",
+    "渐隐轨迹 — no scriptable opacity-over-life curve, so the fade is built from Life 2.2 (±40% random): the tail spans ~200° of arc with staggered deaths = soft dissolve at the tail end",
+    "表盘感 — clean cyan-white glow dots, dark background, no turbulence"
+  ],
+  "_planner_sources": ["eval/plans/eval-e09.json", "recipes/golden-dust.json"],
+  "intent": "光点沿圆形轨道匀速运动，留下渐隐的轨迹，像发光表盘的外圈",
+  "pass_criteria": [
+    "circular arc trail centered in frame (ring geometry readable)",
+    "fading tail — older segments dimmer than the head",
+    "head advanced along the circle between t1 and t4",
+    "clean dark background, glow palette"
+  ],
+  "name": "eval-e10",
+  "compName": "Eval_E10_ClockRing",
+  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 6 },
+  "background": [0.008, 0.01, 0.02],
+  "hostName": "Ring",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        ["tc Particular-0703", 2,                  "Particle Type (Glow Sphere)"],
+        ["tc Particular-0146", 450,                 "Particles/sec (aliased home)"],
+        ["tc Particular-0005", 450,                 "Particles/sec (live twin)"],
+        ["tc Particular-0011", 0,                   "Velocity"],
+        ["tc Particular-0012", 0,                   "Velocity Random"],
+        ["tc Particular-0013", 0,                   "Velocity from Motion"],
+        ["tc Particular-0002", 2.2,                 "Life (tail length ~200 deg)"],
+        ["tc Particular-0065", 40,                  "Life Random % (soft tail dissolve)"],
+        ["tc Particular-0027", 3.2,                 "Size"],
+        ["tc Particular-0033", 90,                  "Opacity"],
+        ["tc Particular-0070", [0.55, 0.9, 1, 1],   "Color (cyan-white)"],
+        ["tc Particular-0069", 2,                   "Blend Mode (Add)"],
+        ["tc Particular-0216", 75,                  "Glow Opacity"],
+        ["tc Particular-0215", 260,                 "Glow Size"]
+      ],
+      "expressions": [
+        ["tc Particular-0581", "a=time*(2*Math.PI/4); [640+240*Math.sin(a), 360-240*Math.cos(a), 0]", "Position (circular orbit, 4s/rev)"]
+      ]
+    }
+  ],
+  "camera": null,
+  "renderFrames": [1, 4]
+}

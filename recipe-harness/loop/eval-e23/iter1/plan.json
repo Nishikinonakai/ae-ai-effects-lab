@@ -1,0 +1,163 @@
+{
+  "_planner_rationale": [
+    "base = recipes/mined/flight-landscape.json (validated Form terrain): sheet 500x1x300 particles, FAffectPos on Y (0165=2 popup, 0167 negative) = terrain height field, FlowZ -500 = forward flight",
+    "均衡器起伏 — boost the height field (0167 -260) and DRIVE evolution with an expression (time*30; the mined preset loops it statically) so peaks rise/fall like a spectrum",
+    "palette — cyan on dark (music-viz convention), Add blend (0037=2, r2 verdict: right for glow family)",
+    "park-sentinel D1/D2/KCenter dropped (e06 precedent: inert)"
+  ],
+  "_planner_sources": [
+    "recipes/mined/flight-landscape.json",
+    "recipes/mined/ethereal-landscape.json (by catalog)",
+    "recipes/mined/genesis.json"
+  ],
+  "intent": "均衡器波形山脉：粒子构成的地形像音乐可视化一样起伏",
+  "pass_criteria": [
+    "particle terrain/landscape band across the frame (Form-style surface)",
+    "peaks/valleys structure readable",
+    "undulation between t1 and t4 (peaks moved/changed)",
+    "clean palette against dark sky"
+  ],
+  "name": "eval-e23_i1",
+  "compName": "Eval_E23_EqualizerTerrain",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.01,
+    0.012,
+    0.025
+  ],
+  "hostName": "Terrain",
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0489",
+          2,
+          "Base Shape Size option"
+        ],
+        [
+          "tc Form-0007",
+          500,
+          "Particles in X"
+        ],
+        [
+          "tc Form-0008",
+          1,
+          "Particles in Y (sheet)"
+        ],
+        [
+          "tc Form-0009",
+          300,
+          "Particles in Z (depth rows)"
+        ],
+        [
+          "tc Form-0004",
+          1180,
+          "Size X"
+        ],
+        [
+          "tc Form-0005",
+          200,
+          "Size Y"
+        ],
+        [
+          "tc Form-0006",
+          1500,
+          "Size Z"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "Blend Mode (Add)"
+        ],
+        [
+          "tc Form-0033",
+          1,
+          "Particle Size"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.25,
+            0.9,
+            0.85,
+            1
+          ],
+          "Particle Color (cyan)"
+        ],
+        [
+          "tc Form-0042",
+          1,
+          "Set Color (Solid)"
+        ],
+        [
+          "tc Form-0165",
+          2,
+          "Field Affect Pos axis (Y popup)"
+        ],
+        [
+          "tc Form-0167",
+          -260,
+          "Field Affect Pos Y (terrain height)"
+        ],
+        [
+          "tc Form-0181",
+          6,
+          "Field Complexity"
+        ],
+        [
+          "tc Form-0182",
+          0.6,
+          "Octave Multiplier"
+        ],
+        [
+          "tc Form-0183",
+          1.8,
+          "Octave Scale"
+        ],
+        [
+          "tc Form-0180",
+          2,
+          "Field Scale"
+        ],
+        [
+          "tc Form-0175",
+          2,
+          "Fractal ABS"
+        ],
+        [
+          "tc Form-0178",
+          0,
+          "Field Min"
+        ],
+        [
+          "tc Form-0171",
+          -500,
+          "Flow Z (forward flight)"
+        ],
+        [
+          "tc Form-0210",
+          10,
+          "RW X"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Form-0172",
+          "time*30",
+          "Field Evolution (peaks rise/fall)"
+        ]
+      ]
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ]
+}

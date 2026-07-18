@@ -1,0 +1,8 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "Identical frames — density/size/life nudges changed nothing visible, which points at the real mechanism: the drops instance has Motion Blur ON at 1900px/s — a 32px smear per frame dilutes an 85%-opacity dot to ~7% per pixel = invisible regardless of count. The rings remain correct. Kill the blur on the drops (first-match instance) to reveal them.",
+  "suggestions": [
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0035", "value": 1, "why": "motion blur off on the drops instance — fast small particles vanish under smear; crisp dashes read as rain" }
+  ]
+}

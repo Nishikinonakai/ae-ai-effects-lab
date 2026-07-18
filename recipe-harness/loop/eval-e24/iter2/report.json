@@ -1,0 +1,84 @@
+{
+  "status": "done",
+  "name": "eval-e24_i2",
+  "params": [
+    {
+      "p": "[1:ADBE Fractal Noise] Fractal Type (sparse/threshold = graphic shapes)",
+      "ok": true,
+      "v": "13"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Noise Type",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Contrast (hard edges)",
+      "ok": true,
+      "v": "180"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Brightness",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Scale",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Evolution (slow) (expr)",
+      "ok": true
+    },
+    {
+      "p": "[2:ADBE Tile] Output Width",
+      "ok": true,
+      "v": "220"
+    },
+    {
+      "p": "[2:ADBE Tile] Output Height",
+      "ok": true,
+      "v": "220"
+    },
+    {
+      "p": "[2:ADBE Tile] Mirror Edges (kaleido symmetry)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[3:ADBE Tint] Map Black To (deep blue)",
+      "ok": true,
+      "v": "0.07000000029802,0.10000"
+    },
+    {
+      "p": "[3:ADBE Tint] Map White To (cream)",
+      "ok": true,
+      "v": "0.93000000715256,0.88999"
+    },
+    {
+      "p": "[3:ADBE Tint] Amount (strict duotone)",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[4:ADBE Emboss] Relief",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[4:ADBE Emboss] Contrast",
+      "ok": true,
+      "v": "170"
+    },
+    {
+      "p": "[4:ADBE Emboss] Blend With Original (keep duotone)",
+      "ok": true,
+      "v": "45"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e24/iter2/eval-e24_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e24/iter2/eval-e24_i2_t4.png"
+  ]
+}

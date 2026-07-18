@@ -1,0 +1,26 @@
+{
+  "intent": "来点好看的科技感粒子背景",
+  "backend": "agent",
+  "outcome": "fail_max_iters",
+  "best_iter": 2,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "Reads as a broken render, not a tech background: faint tiny speckles crawling in from the left, right half empty at t4, streaklets too small/dim to read as streaks or anything deliberate. The left-edge-source design starves frame coverage and the particle scale is below the visibility floor (the miner's sub-pixel lesson)."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "Coverage and brightness fixed — full-frame cyan field on dark blue, background-grade density. But the 'tech' read is still missing: streaklet clumps render as roundish dot clusters (motion per frame too small to elongate them), so it reads as dim blue snow, not data streams. Needs actual directional elongation."
+    },
+    {
+      "iter": 3,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "Third direction also failed: aspect-7 glow spheres at 550 wind with motion blur render as giant smeared ellipses filling the frame wall-to-wall, with hard VERTICAL SEAM artifacts (sub-buffer edges) cutting the field — overpowering and visibly broken, worse than iter2's usable-but-bland dot field. Max-iters reached; best remains iter2 (5/10). Eval lesson recorded: for vague prompts the planner should adapt the closest CURATED library recipe (data-flow) wholesale instead of improvising particle-craft — three self-authored directions each missed taste."
+    }
+  ]
+}

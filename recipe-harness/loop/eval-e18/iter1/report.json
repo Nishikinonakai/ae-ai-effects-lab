@@ -1,0 +1,129 @@
+{
+  "status": "done",
+  "name": "eval-e18_i1",
+  "params": [
+    {
+      "p": "[master] clone MASTER_particular_cloud",
+      "ok": true
+    },
+    {
+      "p": "[1:tc Particular] Emitter Type (Box)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Position (below bottom edge)",
+      "ok": true,
+      "v": "640,750,0"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size mode (XYZ)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size X",
+      "ok": true,
+      "v": "1100"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Y",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Z",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] Particle Type (Cloudlet)",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec",
+      "ok": true,
+      "v": "70"
+    },
+    {
+      "p": "[1:tc Particular] Velocity",
+      "ok": true,
+      "v": "60"
+    },
+    {
+      "p": "[1:tc Particular] Velocity Random %",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Life (reaches top)",
+      "ok": true,
+      "v": "5.5"
+    },
+    {
+      "p": "[1:tc Particular] Life Random %",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Particular] Gravity (buoyant)",
+      "ok": true,
+      "v": "-25"
+    },
+    {
+      "p": "[1:tc Particular] Wind Y (rise)",
+      "ok": true,
+      "v": "-170"
+    },
+    {
+      "p": "[1:tc Particular] Size (big puffs)",
+      "ok": true,
+      "v": "55"
+    },
+    {
+      "p": "[1:tc Particular] Size Random %",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Opacity (volume from overlap)",
+      "ok": true,
+      "v": "22"
+    },
+    {
+      "p": "[1:tc Particular] Opacity Random %",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Particular] Color (white smoke)",
+      "ok": true,
+      "v": "0.93000000715256,0.93999"
+    },
+    {
+      "p": "[1:tc Particular] Blend Mode (Normal)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] TF Affect Position (billow)",
+      "ok": true,
+      "v": "90"
+    },
+    {
+      "p": "[1:tc Particular] TF Scale",
+      "ok": true,
+      "v": "14"
+    },
+    {
+      "p": "[1:tc Particular] TF Evolution",
+      "ok": true,
+      "v": "12"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e18/iter1/eval-e18_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e18/iter1/eval-e18_i1_t4.png"
+  ]
+}

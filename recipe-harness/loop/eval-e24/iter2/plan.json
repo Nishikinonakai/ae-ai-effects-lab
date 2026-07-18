@@ -1,0 +1,176 @@
+{
+  "_planner_rationale": [
+    "the artist's own Tint→Emboss signature stack (brownfield AMV survey; recipes/native/native-tint-emboss.json validated) — palette swapped to 深蓝+米白",
+    "抽象几何底图 — FN Fractal Type 2 ('sparse/threshold' per enriched card = hard graphic shapes) at Contrast 260, then Tile with Mirror Edges = kaleidoscopic symmetry -> reads as abstract print geometry, no footage needed",
+    "双色调 — Tint at Amount 100 forces strict two-tone (deep blue / cream); Emboss AFTER Tint with Blend 45 keeps the duotone while adding 浮雕 relief lines (the validated recipe's order)",
+    "slow Evolution keeps it alive between frames without breaking the poster feel"
+  ],
+  "_planner_sources": [
+    "recipes/native/native-tint-emboss.json",
+    "introspect/enrichment/ADBE_Fractal_Noise.enriched.json",
+    "recipes/native/native-chroma-glitch.json"
+  ],
+  "intent": "复古双色调印刷海报感：抽象几何底图，画面转为深蓝与米白双色，带浮雕纹理线条",
+  "pass_criteria": [
+    "abstract geometric base readable",
+    "strict two-tone palette (deep blue + cream), no full-color leakage",
+    "emboss/relief line texture visible",
+    "poster-like graphic cohesion"
+  ],
+  "name": "eval-e24_i2",
+  "compName": "Eval_E24_DuotonePoster",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": null,
+  "hostName": "Poster",
+  "effects": [
+    {
+      "matchName": "ADBE Fractal Noise",
+      "params": [
+        [
+          "ADBE Fractal Noise-0001",
+          13,
+          "Fractal Type (sparse/threshold = graphic shapes)"
+        ],
+        [
+          "ADBE Fractal Noise-0002",
+          3,
+          "Noise Type"
+        ],
+        [
+          "ADBE Fractal Noise-0004",
+          180,
+          "Contrast (hard edges)"
+        ],
+        [
+          "ADBE Fractal Noise-0005",
+          0,
+          "Brightness"
+        ],
+        [
+          "ADBE Fractal Noise-0010",
+          200,
+          "Scale"
+        ]
+      ],
+      "expressions": [
+        [
+          "ADBE Fractal Noise-0023",
+          "time*18",
+          "Evolution (slow)"
+        ]
+      ]
+    },
+    {
+      "matchName": "ADBE Tile",
+      "params": [
+        [
+          "ADBE Tile-0004",
+          220,
+          "Output Width"
+        ],
+        [
+          "ADBE Tile-0005",
+          220,
+          "Output Height"
+        ],
+        [
+          "ADBE Tile-0006",
+          1,
+          "Mirror Edges (kaleido symmetry)"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Tint",
+      "params": [
+        [
+          "ADBE Tint-0001",
+          [
+            0.07,
+            0.1,
+            0.25,
+            1
+          ],
+          "Map Black To (deep blue)"
+        ],
+        [
+          "ADBE Tint-0002",
+          [
+            0.93,
+            0.89,
+            0.78,
+            1
+          ],
+          "Map White To (cream)"
+        ],
+        [
+          "ADBE Tint-0003",
+          100,
+          "Amount (strict duotone)"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Emboss",
+      "params": [
+        [
+          "ADBE Emboss-0002",
+          3,
+          "Relief"
+        ],
+        [
+          "ADBE Emboss-0003",
+          170,
+          "Contrast"
+        ],
+        [
+          "ADBE Emboss-0004",
+          45,
+          "Blend With Original (keep duotone)"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "ADBE Fractal Noise",
+          "matchName": "ADBE Fractal Noise-0001",
+          "value": 13,
+          "why": "enriched card: type 13 = liquid marble veins — strong graphic structure that survives thresholding, poster-like shapes"
+        },
+        {
+          "type": "param",
+          "effect": "ADBE Fractal Noise",
+          "matchName": "ADBE Fractal Noise-0004",
+          "value": 180,
+          "why": "260 crushed the field to one side; 180 keeps hard edges with both tones present"
+        },
+        {
+          "type": "param",
+          "effect": "ADBE Fractal Noise",
+          "matchName": "ADBE Fractal Noise-0005",
+          "value": 0,
+          "why": "neutral brightness so black/white both survive for the duotone map"
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

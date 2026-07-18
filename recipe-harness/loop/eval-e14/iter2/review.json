@@ -1,0 +1,6 @@
+{
+  "verdict": "pass",
+  "score": 9,
+  "critique": "Both fixes landed: pure-black ramp end + scale-up-only pulse removed the layer-boundary rectangle entirely (corners are true black), and the antiphase frames show a clear heartbeat — larger brighter core at t1.25 vs smaller dimmer warmer-rimmed blob at t1.75. Soft radial falloff, single centered light. All criteria met.",
+  "suggestions": []
+}

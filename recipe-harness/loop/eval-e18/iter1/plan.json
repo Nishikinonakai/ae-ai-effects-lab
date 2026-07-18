@@ -1,0 +1,176 @@
+{
+  "_planner_rationale": [
+    "the known-weak cloudlet class — best lever is the user-authored curve master: clone MASTER_particular_cloud (size-bell + opacity-fade over life curves, unreachable via setValue) and override scriptables on the clone",
+    "滚滚浓烟 — Cloudlet type 0703=4, BIG size 55 at LOW opacity 22: volume from overlap, not from single-particle density; TF displace 90 at scale 14 for billow",
+    "从底部升起弥漫 — bottom-band box emitter + Wind Y -170 + slight negative gravity; Life 5.5 lets plumes reach the top by t4",
+    "白烟 — near-white color, Normal blend (smoke bodies, not light), dark cool bg for contrast"
+  ],
+  "_planner_sources": [
+    "recipe-harness/library/particular-masters.aep (MASTER_particular_cloud)",
+    "recipes/mined/simple-fire.json (master-clone field shape)",
+    "recipes/mined/point-smoke.json (by catalog)"
+  ],
+  "intent": "浓密的白烟从画面底部滚滚升起，逐渐弥漫到画面上方",
+  "pass_criteria": [
+    "smoke reads as connected billowing VOLUME (overlapping puffs), not discrete dots",
+    "rising motion between t1 and t4 with spread",
+    "white/grey palette with internal shading",
+    "no hard particle edges breaking the smoke illusion"
+  ],
+  "name": "eval-e18_i1",
+  "compName": "Eval_E18_SmokeRise",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.05,
+    0.06,
+    0.08
+  ],
+  "hostName": "Smoke",
+  "master": {
+    "library": "library/particular-masters.aep",
+    "comp": "MASTER_particular_cloud",
+    "layer": 1
+  },
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          2,
+          "Emitter Type (Box)"
+        ],
+        [
+          "tc Particular-0581",
+          [
+            640,
+            750,
+            0
+          ],
+          "Position (below bottom edge)"
+        ],
+        [
+          "tc Particular-0577",
+          2,
+          "Emitter Size mode (XYZ)"
+        ],
+        [
+          "tc Particular-0014",
+          1100,
+          "Emitter Size X"
+        ],
+        [
+          "tc Particular-0015",
+          120,
+          "Emitter Size Y"
+        ],
+        [
+          "tc Particular-0016",
+          300,
+          "Emitter Size Z"
+        ],
+        [
+          "tc Particular-0703",
+          4,
+          "Particle Type (Cloudlet)"
+        ],
+        [
+          "tc Particular-0146",
+          70,
+          "Particles/sec"
+        ],
+        [
+          "tc Particular-0011",
+          60,
+          "Velocity"
+        ],
+        [
+          "tc Particular-0012",
+          40,
+          "Velocity Random %"
+        ],
+        [
+          "tc Particular-0002",
+          5.5,
+          "Life (reaches top)"
+        ],
+        [
+          "tc Particular-0065",
+          30,
+          "Life Random %"
+        ],
+        [
+          "tc Particular-0017",
+          -25,
+          "Gravity (buoyant)"
+        ],
+        [
+          "tc Particular-0750",
+          -170,
+          "Wind Y (rise)"
+        ],
+        [
+          "tc Particular-0027",
+          55,
+          "Size (big puffs)"
+        ],
+        [
+          "tc Particular-0074",
+          40,
+          "Size Random %"
+        ],
+        [
+          "tc Particular-0033",
+          22,
+          "Opacity (volume from overlap)"
+        ],
+        [
+          "tc Particular-0075",
+          30,
+          "Opacity Random %"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.93,
+            0.94,
+            0.96,
+            1
+          ],
+          "Color (white smoke)"
+        ],
+        [
+          "tc Particular-0069",
+          1,
+          "Blend Mode (Normal)"
+        ],
+        [
+          "tc Particular-0042",
+          90,
+          "TF Affect Position (billow)"
+        ],
+        [
+          "tc Particular-0046",
+          14,
+          "TF Scale"
+        ],
+        [
+          "tc Particular-0052",
+          12,
+          "TF Evolution"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "_planner_rationale": [
+    "burst = psec expression spike (r6 lesson: flat spike, total per burst): 12000/s for 0.17s ≈ 2000 particles born in one shell",
+    "spherical bloom — Sphere emitter (0782=3) + Uniform direction + Velocity 480; droop — Gravity 210 with default Air Resistance drag; fade — Life 1.5±25 dies before the floor",
+    "彩色 — Color Random 0071=70 over a warm base = multi-hue shell; Add + glow for night-sky pop",
+    "sampling [0.4, 1.6]: expanding shell mid-bloom, then drooped fading arcs"
+  ],
+  "_planner_sources": [
+    "mining/README.md (burst-spike lessons)",
+    "recipes/mined/point-explosion.json (by catalog)",
+    "recipes/golden-dust.json"
+  ],
+  "intent": "夜空烟花：一朵烟花绽放成球形的彩色光点，然后拖尾下坠消散",
+  "pass_criteria": [
+    "spherical burst of many colored glow points from a single origin",
+    "later frame shows expansion + gravity droop (arcs bending down) + fading",
+    "reads as fireworks (radial structure), not random scatter",
+    "night-sky dark background"
+  ],
+  "name": "eval-e16_i1",
+  "compName": "Eval_E16_Fireworks",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.012,
+    0.012,
+    0.03
+  ],
+  "hostName": "Fireworks",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          3,
+          "Emitter Type (Sphere)"
+        ],
+        [
+          "tc Particular-0581",
+          [
+            640,
+            300,
+            0
+          ],
+          "Position (upper sky)"
+        ],
+        [
+          "tc Particular-0577",
+          1,
+          "Emitter Size mode (uniform)"
+        ],
+        [
+          "tc Particular-0014",
+          50,
+          "Emitter Size (small core)"
+        ],
+        [
+          "tc Particular-0113",
+          1,
+          "Emitter Direction (Uniform radial)"
+        ],
+        [
+          "tc Particular-0011",
+          480,
+          "Velocity (bloom radius)"
+        ],
+        [
+          "tc Particular-0012",
+          18,
+          "Velocity Random %"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Particle Type (Glow Sphere)"
+        ],
+        [
+          "tc Particular-0002",
+          1.5,
+          "Life"
+        ],
+        [
+          "tc Particular-0065",
+          25,
+          "Life Random %"
+        ],
+        [
+          "tc Particular-0017",
+          210,
+          "Gravity (droop)"
+        ],
+        [
+          "tc Particular-0027",
+          3.4,
+          "Size"
+        ],
+        [
+          "tc Particular-0074",
+          45,
+          "Size Random %"
+        ],
+        [
+          "tc Particular-0033",
+          100,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0075",
+          50,
+          "Opacity Random % (sparkle)"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            1,
+            0.72,
+            0.3,
+            1
+          ],
+          "Color (warm base)"
+        ],
+        [
+          "tc Particular-0071",
+          70,
+          "Color Random % (multi-hue)"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Mode (Add)"
+        ],
+        [
+          "tc Particular-0216",
+          70,
+          "Glow Opacity"
+        ],
+        [
+          "tc Particular-0215",
+          250,
+          "Glow Size"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0146",
+          "(time>0.25 && time<0.42) ? 12000 : 0",
+          "Particles/sec (burst spike)"
+        ]
+      ]
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    0.4,
+    1.6
+  ]
+}

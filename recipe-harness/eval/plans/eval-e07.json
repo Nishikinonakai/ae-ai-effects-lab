@@ -1,0 +1,59 @@
+{
+  "_planner_rationale": [
+    "base = recipes/mined/large-snow-2d.json (validated) — its fall mechanics reused: Directional emission (0113=2) angled straight down (0112=270), moderate velocity, tiny gravity 17 (snow falls at ~constant speed, not accelerating), TF displace for wander",
+    "planner simplification: the mined recipe textures flakes via a SPRITE connect (pack footage dependency); for plain 大片雪花 a Sphere (0703=1) with heavy Feather 55 reads as a soft flake without any footage — drops the dependency",
+    "大片 — Size 11 ±40%, psec 90 (large flakes stay countable, not a blizzard)",
+    "轻微左右飘动 — TF Affect Position 60 at F Scale 5 (the mined recipe's own sway values, halved-ish for 轻微)",
+    "深灰蓝背景 — bg [0.09,0.11,0.16]; flakes pure white, Normal blend (snow is a body, not light), subtle glow 25/300 from the recipe for softness"
+  ],
+  "_planner_sources": ["recipes/mined/large-snow-2d.json"],
+  "intent": "大片雪花缓缓飘落，轻微左右飘动，深灰蓝背景",
+  "pass_criteria": [
+    "white soft flakes falling downward",
+    "large-flake scale readable (not fine dust)",
+    "slight lateral drift/wander",
+    "dark grey-blue background"
+  ],
+  "name": "eval-e07",
+  "compName": "Eval_E07_Snow",
+  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 6 },
+  "background": [0.09, 0.11, 0.16],
+  "hostName": "Snow",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        ["tc Particular-0782", 2,                "Emitter Type (Box)"],
+        ["tc Particular-0581", [640, -60, 0],     "Position (above top edge)"],
+        ["tc Particular-0577", 2,                 "Emitter Size mode (XYZ)"],
+        ["tc Particular-0014", 1450,              "Emitter Size X"],
+        ["tc Particular-0015", 60,                "Emitter Size Y"],
+        ["tc Particular-0016", 400,               "Emitter Size Z"],
+        ["tc Particular-0703", 1,                 "Particle Type (Sphere)"],
+        ["tc Particular-0029", 55,                "Feather (soft flake)"],
+        ["tc Particular-0146", 90,                "Particles/sec"],
+        ["tc Particular-0113", 2,                 "Emitter Direction (Directional)"],
+        ["tc Particular-0112", 270,               "Angle X (straight down)"],
+        ["tc Particular-0010", 12,                "Direction Spread"],
+        ["tc Particular-0011", 110,               "Velocity (gentle fall)"],
+        ["tc Particular-0012", 25,                "Velocity Random %"],
+        ["tc Particular-0002", 7,                 "Life (crosses the frame)"],
+        ["tc Particular-0065", 20,                "Life Random %"],
+        ["tc Particular-0017", 17,                "Gravity (near-terminal, from recipe)"],
+        ["tc Particular-0027", 11,                "Size (large flakes)"],
+        ["tc Particular-0074", 40,                "Size Random %"],
+        ["tc Particular-0033", 100,               "Opacity"],
+        ["tc Particular-0075", 20,                "Opacity Random %"],
+        ["tc Particular-0070", [1, 1, 1, 1],      "Color (white)"],
+        ["tc Particular-0042", 60,                "TF Affect Position (wander)"],
+        ["tc Particular-0046", 5,                 "TF Scale"],
+        ["tc Particular-0052", 30,                "TF Evolution"],
+        ["tc Particular-0216", 25,                "Glow Opacity (softness)"],
+        ["tc Particular-0215", 300,               "Glow Size"]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [1, 4]
+}

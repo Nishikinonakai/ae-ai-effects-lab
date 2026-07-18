@@ -1,0 +1,14 @@
+{
+  "intent": "老胶片效果的抽象背景：柔和的灰阶云雾底，叠加胶片颗粒噪点、轻微亮度闪烁、整体偏褐色调",
+  "backend": "agent",
+  "outcome": "pass",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "Reads as aged film stock: soft cloud base clearly visible under the treatment, dense authentic-looking grain (a deliberate feature per the request), full-frame sepia/brown grade, and global luminance/structure differs between t1 and t4 (flicker + evolution). All four criteria met — usable as-is."
+    }
+  ]
+}

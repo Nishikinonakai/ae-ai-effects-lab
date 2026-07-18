@@ -1,0 +1,9 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The pulse is unmistakable — antiphase sampling shows a big bright blob at t1.25 vs a smaller dimmer one at t1.75, smooth radial falloff, warm light read. One artifact breaks 'dark surroundings': at sub-100% scale the solid's boundary shows as a faint grey rectangle frame (the ramp end color [0.01,0.01,0.02] is lighter than the pure-black comp behind it).",
+  "suggestions": [
+    { "type": "param", "effect": "ADBE Ramp", "matchName": "ADBE Ramp-0004", "value": [0, 0, 0, 1], "why": "pure-black ramp end = solid edge indistinguishable from comp background" },
+    { "type": "expression", "effect": "ADBE Geometry2", "matchName": "ADBE Geometry2-0003", "expression": "116 + 14*Math.sin(time*2*Math.PI)", "why": "pulse 102-130% — never below 100, so the layer edge stays outside the frame" }
+  ]
+}

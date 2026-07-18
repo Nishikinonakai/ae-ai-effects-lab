@@ -1,0 +1,63 @@
+{
+  "_planner_rationale": [
+    "in-dist hit: recipes/native/native-loop-scroll.json is the 静止画 PV scroll rig from the artist's own AMV stack (Motion Tile ×2037 signature) — reused with direction turned vertical",
+    "THE encoded gotcha: the scroll must animate Motion Tile's TILE CENTER (content slides seamlessly forever); animating Transform position slides content out of layer bounds",
+    "向上 — Tile Center Y decreases: [320, 180 - time*120]; Output 300% + Mirror Edges = no seam, no empty band; Geometry2 125% hides tile borders",
+    "简单几何图案 — the recipe's FN+Tint base at higher contrast reads as abstract pattern blocks; crispness from spline noise"
+  ],
+  "_planner_sources": ["recipes/native/native-loop-scroll.json", "brownfield/AMV_SURVEY.md"],
+  "intent": "无缝循环的向上滚动背景（歌词 PV 用的循环滚动装置），内容用简单几何图案即可",
+  "pass_criteria": [
+    "patterned content fills the frame with no empty band at any edge",
+    "vertical scroll between t1 and t4 (pattern displaced upward)",
+    "pattern repeats seamlessly — no visible seam/tear",
+    "geometry crisp (not smeared)"
+  ],
+  "name": "eval-e11",
+  "compName": "Eval_E11_LoopScroll",
+  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 6 },
+  "background": [0, 0, 0],
+  "hostName": "Scroll",
+  "effects": [
+    {
+      "matchName": "ADBE Fractal Noise",
+      "params": [
+        ["ADBE Fractal Noise-0001", 1,   "Fractal Type"],
+        ["ADBE Fractal Noise-0002", 3,   "Noise Type (spline)"],
+        ["ADBE Fractal Noise-0004", 160, "Contrast (pattern blocks)"],
+        ["ADBE Fractal Noise-0010", 160, "Scale"]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Tint",
+      "params": [
+        ["ADBE Tint-0001", [0.08, 0.05, 0.12, 1],  "Map Black To (deep plum)"],
+        ["ADBE Tint-0002", [0.95, 0.8, 0.62, 1],   "Map White To (warm cream)"],
+        ["ADBE Tint-0003", 100, "Amount"]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Tile",
+      "params": [
+        ["ADBE Tile-0004", 300, "Output Width"],
+        ["ADBE Tile-0005", 300, "Output Height"],
+        ["ADBE Tile-0006", 1,   "Mirror Edges"]
+      ],
+      "expressions": [
+        ["ADBE Tile-0001", "[320, 180 - time*120]", "Tile Center (upward scroll)"]
+      ]
+    },
+    {
+      "matchName": "ADBE Geometry2",
+      "params": [
+        ["ADBE Geometry2-0011", 1,   "Uniform Scale"],
+        ["ADBE Geometry2-0003", 125, "Scale (hide tile borders)"]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [1, 4]
+}

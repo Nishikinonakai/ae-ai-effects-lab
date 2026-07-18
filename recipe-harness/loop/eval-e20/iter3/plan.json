@@ -1,0 +1,310 @@
+{
+  "_planner_rationale": [
+    "EXPECTED-FAIL headroom marker: impact-linked twin systems aren't scriptable (S2 emits along parent life, not at death; over-life curves locked). Faking with two INDEPENDENT instances:",
+    "instance 1 = drops: top box, directional -90, vel 1900, Life 0.34 tuned so drops die ≈ y 560 (the 'water line')",
+    "instance 2 = rings: Disc-direction bursts (0113=4 hoped from the v18 direction list) from a small sphere at the water line, X-rotation 90 lays the disc flat; periodic psec spike makes ring generations; a slightly elevated camera reads the discs as ellipses",
+    "causality is approximate by construction — scored honestly against the linked-systems criteria"
+  ],
+  "_planner_sources": [
+    "recipes/mined/rain.json",
+    "recipes/tornado.json (camera rig pattern)",
+    "memory: aux/S2 emit-from-parent limits"
+  ],
+  "intent": "雨滴落到水面上，溅起一圈圈小小的涟漪",
+  "pass_criteria": [
+    "falling drops AND expanding rings both present",
+    "rings appear in a consistent 'water surface' zone (lower frame band)",
+    "rings expand over time (compare frames)",
+    "causal feel — rings where drops land (approximate is acceptable)"
+  ],
+  "name": "eval-e20_i3",
+  "compName": "Eval_E20_RainRipples",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.02,
+    0.035,
+    0.05
+  ],
+  "hostName": "Ripples",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          2,
+          "Drops: Box emitter"
+        ],
+        [
+          "tc Particular-0581",
+          [
+            640,
+            -40,
+            0
+          ],
+          "Position (above frame)"
+        ],
+        [
+          "tc Particular-0577",
+          2,
+          "Emitter Size mode"
+        ],
+        [
+          "tc Particular-0014",
+          1300,
+          "Emitter Size X"
+        ],
+        [
+          "tc Particular-0015",
+          60,
+          "Emitter Size Y"
+        ],
+        [
+          "tc Particular-0016",
+          200,
+          "Emitter Size Z"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "Particle Type (Sphere)"
+        ],
+        [
+          "tc Particular-0146",
+          240,
+          "Particles/sec (readable drops)"
+        ],
+        [
+          "tc Particular-0113",
+          2,
+          "Direction (Directional)"
+        ],
+        [
+          "tc Particular-0112",
+          -90,
+          "Angle X (down)"
+        ],
+        [
+          "tc Particular-0010",
+          0,
+          "Direction Spread"
+        ],
+        [
+          "tc Particular-0011",
+          1900,
+          "Velocity"
+        ],
+        [
+          "tc Particular-0002",
+          0.5,
+          "Life (dies at waterline y~560)"
+        ],
+        [
+          "tc Particular-0065",
+          8,
+          "Life Random %"
+        ],
+        [
+          "tc Particular-0027",
+          4,
+          "Size (thin drops)"
+        ],
+        [
+          "tc Particular-0524",
+          1,
+          "Aspect Ratio"
+        ],
+        [
+          "tc Particular-0033",
+          85,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.7,
+            0.85,
+            0.95,
+            1
+          ],
+          "Color (rain)"
+        ],
+        [
+          "tc Particular-0035",
+          1,
+          "Motion Blur (streaks)"
+        ],
+        [
+          "tc Particular-0036",
+          180,
+          "Shutter"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          3,
+          "Rings: Sphere emitter"
+        ],
+        [
+          "tc Particular-0581",
+          [
+            640,
+            560,
+            0
+          ],
+          "Position (water line)"
+        ],
+        [
+          "tc Particular-0577",
+          1,
+          "Emitter Size (uniform)"
+        ],
+        [
+          "tc Particular-0014",
+          30,
+          "Emitter Size (small source)"
+        ],
+        [
+          "tc Particular-0113",
+          4,
+          "Direction (Disc)"
+        ],
+        [
+          "tc Particular-0112",
+          90,
+          "Angle X (disc horizontal)"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "Particle Type (Sphere)"
+        ],
+        [
+          "tc Particular-0011",
+          260,
+          "Velocity (ring expansion)"
+        ],
+        [
+          "tc Particular-0012",
+          5,
+          "Velocity Random %"
+        ],
+        [
+          "tc Particular-0002",
+          1.5,
+          "Life"
+        ],
+        [
+          "tc Particular-0065",
+          10,
+          "Life Random %"
+        ],
+        [
+          "tc Particular-0027",
+          1.8,
+          "Size (fine ring dots)"
+        ],
+        [
+          "tc Particular-0033",
+          70,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.65,
+            0.9,
+            1,
+            1
+          ],
+          "Color (ripple)"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend (Add)"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0146",
+          "(time%0.8<0.1)?1100:0",
+          "psec (ring generations)"
+        ],
+        [
+          "tc Particular-0005",
+          "(time%0.8<0.1)?1100:0",
+          "psec live twin"
+        ]
+      ]
+    }
+  ],
+  "camera": {
+    "position": [
+      640,
+      240,
+      -950
+    ],
+    "pointOfInterest": [
+      640,
+      480,
+      0
+    ]
+  },
+  "renderFrames": [
+    1.2,
+    3.6
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0146",
+          "value": 240,
+          "why": "first-match = drops instance; ~3x rate makes the rain readable"
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0027",
+          "value": 4,
+          "why": "bigger drops visible at speed"
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0002",
+          "value": 0.5,
+          "why": "longer life = drops visible over a 950px fall to the waterline"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "for_iter": 3,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0035",
+          "value": 1,
+          "why": "motion blur off on the drops instance — fast small particles vanish under smear; crisp dashes read as rain"
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

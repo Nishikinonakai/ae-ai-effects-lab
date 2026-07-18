@@ -1,0 +1,181 @@
+{
+  "intent": "大片雪花缓缓飘落，轻微左右飘动，深灰蓝背景",
+  "pass_criteria": [
+    "white soft flakes falling downward",
+    "large-flake scale readable (not fine dust)",
+    "slight lateral drift/wander",
+    "dark grey-blue background"
+  ],
+  "iteration": 1,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0782",
+            2,
+            "Emitter Type (Box)"
+          ],
+          [
+            "tc Particular-0581",
+            [
+              640,
+              -60,
+              0
+            ],
+            "Position (above top edge)"
+          ],
+          [
+            "tc Particular-0577",
+            2,
+            "Emitter Size mode (XYZ)"
+          ],
+          [
+            "tc Particular-0014",
+            1450,
+            "Emitter Size X"
+          ],
+          [
+            "tc Particular-0015",
+            60,
+            "Emitter Size Y"
+          ],
+          [
+            "tc Particular-0016",
+            400,
+            "Emitter Size Z"
+          ],
+          [
+            "tc Particular-0703",
+            1,
+            "Particle Type (Sphere)"
+          ],
+          [
+            "tc Particular-0029",
+            55,
+            "Feather (soft flake)"
+          ],
+          [
+            "tc Particular-0146",
+            90,
+            "Particles/sec"
+          ],
+          [
+            "tc Particular-0113",
+            2,
+            "Emitter Direction (Directional)"
+          ],
+          [
+            "tc Particular-0112",
+            270,
+            "Angle X (straight down)"
+          ],
+          [
+            "tc Particular-0010",
+            12,
+            "Direction Spread"
+          ],
+          [
+            "tc Particular-0011",
+            110,
+            "Velocity (gentle fall)"
+          ],
+          [
+            "tc Particular-0012",
+            25,
+            "Velocity Random %"
+          ],
+          [
+            "tc Particular-0002",
+            7,
+            "Life (crosses the frame)"
+          ],
+          [
+            "tc Particular-0065",
+            20,
+            "Life Random %"
+          ],
+          [
+            "tc Particular-0017",
+            17,
+            "Gravity (near-terminal, from recipe)"
+          ],
+          [
+            "tc Particular-0027",
+            11,
+            "Size (large flakes)"
+          ],
+          [
+            "tc Particular-0074",
+            40,
+            "Size Random %"
+          ],
+          [
+            "tc Particular-0033",
+            100,
+            "Opacity"
+          ],
+          [
+            "tc Particular-0075",
+            20,
+            "Opacity Random %"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            "Color (white)"
+          ],
+          [
+            "tc Particular-0042",
+            60,
+            "TF Affect Position (wander)"
+          ],
+          [
+            "tc Particular-0046",
+            5,
+            "TF Scale"
+          ],
+          [
+            "tc Particular-0052",
+            30,
+            "TF Evolution"
+          ],
+          [
+            "tc Particular-0216",
+            25,
+            "Glow Opacity (softness)"
+          ],
+          [
+            "tc Particular-0215",
+            300,
+            "Glow Size"
+          ]
+        ],
+        "expressions": []
+      }
+    ],
+    "camera": null,
+    "background": [
+      0.09,
+      0.11,
+      0.16
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e07/iter1/eval-e07_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e07/iter1/eval-e07_i1_t4.png"
+  ],
+  "prior_iterations": [],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

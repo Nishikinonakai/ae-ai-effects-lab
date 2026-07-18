@@ -1,0 +1,114 @@
+{
+  "status": "done",
+  "name": "eval-e16_i1",
+  "params": [
+    {
+      "p": "[1:tc Particular] Emitter Type (Sphere)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Particular] Position (upper sky)",
+      "ok": true,
+      "v": "640,300,0"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size mode (uniform)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size (small core)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Direction (Uniform radial)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Velocity (bloom radius)",
+      "ok": true,
+      "v": "480"
+    },
+    {
+      "p": "[1:tc Particular] Velocity Random %",
+      "ok": true,
+      "v": "18"
+    },
+    {
+      "p": "[1:tc Particular] Particle Type (Glow Sphere)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Life",
+      "ok": true,
+      "v": "1.5"
+    },
+    {
+      "p": "[1:tc Particular] Life Random %",
+      "ok": true,
+      "v": "25"
+    },
+    {
+      "p": "[1:tc Particular] Gravity (droop)",
+      "ok": true,
+      "v": "210"
+    },
+    {
+      "p": "[1:tc Particular] Size",
+      "ok": true,
+      "v": "3.40000009536743"
+    },
+    {
+      "p": "[1:tc Particular] Size Random %",
+      "ok": true,
+      "v": "45"
+    },
+    {
+      "p": "[1:tc Particular] Opacity",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Particular] Opacity Random % (sparkle)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] Color (warm base)",
+      "ok": true,
+      "v": "1,0.72000002861023,0.300"
+    },
+    {
+      "p": "[1:tc Particular] Color Random % (multi-hue)",
+      "ok": true,
+      "v": "70"
+    },
+    {
+      "p": "[1:tc Particular] Blend Mode (Add)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Glow Opacity",
+      "ok": true,
+      "v": "70"
+    },
+    {
+      "p": "[1:tc Particular] Glow Size",
+      "ok": true,
+      "v": "250"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec (burst spike) (expr)",
+      "ok": true
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e16/iter1/eval-e16_i1_t0p4.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e16/iter1/eval-e16_i1_t1p6.png"
+  ]
+}

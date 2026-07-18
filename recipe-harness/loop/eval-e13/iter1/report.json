@@ -1,0 +1,119 @@
+{
+  "status": "done",
+  "name": "eval-e13_i1",
+  "params": [
+    {
+      "p": "[text] AEText",
+      "ok": true
+    },
+    {
+      "p": "[1:tc Particular] Emitter Type (Text/Mask)",
+      "ok": true,
+      "v": "7"
+    },
+    {
+      "p": "[1:tc Particular] Text/Mask Layer connect",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Particular] Match Text/Mask Size",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Particle Type (Glow Sphere)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec (aliased home)",
+      "ok": true,
+      "v": "900"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec (live twin)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] Velocity (anchored)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Velocity Random",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Velocity from Motion",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Life (replenishing shape)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Life Random %",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Particular] Size",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Particular] Size Random %",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Opacity",
+      "ok": true,
+      "v": "85"
+    },
+    {
+      "p": "[1:tc Particular] Opacity Random %",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Color (ice blue)",
+      "ok": true,
+      "v": "0.64999997615814,0.85000"
+    },
+    {
+      "p": "[1:tc Particular] Blend Mode (Add)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Glow Opacity",
+      "ok": true,
+      "v": "60"
+    },
+    {
+      "p": "[1:tc Particular] Glow Size",
+      "ok": true,
+      "v": "220"
+    },
+    {
+      "p": "[1:tc Particular] Turbulence -> Position (breathing float)",
+      "ok": true,
+      "v": "25"
+    },
+    {
+      "p": "[1:tc Particular] Turbulence Scale",
+      "ok": true,
+      "v": "10"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e13/iter1/eval-e13_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e13/iter1/eval-e13_i1_t4.png"
+  ]
+}

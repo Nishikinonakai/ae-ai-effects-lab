@@ -1,0 +1,10 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "Relief works now — embossed marble-vein lines with clear dimensionality on a cream field, reads as printed paper texture. But the duotone criterion is half-absent: type-13's field is mostly bright, so nearly everything maps to cream; deep blue exists only in thin vein shadows. Poster needs both tones as masses, not one tone plus outlines.",
+  "suggestions": [
+    { "type": "param", "effect": "ADBE Tint", "matchName": "ADBE Tint-0001", "value": [0.93, 0.89, 0.78, 1], "why": "swap the map: dark veins -> cream" },
+    { "type": "param", "effect": "ADBE Tint", "matchName": "ADBE Tint-0002", "value": [0.07, 0.10, 0.25, 1], "why": "bright marble field -> deep blue = blue-dominant poster with cream linework" },
+    { "type": "param", "effect": "ADBE Fractal Noise", "matchName": "ADBE Fractal Noise-0010", "value": 120, "why": "smaller scale = denser vein structure, more graphic coverage" }
+  ]
+}

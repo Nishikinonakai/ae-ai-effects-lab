@@ -1,0 +1,14 @@
+{
+  "intent": "大片雪花缓缓飘落，轻微左右飘动，深灰蓝背景",
+  "backend": "agent",
+  "outcome": "pass",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "Soft white large flakes with good size variation falling from the top (t1 = fresh top band, t4 = frame filled downward), irregular clumped distribution consistent with gentle wander, dark grey-blue background. Sphere+feather substitution for the sprite texture reads convincingly as snow. All criteria met."
+    }
+  ]
+}

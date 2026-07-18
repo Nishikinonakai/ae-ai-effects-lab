@@ -1,0 +1,135 @@
+{
+  "status": "done",
+  "name": "eval-e22_i2",
+  "params": [
+    {
+      "p": "[1:tc Particular] Emitter Type (Box)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Position (left edge)",
+      "ok": true,
+      "v": "640,360,0"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size mode (XYZ)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size X (thin source)",
+      "ok": true,
+      "v": "1400"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Y (full height)",
+      "ok": true,
+      "v": "760"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Z",
+      "ok": true,
+      "v": "300"
+    },
+    {
+      "p": "[1:tc Particular] Particle Type (Streaklet)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] Streaklet No Spheres",
+      "ok": true,
+      "v": "7"
+    },
+    {
+      "p": "[1:tc Particular] Streaklet Spread",
+      "ok": true,
+      "v": "60"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:tc Particular] Velocity",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Particular] Velocity Random %",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Life (crosses frame)",
+      "ok": true,
+      "v": "3.5"
+    },
+    {
+      "p": "[1:tc Particular] Life Random %",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Particular] Wind X (rightward stream)",
+      "ok": true,
+      "v": "380"
+    },
+    {
+      "p": "[1:tc Particular] Size",
+      "ok": true,
+      "v": "9"
+    },
+    {
+      "p": "[1:tc Particular] Size Random %",
+      "ok": true,
+      "v": "55"
+    },
+    {
+      "p": "[1:tc Particular] Opacity",
+      "ok": true,
+      "v": "95"
+    },
+    {
+      "p": "[1:tc Particular] Opacity Random %",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Color (cyan)",
+      "ok": true,
+      "v": "0.34999999403954,0.85000"
+    },
+    {
+      "p": "[1:tc Particular] Blend Mode (Add)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Glow Opacity",
+      "ok": true,
+      "v": "55"
+    },
+    {
+      "p": "[1:tc Particular] Glow Size",
+      "ok": true,
+      "v": "240"
+    },
+    {
+      "p": "[1:tc Particular] Turbulence -> Position (subtle waver)",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Particular] Turbulence Scale",
+      "ok": true,
+      "v": "8"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e22/iter2/eval-e22_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e22/iter2/eval-e22_i2_t4.png"
+  ]
+}

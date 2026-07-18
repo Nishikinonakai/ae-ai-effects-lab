@@ -1,0 +1,9 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The recipe's structure carries: t2 reads as a genuine funnel (wide top, tapering base, 3D coil ellipses under the camera rig) and t5 shows sweep/rotation evolution with a nicely dissipating dust crown. Miss: the coil-spring residue — at t5 the lower funnel reads as discrete stacked loops rather than a fused dust wall (the recipe's documented residual; turbulence 40 merges only partially).",
+  "suggestions": [
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0711", "value": 95, "why": "stronger position turbulence fuses adjacent coil turns into a continuous wall" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0033", "value": 38, "why": "slightly higher opacity thickens the wall so gaps between turns close visually" }
+  ]
+}

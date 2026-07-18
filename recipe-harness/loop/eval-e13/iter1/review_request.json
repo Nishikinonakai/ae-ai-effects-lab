@@ -1,0 +1,149 @@
+{
+  "intent": "粒子聚集成文字 AE 的形状，轻微呼吸浮动",
+  "pass_criteria": [
+    "particles form readable glyphs 'AE'",
+    "letterforms hold together (not dissolved past legibility)",
+    "slight organic float/breathing between t1 and t4",
+    "particles glow against dark background"
+  ],
+  "iteration": 1,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0782",
+            7,
+            "Emitter Type (Text/Mask)"
+          ],
+          [
+            "tc Particular-0641",
+            {
+              "__layer": "AEText"
+            },
+            "Text/Mask Layer connect"
+          ],
+          [
+            "tc Particular-0655",
+            1,
+            "Match Text/Mask Size"
+          ],
+          [
+            "tc Particular-0703",
+            2,
+            "Particle Type (Glow Sphere)"
+          ],
+          [
+            "tc Particular-0146",
+            900,
+            "Particles/sec (aliased home)"
+          ],
+          [
+            "tc Particular-0005",
+            900,
+            "Particles/sec (live twin)"
+          ],
+          [
+            "tc Particular-0011",
+            0,
+            "Velocity (anchored)"
+          ],
+          [
+            "tc Particular-0012",
+            0,
+            "Velocity Random"
+          ],
+          [
+            "tc Particular-0013",
+            0,
+            "Velocity from Motion"
+          ],
+          [
+            "tc Particular-0002",
+            2,
+            "Life (replenishing shape)"
+          ],
+          [
+            "tc Particular-0065",
+            30,
+            "Life Random %"
+          ],
+          [
+            "tc Particular-0027",
+            3,
+            "Size"
+          ],
+          [
+            "tc Particular-0074",
+            40,
+            "Size Random %"
+          ],
+          [
+            "tc Particular-0033",
+            85,
+            "Opacity"
+          ],
+          [
+            "tc Particular-0075",
+            40,
+            "Opacity Random %"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              0.65,
+              0.85,
+              1,
+              1
+            ],
+            "Color (ice blue)"
+          ],
+          [
+            "tc Particular-0069",
+            2,
+            "Blend Mode (Add)"
+          ],
+          [
+            "tc Particular-0216",
+            60,
+            "Glow Opacity"
+          ],
+          [
+            "tc Particular-0215",
+            220,
+            "Glow Size"
+          ],
+          [
+            "tc Particular-0711",
+            25,
+            "Turbulence -> Position (breathing float)"
+          ],
+          [
+            "tc Particular-0715",
+            10,
+            "Turbulence Scale"
+          ]
+        ],
+        "expressions": []
+      }
+    ],
+    "camera": null,
+    "background": [
+      0.01,
+      0.01,
+      0.025
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e13/iter1/eval-e13_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e13/iter1/eval-e13_i1_t4.png"
+  ],
+  "prior_iterations": [],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

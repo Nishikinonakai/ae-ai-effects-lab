@@ -1,0 +1,130 @@
+{
+  "intent": "画面中央的圆形光斑像心跳一样有节奏地放大缩小、亮度脉动",
+  "pass_criteria": [
+    "single soft circular light blob centered",
+    "size and/or brightness clearly differs between t1 and t4 (pulse)",
+    "smooth falloff (light, not a hard-edged circle)",
+    "dark surroundings"
+  ],
+  "iteration": 2,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "ADBE Ramp",
+        "params": [
+          [
+            "ADBE Ramp-0001",
+            [
+              640,
+              360
+            ],
+            "Start of Ramp (center)"
+          ],
+          [
+            "ADBE Ramp-0002",
+            [
+              1,
+              0.92,
+              0.85,
+              1
+            ],
+            "Start Color (warm white)"
+          ],
+          [
+            "ADBE Ramp-0003",
+            [
+              640,
+              40
+            ],
+            "End of Ramp (radius 320)"
+          ],
+          [
+            "ADBE Ramp-0004",
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            "End Color (near-black)"
+          ],
+          [
+            "ADBE Ramp-0005",
+            2,
+            "Ramp Shape (Radial)"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE Glo2",
+        "params": [
+          [
+            "ADBE Glo2-0002",
+            120,
+            "Glow Threshold"
+          ],
+          [
+            "ADBE Glo2-0003",
+            120,
+            "Glow Radius"
+          ],
+          [
+            "ADBE Glo2-0004",
+            1.4,
+            "Glow Intensity"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE Geometry2",
+        "params": [
+          [
+            "ADBE Geometry2-0011",
+            1,
+            "Uniform Scale"
+          ]
+        ],
+        "expressions": [
+          [
+            "ADBE Geometry2-0003",
+            "116 + 14*Math.sin(time*2*Math.PI)",
+            "Scale pulse (1 Hz)"
+          ]
+        ]
+      },
+      {
+        "matchName": "ADBE Exposure2",
+        "params": [],
+        "expressions": [
+          [
+            "ADBE Exposure2-0003",
+            "0.55 + 0.5*Math.sin(time*2*Math.PI)",
+            "Brightness pulse (in phase)"
+          ]
+        ]
+      }
+    ],
+    "camera": null,
+    "background": null,
+    "renderFrames": [
+      1.25,
+      1.75
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e14/iter2/eval-e14_i2_t1p25.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e14/iter2/eval-e14_i2_t1p75.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The pulse is unmistakable — antiphase sampling shows a big bright blob at t1.25 vs a smaller dimmer one at t1.75, smooth radial falloff, warm light read. One artifact breaks 'dark surroundings': at sub-100% scale the solid's boundary shows as a faint grey rectangle frame (the ramp end color [0.01,0.01,0.02] is lighter than the pure-black comp behind it)."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

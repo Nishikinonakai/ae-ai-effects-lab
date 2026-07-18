@@ -1,0 +1,271 @@
+{
+  "intent": "雨滴落到水面上，溅起一圈圈小小的涟漪",
+  "pass_criteria": [
+    "falling drops AND expanding rings both present",
+    "rings appear in a consistent 'water surface' zone (lower frame band)",
+    "rings expand over time (compare frames)",
+    "causal feel — rings where drops land (approximate is acceptable)"
+  ],
+  "iteration": 3,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0782",
+            2,
+            "Drops: Box emitter"
+          ],
+          [
+            "tc Particular-0581",
+            [
+              640,
+              -40,
+              0
+            ],
+            "Position (above frame)"
+          ],
+          [
+            "tc Particular-0577",
+            2,
+            "Emitter Size mode"
+          ],
+          [
+            "tc Particular-0014",
+            1300,
+            "Emitter Size X"
+          ],
+          [
+            "tc Particular-0015",
+            60,
+            "Emitter Size Y"
+          ],
+          [
+            "tc Particular-0016",
+            200,
+            "Emitter Size Z"
+          ],
+          [
+            "tc Particular-0703",
+            1,
+            "Particle Type (Sphere)"
+          ],
+          [
+            "tc Particular-0146",
+            240,
+            "Particles/sec (readable drops)"
+          ],
+          [
+            "tc Particular-0113",
+            2,
+            "Direction (Directional)"
+          ],
+          [
+            "tc Particular-0112",
+            -90,
+            "Angle X (down)"
+          ],
+          [
+            "tc Particular-0010",
+            0,
+            "Direction Spread"
+          ],
+          [
+            "tc Particular-0011",
+            1900,
+            "Velocity"
+          ],
+          [
+            "tc Particular-0002",
+            0.5,
+            "Life (dies at waterline y~560)"
+          ],
+          [
+            "tc Particular-0065",
+            8,
+            "Life Random %"
+          ],
+          [
+            "tc Particular-0027",
+            4,
+            "Size (thin drops)"
+          ],
+          [
+            "tc Particular-0524",
+            1,
+            "Aspect Ratio"
+          ],
+          [
+            "tc Particular-0033",
+            85,
+            "Opacity"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              0.7,
+              0.85,
+              0.95,
+              1
+            ],
+            "Color (rain)"
+          ],
+          [
+            "tc Particular-0035",
+            1,
+            "Motion Blur (streaks)"
+          ],
+          [
+            "tc Particular-0036",
+            180,
+            "Shutter"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0782",
+            3,
+            "Rings: Sphere emitter"
+          ],
+          [
+            "tc Particular-0581",
+            [
+              640,
+              560,
+              0
+            ],
+            "Position (water line)"
+          ],
+          [
+            "tc Particular-0577",
+            1,
+            "Emitter Size (uniform)"
+          ],
+          [
+            "tc Particular-0014",
+            30,
+            "Emitter Size (small source)"
+          ],
+          [
+            "tc Particular-0113",
+            4,
+            "Direction (Disc)"
+          ],
+          [
+            "tc Particular-0112",
+            90,
+            "Angle X (disc horizontal)"
+          ],
+          [
+            "tc Particular-0703",
+            1,
+            "Particle Type (Sphere)"
+          ],
+          [
+            "tc Particular-0011",
+            260,
+            "Velocity (ring expansion)"
+          ],
+          [
+            "tc Particular-0012",
+            5,
+            "Velocity Random %"
+          ],
+          [
+            "tc Particular-0002",
+            1.5,
+            "Life"
+          ],
+          [
+            "tc Particular-0065",
+            10,
+            "Life Random %"
+          ],
+          [
+            "tc Particular-0027",
+            1.8,
+            "Size (fine ring dots)"
+          ],
+          [
+            "tc Particular-0033",
+            70,
+            "Opacity"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              0.65,
+              0.9,
+              1,
+              1
+            ],
+            "Color (ripple)"
+          ],
+          [
+            "tc Particular-0069",
+            2,
+            "Blend (Add)"
+          ]
+        ],
+        "expressions": [
+          [
+            "tc Particular-0146",
+            "(time%0.8<0.1)?1100:0",
+            "psec (ring generations)"
+          ],
+          [
+            "tc Particular-0005",
+            "(time%0.8<0.1)?1100:0",
+            "psec live twin"
+          ]
+        ]
+      }
+    ],
+    "camera": {
+      "position": [
+        640,
+        240,
+        -950
+      ],
+      "pointOfInterest": [
+        640,
+        480,
+        0
+      ]
+    },
+    "background": [
+      0.02,
+      0.035,
+      0.05
+    ],
+    "renderFrames": [
+      1.2,
+      3.6
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e20/iter3/eval-e20_i3_t1p2.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e20/iter3/eval-e20_i3_t3p6.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "Half the miracle landed: the ripple RINGS work — concentric dotted ellipses expanding on the water plane (Disc direction 0113=4 + horizontal disc + elevated camera), with two generations visible and clear expansion between frames. But the falling DROPS are invisible — the upper frame is empty, so the 'drops AND rings' and causality criteria fail. Drops need presence."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "Identical frames — density/size/life nudges changed nothing visible, which points at the real mechanism: the drops instance has Motion Blur ON at 1900px/s — a 32px smear per frame dilutes an 85%-opacity dot to ~7% per pixel = invisible regardless of count. The rings remain correct. Kill the blur on the drops (first-match instance) to reveal them."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

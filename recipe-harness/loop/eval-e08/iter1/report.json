@@ -1,0 +1,94 @@
+{
+  "status": "done",
+  "name": "eval-e08_i1",
+  "params": [
+    {
+      "p": "[1:ADBE Fractal Noise] Fractal Type (soft clouds)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Noise Type (spline)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Contrast",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Scale",
+      "ok": true,
+      "v": "160"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Evolution churn (expr)",
+      "ok": true
+    },
+    {
+      "p": "[2:ADBE Tint] Map Black To (teal)",
+      "ok": true,
+      "v": "0,0.34999999403954,0.5,1"
+    },
+    {
+      "p": "[2:ADBE Tint] Map White To (orange)",
+      "ok": true,
+      "v": "1,0.55000001192093,0.150"
+    },
+    {
+      "p": "[2:ADBE Tint] Amount",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[3:ADBE Tile] Output Width",
+      "ok": true,
+      "v": "160"
+    },
+    {
+      "p": "[3:ADBE Tile] Mirror Edges",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[4:ADBE Shift Channels] Take Red From Blue",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[4:ADBE Shift Channels] Take Blue From Red",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[5:ADBE Wave Warp] Wave Type (square)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[5:ADBE Wave Warp] Wave Height",
+      "ok": true,
+      "v": "6"
+    },
+    {
+      "p": "[5:ADBE Wave Warp] Wave Width",
+      "ok": true,
+      "v": "18"
+    },
+    {
+      "p": "[5:ADBE Wave Warp] Direction",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[5:ADBE Wave Warp] Wave Speed",
+      "ok": true,
+      "v": "2.5"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e08/iter1/eval-e08_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e08/iter1/eval-e08_i1_t4.png"
+  ]
+}

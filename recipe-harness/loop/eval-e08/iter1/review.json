@@ -1,0 +1,6 @@
+{
+  "verdict": "pass",
+  "score": 8,
+  "critique": "Analog-glitch read achieved: chromatic blue/amber base (channel-crossed teal/orange), square-wave zigzag jitter across every edge with clearly different phase/structure between t1 and t4, and color-separation banding at the warped mass boundaries. Reads as intentional signal-distortion style. Fringing is the softest criterion — separation shows at boundaries rather than as tri-color ghosting, acceptable for the ask.",
+  "suggestions": []
+}

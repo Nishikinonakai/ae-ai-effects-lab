@@ -1,0 +1,190 @@
+{
+  "_planner_rationale": [
+    "language-axis probe: English prompt, same library — base is the e07 adaptation of recipes/mined/large-snow-2d.json",
+    "'sparse' -> psec 40 (clearly countable), 'teal' -> PColor [0.35,0.85,0.8], 'dark background' -> near-black cool bg",
+    "'drifting slowly to the LEFT' -> Wind X -85 (negative = left) on top of the gentle directional fall; velocity lowered to 70 for 'slowly'",
+    "physics guard: Air Resistance untouched (default 0.5) so Wind X stays live"
+  ],
+  "_planner_sources": [
+    "recipes/mined/large-snow-2d.json",
+    "eval/plans/eval-e07.json"
+  ],
+  "intent": "sparse teal snowfall drifting slowly to the left, dark background",
+  "pass_criteria": [
+    "sparse population (clearly countable flakes)",
+    "teal-tinted flakes on dark background",
+    "downward fall with leftward drift between frames",
+    "soft flake rendering"
+  ],
+  "name": "eval-e21_i1",
+  "compName": "Eval_E21_TealSnow",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.015,
+    0.025,
+    0.03
+  ],
+  "hostName": "TealSnow",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          2,
+          "Emitter Type (Box)"
+        ],
+        [
+          "tc Particular-0581",
+          [
+            700,
+            -60,
+            0
+          ],
+          "Position (top, biased right for left drift)"
+        ],
+        [
+          "tc Particular-0577",
+          2,
+          "Emitter Size mode (XYZ)"
+        ],
+        [
+          "tc Particular-0014",
+          1500,
+          "Emitter Size X"
+        ],
+        [
+          "tc Particular-0015",
+          60,
+          "Emitter Size Y"
+        ],
+        [
+          "tc Particular-0016",
+          400,
+          "Emitter Size Z"
+        ],
+        [
+          "tc Particular-0703",
+          1,
+          "Particle Type (Sphere)"
+        ],
+        [
+          "tc Particular-0029",
+          55,
+          "Feather (soft flake)"
+        ],
+        [
+          "tc Particular-0146",
+          40,
+          "Particles/sec (sparse)"
+        ],
+        [
+          "tc Particular-0113",
+          2,
+          "Emitter Direction (Directional)"
+        ],
+        [
+          "tc Particular-0112",
+          270,
+          "Angle X (down)"
+        ],
+        [
+          "tc Particular-0010",
+          10,
+          "Direction Spread"
+        ],
+        [
+          "tc Particular-0011",
+          70,
+          "Velocity (slow fall)"
+        ],
+        [
+          "tc Particular-0012",
+          25,
+          "Velocity Random %"
+        ],
+        [
+          "tc Particular-0002",
+          8,
+          "Life"
+        ],
+        [
+          "tc Particular-0065",
+          20,
+          "Life Random %"
+        ],
+        [
+          "tc Particular-0017",
+          14,
+          "Gravity (near-terminal)"
+        ],
+        [
+          "tc Particular-0749",
+          -85,
+          "Wind X (leftward drift)"
+        ],
+        [
+          "tc Particular-0027",
+          9,
+          "Size"
+        ],
+        [
+          "tc Particular-0074",
+          40,
+          "Size Random %"
+        ],
+        [
+          "tc Particular-0033",
+          100,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.35,
+            0.85,
+            0.8,
+            1
+          ],
+          "Color (teal)"
+        ],
+        [
+          "tc Particular-0042",
+          45,
+          "TF Affect Position (gentle wander)"
+        ],
+        [
+          "tc Particular-0046",
+          5,
+          "TF Scale"
+        ],
+        [
+          "tc Particular-0052",
+          25,
+          "TF Evolution"
+        ],
+        [
+          "tc Particular-0216",
+          25,
+          "Glow Opacity"
+        ],
+        [
+          "tc Particular-0215",
+          300,
+          "Glow Size"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ]
+}

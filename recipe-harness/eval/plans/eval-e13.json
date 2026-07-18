@@ -1,0 +1,55 @@
+{
+  "_planner_rationale": [
+    "OOD MECHANISM: Text/Mask emitter never exercised headless. TSV recon: group at 0640 — 0641 Layer (type 6421 selector, same class as the sprite connect 0066), 0642 Emit From (default 2), 0655 Match Text/Mask Size, 0780/0781 density edges/faces",
+    "chain mirrors the verified sprite pattern: create source layer video-off (new runner textLayers primitive) -> 0782=7 (Text/Mask, v18 dropdown read) -> 0641 layer connect resolved at set time",
+    "呼吸浮动 — small Turbulence->Position (legacy 0711) displaces particles gently around the glyphs; Velocity 0 keeps letterforms anchored; continuous psec + life 2 keeps the shape replenished",
+    "glyph legibility — text fontSize 340 centered; particles small (3) and dense (both psec homes 900) so strokes stay solid"
+  ],
+  "_planner_sources": ["gap-test/particular_params_fixed.tsv (Text/Mask group recon)", "recipes/mined/large-snow-2d.json (sprite-connect pattern)", "eval/plans/eval-e09.json (dual psec homes)"],
+  "intent": "粒子聚集成文字 AE 的形状，轻微呼吸浮动",
+  "pass_criteria": [
+    "particles form readable glyphs 'AE'",
+    "letterforms hold together (not dissolved past legibility)",
+    "slight organic float/breathing between t1 and t4",
+    "particles glow against dark background"
+  ],
+  "name": "eval-e13",
+  "compName": "Eval_E13_TextAE",
+  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 6 },
+  "background": [0.01, 0.01, 0.025],
+  "hostName": "TextParticles",
+  "textLayers": [
+    { "name": "AEText", "text": "AE", "fontSize": 340, "position": [640, 360] }
+  ],
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        ["tc Particular-0782", 7,                  "Emitter Type (Text/Mask)"],
+        ["tc Particular-0641", {"__layer": "AEText"}, "Text/Mask Layer connect"],
+        ["tc Particular-0655", 1,                  "Match Text/Mask Size"],
+        ["tc Particular-0703", 2,                  "Particle Type (Glow Sphere)"],
+        ["tc Particular-0146", 900,                 "Particles/sec (aliased home)"],
+        ["tc Particular-0005", 900,                 "Particles/sec (live twin)"],
+        ["tc Particular-0011", 0,                   "Velocity (anchored)"],
+        ["tc Particular-0012", 0,                   "Velocity Random"],
+        ["tc Particular-0013", 0,                   "Velocity from Motion"],
+        ["tc Particular-0002", 2,                   "Life (replenishing shape)"],
+        ["tc Particular-0065", 30,                  "Life Random %"],
+        ["tc Particular-0027", 3,                   "Size"],
+        ["tc Particular-0074", 40,                  "Size Random %"],
+        ["tc Particular-0033", 85,                  "Opacity"],
+        ["tc Particular-0075", 40,                  "Opacity Random %"],
+        ["tc Particular-0070", [0.65, 0.85, 1, 1],  "Color (ice blue)"],
+        ["tc Particular-0069", 2,                   "Blend Mode (Add)"],
+        ["tc Particular-0216", 60,                  "Glow Opacity"],
+        ["tc Particular-0215", 220,                 "Glow Size"],
+        ["tc Particular-0711", 25,                  "Turbulence -> Position (breathing float)"],
+        ["tc Particular-0715", 10,                  "Turbulence Scale"]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [1, 4]
+}

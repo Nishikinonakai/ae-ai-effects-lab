@@ -1,0 +1,10 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "Half the miracle landed: the ripple RINGS work — concentric dotted ellipses expanding on the water plane (Disc direction 0113=4 + horizontal disc + elevated camera), with two generations visible and clear expansion between frames. But the falling DROPS are invisible — the upper frame is empty, so the 'drops AND rings' and causality criteria fail. Drops need presence.",
+  "suggestions": [
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0146", "value": 240, "why": "first-match = drops instance; ~3x rate makes the rain readable" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0027", "value": 4, "why": "bigger drops visible at speed" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0002", "value": 0.5, "why": "longer life = drops visible over a 950px fall to the waterline" }
+  ]
+}

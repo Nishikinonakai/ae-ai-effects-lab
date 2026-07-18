@@ -1,0 +1,74 @@
+{
+  "status": "done",
+  "name": "eval-e11_i1",
+  "params": [
+    {
+      "p": "[1:ADBE Fractal Noise] Fractal Type",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Noise Type (spline)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Contrast (pattern blocks)",
+      "ok": true,
+      "v": "160"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Scale",
+      "ok": true,
+      "v": "160"
+    },
+    {
+      "p": "[2:ADBE Tint] Map Black To (deep plum)",
+      "ok": true,
+      "v": "0.07999999821186,0.05000"
+    },
+    {
+      "p": "[2:ADBE Tint] Map White To (warm cream)",
+      "ok": true,
+      "v": "0.94999998807907,0.80000"
+    },
+    {
+      "p": "[2:ADBE Tint] Amount",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[3:ADBE Tile] Output Width",
+      "ok": true,
+      "v": "300"
+    },
+    {
+      "p": "[3:ADBE Tile] Output Height",
+      "ok": true,
+      "v": "300"
+    },
+    {
+      "p": "[3:ADBE Tile] Mirror Edges",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[3:ADBE Tile] Tile Center (upward scroll) (expr)",
+      "ok": true
+    },
+    {
+      "p": "[4:ADBE Geometry2] Uniform Scale",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[4:ADBE Geometry2] Scale (hide tile borders)",
+      "ok": true,
+      "v": "125"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e11/iter1/eval-e11_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e11/iter1/eval-e11_i1_t4.png"
+  ]
+}

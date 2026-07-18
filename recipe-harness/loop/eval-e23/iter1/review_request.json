@@ -1,0 +1,153 @@
+{
+  "intent": "均衡器波形山脉：粒子构成的地形像音乐可视化一样起伏",
+  "pass_criteria": [
+    "particle terrain/landscape band across the frame (Form-style surface)",
+    "peaks/valleys structure readable",
+    "undulation between t1 and t4 (peaks moved/changed)",
+    "clean palette against dark sky"
+  ],
+  "iteration": 1,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Form",
+        "params": [
+          [
+            "tc Form-0489",
+            2,
+            "Base Shape Size option"
+          ],
+          [
+            "tc Form-0007",
+            500,
+            "Particles in X"
+          ],
+          [
+            "tc Form-0008",
+            1,
+            "Particles in Y (sheet)"
+          ],
+          [
+            "tc Form-0009",
+            300,
+            "Particles in Z (depth rows)"
+          ],
+          [
+            "tc Form-0004",
+            1180,
+            "Size X"
+          ],
+          [
+            "tc Form-0005",
+            200,
+            "Size Y"
+          ],
+          [
+            "tc Form-0006",
+            1500,
+            "Size Z"
+          ],
+          [
+            "tc Form-0037",
+            2,
+            "Blend Mode (Add)"
+          ],
+          [
+            "tc Form-0033",
+            1,
+            "Particle Size"
+          ],
+          [
+            "tc Form-0036",
+            [
+              0.25,
+              0.9,
+              0.85,
+              1
+            ],
+            "Particle Color (cyan)"
+          ],
+          [
+            "tc Form-0042",
+            1,
+            "Set Color (Solid)"
+          ],
+          [
+            "tc Form-0165",
+            2,
+            "Field Affect Pos axis (Y popup)"
+          ],
+          [
+            "tc Form-0167",
+            -260,
+            "Field Affect Pos Y (terrain height)"
+          ],
+          [
+            "tc Form-0181",
+            6,
+            "Field Complexity"
+          ],
+          [
+            "tc Form-0182",
+            0.6,
+            "Octave Multiplier"
+          ],
+          [
+            "tc Form-0183",
+            1.8,
+            "Octave Scale"
+          ],
+          [
+            "tc Form-0180",
+            2,
+            "Field Scale"
+          ],
+          [
+            "tc Form-0175",
+            2,
+            "Fractal ABS"
+          ],
+          [
+            "tc Form-0178",
+            0,
+            "Field Min"
+          ],
+          [
+            "tc Form-0171",
+            -500,
+            "Flow Z (forward flight)"
+          ],
+          [
+            "tc Form-0210",
+            10,
+            "RW X"
+          ]
+        ],
+        "expressions": [
+          [
+            "tc Form-0172",
+            "time*30",
+            "Field Evolution (peaks rise/fall)"
+          ]
+        ]
+      }
+    ],
+    "camera": null,
+    "background": [
+      0.01,
+      0.012,
+      0.025
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e23/iter1/eval-e23_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e23/iter1/eval-e23_i1_t4.png"
+  ],
+  "prior_iterations": [],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

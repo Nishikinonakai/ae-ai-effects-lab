@@ -1,0 +1,228 @@
+{
+  "_planner_rationale": [
+    "vague prompt — planner supplies curated defaults. Taste anchors from the library's tech family (data-flow / digital-stream): horizontal light-streak flow, cool cyan on near-black, additive glow, generous negative space",
+    "Streaklet particle type (0703=5, streaklet params from the validated snow/large-2d recipe family: NoSpheres 7 / Spread 60) elongates each particle along motion = data-stream read without any footage",
+    "flow — full-height box emitter at frame left + Wind X 380 (Air Resistance untouched keeps it live); Life 3.5 crosses the frame",
+    "背景 usability — density modest (psec 120), opacity 70, size small: reads as ambient tech texture, not a hero element"
+  ],
+  "_planner_sources": [
+    "recipes/mined/large-snow-2d.json (streaklet params)",
+    "recipes/mined/data-flow.json (taste anchor, by catalog)",
+    "recipes/golden-dust.json"
+  ],
+  "intent": "来点好看的科技感粒子背景",
+  "pass_criteria": [
+    "coherent, polished particle background (no debug look, no default-blue accident)",
+    "reads as 'tech' (e.g. grids, data streams, clean geometry, cool palette — planner's taste)",
+    "usable as a background: not overpowering, decent negative space",
+    "motion present between frames"
+  ],
+  "name": "eval-e22_i2",
+  "compName": "Eval_E22_TechBG",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.008,
+    0.015,
+    0.03
+  ],
+  "hostName": "TechBG",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          2,
+          "Emitter Type (Box)"
+        ],
+        [
+          "tc Particular-0581",
+          [
+            640,
+            360,
+            0
+          ],
+          "Position (left edge)"
+        ],
+        [
+          "tc Particular-0577",
+          2,
+          "Emitter Size mode (XYZ)"
+        ],
+        [
+          "tc Particular-0014",
+          1400,
+          "Emitter Size X (thin source)"
+        ],
+        [
+          "tc Particular-0015",
+          760,
+          "Emitter Size Y (full height)"
+        ],
+        [
+          "tc Particular-0016",
+          300,
+          "Emitter Size Z"
+        ],
+        [
+          "tc Particular-0703",
+          5,
+          "Particle Type (Streaklet)"
+        ],
+        [
+          "tc Particular-0314",
+          7,
+          "Streaklet No Spheres"
+        ],
+        [
+          "tc Particular-0315",
+          60,
+          "Streaklet Spread"
+        ],
+        [
+          "tc Particular-0146",
+          200,
+          "Particles/sec"
+        ],
+        [
+          "tc Particular-0011",
+          30,
+          "Velocity"
+        ],
+        [
+          "tc Particular-0012",
+          40,
+          "Velocity Random %"
+        ],
+        [
+          "tc Particular-0002",
+          3.5,
+          "Life (crosses frame)"
+        ],
+        [
+          "tc Particular-0065",
+          30,
+          "Life Random %"
+        ],
+        [
+          "tc Particular-0749",
+          380,
+          "Wind X (rightward stream)"
+        ],
+        [
+          "tc Particular-0027",
+          9,
+          "Size"
+        ],
+        [
+          "tc Particular-0074",
+          55,
+          "Size Random %"
+        ],
+        [
+          "tc Particular-0033",
+          95,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0075",
+          40,
+          "Opacity Random %"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.35,
+            0.85,
+            1,
+            1
+          ],
+          "Color (cyan)"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Mode (Add)"
+        ],
+        [
+          "tc Particular-0216",
+          55,
+          "Glow Opacity"
+        ],
+        [
+          "tc Particular-0215",
+          240,
+          "Glow Size"
+        ],
+        [
+          "tc Particular-0711",
+          30,
+          "Turbulence -> Position (subtle waver)"
+        ],
+        [
+          "tc Particular-0715",
+          8,
+          "Turbulence Scale"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0581",
+          "value": [
+            640,
+            360,
+            0
+          ],
+          "why": "emit across the whole frame — immediate full coverage instead of a slow left-to-right fill"
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0014",
+          "value": 1400,
+          "why": "full-width emitter box"
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0027",
+          "value": 9,
+          "why": "streaklets above the visibility floor — readable data-streak scale"
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0033",
+          "value": 95,
+          "why": "full opacity so the streams pop on the dark bg"
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0146",
+          "value": 200,
+          "why": "density for an ambient field (still background-grade)"
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

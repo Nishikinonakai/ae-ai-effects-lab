@@ -1,0 +1,6 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "Frames identical to iter1 — the rescue failed and produced a mechanism finding: 0005's writability is STATEFUL. It rejects setValue once the emitter position carries an expression (this comp acquired the sweep in iter1), which is why e09/e10 worked (runner order: params land before expressions on a fresh comp) and this loop cannot recover (0146 alone starves on an animated emitter regardless of value). The fix is plan-level — set both psec homes as PARAMS before any position expression, i.e. a re-plan on a fresh comp, outside the nudge vocabulary. No applicable suggestions.",
+  "suggestions": []
+}

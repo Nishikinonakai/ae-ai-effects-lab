@@ -1,0 +1,145 @@
+{
+  "status": "done",
+  "name": "eval-e21_i1",
+  "params": [
+    {
+      "p": "[1:tc Particular] Emitter Type (Box)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Position (top, biased right for left drift)",
+      "ok": true,
+      "v": "700,-60,0"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size mode (XYZ)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size X",
+      "ok": true,
+      "v": "1500"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Y",
+      "ok": true,
+      "v": "60"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Z",
+      "ok": true,
+      "v": "400"
+    },
+    {
+      "p": "[1:tc Particular] Particle Type (Sphere)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Feather (soft flake)",
+      "ok": true,
+      "v": "55"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec (sparse)",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Direction (Directional)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Angle X (down)",
+      "ok": true,
+      "v": "270"
+    },
+    {
+      "p": "[1:tc Particular] Direction Spread",
+      "ok": true,
+      "v": "10"
+    },
+    {
+      "p": "[1:tc Particular] Velocity (slow fall)",
+      "ok": true,
+      "v": "70"
+    },
+    {
+      "p": "[1:tc Particular] Velocity Random %",
+      "ok": true,
+      "v": "25"
+    },
+    {
+      "p": "[1:tc Particular] Life",
+      "ok": true,
+      "v": "8"
+    },
+    {
+      "p": "[1:tc Particular] Life Random %",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] Gravity (near-terminal)",
+      "ok": true,
+      "v": "14"
+    },
+    {
+      "p": "[1:tc Particular] Wind X (leftward drift)",
+      "ok": true,
+      "v": "-85"
+    },
+    {
+      "p": "[1:tc Particular] Size",
+      "ok": true,
+      "v": "9"
+    },
+    {
+      "p": "[1:tc Particular] Size Random %",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Opacity",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Particular] Color (teal)",
+      "ok": true,
+      "v": "0.34999999403954,0.85000"
+    },
+    {
+      "p": "[1:tc Particular] TF Affect Position (gentle wander)",
+      "ok": true,
+      "v": "45"
+    },
+    {
+      "p": "[1:tc Particular] TF Scale",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] TF Evolution",
+      "ok": true,
+      "v": "25"
+    },
+    {
+      "p": "[1:tc Particular] Glow Opacity",
+      "ok": true,
+      "v": "25"
+    },
+    {
+      "p": "[1:tc Particular] Glow Size",
+      "ok": true,
+      "v": "300"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e21/iter1/eval-e21_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e21/iter1/eval-e21_i1_t4.png"
+  ]
+}

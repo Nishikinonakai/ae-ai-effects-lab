@@ -1,0 +1,48 @@
+{
+  "_planner_rationale": [
+    "Form family, base-form switch: 0003 Base Form = 3 (Sphere-Layered; FORM_ALIAS_NOTES: 0003[1..5], Designer OBJ gate at 3 maps to AE 4 — so 3 = the sphere) — genesis (validated) supplies the particle-craft: 0042=1 Solid + PColor pairing, PTMode/blend, size/opacity",
+    "自转 — tc_Form card: 0012/0013/0014 = X/Y/Z Rotation (base-form world rotation); expression time*30 on Y Rotation = slow spin; rotation evidence via surface feature drift between frames",
+    "球体轮廓 — Base Shape Size 500^3, particle grid 220x220; slight FAffectPosX 15 breaks the perfect lattice so the surface has features to track while keeping the sphere silhouette",
+    "3D volume read — sphere-layered shells + Add blend gives limb brightening (denser at the silhouette edge)"
+  ],
+  "_planner_sources": ["recipes/mined/genesis.json", "introspect/cards/tc_Form.json", "mining/FORM_ALIAS_NOTES.md"],
+  "intent": "由粒子构成的球体在画面中央缓慢自转",
+  "pass_criteria": [
+    "particle-built sphere silhouette centered in frame",
+    "3D volume readable (shading/density variation, not a flat disc)",
+    "rotation evidence between t1 and t4 (feature moved around the axis)",
+    "background dark and clean"
+  ],
+  "name": "eval-e12",
+  "compName": "Eval_E12_FormSphere",
+  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 6 },
+  "background": [0.01, 0.01, 0.02],
+  "hostName": "Sphere",
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        ["tc Form-0003", 3,            "Base Form (Sphere-Layered)"],
+        ["tc Form-0004", 500,          "Size X"],
+        ["tc Form-0005", 500,          "Size Y"],
+        ["tc Form-0006", 500,          "Size Z"],
+        ["tc Form-0007", 220,          "Particles in X"],
+        ["tc Form-0008", 220,          "Particles in Y"],
+        ["tc Form-0009", 3,            "Particles in Z (layers)"],
+        ["tc Form-0037", 2,            "Blend Mode (Add)"],
+        ["tc Form-0033", 1.2,          "Particle Size"],
+        ["tc Form-0035", 55,           "Particle Opacity"],
+        ["tc Form-0042", 1,            "Set Color (Solid)"],
+        ["tc Form-0036", [0.55, 0.8, 1, 1], "Particle Color (ice blue)"],
+        ["tc Form-0166", 15,           "Field Affect Pos X (subtle surface features)"],
+        ["tc Form-0172", 10,           "Field Evolution (slow)"],
+        ["tc Form-0180", 3,            "Field Scale"]
+      ],
+      "expressions": [
+        ["tc Form-0013", "time*30", "Y Rotation (slow spin)"]
+      ]
+    }
+  ],
+  "camera": null,
+  "renderFrames": [1, 4]
+}

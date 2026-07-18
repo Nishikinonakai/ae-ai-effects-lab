@@ -1,0 +1,84 @@
+{
+  "status": "done",
+  "name": "eval-e10_i1",
+  "params": [
+    {
+      "p": "[1:tc Particular] Particle Type (Glow Sphere)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec (aliased home)",
+      "ok": true,
+      "v": "450"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec (live twin)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] Velocity",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Velocity Random",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Velocity from Motion",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Life (tail length ~200 deg)",
+      "ok": true,
+      "v": "2.20000004768372"
+    },
+    {
+      "p": "[1:tc Particular] Life Random % (soft tail dissolve)",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Size",
+      "ok": true,
+      "v": "3.20000004768372"
+    },
+    {
+      "p": "[1:tc Particular] Opacity",
+      "ok": true,
+      "v": "90"
+    },
+    {
+      "p": "[1:tc Particular] Color (cyan-white)",
+      "ok": true,
+      "v": "0.55000001192093,0.89999"
+    },
+    {
+      "p": "[1:tc Particular] Blend Mode (Add)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Glow Opacity",
+      "ok": true,
+      "v": "75"
+    },
+    {
+      "p": "[1:tc Particular] Glow Size",
+      "ok": true,
+      "v": "260"
+    },
+    {
+      "p": "[1:tc Particular] Position (circular orbit, 4s/rev) (expr)",
+      "ok": true
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e10/iter1/eval-e10_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e10/iter1/eval-e10_i1_t4.png"
+  ]
+}

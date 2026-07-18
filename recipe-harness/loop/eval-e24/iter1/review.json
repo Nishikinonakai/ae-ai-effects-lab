@@ -1,0 +1,10 @@
+{
+  "verdict": "fail",
+  "score": 2,
+  "critique": "Uniform flat slate frame at both t1 and t4 — no geometry, no duotone, no relief. Root cause: Fractal Type 2 (sparse/threshold) at Contrast 260 collapses to a near-uniform field; the mirror-tile of nothing is nothing, and Emboss over a featureless base outputs its neutral grey which the 45% blend mixes into the tint = the observed slate. The stack's structure is fine; the BASE generator degenerated.",
+  "suggestions": [
+    { "type": "param", "effect": "ADBE Fractal Noise", "matchName": "ADBE Fractal Noise-0001", "value": 13, "why": "enriched card: type 13 = liquid marble veins — strong graphic structure that survives thresholding, poster-like shapes" },
+    { "type": "param", "effect": "ADBE Fractal Noise", "matchName": "ADBE Fractal Noise-0004", "value": 180, "why": "260 crushed the field to one side; 180 keeps hard edges with both tones present" },
+    { "type": "param", "effect": "ADBE Fractal Noise", "matchName": "ADBE Fractal Noise-0005", "value": 0, "why": "neutral brightness so black/white both survive for the duotone map" }
+  ]
+}

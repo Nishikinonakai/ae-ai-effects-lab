@@ -1,0 +1,268 @@
+{
+  "_planner_rationale": [
+    "portal ring = the e10 circular light-path at steady state: 4s/rev sweep with Life 4.2 keeps a FULL glowing ring persistent; psec modulated by a time-sine paints brighter/dimmer arc segments that travel around the circle = readable slow rotation",
+    "边缘光尘 — second Particular instance on the same host (multi-instance stacks render additively): same circular path but Velocity 70 + Uniform direction + short life = dust shed outward along the rim",
+    "bloom — native Glow (ADBE Glo2) on top of both instances; mystical teal-violet palette",
+    "dual psec homes set on both instances (animated-emitter rule)"
+  ],
+  "_planner_sources": [
+    "eval/plans/eval-e10.json",
+    "introspect/cards/ADBE_Glo2.json",
+    "recipes/mined/ring-explosion.json (by catalog)"
+  ],
+  "intent": "魔法传送门：悬浮的发光圆环缓缓旋转，边缘散出粒子光尘",
+  "pass_criteria": [
+    "ring/annulus of light readable as the portal",
+    "particle dust emanating near the ring edge",
+    "some rotation/animation evidence between frames",
+    "mystical glow palette on dark background"
+  ],
+  "name": "eval-e17_i2",
+  "compName": "Eval_E17_Portal",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.012,
+    0.008,
+    0.03
+  ],
+  "hostName": "Portal",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0703",
+          2,
+          "Particle Type (Glow Sphere)"
+        ],
+        [
+          "tc Particular-0011",
+          0,
+          "Velocity (ring stays)"
+        ],
+        [
+          "tc Particular-0012",
+          0,
+          "Velocity Random"
+        ],
+        [
+          "tc Particular-0013",
+          0,
+          "Velocity from Motion"
+        ],
+        [
+          "tc Particular-0002",
+          4.2,
+          "Life (full ring persists)"
+        ],
+        [
+          "tc Particular-0065",
+          15,
+          "Life Random %"
+        ],
+        [
+          "tc Particular-0027",
+          4.5,
+          "Size"
+        ],
+        [
+          "tc Particular-0033",
+          90,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.55,
+            0.75,
+            1,
+            1
+          ],
+          "Color (arcane blue)"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Mode (Add)"
+        ],
+        [
+          "tc Particular-0216",
+          70,
+          "Glow Opacity"
+        ],
+        [
+          "tc Particular-0215",
+          260,
+          "Glow Size"
+        ],
+        [
+          "tc Particular-0005",
+          1400,
+          "0005 accepts setValue — drive the LIVE p [i2]"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0581",
+          "a=time*(2*Math.PI/4); [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+          "Position (circular sweep)"
+        ],
+        [
+          "tc Particular-0146",
+          "1400",
+          "psec modulation (rotating arc segments)"
+        ],
+        [
+          "tc Particular-0005",
+          "520+380*Math.sin(time*5)",
+          "psec live twin (same modulation)"
+        ]
+      ]
+    },
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0703",
+          2,
+          "Dust Particle Type (Glow Sphere)"
+        ],
+        [
+          "tc Particular-0113",
+          1,
+          "Direction (Uniform shed)"
+        ],
+        [
+          "tc Particular-0011",
+          70,
+          "Velocity (outward dust)"
+        ],
+        [
+          "tc Particular-0012",
+          60,
+          "Velocity Random %"
+        ],
+        [
+          "tc Particular-0002",
+          1.3,
+          "Life (short dust)"
+        ],
+        [
+          "tc Particular-0065",
+          50,
+          "Life Random %"
+        ],
+        [
+          "tc Particular-0027",
+          2,
+          "Size (fine dust)"
+        ],
+        [
+          "tc Particular-0074",
+          60,
+          "Size Random %"
+        ],
+        [
+          "tc Particular-0033",
+          60,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0075",
+          60,
+          "Opacity Random %"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.75,
+            0.55,
+            1,
+            1
+          ],
+          "Color (violet dust)"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Mode (Add)"
+        ],
+        [
+          "tc Particular-0711",
+          60,
+          "Turbulence (dust waver)"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0581",
+          "a=time*(2*Math.PI/4)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+          "Position (offset sweep)"
+        ],
+        [
+          "tc Particular-0146",
+          "260",
+          "psec (steady shed)"
+        ],
+        [
+          "tc Particular-0005",
+          "260",
+          "psec live twin"
+        ]
+      ]
+    },
+    {
+      "matchName": "ADBE Glo2",
+      "params": [
+        [
+          "ADBE Glo2-0002",
+          140,
+          "Glow Threshold"
+        ],
+        [
+          "ADBE Glo2-0003",
+          60,
+          "Glow Radius"
+        ],
+        [
+          "ADBE Glo2-0004",
+          1.2,
+          "Glow Intensity"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "expression",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0146",
+          "expression": "1400",
+          "why": "constant high rate on the ring instance (first match) — segment modulation sacrificed for a solid ring"
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0005",
+          "value": 1400,
+          "why": "0005 accepts setValue — drive the LIVE psec home so the animated emitter actually emits"
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

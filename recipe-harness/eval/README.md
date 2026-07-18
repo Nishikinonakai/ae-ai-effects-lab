@@ -72,3 +72,45 @@ library-leverage column (#sources cited per plan).
 - **ood failures** = the next mining/probing worklist, ranked by user value
   instead of vendor-preset frequency — this replaces the round-N queue as the
   source of work once mining saturates.
+
+## Round-1 results (2026-07-18, full 24/24)
+
+**one-shot 46% / pass@3 71% / mean iters-to-pass 1.4.** Gradients exactly as
+the thesis predicts: tier T1 82% / T2 86% / T3 33% pass@3 (the compositional
+cliff, same place the gap test found it); dist in 83% / near 91% / ood 33%
+(library coverage drives success — near BEATS in because the loop turns
+recombinations into passes); family: form 3/3, particular 9/12, native 5/6,
+mixed 0/2 (cross-family composition is the weakest seam).
+
+Standout passes: e18 smoke volume (the cloudlet residue class CLOSED by the
+cloud curve master — billowing connected volume, 9/10), e09/e10 light-paths
+(dual-psec + zero-velocity ribbon recipe), e16 fireworks (burst spike + shell
+structure), e23 equalizer terrain, e12 Form sphere (0003=3 confirmed).
+
+Mechanism facts discovered by the eval itself:
+- **0005 psec twin is STATEFUL**: rejects setExpression everywhere; accepts
+  setValue only while the emitter position has no expression (e09/e10 worked
+  by runner order: params before expressions); write-locked under Text/Mask.
+  Plan rule: psec params must land before position expressions.
+- **Text/Mask emitter (0782=7) is UI-gated**: text layer renders, 0641
+  connects (readback), Emit From swept 1/2/3, enabled/visible swept — zero
+  emission in every combination. Same class as OBJ Choose-Model / S2 enable.
+  Round-11: UI-assisted observer diff.
+- **Disc direction 0113=4 works headless** — expanding concentric ripple
+  rings on a plane verified (e20's rings under an elevated camera).
+- **tune_loop's applier cannot target instance N in a multi-instance stack**
+  (e20: three iterations of suggestions, three pixel-identical renders) —
+  harness fix: index-aware suggestion targeting.
+- Noise HLS Auto2 Lightness renders ~6x its nominal scale; FN Fractal Type 2
+  collapses to uniform at high contrast (degenerate-generator class); Emboss's
+  grey blend desaturates duotones; fast small particles vanish under motion
+  blur (dilution).
+- Vague prompts (e22): the planner should adapt the closest CURATED recipe
+  wholesale, not improvise particle-craft — three self-authored directions all
+  missed taste.
+
+Fail worklist by yield: (1) harness multi-instance targeting (unblocks e17/
+e19/e20 class), (2) 0524 aspect/streak probe (rain-streak read), (3) Text/Mask
+UI unlock, (4) tornado multi-system recipe authoring (core+wisps+debris — the
+documented moat work), (5) pattern-generator class for print/geometric asks
+(e24/e11 wanted crisp graphic bases native FN barely provides).

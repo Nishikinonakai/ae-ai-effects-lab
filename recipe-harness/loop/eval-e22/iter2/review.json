@@ -1,0 +1,12 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "Coverage and brightness fixed — full-frame cyan field on dark blue, background-grade density. But the 'tech' read is still missing: streaklet clumps render as roundish dot clusters (motion per frame too small to elongate them), so it reads as dim blue snow, not data streams. Needs actual directional elongation.",
+  "suggestions": [
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0703", "value": 2, "why": "Glow Sphere responds to aspect-ratio stretching cleanly" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0524", "value": 7, "why": "aspect ratio 7 = elongated dashes" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0726", "value": 1, "why": "orient to motion — dashes align with the flow = data-stream read" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0035", "value": 2, "why": "motion blur on for streak smear" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0749", "value": 550, "why": "faster flow = longer per-frame travel, stronger streaking" }
+  ]
+}

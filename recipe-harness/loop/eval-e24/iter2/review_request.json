@@ -1,0 +1,144 @@
+{
+  "intent": "复古双色调印刷海报感：抽象几何底图，画面转为深蓝与米白双色，带浮雕纹理线条",
+  "pass_criteria": [
+    "abstract geometric base readable",
+    "strict two-tone palette (deep blue + cream), no full-color leakage",
+    "emboss/relief line texture visible",
+    "poster-like graphic cohesion"
+  ],
+  "iteration": 2,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "ADBE Fractal Noise",
+        "params": [
+          [
+            "ADBE Fractal Noise-0001",
+            13,
+            "Fractal Type (sparse/threshold = graphic shapes)"
+          ],
+          [
+            "ADBE Fractal Noise-0002",
+            3,
+            "Noise Type"
+          ],
+          [
+            "ADBE Fractal Noise-0004",
+            180,
+            "Contrast (hard edges)"
+          ],
+          [
+            "ADBE Fractal Noise-0005",
+            0,
+            "Brightness"
+          ],
+          [
+            "ADBE Fractal Noise-0010",
+            200,
+            "Scale"
+          ]
+        ],
+        "expressions": [
+          [
+            "ADBE Fractal Noise-0023",
+            "time*18",
+            "Evolution (slow)"
+          ]
+        ]
+      },
+      {
+        "matchName": "ADBE Tile",
+        "params": [
+          [
+            "ADBE Tile-0004",
+            220,
+            "Output Width"
+          ],
+          [
+            "ADBE Tile-0005",
+            220,
+            "Output Height"
+          ],
+          [
+            "ADBE Tile-0006",
+            1,
+            "Mirror Edges (kaleido symmetry)"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE Tint",
+        "params": [
+          [
+            "ADBE Tint-0001",
+            [
+              0.07,
+              0.1,
+              0.25,
+              1
+            ],
+            "Map Black To (deep blue)"
+          ],
+          [
+            "ADBE Tint-0002",
+            [
+              0.93,
+              0.89,
+              0.78,
+              1
+            ],
+            "Map White To (cream)"
+          ],
+          [
+            "ADBE Tint-0003",
+            100,
+            "Amount (strict duotone)"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE Emboss",
+        "params": [
+          [
+            "ADBE Emboss-0002",
+            3,
+            "Relief"
+          ],
+          [
+            "ADBE Emboss-0003",
+            170,
+            "Contrast"
+          ],
+          [
+            "ADBE Emboss-0004",
+            45,
+            "Blend With Original (keep duotone)"
+          ]
+        ],
+        "expressions": []
+      }
+    ],
+    "camera": null,
+    "background": null,
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e24/iter2/eval-e24_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e24/iter2/eval-e24_i2_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 2,
+      "verdict": "fail",
+      "critique": "Uniform flat slate frame at both t1 and t4 — no geometry, no duotone, no relief. Root cause: Fractal Type 2 (sparse/threshold) at Contrast 260 collapses to a near-uniform field; the mirror-tile of nothing is nothing, and Emboss over a featureless base outputs its neutral grey which the 45% blend mixes into the tint = the observed slate. The stack's structure is fine; the BASE generator degenerated."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

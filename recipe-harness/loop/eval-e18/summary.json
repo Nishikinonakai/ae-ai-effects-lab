@@ -1,0 +1,14 @@
+{
+  "intent": "浓密的白烟从画面底部滚滚升起，逐渐弥漫到画面上方",
+  "backend": "agent",
+  "outcome": "pass",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 9,
+      "verdict": "pass",
+      "critique": "The cloudlet class delivers under the curve master: t1 shows soft puffs birthing along the bottom; t4 a towering connected white smoke bank filling most of the frame — cauliflower billows with internal shading, volume from overlapping low-opacity cloudlets, zero hard particle edges. Clear rise and spread between frames. (Emitter Size Y/Z stayed gated on the clone — harmless, X-width carried the band.) Would satisfy as-is."
+    }
+  ]
+}

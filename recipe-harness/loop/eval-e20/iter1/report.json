@@ -1,0 +1,194 @@
+{
+  "status": "done",
+  "name": "eval-e20_i1",
+  "params": [
+    {
+      "p": "[1:tc Particular] Drops: Box emitter",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Position (above frame)",
+      "ok": true,
+      "v": "640,-40,0"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size mode",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size X",
+      "ok": true,
+      "v": "1300"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Y",
+      "ok": true,
+      "v": "60"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Z",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:tc Particular] Particle Type (Sphere)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec (readable drops)",
+      "ok": true,
+      "v": "90"
+    },
+    {
+      "p": "[1:tc Particular] Direction (Directional)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Angle X (down)",
+      "ok": true,
+      "v": "-90"
+    },
+    {
+      "p": "[1:tc Particular] Direction Spread",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Velocity",
+      "ok": true,
+      "v": "1900"
+    },
+    {
+      "p": "[1:tc Particular] Life (dies at waterline y~560)",
+      "ok": true,
+      "v": "0.34000000357628"
+    },
+    {
+      "p": "[1:tc Particular] Life Random %",
+      "ok": true,
+      "v": "8"
+    },
+    {
+      "p": "[1:tc Particular] Size (thin drops)",
+      "ok": true,
+      "v": "2.40000009536743"
+    },
+    {
+      "p": "[1:tc Particular] Aspect Ratio",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Opacity",
+      "ok": true,
+      "v": "85"
+    },
+    {
+      "p": "[1:tc Particular] Color (rain)",
+      "ok": true,
+      "v": "0.69999998807907,0.85000"
+    },
+    {
+      "p": "[1:tc Particular] Motion Blur (streaks)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Shutter",
+      "ok": true,
+      "v": "180"
+    },
+    {
+      "p": "[2:tc Particular] Rings: Sphere emitter",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[2:tc Particular] Position (water line)",
+      "ok": true,
+      "v": "640,560,0"
+    },
+    {
+      "p": "[2:tc Particular] Emitter Size (uniform)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[2:tc Particular] Emitter Size (small source)",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[2:tc Particular] Direction (Disc)",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[2:tc Particular] Angle X (disc horizontal)",
+      "ok": true,
+      "v": "90"
+    },
+    {
+      "p": "[2:tc Particular] Particle Type (Sphere)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[2:tc Particular] Velocity (ring expansion)",
+      "ok": true,
+      "v": "260"
+    },
+    {
+      "p": "[2:tc Particular] Velocity Random %",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[2:tc Particular] Life",
+      "ok": true,
+      "v": "1.5"
+    },
+    {
+      "p": "[2:tc Particular] Life Random %",
+      "ok": true,
+      "v": "10"
+    },
+    {
+      "p": "[2:tc Particular] Size (fine ring dots)",
+      "ok": true,
+      "v": "1.79999995231628"
+    },
+    {
+      "p": "[2:tc Particular] Opacity",
+      "ok": true,
+      "v": "70"
+    },
+    {
+      "p": "[2:tc Particular] Color (ripple)",
+      "ok": true,
+      "v": "0.64999997615814,0.89999"
+    },
+    {
+      "p": "[2:tc Particular] Blend (Add)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[2:tc Particular] psec (ring generations) (expr)",
+      "ok": true
+    },
+    {
+      "p": "[2:tc Particular] psec live twin (expr)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set expression” with this propert"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e20/iter1/eval-e20_i1_t1p2.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e20/iter1/eval-e20_i1_t3p6.png"
+  ]
+}

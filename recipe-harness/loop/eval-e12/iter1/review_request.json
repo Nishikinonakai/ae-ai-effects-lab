@@ -1,0 +1,123 @@
+{
+  "intent": "由粒子构成的球体在画面中央缓慢自转",
+  "pass_criteria": [
+    "particle-built sphere silhouette centered in frame",
+    "3D volume readable (shading/density variation, not a flat disc)",
+    "rotation evidence between t1 and t4 (feature moved around the axis)",
+    "background dark and clean"
+  ],
+  "iteration": 1,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Form",
+        "params": [
+          [
+            "tc Form-0003",
+            3,
+            "Base Form (Sphere-Layered)"
+          ],
+          [
+            "tc Form-0004",
+            500,
+            "Size X"
+          ],
+          [
+            "tc Form-0005",
+            500,
+            "Size Y"
+          ],
+          [
+            "tc Form-0006",
+            500,
+            "Size Z"
+          ],
+          [
+            "tc Form-0007",
+            220,
+            "Particles in X"
+          ],
+          [
+            "tc Form-0008",
+            220,
+            "Particles in Y"
+          ],
+          [
+            "tc Form-0009",
+            3,
+            "Particles in Z (layers)"
+          ],
+          [
+            "tc Form-0037",
+            2,
+            "Blend Mode (Add)"
+          ],
+          [
+            "tc Form-0033",
+            1.2,
+            "Particle Size"
+          ],
+          [
+            "tc Form-0035",
+            55,
+            "Particle Opacity"
+          ],
+          [
+            "tc Form-0042",
+            1,
+            "Set Color (Solid)"
+          ],
+          [
+            "tc Form-0036",
+            [
+              0.55,
+              0.8,
+              1,
+              1
+            ],
+            "Particle Color (ice blue)"
+          ],
+          [
+            "tc Form-0166",
+            15,
+            "Field Affect Pos X (subtle surface features)"
+          ],
+          [
+            "tc Form-0172",
+            10,
+            "Field Evolution (slow)"
+          ],
+          [
+            "tc Form-0180",
+            3,
+            "Field Scale"
+          ]
+        ],
+        "expressions": [
+          [
+            "tc Form-0013",
+            "time*30",
+            "Y Rotation (slow spin)"
+          ]
+        ]
+      }
+    ],
+    "camera": null,
+    "background": [
+      0.01,
+      0.01,
+      0.02
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e12/iter1/eval-e12_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e12/iter1/eval-e12_i1_t4.png"
+  ],
+  "prior_iterations": [],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

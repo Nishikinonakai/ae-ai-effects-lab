@@ -1,0 +1,175 @@
+{
+  "status": "done",
+  "name": "eval-e19_i3",
+  "params": [
+    {
+      "p": "[1:tc Particular] Emitter Type (Box)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Position (above frame)",
+      "ok": true,
+      "v": "640,-80,0"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size mode (XYZ)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size X",
+      "ok": true,
+      "v": "2000"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Y",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Z (depth spread)",
+      "ok": true,
+      "v": "900"
+    },
+    {
+      "p": "[1:tc Particular] Particle Type (Sphere)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec (dense)",
+      "ok": true,
+      "v": "3000"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Direction (Directional)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Angle X (straight down)",
+      "ok": true,
+      "v": "-90"
+    },
+    {
+      "p": "[1:tc Particular] Direction Spread",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Velocity (rain speed)",
+      "ok": true,
+      "v": "2500"
+    },
+    {
+      "p": "[1:tc Particular] Velocity Random %",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] Aspect Ratio",
+      "ok": true,
+      "v": "0.20000000298023"
+    },
+    {
+      "p": "[1:tc Particular] Feather",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] Life (screen crossing)",
+      "ok": true,
+      "v": "1.20000004768372"
+    },
+    {
+      "p": "[1:tc Particular] Life Random %",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Size (thin streaks)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Particular] Size Random %",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] Opacity",
+      "ok": true,
+      "v": "90"
+    },
+    {
+      "p": "[1:tc Particular] Color (pale rain)",
+      "ok": true,
+      "v": "0.5799999833107,0.819999"
+    },
+    {
+      "p": "[1:tc Particular] Motion Blur (streak the drops)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Shutter Angle",
+      "ok": true,
+      "v": "300"
+    },
+    {
+      "p": "[2:ADBE Tint] Map Black To (magenta-violet night)",
+      "ok": true,
+      "v": "0.09000000357628,0.00999"
+    },
+    {
+      "p": "[2:ADBE Tint] Map White To (neon cyan)",
+      "ok": true,
+      "v": "0.5,0.98000001907349,0.9"
+    },
+    {
+      "p": "[2:ADBE Tint] Amount",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[3:ADBE Wave Warp] Wave Type (square)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[3:ADBE Wave Warp] Wave Height",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[3:ADBE Wave Warp] Wave Width",
+      "ok": true,
+      "v": "22"
+    },
+    {
+      "p": "[3:ADBE Wave Warp] Direction",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[3:ADBE Wave Warp] Wave Speed",
+      "ok": true,
+      "v": "2.70000004768372"
+    },
+    {
+      "p": "[4:ADBE Shift Channels] Take Red From Blue",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[4:ADBE Shift Channels] Take Blue From Red",
+      "ok": true,
+      "v": "4"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e19/iter3/eval-e19_i3_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e19/iter3/eval-e19_i3_t4.png"
+  ]
+}

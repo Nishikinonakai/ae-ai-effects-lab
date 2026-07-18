@@ -1,0 +1,12 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "Reads as a broken render, not a tech background: faint tiny speckles crawling in from the left, right half empty at t4, streaklets too small/dim to read as streaks or anything deliberate. The left-edge-source design starves frame coverage and the particle scale is below the visibility floor (the miner's sub-pixel lesson).",
+  "suggestions": [
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0581", "value": [640, 360, 0], "why": "emit across the whole frame — immediate full coverage instead of a slow left-to-right fill" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0014", "value": 1400, "why": "full-width emitter box" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0027", "value": 9, "why": "streaklets above the visibility floor — readable data-streak scale" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0033", "value": 95, "why": "full opacity so the streams pop on the dark bg" },
+    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0146", "value": 200, "why": "density for an ambient field (still background-grade)" }
+  ]
+}

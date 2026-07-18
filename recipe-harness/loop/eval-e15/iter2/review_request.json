@@ -1,0 +1,146 @@
+{
+  "intent": "荒野上的龙卷风：漏斗状的烟尘柱旋转，带 3D 透视感",
+  "pass_criteria": [
+    "vertical funnel/column of particles, wider top narrower base (or readable taper)",
+    "dense enough to read as a coherent volume, not a coil/spring",
+    "rotation/sweep evidence between frames",
+    "3D perspective feel (camera looking at the funnel, not flat 2D)"
+  ],
+  "iteration": 2,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0782",
+            1,
+            "Emitter Type (Point)"
+          ],
+          [
+            "tc Particular-0146",
+            40000,
+            "Particles/sec (dense wall)"
+          ],
+          [
+            "tc Particular-0011",
+            4,
+            "Velocity"
+          ],
+          [
+            "tc Particular-0013",
+            0,
+            "Velocity from Motion (off)"
+          ],
+          [
+            "tc Particular-0002",
+            1.9,
+            "Life (sec)"
+          ],
+          [
+            "tc Particular-0065",
+            25,
+            "Life Random %"
+          ],
+          [
+            "tc Particular-0027",
+            2.2,
+            "Size"
+          ],
+          [
+            "tc Particular-0074",
+            75,
+            "Size Random %"
+          ],
+          [
+            "tc Particular-0033",
+            38,
+            "Opacity"
+          ],
+          [
+            "tc Particular-0075",
+            40,
+            "Opacity Random %"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              0.62,
+              0.57,
+              0.52,
+              1
+            ],
+            "Color (dust)"
+          ],
+          [
+            "tc Particular-0069",
+            1,
+            "Blend Mode (Normal)"
+          ],
+          [
+            "tc Particular-0017",
+            -4,
+            "Gravity (slight lift)"
+          ],
+          [
+            "tc Particular-0711",
+            95,
+            "Turbulence -> Position (merge coils)"
+          ],
+          [
+            "tc Particular-0035",
+            2,
+            "Motion Blur (on)"
+          ],
+          [
+            "tc Particular-0036",
+            200,
+            "Shutter Angle"
+          ]
+        ],
+        "expressions": [
+          [
+            "tc Particular-0581",
+            "var angRev=12.0;var hPer=2.0;var c=(time/hPer)%2;var p=1-Math.abs(1-c);var ang=time*angRev*2*Math.PI;var yB=700,yT=70;var y=yB+(yT-yB)*p;var rB=8,rT=150;var r=rB+(rT-rB)*Math.pow(p,0.8);[640+r*Math.sin(ang),y,r*Math.cos(ang)]",
+            "Emitter Position (swept-angle funnel)"
+          ]
+        ]
+      }
+    ],
+    "camera": {
+      "position": [
+        640,
+        380,
+        -1150
+      ],
+      "pointOfInterest": [
+        640,
+        430,
+        0
+      ]
+    },
+    "background": [
+      0.09,
+      0.09,
+      0.11
+    ],
+    "renderFrames": [
+      2,
+      5
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e15/iter2/eval-e15_i2_t2.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e15/iter2/eval-e15_i2_t5.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The recipe's structure carries: t2 reads as a genuine funnel (wide top, tapering base, 3D coil ellipses under the camera rig) and t5 shows sweep/rotation evolution with a nicely dissipating dust crown. Miss: the coil-spring residue — at t5 the lower funnel reads as discrete stacked loops rather than a fused dust wall (the recipe's documented residual; turbulence 40 merges only partially)."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

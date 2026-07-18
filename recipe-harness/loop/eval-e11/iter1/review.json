@@ -1,0 +1,10 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The rig works: full-frame coverage with no empty band, clear upward displacement of trackable motifs between t1 and t4 (~360px, matching 120px/s), and the mirror-tile joins show no tear. But the CONTENT misses '简单几何图案' — soft cloudy noise upscaled 125% reads mushy/organic, not crisp geometry.",
+  "suggestions": [
+    { "type": "param", "effect": "ADBE Fractal Noise", "matchName": "ADBE Fractal Noise-0002", "value": 1, "why": "Block noise type = hard-edged cells -> geometric pattern" },
+    { "type": "param", "effect": "ADBE Fractal Noise", "matchName": "ADBE Fractal Noise-0004", "value": 280, "why": "high contrast for crisp two-tone shapes" },
+    { "type": "param", "effect": "ADBE Fractal Noise", "matchName": "ADBE Fractal Noise-0010", "value": 90, "why": "smaller scale = readable repeating blocks instead of large blurs" }
+  ]
+}

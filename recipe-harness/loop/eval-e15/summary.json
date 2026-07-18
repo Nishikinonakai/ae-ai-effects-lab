@@ -1,0 +1,26 @@
+{
+  "intent": "荒野上的龙卷风：漏斗状的烟尘柱旋转，带 3D 透视感",
+  "backend": "agent",
+  "outcome": "fail_max_iters",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The recipe's structure carries: t2 reads as a genuine funnel (wide top, tapering base, 3D coil ellipses under the camera rig) and t5 shows sweep/rotation evolution with a nicely dissipating dust crown. Miss: the coil-spring residue — at t5 the lower funnel reads as discrete stacked loops rather than a fused dust wall (the recipe's documented residual; turbulence 40 merges only partially)."
+    },
+    {
+      "iter": 2,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "Overshot: turbulence 95 shredded the funnel — t2 is a chaotic scribble tangle with no readable silhouette, t5 keeps a coil core but drowns it in scattered wisps. Worse than iter1 (compositional params are non-monotonic — the recipe's tuned 40 was closer than 95). Split the difference."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "Turbulence 55 restores the funnel: t2 shows a coherent tapering tornado with mostly-fused turns and good 3D perspective; t5 keeps a dissipating crown but its lower third still reads as discrete spring coils. Max-iters reached. The single-system recipe delivers a recognizable ~70% tornado — the residue matches the recipe's own documented gap (portfolio quality needs multi-system layering: core + wisps + debris + matte), which single-param nudges cannot supply."
+    }
+  ]
+}

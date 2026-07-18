@@ -1,0 +1,89 @@
+{
+  "status": "done",
+  "name": "eval-e12_i1",
+  "params": [
+    {
+      "p": "[1:tc Form] Base Form (Sphere-Layered)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] Size X",
+      "ok": true,
+      "v": "500"
+    },
+    {
+      "p": "[1:tc Form] Size Y",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] Size Z",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] Particles in X",
+      "ok": true,
+      "v": "220"
+    },
+    {
+      "p": "[1:tc Form] Particles in Y",
+      "ok": true,
+      "v": "220"
+    },
+    {
+      "p": "[1:tc Form] Particles in Z (layers)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] Blend Mode (Add)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] Particle Size",
+      "ok": true,
+      "v": "1.20000004768372"
+    },
+    {
+      "p": "[1:tc Form] Particle Opacity",
+      "ok": true,
+      "v": "55"
+    },
+    {
+      "p": "[1:tc Form] Set Color (Solid)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] Particle Color (ice blue)",
+      "ok": true,
+      "v": "0.55000001192093,0.80000"
+    },
+    {
+      "p": "[1:tc Form] Field Affect Pos X (subtle surface features)",
+      "ok": true,
+      "v": "15"
+    },
+    {
+      "p": "[1:tc Form] Field Evolution (slow)",
+      "ok": true,
+      "v": "10"
+    },
+    {
+      "p": "[1:tc Form] Field Scale",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] Y Rotation (slow spin) (expr)",
+      "ok": true
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e12/iter1/eval-e12_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e12/iter1/eval-e12_i1_t4.png"
+  ]
+}

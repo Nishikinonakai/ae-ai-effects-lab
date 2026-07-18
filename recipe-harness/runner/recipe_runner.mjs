@@ -120,6 +120,33 @@ const AEX = String.raw`(function () {
       }
     }
 
+    // 2d) text layers (find-or-create by name): source layers for Particular's Text/Mask
+    // emitter (0782=7 + 0641 layer connect). Video OFF like sprites — the emitter samples
+    // the layer regardless. Recipes declare textLayers: [{name, text, fontSize, position}].
+    if (R.textLayers) {
+      for (var ti = 0; ti < R.textLayers.length; ti++) {
+        var Td = R.textLayers[ti];
+        try {
+          var tlay = findLayer(comp, Td.name);
+          if (!tlay) {
+            tlay = comp.layers.addText(Td.text || "TEXT");
+            tlay.name = Td.name;
+          }
+          var tdoc = tlay.property("Source Text").value;
+          tdoc.fontSize = Td.fontSize || 300;
+          tdoc.fillColor = [1, 1, 1];
+          try { tdoc.justification = ParagraphJustification.CENTER_JUSTIFY; } catch (eJ) {}
+          tlay.property("Source Text").setValue(tdoc);
+          tlay.position.setValue(Td.position || [R.comp.width / 2, R.comp.height / 2]);
+          tlay.enabled = (Td.enabled === true);
+          if (Td.enabled !== true) tlay.moveToEnd();
+          parts.push('{"p":"[text] ' + esc(Td.name) + '","ok":true}');
+        } catch (eT) {
+          parts.push('{"p":"[text] ' + esc(Td.name) + '","ok":false,"err":"' + esc(String(eT).substring(0,70)) + '"}');
+        }
+      }
+    }
+
     // 3) host layer: find (idempotent re-run) | clone from a curve-library master | new solid.
     // Masters carry CUSTOM_VALUE state (over-life curves, gradients) that setValue cannot
     // reach — layer copy is a full-state transfer, so curves ride along; the recipe's params

@@ -1,0 +1,26 @@
+{
+  "intent": "雨滴落到水面上，溅起一圈圈小小的涟漪",
+  "backend": "agent",
+  "outcome": "fail_max_iters",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "Half the miracle landed: the ripple RINGS work — concentric dotted ellipses expanding on the water plane (Disc direction 0113=4 + horizontal disc + elevated camera), with two generations visible and clear expansion between frames. But the falling DROPS are invisible — the upper frame is empty, so the 'drops AND rings' and causality criteria fail. Drops need presence."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "Identical frames — density/size/life nudges changed nothing visible, which points at the real mechanism: the drops instance has Motion Blur ON at 1900px/s — a 32px smear per frame dilutes an 85%-opacity dot to ~7% per pixel = invisible regardless of count. The rings remain correct. Kill the blur on the drops (first-match instance) to reveal them."
+    },
+    {
+      "iter": 3,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "Third identical render: none of the three iterations' suggestions produced any pixel change — a HARNESS finding, not a look finding: tune_loop's mechanical applier does not reach the intended instance in a multi-instance effect stack (both instances share the matchName 'tc Particular'; the applier needs index-aware targeting). The look itself: rings excellent (Disc-direction ripple mechanism verified headless — a new ontology fact), drops invisible (motion-blur dilution hypothesis untested because the nudge never landed). Expected-fail marker confirmed at the harness level: linked-system looks need multi-instance-aware suggestion targeting plus the drop/ring causality that scripting cannot express."
+    }
+  ]
+}

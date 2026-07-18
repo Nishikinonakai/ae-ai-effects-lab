@@ -1,0 +1,252 @@
+{
+  "intent": "赛博朋克雨夜氛围：密集的雨丝落下，青色与品红的霓虹色调，偶发轻微的故障闪烁",
+  "pass_criteria": [
+    "dense streak-like rain falling",
+    "teal/cyan + magenta neon grade clearly present",
+    "some glitch/flicker artifact between sampled frames",
+    "cohesive moody composite — elements read as one scene"
+  ],
+  "iteration": 3,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0782",
+            2,
+            "Emitter Type (Box)"
+          ],
+          [
+            "tc Particular-0581",
+            [
+              640,
+              -80,
+              0
+            ],
+            "Position (above frame)"
+          ],
+          [
+            "tc Particular-0577",
+            2,
+            "Emitter Size mode (XYZ)"
+          ],
+          [
+            "tc Particular-0014",
+            2000,
+            "Emitter Size X"
+          ],
+          [
+            "tc Particular-0015",
+            200,
+            "Emitter Size Y"
+          ],
+          [
+            "tc Particular-0016",
+            900,
+            "Emitter Size Z (depth spread)"
+          ],
+          [
+            "tc Particular-0703",
+            1,
+            "Particle Type (Sphere)"
+          ],
+          [
+            "tc Particular-0146",
+            3000,
+            "Particles/sec (dense)"
+          ],
+          [
+            "tc Particular-0113",
+            2,
+            "Emitter Direction (Directional)"
+          ],
+          [
+            "tc Particular-0112",
+            -90,
+            "Angle X (straight down)"
+          ],
+          [
+            "tc Particular-0010",
+            0,
+            "Direction Spread"
+          ],
+          [
+            "tc Particular-0011",
+            2500,
+            "Velocity (rain speed)"
+          ],
+          [
+            "tc Particular-0012",
+            20,
+            "Velocity Random %"
+          ],
+          [
+            "tc Particular-0524",
+            0.2,
+            "Aspect Ratio"
+          ],
+          [
+            "tc Particular-0029",
+            50,
+            "Feather"
+          ],
+          [
+            "tc Particular-0002",
+            1.2,
+            "Life (screen crossing)"
+          ],
+          [
+            "tc Particular-0065",
+            40,
+            "Life Random %"
+          ],
+          [
+            "tc Particular-0027",
+            3,
+            "Size (thin streaks)"
+          ],
+          [
+            "tc Particular-0074",
+            50,
+            "Size Random %"
+          ],
+          [
+            "tc Particular-0033",
+            90,
+            "Opacity"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              0.58,
+              0.82,
+              0.9,
+              1
+            ],
+            "Color (pale rain)"
+          ],
+          [
+            "tc Particular-0035",
+            2,
+            "Motion Blur (streak the drops)"
+          ],
+          [
+            "tc Particular-0036",
+            300,
+            "Shutter Angle"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE Tint",
+        "params": [
+          [
+            "ADBE Tint-0001",
+            [
+              0.09,
+              0.01,
+              0.13,
+              1
+            ],
+            "Map Black To (magenta-violet night)"
+          ],
+          [
+            "ADBE Tint-0002",
+            [
+              0.5,
+              0.98,
+              0.95,
+              1
+            ],
+            "Map White To (neon cyan)"
+          ],
+          [
+            "ADBE Tint-0003",
+            100,
+            "Amount"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE Wave Warp",
+        "params": [
+          [
+            "ADBE Wave Warp-0001",
+            5,
+            "Wave Type (square)"
+          ],
+          [
+            "ADBE Wave Warp-0002",
+            5,
+            "Wave Height"
+          ],
+          [
+            "ADBE Wave Warp-0003",
+            22,
+            "Wave Width"
+          ],
+          [
+            "ADBE Wave Warp-0004",
+            0,
+            "Direction"
+          ],
+          [
+            "ADBE Wave Warp-0005",
+            2.7,
+            "Wave Speed"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE Shift Channels",
+        "params": [
+          [
+            "ADBE Shift Channels-0002",
+            2,
+            "Take Red From Blue"
+          ],
+          [
+            "ADBE Shift Channels-0004",
+            4,
+            "Take Blue From Red"
+          ]
+        ],
+        "expressions": []
+      }
+    ],
+    "camera": null,
+    "background": [
+      0.1,
+      0.02,
+      0.12
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e19/iter3/eval-e19_i3_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e19/iter3/eval-e19_i3_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "Palette bug: the R<->B channel swap runs AFTER the Tint, converting the neon cyan into olive-yellow specks on plum — the cyberpunk grade is gone (planner error: swap composes with the grade). Rain also reads as dot specks, not streaks (motion blur alone too subtle at size 2). Density and mood-darkness are fine."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "Palette restored — teal-cyan specks on plum-violet, both neon hues present, moody and cohesive. But the core '密集雨丝' still fails: drops render as star-like dots; aspect 5 produced no visible vertical elongation (direction of the ratio may be inverted, or it needs size to show). Wave-warp displacement is present but sub-perceptual at dot scale."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

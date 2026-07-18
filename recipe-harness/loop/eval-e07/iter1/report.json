@@ -1,0 +1,145 @@
+{
+  "status": "done",
+  "name": "eval-e07_i1",
+  "params": [
+    {
+      "p": "[1:tc Particular] Emitter Type (Box)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Position (above top edge)",
+      "ok": true,
+      "v": "640,-60,0"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size mode (XYZ)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size X",
+      "ok": true,
+      "v": "1450"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Y",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Z",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] Particle Type (Sphere)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Feather (soft flake)",
+      "ok": true,
+      "v": "55"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec",
+      "ok": true,
+      "v": "90"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Direction (Directional)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Angle X (straight down)",
+      "ok": true,
+      "v": "270"
+    },
+    {
+      "p": "[1:tc Particular] Direction Spread",
+      "ok": true,
+      "v": "12"
+    },
+    {
+      "p": "[1:tc Particular] Velocity (gentle fall)",
+      "ok": true,
+      "v": "110"
+    },
+    {
+      "p": "[1:tc Particular] Velocity Random %",
+      "ok": true,
+      "v": "25"
+    },
+    {
+      "p": "[1:tc Particular] Life (crosses the frame)",
+      "ok": true,
+      "v": "7"
+    },
+    {
+      "p": "[1:tc Particular] Life Random %",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] Gravity (near-terminal, from recipe)",
+      "ok": true,
+      "v": "17"
+    },
+    {
+      "p": "[1:tc Particular] Size (large flakes)",
+      "ok": true,
+      "v": "11"
+    },
+    {
+      "p": "[1:tc Particular] Size Random %",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] Opacity",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Particular] Opacity Random %",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] Color (white)",
+      "ok": true,
+      "v": "1,1,1,1"
+    },
+    {
+      "p": "[1:tc Particular] TF Affect Position (wander)",
+      "ok": true,
+      "v": "60"
+    },
+    {
+      "p": "[1:tc Particular] TF Scale",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] TF Evolution",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Particular] Glow Opacity (softness)",
+      "ok": true,
+      "v": "25"
+    },
+    {
+      "p": "[1:tc Particular] Glow Size",
+      "ok": true,
+      "v": "300"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e07/iter1/eval-e07_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e07/iter1/eval-e07_i1_t4.png"
+  ]
+}

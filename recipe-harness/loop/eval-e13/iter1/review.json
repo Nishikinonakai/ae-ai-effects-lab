@@ -1,0 +1,6 @@
+{
+  "verdict": "fail",
+  "score": 1,
+  "critique": "Zero emission across every probe. Mechanism findings (all readbacks verified): text layer creates + renders fine (scripted Source Text OK), 0641 layer connect lands (index readback), 0782=7 lands, 0005 psec is WRITE-LOCKED under Text/Mask (settable under Point in e09/e10 — twin liveness is emitter-type-dependent), Emit From 0642 swept 1/2/3 = all empty, enabled/visible text = still no particles. The Text/Mask emitter joins the UI-gated class (like OBJ Choose Model / S2 enable): some plugin-private state beyond scriptable params gates it. No param suggestion applies — terminating. Round-11 worklist: UI-assisted observer diff on a working Text/Mask instance (the S2 unlock method).",
+  "suggestions": []
+}

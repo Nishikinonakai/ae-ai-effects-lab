@@ -1,0 +1,78 @@
+{
+  "status": "done",
+  "name": "eval-e04_i1",
+  "params": [
+    {
+      "p": "[1:ADBE Fractal Noise] Fractal Type (soft clouds)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Noise Type (smoothest)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Contrast (soft)",
+      "ok": true,
+      "v": "105"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Brightness",
+      "ok": true,
+      "v": "-6"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Scale (big soft billows)",
+      "ok": true,
+      "v": "210"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Evolution (slow) (expr)",
+      "ok": true
+    },
+    {
+      "p": "[2:ADBE Noise HLS Auto2] Noise type (grain)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[2:ADBE Noise HLS Auto2] Lightness noise (visible film grain)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[2:ADBE Noise HLS Auto2] Grain Size",
+      "ok": true,
+      "v": "0.89999997615814"
+    },
+    {
+      "p": "[2:ADBE Noise HLS Auto2] Noise Animation Speed (per-frame refresh)",
+      "ok": true,
+      "v": "24"
+    },
+    {
+      "p": "[3:ADBE Exposure2] Master Exposure flicker (stops) (expr)",
+      "ok": true
+    },
+    {
+      "p": "[4:ADBE Tint] Map Black To (warm dark brown)",
+      "ok": true,
+      "v": "0.09000000357628,0.05499"
+    },
+    {
+      "p": "[4:ADBE Tint] Map White To (aged paper)",
+      "ok": true,
+      "v": "0.88999998569489,0.79000"
+    },
+    {
+      "p": "[4:ADBE Tint] Amount",
+      "ok": true,
+      "v": "100"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e04/iter1/eval-e04_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e04/iter1/eval-e04_i1_t4.png"
+  ]
+}

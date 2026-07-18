@@ -1,0 +1,84 @@
+{
+  "status": "done",
+  "name": "eval-e09_i1",
+  "params": [
+    {
+      "p": "[1:tc Particular] Particle Type (Glow Sphere)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec (aliased home)",
+      "ok": true,
+      "v": "350"
+    },
+    {
+      "p": "[1:tc Particular] Particles/sec (live twin)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] Velocity (ribbon stays)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Velocity Random",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Velocity from Motion (no ejection)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Life (outlives the sweep)",
+      "ok": true,
+      "v": "6"
+    },
+    {
+      "p": "[1:tc Particular] Size",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[1:tc Particular] Size Random %",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Particular] Opacity",
+      "ok": true,
+      "v": "90"
+    },
+    {
+      "p": "[1:tc Particular] Color (blue-white)",
+      "ok": true,
+      "v": "0.60000002384186,0.80000"
+    },
+    {
+      "p": "[1:tc Particular] Blend Mode (Add)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Glow Opacity",
+      "ok": true,
+      "v": "80"
+    },
+    {
+      "p": "[1:tc Particular] Glow Size",
+      "ok": true,
+      "v": "280"
+    },
+    {
+      "p": "[1:tc Particular] Position (S sweep over 5s) (expr)",
+      "ok": true
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e09/iter1/eval-e09_i1_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e09/iter1/eval-e09_i1_t4.png"
+  ]
+}
