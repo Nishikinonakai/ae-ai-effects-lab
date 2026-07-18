@@ -3,9 +3,15 @@
     "OOD MECHANISM: Text/Mask emitter never exercised headless. TSV recon: group at 0640 — 0641 Layer (type 6421 selector, same class as the sprite connect 0066), 0642 Emit From (default 2), 0655 Match Text/Mask Size, 0780/0781 density edges/faces",
     "chain mirrors the verified sprite pattern: create source layer video-off (new runner textLayers primitive) -> 0782=7 (Text/Mask, v18 dropdown read) -> 0641 layer connect resolved at set time",
     "呼吸浮动 — small Turbulence->Position (legacy 0711) displaces particles gently around the glyphs; Velocity 0 keeps letterforms anchored; continuous psec + life 2 keeps the shape replenished",
-    "glyph legibility — text fontSize 340 centered; particles small (3) and dense (both psec homes 900) so strokes stay solid"
+    "glyph legibility — text fontSize 340 centered; particles small (3) and dense (both psec homes 900) so strokes stay solid",
+    "r2 REVISION (probe session 2026-07-19): write-order fix — 0005 live psec is settable ONLY on a virgin instance before any type/expression writes (stuck-lock is per-instance sticky); 0641 connect must precede 0782=7 because the Text/Mask bake event fires on ENTRY into type 7 (plugin creates locked TextLayerEmit helper light at that moment). Old order (0782 first, 0641 later, 0005 never landing) = 1 particle/sec on empty bake = black frames.",
+    "r3 (2026-07-19 probe session): e13 CONFIRMED UI-gated after exhaustive headless sweep — bake event fires on 0641-then-0782=7 write order (locked TextLayerEmit helper light appears) but glyph extraction is UI-thread-only; 0658 use-primary emits factory-default 'Trapcode' geometry; Layer emitter 0782=6 shares the gate. 0005 removed: it is 'Emitter Type Old' (legacy 1..10 popup), not psec. Awaiting round-11 UI-assisted observer diff; expected verdict stays fail until then."
   ],
-  "_planner_sources": ["gap-test/particular_params_fixed.tsv (Text/Mask group recon)", "recipes/mined/large-snow-2d.json (sprite-connect pattern)", "eval/plans/eval-e09.json (dual psec homes)"],
+  "_planner_sources": [
+    "gap-test/particular_params_fixed.tsv (Text/Mask group recon)",
+    "recipes/mined/large-snow-2d.json (sprite-connect pattern)",
+    "eval/plans/eval-e09.json (dual psec homes)"
+  ],
   "intent": "粒子聚集成文字 AE 的形状，轻微呼吸浮动",
   "pass_criteria": [
     "particles form readable glyphs 'AE'",
@@ -15,41 +21,147 @@
   ],
   "name": "eval-e13",
   "compName": "Eval_E13_TextAE",
-  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 6 },
-  "background": [0.01, 0.01, 0.025],
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.01,
+    0.01,
+    0.025
+  ],
   "hostName": "TextParticles",
   "textLayers": [
-    { "name": "AEText", "text": "AE", "fontSize": 340, "position": [640, 360] }
+    {
+      "name": "AEText",
+      "text": "AE",
+      "fontSize": 340,
+      "position": [
+        640,
+        360
+      ]
+    }
   ],
   "effects": [
     {
       "matchName": "tc Particular",
       "params": [
-        ["tc Particular-0782", 7,                  "Emitter Type (Text/Mask)"],
-        ["tc Particular-0641", {"__layer": "AEText"}, "Text/Mask Layer connect"],
-        ["tc Particular-0655", 1,                  "Match Text/Mask Size"],
-        ["tc Particular-0703", 2,                  "Particle Type (Glow Sphere)"],
-        ["tc Particular-0146", 900,                 "Particles/sec (aliased home)"],
-        ["tc Particular-0005", 900,                 "Particles/sec (live twin)"],
-        ["tc Particular-0011", 0,                   "Velocity (anchored)"],
-        ["tc Particular-0012", 0,                   "Velocity Random"],
-        ["tc Particular-0013", 0,                   "Velocity from Motion"],
-        ["tc Particular-0002", 2,                   "Life (replenishing shape)"],
-        ["tc Particular-0065", 30,                  "Life Random %"],
-        ["tc Particular-0027", 3,                   "Size"],
-        ["tc Particular-0074", 40,                  "Size Random %"],
-        ["tc Particular-0033", 85,                  "Opacity"],
-        ["tc Particular-0075", 40,                  "Opacity Random %"],
-        ["tc Particular-0070", [0.65, 0.85, 1, 1],  "Color (ice blue)"],
-        ["tc Particular-0069", 2,                   "Blend Mode (Add)"],
-        ["tc Particular-0216", 60,                  "Glow Opacity"],
-        ["tc Particular-0215", 220,                 "Glow Size"],
-        ["tc Particular-0711", 25,                  "Turbulence -> Position (breathing float)"],
-        ["tc Particular-0715", 10,                  "Turbulence Scale"]
+        [
+          "tc Particular-0641",
+          {
+            "__layer": "AEText"
+          },
+          "Text/Mask Layer connect (before type switch)"
+        ],
+        [
+          "tc Particular-0655",
+          1,
+          "Match Text/Mask Size"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Particle Type (Glow Sphere)"
+        ],
+        [
+          "tc Particular-0011",
+          0,
+          "Velocity (anchored)"
+        ],
+        [
+          "tc Particular-0012",
+          0,
+          "Velocity Random"
+        ],
+        [
+          "tc Particular-0013",
+          0,
+          "Velocity from Motion"
+        ],
+        [
+          "tc Particular-0002",
+          2,
+          "Life (replenishing shape)"
+        ],
+        [
+          "tc Particular-0065",
+          30,
+          "Life Random %"
+        ],
+        [
+          "tc Particular-0027",
+          3,
+          "Size"
+        ],
+        [
+          "tc Particular-0074",
+          40,
+          "Size Random %"
+        ],
+        [
+          "tc Particular-0033",
+          85,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0075",
+          40,
+          "Opacity Random %"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.65,
+            0.85,
+            1,
+            1
+          ],
+          "Color (ice blue)"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Mode (Add)"
+        ],
+        [
+          "tc Particular-0216",
+          60,
+          "Glow Opacity"
+        ],
+        [
+          "tc Particular-0215",
+          220,
+          "Glow Size"
+        ],
+        [
+          "tc Particular-0711",
+          25,
+          "Turbulence -> Position (breathing float)"
+        ],
+        [
+          "tc Particular-0715",
+          10,
+          "Turbulence Scale"
+        ],
+        [
+          "tc Particular-0146",
+          900,
+          "Particles/sec (the ONE live psec — 0005 is Emitter Type Old, never set it)"
+        ],
+        [
+          "tc Particular-0782",
+          7,
+          "Emitter Type Text/Mask — LAST: bake event fires with layer+psec armed"
+        ]
       ],
       "expressions": []
     }
   ],
   "camera": null,
-  "renderFrames": [1, 4]
+  "renderFrames": [
+    1,
+    4
+  ]
 }

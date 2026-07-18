@@ -320,8 +320,10 @@ dim-faint batch through the tune loop.
 - **Light-path class SOLVED structurally**: presets ship NO emitter path (Designer's
   preview animates a demo path). One probe frame settled two twin-pairs at once:
   **0581 Position (3D) is LIVE** (0003 Position XY is a dormant twin — expressions on
-  it are inert) and **0005 Particles/sec is LIVE** (the aliased 0146 'ParticlesPerSecF'
-  alone leaves near-zero emission). A synthesized lissajous on 0581 + live psec paints
+  it are inert) and ~~**0005 Particles/sec is LIVE**~~ [CORRECTED 2026-07-19: 0005 is
+  'Emitter Type Old', a legacy 1..10 popup — 0146 IS the live psec; the 'near-zero
+  emission' was velocity-0 particles stacking on one pixel until the 0581 expression
+  spread them. See eval/README.md mechanism facts.] A synthesized lissajous on 0581 + live psec paints
   a clean blue light ribbon. 0146-vs-0005 semantics = round-11 worklist (burst spike
   currently targets 0146 and bursts DO fire — the two may be multiplicative).
 - **Second untouched-default gradient home found**: the main col.life flatten had no

@@ -88,14 +88,41 @@ cloud curve master — billowing connected volume, 9/10), e09/e10 light-paths
 structure), e23 equalizer terrain, e12 Form sphere (0003=3 confirmed).
 
 Mechanism facts discovered by the eval itself:
-- **0005 psec twin is STATEFUL**: rejects setExpression everywhere; accepts
-  setValue only while the emitter position has no expression (e09/e10 worked
-  by runner order: params before expressions); write-locked under Text/Mask.
-  Plan rule: psec params must land before position expressions.
-- **Text/Mask emitter (0782=7) is UI-gated**: text layer renders, 0641
-  connects (readback), Emit From swept 1/2/3, enabled/visible swept — zero
-  emission in every combination. Same class as OBJ Choose-Model / S2 enable.
-  Round-11: UI-assisted observer diff.
+- ~~**0005 psec twin is STATEFUL**~~ **CORRECTED 2026-07-19 (e13 probe session)**:
+  `tc Particular-0005` is **"Emitter Type Old"** — a legacy 1..10 popup (TSV idx 6),
+  NOT Particles/sec. Every historical claim about "0005 live psec" was misattribution:
+  **0146 IS the one true live Particles/sec** (verified: virgin instance, 0146=2000,
+  Point type, velocity 0 → particles emit but STACK ON ONE PIXEL, reading as a single
+  dot — the round-10 "0146 alone leaves near-zero emission" myth came from exactly this
+  stacked-emission illusion; the light-path revival credited to "0005" was actually the
+  0581 position expression spreading the stack out). The "Can not set value" errors on
+  0005 = range violations (>10) or legacy-popup write locks. Plans must NEVER touch 0005.
+- **Text/Mask emitter (0782=7) is UI-gated — mechanism now fully mapped (e13 probe
+  session 2026-07-19)**:
+  - The bake EVENT fires headless on *entry into type 7* — but ONLY if 0641 already
+    points at the source layer (write-order rule: **connect 0641 first, set 0782=7
+    last**; the original plan order 0782→0641 misses the event entirely). Firing is
+    observable: the plugin synchronously creates a locked+shy sourceless LIGHT layer
+    `TextLayerEmit [<name>]`.
+  - Headless the bake produces EMPTY geometry (zero emission at any density); the
+    actual glyph-outline extraction runs only on the UI thread's dropdown-selection
+    event. Param refire / type retoggle / fx toggle / video toggle / mask donor /
+    precomp donor / openInViewer+idle: all swept, none trigger extraction.
+  - **0658 "Use Primary Layer"=1** (visible only on non-solid hosts — param visibility
+    depends on HOST LAYER TYPE, new ontology axis) emits the plugin's FACTORY DEFAULT
+    text geometry ("Trapcode"), proving the emission pipeline itself is healthy headless.
+  - Under type 7 emission density is governed by 0780/0781 (edges/faces densities),
+    not psec.
+  - **HAZARD — instance wedge**: an effect instance that has entered type 7 headless
+    can stop rendering ANY emitter type afterward (Box sanity probe: black). Recovery:
+    delete comp + rebuild on a virgin instance. Never enter 7 speculatively.
+  - **Layer emitter (0782=6) also fails to sample its connected layer headless** (valid
+    connect at 0115, precomp source, video on/off, healthy 0146) — the v18 layer-source
+    emitters appear to share the UI-side bake pipeline. Same UI-gate class.
+  - Layer-INDEX selectors (6421 class) go stale when the layer stack shifts (helper
+    insertion moved BG under the selector). Product rule: re-assert connects after any
+    layer insert/remove.
+  Round-11: UI-assisted observer diff remains the unlock path for this class.
 - **Disc direction 0113=4 works headless** — expanding concentric ripple
   rings on a plane verified (e20's rings under an elevated camera).
 - **tune_loop's applier cannot target instance N in a multi-instance stack**
