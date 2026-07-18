@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The orange-on-black palette, dense lower source, and strong t1-to-t4 upward travel clearly communicate rising embers. At t1 the field is a reasonably coherent vertical cluster, but at t4 it still blooms too widely at the top and is cropped by the frame edge, reading more like an upward explosive burst than a sustained tapered ember plume. Individual particles remain large, uniformly circular glowing dots rather than sharper, varied hot embers.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 180,
+      "why": "Reduce the excessive upward travel so the plume remains contained and coherent at t4 instead of expanding and cropping at the top edge."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 18,
+      "why": "Narrow directional spread to preserve a tapered rising column with moderate drift rather than a broad explosive spray."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 5,
+      "why": "Sharpen particle edges so the particles read more like hot embers and less like soft circular bokeh."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

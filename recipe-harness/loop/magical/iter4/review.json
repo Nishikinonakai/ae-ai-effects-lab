@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The render now has clear frame-to-frame expansion: frame 4 forms a wider pink-and-white magical scatter than frame 1, and the individual white spark structure remains visible against the black field. It reads much closer to an airy magical burst. However, the bloom is still relatively small and concentrated around a bright central knot, with the outer motion feeling more like a compact radial spark explosion than the broad, floating Light and Magic-style magical spread suggested by the preset thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 280,
+      "why": "Increase primary-particle travel distance so the pink magical bloom occupies more of the canvas and opens up more decisively over time."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 145,
+      "why": "Widen the primary emission cone to reduce the dense central clump and create a more airy, enveloping magical cloud."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-2059",
+      "value": 250,
+      "why": "Push the small white auxiliary sparks farther beyond the pink core, producing a lighter, more expansive glitter halo."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

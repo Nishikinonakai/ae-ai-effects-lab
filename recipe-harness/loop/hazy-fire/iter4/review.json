@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The palette and central fiery texture are closer to the intended fire treatment, and there is a small vertical smoky suggestion in the core. However, the animation still reads overwhelmingly as a spark burst: from t1 to t4, numerous crisp glowing dots expand far outward in an almost radial field. The core remains clipped white and compact, while the desired result needs a sustained, larger, soft-edged haze/fire volume with much slower, coherent billowing motion rather than visible projectile-like embers.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 0.35,
+      "why": "Greatly reducing emitter velocity prevents the fast explosion-like outward travel and lets the fire texture linger as a compact billowing volume."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0012",
+      "value": 0,
+      "why": "Removing velocity variation suppresses the remaining wide radial spark distribution so motion follows the directed plume instead of ejecting in all directions."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 55,
+      "why": "A much lower emission rate reduces the dense field of individually readable ember dots, making the fire/smoke texture more legible."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 280,
+      "why": "Larger particles create more overlapping soft fire-and-smoke texture, expanding the hazy volume instead of presenting a tiny bright particle cluster."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

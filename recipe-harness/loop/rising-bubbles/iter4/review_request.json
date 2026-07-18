@@ -1,0 +1,286 @@
+{
+  "intent": "vendor preset \"Rising Bubbles\" (Nature) — validate against its thumbnail",
+  "pass_criteria": [],
+  "iteration": 4,
+  "max_iters": 5,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0782",
+            2,
+            "FXid_Gen1EmitterType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0703",
+            1,
+            "FXid_PType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0146",
+            65,
+            "FXid_Gen1ParticlesPerSecF (alias)"
+          ],
+          [
+            "tc Particular-0014",
+            1903,
+            "FXid_Gen1EmitterSizeX (alias)"
+          ],
+          [
+            "tc Particular-0015",
+            50,
+            "FXid_Gen1EmitterSizeY (exact)"
+          ],
+          [
+            "tc Particular-0016",
+            1810,
+            "FXid_Gen1EmitterSizeZ (exact)"
+          ],
+          [
+            "tc Particular-0221",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInX (alias)"
+          ],
+          [
+            "tc Particular-0222",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInY (alias)"
+          ],
+          [
+            "tc Particular-0223",
+            1,
+            "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+          ],
+          [
+            "tc Particular-0112",
+            2.129975212e-314,
+            "FXid_Gen1AngleX (alias)"
+          ],
+          [
+            "tc Particular-0111",
+            0,
+            "FXid_Gen1AngleY (alias)"
+          ],
+          [
+            "tc Particular-0076",
+            0,
+            "FXid_Gen1AngleZ (alias)"
+          ],
+          [
+            "tc Particular-0010",
+            20,
+            "FXid_Gen1DirSpread (alias)"
+          ],
+          [
+            "tc Particular-0113",
+            2,
+            "FXid_Gen1EmitterDir (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0011",
+            10,
+            "FXid_Gen1Vel (alias)"
+          ],
+          [
+            "tc Particular-0013",
+            20,
+            "FXid_Gen1VelEmit (alias)"
+          ],
+          [
+            "tc Particular-0012",
+            50,
+            "FXid_Gen1VelSpread (alias)"
+          ],
+          [
+            "tc Particular-0524",
+            1,
+            "FXid_PAspectRatio (alias)"
+          ],
+          [
+            "tc Particular-0029",
+            8,
+            "FXid_PFeather (alias)"
+          ],
+          [
+            "tc Particular-0002",
+            3,
+            "FXid_PLife (alias)"
+          ],
+          [
+            "tc Particular-0065",
+            0,
+            "FXid_PLifeRnd (alias)"
+          ],
+          [
+            "tc Particular-0027",
+            34,
+            "FXid_PSizeMax (alias)"
+          ],
+          [
+            "tc Particular-0074",
+            55,
+            "FXid_PSizeRnd (alias)"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            "FXid_PColor (alias)"
+          ],
+          [
+            "tc Particular-0071",
+            0,
+            "FXid_PColorRnd (alias)"
+          ],
+          [
+            "tc Particular-0088",
+            4,
+            "FXid_PSetColor (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0033",
+            65,
+            "FXid_POpacMax (alias)"
+          ],
+          [
+            "tc Particular-0075",
+            0,
+            "FXid_POpacRnd (alias)"
+          ],
+          [
+            "tc Particular-0210",
+            [
+              0.25098039215686274,
+              0.25098039215686274,
+              0.25098039215686274,
+              1
+            ],
+            "FXid_Options_SmokeletShadow_Color (alias)"
+          ],
+          [
+            "tc Particular-0211",
+            50,
+            "FXid_Options_SmokeletShadow_ColorStrength (alias)"
+          ],
+          [
+            "tc Particular-0212",
+            50,
+            "FXid_Options_SmokeletShadow_Opacity (alias)"
+          ],
+          [
+            "tc Particular-0284",
+            0,
+            "FXid_PShade (alias)"
+          ],
+          [
+            "tc Particular-0304",
+            250,
+            "FXid_PShadeFalloffAdjust (alias)"
+          ],
+          [
+            "tc Particular-0042",
+            50,
+            "FXid_FAffectPos (alias)"
+          ],
+          [
+            "tc Particular-0041",
+            0,
+            "FXid_FAffectSize (alias)"
+          ],
+          [
+            "tc Particular-0045",
+            0.5,
+            "FXid_FAffectTime (alias)"
+          ],
+          [
+            "tc Particular-0052",
+            50,
+            "FXid_FEvolution (alias)"
+          ],
+          [
+            "tc Particular-0046",
+            4,
+            "FXid_FScale (alias)"
+          ],
+          [
+            "tc Particular-0017",
+            -330,
+            "FXid_Gravity (exact)"
+          ],
+          [
+            "tc Particular-0018",
+            0,
+            "FXid_AirResist (alias)"
+          ],
+          [
+            "tc Particular-0019",
+            1,
+            "FXid_SpinAmp (alias)"
+          ],
+          [
+            "tc Particular-0020",
+            1,
+            "FXid_SpinFreq (alias)"
+          ],
+          [
+            "tc Particular-0021",
+            1,
+            "FXid_SpinTime (alias)"
+          ],
+          [
+            "tc Particular-0749",
+            0,
+            "FXid_WindX (exact)"
+          ],
+          [
+            "tc Particular-0751",
+            0,
+            "FXid_WindZ (exact)"
+          ]
+        ],
+        "expressions": []
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/rising-bubbles/iter4/rising-bubbles_i4_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/rising-bubbles/iter4/rising-bubbles_i4_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The black background and cool cyan/blue particle coloration are directionally compatible, and the frame-to-frame refresh suggests upward particle simulation is active. However, the render reads as a sparse starfield of pinpoints rather than the preset's recognizable rising bubbles: there are virtually no visible bubble discs, soft circular edges, or meaningful scale variation. The particle field also becomes noticeably denser by t4 instead of presenting a composed stream of larger, clearly rising bubbles."
+    },
+    {
+      "iter": 2,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render now clearly reads as cyan/blue bubble-like particles on black, with broad scale variation and an upward-oriented simulation that is much closer to the Rising Bubbles look. However, it is substantially overpopulated, especially by t4, making the image feel like a crowded drifting field rather than a composed stream of individual rising bubbles. The bubbles are also excessively soft and glow-like; their circular silhouettes merge into one another instead of retaining the cleaner, more legible bubble discs implied by the preset thumbnail."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The cyan/teal bubbles on black and the upward-changing particle arrangement are strongly aligned with the Rising Bubbles direction. Compared with the prior pass, the field is less uniformly crowded and individual particles are easier to distinguish. However, the bubbles remain too soft, oversized, and heavily overlapping—especially in the lower-center and left edge at t4—so they read more like glowing bokeh blobs than clean, legible bubble discs. A slightly lower emission rate, smaller maximum size, and much firmer edges would make the stream feel more composed and thumbnail-like."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

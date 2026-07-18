@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The orange/yellow palette and rapid burst timing read as a fire effect, but it does not yet resemble an explosive muzzle flash. At 0.01s it is a soft, rounded orange blob with no sharp flame rays or directional blast silhouette. By 0.08s it has collapsed into a small, dense spark cluster rather than a sustained, expanding flash; the motion reads as a continuously replenished particle fountain instead of a brief explosive plume.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 0.07,
+      "why": "Increase main-particle life so the burst remains visibly expanded at 0.08s and develops a readable flame/spark trail rather than disappearing into a tight cluster."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 45,
+      "why": "Widen directional spread to create the explosive fan/ray silhouette expected from a muzzle flash instead of the current compact rounded puff."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 30,
+      "why": "Make the initial hot particles larger so the flash has a stronger bright flame core before it breaks into smaller sparks."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

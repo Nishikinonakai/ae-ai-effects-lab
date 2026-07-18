@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Muzzle Flash 4\" (Explosive) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The orange/yellow palette and rapid burst timing read as a fire effect, but it does not yet resemble an explosive muzzle flash. At 0.01s it is a soft, rounded orange blob with no sharp flame rays or directional blast silhouette. By 0.08s it has collapsed into a small, dense spark cluster rather than a sustained, expanding flash; the motion reads as a continuously replenished particle fountain instead of a brief explosive plume."
+    },
+    {
+      "iter": 2,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The color and expanding burst read as hot fire, and the frame at 0.08s is larger and more spark-filled than 0.01s. However, both frames remain a soft, rounded orange particle cloud. It lacks the crisp pointed flame tongues, bright hot core, and directional cone/starburst silhouette expected from an Explosive muzzle flash. The burst also continues to build through 0.08s rather than peaking immediately and rapidly dissipating."
+    },
+    {
+      "iter": 3,
+      "score": 0,
+      "verdict": "fail",
+      "critique": "Both sampled frames are completely black: there is no visible burst, hot core, flame tongue, spark, or directional muzzle-flash silhouette. The 0.08s disappearance could be appropriate for a short flash, but the absence at 0.01s means the effect is not rendering visibly at all. The anomalous near-zero denormal Angle X value is the most likely invalid directional-control input."
+    },
+    {
+      "iter": 4,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The render is visible again and its orange initial burst at 0.01s followed by a small spark remnant at 0.08s is a meaningful improvement over the black result. However, it still reads as a soft fire-particle puff rather than the preset's explosive muzzle-flash silhouette: the first frame has a rounded, heavily blurred orange blob with no crisp hot core or pointed flame tongues. The 0.08s frame is a dense centered spark fountain, indicating that emission is still occurring through most of the sampled interval instead of being a single instantaneous flash that expands and dissipates."
+    },
+    {
+      "iter": 5,
+      "score": 0,
+      "verdict": "fail",
+      "critique": "Both 0.01s and 0.08s frames are entirely black. No muzzle-flash core, orange flame, directional tongues, or residual sparks are visible, so the result cannot be compared visually to the Explosive Muzzle Flash 4 thumbnail. The intended short decay at 0.08s is moot because the initial burst is also absent."
+    }
+  ]
+}

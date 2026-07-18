@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The black field, pink glow, and white spark accents establish a broadly magical look, but the result is still a very small, nearly circular pink puff. Between frames 1 and 4 there is only minimal visible evolution, so it does not yet read as the airy, expanding Light and Magic particle motion suggested by the preset thumbnail. The large feathered pink primary particles form an opaque core that hides the individual spark structure.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 85,
+      "why": "Increase primary-particle travel so the effect expands beyond the tight static orb and produces visible frame-to-frame motion."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 115,
+      "why": "Broaden the emission directions to turn the current compact circular puff into a more airy magical burst."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 1.1,
+      "why": "Keep the expanding pink particles visible long enough to create a larger, sustained magical volume instead of a tiny dense center."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 24,
+      "why": "Reduce the oversized feathered primary particles so the white auxiliary spark detail remains distinct rather than being buried in a solid pink glow."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-2059",
+      "value": 105,
+      "why": "Give the white secondary particles more outward motion, making their sparkle pattern visibly animate and extend beyond the pink core."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

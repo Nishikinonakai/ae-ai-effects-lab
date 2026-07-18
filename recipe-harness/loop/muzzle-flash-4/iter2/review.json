@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The color and expanding burst read as hot fire, and the frame at 0.08s is larger and more spark-filled than 0.01s. However, both frames remain a soft, rounded orange particle cloud. It lacks the crisp pointed flame tongues, bright hot core, and directional cone/starburst silhouette expected from an Explosive muzzle flash. The burst also continues to build through 0.08s rather than peaking immediately and rapidly dissipating.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 12,
+      "why": "Reduce the 100% particle feather so the flash edge breaks into sharper flame spikes instead of a blurred orange blob."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 18,
+      "why": "Narrow the 45-degree directional spread to form a more identifiable directional muzzle-blast cone."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0042",
+      "value": 70,
+      "why": "Reduce the very strong position turbulence that is inflating the burst into soft rounded lobes; a lower value preserves a cleaner explosive silhouette."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.025 ? 40000 : 0",
+      "why": "Make the emission a true instant flash rather than continuing to add particles through 0.08 seconds."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 0.04,
+      "why": "Shorten particle life so the flash peaks immediately and clears rapidly rather than remaining a dense fireball at the later frame."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

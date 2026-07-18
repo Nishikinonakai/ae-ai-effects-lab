@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The render retains the warm gold glow, black field, dense luminous center, and active particle variation appropriate to a magical effect. It is more evenly distributed by t4, but it still reads as a compact spark burst rather than the broad, coherent elliptical magic-disc silhouette of the preset thumbnail. The effect occupies only a small central portion of the frame and has no clearly legible disc plane; its outer particles disperse irregularly from a bright blob.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 650,
+      "why": "Give the grid emitter substantial horizontal extent so the particle mass establishes a wide disc silhouette instead of originating as a compact point blob."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0015",
+      "value": 220,
+      "why": "Add a smaller perpendicular emitter extent to produce a readable flattened ellipse while keeping the disc wider than it is tall."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 35,
+      "why": "Reduce outward velocity so particles remain concentrated over the enlarged emitter plane rather than breaking into an irregular burst."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

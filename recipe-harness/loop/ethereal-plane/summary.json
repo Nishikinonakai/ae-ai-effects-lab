@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Ethereal Plane\" (Light and Magic) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render reads as an ethereal, pastel-blue particle plane: a dense luminous horizontal band, soft bloom, black negative space, and slight flowing deformation between t1 and t4 all support the preset intent. However, very large out-of-focus circular particles dominate the foreground and frame edges, especially at t4, making the result feel more like bokeh flying past the camera than a refined magical plane. The particle band is also somewhat unevenly cluttered beneath the main horizon."
+    },
+    {
+      "iter": 2,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The core look remains recognizable: a luminous pastel-blue magical particle plane spans the frame against clean black negative space, with a gently changing wave profile between t1 and t4. However, large soft-focus particles still break the refined planar silhouette, especially at the edges and in the upper/lower foreground at t4. The plane also has too much apparent depth, producing distracting particles far above and below the intended horizon band rather than a controlled, elegant sheet."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The large foreground bokeh artifacts from prior iterations are gone, and both frames now read as a clean, pale-blue particle sheet spanning a black field. The motion remains gently organic, with the wave profile changing between t1 and t4. However, the result is now too dim and granular compared with an ethereal magical-plane thumbnail: it reads as discrete tiny dots rather than a softly luminous, cohesive plane. The deformation also still throws a broad tail of particles noticeably below the central horizon, weakening the refined thin-sheet silhouette."
+    },
+    {
+      "iter": 4,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render now has a clean pale-blue particle sheet, strong black negative space, and subtle evolving wave motion between t1 and t4. It is much closer to the intended controlled plane than the earlier bokeh-heavy versions. However, it still reads primarily as sharply resolved granular dots rather than a cohesive, softly radiant magical surface. The t4 center also sags into a noticeably broad underside/tail, so the sheet loses some of the thumbnail's refined thin-horizon silhouette."
+    },
+    {
+      "iter": 5,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "Both frames clearly read as a pale pastel-blue particle plane on clean black, with restrained organic evolution from t1 to t4 and no intrusive foreground bokeh. The main remaining mismatch is surface quality: particles remain individually sharp and granular instead of merging into a softly radiant magical sheet. At t4, the center also develops a thicker downward underside that weakens the intended refined thin-horizon silhouette."
+    }
+  ]
+}

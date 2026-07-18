@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The render has the correct basic glow-field ingredients—warm orange points, soft bloom, and a black background—but it is much too sparse and uneven to read as a cohesive field, especially at t1 where only a handful of isolated dots are visible. By t4 more particles appear, but the field is still scattered rather than richly populated; the visible density changes noticeably across just three frames, creating a build-up/popping impression instead of a stable animated glow texture. The largest glows are visually appealing but need more supporting particles around them.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 100,
+      "why": "Increase emission density so the preset reads as a continuous luminous particle field from the first rendered frame and remains visually full across time."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 8,
+      "why": "Slightly enlarge the particle cores so the additional field density remains legible as soft glowing motes rather than mostly imperceptible pinpoints."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

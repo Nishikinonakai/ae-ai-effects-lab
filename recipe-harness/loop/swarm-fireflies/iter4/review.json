@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The warm orange pinpoints on black read well as fireflies, and the t4 frame is substantially broader and more organically irregular than the earlier compact cluster. However, the t1-to-t4 change still reads primarily as a rapidly emitting particle burst: the count rises sharply and the swarm expands outward radially. A Swarm Fireflies preset should feel like a steadier population of individually wandering lights, with less center-heavy buildup and slower, less ballistic travel.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 45,
+      "why": "Reduce the rapid density buildup between frames so the result reads as a persistent swarm rather than an accelerating burst."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 22,
+      "why": "Slow the outward ballistic expansion so individual lights appear to drift and linger."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0018",
+      "value": 3,
+      "why": "Add drag to damp the radial particle motion and retain a looser wandering swarm shape."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

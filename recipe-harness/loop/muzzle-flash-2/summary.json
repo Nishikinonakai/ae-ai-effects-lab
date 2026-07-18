@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Muzzle Flash 2\" (Explosive) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 5,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The render has the correct orange/yellow fire color on black and changes between frames, but it reads as a small, soft circular fireball rather than an explosive directional muzzle flash. At 0.01 it is a dense blob; by 0.08 it has simply contracted and shifted slightly, with no clear forward flame cone, bright core, sparks, or expanding directional energy characteristic of the preset thumbnail."
+    },
+    {
+      "iter": 2,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The orange-on-black palette is appropriate and the flash moves rightward between 0.01 and 0.08, but both frames still read as the same small, rounded orange particle blob. It lacks the large, sharp forward flame wedge, hot near-white/yellow core, and long directional particle/spark trail expected from an Explosive muzzle-flash thumbnail. The late frame translates rather than visibly expanding into a directional blast."
+    },
+    {
+      "iter": 3,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The black background and warm yellow/orange palette are appropriate, and the blast shifts rightward between 0.01 and 0.08. However, it remains a dense, rounded overlapping-particle cloud at both times. It has no readable forward flame wedge, pointed leading edge, separated fast sparks, or hot near-white ignition core; motion is primarily a uniform translation of the blob rather than a directional explosive spread."
+    },
+    {
+      "iter": 4,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The black field and hot pale-yellow/orange flash color are appropriate, and the flash clearly advances to the right between 0.01 and 0.08. However, it is still a very small, soft, horizontally oval cloud rather than the large explosive directional muzzle-flash form. The leading edge is not a sharp flame wedge, there is no substantial fading trail behind the ignition point, and no separated fast sparks are visible. The motion reads as a compact particle clump translating rightward instead of an expanding forward blast."
+    },
+    {
+      "iter": 5,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The black field, hot pale-yellow core, orange edge color, and rightward temporal progression are now recognizable as a muzzle-flash-like event. At 0.08 there is a short orange tail feeding into a brighter head, which is more directional than prior renders. However, the effect remains far too small and reads as a compact glowing projectile/comet rather than the large explosive muzzle-flash wedge in the preset thumbnail. The bright head is rounded and soft, while the trail is thin and uniform; it needs a broader, sharper flame body with visibly larger, more irregular explosive energy."
+    }
+  ]
+}

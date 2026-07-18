@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Rising Embers\" (Smoke and Fire) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 3,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render has the essential upward motion and orange-on-black ember coloration: between t1 and t4 the particle field clearly rises. However, it reads as a thin, sparse vertical string of tiny dots rather than the fuller, turbulent rising ember plume suggested by a Smoke and Fire \"Rising Embers\" preset thumbnail. The emission is too narrowly constrained, particles are too small, and there is little visible fiery glow or variation in the plume silhouette."
+    },
+    {
+      "iter": 2,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render now has a denser orange ember field and clearly rises between t1 and t4, with a more convincing spread than the prior thin string. It still reads primarily as evenly soft glowing dots in a narrow, segmented vertical column rather than a cohesive turbulent ember plume. The particle scale remains small, and the motion/silhouette needs more lateral turbulence and a broader fiery core to better match a Rising Embers Smoke and Fire preset thumbnail."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render now has a substantially fuller orange-on-black rising ember field, and the t1-to-t4 change clearly communicates upward movement. The broadening at the upper portion is more plume-like than prior iterations. However, it still reads as a collection of uniformly circular, soft orange bokeh dots rather than a turbulent Smoke-and-Fire ember plume: the center lacks a concentrated fiery source/core, particle paths remain fairly orderly, and the very high feathering makes the embers overly diffuse."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The orange-on-black palette and strong upward displacement from t1 to t4 communicate rising embers, with a denser central source than earlier attempts. However, the t4 field expands into a very broad, almost explosive spray that reaches/crops at the top edge rather than retaining a tapered vertical plume. The particles remain uniformly round glowing dots; the 30 feather makes their edges too bokeh-like and prevents a sharper, hotter ember appearance. The intended Smoke-and-Fire look needs a more concentrated lower core and a more coherent upward column with only moderate lateral drift."
+    },
+    {
+      "iter": 5,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The orange-on-black palette, dense lower source, and strong t1-to-t4 upward travel clearly communicate rising embers. At t1 the field is a reasonably coherent vertical cluster, but at t4 it still blooms too widely at the top and is cropped by the frame edge, reading more like an upward explosive burst than a sustained tapered ember plume. Individual particles remain large, uniformly circular glowing dots rather than sharper, varied hot embers."
+    }
+  ]
+}

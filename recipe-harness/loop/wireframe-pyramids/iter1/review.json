@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The render has the basic black-background, cyan wireframe geometry look, and the change from t1 to t4 shows outward particle motion. However, the result is an extremely small, dense knot of overlapping pyramids near the center rather than a readable abstract field of prominent wireframe pyramids. Individual pyramid silhouettes are largely lost, and the composition uses very little of the frame.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 110,
+      "why": "Increase particle scale so the wireframe pyramid forms read clearly and occupy a purposeful portion of the frame instead of collapsing into a tiny central cluster."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 55,
+      "why": "Increase base particle velocity so the larger pyramids separate into an airy geometric arrangement rather than remaining heavily overlapped around the emitter."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

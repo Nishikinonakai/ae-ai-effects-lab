@@ -1,0 +1,34 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The render has the correct orange fire/smoke palette and a brief rightward directional drift between 0.01 and 0.08, but it reads as a soft, rounded orange cloud rather than an explosive muzzle flash. It lacks a hot yellow/near-white core, sharp high-energy particle definition, and a convincingly fast burst-and-dissipate silhouette. The two frames remain similarly dense and blob-like, so the motion feels sustained rather than a crisp flash.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0070",
+      "value": [
+        1,
+        0.72,
+        0.18,
+        1
+      ],
+      "why": "Shift the primary particle color toward hot yellow so the flash has a brighter combustion core instead of reading as uniformly orange smoke."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 18,
+      "why": "Reduce excessive particle feathering; the current 46 value merges the particles into a soft circular blob, while a lower feather preserves explosive edge definition."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.04 ? 150000 : 0",
+      "why": "Shorten the emission window so the effect behaves like a discrete muzzle-flash burst rather than continuously replenishing a similarly dense cloud through the 0.08-second frame."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

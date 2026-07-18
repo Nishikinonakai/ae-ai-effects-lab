@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Fire Trails 1\" (Explosive) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 5,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The early frame has a bright, compact ignition point, but it is far too small and isolated for an explosive Fire Trails burst. By 2 seconds, the blast has become a very wide field of discrete peach-colored blobs with large empty gaps; the motion reads as slow ballistic embers rather than dense, continuous fiery trails. The extreme spread and long persistence make the explosion lose its central explosive form, and there is little hot yellow/white flame structure or trail continuity visible."
+    },
+    {
+      "iter": 2,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The render has a credible hot white ignition point at 0.08s, but it remains much too small for the intended explosive Fire Trails look. At 2s, the result is dominated by sparse, discrete peach ember blobs on widely separated ballistic arcs. The explosion has expanded so far that its center is mostly empty, and the arcs do not resolve into dense, continuous flame trails. It also lacks the stronger yellow-orange fire body and compact explosive cohesion expected from the preset thumbnail."
+    },
+    {
+      "iter": 3,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The 2s frame now reads much more clearly as a fiery particle burst: it has many orange radial streams and a denser central launch area than prior iterations. However, the trails still resolve as separated bead-like ember clumps rather than continuous flame streaks. Gravity pulls most of the explosion into a heavy downward fan, leaving the upper half thin and breaking the compact radial explosive silhouette. The 0.08s ignition remains a very small isolated dot, and the overall fire lacks a stronger hot yellow-white core and bloom characteristic of the Fire Trails 1 thumbnail."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The 2s frame is now convincingly fiery, with a bright yellow-white center and many orange radial trails; it is substantially closer to an explosive Fire Trails burst than prior iterations. However, the streams still read as chains of large, separated glowing blobs rather than smoother continuous flame trails. The overall burst is also overly large at 2s, and gravity creates a noticeably heavier lower fan than the thinner upper half. The 0.08s ignition is still only a small dot rather than a fuller initial flash."
+    },
+    {
+      "iter": 5,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The 2s frame now has a strong hot yellow-white core, orange flame color, and a much more compact radial explosive silhouette. It is substantially closer to an explosive Fire Trails preset than earlier versions. However, the outer streams still resolve as chunky, separated cauliflower-like fire blobs instead of thinner continuous fiery trails. The lower half remains slightly heavier and more extended than the upper burst, and the 0.08s frame is still only a small isolated ignition dot rather than a broader initial flash."
+    }
+  ]
+}

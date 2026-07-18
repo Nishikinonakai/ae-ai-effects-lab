@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The render has the essential black-background, mint-to-neon-green triangular particle look, and frame 4 visibly has more particles than frame 1. However, it reads as a small, dense pile of overlapping triangles near the center rather than a clear 2D motion-graphics triangle field. The very low particle velocity keeps the animation compressed, obscuring individual triangle shapes and making the motion feel like accumulation rather than an energetic expanding arrangement.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 55,
+      "why": "Increase emitter velocity so particles separate into individually readable triangles and create the broader, more graphic motion expected from the preset."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 45,
+      "why": "Widen directional spread along with the increased velocity, preventing the particles from remaining a tight central clump."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The black background and isolated cellular sprite forms are directionally appropriate, and the two frames show the cells changing position rather than remaining static. However, the result still reads as a field of sharp neon bacteria, not the softer, calmer Nature preset thumbnail. There are too many equally prominent particles, the pink/orange edges are overly saturated, and the motion between 0.08 s and 2 s is still noticeably dispersed rather than gently suspended.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.1 ? 7000 : 0",
+      "why": "Reduce the burst population substantially so the frame has more of the intended spacious floating-cell field."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 2,
+      "why": "Lower base velocity so cells drift instead of visibly dispersing from the burst."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0018",
+      "value": 5,
+      "why": "Increase air resistance to further damp the burst momentum and create gentler suspended motion."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0033",
+      "value": 65,
+      "why": "Reduce the harsh bright neon prominence of every sprite, allowing the field to feel softer and more natural."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

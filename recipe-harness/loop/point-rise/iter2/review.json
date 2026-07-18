@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The render keeps the intended white-on-black point-particle look, but it still reads as a compact expanding puff rather than the vendor preset's clear rising point stream. From t1 to t4 the bright core remains nearly fixed and dominates the image, while the surrounding particles spread in multiple directions. The 20% opacity also makes the individual upward-moving particles too faint to define a readable ascent.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 300,
+      "why": "Increase particle velocity so the rise is clearly visible across the t1-to-t4 interval instead of remaining concentrated at the emitter."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 3,
+      "why": "Tighten directional spread to suppress the radial puff and form a narrow, directional rising stream."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0033",
+      "value": 65,
+      "why": "Raise particle opacity so the directional stream remains legible against black, especially in the early frame."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

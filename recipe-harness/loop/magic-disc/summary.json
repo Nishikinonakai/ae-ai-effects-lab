@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Magic Disc\" (Light and Magic) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 2,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The render has a plausible warm magical-particle look on black, with a dense glowing core and fine spark scatter. Motion between t1 and t4 does show active upward dispersion. However, it reads as a small upward fountain/crown rather than a coherent magic disc: the particle mass is vertically V-shaped, lacks a broad circular/elliptical disc silhouette, and occupies too little of the frame. The time-driven color sweep also makes the entire effect abruptly change from pale yellow at t1 to saturated orange at t4 instead of maintaining a stable luminous disc palette."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render retains the warm gold glow, black field, dense luminous center, and active particle variation appropriate to a magical effect. It is more evenly distributed by t4, but it still reads as a compact spark burst rather than the broad, coherent elliptical magic-disc silhouette of the preset thumbnail. The effect occupies only a small central portion of the frame and has no clearly legible disc plane; its outer particles disperse irregularly from a bright blob."
+    },
+    {
+      "iter": 3,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The black background and warm gold particle/glow treatment are appropriate, and the color remains stable between t1 and t4. However, both frames show only a tiny, dense central blob—roughly a few percent of frame width—with an irregular vertical/teardrop profile by t4. It does not form the preset's broad, coherent horizontal elliptical magic-disc plane, and the motion reads as slight local spark agitation rather than energy distributed across a large disc."
+    },
+    {
+      "iter": 4,
+      "score": 2,
+      "verdict": "fail",
+      "critique": "The black background and warm golden glow are directionally appropriate, but both frames remain a tiny central blob (only a few percent of frame width). At t1 it is nearly circular; at t4 it becomes a small vertical capsule. Neither frame produces the preset thumbnail's large, horizontally extended elliptical magic-disc plane, and the observed motion is localized vertical drift rather than energy distributed across a broad disc."
+    },
+    {
+      "iter": 5,
+      "score": 1,
+      "verdict": "fail",
+      "critique": "The black background and warm gold glow are appropriate, but both frames contain only one or two tiny central glowing dots. At t4 the dot merely splits/drifts slightly downward; there is no broad horizontal elliptical particle field, disc edge, or distributed magical energy. This is far from the Magic Disc thumbnail silhouette and scale."
+    }
+  ]
+}

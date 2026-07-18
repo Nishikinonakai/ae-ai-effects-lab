@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The turquoise-on-black palette and the centered radial emission are on intent. Motion is clearly explosive, but it overshoots: by 1.9s nearly all particles have traveled beyond the frame, leaving only sparse corner fragments rather than a readable expanding ring. At 0.08s the burst is an overly dense, smooth concentric bullseye with little separation between particles. The preset needs a slower, more legible expanding particle ring with brighter individual dots retained inside frame.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 260,
+      "why": "Reduce radial velocity so the expanding ring remains visibly within the composition at 1.9s instead of exiting to the corners."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 12000,
+      "why": "Lower the initial burst density so the early frame breaks into individually readable particles rather than opaque concentric bands."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0033",
+      "value": 45,
+      "why": "Increase particle opacity so the slower, more dispersed ring remains bright and energetic against black at later time."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

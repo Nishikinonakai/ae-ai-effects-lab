@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The orange-on-black palette and strong upward displacement from t1 to t4 communicate rising embers, with a denser central source than earlier attempts. However, the t4 field expands into a very broad, almost explosive spray that reaches/crops at the top edge rather than retaining a tapered vertical plume. The particles remain uniformly round glowing dots; the 30 feather makes their edges too bokeh-like and prevents a sharper, hotter ember appearance. The intended Smoke-and-Fire look needs a more concentrated lower core and a more coherent upward column with only moderate lateral drift.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 125,
+      "why": "Reduce emitter width so the source remains concentrated and the rising field reads as a tapered plume instead of a wide burst."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 28,
+      "why": "Narrow the directional spread to preserve clear upward flow while retaining enough variation for natural ember drift."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 12,
+      "why": "Lower feathering to make embers less uniformly soft/bokeh-like and give the fiery particles a crisper, hotter visual character."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 300,
+      "why": "Reduce velocity so particles do not disperse and crop at the top so quickly, maintaining a denser visible plume through the frame."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

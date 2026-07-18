@@ -1,0 +1,32 @@
+{
+  "intent": "vendor preset \"Glow Field\" (Motion Graphics) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 4,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render has the correct basic glow-field ingredients—warm orange points, soft bloom, and a black background—but it is much too sparse and uneven to read as a cohesive field, especially at t1 where only a handful of isolated dots are visible. By t4 more particles appear, but the field is still scattered rather than richly populated; the visible density changes noticeably across just three frames, creating a build-up/popping impression instead of a stable animated glow texture. The largest glows are visually appealing but need more supporting particles around them."
+    },
+    {
+      "iter": 2,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The warm orange particle color, deep black background, and soft oversized bloom read correctly as a Glow Field. Density is improved versus the prior render, especially at t4, but t1 remains too open and sparse, with broad empty black areas between isolated lights. The field also still builds noticeably from t1 to t4 rather than reading as a consistently populated ambient texture. A few very large glows dominate while there are not enough smaller supporting points to form a rich field."
+    },
+    {
+      "iter": 3,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The warm orange palette, black background, and soft oversized bloom match the Glow Field look. Frame t4 has a reasonably rich scatter of large and small lights, but frame t1 is still substantially more open, with isolated dots and broad empty regions. The particle population visibly ramps up between t1 and t4 rather than holding a stable ambient-field density; this is the main remaining mismatch."
+    },
+    {
+      "iter": 4,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "Both frames now read as a stable Glow Field: a rich warm-orange scatter of varied point sizes, soft oversized bloom, and deep black negative space. The population holds convincingly from t1 to t4 without the earlier obvious ramp-up, while retaining an ambient, gently varied particle distribution."
+    }
+  ]
+}

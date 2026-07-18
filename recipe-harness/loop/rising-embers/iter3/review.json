@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The render now has a substantially fuller orange-on-black rising ember field, and the t1-to-t4 change clearly communicates upward movement. The broadening at the upper portion is more plume-like than prior iterations. However, it still reads as a collection of uniformly circular, soft orange bokeh dots rather than a turbulent Smoke-and-Fire ember plume: the center lacks a concentrated fiery source/core, particle paths remain fairly orderly, and the very high feathering makes the embers overly diffuse.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 50,
+      "why": "Increase directional spread so the ascending particles fan and churn laterally, creating a less orderly, more turbulent plume silhouette."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 13,
+      "why": "Increase maximum particle size to establish a stronger bright ember/fire core among the smaller particles."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 30,
+      "why": "Reduce excessive softness so the larger embers retain a brighter, more fire-like center instead of reading as uniformly blurred dots."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

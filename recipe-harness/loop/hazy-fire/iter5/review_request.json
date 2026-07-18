@@ -1,0 +1,279 @@
+{
+  "intent": "vendor preset \"Hazy Fire\" (Smoke and Fire) — validate against its thumbnail",
+  "pass_criteria": [],
+  "iteration": 5,
+  "max_iters": 5,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0782",
+            1,
+            "FXid_Gen1EmitterType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0703",
+            6,
+            "FXid_PType (alias+enumOffset) [Designer 5 -> Sprite + connected texture]"
+          ],
+          [
+            "tc Particular-0146",
+            55,
+            "FXid_Gen1ParticlesPerSecF (alias)"
+          ],
+          [
+            "tc Particular-0014",
+            0,
+            "FXid_Gen1EmitterSizeX (alias)"
+          ],
+          [
+            "tc Particular-0015",
+            0,
+            "FXid_Gen1EmitterSizeY (exact)"
+          ],
+          [
+            "tc Particular-0016",
+            0,
+            "FXid_Gen1EmitterSizeZ (exact)"
+          ],
+          [
+            "tc Particular-0221",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInX (alias)"
+          ],
+          [
+            "tc Particular-0222",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInY (alias)"
+          ],
+          [
+            "tc Particular-0223",
+            1,
+            "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+          ],
+          [
+            "tc Particular-0112",
+            -90,
+            "FXid_Gen1AngleX (alias)"
+          ],
+          [
+            "tc Particular-0111",
+            0,
+            "FXid_Gen1AngleY (alias)"
+          ],
+          [
+            "tc Particular-0076",
+            0,
+            "FXid_Gen1AngleZ (alias)"
+          ],
+          [
+            "tc Particular-0010",
+            6,
+            "FXid_Gen1DirSpread (alias)"
+          ],
+          [
+            "tc Particular-0113",
+            2,
+            "FXid_Gen1EmitterDir (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0011",
+            0.35,
+            "FXid_Gen1Vel (alias)"
+          ],
+          [
+            "tc Particular-0013",
+            0,
+            "FXid_Gen1VelEmit (alias)"
+          ],
+          [
+            "tc Particular-0012",
+            0,
+            "FXid_Gen1VelSpread (alias)"
+          ],
+          [
+            "tc Particular-0524",
+            1,
+            "FXid_PAspectRatio (alias)"
+          ],
+          [
+            "tc Particular-0029",
+            100,
+            "FXid_PFeather (alias)"
+          ],
+          [
+            "tc Particular-0002",
+            2.5,
+            "FXid_PLife (alias)"
+          ],
+          [
+            "tc Particular-0065",
+            25,
+            "FXid_PLifeRnd (alias)"
+          ],
+          [
+            "tc Particular-0027",
+            280,
+            "FXid_PSizeMax (alias)"
+          ],
+          [
+            "tc Particular-0074",
+            25,
+            "FXid_PSizeRnd (alias)"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            "FXid_PColor (alias)"
+          ],
+          [
+            "tc Particular-0071",
+            0,
+            "FXid_PColorRnd (alias)"
+          ],
+          [
+            "tc Particular-0088",
+            2,
+            "FXid_PSetColor (alias+enumOffset) [Over Life: fire master gradient]"
+          ],
+          [
+            "tc Particular-0033",
+            100,
+            "FXid_POpacMax (alias)"
+          ],
+          [
+            "tc Particular-0075",
+            0,
+            "FXid_POpacRnd (alias)"
+          ],
+          [
+            "tc Particular-0042",
+            90,
+            "FXid_FAffectPos (alias)"
+          ],
+          [
+            "tc Particular-0041",
+            0,
+            "FXid_FAffectSize (alias)"
+          ],
+          [
+            "tc Particular-0045",
+            1,
+            "FXid_FAffectTime (alias)"
+          ],
+          [
+            "tc Particular-0052",
+            5,
+            "FXid_FEvolution (alias)"
+          ],
+          [
+            "tc Particular-0046",
+            4,
+            "FXid_FScale (alias)"
+          ],
+          [
+            "tc Particular-0018",
+            8,
+            "FXid_AirResist (alias)"
+          ],
+          [
+            "tc Particular-0019",
+            0,
+            "FXid_SpinAmp (alias)"
+          ],
+          [
+            "tc Particular-0020",
+            1,
+            "FXid_SpinFreq (alias)"
+          ],
+          [
+            "tc Particular-0021",
+            1,
+            "FXid_SpinTime (alias)"
+          ],
+          [
+            "tc Particular-0749",
+            0,
+            "FXid_WindX (exact)"
+          ],
+          [
+            "tc Particular-0751",
+            0,
+            "FXid_WindZ (exact)"
+          ],
+          [
+            "tc Particular-0066",
+            {
+              "__layer": "SpriteTex"
+            },
+            "Sprite texture layer (mined PLayer)"
+          ],
+          [
+            "tc Particular-0067",
+            7,
+            "FXid_PLayerTime (+enumOffset)"
+          ],
+          [
+            "tc Particular-0694",
+            1,
+            "FXid_PUnmult (alias) [after sprite connect]"
+          ],
+          [
+            "tc Particular-0069",
+            0,
+            "Blend Mode: Add (curated — fire-family luma sprite)"
+          ]
+        ],
+        "expressions": []
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/hazy-fire/iter5/hazy-fire_i5_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/hazy-fire/iter5/hazy-fire_i5_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The render has a bright fire-colored core and animated outward particle motion, but it reads as a radial spark/explosion burst rather than the vendor's hazy smoke-and-fire look. From t1 to t4, the particles rapidly disperse in all directions into distinct, hard circular embers. There is no substantial soft smoky volume, lingering haze, or upward fire plume; the central core also remains overexposed white rather than resolving into layered orange/red flame."
+    },
+    {
+      "iter": 2,
+      "score": 2,
+      "verdict": "fail",
+      "critique": "The render retains a bright orange/yellow fire palette, but it is still a compact explosion: t1 is an overexposed white-hot orb and by t4 it ejects a wide, evenly radial field of crisp ember dots. This is opposite the thumbnail intent of soft, layered smoke-and-fire haze with a coherent rising plume. There is almost no lingering volume, the fire core clips to white, and the t1-to-t4 motion disperses too rapidly rather than billowing upward."
+    },
+    {
+      "iter": 3,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The central palette and small amount of fiery texture are closer to fire, but the result still reads as a compact spark burst rather than Hazy Fire. At t1 the core is overly white and crowded with discrete yellow ember dots; by t4 those dots have expanded into a broad, nearly radial field. The desired sustained, soft smoke volume and coherent upward/billowing flame shape are still absent."
+    },
+    {
+      "iter": 4,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The palette and central fiery texture are closer to the intended fire treatment, and there is a small vertical smoky suggestion in the core. However, the animation still reads overwhelmingly as a spark burst: from t1 to t4, numerous crisp glowing dots expand far outward in an almost radial field. The core remains clipped white and compact, while the desired result needs a sustained, larger, soft-edged haze/fire volume with much slower, coherent billowing motion rather than visible projectile-like embers."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

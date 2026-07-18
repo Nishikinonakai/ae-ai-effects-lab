@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The palette is closer to Smokey Fire now: orange-gold ember detail sits against charcoal smoke on black, and the t1-to-t4 change clearly shows active particle motion. But the structure remains a centered, nearly circular blast. At t4, sparks form a large evenly radial halo while the smoke expands symmetrically around a small brown-orange ring with a dark center. It does not yet present as a dense luminous flame body feeding an irregular, vertically rising smoke plume like the preset thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0012",
+      "value": 6,
+      "why": "Reduce velocity variation so particles stop filling a broad, uniform radial explosion and remain concentrated in a flame/smoke source."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 2,
+      "why": "Further narrow the emitter direction spread to break the circular burst silhouette and establish a more coherent plume direction."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0017",
+      "value": -2.5,
+      "why": "Increase upward acceleration so the smoke and glowing particles develop a visibly rising, asymmetric fire-plume motion instead of expanding evenly outward."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 420,
+      "why": "Increase source density to fill the dark center and create a more continuous luminous flame body rather than a thin ring of sprite particles."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

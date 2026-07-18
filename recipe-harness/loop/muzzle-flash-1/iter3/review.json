@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The yellow-orange palette is closer and the early frame has a slightly brighter center, but both times still read as a tiny cluster of soft, overlapping round particles. The burst has almost no readable rightward flame/spray silhouette or evolution between 0.01 and 0.08 seconds. It remains much too small, cloudy, and circular for an Explosive muzzle flash, which needs a hard bright ignition core and an elongated directional discharge.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.025 ? 900 : 0",
+      "why": "Make this a short, sparse ignition burst rather than enough simultaneous particles to merge into a uniform puff."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 0.08,
+      "why": "Keep the initial burst visible long enough to resolve into a traveling spray by the 0.08-second render instead of continually replacing it with a similar rounded cluster."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 2600,
+      "why": "Push the burst outward fast enough to create a visibly directional, separated explosive shape."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 42,
+      "why": "Increase the visible scale of the flash so it reads as a muzzle event rather than a small central blob."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 1,
+      "why": "Remove the heavy soft edge so individual ignition particles form a sharper flame-like core and spray."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

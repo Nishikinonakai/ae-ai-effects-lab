@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The white-on-black particle treatment is appropriate, but the result still does not read as a Point Rise. At t4 it forms a dense, nearly stationary bright core with a small omnidirectional puff around it; compared with t1 there is no clearly legible upward stream. The cluster also appears slightly lower rather than rising. The emission needs to be aimed into screen-up motion rather than along depth, and the excessive core density should be reduced so separate ascending points remain visible.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0112",
+      "value": 90,
+      "why": "Rotate the directional emitter into the screen-up axis so the t1-to-t4 motion reads as a clearly rising point stream instead of a depth-facing radial puff."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 250,
+      "why": "Reduce the continuously replenished center density, preventing the stationary bright core from obscuring the individual upward-moving particles."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

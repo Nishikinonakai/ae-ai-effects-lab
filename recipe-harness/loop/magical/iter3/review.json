@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The pink-and-white particle palette, black field, and newly visible outward scatter read more convincingly as magical than prior iterations. Frame 4 now clearly expands beyond frame 1. However, the effect remains very small relative to the canvas and retains a dense, bright central clump; it reads more like a compact spark burst than the broad, airy Light and Magic-style magical bloom implied by the preset thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 170,
+      "why": "Increase primary particle travel so the magical bloom occupies substantially more of the frame and visibly opens over the sampled frames."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-2059",
+      "value": 175,
+      "why": "Push the secondary white spark particles farther from the core, creating the airy starry halo instead of keeping the detail concentrated in a tight puff."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 15,
+      "why": "Reduce the oversized soft pink primary particles so the central glow no longer obscures the individual spark structure."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

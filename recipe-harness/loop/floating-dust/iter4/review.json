@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render is now substantially denser and the t1-to-t4 progression clearly shows floating particle motion and accumulation. The black background, white dust color, broad distribution, and mix of fine and slightly larger particles are directionally consistent with Floating Dust. However, it still reads more like a crisp starfield than a soft, enveloping dust atmosphere: many particles remain hard pinpoints, and the population at t1 is notably lighter than at t4 rather than immediately feeling like an established suspended field.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0005",
+      "value": 4500,
+      "why": "This is the control visibly governing active emission; raising it should make the first rendered frame much more fully populated and create the dense, already-present dust field required by the preset."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 100,
+      "why": "Increasing particle feathering softens the remaining pinpoint/star-like particles into more diffuse floating dust without changing the intended monochrome treatment."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

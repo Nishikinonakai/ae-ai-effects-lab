@@ -1,0 +1,384 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Particle Swarm.xbxc",
+  "_pack": "TC14",
+  "_category": "Light and Magic",
+  "_map_coverage": "23 mapped / 1 unmapped / 4 curves",
+  "_unmapped": {
+    "FXid_PTMode": 2
+  },
+  "_curves": {
+    "rg.custom.xfer.life": {
+      "isCurveMode": false,
+      "samples": [
+        1
+      ],
+      "curveX": [],
+      "curveY": []
+    },
+    "rg.custom.col.life": {},
+    "rg.custom.op.life": {
+      "isCurveMode": false,
+      "samples": [
+        1
+      ],
+      "curveX": [],
+      "curveY": []
+    },
+    "rg.custom.size.life": {
+      "isCurveMode": false,
+      "samples": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "curveX": [],
+      "curveY": []
+    }
+  },
+  "intent": "vendor preset \"Particle Swarm\" (Light and Magic) — validate against its thumbnail",
+  "name": "particle-swarm_i1",
+  "compName": "Mined_ParticleSwarm",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "hostName": "Mined",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          1,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "FXid_PType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0146",
+          500,
+          "FXid_Gen1ParticlesPerSecF (alias)"
+        ],
+        [
+          "tc Particular-0014",
+          0,
+          "FXid_Gen1EmitterSizeX (alias)"
+        ],
+        [
+          "tc Particular-0015",
+          0,
+          "FXid_Gen1EmitterSizeY (exact)"
+        ],
+        [
+          "tc Particular-0016",
+          0,
+          "FXid_Gen1EmitterSizeZ (exact)"
+        ],
+        [
+          "tc Particular-0221",
+          5,
+          "FXid_Options_GridEmitter_ParticlesInX (alias)"
+        ],
+        [
+          "tc Particular-0222",
+          5,
+          "FXid_Options_GridEmitter_ParticlesInY (alias)"
+        ],
+        [
+          "tc Particular-0223",
+          5,
+          "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+        ],
+        [
+          "tc Particular-0524",
+          1,
+          "FXid_PAspectRatio (alias)"
+        ],
+        [
+          "tc Particular-0029",
+          50,
+          "FXid_PFeather (alias)"
+        ],
+        [
+          "tc Particular-0002",
+          1,
+          "FXid_PLife (alias)"
+        ],
+        [
+          "tc Particular-0065",
+          25,
+          "FXid_PLifeRnd (alias)"
+        ],
+        [
+          "tc Particular-0027",
+          2,
+          "FXid_PSizeMax (alias)"
+        ],
+        [
+          "tc Particular-0074",
+          74,
+          "FXid_PSizeRnd (alias)"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0,
+            0.34509803921568627,
+            1,
+            1
+          ],
+          "FXid_PColor (alias)"
+        ],
+        [
+          "tc Particular-0071",
+          0,
+          "FXid_PColorRnd (alias)"
+        ],
+        [
+          "tc Particular-0088",
+          1,
+          "FXid_PSetColor (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0042",
+          100,
+          "FXid_FAffectPos (alias)"
+        ],
+        [
+          "tc Particular-0041",
+          0,
+          "FXid_FAffectSize (alias)"
+        ],
+        [
+          "tc Particular-0045",
+          0.5,
+          "FXid_FAffectTime (alias)"
+        ],
+        [
+          "tc Particular-0052",
+          50,
+          "FXid_FEvolution (alias)"
+        ],
+        [
+          "tc Particular-0046",
+          10,
+          "FXid_FScale (alias)"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    1,
+    4
+  ]
+}

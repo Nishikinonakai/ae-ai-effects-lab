@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The 2s frame now reads much more clearly as a fiery particle burst: it has many orange radial streams and a denser central launch area than prior iterations. However, the trails still resolve as separated bead-like ember clumps rather than continuous flame streaks. Gravity pulls most of the explosion into a heavy downward fan, leaving the upper half thin and breaking the compact radial explosive silhouette. The 0.08s ignition remains a very small isolated dot, and the overall fire lacks a stronger hot yellow-white core and bloom characteristic of the Fire Trails 1 thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0017",
+      "value": 10,
+      "why": "Reduce the strong downward ballistic bias so the burst retains a more compact, radial explosive form instead of collapsing into a lower-half fan by 2 seconds."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-2194",
+      "value": 80,
+      "why": "Increase secondary-particle emission along the parent motion so the orange paths join into continuous fire trails rather than sparse dotted clumps."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-2075",
+      "value": 8,
+      "why": "Slightly enlarge the secondary fire particles to give each denser trail a more cohesive flame body and a stronger early ignition presence."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0216",
+      "value": 55,
+      "why": "Increase glow opacity to restore a hotter luminous fire core and reduce the dry ember-only appearance."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

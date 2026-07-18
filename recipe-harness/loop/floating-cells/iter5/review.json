@@ -1,0 +1,32 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The field is now appropriately sparse on a clean black background, and the two frames retain a broadly similar dispersed composition rather than exploding radially. However, the individual elements still read as tiny crisp, saturated pink/orange bacteria rods, not soft subdued organic cells. Their displacement over two seconds is also still slightly more active than a nearly suspended floating-cell field.",
+  "suggestions": [
+    {
+      "type": "effect",
+      "matchName": "ADBE Gaussian Blur 2",
+      "params": [
+        [
+          "ADBE Gaussian Blur 2-0001",
+          1.5,
+          "Blurriness"
+        ],
+        [
+          "ADBE Gaussian Blur 2-0002",
+          1,
+          "Blur Dimensions"
+        ]
+      ],
+      "why": "A small post-process blur will soften the hard sprite edges and reduce the neon bacterial crispness without destroying the sparse cell distribution."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 0.05,
+      "why": "Lowering emitter velocity will reduce the remaining noticeable two-second drift and make the cells feel gently suspended."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

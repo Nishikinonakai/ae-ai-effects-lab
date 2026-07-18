@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Hazy Fire\" (Smoke and Fire) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 5,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The render has a bright fire-colored core and animated outward particle motion, but it reads as a radial spark/explosion burst rather than the vendor's hazy smoke-and-fire look. From t1 to t4, the particles rapidly disperse in all directions into distinct, hard circular embers. There is no substantial soft smoky volume, lingering haze, or upward fire plume; the central core also remains overexposed white rather than resolving into layered orange/red flame."
+    },
+    {
+      "iter": 2,
+      "score": 2,
+      "verdict": "fail",
+      "critique": "The render retains a bright orange/yellow fire palette, but it is still a compact explosion: t1 is an overexposed white-hot orb and by t4 it ejects a wide, evenly radial field of crisp ember dots. This is opposite the thumbnail intent of soft, layered smoke-and-fire haze with a coherent rising plume. There is almost no lingering volume, the fire core clips to white, and the t1-to-t4 motion disperses too rapidly rather than billowing upward."
+    },
+    {
+      "iter": 3,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The central palette and small amount of fiery texture are closer to fire, but the result still reads as a compact spark burst rather than Hazy Fire. At t1 the core is overly white and crowded with discrete yellow ember dots; by t4 those dots have expanded into a broad, nearly radial field. The desired sustained, soft smoke volume and coherent upward/billowing flame shape are still absent."
+    },
+    {
+      "iter": 4,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The palette and central fiery texture are closer to the intended fire treatment, and there is a small vertical smoky suggestion in the core. However, the animation still reads overwhelmingly as a spark burst: from t1 to t4, numerous crisp glowing dots expand far outward in an almost radial field. The core remains clipped white and compact, while the desired result needs a sustained, larger, soft-edged haze/fire volume with much slower, coherent billowing motion rather than visible projectile-like embers."
+    },
+    {
+      "iter": 5,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The render now contains a more substantial soft orange smoke/fire volume than earlier attempts, especially by t4, and the overall mass is beginning to feel hazier rather than purely explosive. However, the effect is still dominated by many discrete, bright circular ember sprites that spread outward around the core between t1 and t4. The center remains yellow-white and clipped, while the intended Hazy Fire look should read as a sustained, layered, soft-edged fire-and-smoke plume with only sparse incidental sparks. The motion is still too visibly particle-based and radially dispersive rather than cohesive billowing haze."
+    }
+  ]
+}

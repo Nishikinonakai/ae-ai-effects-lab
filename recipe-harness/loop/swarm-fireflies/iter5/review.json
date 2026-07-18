@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The warm orange pinpoints, soft glow, black background, and irregular central grouping read convincingly as fireflies. Motion from t1 to t4 is visible, but it remains dominated by rapid population growth: the count roughly triples and the swarm builds into a dense, center-heavy burst. The fireflies should feel like a more stable, spatially loose population that drifts gently, rather than fast outward emission from a central source.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 20,
+      "why": "Lowering particles per second reduces the conspicuous t1-to-t4 count buildup so the swarm reads less like a burst."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 7,
+      "why": "Reducing initial velocity makes the visible motion less radial and ballistic, supporting a gentler wandering-firefly feel."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 420,
+      "why": "Widening the emitter distributes the fireflies over a looser area instead of concentrating their births in a bright central knot."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0015",
+      "value": 420,
+      "why": "Widening the emitter vertically as well preserves an organic broad swarm rather than a compact center-heavy cluster."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

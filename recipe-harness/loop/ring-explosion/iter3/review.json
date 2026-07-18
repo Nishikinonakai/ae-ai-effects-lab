@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The black field, cyan-green palette, and centered radial expansion are aligned with a Ring Explosion. At 1.9s there is now a clearly particulate circular form, but it fills almost the entire frame and reads more like a turbulent spherical shell/wreath than a clean explosive ring. Dense internal webbing and bright clumped knots obscure the outward ring structure. At 0.08s the source is still a tiny, smooth bullseye rather than a brief burst of individually discernible particles.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 170,
+      "why": "Reduce radial travel so the expanding ring remains comfortably inside frame at the later sample, preserving a readable circumference and center void."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.1 ? 18000 : 0",
+      "why": "Lower the burst density so the early source and later ring resolve as separate particles instead of smooth, opaque concentric bands and dense cloud-like webbing."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0042",
+      "value": 2,
+      "why": "Reduce positional force influence to retain a broken explosive perimeter while suppressing the large turbulent internal ribbons and clustered knots."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

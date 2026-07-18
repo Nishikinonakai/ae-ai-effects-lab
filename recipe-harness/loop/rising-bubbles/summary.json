@@ -1,0 +1,32 @@
+{
+  "intent": "vendor preset \"Rising Bubbles\" (Nature) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 4,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The black background and cool cyan/blue particle coloration are directionally compatible, and the frame-to-frame refresh suggests upward particle simulation is active. However, the render reads as a sparse starfield of pinpoints rather than the preset's recognizable rising bubbles: there are virtually no visible bubble discs, soft circular edges, or meaningful scale variation. The particle field also becomes noticeably denser by t4 instead of presenting a composed stream of larger, clearly rising bubbles."
+    },
+    {
+      "iter": 2,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render now clearly reads as cyan/blue bubble-like particles on black, with broad scale variation and an upward-oriented simulation that is much closer to the Rising Bubbles look. However, it is substantially overpopulated, especially by t4, making the image feel like a crowded drifting field rather than a composed stream of individual rising bubbles. The bubbles are also excessively soft and glow-like; their circular silhouettes merge into one another instead of retaining the cleaner, more legible bubble discs implied by the preset thumbnail."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The cyan/teal bubbles on black and the upward-changing particle arrangement are strongly aligned with the Rising Bubbles direction. Compared with the prior pass, the field is less uniformly crowded and individual particles are easier to distinguish. However, the bubbles remain too soft, oversized, and heavily overlapping—especially in the lower-center and left edge at t4—so they read more like glowing bokeh blobs than clean, legible bubble discs. A slightly lower emission rate, smaller maximum size, and much firmer edges would make the stream feel more composed and thumbnail-like."
+    },
+    {
+      "iter": 4,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "The render now strongly reads as Rising Bubbles: clean cyan/teal-to-blue circular particles against black, with clear size variation and visible upward turnover between t1 and t4. The firmer silhouettes are a substantial improvement. It is still slightly more populated and scale-heavy than a composed thumbnail-like bubble stream, particularly from the large cropped edge bubbles and several medium overlaps. Edges retain a mild glow/soft halo rather than fully crisp bubble discs."
+    }
+  ]
+}

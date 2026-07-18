@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The black background and warm gold particle/glow treatment are appropriate, and the color remains stable between t1 and t4. However, both frames show only a tiny, dense central blob—roughly a few percent of frame width—with an irregular vertical/teardrop profile by t4. It does not form the preset's broad, coherent horizontal elliptical magic-disc plane, and the motion reads as slight local spark agitation rather than energy distributed across a large disc.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 2600,
+      "why": "Expand the primary emitter substantially along X so the particle field can establish a wide, frame-legible horizontal disc rather than a compact center blob."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0015",
+      "value": 600,
+      "why": "Increase the emitter's Y extent moderately while retaining a much wider X:Y ratio, producing an elliptical disc silhouette instead of a narrow clump."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 12,
+      "why": "Reduce outward particle velocity so the enlarged emission area remains a coherent luminous plane instead of dispersing into an irregular burst."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 1200,
+      "why": "Raise particle density to fill the expanded elliptical emitter continuously and make the magic-disc surface visually solid enough to read at thumbnail scale."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

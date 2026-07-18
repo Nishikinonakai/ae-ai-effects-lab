@@ -1,0 +1,15 @@
+{
+  "verdict": "fail",
+  "score": 0,
+  "critique": "Both 0.01 s and 0.08 s frames are completely black: no particles, ignition core, muzzle-flash silhouette, or visible temporal evolution is present. The current burst expression overrides the listed 15000 particles/sec value with only 900/sec for 0.025 s, yielding too few visible particles for this setup.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.025 ? 12000 : 0",
+      "why": "Increase the short burst from 900/sec to a visible but controlled 12,000/sec spike; this is far below the previously failed 150,000/sec blob-producing burst while providing enough particles to render a readable flash."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

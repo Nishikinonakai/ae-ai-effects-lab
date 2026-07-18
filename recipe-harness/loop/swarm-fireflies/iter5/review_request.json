@@ -1,0 +1,272 @@
+{
+  "intent": "vendor preset \"Swarm Fireflies\" (Light and Magic) — validate against its thumbnail",
+  "pass_criteria": [],
+  "iteration": 5,
+  "max_iters": 5,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0782",
+            3,
+            "FXid_Gen1EmitterType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0703",
+            2,
+            "FXid_PType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0146",
+            45,
+            "FXid_Gen1ParticlesPerSecF (alias)"
+          ],
+          [
+            "tc Particular-0014",
+            280,
+            "FXid_Gen1EmitterSizeX (alias)"
+          ],
+          [
+            "tc Particular-0015",
+            280,
+            "FXid_Gen1EmitterSizeY (exact)"
+          ],
+          [
+            "tc Particular-0016",
+            150,
+            "FXid_Gen1EmitterSizeZ (exact)"
+          ],
+          [
+            "tc Particular-0221",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInX (alias)"
+          ],
+          [
+            "tc Particular-0222",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInY (alias)"
+          ],
+          [
+            "tc Particular-0223",
+            1,
+            "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+          ],
+          [
+            "tc Particular-0112",
+            0,
+            "FXid_Gen1AngleX (alias)"
+          ],
+          [
+            "tc Particular-0111",
+            0,
+            "FXid_Gen1AngleY (alias)"
+          ],
+          [
+            "tc Particular-0076",
+            0,
+            "FXid_Gen1AngleZ (alias)"
+          ],
+          [
+            "tc Particular-0010",
+            20,
+            "FXid_Gen1DirSpread (alias)"
+          ],
+          [
+            "tc Particular-0113",
+            1,
+            "FXid_Gen1EmitterDir (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0011",
+            22,
+            "FXid_Gen1Vel (alias)"
+          ],
+          [
+            "tc Particular-0013",
+            0,
+            "FXid_Gen1VelEmit (alias)"
+          ],
+          [
+            "tc Particular-0012",
+            100,
+            "FXid_Gen1VelSpread (alias)"
+          ],
+          [
+            "tc Particular-0524",
+            1,
+            "FXid_PAspectRatio (alias)"
+          ],
+          [
+            "tc Particular-0029",
+            0,
+            "FXid_PFeather (alias)"
+          ],
+          [
+            "tc Particular-0002",
+            3.6,
+            "FXid_PLife (alias)"
+          ],
+          [
+            "tc Particular-0065",
+            0,
+            "FXid_PLifeRnd (alias)"
+          ],
+          [
+            "tc Particular-0027",
+            3,
+            "FXid_PSizeMax (alias)"
+          ],
+          [
+            "tc Particular-0074",
+            0,
+            "FXid_PSizeRnd (alias)"
+          ],
+          [
+            "tc Particular-0694",
+            0,
+            "FXid_PUnmult (alias)"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              1,
+              0.3843137254901961,
+              0.17647058823529413,
+              1
+            ],
+            "FXid_PColor (alias)"
+          ],
+          [
+            "tc Particular-0071",
+            0,
+            "FXid_PColorRnd (alias)"
+          ],
+          [
+            "tc Particular-0088",
+            1,
+            "FXid_PSetColor (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0033",
+            100,
+            "FXid_POpacMax (alias)"
+          ],
+          [
+            "tc Particular-0075",
+            0,
+            "FXid_POpacRnd (alias)"
+          ],
+          [
+            "tc Particular-0210",
+            [
+              0.25098039215686274,
+              0.25098039215686274,
+              0.25098039215686274,
+              1
+            ],
+            "FXid_Options_SmokeletShadow_Color (alias)"
+          ],
+          [
+            "tc Particular-0211",
+            50,
+            "FXid_Options_SmokeletShadow_ColorStrength (alias)"
+          ],
+          [
+            "tc Particular-0212",
+            50,
+            "FXid_Options_SmokeletShadow_Opacity (alias)"
+          ],
+          [
+            "tc Particular-0284",
+            0,
+            "FXid_PShade (alias)"
+          ],
+          [
+            "tc Particular-0304",
+            250,
+            "FXid_PShadeFalloffAdjust (alias)"
+          ],
+          [
+            "tc Particular-0018",
+            3,
+            "FXid_AirResist (alias)"
+          ],
+          [
+            "tc Particular-0019",
+            20,
+            "FXid_SpinAmp (alias)"
+          ],
+          [
+            "tc Particular-0020",
+            6,
+            "FXid_SpinFreq (alias)"
+          ],
+          [
+            "tc Particular-0021",
+            0,
+            "FXid_SpinTime (alias)"
+          ],
+          [
+            "tc Particular-0749",
+            0,
+            "FXid_WindX (exact)"
+          ],
+          [
+            "tc Particular-0750",
+            0,
+            "FXid_WindY (exact)"
+          ],
+          [
+            "tc Particular-0751",
+            0,
+            "FXid_WindZ (exact)"
+          ]
+        ],
+        "expressions": []
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/swarm-fireflies/iter5/swarm-fireflies_i5_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/swarm-fireflies/iter5/swarm-fireflies_i5_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The warm orange, softly glowing points on black read as fireflies and the centered swarm composition is plausible. However, the swarm is a tight, nearly static-looking square cluster: between t1 and t4 it mostly refreshes dot positions rather than showing visible individual flight. It lacks the broader, organic dispersion and lingering, wandering swarm motion expected from a “Swarm Fireflies” magic preset."
+    },
+    {
+      "iter": 2,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The warm orange glow on black reads clearly as fireflies, and the t1-to-t4 comparison now shows a noticeable shifting, irregular swarm rather than a fully static grid. However, it is still a very tight, uniformly dense bright knot near the center. The intended magical firefly swarm should feel more spacious and naturally dispersed, with individual lights lingering as they wander instead of reading as a compact particle burst."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render now reads clearly as a warm-orange firefly swarm on black, with a more irregular silhouette and visible change from t1 to t4. It is still concentrated as a dense central particle burst, especially at t4 where the center becomes a bright knot. The particles also appear to accumulate rapidly rather than linger as a spacious, loosely distributed swarm of individually wandering lights."
+    },
+    {
+      "iter": 4,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The warm orange pinpoints on black read well as fireflies, and the t4 frame is substantially broader and more organically irregular than the earlier compact cluster. However, the t1-to-t4 change still reads primarily as a rapidly emitting particle burst: the count rises sharply and the swarm expands outward radially. A Swarm Fireflies preset should feel like a steadier population of individually wandering lights, with less center-heavy buildup and slower, less ballistic travel."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

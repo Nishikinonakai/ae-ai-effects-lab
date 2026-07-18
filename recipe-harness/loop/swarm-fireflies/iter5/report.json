@@ -1,0 +1,215 @@
+{
+  "status": "done",
+  "name": "swarm-fireflies_i5",
+  "params": [
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterType (alias+enumOffset)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PType (alias+enumOffset)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1ParticlesPerSecF (alias)",
+      "ok": true,
+      "v": "45"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeX (alias)",
+      "ok": true,
+      "v": "280"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeY (exact)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeZ (exact)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInX (alias)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInY (alias)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInZ (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleX (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleY (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleZ (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1DirSpread (alias)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterDir (alias+enumOffset)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1Vel (alias)",
+      "ok": true,
+      "v": "22"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1VelEmit (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1VelSpread (alias)",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PAspectRatio (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PFeather (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PLife (alias)",
+      "ok": true,
+      "v": "3.59999990463257"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PLifeRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSizeMax (alias)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSizeRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PUnmult (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PColor (alias)",
+      "ok": true,
+      "v": "1,0.38431373238564,0.176"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PColorRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSetColor (alias+enumOffset)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_POpacMax (alias)",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Particular] FXid_POpacRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_SmokeletShadow_Color (alias)",
+      "ok": true,
+      "v": "0.25098040699959,0.25098"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_SmokeletShadow_ColorStrength (alias)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_SmokeletShadow_Opacity (alias)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PShade (alias)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PShadeFalloffAdjust (alias)",
+      "ok": true,
+      "v": "250"
+    },
+    {
+      "p": "[1:tc Particular] FXid_AirResist (alias)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SpinAmp (alias)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SpinFreq (alias)",
+      "ok": true,
+      "v": "6"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SpinTime (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_WindX (exact)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_WindY (exact)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_WindZ (exact)",
+      "ok": true,
+      "v": "0"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/swarm-fireflies/iter5/swarm-fireflies_i5_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/swarm-fireflies/iter5/swarm-fireflies_i5_t4.png"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The render has the correct black field and white particle treatment, and frame 4 shows new particles appearing across the frame. However, it is far too sparse to read as the Brownian Motion fluid preset thumbnail: frame 1 is nearly empty and frame 4 remains isolated, widely separated specks rather than a dense, continuously active cloud of fine particles. The motion over the sampled frames reads primarily as rapid emission/population change, not an established field of fluid-driven Brownian agitation.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0005",
+      "value": 2000,
+      "why": "Raise the visible particle population substantially so the preset reads as a dense Brownian field rather than occasional isolated dots."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 6,
+      "why": "Slightly increase particle size so the denser field remains legible at thumbnail scale without becoming large blobs."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

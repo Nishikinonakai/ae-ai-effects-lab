@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The render has the essential upward motion and orange-on-black ember coloration: between t1 and t4 the particle field clearly rises. However, it reads as a thin, sparse vertical string of tiny dots rather than the fuller, turbulent rising ember plume suggested by a Smoke and Fire \"Rising Embers\" preset thumbnail. The emission is too narrowly constrained, particles are too small, and there is little visible fiery glow or variation in the plume silhouette.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 180,
+      "why": "Widen the emitter so the ember stream forms a natural plume rather than a narrow vertical line."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 18,
+      "why": "Add directional spread to create lateral drift and irregular turbulence while retaining the upward rise."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 5,
+      "why": "Make individual embers more legible and produce a stronger fire-like visual weight."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

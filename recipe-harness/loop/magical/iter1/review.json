@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The render has a clean black background and a centered pink, softly glowing particle orb with white spark detail, which reads broadly magical. However, it is very small and visually almost identical between frames 1 and 4: the effect reads as a static pink puff rather than the active, airy Light and Magic-style magical particle motion implied by the preset. The dense soft pink core also obscures the individual spark structure.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 22,
+      "why": "Add outward motion so the particle cluster visibly evolves between frames instead of remaining a nearly static orb."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 0.45,
+      "why": "Increase primary particle lifetime so the new motion produces a fuller, more legible magical trail/cloud rather than disappearing immediately."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0033",
+      "value": 25,
+      "why": "Reduce the opaque pink core so the brighter white spark particles and evolving magical structure remain visible."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

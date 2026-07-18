@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The warm orange palette, black background, and soft oversized bloom match the Glow Field look. Frame t4 has a reasonably rich scatter of large and small lights, but frame t1 is still substantially more open, with isolated dots and broad empty regions. The particle population visibly ramps up between t1 and t4 rather than holding a stable ambient-field density; this is the main remaining mismatch.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 1 ? 550 : 0",
+      "why": "Front-load particle births before t1, then stop ongoing emission so the field does not continue visibly filling between t1 and t4."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 8,
+      "why": "Keep the front-loaded particles alive through t4, preserving the denser early field instead of producing the current temporal build-up."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

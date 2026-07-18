@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The render reads as an ethereal, pastel-blue particle plane: a dense luminous horizontal band, soft bloom, black negative space, and slight flowing deformation between t1 and t4 all support the preset intent. However, very large out-of-focus circular particles dominate the foreground and frame edges, especially at t4, making the result feel more like bokeh flying past the camera than a refined magical plane. The particle band is also somewhat unevenly cluttered beneath the main horizon.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 2.5,
+      "why": "Reduce the maximum particle size so the oversized foreground discs no longer overpower the delicate plane."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0074",
+      "value": 14,
+      "why": "Lower size randomness to retain depth variation while making the particle field more controlled and thumbnail-like."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

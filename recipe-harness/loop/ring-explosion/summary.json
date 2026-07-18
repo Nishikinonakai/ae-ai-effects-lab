@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Ring Explosion\" (Explosive) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 5,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The black background and turquoise/green palette are appropriate, and the bright centered source reads cleanly. However, the visible result is a compact, opaque concentric bullseye rather than an explosive ring of individually readable particles. It lacks the broad radial spread, broken particulate edge, and energetic outward motion expected from a Ring Explosion thumbnail."
+    },
+    {
+      "iter": 2,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The turquoise-on-black palette and the centered radial emission are on intent. Motion is clearly explosive, but it overshoots: by 1.9s nearly all particles have traveled beyond the frame, leaving only sparse corner fragments rather than a readable expanding ring. At 0.08s the burst is an overly dense, smooth concentric bullseye with little separation between particles. The preset needs a slower, more legible expanding particle ring with brighter individual dots retained inside frame."
+    },
+    {
+      "iter": 3,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The black field, cyan-green palette, and centered radial expansion are aligned with a Ring Explosion. At 1.9s there is now a clearly particulate circular form, but it fills almost the entire frame and reads more like a turbulent spherical shell/wreath than a clean explosive ring. Dense internal webbing and bright clumped knots obscure the outward ring structure. At 0.08s the source is still a tiny, smooth bullseye rather than a brief burst of individually discernible particles."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The black background, centered cyan-green burst, and clear outward expansion are aligned with the Ring Explosion intent. At 1.9s, however, the result still reads as a large turbulent spherical particle shell: broad interior ribbons, clumped bright knots, and dense webbing compete with the outer circumference. A cleaner explosive ring needs a more point-like origin and substantially less force-driven distortion so the perimeter remains the dominant readable structure. At 0.08s the source remains a tiny smooth glow rather than a visibly particulate ignition."
+    },
+    {
+      "iter": 5,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The black background, centered turquoise-green radial motion, and strong circular silhouette now read much closer to a Ring Explosion. At 1.9s the ring is clearly contained in frame and has a clean hollow center. However, it remains an overly dense, thick particle donut rather than a sharper explosive perimeter: the band is packed with so many small particles that it reads as a continuous fuzzy torus. The 0.08s frame is still only a smooth glowing dot, with no readable particulate ignition."
+    }
+  ]
+}

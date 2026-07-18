@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 0,
+  "critique": "Both 0.01s and 0.08s frames are entirely black. No muzzle-flash core, orange flame, directional tongues, or residual sparks are visible, so the result cannot be compared visually to the Explosive Muzzle Flash 4 thumbnail. The intended short decay at 0.08s is moot because the initial burst is also absent.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 900,
+      "why": "The current 5565 velocity is extreme for a flash sampled only 0.01s after ignition and can propel the burst out of the visible emission area before it forms a readable core; reducing it should keep the initial explosion on-screen."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0042",
+      "value": 0,
+      "why": "The very high 352 field-affect-position value can strongly displace particles immediately. Removing that positional field influence should restore a centered visible burst."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 0.1,
+      "why": "A slightly longer 0.1s particle life provides enough visible duration for the initial burst to render reliably at 0.01s while still allowing a rapidly dissipating muzzle-flash motion."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

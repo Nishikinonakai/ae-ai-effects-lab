@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 1,
+  "critique": "The black background and yellow-to-orange/red fire coloring are appropriate, but both frames remain a compact symmetric particle burst. Frame 4 expands evenly in all directions from a fixed bright center, reading as sparks from an explosion rather than a rocket moving on a single axis with a dense tapered flame trail. The particles are also mostly tiny round dots, with no substantial connected fire plume.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0113",
+      "value": 1,
+      "why": "Switch the emitter-direction mode away from the current radial/exploding behavior so emitted particles can follow one coherent rocket axis."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 3,
+      "why": "Greatly narrow directional spread so the fire forms a tapered plume instead of a circular spark field."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 180,
+      "why": "Add sustained forward particle velocity to establish visible directional travel and stretch the emission into a trail."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0013",
+      "value": 5,
+      "why": "Reduce per-particle emission velocity variation so particles stay attached to the main forward-moving flame trail rather than dispersing as debris."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 18,
+      "why": "Make the fire sprites large enough to merge into a readable flame plume rather than resolving primarily as isolated spark dots."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

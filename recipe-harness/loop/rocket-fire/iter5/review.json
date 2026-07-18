@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 1,
+  "critique": "The fire sprite palette on black is appropriate, but the animation is still a centered omnidirectional explosion. From frame 1 to frame 4, particles radiate evenly outward and the large flame sprites become widely scattered debris. There is no single travel axis, no visible rocket head progression, and no dense tapered flame trail; it does not match a Rocket Fire thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0113",
+      "value": 2,
+      "why": "Switch the emitter direction mode from the current radial/uniform behavior to a directional mode so particles form one coherent rocket axis rather than an expanding sphere."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 0,
+      "why": "Remove directional spread so the directional emitter produces a narrow tapered trail instead of a broad burst."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 45,
+      "why": "Greatly reduce particle velocity; the current 180 velocity throws sprite fragments across the frame before they can read as an attached fire plume."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 180,
+      "why": "Increase emission density so the flame sprites overlap into a continuous, dense rocket-fire trail rather than sparse individual sparks."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 45,
+      "why": "Increase the core flame particle size so the trail has substantial connected flame texture instead of being dominated by tiny round dots."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

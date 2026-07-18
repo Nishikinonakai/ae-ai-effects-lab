@@ -1,0 +1,225 @@
+{
+  "intent": "vendor preset \"Point Rise\" (Basics) — validate against its thumbnail",
+  "pass_criteria": [],
+  "iteration": 3,
+  "max_iters": 5,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0782",
+            1,
+            "FXid_Gen1EmitterType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0703",
+            1,
+            "FXid_PType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0146",
+            500,
+            "FXid_Gen1ParticlesPerSecF (alias)"
+          ],
+          [
+            "tc Particular-0014",
+            0,
+            "FXid_Gen1EmitterSizeX (alias)"
+          ],
+          [
+            "tc Particular-0015",
+            0,
+            "FXid_Gen1EmitterSizeY (exact)"
+          ],
+          [
+            "tc Particular-0016",
+            0,
+            "FXid_Gen1EmitterSizeZ (exact)"
+          ],
+          [
+            "tc Particular-0221",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInX (alias)"
+          ],
+          [
+            "tc Particular-0222",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInY (alias)"
+          ],
+          [
+            "tc Particular-0223",
+            1,
+            "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+          ],
+          [
+            "tc Particular-0112",
+            0,
+            "FXid_Gen1AngleX (alias)"
+          ],
+          [
+            "tc Particular-0111",
+            0,
+            "FXid_Gen1AngleY (alias)"
+          ],
+          [
+            "tc Particular-0076",
+            0,
+            "FXid_Gen1AngleZ (alias)"
+          ],
+          [
+            "tc Particular-0010",
+            3,
+            "FXid_Gen1DirSpread (alias)"
+          ],
+          [
+            "tc Particular-0113",
+            2,
+            "FXid_Gen1EmitterDir (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0011",
+            300,
+            "FXid_Gen1Vel (alias)"
+          ],
+          [
+            "tc Particular-0013",
+            0,
+            "FXid_Gen1VelEmit (alias)"
+          ],
+          [
+            "tc Particular-0012",
+            25,
+            "FXid_Gen1VelSpread (alias)"
+          ],
+          [
+            "tc Particular-0524",
+            1,
+            "FXid_PAspectRatio (alias)"
+          ],
+          [
+            "tc Particular-0029",
+            50,
+            "FXid_PFeather (alias)"
+          ],
+          [
+            "tc Particular-0002",
+            3,
+            "FXid_PLife (alias)"
+          ],
+          [
+            "tc Particular-0065",
+            62,
+            "FXid_PLifeRnd (alias)"
+          ],
+          [
+            "tc Particular-0027",
+            2,
+            "FXid_PSizeMax (alias)"
+          ],
+          [
+            "tc Particular-0074",
+            35,
+            "FXid_PSizeRnd (alias)"
+          ],
+          [
+            "tc Particular-0033",
+            65,
+            "FXid_POpacMax (alias)"
+          ],
+          [
+            "tc Particular-0075",
+            0,
+            "FXid_POpacRnd (alias)"
+          ],
+          [
+            "tc Particular-0042",
+            90,
+            "FXid_FAffectPos (alias)"
+          ],
+          [
+            "tc Particular-0041",
+            0,
+            "FXid_FAffectSize (alias)"
+          ],
+          [
+            "tc Particular-0045",
+            1,
+            "FXid_FAffectTime (alias)"
+          ],
+          [
+            "tc Particular-0052",
+            5,
+            "FXid_FEvolution (alias)"
+          ],
+          [
+            "tc Particular-0046",
+            4,
+            "FXid_FScale (alias)"
+          ],
+          [
+            "tc Particular-0018",
+            0,
+            "FXid_AirResist (alias)"
+          ],
+          [
+            "tc Particular-0019",
+            0,
+            "FXid_SpinAmp (alias)"
+          ],
+          [
+            "tc Particular-0020",
+            1,
+            "FXid_SpinFreq (alias)"
+          ],
+          [
+            "tc Particular-0021",
+            1,
+            "FXid_SpinTime (alias)"
+          ],
+          [
+            "tc Particular-0749",
+            0,
+            "FXid_WindX (exact)"
+          ],
+          [
+            "tc Particular-0751",
+            0,
+            "FXid_WindZ (exact)"
+          ]
+        ],
+        "expressions": []
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/point-rise/iter3/point-rise_i3_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/point-rise/iter3/point-rise_i3_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render has the correct basic ingredients for a Point Rise preset: a white particle point on black that grows into a small rising particle cluster. Motion from t1 to t4 is upward, but it is very subtle, and the result reads more like a compact, roughly radial puff than a clearly directional rising point stream. The low opacity and 2 px particle size also leave the early frame nearly invisible."
+    },
+    {
+      "iter": 2,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The render keeps the intended white-on-black point-particle look, but it still reads as a compact expanding puff rather than the vendor preset's clear rising point stream. From t1 to t4 the bright core remains nearly fixed and dominates the image, while the surrounding particles spread in multiple directions. The 20% opacity also makes the individual upward-moving particles too faint to define a readable ascent."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

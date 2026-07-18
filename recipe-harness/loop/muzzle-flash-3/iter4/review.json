@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The timing now reads correctly as a very brief muzzle event: it is bright at 0.01 and cleanly gone by 0.08. The burst also has a stronger horizontal muzzle-direction bias and a hot yellow-white palette. However, it still appears as a tightly packed tube of overlapping soft circular blobs, rather than the preset thumbnail's sharp, violent explosive/starburst shape. The flash needs less particle crowding, much smaller/crisper visible elements, and a wider directional cone so separated energetic fragments radiate from a distinct ignition area.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.04 ? 40000 : 0",
+      "why": "Reducing the initial burst density prevents the current solid pile of overlapping discs and reveals separated explosive fragments."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 3,
+      "why": "Smaller primary particles will replace the large bubble-like circles with finer, more energetic flash detail."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 0,
+      "why": "Removing feathering gives the burst sharper particle edges instead of the current soft cloud appearance."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 35,
+      "why": "A wider directional spread creates the required forceful flared/starburst silhouette while retaining the rightward muzzle direction."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

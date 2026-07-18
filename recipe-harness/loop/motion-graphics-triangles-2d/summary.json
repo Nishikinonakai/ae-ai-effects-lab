@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Triangles 2D\" (Motion Graphics) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 5,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The render has the essential black-background, mint-to-neon-green triangular particle look, and frame 4 visibly has more particles than frame 1. However, it reads as a small, dense pile of overlapping triangles near the center rather than a clear 2D motion-graphics triangle field. The very low particle velocity keeps the animation compressed, obscuring individual triangle shapes and making the motion feel like accumulation rather than an energetic expanding arrangement."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The black background and clean mint-to-neon-green triangle sprites match the intended graphic language, and frame 4 now expands noticeably beyond frame 1. However, the result still reads as a heavily overlapping central burst rather than a clear, airy 2D triangle field: many individual triangles are obscured, and the overall spread remains modest relative to the frame. A wider directional dispersion with fewer concurrent particles is needed to make the motion-graphics triangle arrangement legible."
+    },
+    {
+      "iter": 3,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The black field, flat mint-to-neon-green palette, crisp triangle sprites, and clear expansion from frame 1 to frame 4 all fit the intended 2D motion-graphics look. Frame 4 is substantially more legible than prior iterations, but it still has a congested central cluster where several large triangles overlap. The particle field also occupies only the middle portion of the composition rather than feeling broadly dispersed across the frame like an airy graphic triangle arrangement."
+    },
+    {
+      "iter": 4,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render now strongly matches the preset’s intended graphic language: a pure black field, crisp flat triangle sprites, and a convincing mint-at-birth to neon-green-later color shift. Motion between t1 and t4 is clearly outward and energetic, with particles reaching a substantially wider area than before. It is still not quite as airy and deliberately composed as the thumbnail-style 2D triangle field: several oversized triangles overlap through the central area, while a few isolated large shapes dominate the distribution. A slightly faster, smaller particle field would preserve the expansion while making more individual triangles readable across the composition."
+    },
+    {
+      "iter": 5,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "The render convincingly captures the preset language: pure black background, crisp flat triangular sprites, a clean mint-to-bright-green color progression, and clearly energetic outward motion from t1 to t4. By t4 the field is much broader and individual triangles are mostly readable. It still falls short of the airy thumbnail-style graphic distribution because a few very large triangles remain visually dominant and the central area retains some overlap; the triangle scale variation feels more like a particle burst than an evenly composed 2D triangle field."
+    }
+  ]
+}

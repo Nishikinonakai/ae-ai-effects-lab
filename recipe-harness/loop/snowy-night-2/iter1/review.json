@@ -1,0 +1,38 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render has a credible white-on-dark snowfall look, with varied small flake sizes and clear downward movement between t1 and t4. However, the snow is confined to a narrow, centered rectangular column rather than reading as an all-over snowy-night field. Density also ramps substantially from sparse at t1 to crowded at t4, making the effect feel like a simulation starting up instead of a stable preset state. The pure black background is harsher than a night-sky presentation.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 1100,
+      "why": "Widen the emitter so snowfall occupies most of the frame instead of a visibly constrained central column."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 2,
+      "why": "Shorten particle life to reach a stable-looking particle population sooner and reduce the major density difference between the sampled times."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 850,
+      "why": "Compensate for the shorter life while preserving a full, wintry snowfall density."
+    },
+    {
+      "type": "background",
+      "value": [
+        0.015,
+        0.025,
+        0.055
+      ],
+      "why": "A very dark blue-black gives the flakes a more natural snowy-night context than absolute black."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

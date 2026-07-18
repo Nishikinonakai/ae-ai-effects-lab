@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The render clearly reads as a dense white blizzard on black, with strong depth layering and convincing forward motion between t1 and t4. The t1 frame has a good mix of fine snow and nearer flakes. By t4, however, several foreground particles become excessively large, soft, and blown-out—especially along the upper-right and lower-right—making the result feel more like fast camera-flight debris than consistently scaled snowfall. The depth motion is strong but slightly too aggressive over the short frame interval.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 1.8,
+      "why": "Reduce the oversized, heavily blurred foreground discs while retaining the dense fine-snow field and depth variation."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0751",
+      "value": -850,
+      "why": "Moderate the extreme Z-axis wind so flakes advance toward camera with a more controlled blizzard drift rather than rapidly blooming into oversized foreground blobs."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

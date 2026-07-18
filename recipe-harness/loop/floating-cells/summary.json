@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Floating Cells\" (Nature) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 3,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render has a convincing microscopic cell sprite look and an appropriately dark backdrop, but it reads as an extremely dense burst of neon bacteria rather than a calm Nature-style field of floating cells. At 0.08 s the particles form a strong expanding/radiating pattern, and by 2 s the frame remains overcrowded and visually noisy. The intended gentle, spacious floating behavior is obscured by the very large initial emission spike and unrestricted motion."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The black background and isolated cellular sprite forms are directionally appropriate, and the two frames show the cells changing position rather than remaining static. However, the result still reads as a field of sharp neon bacteria, not the softer, calmer Nature preset thumbnail. There are too many equally prominent particles, the pink/orange edges are overly saturated, and the motion between 0.08 s and 2 s is still noticeably dispersed rather than gently suspended."
+    },
+    {
+      "iter": 3,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The density is now much closer to a spacious floating field: the black backdrop is clean, the particles are well separated, and the two frames no longer read as a single explosive radial burst. However, the sprites still appear as numerous sharp, saturated pink/orange bacteria-like rods rather than soft, subdued floating cells. Their displacement across the two-second comparison is still more active than gently suspended, and the uniformly crisp bright outlines keep the result from matching a calm Nature-thumbnail feel."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render now has a clean black field and a suitably spacious distribution of isolated particles; the two times also preserve the field-like composition rather than reading as a single dense explosion. However, it still looks like dim, crisp pink/orange bacteria rods rather than the soft, subdued organic cells implied by the Nature preset thumbnail. The particles remain visibly sharp and saturated, and their positions shift enough over two seconds to feel actively drifting instead of gently suspended."
+    },
+    {
+      "iter": 5,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The field is now appropriately sparse on a clean black background, and the two frames retain a broadly similar dispersed composition rather than exploding radially. However, the individual elements still read as tiny crisp, saturated pink/orange bacteria rods, not soft subdued organic cells. Their displacement over two seconds is also still slightly more active than a nearly suspended floating-cell field."
+    }
+  ]
+}

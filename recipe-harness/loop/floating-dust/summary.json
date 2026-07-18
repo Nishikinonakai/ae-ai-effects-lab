@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Floating Dust\" (Dust and Debris) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 5,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The black background and white particulate color are appropriate, but the render reads as a very sparse starfield rather than the denser, soft floating-dust field expected from the preset thumbnail. At t1 only a handful of particles are visible; by t4 the count increases, confirming emission, but it is still far too empty for the early-frame preset look. The visible particles are mostly crisp pinpoint lights, with little soft dusty presence or size variation. Motion is beginning to populate the frame, but the effect needs substantially more immediately visible particles."
+    },
+    {
+      "iter": 2,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The black field and white, softly feathered particle treatment are directionally appropriate, and t4 shows the particles distributing across the frame. However, it still reads as a sparse starfield rather than the preset's enveloping floating-dust field. t1 contains only about five visible particles and t4 only around twenty; the early-frame density remains far below the intended thumbnail look. Size variation is also too extreme: occasional large bright blobs stand out as stars instead of a predominantly fine, diffuse dust population."
+    },
+    {
+      "iter": 3,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The black background and white particle color remain appropriate, but both frames still render as an extremely sparse starfield rather than the preset's dense, softly suspended floating-dust field. Frame t1 has only a few isolated points, and t4 has only roughly twenty visible particles, indicating that the active emission control is still effectively near 20 particles/sec despite the separate 9000 value. The occasional comparatively large bright dot also reads as a star rather than diffuse fine dust. Motion/population increases from t1 to t4, but the field is far too empty at the start and remains too sparse overall."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render is now substantially denser and the t1-to-t4 progression clearly shows floating particle motion and accumulation. The black background, white dust color, broad distribution, and mix of fine and slightly larger particles are directionally consistent with Floating Dust. However, it still reads more like a crisp starfield than a soft, enveloping dust atmosphere: many particles remain hard pinpoints, and the population at t1 is notably lighter than at t4 rather than immediately feeling like an established suspended field."
+    },
+    {
+      "iter": 5,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render now has an appropriate black field, white particulate color, broad full-frame coverage, and clear slow population/motion from t1 to t4. It is much closer to the Floating Dust direction than prior iterations. However, it still reads primarily as a fine starfield: most grains are hard sub-pixel pinpoints rather than a consistently soft suspended-dust layer. The t1 field is also visibly less established than t4, so the opening frame does not yet feel like the preset's enveloping dust atmosphere."
+    }
+  ]
+}

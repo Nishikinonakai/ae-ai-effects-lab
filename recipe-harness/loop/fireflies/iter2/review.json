@@ -1,0 +1,7 @@
+{
+  "verdict": "pass",
+  "score": 9,
+  "critique": "The render convincingly matches the Fireflies nature-preset look: a pure black field populated by widely scattered small yellow-green lights, varied point sizes, soft bloom, and a restrained handful of larger luminous fireflies. Both sampled times retain a natural mix of warm yellow-green and green rather than the prior global neon-green shift, while the changing particle positions read as gentle drifting.",
+  "suggestions": [],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

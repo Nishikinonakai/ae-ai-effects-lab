@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Muzzle Flash 3\" (Explosive) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 5,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The render has the correct orange fire/smoke palette and a brief rightward directional drift between 0.01 and 0.08, but it reads as a soft, rounded orange cloud rather than an explosive muzzle flash. It lacks a hot yellow/near-white core, sharp high-energy particle definition, and a convincingly fast burst-and-dissipate silhouette. The two frames remain similarly dense and blob-like, so the motion feels sustained rather than a crisp flash."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render now has a much better flash-like lifetime: it is visible at 0.01 and fully extinguished by 0.08. Its yellow-orange palette is also closer to a hot ignition than the prior soft orange cloud. However, at the visible frame it remains a compact, nearly circular cluster of large soft discs. It lacks the thumbnail's aggressive directional, starburst-like explosive silhouette, a near-white hot center, and sharper energetic fragments/streaks extending from the muzzle direction."
+    },
+    {
+      "iter": 3,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The timing is now convincingly flash-like: the burst is bright at 0.01 and completely gone by 0.08. The color is also much closer to a hot ignition. However, the visible flash still reads as a dense pile of overlapping, soft circular particles. It has no distinct near-white ignition point and too little directional separation to resemble the preset thumbnail's sharp, forceful muzzle-blast/starburst silhouette."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The timing now reads correctly as a very brief muzzle event: it is bright at 0.01 and cleanly gone by 0.08. The burst also has a stronger horizontal muzzle-direction bias and a hot yellow-white palette. However, it still appears as a tightly packed tube of overlapping soft circular blobs, rather than the preset thumbnail's sharp, violent explosive/starburst shape. The flash needs less particle crowding, much smaller/crisper visible elements, and a wider directional cone so separated energetic fragments radiate from a distinct ignition area."
+    },
+    {
+      "iter": 5,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The burst now has a convincing instantaneous muzzle-flash lifetime: it is bright at 0.01 and fully absent by 0.08. Its silhouette is more directional, with a pointed forward wedge and warmer edge particles around a pale hot region. However, it still resolves primarily as a densely packed cluster of round, soft particle discs, including a distracting hollow gap near the center. It remains less sharply fragmented and less violently starburst-like than the Explosive preset thumbnail; separated fine sparks and a more distinct white ignition point are still needed."
+    }
+  ]
+}

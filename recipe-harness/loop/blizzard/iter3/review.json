@@ -1,0 +1,16 @@
+{
+  "verdict": "pass",
+  "score": 8,
+  "critique": "The render now reads convincingly as a dense white blizzard with a strong field of fine flakes, black-background contrast, and far more consistent particle sizing than prior iterations. The oversized blown-out foreground discs are largely resolved. Between t1 and t4, however, the field still gains depth and apparent density a little too quickly, with a handful of noticeably larger near flakes at the edges. It remains slightly more like forward flight through particles than the steadier snowfall suggested by the preset thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 700,
+      "why": "Reduce particle travel over the short t1-to-t4 interval so depth progression and foreground-size growth feel like sustained blizzard snowfall rather than rapid camera-flight debris."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra",
+  "_normalized_pass_at": 8
+}

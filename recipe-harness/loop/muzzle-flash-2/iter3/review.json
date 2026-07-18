@@ -1,0 +1,48 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The black background and warm yellow/orange palette are appropriate, and the blast shifts rightward between 0.01 and 0.08. However, it remains a dense, rounded overlapping-particle cloud at both times. It has no readable forward flame wedge, pointed leading edge, separated fast sparks, or hot near-white ignition core; motion is primarily a uniform translation of the blob rather than a directional explosive spread.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 4,
+      "why": "Collapse the wide emitter volume so the flash originates from a tight muzzle point instead of beginning as a circular cloud."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0015",
+      "value": 4,
+      "why": "Collapse the emitter height with the X size to establish a concentrated source for a directional wedge."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0012",
+      "value": 140,
+      "why": "Introduce substantial forward speed variation so the burst resolves into a tapered stream of leading particles and trailing sparks rather than translating as one compact mass."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 12,
+      "why": "Reduce oversized overlapping particle discs, allowing the directional spread and spark structure to read clearly."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0070",
+      "value": [
+        1,
+        0.96,
+        0.7,
+        1
+      ],
+      "why": "Push the main flash toward a hot near-white/yellow core, closer to an explosive muzzle ignition than the current uniform orange-yellow blob."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

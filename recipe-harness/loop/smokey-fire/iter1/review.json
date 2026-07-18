@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The render has a plausible black-background fire/smoke palette: gray textured smoke surrounds the source and orange ember points expand noticeably from t1 to t4. However, the dominant form is a severely clipped, flat white circular core rather than readable orange/yellow flame. The smoke is a small, symmetric halo and the embers form a fairly uniform radial burst, making it read as a white explosion or energy orb more than the Smokey Fire preset thumbnail's flame-led, smoky character. Motion does expand between frames, but it grows the blown-out central disk rather than developing distinct fire and smoke structure.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0069",
+      "value": 1,
+      "why": "Replace Add blending with the less clipping-prone blend option so overlapping fire sprites retain orange/yellow flame detail instead of accumulating into a solid white disk."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 120,
+      "why": "Reduce particle accumulation at the emitter; the current 250 particles/sec produces an opaque, featureless center by frame 4."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 145,
+      "why": "Reduce the very large particle core so smoke texture and individual flame forms remain visible rather than merging into a hard circular mass."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

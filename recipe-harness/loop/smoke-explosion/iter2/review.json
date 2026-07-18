@@ -1,0 +1,41 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The render now has a soft gray smoke-like material and grows between 0.08s and 1.3s, which is closer to smoke than the prior bead-trail firework. However, it reads as one very smooth, uniform expanding bubble rather than an explosive, turbulent cluster of overlapping smoke billows. The small bright white particles persist in the center at 1.3s and distract as leftover sparks rather than resolving into smoke. The volume also lacks enough positional breakup and tonal variation to match an explosive smoke thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 22,
+      "why": "Reduce excessive feathering so the cloud resolves into visible overlapping smoke puffs instead of one featureless soft silhouette."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0042",
+      "value": 70,
+      "why": "Apply the fractal field to particle positions to break the circular bubble into turbulent, irregular explosion lobes."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0046",
+      "value": 35,
+      "why": "Increase field scale so the positional distortion produces broad smoke-billow structure rather than fine noise."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-2118",
+      "value": [
+        0.22,
+        0.22,
+        0.22,
+        1
+      ],
+      "why": "Remove the lingering white auxiliary spark core by making the secondary particles blend into the dark-gray smoke palette."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

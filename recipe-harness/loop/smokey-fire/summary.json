@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Smokey Fire\" (Smoke and Fire) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 2,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The render has a plausible black-background fire/smoke palette: gray textured smoke surrounds the source and orange ember points expand noticeably from t1 to t4. However, the dominant form is a severely clipped, flat white circular core rather than readable orange/yellow flame. The smoke is a small, symmetric halo and the embers form a fairly uniform radial burst, making it read as a white explosion or energy orb more than the Smokey Fire preset thumbnail's flame-led, smoky character. Motion does expand between frames, but it grows the blown-out central disk rather than developing distinct fire and smoke structure."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The white clipped core is gone, and the render now has a believable orange ember palette with dark gray smoke around the source. Motion from t1 to t4 is clearly visible. However, it still reads primarily as a compact, symmetric circular smoke ring ejecting a broad radial field of discrete sparks. It lacks the dense, irregular flame-led body and upward/rising smoky-fire structure expected of the Smokey Fire thumbnail; the flame remains a thin brown-orange ring around a dark center rather than a luminous fire mass."
+    },
+    {
+      "iter": 3,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The orange ember and charcoal-smoke palette is appropriate, and the t1-to-t4 expansion clearly shows active motion. However, the effect remains an explosion-like radial burst: a small brown-orange circular ring sits in the center while sparks disperse evenly in all directions and the smoke becomes a diffuse, roughly symmetric cloud. It still lacks a dense, luminous yellow/orange flame body and the vertically rising, irregular smoky structure associated with the Smokey Fire thumbnail."
+    },
+    {
+      "iter": 4,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The palette is closer to Smokey Fire now: orange-gold ember detail sits against charcoal smoke on black, and the t1-to-t4 change clearly shows active particle motion. But the structure remains a centered, nearly circular blast. At t4, sparks form a large evenly radial halo while the smoke expands symmetrically around a small brown-orange ring with a dark center. It does not yet present as a dense luminous flame body feeding an irregular, vertically rising smoke plume like the preset thumbnail."
+    },
+    {
+      "iter": 5,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The black background, orange-gold ember detail, and charcoal smoke are appropriate, and t1-to-t4 clearly shows particle motion. However, the result still reads as a small, symmetric explosion: a sharply defined circular orange ring with a dark center emits an evenly radial halo of sparks while the smoke expands as a round cloud. It lacks the thumbnail's dense, luminous, irregular flame mass and vertically rising smoke plume. The fire body is also too small and dim relative to the frame."
+    }
+  ]
+}

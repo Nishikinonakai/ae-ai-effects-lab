@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Light Blobs\" (Light and Magic) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render has a plausible black-background, pink-magenta glowing-light treatment, and the soft blurred blobs read clearly. However, it currently reads more like a compact radial firework or exploding flower than the vendor's soft 'Light Blobs' look: the blob cluster is very regular and square-like, while numerous sharp white radial streaks dominate the center. From t1 to t4 it expands outward abruptly, reinforcing an explosion rather than gently drifting luminous blobs."
+    },
+    {
+      "iter": 2,
+      "score": 2,
+      "verdict": "fail",
+      "critique": "The pink soft-focus glow and black background are directionally appropriate, but both t1 and t4 show only one large centered blob. There is no visible multi-blob field, variation, spatial spread, or appreciable motion between frames, so it does not yet resemble a Light Blobs preset thumbnail or animation."
+    },
+    {
+      "iter": 3,
+      "score": 2,
+      "verdict": "fail",
+      "critique": "The black background and soft pink glow are directionally consistent, but both frames still read as a single large, stationary centered disc rather than a field of distinct luminous blobs. The tiny sharp white core is distracting and unlike the soft vendor look. There is no meaningful spatial distribution or visible drift from t1 to t4."
+    },
+    {
+      "iter": 4,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The render now has several visible soft pink blobs and a pleasing diffuse glow on black, which is closer than the prior single-disc result. However, the blobs remain fused into one compact, nearly circular central mass. From t1 to t4 the cluster mainly fills in and grows denser rather than reading as a spatially dispersed field of independently drifting light blobs. The composition still lacks the broader, airy distribution and gentle motion implied by the preset thumbnail."
+    },
+    {
+      "iter": 5,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The black background and pink-lilac glow are directionally appropriate, and t4 contains more individual soft blob forms than the prior render. However, the result still reads as a small central firework: bright sharp radial streaks and a dense white-hot core dominate both frames, while the t1-to-t4 change is an abrupt outward burst. The intended look needs a much broader, airier field of independently soft luminous blobs with gentle drift rather than an exploding, center-originating cluster."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The core look remains recognizable: a luminous pastel-blue magical particle plane spans the frame against clean black negative space, with a gently changing wave profile between t1 and t4. However, large soft-focus particles still break the refined planar silhouette, especially at the edges and in the upper/lower foreground at t4. The plane also has too much apparent depth, producing distracting particles far above and below the intended horizon band rather than a controlled, elegant sheet.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 1.2,
+      "why": "Reduce the maximum particle size so near-camera particles no longer read as oversized bokeh blobs."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0016",
+      "value": 1600,
+      "why": "Compress the emitter depth range to keep particles concentrated around the plane instead of scattering large foreground particles throughout the frame."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

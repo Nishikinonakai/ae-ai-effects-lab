@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The 2s frame is now convincingly fiery, with a bright yellow-white center and many orange radial trails; it is substantially closer to an explosive Fire Trails burst than prior iterations. However, the streams still read as chains of large, separated glowing blobs rather than smoother continuous flame trails. The overall burst is also overly large at 2s, and gravity creates a noticeably heavier lower fan than the thinner upper half. The 0.08s ignition is still only a small dot rather than a fuller initial flash.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.1 ? 12000 : 0",
+      "why": "A denser initial particle burst will fill the gaps between bead-like clumps and create more continuous fire-trail streams."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 90,
+      "why": "Reducing launch velocity keeps the 2s explosion more compact and cohesive instead of spreading into disconnected outer fragments."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0017",
+      "value": 2,
+      "why": "Greatly reducing gravity restores a more balanced radial explosive silhouette, preventing the heavy downward-weighted fan."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The render has a bright fire-colored core and animated outward particle motion, but it reads as a radial spark/explosion burst rather than the vendor's hazy smoke-and-fire look. From t1 to t4, the particles rapidly disperse in all directions into distinct, hard circular embers. There is no substantial soft smoky volume, lingering haze, or upward fire plume; the central core also remains overexposed white rather than resolving into layered orange/red flame.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 75,
+      "why": "Reduce the extreme radial travel so particles remain concentrated enough to form a dense hazy fire body instead of an explosion-sized spark field."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 1.6,
+      "why": "Give fire and haze particles enough persistence to overlap into a continuous smoky/flame volume rather than short-lived isolated dots."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0018",
+      "value": 4,
+      "why": "Add drag so the emitted particles slow and accumulate around the flame, producing lingering haze instead of uniformly ballistic outward motion."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 90,
+      "why": "Increase sprite scale to favor soft overlapping flame/haze shapes over the current tiny ember-like particle marks."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

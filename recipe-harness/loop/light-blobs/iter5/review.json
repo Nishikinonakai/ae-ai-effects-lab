@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The black background and pink-lilac glow are directionally appropriate, and t4 contains more individual soft blob forms than the prior render. However, the result still reads as a small central firework: bright sharp radial streaks and a dense white-hot core dominate both frames, while the t1-to-t4 change is an abrupt outward burst. The intended look needs a much broader, airier field of independently soft luminous blobs with gentle drift rather than an exploding, center-originating cluster.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-2194",
+      "value": 0,
+      "why": "Disable the auxiliary particle emission that is contributing conspicuous sharp streaks around the otherwise soft blobs."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 10,
+      "why": "Greatly reduce main-particle velocity so the t1-to-t4 evolution reads as gentle drift rather than a radial explosion."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 500,
+      "why": "Widen the emitter substantially to distribute blobs across a broader horizontal field instead of concentrating them in the center."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0015",
+      "value": 350,
+      "why": "Expand the vertical emission area as well, producing the airy scattered blob composition indicated by the preset thumbnail."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

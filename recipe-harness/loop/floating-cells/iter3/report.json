@@ -1,0 +1,253 @@
+{
+  "status": "done",
+  "name": "floating-cells_i3",
+  "params": [
+    {
+      "p": "[footage] SpriteTex",
+      "ok": true
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterType (alias+enumOffset)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PType (alias+enumOffset) [Designer 5 -> Sprite + connected texture]",
+      "ok": true,
+      "v": "6"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1ParticlesPerSecF (alias)",
+      "ok": true,
+      "v": "20000"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeX (alias)",
+      "ok": true,
+      "v": "2000"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeY (exact)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeZ (exact)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInX (alias)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInY (alias)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInZ (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleX (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleY (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleZ (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1DirSpread (alias)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterDir (alias+enumOffset)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1Vel (alias)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1VelEmit (alias)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1VelSpread (alias)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PAspectRatio (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PFeather (alias)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PLife (alias)",
+      "ok": true,
+      "v": "10"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PLifeRnd (alias)",
+      "ok": true,
+      "v": "0.30000305175781"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSizeMax (alias)",
+      "ok": true,
+      "v": "10"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSizeRnd (alias)",
+      "ok": true,
+      "v": "25"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PColor (alias)",
+      "ok": true,
+      "v": "1,1,1,1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PColorRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSetColor (alias+enumOffset)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_POpacMax (alias)",
+      "ok": true,
+      "v": "65"
+    },
+    {
+      "p": "[1:tc Particular] FXid_POpacRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotAuto (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotate (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateRnd (alias)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateRndSpeed (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateSpeed (alias)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateSpeedX (alias)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateSpeedY (alias)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateX (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateY (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_AirResist (alias)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SpinAmp (alias)",
+      "ok": true,
+      "v": "0.25"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SpinFreq (alias)",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SpinTime (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_WindX (exact)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_WindY (exact)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_WindZ (exact)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Sprite texture layer (mined PLayer)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PLayerTime (+enumOffset)",
+      "ok": true,
+      "v": "7"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PUnmult (alias) [after sprite connect]",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Explode -> 0.1s burst spike (expr)",
+      "ok": true
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/floating-cells/iter3/floating-cells_i3_t0p08.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/floating-cells/iter3/floating-cells_i3_t2.png"
+  ]
+}

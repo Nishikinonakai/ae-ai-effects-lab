@@ -1,0 +1,15 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The black field, detailed snowflake sprite texture, varied 3D-facing brightness, and several clearly prominent large flakes all read convincingly as the Large Snow 3D preset. The motion between t1 and t4, however, still increases the visible population too much: t4 has a busy spread of small dark flakes across the center/lower area and several competing cropped edge flakes, whereas the desired silhouette should remain more spacious and led by a smaller number of large flakes.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 65,
+      "why": "Reduce the emitter rate to keep the later frame from filling with extra small sprite flakes, preserving the sparse large-flake composition over time."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

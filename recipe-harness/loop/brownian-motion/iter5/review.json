@@ -1,0 +1,15 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The black field and very fine white dust treatment now match the intended palette, and the two sampled frames have broadly similar population, avoiding the pronounced t1-to-t4 buildup seen previously. However, the field is still much too sparse for the Brownian Motion fluid preset thumbnail: it reads as isolated star-like specks across mostly empty black rather than a dense, continuously agitated particulate cloud. The existing front-load expression appears to be applied to a non-driving/alias particle-rate control, since neither sampled frame has enough established particles.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0005",
+      "expression": "time < thisComp.frameDuration*1.5 ? 30000 : 2000",
+      "why": "Apply the startup burst to the currently active particle-rate control so frame 1 begins as an established dense dust field and frame 4 retains a comparably populated, fluid-agitated field rather than sparse isolated specks."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

@@ -1,0 +1,48 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The timing is now convincingly flash-like: the burst is bright at 0.01 and completely gone by 0.08. The color is also much closer to a hot ignition. However, the visible flash still reads as a dense pile of overlapping, soft circular particles. It has no distinct near-white ignition point and too little directional separation to resemble the preset thumbnail's sharp, forceful muzzle-blast/starburst silhouette.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 8,
+      "why": "Narrow the emission cone so the burst forms a deliberate forward muzzle direction instead of a rounded all-over cluster."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 7000,
+      "why": "Push particles farther apart during the very short visible lifetime, creating an explosive directional silhouette and fragment separation."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 8,
+      "why": "Replace the large overlapping disc/blob appearance with smaller, sharper high-energy particles."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 8,
+      "why": "Collapse the large emitter volume toward a muzzle point so the burst originates from a concentrated hot center."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0070",
+      "value": [
+        1,
+        0.96,
+        0.62,
+        1
+      ],
+      "why": "Raise the main particle color toward near-white yellow to establish a hotter ignition core rather than a uniformly orange-yellow cloud."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

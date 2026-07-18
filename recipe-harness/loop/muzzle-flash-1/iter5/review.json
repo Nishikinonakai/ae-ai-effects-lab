@@ -1,0 +1,15 @@
+{
+  "verdict": "fail",
+  "score": 0,
+  "critique": "Both sampled frames are completely black. There is no visible muzzle flash, orange/yellow ignition core, directional explosive spray, particle motion, or transient fade. The burst is not producing a renderable visible density at either sampled time.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.09 ? 15000 : 0",
+      "why": "Maintain the intended 15,000/sec burst through both sampled times so particles are visibly emitted at 0.01 s and still present at 0.08 s; the current short burst leaves both renders empty."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

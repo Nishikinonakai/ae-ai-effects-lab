@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The black background, centered cyan-green burst, and clear outward expansion are aligned with the Ring Explosion intent. At 1.9s, however, the result still reads as a large turbulent spherical particle shell: broad interior ribbons, clumped bright knots, and dense webbing compete with the outer circumference. A cleaner explosive ring needs a more point-like origin and substantially less force-driven distortion so the perimeter remains the dominant readable structure. At 0.08s the source remains a tiny smooth glow rather than a visibly particulate ignition.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0042",
+      "value": 0,
+      "why": "Disable the main force field's position influence; its evolving displacement is producing the large folded interior ribbons and turbulent webbing instead of a clean radial explosion."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 0,
+      "why": "Collapse emitter X extent to concentrate the burst at the center rather than seeding a broad volumetric shell."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0015",
+      "value": 0,
+      "why": "Collapse emitter Y extent with X so the late-stage particle distribution resolves primarily as an expanding ring."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0016",
+      "value": 0,
+      "why": "Remove emitter Z extent to prevent depth-distributed particles from filling the ring interior and obscuring the perimeter."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-2759",
+      "value": 0,
+      "why": "Remove secondary-particle turbulence, which is reinforcing the noisy internal swirls and bright clumped arcs."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

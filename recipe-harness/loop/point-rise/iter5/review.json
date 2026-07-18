@@ -1,0 +1,23 @@
+{
+  "verdict": "pass",
+  "score": 8,
+  "critique": "The motion now convincingly reads as a Point Rise: between t1 and t4, a narrow white source emits a clearly upward, tapered stream on black. The overall silhouette and directional ascent match the preset intent well. However, the t4 particles are still somewhat gray/soft and the base remains a dense bright knot, so the individual points are less crisp and distinct than the thumbnail-like preset treatment.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 125,
+      "why": "Reduce emission density so the source is less of a solid bright knot and individual ascending particles separate more clearly."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 25,
+      "why": "Lower particle feathering to make the white points crisper and more legible against black."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra",
+  "_normalized_pass_at": 8
+}

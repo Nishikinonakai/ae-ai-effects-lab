@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The snowflake sprites, black background, varied 3D orientations, and prominent large flakes fit the intended Large Snow 3D character well. Frame t1 is especially close to a spacious large-flake composition. By t4, however, the particle population has accumulated into a substantially busier field, with many small/dark flakes and several oversized edge flakes competing with the intended clean, sparse large-snow silhouette.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 90,
+      "why": "Reduce the emission rate so the mature t4 frame contains fewer accumulated flakes while retaining a clearly active falling-snow motion."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 2,
+      "why": "Shorten particle lifetime to further prevent dense temporal buildup at later frames and keep the visual dominated by isolated large flakes."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

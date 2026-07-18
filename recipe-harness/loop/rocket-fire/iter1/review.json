@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The render has a warm fire palette on black and visibly evolves from frame 1 to frame 4, but it reads as a centered radial explosion: a blown-out white circular core expands while small orange/yellow dots scatter in every direction. It does not resemble a directional Rocket Fire effect, and the large opaque core obscures the flame texture rather than showing a shaped rocket flame or trailing fire.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 350,
+      "why": "Increase particle velocity so the effect develops a directional rocket-like fire stream instead of accumulating as a stationary central ball."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 8,
+      "why": "Tighten directional spread so particles form a concentrated flame trail rather than a broad radial burst."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 35,
+      "why": "Reduce maximum particle size to prevent the saturated white central disk from dominating the fire texture."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 30,
+      "why": "Lower particle density along with the smaller sprites so the flame remains detailed and does not overbuild into an opaque blob."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

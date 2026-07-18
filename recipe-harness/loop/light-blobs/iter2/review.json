@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 2,
+  "critique": "The pink soft-focus glow and black background are directionally appropriate, but both t1 and t4 show only one large centered blob. There is no visible multi-blob field, variation, spatial spread, or appreciable motion between frames, so it does not yet resemble a Light Blobs preset thumbnail or animation.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 180,
+      "why": "Raise the main emission rate so multiple distinct blobs are present rather than a single isolated particle."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 500,
+      "why": "Widen the X emission region to distribute blobs across the frame instead of stacking at the center."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0015",
+      "value": 280,
+      "why": "Widen the Y emission region to form a loose luminous cluster rather than a centered overlap."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 4,
+      "why": "Keep blob movement gentle and drifting after widening the emitter, avoiding the prior explosive radial motion."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 3,
+      "why": "Extend particle persistence so the distributed blob field can accumulate and remain visible over time."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

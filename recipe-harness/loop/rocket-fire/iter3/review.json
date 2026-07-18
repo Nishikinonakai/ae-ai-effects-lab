@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 1,
+  "critique": "The palette and black background remain fire-appropriate, but the motion from frame 1 to frame 4 is still an almost perfectly symmetric expanding burst. Frame 4 is especially explosion-like: flame sprites occupy a broad circular field around the bright center, rather than forming a compact, tapered plume behind a traveling rocket direction. The isolated large flame chunks further read as debris, not a coherent fire trail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0113",
+      "value": 2,
+      "why": "Switch the emitter-direction mode away from the current outward/radial behavior to a directional emission mode so particles share a rocket-travel axis instead of expanding evenly around the origin."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0012",
+      "value": 0,
+      "why": "Remove velocity variation that is spreading the fire sprites laterally and breaking the trail silhouette."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 6,
+      "why": "Reduce the oversized isolated sprite chunks so the effect reads as a dense tapered flame plume rather than explosion debris."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

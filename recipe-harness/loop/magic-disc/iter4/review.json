@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 2,
+  "critique": "The black background and warm golden glow are directionally appropriate, but both frames remain a tiny central blob (only a few percent of frame width). At t1 it is nearly circular; at t4 it becomes a small vertical capsule. Neither frame produces the preset thumbnail's large, horizontally extended elliptical magic-disc plane, and the observed motion is localized vertical drift rather than energy distributed across a broad disc.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 20000,
+      "why": "Expand the emitter's horizontal extent dramatically so the particle field can occupy a substantial portion of the frame and establish the required wide disc silhouette."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0015",
+      "value": 1800,
+      "why": "Give the expanded horizontal field a controlled but much smaller vertical thickness, producing an ellipse/disc rather than a point-like mass or tall plume."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0221",
+      "value": 60,
+      "why": "Increase horizontal grid sampling so the enlarged emitter reads as a continuous populated energy disc instead of a few merged glowing points."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 0,
+      "why": "Remove the emitter velocity responsible for the t4 vertical capsule/drift, keeping particles distributed in a stable horizontal disc plane."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

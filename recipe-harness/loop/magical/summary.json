@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Magical\" (Light and Magic) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 5,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render has a clean black background and a centered pink, softly glowing particle orb with white spark detail, which reads broadly magical. However, it is very small and visually almost identical between frames 1 and 4: the effect reads as a static pink puff rather than the active, airy Light and Magic-style magical particle motion implied by the preset. The dense soft pink core also obscures the individual spark structure."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The black field, pink glow, and white spark accents establish a broadly magical look, but the result is still a very small, nearly circular pink puff. Between frames 1 and 4 there is only minimal visible evolution, so it does not yet read as the airy, expanding Light and Magic particle motion suggested by the preset thumbnail. The large feathered pink primary particles form an opaque core that hides the individual spark structure."
+    },
+    {
+      "iter": 3,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The pink-and-white particle palette, black field, and newly visible outward scatter read more convincingly as magical than prior iterations. Frame 4 now clearly expands beyond frame 1. However, the effect remains very small relative to the canvas and retains a dense, bright central clump; it reads more like a compact spark burst than the broad, airy Light and Magic-style magical bloom implied by the preset thumbnail."
+    },
+    {
+      "iter": 4,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render now has clear frame-to-frame expansion: frame 4 forms a wider pink-and-white magical scatter than frame 1, and the individual white spark structure remains visible against the black field. It reads much closer to an airy magical burst. However, the bloom is still relatively small and concentrated around a bright central knot, with the outer motion feeling more like a compact radial spark explosion than the broad, floating Light and Magic-style magical spread suggested by the preset thumbnail."
+    },
+    {
+      "iter": 5,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "The frame-to-frame motion now reads clearly: the t4 field expands substantially beyond t1 into a pink-and-white magical scatter on black, with a convincing mix of glowing pink motes and fine white spark detail. It is much closer to an airy Light and Magic bloom than the prior compact puffs. However, the motion still originates from and remains weighted toward a bright central knot, while the larger pink particles read as discrete radial burst beads. The intended preset feel would be broader and more floating/diffuse, with less central concentration and a wider magical drift."
+    }
+  ]
+}

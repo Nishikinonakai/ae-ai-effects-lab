@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The orange ember and charcoal-smoke palette is appropriate, and the t1-to-t4 expansion clearly shows active motion. However, the effect remains an explosion-like radial burst: a small brown-orange circular ring sits in the center while sparks disperse evenly in all directions and the smoke becomes a diffuse, roughly symmetric cloud. It still lacks a dense, luminous yellow/orange flame body and the vertically rising, irregular smoky structure associated with the Smokey Fire thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 2.5,
+      "why": "Lower initial particle velocity so emitted fire and smoke accumulate into a coherent flame mass instead of immediately forming a large radial spark burst."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 8,
+      "why": "Narrow directional spread to break the uniform circular explosion silhouette and concentrate the fire into a more flame-led source."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 240,
+      "why": "Raise emission density to fill the dark hollow center with overlapping sprite detail, producing a fuller luminous fire body."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0017",
+      "value": -1.2,
+      "why": "Increase upward acceleration so the retained smoke and fire develop a visible rising plume rather than expanding as a symmetric halo."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

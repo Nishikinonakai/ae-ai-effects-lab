@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The render has a plausible warm magical-particle look on black, with a dense glowing core and fine spark scatter. Motion between t1 and t4 does show active upward dispersion. However, it reads as a small upward fountain/crown rather than a coherent magic disc: the particle mass is vertically V-shaped, lacks a broad circular/elliptical disc silhouette, and occupies too little of the frame. The time-driven color sweep also makes the entire effect abruptly change from pale yellow at t1 to saturated orange at t4 instead of maintaining a stable luminous disc palette.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0017",
+      "value": 0,
+      "why": "Removing the strong upward gravity will stop the crown/fountain trajectory and preserve a flatter disc-like particle field."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 75,
+      "why": "A substantially wider directional spread will distribute particles radially into a disc/halo silhouette rather than a narrow upward fan."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 4,
+      "why": "Larger particles will give the magic disc a more visible, substantial luminous body at the current small on-screen scale."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0070",
+      "expression": "[0.98,0.72,0.22,1]",
+      "why": "Use a stable warm gold/orange birth color instead of globally sweeping every particle from yellow to orange across the sampled frames."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

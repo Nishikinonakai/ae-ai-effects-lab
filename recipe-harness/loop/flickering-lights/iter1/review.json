@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The render has the right general warm amber/orange-on-black palette for a flickering-lights preset, and the soft overlapping round sprites read as lights. However, the particles look like large dim shaded balls rather than luminous flickering bulbs: their dark rims and weak glow make the result feel volumetric and muddy. Motion is also incorrect for a controlled flickering-light field: frame 4 has accumulated dramatically more lights than frame 1, turning the composition from sparse to crowded instead of keeping a relatively stable population whose brightness flickers.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 0.5,
+      "why": "Shorten particle life so the light population does not heavily accumulate between comp times and can refresh as flickers."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0216",
+      "value": 70,
+      "why": "Increase glow opacity so the orange dots read as emissive lights rather than dim shaded discs."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0033",
+      "expression": "clamp(70 + wiggle(12,30),0,100)",
+      "why": "Animate particle opacity with fast variation to introduce the defining flickering-light behavior."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

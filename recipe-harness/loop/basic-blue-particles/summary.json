@@ -1,0 +1,14 @@
+{
+  "intent": "vendor preset \"Basic Blue Particles\" (Basics) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 9,
+      "verdict": "pass",
+      "critique": "The render matches a Basic Blue Particles preset look: a clean black field with a centered, vivid-blue particle burst. Frame 1 has a dense blue core with fine scattered dots, and by frame 4 the same emission has visibly expanded into a larger, diffuse cloud while retaining a bright center. Motion reads as a natural outward particle spread rather than a static cluster."
+    }
+  ]
+}

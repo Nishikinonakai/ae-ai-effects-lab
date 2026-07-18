@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The render now clearly reads as a directional Point Rise: the t4 frame forms a tapered stream extending upward from a bright point source, a substantial improvement over the earlier radial puff. The white particles on black also match the preset’s basic treatment. However, the rising particles remain quite dim and the emission point is still an overly bright, dense knot, so the stream lacks the crisp, individually readable point detail expected from the thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0033",
+      "value": 55,
+      "why": "Raise particle opacity so the upward-moving individual points read clearly instead of fading into a faint gray plume."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 170,
+      "why": "Reduce emission density to soften the saturated source knot and separate the rising points into a cleaner stream."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

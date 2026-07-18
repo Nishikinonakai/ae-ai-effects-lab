@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Flickering Lights\" (Motion Graphics) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 5,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The render has the right general warm amber/orange-on-black palette for a flickering-lights preset, and the soft overlapping round sprites read as lights. However, the particles look like large dim shaded balls rather than luminous flickering bulbs: their dark rims and weak glow make the result feel volumetric and muddy. Motion is also incorrect for a controlled flickering-light field: frame 4 has accumulated dramatically more lights than frame 1, turning the composition from sparse to crowded instead of keeping a relatively stable population whose brightness flickers."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The black background and warm amber/orange palette are appropriate, and the field of soft circular elements is closer to decorative lights than the first pass. However, the circles still read as dark, shaded sprite spheres with visible brown rims instead of bright self-illuminated bulbs/bokeh. The frame-to-frame population also remains uneven: t4 is noticeably busier and more clustered than t1, rather than holding a consistent field while individual lights flicker."
+    },
+    {
+      "iter": 3,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The black background, warm amber palette, sparse layout, and now roughly consistent number of lights across t1 and t4 are appropriate. However, the elements still read as dim brown shaded spheres with dark rims rather than bright, self-illuminated flickering bulbs/bokeh. The lights also substantially relocate between frames instead of remaining a mostly fixed light field whose intensity varies independently."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The sparse warm orange-on-black field and stable overall particle count fit the flickering-lights concept better than prior iterations. However, each light is still a dim, brown, shaded sphere with a dark perimeter rather than a bright self-illuminated bulb or soft bokeh glow. Motion is also still wrong: nearly all lights change position between t1 and t4, including large group relocations, so it reads as drifting/re-spawning particles rather than a fixed field with independently flickering intensity."
+    },
+    {
+      "iter": 5,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The warm amber, peach, and yellow lights against pure black now read convincingly as luminous bokeh rather than the earlier dark shaded spheres. The density is broadly appropriate and several lights have a pleasing bright core with a soft halo. However, the field is still not temporally coherent: almost every light has changed location from t1 to t4, with entirely new clusters appearing and prior clusters disappearing. This reads as particle turnover/re-spawning, not stationary decorative lights flickering independently. The remaining light edges are also slightly too defined for a soft flickering-light thumbnail treatment."
+    }
+  ]
+}

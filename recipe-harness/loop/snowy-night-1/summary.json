@@ -1,0 +1,26 @@
+{
+  "intent": "vendor preset \"Snowy Night 1\" (Nature) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 3,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render reads as clean white snowfall on black, with appropriately varied speck sizes and a denser field by t4 that indicates ongoing emission. However, the snowfall is confined to a narrow central vertical column, leaving most of the frame empty; it feels like an emitter test rather than a full snowy-night scene. The flakes are also predominantly pinprick-small, so the result lacks the layered, softly visible snowfall presence expected from the preset thumbnail. Motion buildup from t1 to t4 is substantial, but the early frame is noticeably underpopulated."
+    },
+    {
+      "iter": 2,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The field now fills the full frame rather than the narrow central column, and the white-on-black contrast, mixed flake sizes, and increased density from t1 to t4 read clearly as snowfall. However, t1 is still noticeably sparse compared with the much fuller t4 frame, making the start of the animation feel like particles are only beginning to accumulate. Most flakes remain very small and crisp; the preset-like snowy-night look would benefit from a stronger foreground layer of larger, softer flakes while retaining the existing fine background snow."
+    },
+    {
+      "iter": 3,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "The render now reads convincingly as a full-frame snowy field: bright white flakes cover the frame, size variation is present, and the t1-to-t4 progression shows ongoing falling/emission. The principal remaining mismatch is temporal balance: t1 is visibly lighter than t4, while the thumbnail-like preset should feel established from the opening frame. Flakes are still biased toward fine, crisp dots; a somewhat larger soft foreground component would make the snow feel more layered and atmospheric."
+    }
+  ]
+}

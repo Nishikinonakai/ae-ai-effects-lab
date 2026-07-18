@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The render has the correct basic ingredients for a Point Rise preset: a white particle point on black that grows into a small rising particle cluster. Motion from t1 to t4 is upward, but it is very subtle, and the result reads more like a compact, roughly radial puff than a clearly directional rising point stream. The low opacity and 2 px particle size also leave the early frame nearly invisible.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 110,
+      "why": "Increase emitter velocity so the upward progression is clearly visible across adjacent frames rather than remaining a nearly stationary cluster."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 10,
+      "why": "Tighten directional spread to make the particles read as a focused point rising upward instead of a spherical burst."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

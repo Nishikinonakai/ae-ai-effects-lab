@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render reads as clean white snowfall on black, with appropriately varied speck sizes and a denser field by t4 that indicates ongoing emission. However, the snowfall is confined to a narrow central vertical column, leaving most of the frame empty; it feels like an emitter test rather than a full snowy-night scene. The flakes are also predominantly pinprick-small, so the result lacks the layered, softly visible snowfall presence expected from the preset thumbnail. Motion buildup from t1 to t4 is substantial, but the early frame is noticeably underpopulated.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 1100,
+      "why": "Widen the emitter so snow occupies nearly the full frame instead of a central column."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0015",
+      "value": 500,
+      "why": "Increase vertical emission coverage so flakes enter across the visible image area rather than beginning in a compact band."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 2,
+      "why": "Make a portion of the flakes visibly larger and softer while retaining the existing 75% size randomness for depth."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

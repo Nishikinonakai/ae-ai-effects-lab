@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The black field and white particulate treatment are on target, and density is now much closer to the Brownian Motion preset look. However, the t1-to-t4 comparison still shows a strong startup/accumulation ramp: t1 is a relatively open field while t4 is substantially more populated, so the animation reads partly as emission buildup rather than an already-established, continuously agitated fluid field. Several particles also remain visibly chunky compared with the predominantly fine dust texture expected from the preset thumbnail.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < thisComp.frameDuration*1.5 ? 10000 : 2000",
+      "why": "Front-load emission on the first rendered frame so t1 begins with a populated field, reducing the conspicuous density ramp between t1 and t4 while retaining the current sustained rate."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 1,
+      "why": "Reduce the remaining oversized white blobs so the field reads as finer Brownian particulate rather than mixed chunky specks."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

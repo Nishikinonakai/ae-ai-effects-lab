@@ -1,0 +1,268 @@
+{
+  "status": "done",
+  "name": "muzzle-flash-3_i1",
+  "params": [
+    {
+      "p": "[master] clone MASTER_particular_S2",
+      "ok": true
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterType (alias+enumOffset)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PType (alias+enumOffset)",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1ParticlesPerSecF (alias)",
+      "ok": true,
+      "v": "15000"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeX (alias)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeY (exact)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeZ (exact)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInX (alias)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInY (alias)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInZ (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleX (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleY (alias)",
+      "ok": true,
+      "v": "90"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleZ (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1DirSpread (alias)",
+      "ok": true,
+      "v": "11"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterDir (alias+enumOffset)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1Vel (alias)",
+      "ok": true,
+      "v": "2540"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1VelEmit (alias)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1VelSpread (alias)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PAspectRatio (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PFeather (alias)",
+      "ok": true,
+      "v": "46"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PLife (alias)",
+      "ok": true,
+      "v": "0.05799328535795"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PLifeRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSizeMax (alias)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSizeRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PUnmult (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PColor (alias)",
+      "ok": true,
+      "v": "1,0.48235294222832,0.101"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PColorRnd (alias)",
+      "ok": true,
+      "v": "24"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSetColor (alias+enumOffset)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_POpacMax (alias)",
+      "ok": true,
+      "v": "69"
+    },
+    {
+      "p": "[1:tc Particular] FXid_POpacRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_FAffectPos (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_FAffectSize (alias)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] FXid_FAffectTime (alias)",
+      "ok": true,
+      "v": "0.02000427246094"
+    },
+    {
+      "p": "[1:tc Particular] FXid_FEvolution (alias)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] FXid_FScale (alias)",
+      "ok": true,
+      "v": "15"
+    },
+    {
+      "p": "[1:tc Particular] aux -> S2 Emitter Type: Emit from Parent (v18)",
+      "ok": true,
+      "v": "8"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_AirPhysics_Turbulence (aux->S2)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Control_InheritVelocity (aux->S2)",
+      "ok": false,
+      "err": "Error: After Effects error: Unable to call “setValue” because of param"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Gravity (aux->S2)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Randomness_Life (aux->S2)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Randomness_Opacity (aux->S2)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Randomness_Size (aux->S2)",
+      "ok": true,
+      "v": "59"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_TransferMode (aux->S2)+enumOffset",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_PLife (aux->S2)",
+      "ok": true,
+      "v": "0.00999450683594"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_POpacity (aux->S2)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_PSize (aux->S2)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_PType (aux->S2)+enumOffset",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_PVel (aux->S2)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_ParticlesPerSecF (aux->S2) [/10 burst-spike normalization]",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Set Color S2: At Birth",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Color S2 (inherit main (100%))",
+      "ok": true,
+      "v": "1,0.48235294222832,0.101"
+    },
+    {
+      "p": "[1:tc Particular] Explode -> 0.1s burst spike (expr)",
+      "ok": true
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/muzzle-flash-3/iter1/muzzle-flash-3_i1_t0p01.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/muzzle-flash-3/iter1/muzzle-flash-3_i1_t0p08.png"
+  ]
+}

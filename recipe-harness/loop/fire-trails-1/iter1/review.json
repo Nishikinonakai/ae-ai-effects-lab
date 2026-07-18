@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The early frame has a bright, compact ignition point, but it is far too small and isolated for an explosive Fire Trails burst. By 2 seconds, the blast has become a very wide field of discrete peach-colored blobs with large empty gaps; the motion reads as slow ballistic embers rather than dense, continuous fiery trails. The extreme spread and long persistence make the explosion lose its central explosive form, and there is little hot yellow/white flame structure or trail continuity visible.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 190,
+      "why": "Lower the primary velocity so the burst remains compositionally concentrated instead of spreading to every edge of frame by 2 seconds."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 1.6,
+      "why": "Shorten primary particle life so old particles fade into a fire-trail burst rather than persisting as a full-screen field of separate embers."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0017",
+      "value": 95,
+      "why": "Reduce gravity to retain more outward explosive momentum and avoid the pronounced downward-falling ember pattern."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

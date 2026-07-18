@@ -1,0 +1,453 @@
+{
+  "status": "done",
+  "name": "ring-explosion_i3",
+  "params": [
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeOption (alias+enumOffset)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterType (alias+enumOffset)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PType (alias+enumOffset)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeX (alias)",
+      "ok": true,
+      "v": "500"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeY (exact)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeZ (exact)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1ParticlesPerSecF (alias)",
+      "ok": true,
+      "v": "45000"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInX (alias)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInY (alias)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInZ (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleX (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleY (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleZ (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1DirSpread (alias)",
+      "ok": false,
+      "err": "Error: After Effects error: Unable to call “setValue” because of param"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterDir (alias+enumOffset)",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1Vel (alias)",
+      "ok": true,
+      "v": "260"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1VelEmit (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1VelSpread (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1VelSpreadDistr (alias)",
+      "ok": true,
+      "v": "0.00999999977648"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_RandomSeed (exact)",
+      "ok": true,
+      "v": "100000"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Glow_TransferMode (alias+enumOffset)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Glow_Feather (exact)",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Glow_Opacity (exact)",
+      "ok": true,
+      "v": "25"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Glow_Size (exact)",
+      "ok": true,
+      "v": "300"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PFeather (alias)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PLife (alias)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PLifeRnd (alias)",
+      "ok": true,
+      "v": "49"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PUnmult (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Streaklet_NoSpheres (alias)",
+      "ok": true,
+      "v": "7"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Streaklet_RandomSeed (exact)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Streaklet_Spread (alias)",
+      "ok": true,
+      "v": "60"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PAspectRatio (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotAuto (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotate (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateRndSpeed (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateRndSpeedDistr (alias)",
+      "ok": true,
+      "v": "0.5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateSpeed (alias)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateSpeedX (alias)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateSpeedY (alias)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateX (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PRotateY (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSizeMax (alias)",
+      "ok": true,
+      "v": "6"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSizeRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_POpacMax (alias)",
+      "ok": true,
+      "v": "45"
+    },
+    {
+      "p": "[1:tc Particular] FXid_POpacRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PColor (alias) [flattened col.life gradient]",
+      "ok": true,
+      "v": "0.21,0.93,0.74,1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PColorRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSetColor (alias+enumOffset) [forced At Birth: gradient unscriptable]",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_SmokeletShadow_Color (alias)",
+      "ok": true,
+      "v": "0,0,0,1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_SmokeletShadow_ColorStrength (alias)",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_SmokeletShadow_Opacity (alias)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PShade (alias)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PShadeFalloffAdjust (alias)",
+      "ok": true,
+      "v": "250"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gravity (exact)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_AirResist (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_FAffectPos (alias)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_FAffectSize (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_FAffectTime (alias)",
+      "ok": true,
+      "v": "0.5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_FEvolution (alias)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] FXid_FScale (alias)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SpinAmp (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SpinFreq (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SpinTime (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_WindX (exact)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_WindY (exact)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_WindZ (exact)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] aux -> S2 Emitter Type: Emit from Parent (v18)",
+      "ok": true,
+      "v": "8"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_AirPhysics_Resistance (aux->S2)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_AirPhysics_Turbulence (aux->S2)",
+      "ok": true,
+      "v": "136"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_AirPhysics_Wind (aux->S2)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Control_InheritVelocity (aux->S2)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_EmitProbability (aux->S2)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Feather (aux->S2)",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Gravity (aux->S2)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Randomness_Life (aux->S2)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Randomness_Opacity (aux->S2)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Randomness_Size (aux->S2)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_TransferMode (aux->S2)+enumOffset",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_PLife (aux->S2)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_POpacity (aux->S2)",
+      "ok": true,
+      "v": "25"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_PSize (aux->S2)",
+      "ok": true,
+      "v": "2.5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_PType (aux->S2)+enumOffset",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_PVel (aux->S2)",
+      "ok": true,
+      "v": "28.3999996185303"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_ParticlesPerSecF (aux->S2) [/10 burst-spike normalization]",
+      "ok": true,
+      "v": "45"
+    },
+    {
+      "p": "[1:tc Particular] Set Color S2: At Birth",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Color S2 (inherit main (100%))",
+      "ok": true,
+      "v": "0.21999999880791,0.87000"
+    },
+    {
+      "p": "[1:tc Particular] birth-color sweep across gradient ends (two-tone) (expr)",
+      "ok": true
+    },
+    {
+      "p": "[1:tc Particular] Explode -> 0.1s burst spike (expr)",
+      "ok": true
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/ring-explosion/iter3/ring-explosion_i3_t0p08.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/ring-explosion/iter3/ring-explosion_i3_t1p9.png"
+  ]
+}

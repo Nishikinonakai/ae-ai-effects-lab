@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The black background and cool cyan/blue particle coloration are directionally compatible, and the frame-to-frame refresh suggests upward particle simulation is active. However, the render reads as a sparse starfield of pinpoints rather than the preset's recognizable rising bubbles: there are virtually no visible bubble discs, soft circular edges, or meaningful scale variation. The particle field also becomes noticeably denser by t4 instead of presenting a composed stream of larger, clearly rising bubbles.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 45,
+      "why": "Increase maximum particle size so the particles read as visible bubbles rather than sub-pixel cyan specks."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0074",
+      "value": 55,
+      "why": "Retain some bubble size variation while preventing nearly all particles from shrinking into tiny points."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 220,
+      "why": "Reduce emission density to leave visual space for the enlarged individual bubbles and avoid a starfield-like accumulation."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

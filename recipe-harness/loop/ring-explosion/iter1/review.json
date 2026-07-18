@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The black background and turquoise/green palette are appropriate, and the bright centered source reads cleanly. However, the visible result is a compact, opaque concentric bullseye rather than an explosive ring of individually readable particles. It lacks the broad radial spread, broken particulate edge, and energetic outward motion expected from a Ring Explosion thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 180,
+      "why": "Expand Direction Spread from the near-zero 2-degree cone into a full radial explosion so particles form a ring rather than a tight central stack."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 700,
+      "why": "Increase emitter velocity so the burst reaches a clearly visible ring radius quickly instead of remaining as a small central disk."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 6,
+      "why": "Reduce particle size so the expanding ring retains a granular explosive edge instead of merging into a solid turquoise shape."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.1 ? 45000 : 0",
+      "why": "Reduce the burst density substantially; the current spike overfills the source and hides the separate exploding particles."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

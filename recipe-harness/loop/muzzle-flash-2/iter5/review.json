@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The black field, hot pale-yellow core, orange edge color, and rightward temporal progression are now recognizable as a muzzle-flash-like event. At 0.08 there is a short orange tail feeding into a brighter head, which is more directional than prior renders. However, the effect remains far too small and reads as a compact glowing projectile/comet rather than the large explosive muzzle-flash wedge in the preset thumbnail. The bright head is rounded and soft, while the trail is thin and uniform; it needs a broader, sharper flame body with visibly larger, more irregular explosive energy.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 16,
+      "why": "Increase primary particle scale so the flash occupies a more substantial area and its fire mass reads as an explosive muzzle flare rather than a tiny projectile."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 14,
+      "why": "Reduce excessive particle feathering to make the forward flame silhouette and bright core more defined, sharper, and closer to a flame wedge."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

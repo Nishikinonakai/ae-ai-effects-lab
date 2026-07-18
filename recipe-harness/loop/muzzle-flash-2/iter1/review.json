@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The render has the correct orange/yellow fire color on black and changes between frames, but it reads as a small, soft circular fireball rather than an explosive directional muzzle flash. At 0.01 it is a dense blob; by 0.08 it has simply contracted and shifted slightly, with no clear forward flame cone, bright core, sparks, or expanding directional energy characteristic of the preset thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 0.08,
+      "why": "Increase main-particle life so the existing high forward velocity can form a visible forward flash/cone instead of a compact circular blob."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 14,
+      "why": "Reduce particle size so individual fast-moving particles resolve into an explosive flame shape rather than merging into one soft disk."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.06 ? 90000 : 0",
+      "why": "Keep the burst intense but shorten and reduce the emission spike, preventing the longer-lived particles from becoming an opaque uniform mass."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

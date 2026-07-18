@@ -1,0 +1,41 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The timing reads as an outward burst, but visually it is a bright radial firework: hundreds of tiny, sharply separated white bead trails form a near-perfect circular shell by 1.3s. A Smoke Explosion should resolve into a denser, softer, irregular volume of expanding smoke rather than long spoke-like particle streams. The pure white color and very small particle size also prevent any smoky mass or tonal depth.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 120,
+      "why": "Reducing the extreme radial velocity will shorten the spoke trails and keep the burst cohesive enough to become an expanding smoke volume."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 70,
+      "why": "Substantially larger primary particles merge into soft smoke clumps instead of rendering as individual bead-like firework dots."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0074",
+      "value": 55,
+      "why": "Size variation breaks the uniform radial shell and gives the plume the irregular clumped silhouette expected of an explosion."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0070",
+      "value": [
+        0.32,
+        0.32,
+        0.32,
+        1
+      ],
+      "why": "A medium gray base creates visible smoke tonal character; the current solid white reads as sparks or an overexposed firework."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

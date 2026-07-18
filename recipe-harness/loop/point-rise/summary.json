@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Point Rise\" (Basics) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 5,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render has the correct basic ingredients for a Point Rise preset: a white particle point on black that grows into a small rising particle cluster. Motion from t1 to t4 is upward, but it is very subtle, and the result reads more like a compact, roughly radial puff than a clearly directional rising point stream. The low opacity and 2 px particle size also leave the early frame nearly invisible."
+    },
+    {
+      "iter": 2,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The render keeps the intended white-on-black point-particle look, but it still reads as a compact expanding puff rather than the vendor preset's clear rising point stream. From t1 to t4 the bright core remains nearly fixed and dominates the image, while the surrounding particles spread in multiple directions. The 20% opacity also makes the individual upward-moving particles too faint to define a readable ascent."
+    },
+    {
+      "iter": 3,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The white-on-black particle treatment is appropriate, but the result still does not read as a Point Rise. At t4 it forms a dense, nearly stationary bright core with a small omnidirectional puff around it; compared with t1 there is no clearly legible upward stream. The cluster also appears slightly lower rather than rising. The emission needs to be aimed into screen-up motion rather than along depth, and the excessive core density should be reduced so separate ascending points remain visible."
+    },
+    {
+      "iter": 4,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render now clearly reads as a directional Point Rise: the t4 frame forms a tapered stream extending upward from a bright point source, a substantial improvement over the earlier radial puff. The white particles on black also match the preset’s basic treatment. However, the rising particles remain quite dim and the emission point is still an overly bright, dense knot, so the stream lacks the crisp, individually readable point detail expected from the thumbnail."
+    },
+    {
+      "iter": 5,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "The motion now convincingly reads as a Point Rise: between t1 and t4, a narrow white source emits a clearly upward, tapered stream on black. The overall silhouette and directional ascent match the preset intent well. However, the t4 particles are still somewhat gray/soft and the base remains a dense bright knot, so the individual points are less crisp and distinct than the thumbnail-like preset treatment."
+    }
+  ]
+}

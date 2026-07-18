@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Rocket Fire\" (Smoke and Fire) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The render has a warm fire palette on black and visibly evolves from frame 1 to frame 4, but it reads as a centered radial explosion: a blown-out white circular core expands while small orange/yellow dots scatter in every direction. It does not resemble a directional Rocket Fire effect, and the large opaque core obscures the flame texture rather than showing a shaped rocket flame or trailing fire."
+    },
+    {
+      "iter": 2,
+      "score": 2,
+      "verdict": "fail",
+      "critique": "The fire-colored sprite texture and black background are appropriate, and the particle count increases between frames. However, both frames still read as a symmetric radial burst centered in the comp: particles and large flame chunks spread in all directions, with no coherent rocket travel axis or attached tapered fire trail. By frame 4 the very large isolated sprites near the edges make the effect feel like an explosion/debris field rather than the compact directional Rocket Fire preset."
+    },
+    {
+      "iter": 3,
+      "score": 1,
+      "verdict": "fail",
+      "critique": "The palette and black background remain fire-appropriate, but the motion from frame 1 to frame 4 is still an almost perfectly symmetric expanding burst. Frame 4 is especially explosion-like: flame sprites occupy a broad circular field around the bright center, rather than forming a compact, tapered plume behind a traveling rocket direction. The isolated large flame chunks further read as debris, not a coherent fire trail."
+    },
+    {
+      "iter": 4,
+      "score": 1,
+      "verdict": "fail",
+      "critique": "The black background and yellow-to-orange/red fire coloring are appropriate, but both frames remain a compact symmetric particle burst. Frame 4 expands evenly in all directions from a fixed bright center, reading as sparks from an explosion rather than a rocket moving on a single axis with a dense tapered flame trail. The particles are also mostly tiny round dots, with no substantial connected fire plume."
+    },
+    {
+      "iter": 5,
+      "score": 1,
+      "verdict": "fail",
+      "critique": "The fire sprite palette on black is appropriate, but the animation is still a centered omnidirectional explosion. From frame 1 to frame 4, particles radiate evenly outward and the large flame sprites become widely scattered debris. There is no single travel axis, no visible rocket head progression, and no dense tapered flame trail; it does not match a Rocket Fire thumbnail."
+    }
+  ]
+}

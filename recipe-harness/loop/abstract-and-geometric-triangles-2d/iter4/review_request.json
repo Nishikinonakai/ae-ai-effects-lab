@@ -1,0 +1,419 @@
+{
+  "intent": "vendor preset \"Triangles 2D\" (Abstract and Geometric) — validate against its thumbnail",
+  "pass_criteria": [],
+  "iteration": 4,
+  "max_iters": 5,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0577",
+            1,
+            "FXid_Gen1EmitterSizeOption (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0782",
+            2,
+            "FXid_Gen1EmitterType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0703",
+            6,
+            "FXid_PType (alias+enumOffset) [Designer 6 -> Sprite + connected texture]"
+          ],
+          [
+            "tc Particular-0014",
+            0,
+            "FXid_Gen1EmitterSizeX (alias)"
+          ],
+          [
+            "tc Particular-0015",
+            0,
+            "FXid_Gen1EmitterSizeY (exact)"
+          ],
+          [
+            "tc Particular-0016",
+            0,
+            "FXid_Gen1EmitterSizeZ (exact)"
+          ],
+          [
+            "tc Particular-0146",
+            38,
+            "FXid_Gen1ParticlesPerSecF (alias)"
+          ],
+          [
+            "tc Particular-0221",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInX (alias)"
+          ],
+          [
+            "tc Particular-0222",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInY (alias)"
+          ],
+          [
+            "tc Particular-0223",
+            1,
+            "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+          ],
+          [
+            "tc Particular-0112",
+            0,
+            "FXid_Gen1AngleX (alias)"
+          ],
+          [
+            "tc Particular-0111",
+            0,
+            "FXid_Gen1AngleY (alias)"
+          ],
+          [
+            "tc Particular-0076",
+            0,
+            "FXid_Gen1AngleZ (alias)"
+          ],
+          [
+            "tc Particular-0010",
+            140,
+            "FXid_Gen1DirSpread (alias)"
+          ],
+          [
+            "tc Particular-0113",
+            1,
+            "FXid_Gen1EmitterDir (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0011",
+            180,
+            "FXid_Gen1Vel (alias)"
+          ],
+          [
+            "tc Particular-0013",
+            70,
+            "FXid_Gen1VelEmit (alias)"
+          ],
+          [
+            "tc Particular-0012",
+            20,
+            "FXid_Gen1VelSpread (alias)"
+          ],
+          [
+            "tc Particular-0283",
+            0.5,
+            "FXid_Gen1VelSpreadDistr (alias)"
+          ],
+          [
+            "tc Particular-0230",
+            100000,
+            "FXid_Options_RandomSeed (exact)"
+          ],
+          [
+            "tc Particular-0218",
+            1,
+            "FXid_Glow_TransferMode (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0217",
+            100,
+            "FXid_Options_Glow_Feather (exact)"
+          ],
+          [
+            "tc Particular-0216",
+            25,
+            "FXid_Options_Glow_Opacity (exact)"
+          ],
+          [
+            "tc Particular-0215",
+            300,
+            "FXid_Options_Glow_Size (exact)"
+          ],
+          [
+            "tc Particular-0029",
+            50,
+            "FXid_PFeather (alias)"
+          ],
+          [
+            "tc Particular-0002",
+            3,
+            "FXid_PLife (alias)"
+          ],
+          [
+            "tc Particular-0065",
+            25,
+            "FXid_PLifeRnd (alias)"
+          ],
+          [
+            "tc Particular-0314",
+            7,
+            "FXid_Streaklet_NoSpheres (alias)"
+          ],
+          [
+            "tc Particular-0313",
+            0,
+            "FXid_Streaklet_RandomSeed (exact)"
+          ],
+          [
+            "tc Particular-0315",
+            60,
+            "FXid_Streaklet_Spread (alias)"
+          ],
+          [
+            "tc Particular-0524",
+            1,
+            "FXid_PAspectRatio (alias)"
+          ],
+          [
+            "tc Particular-0726",
+            0,
+            "FXid_PRotAuto (alias)"
+          ],
+          [
+            "tc Particular-0136",
+            0,
+            "FXid_PRotate (alias)"
+          ],
+          [
+            "tc Particular-0137",
+            50,
+            "FXid_PRotateRnd (alias)"
+          ],
+          [
+            "tc Particular-0279",
+            0,
+            "FXid_PRotateRndSpeed (alias)"
+          ],
+          [
+            "tc Particular-0282",
+            0.5,
+            "FXid_PRotateRndSpeedDistr (alias)"
+          ],
+          [
+            "tc Particular-0138",
+            0,
+            "FXid_PRotateSpeed (alias)"
+          ],
+          [
+            "tc Particular-0277",
+            0,
+            "FXid_PRotateSpeedX (alias)"
+          ],
+          [
+            "tc Particular-0278",
+            0,
+            "FXid_PRotateSpeedY (alias)"
+          ],
+          [
+            "tc Particular-0275",
+            0,
+            "FXid_PRotateX (alias)"
+          ],
+          [
+            "tc Particular-0276",
+            0,
+            "FXid_PRotateY (alias)"
+          ],
+          [
+            "tc Particular-0027",
+            13,
+            "FXid_PSizeMax (alias)"
+          ],
+          [
+            "tc Particular-0074",
+            55,
+            "FXid_PSizeRnd (alias)"
+          ],
+          [
+            "tc Particular-0033",
+            100,
+            "FXid_POpacMax (alias)"
+          ],
+          [
+            "tc Particular-0075",
+            0,
+            "FXid_POpacRnd (alias)"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              0.43374999705702066,
+              0.6524999886751175,
+              0.7099999934434891,
+              1
+            ],
+            "FXid_PColor (alias) [flattened col.life gradient]"
+          ],
+          [
+            "tc Particular-0071",
+            0,
+            "FXid_PColorRnd (alias)"
+          ],
+          [
+            "tc Particular-0088",
+            1,
+            "FXid_PSetColor (alias+enumOffset) [forced At Birth: gradient unscriptable]"
+          ],
+          [
+            "tc Particular-0210",
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            "FXid_Options_SmokeletShadow_Color (alias)"
+          ],
+          [
+            "tc Particular-0211",
+            100,
+            "FXid_Options_SmokeletShadow_ColorStrength (alias)"
+          ],
+          [
+            "tc Particular-0212",
+            20,
+            "FXid_Options_SmokeletShadow_Opacity (alias)"
+          ],
+          [
+            "tc Particular-0284",
+            0,
+            "FXid_PShade (alias)"
+          ],
+          [
+            "tc Particular-0304",
+            710,
+            "FXid_PShadeFalloffAdjust (alias)"
+          ],
+          [
+            "tc Particular-0017",
+            0,
+            "FXid_Gravity (exact)"
+          ],
+          [
+            "tc Particular-0018",
+            0,
+            "FXid_AirResist (alias)"
+          ],
+          [
+            "tc Particular-0042",
+            0,
+            "FXid_FAffectPos (alias)"
+          ],
+          [
+            "tc Particular-0041",
+            0,
+            "FXid_FAffectSize (alias)"
+          ],
+          [
+            "tc Particular-0045",
+            0.5,
+            "FXid_FAffectTime (alias)"
+          ],
+          [
+            "tc Particular-0052",
+            50,
+            "FXid_FEvolution (alias)"
+          ],
+          [
+            "tc Particular-0046",
+            10,
+            "FXid_FScale (alias)"
+          ],
+          [
+            "tc Particular-0019",
+            0,
+            "FXid_SpinAmp (alias)"
+          ],
+          [
+            "tc Particular-0020",
+            1,
+            "FXid_SpinFreq (alias)"
+          ],
+          [
+            "tc Particular-0021",
+            1,
+            "FXid_SpinTime (alias)"
+          ],
+          [
+            "tc Particular-0749",
+            0,
+            "FXid_WindX (exact)"
+          ],
+          [
+            "tc Particular-0750",
+            0,
+            "FXid_WindY (exact)"
+          ],
+          [
+            "tc Particular-0751",
+            0,
+            "FXid_WindZ (exact)"
+          ],
+          [
+            "tc Particular-0066",
+            {
+              "__layer": "SpriteTex"
+            },
+            "Sprite texture layer (mined PLayer)"
+          ],
+          [
+            "tc Particular-0700",
+            100,
+            "Colorize (Designer type variant, 0-100)"
+          ],
+          [
+            "tc Particular-0067",
+            2,
+            "FXid_PLayerTime (+enumOffset)"
+          ],
+          [
+            "tc Particular-0694",
+            0,
+            "FXid_PUnmult (alias) [after sprite connect]"
+          ]
+        ],
+        "expressions": [
+          [
+            "tc Particular-0070",
+            "linear(time,0,4,[0.49,0.81,0.71,1],[0.34,0.93,0.19,1])",
+            "birth-color sweep across gradient ends (two-tone)"
+          ]
+        ]
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/abstract-and-geometric-triangles-2d/iter4/abstract-and-geometric-triangles-2d_i4_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/abstract-and-geometric-triangles-2d/iter4/abstract-and-geometric-triangles-2d_i4_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The render has the intended flat triangular sprite geometry and a clean black background, with a subtle mint-to-green color shift between t1 and t4. However, nearly all particles remain collapsed into one small, dense, center-right rosette. There is no readable field of individually spaced triangles, and motion over time only changes the compact overlap rather than producing the expansive geometric particle movement expected from the Triangles 2D preset thumbnail."
+    },
+    {
+      "iter": 2,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The t4 frame now has the essential preset look: crisp flat mint/green triangular sprites on black, with a clearly expanding, screen-spanning geometric particle field. Motion is substantially improved from t1’s compact cluster to t4’s wide dispersion. However, the t4 field is still overly concentrated and overlapped through the center, while many peripheral triangles are disproportionately large. This reads more like a burst from one point than the cleaner, individually legible scattered-triangle composition suggested by the Triangles 2D thumbnail."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render now strongly matches the core Triangles 2D aesthetic: flat mint-to-lime triangular sprites, sharp edges, black background, and clear outward motion from the compact t1 cluster to a broad t4 field. At t4, however, the composition remains too burst-like: the center is still congested with overlapping shapes, while several edge triangles are much larger than the rest. The thumbnail-like preset treatment should read as a cleaner field of more consistently scaled, individually legible triangles."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

@@ -1,0 +1,41 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The render is visible again and its orange initial burst at 0.01s followed by a small spark remnant at 0.08s is a meaningful improvement over the black result. However, it still reads as a soft fire-particle puff rather than the preset's explosive muzzle-flash silhouette: the first frame has a rounded, heavily blurred orange blob with no crisp hot core or pointed flame tongues. The 0.08s frame is a dense centered spark fountain, indicating that emission is still occurring through most of the sampled interval instead of being a single instantaneous flash that expands and dissipates.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.02 ? 40000 : 0",
+      "why": "Make the source a genuinely instantaneous firing burst; the current 0.1-second emission keeps replenishing the 0.08s spark cluster."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 0.06,
+      "why": "Let particles from the short initial burst remain visible long enough to expand into a brief trailing plume rather than requiring continuous emission."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 12,
+      "why": "Greatly reduce the 100% feather that is turning the initial flash into a uniformly soft round blob; sharper particles can define flame tongues and a brighter explosive edge."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0070",
+      "value": [
+        1,
+        0.72,
+        0.16,
+        1
+      ],
+      "why": "Shift the base from deep orange toward a hotter yellow-orange so the dense initial burst reads closer to a hot muzzle-flash core."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

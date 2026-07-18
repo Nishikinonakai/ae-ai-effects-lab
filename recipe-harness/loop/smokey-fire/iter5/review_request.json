@@ -1,0 +1,414 @@
+{
+  "intent": "vendor preset \"Smokey Fire\" (Smoke and Fire) — validate against its thumbnail",
+  "pass_criteria": [],
+  "iteration": 5,
+  "max_iters": 5,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0577",
+            1,
+            "FXid_Gen1EmitterSizeOption (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0782",
+            1,
+            "FXid_Gen1EmitterType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0703",
+            6,
+            "FXid_PType (alias+enumOffset) [Designer 5 -> Sprite + connected texture]"
+          ],
+          [
+            "tc Particular-0014",
+            0,
+            "FXid_Gen1EmitterSizeX (alias)"
+          ],
+          [
+            "tc Particular-0015",
+            0,
+            "FXid_Gen1EmitterSizeY (exact)"
+          ],
+          [
+            "tc Particular-0016",
+            0,
+            "FXid_Gen1EmitterSizeZ (exact)"
+          ],
+          [
+            "tc Particular-0146",
+            420,
+            "FXid_Gen1ParticlesPerSecF (alias)"
+          ],
+          [
+            "tc Particular-0221",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInX (alias)"
+          ],
+          [
+            "tc Particular-0222",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInY (alias)"
+          ],
+          [
+            "tc Particular-0223",
+            1,
+            "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+          ],
+          [
+            "tc Particular-0112",
+            0,
+            "FXid_Gen1AngleX (alias)"
+          ],
+          [
+            "tc Particular-0111",
+            0,
+            "FXid_Gen1AngleY (alias)"
+          ],
+          [
+            "tc Particular-0076",
+            0,
+            "FXid_Gen1AngleZ (alias)"
+          ],
+          [
+            "tc Particular-0010",
+            2,
+            "FXid_Gen1DirSpread (alias)"
+          ],
+          [
+            "tc Particular-0113",
+            1,
+            "FXid_Gen1EmitterDir (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0011",
+            2.5,
+            "FXid_Gen1Vel (alias)"
+          ],
+          [
+            "tc Particular-0013",
+            0,
+            "FXid_Gen1VelEmit (alias)"
+          ],
+          [
+            "tc Particular-0012",
+            6,
+            "FXid_Gen1VelSpread (alias)"
+          ],
+          [
+            "tc Particular-0283",
+            0.5,
+            "FXid_Gen1VelSpreadDistr (alias)"
+          ],
+          [
+            "tc Particular-0230",
+            100000,
+            "FXid_Options_RandomSeed (exact)"
+          ],
+          [
+            "tc Particular-0218",
+            1,
+            "FXid_Glow_TransferMode (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0217",
+            100,
+            "FXid_Options_Glow_Feather (exact)"
+          ],
+          [
+            "tc Particular-0216",
+            25,
+            "FXid_Options_Glow_Opacity (exact)"
+          ],
+          [
+            "tc Particular-0215",
+            300,
+            "FXid_Options_Glow_Size (exact)"
+          ],
+          [
+            "tc Particular-0029",
+            50,
+            "FXid_PFeather (alias)"
+          ],
+          [
+            "tc Particular-0002",
+            3,
+            "FXid_PLife (alias)"
+          ],
+          [
+            "tc Particular-0065",
+            88,
+            "FXid_PLifeRnd (alias)"
+          ],
+          [
+            "tc Particular-0314",
+            7,
+            "FXid_Streaklet_NoSpheres (alias)"
+          ],
+          [
+            "tc Particular-0313",
+            0,
+            "FXid_Streaklet_RandomSeed (exact)"
+          ],
+          [
+            "tc Particular-0315",
+            60,
+            "FXid_Streaklet_Spread (alias)"
+          ],
+          [
+            "tc Particular-0524",
+            1,
+            "FXid_PAspectRatio (alias)"
+          ],
+          [
+            "tc Particular-0726",
+            0,
+            "FXid_PRotAuto (alias)"
+          ],
+          [
+            "tc Particular-0136",
+            0,
+            "FXid_PRotate (alias)"
+          ],
+          [
+            "tc Particular-0137",
+            50,
+            "FXid_PRotateRnd (alias)"
+          ],
+          [
+            "tc Particular-0279",
+            0,
+            "FXid_PRotateRndSpeed (alias)"
+          ],
+          [
+            "tc Particular-0282",
+            0.5,
+            "FXid_PRotateRndSpeedDistr (alias)"
+          ],
+          [
+            "tc Particular-0138",
+            0,
+            "FXid_PRotateSpeed (alias)"
+          ],
+          [
+            "tc Particular-0277",
+            0,
+            "FXid_PRotateSpeedX (alias)"
+          ],
+          [
+            "tc Particular-0278",
+            0,
+            "FXid_PRotateSpeedY (alias)"
+          ],
+          [
+            "tc Particular-0275",
+            0,
+            "FXid_PRotateX (alias)"
+          ],
+          [
+            "tc Particular-0276",
+            0,
+            "FXid_PRotateY (alias)"
+          ],
+          [
+            "tc Particular-0027",
+            210,
+            "FXid_PSizeMax (alias)"
+          ],
+          [
+            "tc Particular-0074",
+            25,
+            "FXid_PSizeRnd (alias)"
+          ],
+          [
+            "tc Particular-0033",
+            100,
+            "FXid_POpacMax (alias)"
+          ],
+          [
+            "tc Particular-0075",
+            0,
+            "FXid_POpacRnd (alias)"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              1,
+              1,
+              1,
+              1
+            ],
+            "FXid_PColor (alias)"
+          ],
+          [
+            "tc Particular-0071",
+            0,
+            "FXid_PColorRnd (alias)"
+          ],
+          [
+            "tc Particular-0088",
+            2,
+            "FXid_PSetColor (alias+enumOffset) [Over Life: fire master gradient]"
+          ],
+          [
+            "tc Particular-0210",
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            "FXid_Options_SmokeletShadow_Color (alias)"
+          ],
+          [
+            "tc Particular-0211",
+            100,
+            "FXid_Options_SmokeletShadow_ColorStrength (alias)"
+          ],
+          [
+            "tc Particular-0212",
+            5,
+            "FXid_Options_SmokeletShadow_Opacity (alias)"
+          ],
+          [
+            "tc Particular-0284",
+            0,
+            "FXid_PShade (alias)"
+          ],
+          [
+            "tc Particular-0304",
+            250,
+            "FXid_PShadeFalloffAdjust (alias)"
+          ],
+          [
+            "tc Particular-0017",
+            -2.5,
+            "FXid_Gravity (exact)"
+          ],
+          [
+            "tc Particular-0018",
+            0,
+            "FXid_AirResist (alias)"
+          ],
+          [
+            "tc Particular-0042",
+            90,
+            "FXid_FAffectPos (alias)"
+          ],
+          [
+            "tc Particular-0041",
+            0,
+            "FXid_FAffectSize (alias)"
+          ],
+          [
+            "tc Particular-0045",
+            1,
+            "FXid_FAffectTime (alias)"
+          ],
+          [
+            "tc Particular-0052",
+            5,
+            "FXid_FEvolution (alias)"
+          ],
+          [
+            "tc Particular-0046",
+            4,
+            "FXid_FScale (alias)"
+          ],
+          [
+            "tc Particular-0019",
+            0,
+            "FXid_SpinAmp (alias)"
+          ],
+          [
+            "tc Particular-0020",
+            1,
+            "FXid_SpinFreq (alias)"
+          ],
+          [
+            "tc Particular-0021",
+            1,
+            "FXid_SpinTime (alias)"
+          ],
+          [
+            "tc Particular-0749",
+            0,
+            "FXid_WindX (exact)"
+          ],
+          [
+            "tc Particular-0751",
+            0,
+            "FXid_WindZ (exact)"
+          ],
+          [
+            "tc Particular-0066",
+            {
+              "__layer": "SpriteTex"
+            },
+            "Sprite texture layer (mined PLayer)"
+          ],
+          [
+            "tc Particular-0067",
+            3,
+            "FXid_PLayerTime (+enumOffset)"
+          ],
+          [
+            "tc Particular-0694",
+            1,
+            "FXid_PUnmult (alias) [after sprite connect]"
+          ],
+          [
+            "tc Particular-0069",
+            1,
+            "Blend Mode: Add (curated — fire-family luma sprite)"
+          ]
+        ],
+        "expressions": []
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/smokey-fire/iter5/smokey-fire_i5_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/smokey-fire/iter5/smokey-fire_i5_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The render has a plausible black-background fire/smoke palette: gray textured smoke surrounds the source and orange ember points expand noticeably from t1 to t4. However, the dominant form is a severely clipped, flat white circular core rather than readable orange/yellow flame. The smoke is a small, symmetric halo and the embers form a fairly uniform radial burst, making it read as a white explosion or energy orb more than the Smokey Fire preset thumbnail's flame-led, smoky character. Motion does expand between frames, but it grows the blown-out central disk rather than developing distinct fire and smoke structure."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The white clipped core is gone, and the render now has a believable orange ember palette with dark gray smoke around the source. Motion from t1 to t4 is clearly visible. However, it still reads primarily as a compact, symmetric circular smoke ring ejecting a broad radial field of discrete sparks. It lacks the dense, irregular flame-led body and upward/rising smoky-fire structure expected of the Smokey Fire thumbnail; the flame remains a thin brown-orange ring around a dark center rather than a luminous fire mass."
+    },
+    {
+      "iter": 3,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The orange ember and charcoal-smoke palette is appropriate, and the t1-to-t4 expansion clearly shows active motion. However, the effect remains an explosion-like radial burst: a small brown-orange circular ring sits in the center while sparks disperse evenly in all directions and the smoke becomes a diffuse, roughly symmetric cloud. It still lacks a dense, luminous yellow/orange flame body and the vertically rising, irregular smoky structure associated with the Smokey Fire thumbnail."
+    },
+    {
+      "iter": 4,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The palette is closer to Smokey Fire now: orange-gold ember detail sits against charcoal smoke on black, and the t1-to-t4 change clearly shows active particle motion. But the structure remains a centered, nearly circular blast. At t4, sparks form a large evenly radial halo while the smoke expands symmetrically around a small brown-orange ring with a dark center. It does not yet present as a dense luminous flame body feeding an irregular, vertically rising smoke plume like the preset thumbnail."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

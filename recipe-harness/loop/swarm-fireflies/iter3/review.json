@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The render now reads clearly as a warm-orange firefly swarm on black, with a more irregular silhouette and visible change from t1 to t4. It is still concentrated as a dense central particle burst, especially at t4 where the center becomes a bright knot. The particles also appear to accumulate rapidly rather than linger as a spacious, loosely distributed swarm of individually wandering lights.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 55,
+      "why": "Increasing particle velocity carries lights farther from the center, opening the swarm into a broader, less burst-like distribution."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0012",
+      "value": 100,
+      "why": "A wider velocity spread breaks up the concentrated central flow and gives individual fireflies more varied outward wandering paths."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 3.6,
+      "why": "Longer particle life lets dispersed lights remain visible long enough to read as a lingering swarm rather than a rapidly refreshing emission burst."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 85,
+      "why": "Reducing the emission rate prevents the t4 frame from building into an overly dense bright core while the longer life preserves swarm presence."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

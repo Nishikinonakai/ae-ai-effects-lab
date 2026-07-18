@@ -1,0 +1,7 @@
+{
+  "verdict": "pass",
+  "score": 9,
+  "critique": "The render matches a Basic Blue Particles preset look: a clean black field with a centered, vivid-blue particle burst. Frame 1 has a dense blue core with fine scattered dots, and by frame 4 the same emission has visibly expanded into a larger, diffuse cloud while retaining a bright center. Motion reads as a natural outward particle spread rather than a static cluster.",
+  "suggestions": [],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

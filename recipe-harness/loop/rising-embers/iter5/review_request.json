@@ -1,0 +1,222 @@
+{
+  "intent": "vendor preset \"Rising Embers\" (Smoke and Fire) — validate against its thumbnail",
+  "pass_criteria": [],
+  "iteration": 5,
+  "max_iters": 5,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0782",
+            2,
+            "FXid_Gen1EmitterType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0703",
+            2,
+            "FXid_PType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0014",
+            125,
+            "FXid_Gen1EmitterSizeX (alias)"
+          ],
+          [
+            "tc Particular-0015",
+            100,
+            "FXid_Gen1EmitterSizeY (exact)"
+          ],
+          [
+            "tc Particular-0016",
+            100,
+            "FXid_Gen1EmitterSizeZ (exact)"
+          ],
+          [
+            "tc Particular-0221",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInX (alias)"
+          ],
+          [
+            "tc Particular-0222",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInY (alias)"
+          ],
+          [
+            "tc Particular-0223",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+          ],
+          [
+            "tc Particular-0112",
+            90,
+            "FXid_Gen1AngleX (alias)"
+          ],
+          [
+            "tc Particular-0111",
+            0,
+            "FXid_Gen1AngleY (alias)"
+          ],
+          [
+            "tc Particular-0076",
+            0,
+            "FXid_Gen1AngleZ (alias)"
+          ],
+          [
+            "tc Particular-0010",
+            28,
+            "FXid_Gen1DirSpread (alias)"
+          ],
+          [
+            "tc Particular-0113",
+            2,
+            "FXid_Gen1EmitterDir (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0011",
+            300,
+            "FXid_Gen1Vel (alias)"
+          ],
+          [
+            "tc Particular-0013",
+            0,
+            "FXid_Gen1VelEmit (alias)"
+          ],
+          [
+            "tc Particular-0012",
+            50,
+            "FXid_Gen1VelSpread (alias)"
+          ],
+          [
+            "tc Particular-0524",
+            1,
+            "FXid_PAspectRatio (alias)"
+          ],
+          [
+            "tc Particular-0029",
+            12,
+            "FXid_PFeather (alias)"
+          ],
+          [
+            "tc Particular-0002",
+            3,
+            "FXid_PLife (alias)"
+          ],
+          [
+            "tc Particular-0065",
+            25,
+            "FXid_PLifeRnd (alias)"
+          ],
+          [
+            "tc Particular-0027",
+            9,
+            "FXid_PSizeMax (alias)"
+          ],
+          [
+            "tc Particular-0074",
+            50,
+            "FXid_PSizeRnd (alias)"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              1,
+              0.396078431372549,
+              0.06274509803921569,
+              1
+            ],
+            "FXid_PColor (alias)"
+          ],
+          [
+            "tc Particular-0071",
+            10,
+            "FXid_PColorRnd (alias)"
+          ],
+          [
+            "tc Particular-0088",
+            1,
+            "FXid_PSetColor (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0033",
+            100,
+            "FXid_POpacMax (alias)"
+          ],
+          [
+            "tc Particular-0075",
+            0,
+            "FXid_POpacRnd (alias)"
+          ],
+          [
+            "tc Particular-0042",
+            90,
+            "FXid_FAffectPos (alias)"
+          ],
+          [
+            "tc Particular-0041",
+            0,
+            "FXid_FAffectSize (alias)"
+          ],
+          [
+            "tc Particular-0045",
+            0.5,
+            "FXid_FAffectTime (alias)"
+          ],
+          [
+            "tc Particular-0052",
+            50,
+            "FXid_FEvolution (alias)"
+          ],
+          [
+            "tc Particular-0046",
+            10,
+            "FXid_FScale (alias)"
+          ]
+        ],
+        "expressions": []
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/rising-embers/iter5/rising-embers_i5_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/rising-embers/iter5/rising-embers_i5_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render has the essential upward motion and orange-on-black ember coloration: between t1 and t4 the particle field clearly rises. However, it reads as a thin, sparse vertical string of tiny dots rather than the fuller, turbulent rising ember plume suggested by a Smoke and Fire \"Rising Embers\" preset thumbnail. The emission is too narrowly constrained, particles are too small, and there is little visible fiery glow or variation in the plume silhouette."
+    },
+    {
+      "iter": 2,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render now has a denser orange ember field and clearly rises between t1 and t4, with a more convincing spread than the prior thin string. It still reads primarily as evenly soft glowing dots in a narrow, segmented vertical column rather than a cohesive turbulent ember plume. The particle scale remains small, and the motion/silhouette needs more lateral turbulence and a broader fiery core to better match a Rising Embers Smoke and Fire preset thumbnail."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render now has a substantially fuller orange-on-black rising ember field, and the t1-to-t4 change clearly communicates upward movement. The broadening at the upper portion is more plume-like than prior iterations. However, it still reads as a collection of uniformly circular, soft orange bokeh dots rather than a turbulent Smoke-and-Fire ember plume: the center lacks a concentrated fiery source/core, particle paths remain fairly orderly, and the very high feathering makes the embers overly diffuse."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The orange-on-black palette and strong upward displacement from t1 to t4 communicate rising embers, with a denser central source than earlier attempts. However, the t4 field expands into a very broad, almost explosive spray that reaches/crops at the top edge rather than retaining a tapered vertical plume. The particles remain uniformly round glowing dots; the 30 feather makes their edges too bokeh-like and prevents a sharper, hotter ember appearance. The intended Smoke-and-Fire look needs a more concentrated lower core and a more coherent upward column with only moderate lateral drift."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

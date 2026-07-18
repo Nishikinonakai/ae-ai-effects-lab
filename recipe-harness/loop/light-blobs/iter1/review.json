@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The render has a plausible black-background, pink-magenta glowing-light treatment, and the soft blurred blobs read clearly. However, it currently reads more like a compact radial firework or exploding flower than the vendor's soft 'Light Blobs' look: the blob cluster is very regular and square-like, while numerous sharp white radial streaks dominate the center. From t1 to t4 it expands outward abruptly, reinforcing an explosion rather than gently drifting luminous blobs.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-2194",
+      "value": 0,
+      "why": "Disable the S2 auxiliary particle emission that is producing the distracting sharp white radial spark streaks; the intended image should be led by soft glowing blobs."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 20,
+      "why": "Reduce main-particle velocity so the blobs evolve with a calmer, less explosive outward motion between frames."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 55,
+      "why": "Widen directional spread to break the strongly radial, structured burst and create a more naturally dispersed blob field."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

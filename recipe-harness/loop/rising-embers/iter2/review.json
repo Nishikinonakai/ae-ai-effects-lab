@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render now has a denser orange ember field and clearly rises between t1 and t4, with a more convincing spread than the prior thin string. It still reads primarily as evenly soft glowing dots in a narrow, segmented vertical column rather than a cohesive turbulent ember plume. The particle scale remains small, and the motion/silhouette needs more lateral turbulence and a broader fiery core to better match a Rising Embers Smoke and Fire preset thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 9,
+      "why": "Increase the maximum particle size so the plume contains a more visible mix of bright, substantial embers instead of predominantly tiny dots."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 30,
+      "why": "Broaden the directional spread to break up the narrow central column and create a fuller rising plume silhouette."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0042",
+      "value": 90,
+      "why": "Increase turbulence influence on particle position so the rising embers form a more organic, swirling fire-like path rather than separated clusters."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

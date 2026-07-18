@@ -1,0 +1,220 @@
+{
+  "status": "done",
+  "name": "magical_i2",
+  "params": [
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterType (alias+enumOffset)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PType (alias+enumOffset)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeX (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeY (exact)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterSizeZ (exact)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInX (alias)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInY (alias)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_GridEmitter_ParticlesInZ (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleX (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleY (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1AngleZ (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1DirSpread (alias)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1EmitterDir (alias+enumOffset)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1Vel (alias)",
+      "ok": true,
+      "v": "22"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1VelEmit (alias)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Gen1VelSpread (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PAspectRatio (alias)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PFeather (alias)",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PLife (alias)",
+      "ok": true,
+      "v": "0.44999998807907"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PLifeRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSizeMax (alias)",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSizeRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PColor (alias)",
+      "ok": true,
+      "v": "0.72549021244049,0.23921"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PColorRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_PSetColor (alias+enumOffset)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_POpacMax (alias)",
+      "ok": true,
+      "v": "25"
+    },
+    {
+      "p": "[1:tc Particular] FXid_POpacRnd (alias)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] aux -> S2 Emitter Type: Emit from Parent (v18)",
+      "ok": true,
+      "v": "8"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Control_InheritVelocity (aux->S2)",
+      "ok": true,
+      "v": "0.00999999977648"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Gravity (aux->S2)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Randomness_Life (aux->S2)",
+      "ok": true,
+      "v": "40"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Randomness_Opacity (aux->S2)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_Randomness_Size (aux->S2)",
+      "ok": true,
+      "v": "22.3999996185303"
+    },
+    {
+      "p": "[1:tc Particular] FXid_Options_Aux_TransferMode (aux->S2)+enumOffset",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_PLife (aux->S2)",
+      "ok": true,
+      "v": "0.60000610351562"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_POpacity (aux->S2)",
+      "ok": true,
+      "v": "90"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_PSize (aux->S2)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_PType (aux->S2)+enumOffset",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_PVel (aux->S2)",
+      "ok": true,
+      "v": "64"
+    },
+    {
+      "p": "[1:tc Particular] FXid_SE_ParticlesPerSecF (aux->S2)",
+      "ok": true,
+      "v": "28"
+    },
+    {
+      "p": "[1:tc Particular] Set Color S2: At Birth",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Color S2 (classic aux default white)",
+      "ok": true,
+      "v": "1,1,1,1"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/magical/iter2/magical_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/magical/iter2/magical_i2_t4.png"
+  ]
+}

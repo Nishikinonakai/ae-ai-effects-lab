@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Brownian Motion\" (Fluid) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 3,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The render has the correct black field and white particle treatment, and frame 4 shows new particles appearing across the frame. However, it is far too sparse to read as the Brownian Motion fluid preset thumbnail: frame 1 is nearly empty and frame 4 remains isolated, widely separated specks rather than a dense, continuously active cloud of fine particles. The motion over the sampled frames reads primarily as rapid emission/population change, not an established field of fluid-driven Brownian agitation."
+    },
+    {
+      "iter": 2,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The black background and white particle color are appropriate, but the render remains dramatically under-populated relative to a Brownian Motion fluid thumbnail. Frame 1 has only a handful of large isolated dots, and frame 4 has only a few dozen scattered blobs. This reads as a low-rate emitter accumulating particles rather than a dense field of fine particles already undergoing continuous fluid agitation. The visible particle-size setting also produces chunky specks instead of the preset's fine particulate texture."
+    },
+    {
+      "iter": 3,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The black field and white particulate treatment are on target, and density is now much closer to the Brownian Motion preset look. However, the t1-to-t4 comparison still shows a strong startup/accumulation ramp: t1 is a relatively open field while t4 is substantially more populated, so the animation reads partly as emission buildup rather than an already-established, continuously agitated fluid field. Several particles also remain visibly chunky compared with the predominantly fine dust texture expected from the preset thumbnail."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The black field, white particles, and overall fine-grain distribution are substantially closer to the intended Brownian Motion fluid thumbnail. However, the t1-to-t4 change still reads chiefly as a pronounced particle accumulation: t4 is much denser than t1 rather than appearing as the same already-established field undergoing agitation. A visible minority of particles remain noticeably chunky, which disrupts the predominantly fine dust texture."
+    },
+    {
+      "iter": 5,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The black field and very fine white dust treatment now match the intended palette, and the two sampled frames have broadly similar population, avoiding the pronounced t1-to-t4 buildup seen previously. However, the field is still much too sparse for the Brownian Motion fluid preset thumbnail: it reads as isolated star-like specks across mostly empty black rather than a dense, continuously agitated particulate cloud. The existing front-load expression appears to be applied to a non-driving/alias particle-rate control, since neither sampled frame has enough established particles."
+    }
+  ]
+}

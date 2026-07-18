@@ -1,0 +1,23 @@
+{
+  "verdict": "pass",
+  "score": 8,
+  "critique": "The frame-to-frame motion now reads clearly: the t4 field expands substantially beyond t1 into a pink-and-white magical scatter on black, with a convincing mix of glowing pink motes and fine white spark detail. It is much closer to an airy Light and Magic bloom than the prior compact puffs. However, the motion still originates from and remains weighted toward a bright central knot, while the larger pink particles read as discrete radial burst beads. The intended preset feel would be broader and more floating/diffuse, with less central concentration and a wider magical drift.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 360,
+      "why": "Increase primary-particle travel so the bloom opens farther from the center over the sampled frames, reducing the compact explosion impression."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 11,
+      "why": "Make the large pink motes less bead-like and less dominant at the core, allowing the white magical spark structure to carry the airy bloom."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra",
+  "_normalized_pass_at": 8
+}

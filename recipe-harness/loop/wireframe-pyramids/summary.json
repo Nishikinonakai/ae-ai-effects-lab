@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Wireframe Pyramids\" (Abstract and Geometric) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 5,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The render has the basic black-background, cyan wireframe geometry look, and the change from t1 to t4 shows outward particle motion. However, the result is an extremely small, dense knot of overlapping pyramids near the center rather than a readable abstract field of prominent wireframe pyramids. Individual pyramid silhouettes are largely lost, and the composition uses very little of the frame."
+    },
+    {
+      "iter": 2,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The cyan-on-black wireframe treatment and expanding motion are on target, and the later frame has a more substantial scale than the previous iteration. However, both frames still read as a dense central ball of intersecting outlines rather than a deliberate field of individually legible wireframe pyramids. The high simultaneous particle count obscures pyramid silhouettes, especially at t4, where overlap becomes heavier instead of creating a spacious geometric spread."
+    },
+    {
+      "iter": 3,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render correctly uses luminous cyan wireframe pyramid geometry on pure black, and the t1-to-t4 change shows outward growth. The pyramids are larger than prior iterations, but both frames still read as a heavily intersecting central cluster rather than a spacious abstract field of distinct, readable pyramid silhouettes. At t4 especially, increased size is achieved mostly through overlap, with too few shapes separating into clear positions across the composition."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The cyan-on-black wireframe treatment is clean and the pyramid forms are substantially more legible than in prior renders. Motion from t1 to t4 does expand outward. However, the shapes still travel and accumulate as one central overlapping group rather than becoming a spacious abstract field of individually readable pyramids across the frame. The composition remains undersized with excessive empty black space, while the t4 silhouettes intersect enough to reduce the intended geometric clarity."
+    },
+    {
+      "iter": 5,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The clean cyan-on-black wireframe style and recognizable pyramid geometry match the intended abstract geometric treatment well. Motion from t1 to t4 is outward, and individual forms are clearer than in prior iterations. However, the group remains concentrated in a small central region: at t4 several pyramids still converge through the same center and form a tangled cluster, while most of the frame stays unused. The intended result needs a wider field of separated, individually readable pyramids rather than a compact central burst."
+    }
+  ]
+}

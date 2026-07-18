@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The black field and white, softly feathered particle treatment are directionally appropriate, and t4 shows the particles distributing across the frame. However, it still reads as a sparse starfield rather than the preset's enveloping floating-dust field. t1 contains only about five visible particles and t4 only around twenty; the early-frame density remains far below the intended thumbnail look. Size variation is also too extreme: occasional large bright blobs stand out as stars instead of a predominantly fine, diffuse dust population.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0005",
+      "value": 9000,
+      "why": "Substantially increase births per frame so the first rendered frame and subsequent frames contain a visibly dense dust field rather than slowly accumulating sparse points."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 2.5,
+      "why": "Reduce the maximum particle size so isolated oversized bright blobs no longer dominate the field and the result reads as fine dust."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0074",
+      "value": 55,
+      "why": "Retain organic size variation while reducing the chance of conspicuous star-like particles relative to the dominant small dust grains."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 2,
+  "critique": "The render retains a bright orange/yellow fire palette, but it is still a compact explosion: t1 is an overexposed white-hot orb and by t4 it ejects a wide, evenly radial field of crisp ember dots. This is opposite the thumbnail intent of soft, layered smoke-and-fire haze with a coherent rising plume. There is almost no lingering volume, the fire core clips to white, and the t1-to-t4 motion disperses too rapidly rather than billowing upward.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 18,
+      "why": "Greatly reduce particle travel so emitted material remains as a dense lingering haze instead of expanding into a large spark burst by t4."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 6,
+      "why": "Narrow the directional cone to suppress the symmetric radial scatter and establish a unified plume."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0112",
+      "value": -90,
+      "why": "Rotate the directional emission upward so the slowed particles build a fire-and-smoke column rather than an outward blast."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 150,
+      "why": "Use larger sprite particles to create overlapping soft volume rather than individually legible ember circles."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0069",
+      "value": 1,
+      "why": "Replace additive accumulation with the less clipping blend mode so the central flame resolves into orange/red layers instead of a white saturated disk."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

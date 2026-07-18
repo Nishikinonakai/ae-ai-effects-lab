@@ -1,0 +1,26 @@
+{
+  "intent": "vendor preset \"Snowy Night 2\" (Nature) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 3,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render has a credible white-on-dark snowfall look, with varied small flake sizes and clear downward movement between t1 and t4. However, the snow is confined to a narrow, centered rectangular column rather than reading as an all-over snowy-night field. Density also ramps substantially from sparse at t1 to crowded at t4, making the effect feel like a simulation starting up instead of a stable preset state. The pure black background is harsher than a night-sky presentation."
+    },
+    {
+      "iter": 2,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The snowfall now fills the entire frame rather than the narrow central column seen previously, and it has a convincing mix of fine specks and larger softly blurred flakes. Downward movement is apparent between t1 and t4. However, the field still builds noticeably in density from t1 to t4 instead of maintaining a settled, continuous snowfall state. The background reads essentially pure black, which is harsher and flatter than a deep blue snowy-night backdrop."
+    },
+    {
+      "iter": 3,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "The render now reads as a settled, full-frame snowfall field: coverage is even across both frames, the mix of pinprick snow and occasional larger soft flakes is convincing, and the particle positions show gentle downward motion without the obvious startup density ramp seen earlier. The remaining mismatch is the backdrop: it still renders effectively black rather than the visibly deep blue night-sky tone expected from the Snowy Night 2 thumbnail, making the result flatter and harsher than the intended snowy-night atmosphere."
+    }
+  ]
+}

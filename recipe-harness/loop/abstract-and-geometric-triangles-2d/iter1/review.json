@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The render has the intended flat triangular sprite geometry and a clean black background, with a subtle mint-to-green color shift between t1 and t4. However, nearly all particles remain collapsed into one small, dense, center-right rosette. There is no readable field of individually spaced triangles, and motion over time only changes the compact overlap rather than producing the expansive geometric particle movement expected from the Triangles 2D preset thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 180,
+      "why": "Increase particle velocity so emitted triangle sprites visibly separate from the point emitter instead of accumulating as a compact central blob."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 140,
+      "why": "Widen directional spread so the moving triangles fan into a broad abstract geometric arrangement rather than following nearly the same path."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0013",
+      "value": 70,
+      "why": "Add substantial velocity variation to break up the uniform overlapping cluster and create more varied triangle spacing and motion."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

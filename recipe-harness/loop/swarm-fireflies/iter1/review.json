@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The warm orange, softly glowing points on black read as fireflies and the centered swarm composition is plausible. However, the swarm is a tight, nearly static-looking square cluster: between t1 and t4 it mostly refreshes dot positions rather than showing visible individual flight. It lacks the broader, organic dispersion and lingering, wandering swarm motion expected from a “Swarm Fireflies” magic preset.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 35,
+      "why": "Give particles visible travel between frames so the swarm reads as flying fireflies rather than a stationary emitter cloud."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0012",
+      "value": 70,
+      "why": "Add substantial speed variation so individual fireflies drift at different rates instead of moving as a uniform mass."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 1.5,
+      "why": "Let moving particles remain visible longer, creating a more persistent, naturally dispersed swarm."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

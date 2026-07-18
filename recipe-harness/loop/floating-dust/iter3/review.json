@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The black background and white particle color remain appropriate, but both frames still render as an extremely sparse starfield rather than the preset's dense, softly suspended floating-dust field. Frame t1 has only a few isolated points, and t4 has only roughly twenty visible particles, indicating that the active emission control is still effectively near 20 particles/sec despite the separate 9000 value. The occasional comparatively large bright dot also reads as a star rather than diffuse fine dust. Motion/population increases from t1 to t4, but the field is far too empty at the start and remains too sparse overall.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 3000,
+      "why": "This appears to be the active particles-per-second control: raising it from 20 will create an immediately populated field at t1 and a dense dust distribution by t4 instead of relying on the inactive/conflicting 9000 setting."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 1.5,
+      "why": "Reducing maximum particle size will prevent isolated oversized bright particles from reading as stars once emission density is increased, keeping the look predominantly fine floating dust."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

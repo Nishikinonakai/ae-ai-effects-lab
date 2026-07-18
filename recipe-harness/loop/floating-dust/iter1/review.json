@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The black background and white particulate color are appropriate, but the render reads as a very sparse starfield rather than the denser, soft floating-dust field expected from the preset thumbnail. At t1 only a handful of particles are visible; by t4 the count increases, confirming emission, but it is still far too empty for the early-frame preset look. The visible particles are mostly crisp pinpoint lights, with little soft dusty presence or size variation. Motion is beginning to populate the frame, but the effect needs substantially more immediately visible particles.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0005",
+      "value": 1800,
+      "why": "Increase early-frame particle population so the frame reads as a continuous floating dust field rather than isolated stars."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 4.5,
+      "why": "Make particles visibly dust-like at render resolution instead of predominantly sub-pixel pinpoints."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0074",
+      "value": 75,
+      "why": "Broaden particle-size variation to create a more natural mix of fine specks and occasional larger floating dust motes."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

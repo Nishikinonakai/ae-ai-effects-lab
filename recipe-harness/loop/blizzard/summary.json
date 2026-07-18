@@ -1,0 +1,26 @@
+{
+  "intent": "vendor preset \"Blizzard\" (Nature) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 3,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render clearly reads as a dense white blizzard on black, with strong depth layering and convincing forward motion between t1 and t4. The t1 frame has a good mix of fine snow and nearer flakes. By t4, however, several foreground particles become excessively large, soft, and blown-out—especially along the upper-right and lower-right—making the result feel more like fast camera-flight debris than consistently scaled snowfall. The depth motion is strong but slightly too aggressive over the short frame interval."
+    },
+    {
+      "iter": 2,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render strongly reads as a dense white blizzard on black, with convincing multilayered snow density and a good fine-particle field at t1. Motion/depth progression is still too aggressive by t4: numerous foreground flakes have expanded into large, soft, overbright discs, especially near the upper-left, upper-right, and lower-right edges. This makes the effect feel like particles rapidly flying into the camera rather than the more consistently scaled snowfall implied by the Blizzard preset thumbnail."
+    },
+    {
+      "iter": 3,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "The render now reads convincingly as a dense white blizzard with a strong field of fine flakes, black-background contrast, and far more consistent particle sizing than prior iterations. The oversized blown-out foreground discs are largely resolved. Between t1 and t4, however, the field still gains depth and apparent density a little too quickly, with a handful of noticeably larger near flakes at the edges. It remains slightly more like forward flight through particles than the steadier snowfall suggested by the preset thumbnail."
+    }
+  ]
+}

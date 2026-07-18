@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The black field, white particles, and overall fine-grain distribution are substantially closer to the intended Brownian Motion fluid thumbnail. However, the t1-to-t4 change still reads chiefly as a pronounced particle accumulation: t4 is much denser than t1 rather than appearing as the same already-established field undergoing agitation. A visible minority of particles remain noticeably chunky, which disrupts the predominantly fine dust texture.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < thisComp.frameDuration*1.5 ? 30000 : 200",
+      "why": "Create a much denser field immediately at startup while nearly eliminating the continuing emission that causes the strong t1-to-t4 population ramp."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 0.5,
+      "why": "Reduce the remaining oversized bright flecks so the particle field reads more consistently as fine Brownian dust."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

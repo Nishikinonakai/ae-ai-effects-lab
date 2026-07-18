@@ -1,0 +1,15 @@
+{
+  "verdict": "fail",
+  "score": 0,
+  "critique": "Both sampled frames are completely black: there is no visible burst, hot core, flame tongue, spark, or directional muzzle-flash silhouette. The 0.08s disappearance could be appropriate for a short flash, but the absence at 0.01s means the effect is not rendering visibly at all. The anomalous near-zero denormal Angle X value is the most likely invalid directional-control input.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0112",
+      "value": 0,
+      "why": "Replace the invalid denormalized Angle X value (6.3e-322) with a valid angle so the particle emission direction can render normally."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

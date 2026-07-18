@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The black background and white particle color are appropriate, but the render remains dramatically under-populated relative to a Brownian Motion fluid thumbnail. Frame 1 has only a handful of large isolated dots, and frame 4 has only a few dozen scattered blobs. This reads as a low-rate emitter accumulating particles rather than a dense field of fine particles already undergoing continuous fluid agitation. The visible particle-size setting also produces chunky specks instead of the preset's fine particulate texture.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 2000,
+      "why": "The active Gen1 emitter rate is still 20 particles/sec, which directly explains the sparse frame-to-frame buildup despite the separate visibility-floor rate setting. Raising the actual emitter rate establishes a substantially denser moving field immediately."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 2,
+      "why": "With the increased emission density, reducing maximum particle size from 6 to 2 changes the current conspicuous white blobs into the fine dust-like particles characteristic of the Brownian Motion thumbnail."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

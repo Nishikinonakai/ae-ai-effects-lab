@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The render now has an appropriate black field, white particulate color, broad full-frame coverage, and clear slow population/motion from t1 to t4. It is much closer to the Floating Dust direction than prior iterations. However, it still reads primarily as a fine starfield: most grains are hard sub-pixel pinpoints rather than a consistently soft suspended-dust layer. The t1 field is also visibly less established than t4, so the opening frame does not yet feel like the preset's enveloping dust atmosphere.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 1.8,
+      "why": "Raise the particle-size ceiling modestly so more of the very fine points resolve as soft dust grains instead of crisp star-like pixels."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0074",
+      "value": 50,
+      "why": "Reduce extreme size randomness so the field has more consistently visible mid-fine dust while retaining some foreground/background variation."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

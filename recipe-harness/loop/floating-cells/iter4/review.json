@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render now has a clean black field and a suitably spacious distribution of isolated particles; the two times also preserve the field-like composition rather than reading as a single dense explosion. However, it still looks like dim, crisp pink/orange bacteria rods rather than the soft, subdued organic cells implied by the Nature preset thumbnail. The particles remain visibly sharp and saturated, and their positions shift enough over two seconds to feel actively drifting instead of gently suspended.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 100,
+      "why": "Increase particle feathering to remove the crisp outlined sprite look and make the cells read as softer floating forms."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 0.12,
+      "why": "Reduce base particle velocity so the two-second displacement feels suspended and calm rather than noticeably dispersed."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0018",
+      "value": 15,
+      "why": "Raise air resistance to damp residual particle travel after the burst and reinforce slow, buoyant floating motion."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

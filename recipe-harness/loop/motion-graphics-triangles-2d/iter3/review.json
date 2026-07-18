@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The black field, flat mint-to-neon-green palette, crisp triangle sprites, and clear expansion from frame 1 to frame 4 all fit the intended 2D motion-graphics look. Frame 4 is substantially more legible than prior iterations, but it still has a congested central cluster where several large triangles overlap. The particle field also occupies only the middle portion of the composition rather than feeling broadly dispersed across the frame like an airy graphic triangle arrangement.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 2,
+      "why": "Shortening particle life reduces the number of simultaneously visible triangles, clearing the persistent overlapping pile in the center."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 170,
+      "why": "Increasing velocity lets the remaining triangles reach farther from the emitter during their shorter lifetime, creating a wider, more energetic 2D field."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

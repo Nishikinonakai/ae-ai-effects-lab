@@ -1,0 +1,14 @@
+{
+  "intent": "vendor preset \"Particle Swarm\" (Light and Magic) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 9,
+      "verdict": "pass",
+      "critique": "The render reads clearly as a Particle Swarm: a bright electric-blue, tightly clustered particle mass on pure black, with a dense luminous core and irregular orbiting specks. From t1 to t4 the swarm becomes fuller and spreads subtly outward while retaining its compact centered formation, giving it the expected living, turbulent swarm motion. The small particle scale, blue color, and black negative space are visually consistent with the Light and Magic preset thumbnail aesthetic."
+    }
+  ]
+}

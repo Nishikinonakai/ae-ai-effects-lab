@@ -1,0 +1,15 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The render strongly matches the Large Snow 3D look in sprite detail, black background, 3D-facing brightness variation, and prominent individual flakes. Frame t1 has an appropriately open, large-flake-led composition. By t4, however, too many additional flakes remain visible, producing a noticeably busier central/lower field and several distracting cropped edge flakes. The temporal population increase still departs from the preset's cleaner, more spacious thumbnail silhouette.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 40,
+      "why": "Reduce the emission rate so the later frame does not accumulate into a crowded field of small and edge-cropped flakes, while retaining a few clearly readable large snowflake sprites."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

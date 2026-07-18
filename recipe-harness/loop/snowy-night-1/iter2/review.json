@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The field now fills the full frame rather than the narrow central column, and the white-on-black contrast, mixed flake sizes, and increased density from t1 to t4 read clearly as snowfall. However, t1 is still noticeably sparse compared with the much fuller t4 frame, making the start of the animation feel like particles are only beginning to accumulate. Most flakes remain very small and crisp; the preset-like snowy-night look would benefit from a stronger foreground layer of larger, softer flakes while retaining the existing fine background snow.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 800,
+      "why": "Raises initial particle presence so the early frame feels like an already-established snowfall rather than a sparse startup."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 3,
+      "why": "Offsets the higher emission rate by reducing persistence, helping prevent the later frame from becoming disproportionately denser than the early frame."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 3.5,
+      "why": "Introduces a more visible soft foreground-flake scale while the existing 75% size randomness preserves the fine distant snow."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

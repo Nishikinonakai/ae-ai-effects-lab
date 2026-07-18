@@ -1,0 +1,30 @@
+{
+  "verdict": "pass",
+  "score": 8,
+  "critique": "The render now reads convincingly as a full-frame snowy field: bright white flakes cover the frame, size variation is present, and the t1-to-t4 progression shows ongoing falling/emission. The principal remaining mismatch is temporal balance: t1 is visibly lighter than t4, while the thumbnail-like preset should feel established from the opening frame. Flakes are still biased toward fine, crisp dots; a somewhat larger soft foreground component would make the snow feel more layered and atmospheric.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 1.2,
+      "why": "Shortening particle life reduces the excessive accumulation visible by t4, bringing its density closer to the already-established-looking t1 field."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 1100,
+      "why": "A moderate emission increase restores early-frame coverage after reducing lifetime, so t1 feels populated without allowing t4 to become overwhelmingly dense."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 5,
+      "why": "Increasing maximum particle size adds a clearer foreground layer of larger soft flakes while retaining the fine background particles from size randomness."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra",
+  "_normalized_pass_at": 8
+}

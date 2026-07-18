@@ -1,0 +1,48 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The render now has a much better flash-like lifetime: it is visible at 0.01 and fully extinguished by 0.08. Its yellow-orange palette is also closer to a hot ignition than the prior soft orange cloud. However, at the visible frame it remains a compact, nearly circular cluster of large soft discs. It lacks the thumbnail's aggressive directional, starburst-like explosive silhouette, a near-white hot center, and sharper energetic fragments/streaks extending from the muzzle direction.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 4,
+      "why": "Reduce particle feather substantially so the flash resolves into crisper high-energy particles instead of a soft rounded blob."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 4200,
+      "why": "Increase main particle velocity to push the burst outward into a more explosive directional muzzle-flash silhouette during its short visible lifetime."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 25,
+      "why": "Broaden the directional cone enough to form a pointed fan/starburst while retaining a clear forward muzzle direction."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0070",
+      "value": [
+        1,
+        0.9,
+        0.35,
+        1
+      ],
+      "why": "Shift the primary particle color toward intense yellow to create a hotter, closer-to-white-looking flash core against black."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0033",
+      "value": 100,
+      "why": "Raise particle opacity so the overlapping center reads as a bright ignition core rather than uniformly translucent orange circles."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

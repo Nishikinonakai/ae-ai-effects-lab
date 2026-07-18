@@ -1,0 +1,44 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The sparse warm orange-on-black field and stable overall particle count fit the flickering-lights concept better than prior iterations. However, each light is still a dim, brown, shaded sphere with a dark perimeter rather than a bright self-illuminated bulb or soft bokeh glow. Motion is also still wrong: nearly all lights change position between t1 and t4, including large group relocations, so it reads as drifting/re-spawning particles rather than a fixed field with independently flickering intensity.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 0,
+      "why": "Remove initial particle velocity so the light positions remain fixed and only their brightness flickers."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0750",
+      "value": 0,
+      "why": "Eliminate the strong Y wind that is visibly relocating the light field between frames."
+    },
+    {
+      "type": "effect",
+      "matchName": "ADBE Glo2",
+      "params": [
+        [
+          "ADBE Glo2-0002",
+          35,
+          "Glow Threshold"
+        ],
+        [
+          "ADBE Glo2-0003",
+          55,
+          "Glow Radius"
+        ],
+        [
+          "ADBE Glo2-0004",
+          1.8,
+          "Glow Intensity"
+        ]
+      ],
+      "why": "Add a visible soft luminance halo around the sprite highlights so they read as illuminated bulbs/bokeh instead of shaded brown balls."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

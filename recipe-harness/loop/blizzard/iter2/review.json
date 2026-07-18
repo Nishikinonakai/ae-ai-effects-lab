@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The render strongly reads as a dense white blizzard on black, with convincing multilayered snow density and a good fine-particle field at t1. Motion/depth progression is still too aggressive by t4: numerous foreground flakes have expanded into large, soft, overbright discs, especially near the upper-left, upper-right, and lower-right edges. This makes the effect feel like particles rapidly flying into the camera rather than the more consistently scaled snowfall implied by the Blizzard preset thumbnail.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0751",
+      "value": -350,
+      "why": "Reduce the strong toward-camera Z wind so foreground flakes do not rush into extreme perspective size over only a few frames."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 850,
+      "why": "Lower overall particle velocity to soften the t1-to-t4 depth acceleration while preserving the dense blizzard motion."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

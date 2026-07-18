@@ -1,0 +1,816 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Floating Cells.xbxc",
+  "_pack": "TC14",
+  "_category": "Nature",
+  "_map_coverage": "47 mapped / 2 unmapped / 3 curves",
+  "_unmapped": {
+    "FXid_PLayerMultiClips": 2,
+    "FXid_PTMode": 0
+  },
+  "_curves": {
+    "rg.custom.xfer.life": {
+      "isCurveMode": false,
+      "samples": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "curveX": [],
+      "curveY": []
+    },
+    "rg.custom.col.life": {
+      "PosP": [
+        0,
+        50,
+        100,
+        150,
+        200
+      ],
+      "PosR": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "PosG": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "PosB": [
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    "rg.custom.op.life": {
+      "isCurveMode": true,
+      "samples": [
+        0.2200000286102295,
+        0.3500000238418579,
+        0.4300000071525574,
+        0.49000000953674316,
+        0.5399999618530273,
+        0.5900000333786011,
+        0.6299999952316284,
+        0.6699999570846558,
+        0.7100000381469727,
+        0.7400000095367432,
+        0.7699999809265137,
+        0.800000011920929,
+        0.8199999928474426,
+        0.8500000238418579,
+        0.8700000047683716,
+        0.8899999856948853,
+        0.9099999666213989,
+        0.9399999976158142,
+        0.9599999785423279,
+        0.9700000286102295,
+        0.9800000190734863,
+        0.9900000095367432,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0.9399999976158142,
+        0.8700000047683716,
+        0.800000011920929,
+        0.7400000095367432,
+        0.6699999570846558,
+        0.6000000238418579,
+        0.5399999618530273,
+        0.4700000286102295,
+        0.3999999761581421,
+        0.3399999737739563,
+        0.26999998092651367,
+        0.19999998807907104,
+        0.13999998569488525,
+        0.06999999284744263,
+        0
+      ],
+      "curveX": [
+        0,
+        17,
+        50,
+        75,
+        100,
+        125,
+        150,
+        185,
+        200
+      ],
+      "curveY": [
+        0,
+        0.9300000071525574,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
+    }
+  },
+  "intent": "vendor preset \"Floating Cells\" (Nature) — validate against its thumbnail",
+  "name": "floating-cells_i3",
+  "compName": "Mined_FloatingCells",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "footage": [
+    {
+      "path": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Sprites/Common/Organic Matter/Cell 3.mov",
+      "layerName": "SpriteTex"
+    }
+  ],
+  "hostName": "Mined",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          2,
+          "FXid_Gen1EmitterType (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0703",
+          6,
+          "FXid_PType (alias+enumOffset) [Designer 5 -> Sprite + connected texture]"
+        ],
+        [
+          "tc Particular-0146",
+          20000,
+          "FXid_Gen1ParticlesPerSecF (alias)"
+        ],
+        [
+          "tc Particular-0014",
+          2000,
+          "FXid_Gen1EmitterSizeX (alias)"
+        ],
+        [
+          "tc Particular-0015",
+          2000,
+          "FXid_Gen1EmitterSizeY (exact)"
+        ],
+        [
+          "tc Particular-0016",
+          0,
+          "FXid_Gen1EmitterSizeZ (exact)"
+        ],
+        [
+          "tc Particular-0221",
+          5,
+          "FXid_Options_GridEmitter_ParticlesInX (alias)"
+        ],
+        [
+          "tc Particular-0222",
+          5,
+          "FXid_Options_GridEmitter_ParticlesInY (alias)"
+        ],
+        [
+          "tc Particular-0223",
+          1,
+          "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+        ],
+        [
+          "tc Particular-0112",
+          0,
+          "FXid_Gen1AngleX (alias)"
+        ],
+        [
+          "tc Particular-0111",
+          0,
+          "FXid_Gen1AngleY (alias)"
+        ],
+        [
+          "tc Particular-0076",
+          0,
+          "FXid_Gen1AngleZ (alias)"
+        ],
+        [
+          "tc Particular-0010",
+          20,
+          "FXid_Gen1DirSpread (alias)"
+        ],
+        [
+          "tc Particular-0113",
+          1,
+          "FXid_Gen1EmitterDir (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0011",
+          2,
+          "FXid_Gen1Vel (alias)"
+        ],
+        [
+          "tc Particular-0013",
+          20,
+          "FXid_Gen1VelEmit (alias)"
+        ],
+        [
+          "tc Particular-0012",
+          20,
+          "FXid_Gen1VelSpread (alias)"
+        ],
+        [
+          "tc Particular-0524",
+          1,
+          "FXid_PAspectRatio (alias)"
+        ],
+        [
+          "tc Particular-0029",
+          50,
+          "FXid_PFeather (alias)"
+        ],
+        [
+          "tc Particular-0002",
+          10,
+          "FXid_PLife (alias)"
+        ],
+        [
+          "tc Particular-0065",
+          0.3000030517578125,
+          "FXid_PLifeRnd (alias)"
+        ],
+        [
+          "tc Particular-0027",
+          10,
+          "FXid_PSizeMax (alias)"
+        ],
+        [
+          "tc Particular-0074",
+          25,
+          "FXid_PSizeRnd (alias)"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          "FXid_PColor (alias)"
+        ],
+        [
+          "tc Particular-0071",
+          0,
+          "FXid_PColorRnd (alias)"
+        ],
+        [
+          "tc Particular-0088",
+          1,
+          "FXid_PSetColor (alias+enumOffset)"
+        ],
+        [
+          "tc Particular-0033",
+          65,
+          "FXid_POpacMax (alias)"
+        ],
+        [
+          "tc Particular-0075",
+          0,
+          "FXid_POpacRnd (alias)"
+        ],
+        [
+          "tc Particular-0726",
+          0,
+          "FXid_PRotAuto (alias)"
+        ],
+        [
+          "tc Particular-0136",
+          0,
+          "FXid_PRotate (alias)"
+        ],
+        [
+          "tc Particular-0137",
+          50,
+          "FXid_PRotateRnd (alias)"
+        ],
+        [
+          "tc Particular-0279",
+          1,
+          "FXid_PRotateRndSpeed (alias)"
+        ],
+        [
+          "tc Particular-0138",
+          0.100006103515625,
+          "FXid_PRotateSpeed (alias)"
+        ],
+        [
+          "tc Particular-0277",
+          0,
+          "FXid_PRotateSpeedX (alias)"
+        ],
+        [
+          "tc Particular-0278",
+          0,
+          "FXid_PRotateSpeedY (alias)"
+        ],
+        [
+          "tc Particular-0275",
+          0,
+          "FXid_PRotateX (alias)"
+        ],
+        [
+          "tc Particular-0276",
+          0,
+          "FXid_PRotateY (alias)"
+        ],
+        [
+          "tc Particular-0018",
+          5,
+          "FXid_AirResist (alias)"
+        ],
+        [
+          "tc Particular-0019",
+          0.25,
+          "FXid_SpinAmp (alias)"
+        ],
+        [
+          "tc Particular-0020",
+          100,
+          "FXid_SpinFreq (alias)"
+        ],
+        [
+          "tc Particular-0021",
+          1,
+          "FXid_SpinTime (alias)"
+        ],
+        [
+          "tc Particular-0749",
+          0,
+          "FXid_WindX (exact)"
+        ],
+        [
+          "tc Particular-0750",
+          0,
+          "FXid_WindY (exact)"
+        ],
+        [
+          "tc Particular-0751",
+          0,
+          "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0066",
+          {
+            "__layer": "SpriteTex"
+          },
+          "Sprite texture layer (mined PLayer)"
+        ],
+        [
+          "tc Particular-0067",
+          7,
+          "FXid_PLayerTime (+enumOffset)"
+        ],
+        [
+          "tc Particular-0694",
+          0,
+          "FXid_PUnmult (alias) [after sprite connect]"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0146",
+          "time < 0.1 ? 7000 : 0",
+          "Explode -> 0.1s burst spike"
+        ]
+      ]
+    }
+  ],
+  "camera": null,
+  "renderFrames": [
+    0.08,
+    2
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "expression",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0146",
+          "expression": "time < 0.1 ? 20000 : 0",
+          "why": "Reduce the initial burst by tenfold so the composition has breathing room and reads as individual floating cells rather than a packed particle explosion."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0018",
+          "value": 2,
+          "why": "Add air resistance to damp the initial radial travel, producing slower, gentler floating motion over time."
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "for_iter": 3,
+      "applied": [
+        {
+          "type": "expression",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0146",
+          "expression": "time < 0.1 ? 7000 : 0",
+          "why": "Reduce the burst population substantially so the frame has more of the intended spacious floating-cell field."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0011",
+          "value": 2,
+          "why": "Lower base velocity so cells drift instead of visibly dispersing from the burst."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0018",
+          "value": 5,
+          "why": "Increase air resistance to further damp the burst momentum and create gentler suspended motion."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0033",
+          "value": 65,
+          "why": "Reduce the harsh bright neon prominence of every sprite, allowing the field to feel softer and more natural."
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

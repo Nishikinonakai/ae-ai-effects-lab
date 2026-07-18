@@ -1,0 +1,50 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The central palette and small amount of fiery texture are closer to fire, but the result still reads as a compact spark burst rather than Hazy Fire. At t1 the core is overly white and crowded with discrete yellow ember dots; by t4 those dots have expanded into a broad, nearly radial field. The desired sustained, soft smoke volume and coherent upward/billowing flame shape are still absent.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 3,
+      "why": "Greatly reduce particle travel so the emission stops reading as an explosion and remains concentrated as a lingering fire volume."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0012",
+      "value": 5,
+      "why": "Suppress the wide all-direction velocity variation responsible for the radial halo of detached embers."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0018",
+      "value": 8,
+      "why": "Add substantial air resistance so particles billow and hang near the flame rather than continuing to eject outward."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 2.5,
+      "why": "Lengthen lifetime to build persistent layered haze instead of short-lived sparks."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0029",
+      "value": 100,
+      "why": "Maximize particle softness to dissolve the visible circular ember edges into smoke-like fire haze."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0069",
+      "value": 0,
+      "why": "Use non-additive blending to reduce the clipped white-hot core and preserve orange/red flame detail."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

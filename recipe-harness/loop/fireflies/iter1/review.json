@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render has the essential Fireflies look: a black field with scattered, softly blooming green-yellow points and a few larger hero glows. Particle distribution is broad and the frame-to-frame change suggests gentle drifting rather than rigidly static dots. However, the color behavior is visibly inconsistent: frame 1 has the warmer yellow-green firefly variation associated with the preset, while frame 4 has shifted almost entirely to highly saturated neon green. This reads as a global timed color sweep rather than natural, individually varied fireflies, and the later frame loses the warm luminous balance of the thumbnail-like look.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0070",
+      "expression": "[0.72,0.95,0.28,1]",
+      "why": "Remove the synchronized yellow-to-neon-green time sweep so the fireflies retain a stable natural yellow-green base color throughout the animation."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0071",
+      "value": 35,
+      "why": "Introduce per-particle color variation so the field contains a persistent mix of warmer yellow and greener fireflies instead of becoming uniformly saturated green."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

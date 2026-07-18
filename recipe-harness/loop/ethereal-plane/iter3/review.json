@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The large foreground bokeh artifacts from prior iterations are gone, and both frames now read as a clean, pale-blue particle sheet spanning a black field. The motion remains gently organic, with the wave profile changing between t1 and t4. However, the result is now too dim and granular compared with an ethereal magical-plane thumbnail: it reads as discrete tiny dots rather than a softly luminous, cohesive plane. The deformation also still throws a broad tail of particles noticeably below the central horizon, weakening the refined thin-sheet silhouette.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 2.2,
+      "why": "Slightly larger particles will consolidate the pinpoints into a more luminous continuous plane and give the existing glow something substantial to bloom."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0216",
+      "value": 55,
+      "why": "Increase the soft magical radiance around the denser particle band without reintroducing oversized foreground bokeh."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0042",
+      "value": 110,
+      "why": "Reduce field displacement so the animated wave remains present but the lower scattered tail pulls back toward a controlled planar horizon."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

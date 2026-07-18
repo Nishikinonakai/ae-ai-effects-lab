@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render clearly reads as dimensional falling snowflakes on black, with varied sprite orientations and sizes. However, the mature frame is far denser than the earlier frame: t4 becomes a busy field of many small, dark outline flakes rather than a clean 'Large Snow 3D' look dominated by spacious, prominent flakes. The visual density buildup is especially noticeable across time and weakens the large-flake preset silhouette.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 140,
+      "why": "Reduce the fully developed particle count so the snow remains airy and the large individual flakes read clearly instead of forming a dense texture by t4."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 52,
+      "why": "Make the primary flakes more consistently prominent after reducing emission, reinforcing the intended Large Snow appearance."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

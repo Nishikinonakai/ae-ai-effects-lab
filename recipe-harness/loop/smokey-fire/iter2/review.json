@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The white clipped core is gone, and the render now has a believable orange ember palette with dark gray smoke around the source. Motion from t1 to t4 is clearly visible. However, it still reads primarily as a compact, symmetric circular smoke ring ejecting a broad radial field of discrete sparks. It lacks the dense, irregular flame-led body and upward/rising smoky-fire structure expected of the Smokey Fire thumbnail; the flame remains a thin brown-orange ring around a dark center rather than a luminous fire mass.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0113",
+      "value": 1,
+      "why": "Change from the current explosive/radial emission behavior to directional emission so the sparks and fire stop forming a symmetric circular blast."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 6,
+      "why": "Reduce outward particle travel so the fire and smoke remain a dense readable source rather than becoming a large sparse spark halo by t4."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0017",
+      "value": -0.35,
+      "why": "Introduce upward buoyancy so the smoky fire develops a rising, asymmetric flame/smoke silhouette instead of remaining centered as a circular ring."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 210,
+      "why": "Increase sprite scale to turn the thin central orange ring into a fuller flame-and-smoke body."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

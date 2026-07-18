@@ -1,0 +1,32 @@
+{
+  "intent": "vendor preset \"Triangles 2D\" (Abstract and Geometric) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 4,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The render has the intended flat triangular sprite geometry and a clean black background, with a subtle mint-to-green color shift between t1 and t4. However, nearly all particles remain collapsed into one small, dense, center-right rosette. There is no readable field of individually spaced triangles, and motion over time only changes the compact overlap rather than producing the expansive geometric particle movement expected from the Triangles 2D preset thumbnail."
+    },
+    {
+      "iter": 2,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The t4 frame now has the essential preset look: crisp flat mint/green triangular sprites on black, with a clearly expanding, screen-spanning geometric particle field. Motion is substantially improved from t1’s compact cluster to t4’s wide dispersion. However, the t4 field is still overly concentrated and overlapped through the center, while many peripheral triangles are disproportionately large. This reads more like a burst from one point than the cleaner, individually legible scattered-triangle composition suggested by the Triangles 2D thumbnail."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render now strongly matches the core Triangles 2D aesthetic: flat mint-to-lime triangular sprites, sharp edges, black background, and clear outward motion from the compact t1 cluster to a broad t4 field. At t4, however, the composition remains too burst-like: the center is still congested with overlapping shapes, while several edge triangles are much larger than the rest. The thumbnail-like preset treatment should read as a cleaner field of more consistently scaled, individually legible triangles."
+    },
+    {
+      "iter": 4,
+      "score": 8,
+      "verdict": "pass",
+      "critique": "The render convincingly captures the Triangles 2D look: crisp flat triangle sprites, black background, mint-to-lime coloring, and clear expansion from the compact t1 cluster into a broad t4 field. At t4 the field is substantially more legible than prior iterations, but the center still contains a small congested knot of overlapping particles. Scale variation is also stronger than the thumbnail-like treatment: a few peripheral triangles are conspicuously larger than the majority, weakening the clean, consistently sized scattered-field impression."
+    }
+  ]
+}

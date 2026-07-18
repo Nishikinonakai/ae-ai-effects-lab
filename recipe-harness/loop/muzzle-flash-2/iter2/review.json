@@ -1,0 +1,41 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The orange-on-black palette is appropriate and the flash moves rightward between 0.01 and 0.08, but both frames still read as the same small, rounded orange particle blob. It lacks the large, sharp forward flame wedge, hot near-white/yellow core, and long directional particle/spark trail expected from an Explosive muzzle-flash thumbnail. The late frame translates rather than visibly expanding into a directional blast.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 0.16,
+      "why": "Double particle life so the rapid rightward emission remains visible as an extended forward flame/trail instead of collapsing into a compact moving puff."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 3,
+      "why": "Tighten directional spread to concentrate the existing high velocity into a clearly pointed muzzle-flash cone rather than a rounded cloud."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 30,
+      "why": "Increase primary particle size so the initial flash has the larger, forceful explosive silhouette seen in the preset rather than a tiny blob."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0070",
+      "value": [
+        1,
+        0.78,
+        0.22,
+        1
+      ],
+      "why": "Shift the main flame toward hotter yellow to establish a brighter flash core while the existing color randomness retains orange variation at the edges."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

@@ -1,0 +1,225 @@
+{
+  "intent": "vendor preset \"Fireflies\" (Nature) — validate against its thumbnail",
+  "pass_criteria": [],
+  "iteration": 2,
+  "max_iters": 5,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0782",
+            2,
+            "FXid_Gen1EmitterType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0703",
+            2,
+            "FXid_PType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0146",
+            1320,
+            "FXid_Gen1ParticlesPerSecF (alias)"
+          ],
+          [
+            "tc Particular-0014",
+            3500,
+            "FXid_Gen1EmitterSizeX (alias)"
+          ],
+          [
+            "tc Particular-0015",
+            750,
+            "FXid_Gen1EmitterSizeY (exact)"
+          ],
+          [
+            "tc Particular-0016",
+            650,
+            "FXid_Gen1EmitterSizeZ (exact)"
+          ],
+          [
+            "tc Particular-0221",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInX (alias)"
+          ],
+          [
+            "tc Particular-0222",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInY (alias)"
+          ],
+          [
+            "tc Particular-0223",
+            1,
+            "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+          ],
+          [
+            "tc Particular-0112",
+            90,
+            "FXid_Gen1AngleX (alias)"
+          ],
+          [
+            "tc Particular-0111",
+            0,
+            "FXid_Gen1AngleY (alias)"
+          ],
+          [
+            "tc Particular-0076",
+            0,
+            "FXid_Gen1AngleZ (alias)"
+          ],
+          [
+            "tc Particular-0010",
+            20,
+            "FXid_Gen1DirSpread (alias)"
+          ],
+          [
+            "tc Particular-0113",
+            4,
+            "FXid_Gen1EmitterDir (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0011",
+            50,
+            "FXid_Gen1Vel (alias)"
+          ],
+          [
+            "tc Particular-0013",
+            20,
+            "FXid_Gen1VelEmit (alias)"
+          ],
+          [
+            "tc Particular-0012",
+            20,
+            "FXid_Gen1VelSpread (alias)"
+          ],
+          [
+            "tc Particular-0524",
+            1,
+            "FXid_PAspectRatio (alias)"
+          ],
+          [
+            "tc Particular-0029",
+            50,
+            "FXid_PFeather (alias)"
+          ],
+          [
+            "tc Particular-0002",
+            1,
+            "FXid_PLife (alias)"
+          ],
+          [
+            "tc Particular-0065",
+            25,
+            "FXid_PLifeRnd (alias)"
+          ],
+          [
+            "tc Particular-0027",
+            2,
+            "FXid_PSizeMax (alias)"
+          ],
+          [
+            "tc Particular-0074",
+            50,
+            "FXid_PSizeRnd (alias)"
+          ],
+          [
+            "tc Particular-0694",
+            0,
+            "FXid_PUnmult (alias)"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              0.5146078504621983,
+              0.9429411739110947,
+              0.49308824562467635,
+              1
+            ],
+            "FXid_PColor (alias) [flattened col.life gradient]"
+          ],
+          [
+            "tc Particular-0071",
+            35,
+            "FXid_PColorRnd (alias)"
+          ],
+          [
+            "tc Particular-0088",
+            1,
+            "FXid_PSetColor (alias+enumOffset) [forced At Birth: gradient unscriptable]"
+          ],
+          [
+            "tc Particular-0033",
+            100,
+            "FXid_POpacMax (alias)"
+          ],
+          [
+            "tc Particular-0075",
+            0,
+            "FXid_POpacRnd (alias)"
+          ],
+          [
+            "tc Particular-0042",
+            100,
+            "FXid_FAffectPos (alias)"
+          ],
+          [
+            "tc Particular-0041",
+            0,
+            "FXid_FAffectSize (alias)"
+          ],
+          [
+            "tc Particular-0045",
+            0.5,
+            "FXid_FAffectTime (alias)"
+          ],
+          [
+            "tc Particular-0052",
+            50,
+            "FXid_FEvolution (alias)"
+          ],
+          [
+            "tc Particular-0046",
+            10,
+            "FXid_FScale (alias)"
+          ],
+          [
+            "tc Particular-0017",
+            -4,
+            "FXid_Gravity (exact)"
+          ]
+        ],
+        "expressions": [
+          [
+            "tc Particular-0070",
+            "[0.72,0.95,0.28,1]",
+            "birth-color sweep across gradient ends (two-tone)"
+          ]
+        ]
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/fireflies/iter2/fireflies_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/fireflies/iter2/fireflies_i2_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render has the essential Fireflies look: a black field with scattered, softly blooming green-yellow points and a few larger hero glows. Particle distribution is broad and the frame-to-frame change suggests gentle drifting rather than rigidly static dots. However, the color behavior is visibly inconsistent: frame 1 has the warmer yellow-green firefly variation associated with the preset, while frame 4 has shifted almost entirely to highly saturated neon green. This reads as a global timed color sweep rather than natural, individually varied fireflies, and the later frame loses the warm luminous balance of the thumbnail-like look."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

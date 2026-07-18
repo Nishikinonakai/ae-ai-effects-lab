@@ -1,0 +1,496 @@
+{
+  "intent": "vendor preset \"Fire Trails 1\" (Explosive) — validate against its thumbnail",
+  "pass_criteria": [],
+  "iteration": 3,
+  "max_iters": 5,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Particular",
+        "params": [
+          [
+            "tc Particular-0577",
+            1,
+            "FXid_Gen1EmitterSizeOption (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0782",
+            3,
+            "FXid_Gen1EmitterType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0703",
+            1,
+            "FXid_PType (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0014",
+            10,
+            "FXid_Gen1EmitterSizeX (alias)"
+          ],
+          [
+            "tc Particular-0015",
+            10,
+            "FXid_Gen1EmitterSizeY (exact)"
+          ],
+          [
+            "tc Particular-0016",
+            10,
+            "FXid_Gen1EmitterSizeZ (exact)"
+          ],
+          [
+            "tc Particular-0146",
+            900,
+            "FXid_Gen1ParticlesPerSecF (alias)"
+          ],
+          [
+            "tc Particular-0221",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInX (alias)"
+          ],
+          [
+            "tc Particular-0222",
+            5,
+            "FXid_Options_GridEmitter_ParticlesInY (alias)"
+          ],
+          [
+            "tc Particular-0223",
+            1,
+            "FXid_Options_GridEmitter_ParticlesInZ (alias)"
+          ],
+          [
+            "tc Particular-0112",
+            85,
+            "FXid_Gen1AngleX (alias)"
+          ],
+          [
+            "tc Particular-0111",
+            34,
+            "FXid_Gen1AngleY (alias)"
+          ],
+          [
+            "tc Particular-0076",
+            0,
+            "FXid_Gen1AngleZ (alias)"
+          ],
+          [
+            "tc Particular-0010",
+            42,
+            "FXid_Gen1DirSpread (alias)"
+          ],
+          [
+            "tc Particular-0113",
+            1,
+            "FXid_Gen1EmitterDir (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0011",
+            120,
+            "FXid_Gen1Vel (alias)"
+          ],
+          [
+            "tc Particular-0013",
+            20,
+            "FXid_Gen1VelEmit (alias)"
+          ],
+          [
+            "tc Particular-0012",
+            75,
+            "FXid_Gen1VelSpread (alias)"
+          ],
+          [
+            "tc Particular-0283",
+            0.5,
+            "FXid_Gen1VelSpreadDistr (alias)"
+          ],
+          [
+            "tc Particular-0230",
+            100000,
+            "FXid_Options_RandomSeed (exact)"
+          ],
+          [
+            "tc Particular-0218",
+            1,
+            "FXid_Glow_TransferMode (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0217",
+            100,
+            "FXid_Options_Glow_Feather (exact)"
+          ],
+          [
+            "tc Particular-0216",
+            25,
+            "FXid_Options_Glow_Opacity (exact)"
+          ],
+          [
+            "tc Particular-0215",
+            300,
+            "FXid_Options_Glow_Size (exact)"
+          ],
+          [
+            "tc Particular-0029",
+            39,
+            "FXid_PFeather (alias)"
+          ],
+          [
+            "tc Particular-0002",
+            1.6,
+            "FXid_PLife (alias)"
+          ],
+          [
+            "tc Particular-0065",
+            42.1875,
+            "FXid_PLifeRnd (alias)"
+          ],
+          [
+            "tc Particular-0694",
+            0,
+            "FXid_PUnmult (alias)"
+          ],
+          [
+            "tc Particular-0314",
+            7,
+            "FXid_Streaklet_NoSpheres (alias)"
+          ],
+          [
+            "tc Particular-0313",
+            0,
+            "FXid_Streaklet_RandomSeed (exact)"
+          ],
+          [
+            "tc Particular-0315",
+            60,
+            "FXid_Streaklet_Spread (alias)"
+          ],
+          [
+            "tc Particular-0524",
+            1,
+            "FXid_PAspectRatio (alias)"
+          ],
+          [
+            "tc Particular-0726",
+            0,
+            "FXid_PRotAuto (alias)"
+          ],
+          [
+            "tc Particular-0136",
+            0,
+            "FXid_PRotate (alias)"
+          ],
+          [
+            "tc Particular-0137",
+            0,
+            "FXid_PRotateRnd (alias)"
+          ],
+          [
+            "tc Particular-0279",
+            0,
+            "FXid_PRotateRndSpeed (alias)"
+          ],
+          [
+            "tc Particular-0282",
+            0.5,
+            "FXid_PRotateRndSpeedDistr (alias)"
+          ],
+          [
+            "tc Particular-0138",
+            0,
+            "FXid_PRotateSpeed (alias)"
+          ],
+          [
+            "tc Particular-0277",
+            0,
+            "FXid_PRotateSpeedX (alias)"
+          ],
+          [
+            "tc Particular-0278",
+            0,
+            "FXid_PRotateSpeedY (alias)"
+          ],
+          [
+            "tc Particular-0275",
+            0,
+            "FXid_PRotateX (alias)"
+          ],
+          [
+            "tc Particular-0276",
+            0,
+            "FXid_PRotateY (alias)"
+          ],
+          [
+            "tc Particular-0027",
+            0,
+            "FXid_PSizeMax (alias)"
+          ],
+          [
+            "tc Particular-0074",
+            0,
+            "FXid_PSizeRnd (alias)"
+          ],
+          [
+            "tc Particular-0033",
+            100,
+            "FXid_POpacMax (alias)"
+          ],
+          [
+            "tc Particular-0075",
+            0,
+            "FXid_POpacRnd (alias)"
+          ],
+          [
+            "tc Particular-0070",
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            "FXid_PColor (alias)"
+          ],
+          [
+            "tc Particular-0071",
+            0,
+            "FXid_PColorRnd (alias)"
+          ],
+          [
+            "tc Particular-0088",
+            1,
+            "FXid_PSetColor (alias+enumOffset)"
+          ],
+          [
+            "tc Particular-0210",
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            "FXid_Options_SmokeletShadow_Color (alias)"
+          ],
+          [
+            "tc Particular-0211",
+            100,
+            "FXid_Options_SmokeletShadow_ColorStrength (alias)"
+          ],
+          [
+            "tc Particular-0212",
+            5,
+            "FXid_Options_SmokeletShadow_Opacity (alias)"
+          ],
+          [
+            "tc Particular-0284",
+            0,
+            "FXid_PShade (alias)"
+          ],
+          [
+            "tc Particular-0304",
+            250,
+            "FXid_PShadeFalloffAdjust (alias)"
+          ],
+          [
+            "tc Particular-0017",
+            35,
+            "FXid_Gravity (exact)"
+          ],
+          [
+            "tc Particular-0018",
+            0,
+            "FXid_AirResist (alias)"
+          ],
+          [
+            "tc Particular-0042",
+            0,
+            "FXid_FAffectPos (alias)"
+          ],
+          [
+            "tc Particular-0041",
+            0,
+            "FXid_FAffectSize (alias)"
+          ],
+          [
+            "tc Particular-0045",
+            0,
+            "FXid_FAffectTime (alias)"
+          ],
+          [
+            "tc Particular-0052",
+            50,
+            "FXid_FEvolution (alias)"
+          ],
+          [
+            "tc Particular-0046",
+            48,
+            "FXid_FScale (alias)"
+          ],
+          [
+            "tc Particular-0019",
+            52.583587646484375,
+            "FXid_SpinAmp (alias)"
+          ],
+          [
+            "tc Particular-0020",
+            1,
+            "FXid_SpinFreq (alias)"
+          ],
+          [
+            "tc Particular-0021",
+            1,
+            "FXid_SpinTime (alias)"
+          ],
+          [
+            "tc Particular-0749",
+            0,
+            "FXid_WindX (exact)"
+          ],
+          [
+            "tc Particular-0751",
+            0,
+            "FXid_WindZ (exact)"
+          ],
+          [
+            "tc Particular-2830",
+            8,
+            "aux -> S2 Emitter Type: Emit from Parent (v18)"
+          ],
+          [
+            "tc Particular-2066",
+            0,
+            "FXid_Options_Aux_AirPhysics_Resistance (aux->S2)"
+          ],
+          [
+            "tc Particular-2759",
+            0,
+            "FXid_Options_Aux_AirPhysics_Turbulence (aux->S2)"
+          ],
+          [
+            "tc Particular-2797",
+            0,
+            "FXid_Options_Aux_AirPhysics_Wind (aux->S2)"
+          ],
+          [
+            "tc Particular-2242",
+            0.01,
+            "FXid_Options_Aux_Control_InheritVelocity (aux->S2)"
+          ],
+          [
+            "tc Particular-2236",
+            100,
+            "FXid_Options_Aux_EmitProbability (aux->S2)"
+          ],
+          [
+            "tc Particular-2077",
+            30,
+            "FXid_Options_Aux_Feather (aux->S2)"
+          ],
+          [
+            "tc Particular-2065",
+            0,
+            "FXid_Options_Aux_Gravity (aux->S2)"
+          ],
+          [
+            "tc Particular-2113",
+            0,
+            "FXid_Options_Aux_Randomness_Life (aux->S2)"
+          ],
+          [
+            "tc Particular-2123",
+            0,
+            "FXid_Options_Aux_Randomness_Opacity (aux->S2)"
+          ],
+          [
+            "tc Particular-2122",
+            0,
+            "FXid_Options_Aux_Randomness_Size (aux->S2)"
+          ],
+          [
+            "tc Particular-2117",
+            3,
+            "FXid_Options_Aux_TransferMode (aux->S2)+enumOffset"
+          ],
+          [
+            "tc Particular-2050",
+            0.399993896484375,
+            "FXid_SE_PLife (aux->S2)"
+          ],
+          [
+            "tc Particular-2081",
+            45.75892639160156,
+            "FXid_SE_POpacity (aux->S2)"
+          ],
+          [
+            "tc Particular-2075",
+            5.1339263916015625,
+            "FXid_SE_PSize (aux->S2)"
+          ],
+          [
+            "tc Particular-2751",
+            4,
+            "FXid_SE_PType (aux->S2)+enumOffset"
+          ],
+          [
+            "tc Particular-2059",
+            30,
+            "FXid_SE_PVel (aux->S2)"
+          ],
+          [
+            "tc Particular-2194",
+            28,
+            "FXid_SE_ParticlesPerSecF (aux->S2) [/10 burst-spike normalization]"
+          ],
+          [
+            "tc Particular-2136",
+            1,
+            "Set Color S2: At Birth"
+          ],
+          [
+            "tc Particular-2118",
+            [
+              1,
+              0.18,
+              0.025,
+              1
+            ],
+            "Color S2 (flattened SE color curve)"
+          ]
+        ],
+        "expressions": [
+          [
+            "tc Particular-0146",
+            "time < 0.1 ? 9000 : 0",
+            "Explode -> 0.1s burst spike"
+          ]
+        ]
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      0.08,
+      2
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/fire-trails-1/iter3/fire-trails-1_i3_t0p08.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/fire-trails-1/iter3/fire-trails-1_i3_t2.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The early frame has a bright, compact ignition point, but it is far too small and isolated for an explosive Fire Trails burst. By 2 seconds, the blast has become a very wide field of discrete peach-colored blobs with large empty gaps; the motion reads as slow ballistic embers rather than dense, continuous fiery trails. The extreme spread and long persistence make the explosion lose its central explosive form, and there is little hot yellow/white flame structure or trail continuity visible."
+    },
+    {
+      "iter": 2,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "The render has a credible hot white ignition point at 0.08s, but it remains much too small for the intended explosive Fire Trails look. At 2s, the result is dominated by sparse, discrete peach ember blobs on widely separated ballistic arcs. The explosion has expanded so far that its center is mostly empty, and the arcs do not resolve into dense, continuous flame trails. It also lacks the stronger yellow-orange fire body and compact explosive cohesion expected from the preset thumbnail."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

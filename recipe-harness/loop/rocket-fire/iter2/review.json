@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 2,
+  "critique": "The fire-colored sprite texture and black background are appropriate, and the particle count increases between frames. However, both frames still read as a symmetric radial burst centered in the comp: particles and large flame chunks spread in all directions, with no coherent rocket travel axis or attached tapered fire trail. By frame 4 the very large isolated sprites near the edges make the effect feel like an explosion/debris field rather than the compact directional Rocket Fire preset.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0112",
+      "value": 90,
+      "why": "Rotate the directional emitter into the visible comp plane so the emission forms a clear rocket-fire travel axis instead of appearing as a face-on radial spread."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 2,
+      "why": "Greatly narrow directional spread to consolidate particles into a tapered jet/trail rather than a circular explosion."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 140,
+      "why": "Reduce velocity so particles remain visually connected as a flame trail over the sampled frames instead of immediately reaching the comp edges."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 120,
+      "why": "Increase continuous emission density so the directional trail reads as sustained fire rather than sparse individual dots and disconnected sprites."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 16,
+      "why": "Shrink maximum sprite size to prevent the oversized flame chunks at the frame edges from dominating the rocket-fire shape."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

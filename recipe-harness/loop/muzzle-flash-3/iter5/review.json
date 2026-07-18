@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The burst now has a convincing instantaneous muzzle-flash lifetime: it is bright at 0.01 and fully absent by 0.08. Its silhouette is more directional, with a pointed forward wedge and warmer edge particles around a pale hot region. However, it still resolves primarily as a densely packed cluster of round, soft particle discs, including a distracting hollow gap near the center. It remains less sharply fragmented and less violently starburst-like than the Explosive preset thumbnail; separated fine sparks and a more distinct white ignition point are still needed.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.04 ? 10000 : 0",
+      "why": "Reduce the extreme burst density so the flash does not merge into a blob and individual energetic fragments can separate visibly."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 1.25,
+      "why": "Make the visible particles substantially smaller, producing crisper spark-like detail instead of large overlapping circular discs."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 50,
+      "why": "Broaden the directional cone so the reduced particle count forms a wider explosive/starburst silhouette rather than a compact tube."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

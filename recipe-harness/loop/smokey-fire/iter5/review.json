@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The black background, orange-gold ember detail, and charcoal smoke are appropriate, and t1-to-t4 clearly shows particle motion. However, the result still reads as a small, symmetric explosion: a sharply defined circular orange ring with a dark center emits an evenly radial halo of sparks while the smoke expands as a round cloud. It lacks the thumbnail's dense, luminous, irregular flame mass and vertically rising smoke plume. The fire body is also too small and dim relative to the frame.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0011",
+      "value": 0.6,
+      "why": "Substantially reduce outward particle travel so the source can accumulate into a dense fire body instead of producing a broad radial explosion."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0017",
+      "value": -7,
+      "why": "Increase upward acceleration to pull smoke and embers into a vertically rising plume rather than a symmetric circular cloud."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 850,
+      "why": "Raise emission density so the center reads as continuous luminous fire and smoke instead of a sparse ring of individually readable sprite particles."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 300,
+      "why": "Enlarge the clustered particle body so the fire/smoke occupies more of the frame and becomes the dominant form."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The black field and hot pale-yellow/orange flash color are appropriate, and the flash clearly advances to the right between 0.01 and 0.08. However, it is still a very small, soft, horizontally oval cloud rather than the large explosive directional muzzle-flash form. The leading edge is not a sharp flame wedge, there is no substantial fading trail behind the ignition point, and no separated fast sparks are visible. The motion reads as a compact particle clump translating rightward instead of an expanding forward blast.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "expression": "time < 0.04 ? 35000 : 0",
+      "why": "Reduce the burst from thousands of overlapping cloudlets to a shorter, more legible ignition event so directional structure can become visible instead of a solid round blob."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 0.38,
+      "why": "Keep the fast right-moving main particles alive long enough to form a clearly tapering flame/trail behind the leading flash."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 5,
+      "why": "Smaller main particles reduce the inflated pill-shaped silhouette and reveal a sharper, more explosive directional edge."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-2194",
+      "value": 18,
+      "why": "Increase auxiliary emission so the blast gains visible detached ember/spark detail rather than reading as one uniform cloud."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-2050",
+      "value": 0.1,
+      "why": "Allow auxiliary sparks to persist into the late frame, creating a readable trailing energetic scatter behind the forward flame."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

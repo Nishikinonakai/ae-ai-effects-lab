@@ -1,0 +1,38 @@
+{
+  "intent": "vendor preset \"Muzzle Flash 1\" (Explosive) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 2,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 3,
+      "verdict": "fail",
+      "critique": "Both frames show a small, soft-edged orange circular blob. It has only a slight rightward displacement from 0.01 to 0.08 seconds, but no readable explosive particle separation, directional flame shape, bright yellow-white core, or sharp transient burst characteristic of the Muzzle Flash 1 (Explosive) thumbnail. The 150000/sec burst creates so much overlapping material that the particles merge into a uniform puff."
+    },
+    {
+      "iter": 2,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The orange/yellow color and brief rightward motion are closer to a muzzle-flash palette, but both frames still read as a compact cluster of overlapping soft blobs. There is no crisp bright yellow-white ignition core, no clearly separated fast particles, and no elongated directional flame/explosive spray. The 0.01 and 0.08 frames remain similarly sized and rounded rather than resolving into a sharp transient burst traveling to the right."
+    },
+    {
+      "iter": 3,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The yellow-orange palette is closer and the early frame has a slightly brighter center, but both times still read as a tiny cluster of soft, overlapping round particles. The burst has almost no readable rightward flame/spray silhouette or evolution between 0.01 and 0.08 seconds. It remains much too small, cloudy, and circular for an Explosive muzzle flash, which needs a hard bright ignition core and an elongated directional discharge."
+    },
+    {
+      "iter": 4,
+      "score": 0,
+      "verdict": "fail",
+      "critique": "Both 0.01 s and 0.08 s frames are completely black: no particles, ignition core, muzzle-flash silhouette, or visible temporal evolution is present. The current burst expression overrides the listed 15000 particles/sec value with only 900/sec for 0.025 s, yielding too few visible particles for this setup."
+    },
+    {
+      "iter": 5,
+      "score": 0,
+      "verdict": "fail",
+      "critique": "Both sampled frames are completely black. There is no visible muzzle flash, orange/yellow ignition core, directional explosive spray, particle motion, or transient fade. The burst is not producing a renderable visible density at either sampled time."
+    }
+  ]
+}

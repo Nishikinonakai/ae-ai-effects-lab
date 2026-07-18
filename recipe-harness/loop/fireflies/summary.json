@@ -1,0 +1,20 @@
+{
+  "intent": "vendor preset \"Fireflies\" (Nature) — validate against its thumbnail",
+  "backend": "api",
+  "outcome": "pass",
+  "best_iter": 2,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render has the essential Fireflies look: a black field with scattered, softly blooming green-yellow points and a few larger hero glows. Particle distribution is broad and the frame-to-frame change suggests gentle drifting rather than rigidly static dots. However, the color behavior is visibly inconsistent: frame 1 has the warmer yellow-green firefly variation associated with the preset, while frame 4 has shifted almost entirely to highly saturated neon green. This reads as a global timed color sweep rather than natural, individually varied fireflies, and the later frame loses the warm luminous balance of the thumbnail-like look."
+    },
+    {
+      "iter": 2,
+      "score": 9,
+      "verdict": "pass",
+      "critique": "The render convincingly matches the Fireflies nature-preset look: a pure black field populated by widely scattered small yellow-green lights, varied point sizes, soft bloom, and a restrained handful of larger luminous fireflies. Both sampled times retain a natural mix of warm yellow-green and green rather than the prior global neon-green shift, while the changing particle positions read as gentle drifting."
+    }
+  ]
+}
