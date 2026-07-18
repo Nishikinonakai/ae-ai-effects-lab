@@ -1,0 +1,304 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Bokeh/Deep Orange Bokeh.xbxc",
+  "_pack": "TC14",
+  "_category": "Bokeh",
+  "_effect": "tc Form",
+  "_map_coverage": "28 mapped / 0 unmapped / 5 curves",
+  "_unmapped": [],
+  "_notes": [],
+  "intent": "Reproduce the vendor Form preset \"Deep Orange Bokeh\" (Bokeh); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Bokeh/Deep Orange Bokeh.png",
+  "name": "deep-orange-bokeh_i4",
+  "compName": "MinedForm_DeepOrangeBokeh",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "footage": [
+    {
+      "path": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Sprites/Common/Bokeh/Bokeh 2.png",
+      "layerName": "SpriteTex"
+    }
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0024",
+          7,
+          "FXid_PType (default-pair+enumOffset, med)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0007",
+          12,
+          "FXid_BaseShapeParticlesX (exact-name, high)"
+        ],
+        [
+          "tc Form-0008",
+          9,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          1,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          1920,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0005",
+          1080,
+          "FXid_BaseShapeSizeY (exact-name, high)"
+        ],
+        [
+          "tc Form-0006",
+          200,
+          "FXid_BaseShapeSizeZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0025",
+          34,
+          "FXid_PFeather (default-pair, high)"
+        ],
+        [
+          "tc Form-0028",
+          1,
+          "FXid_PLayerTime (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0033",
+          330,
+          "FXid_PSizeMax (exact-name, high)"
+        ],
+        [
+          "tc Form-0034",
+          70,
+          "FXid_PSizeRnd (exact-name, high)"
+        ],
+        [
+          "tc Form-0035",
+          100,
+          "FXid_POpacMax (default-pair, high)"
+        ],
+        [
+          "tc Form-0246",
+          100,
+          "FXid_POpacRnd (exact-name, high)"
+        ],
+        [
+          "tc Form-0036",
+          [
+            1,
+            0.55,
+            0.16,
+            1
+          ],
+          "FXid_PColor (default-pair, high)"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0159",
+          81,
+          "FXid_BaseShapeDisperse (default-pair, high)"
+        ],
+        [
+          "tc Form-0164",
+          25,
+          "FXid_FAffectOpac (exact-name, high)"
+        ],
+        [
+          "tc Form-0166",
+          126,
+          "FXid_FAffectPosX (exact-name, high)"
+        ],
+        [
+          "tc Form-0163",
+          30.8,
+          "FXid_FAffectSize (exact-name, high)"
+        ],
+        [
+          "tc Form-0172",
+          10,
+          "FXid_FEvolution (default-pair, high)"
+        ],
+        [
+          "tc Form-0173",
+          1,
+          "FXid_FLoop (exact-name, high)"
+        ],
+        [
+          "tc Form-0174",
+          10,
+          "FXid_FLoopTime (exact-name, high)"
+        ],
+        [
+          "tc Form-0171",
+          15,
+          "FXid_FlowZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0027",
+          {
+            "__layer": "SpriteTex"
+          },
+          "Sprite texture layer (rg.p.sprite.id)"
+        ],
+        [
+          "tc Form-0028",
+          1,
+          "FXid_PLayerTime (+enumOffset)"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0033",
+          "value": 650,
+          "why": "Reduce the extremely oversized particle diameter so more of the 5x4 particle field can remain visible at once and the composition reads as layered bokeh rather than a few cropped circles."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0035",
+          "value": 65,
+          "why": "Raise maximum opacity to make the orange bokeh read clearly as deep orange against black instead of near-black brown."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0171",
+          "value": 15,
+          "why": "Slow Z flow so particles do not vacate the frame so dramatically between t1 and t4, preserving a denser and more stable bokeh composition."
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "for_iter": 3,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0007",
+          "value": 8,
+          "why": "Increase the particle grid horizontally so the bokeh field has substantially more overlapping elements and fewer empty black areas."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0008",
+          "value": 6,
+          "why": "Increase vertical particle density to sustain a fuller bokeh composition at both sampled times."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0033",
+          "value": 430,
+          "why": "Reduce the maximum disc scale so the increased particle count forms a layered bokeh field rather than only a few dominant oversized circles."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0035",
+          "value": 100,
+          "why": "Raise maximum particle opacity so the intended deep-orange color reads clearly instead of collapsing into near-black brown discs."
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "for_iter": 4,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0007",
+          "value": 12,
+          "why": "Increase horizontal particle population so the field remains visually full rather than leaving broad empty black regions."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0008",
+          "value": 9,
+          "why": "Increase vertical particle population to create the richer, more continuous bokeh layering expected from the preset."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0033",
+          "value": 330,
+          "why": "Reduce the dominant maximum disc size so the increased population reads as a layered bokeh field instead of a small number of uniformly oversized circles."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0034",
+          "value": 70,
+          "why": "Broaden size randomness to introduce a more natural mix of small and large bokeh discs and reduce the uniform-circle appearance."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0036",
+          "value": [
+            1,
+            0.55,
+            0.16,
+            1
+          ],
+          "why": "Lift the orange toward a more luminous saturated deep-orange appearance rather than the current muddy brown."
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

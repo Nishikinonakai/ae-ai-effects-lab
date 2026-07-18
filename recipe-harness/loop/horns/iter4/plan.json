@@ -1,0 +1,199 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Lines/Horns.xbxc",
+  "_pack": "TC14",
+  "_category": "Lines",
+  "_effect": "tc Form",
+  "_map_coverage": "24 mapped / 0 unmapped / 5 curves",
+  "_unmapped": [],
+  "_notes": [],
+  "intent": "Reproduce the vendor Form preset \"Horns\" (Lines); reference thumbnail: none shipped",
+  "name": "horns_i4",
+  "compName": "MinedForm_Horns",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0003",
+          2,
+          "FXid_BaseShape (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0012",
+          22,
+          "FXid_BaseShapeAngleX (exact-name, high)"
+        ],
+        [
+          "tc Form-0013",
+          2,
+          "FXid_BaseShapeAngleY (exact-name, high)"
+        ],
+        [
+          "tc Form-0014",
+          -26,
+          "FXid_BaseShapeAngleZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0008",
+          12,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          4,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          800,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0005",
+          200,
+          "FXid_BaseShapeSizeY (exact-name, high)"
+        ],
+        [
+          "tc Form-0006",
+          800,
+          "FXid_BaseShapeSizeZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0016",
+          6,
+          "FXid_StringDensity (default-pair, high)"
+        ],
+        [
+          "tc Form-0017",
+          5,
+          "FXid_StringSizeRnd (exact-name, high)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0033",
+          1,
+          "FXid_PSizeMax (exact-name, high)"
+        ],
+        [
+          "tc Form-0042",
+          1,
+          "FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.45331397247903144,
+            0.6669172105597861,
+            0.5946453794101139,
+            1
+          ],
+          "FXid_PColor (default-pair, high) [flattened ColorMapArb]"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0160",
+          4,
+          "FXid_SDTwisterAmount (default-pair, high)"
+        ],
+        [
+          "tc Form-0163",
+          11,
+          "FXid_FAffectSize (exact-name, high)"
+        ],
+        [
+          "tc Form-0180",
+          6,
+          "FXid_FScale (exact-name, high)"
+        ],
+        [
+          "tc Form-0499",
+          2,
+          "FXid_FractalStrengthOver (exact-name+enumOffset, high)"
+        ],
+        [
+          "tc Form-0206",
+          [
+            640,
+            360
+          ],
+          "FXid_KCenterXY (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0204",
+          3,
+          "FXid_KMode (default-pair+enumOffset, high)"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 4,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0004",
+          "value": 800,
+          "why": "Reduce the base shape X extent so the horn bundles and their tapered ends can remain visible inside the composition rather than being clipped at the left and right edges."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0006",
+          "value": 800,
+          "why": "Reduce the Z extent with X to pull the projected ribbons back into a more legible paired-horns composition rather than oversized frame-spanning arcs."
+        },
+        {
+          "type": "param",
+          "effect": "tc Form",
+          "matchName": "tc Form-0016",
+          "value": 6,
+          "why": "Lower string density to separate the line strands at the central overlap and prevent the intersections from blooming into broad white bands."
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

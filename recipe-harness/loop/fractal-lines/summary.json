@@ -21,6 +21,18 @@
       "score": 4,
       "verdict": "fail",
       "critique": "The black background and hot magenta Form-string palette are on target, and the two frames show a reasonably continuous evolving field rather than the severe empty-to-overpacked jump seen earlier. However, both frames still read primarily as long, smooth, uniformly angled streaks with repeated tapered capsules. The large bright strings dominate the image, especially at left in t1 and right/center in t4, while much of the frame remains empty black. There is very little visible fine-scale branching, turbulent fragmentation, or layered fractal detail, so it does not yet resemble the dense, intricate Fractal Lines preset."
+    },
+    {
+      "iter": 4,
+      "score": 2,
+      "verdict": "fail",
+      "critique": "The black background and magenta line color match the intended preset family, but the result is substantially less fractal than the reference intent. The frame is dominated by a sparse set of extremely long, smooth, nearly parallel diagonal streaks, including several clipped and overbright foreground bands at the far left. Most of the image is empty black, with almost no branching, granular breakup, or layered fine-line detail. The field reads as a simple diagonal line array rather than an intricate turbulent fractal-line texture."
+    },
+    {
+      "iter": 5,
+      "score": 1,
+      "verdict": "fail",
+      "critique": "The magenta-on-black palette remains related to the Form preset family, but this frame is now an extreme close-up of soft, smooth, parallel diagonal bands. It lacks the reference preset's intricate, distributed fractal-string texture: there is virtually no visible branching, turbulent breakup, or fine layered line structure. The far-left bands are heavily blown out and the field has little black-space separation, so it reads as blurred light streaks rather than Fractal Lines."
     }
   ]
 }

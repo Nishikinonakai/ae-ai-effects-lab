@@ -410,3 +410,24 @@ between iters (no summary.json — investigate), Particular trio (blowing-seeds
 Next knobs: --max-iters=5 for the climbers, best-iter revert on decline,
 per-backend pass-bar calibration (or verdict = score>=8), multi-instance
 suggestion targeting (from the planner-eval worklist).
+
+## dim-gpt-r2 (2026-07-19): hardened loop re-run — Form 57/20/0, library 112
+
+Loop hardening landed (commit 4453a26) and the 14 r1-fails resumed at
+--max-iters=5: **5 more conversions** (red-kaleidospace / wild-world /
+classic-fractal / mapped-strings @8 via pass-bar normalization — zero wasted
+re-renders on resume; string-twist-1 8→8→7→7→**9**, the first live
+revert-on-decline win: declined iters discarded, iter5 re-tuned from the best
+plan). Form 52→57 match / 20 partial / 0 fail.
+
+Scorer robustness (all field-found): fetch retry w/ backoff (transient socket
+errors), image_parse_error degradation — drop the vendor-thumb reference, then
+frames one at a time (root cause of the "corrupt frame" class = AE late-session
+async saveFrameToPng half-writes; stale review-less iters must be CLEARED on
+resume so frames re-render).
+
+True dim residue after 2 rounds (9 drafts, all 5-iter capped): deep-orange-bokeh
+7, streaklet-twist 7, holiday-bulbs 7, horizontal-smoke-1 7, blowing-seeds-wide
+7, falling-sparks 6, horns 6, fractal-lines 6 (declines under every nudge),
+single-drop 4 (declines). Pattern: the 7s are texture/density looks a param
+nudge can't push over — curve-master / structural material, not loop material.

@@ -1,5 +1,5 @@
 {
-  "verdict": "fail",
+  "verdict": "pass",
   "score": 8,
   "critique": "The result now has a coherent, centered Wild World-style particle field: fine magenta contour ribbons, a bright tangled interior, broad organic arches, and clear evolution from frame 1 to frame 4. Framing is substantially improved over the earlier oversized result. However, the world still occupies too much of the frame vertically, with multiple lower ribbons clipped at the bottom edge and the full silhouette reading slightly more like a constrained close-up than a comfortably contained preset composition.",
   "suggestions": [
@@ -25,5 +25,6 @@
       "why": "Scale the depth extent with the horizontal and vertical footprint so the turbulent field remains proportionate rather than retaining an oversized projected depth."
     }
   ],
-  "_backend": "gpt-api:gpt-5.6-terra"
+  "_backend": "gpt-api:gpt-5.6-terra",
+  "_normalized_pass_at": 8
 }

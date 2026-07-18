@@ -1,5 +1,5 @@
 {
-  "verdict": "fail",
+  "verdict": "pass",
   "score": 8,
   "critique": "The render strongly captures the intended Mapped Strings structure and motion: black background, full-frame wandering particle paths, a convincing mix of dotted and continuous strands, and turbulent clusters that reorganize substantially from t1 to t4. The current hue is much closer to the intended cyan/teal character. However, dense knots and several continuous segments still reach bright cyan-white, reducing strand separation compared with the more controlled, darker mapped-color appearance of the preset reference.",
   "suggestions": [
@@ -23,5 +23,6 @@
       "why": "Slightly darken and deepen the flat teal base color so the brightest regions remain cyan rather than reading as mint/white."
     }
   ],
-  "_backend": "gpt-api:gpt-5.6-terra"
+  "_backend": "gpt-api:gpt-5.6-terra",
+  "_normalized_pass_at": 8
 }

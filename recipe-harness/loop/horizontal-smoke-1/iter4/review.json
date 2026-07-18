@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The render matches the intended black-background, centered horizontal white-smoke composition and shows soft evolving texture between t1 and t4. However, the core remains visibly segmented into a row of bright sprite lobes, with persistent dark vertical pinches through the center and near the right side. It still does not read as the thumbnail's continuously merged drifting smoke plume.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0221",
+      "value": 32,
+      "why": "Double the Grid Emitter X particle count so adjacent smoke sprites are placed more densely across the 500px-wide emitter, filling the recurring vertical gaps."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 220,
+      "why": "Increase emission density to build substantially more overlapping sprite layers during the 3-second lifetime, merging the bright bead-like columns into a continuous plume."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

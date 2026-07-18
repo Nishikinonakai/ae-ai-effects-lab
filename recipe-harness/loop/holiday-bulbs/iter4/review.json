@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The ornate amber/gold bulb sprite, black background, and visible change between t1 and t4 are on target for Holiday Bulbs. Bulb silhouettes are mostly clear. However, both frames still read as fragmented ribbons and clumps rather than a coherent Shape Grids field: large black channels cut through the array, especially across the center and lower portions, and the motion noticeably relocates those gaps. The remaining flow/twister displacement is overpowering the underlying grid; slight scale randomization also weakens the regular row spacing.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0160",
+      "value": 0,
+      "why": "Remove the residual Twister distortion that is splitting the particle grid into disconnected curved bands and large voids."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0170",
+      "value": 0,
+      "why": "Eliminate vertical Flow displacement so the particle rows retain a stable, recognizable Shape Grids structure across time."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0034",
+      "value": 0,
+      "why": "Make bulb scale consistent so adjacent particles form cleaner, more evenly spaced grid rows."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

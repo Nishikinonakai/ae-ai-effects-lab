@@ -81,9 +81,10 @@
       "note": "authored-PColor fix (flatten only in gradient mode)"
     },
     "red-kaleidospace": {
-      "verdict": "partial",
+      "verdict": "match",
       "class": "ok-partial",
-      "round": "form-r1"
+      "round": "dim-gpt-r2",
+      "tuned": true
     },
     "red-shard": {
       "verdict": "match",
@@ -104,9 +105,10 @@
       "note": "authored-PColor fix (flatten only in gradient mode)"
     },
     "wild-world": {
-      "verdict": "partial",
+      "verdict": "match",
       "class": "ok-partial",
-      "round": "form-r1"
+      "round": "dim-gpt-r2",
+      "tuned": true
     },
     "basic-bokeh": {
       "verdict": "match",
@@ -129,9 +131,10 @@
       "round": "form-r1"
     },
     "classic-fractal": {
-      "verdict": "partial",
+      "verdict": "match",
       "class": "ok-partial",
-      "round": "form-r1"
+      "round": "dim-gpt-r2",
+      "tuned": true
     },
     "data-flow": {
       "verdict": "match",
@@ -243,9 +246,10 @@
       "tuned": true
     },
     "mapped-strings": {
-      "verdict": "partial",
+      "verdict": "match",
       "class": "ok-partial",
-      "round": "form-r1"
+      "round": "dim-gpt-r2",
+      "tuned": true
     },
     "massive-strings": {
       "verdict": "match",
@@ -269,9 +273,10 @@
       "round": "form-r1"
     },
     "string-twist-1": {
-      "verdict": "partial",
+      "verdict": "match",
       "class": "ok-partial",
-      "round": "form-r1"
+      "round": "dim-gpt-r2",
+      "tuned": true
     },
     "string-twist-2": {
       "verdict": "match",

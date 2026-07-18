@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render has the intended black backdrop, bright yellow/orange/red ember palette, dense emission, and a discernible downward shift from t1 to t4. However, it still reads as a narrow central column of soft bead-like particles rather than the broader, scattered falling-sparks shower of the preset thumbnail. The lateral field is too constrained and the visible trail remains relatively compact, with the lower portion crowding/cropping near the bottom instead of sustaining a more extended descending shower.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 700,
+      "why": "Substantially widening the line emitter spreads the source across more of the frame, breaking the tight centered column."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 100,
+      "why": "A wider direction spread disperses sparks laterally after emission, creating a more natural shower rather than a vertically packed plume."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 4.8,
+      "why": "Longer particle life preserves a longer descending field and makes the falling motion read more clearly across the frame."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

@@ -1,0 +1,130 @@
+{
+  "status": "done",
+  "name": "horns_i3",
+  "params": [
+    {
+      "p": "[1:tc Form] FXid_BaseShape (default-pair+enumOffset, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeOption (exact-name+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeAngleX (exact-name, high)",
+      "ok": true,
+      "v": "22"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeAngleY (exact-name, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeAngleZ (exact-name, high)",
+      "ok": true,
+      "v": "-26"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeCenter (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesY (exact-name, high)",
+      "ok": true,
+      "v": "12"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesZ (exact-name, high)",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeX (exact-name, high)",
+      "ok": true,
+      "v": "1250"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeY (exact-name, high)",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeZ (exact-name, high)",
+      "ok": true,
+      "v": "1250"
+    },
+    {
+      "p": "[1:tc Form] FXid_StringDensity (default-pair, high)",
+      "ok": true,
+      "v": "9"
+    },
+    {
+      "p": "[1:tc Form] FXid_StringSizeRnd (exact-name, high)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Form] FXid_PTMode (ranked-candidate+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PSizeMax (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_PColor (default-pair, high) [flattened ColorMapArb]",
+      "ok": true,
+      "v": "0.45331397652626,0.66691"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Color (default-pair, med)",
+      "ok": true,
+      "v": "0,0,0,1"
+    },
+    {
+      "p": "[1:tc Form] FXid_SDTwisterAmount (default-pair, high)",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectSize (exact-name, high)",
+      "ok": true,
+      "v": "11"
+    },
+    {
+      "p": "[1:tc Form] FXid_FScale (exact-name, high)",
+      "ok": true,
+      "v": "6"
+    },
+    {
+      "p": "[1:tc Form] FXid_FractalStrengthOver (exact-name+enumOffset, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_KCenterXY (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_KMode (default-pair+enumOffset, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/horns/iter3/horns_i3_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/horns/iter3/horns_i3_t4.png"
+  ]
+}

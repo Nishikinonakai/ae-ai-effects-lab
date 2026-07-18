@@ -21,6 +21,18 @@
       "score": 7,
       "verdict": "fail",
       "critique": "This is now clearly a localized release of dandelion seeds that expands into a broad rightward plume: t1 has a compact source cluster and t4 shows the same material dispersed widely across the right half of the frame. That is a substantial match to the intended blowing-seeds motion, and it avoids the prior full-frame birth field. The result remains somewhat too sparse and faint, however; the t4 plume has large empty gaps and lacks the fuller, more visually legible seed cloud expected from a preset thumbnail."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The imagery is unmistakably dandelion seed material, and t4 has a much fuller cloud than the preceding sparse result. However, the motion still reads more as accumulating seeds in a loose, broadly distributed field than a defined wind-carried release. At t1 the seeds are already dispersed across a wide central area rather than visibly originating from a compact source, and by t4 the expansion has substantial vertical and backward scatter instead of a more coherent wide rightward plume. The seeds are also very small and dim against black, reducing the thumbnail-like legibility of the botanical cloud."
+    },
+    {
+      "iter": 5,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The timing now reads as a localized seed release: t1 is a compact cluster and t4 becomes a distinctly rightward, widening plume. This is much closer to blowing seeds than the prior broad birth field. However, the plume remains undersized and faint within the frame, with the dandelion sprites reading as tiny upright seed-head silhouettes rather than a clearly legible, airy cloud. The t4 distribution also has somewhat more downward/backward scatter than a clean wind-carried sweep."
     }
   ]
 }

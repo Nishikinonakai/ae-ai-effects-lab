@@ -21,6 +21,18 @@
       "score": 7,
       "verdict": "fail",
       "critique": "The lime-green-on-black Streaklet line treatment is clean and the frames now show clear rotation between t1 and t4. However, the visible result is still dominated by long, smooth ribbon arcs that are heavily cropped by both horizontal edges. The actual twisted convergence is weak and displaced leftward, especially at t4, so it reads more like flowing parallel strands than a compact Streaklet Twist focal mass."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The lime-green Streaklet line rendering on black is clean, layered, and visibly animated between t1 and t4. However, both frames remain dominated by extremely long, cropped parallel arcs that span edge-to-edge. The twist is only a shallow crossing region rather than a compact, legible curled focal mass, and at t4 it reads especially as an open fan of ribbons. This does not yet convincingly match a focused Streaklet Twist preset composition."
+    },
+    {
+      "iter": 5,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The lime-green-on-black Streaklet treatment is clean, dense, and clearly animated between t1 and t4. This iteration is less aggressively edge-cropped than prior renders, especially at t1. However, the formation still reads chiefly as long flowing ribbon strands: t1 is a broad crossing bundle and t4 opens into a wide U/fan shape. The twist does not resolve into a compact, concentrated curled focal mass, so it remains less like a focused Streaklet Twist preset and more like rotating parallel arcs."
     }
   ]
 }

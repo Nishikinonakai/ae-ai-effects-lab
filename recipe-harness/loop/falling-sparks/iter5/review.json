@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render retains the correct black backdrop, dense warm fire palette, glow, and a visible downward progression from t1 to t4. However, it still reads as a compact, soft bead-like central plume instead of a broad field of individually falling sparks. At t4 the lower mass crowds into and clips at the bottom edge while the upper source remains narrow; the shower needs substantially more lateral distribution and less clustered particle scale.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 1200,
+      "why": "Widening the emitter creates a substantially broader spark source instead of the persistent tight center column."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 145,
+      "why": "Increasing directional spread pushes more particles outward as they fall, producing a scattered shower silhouette rather than a vertical plume."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 5,
+      "why": "Reducing particle size helps the dense field resolve as many distinct sparks rather than large soft, crowded beads."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

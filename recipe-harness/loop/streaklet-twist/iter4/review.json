@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The lime-green Streaklet line rendering on black is clean, layered, and visibly animated between t1 and t4. However, both frames remain dominated by extremely long, cropped parallel arcs that span edge-to-edge. The twist is only a shallow crossing region rather than a compact, legible curled focal mass, and at t4 it reads especially as an open fan of ribbons. This does not yet convincingly match a focused Streaklet Twist preset composition.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0004",
+      "value": 750,
+      "why": "Reduce the base shape X span so the streaks no longer run as oversized edge-to-edge ribbons and the twisted structure remains contained within the frame."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0160",
+      "value": 5,
+      "why": "Increase the Twister amount to produce a more obvious curled convergence and stronger central twist after the overall streak span is reduced."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

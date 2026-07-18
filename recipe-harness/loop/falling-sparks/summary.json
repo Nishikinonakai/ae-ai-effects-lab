@@ -21,6 +21,18 @@
       "score": 6,
       "verdict": "fail",
       "critique": "The render now clearly reads as fiery falling sparks: it has a black background, dense yellow/orange/red embers, visible glow, and the t4 frame shows the particle mass descending. However, it remains a tight, centered column rather than the wider, more dispersed falling-sparks shower indicated by the preset thumbnail. The source and trail are still compact, with small bead-like particles and insufficient lateral spread; the field should occupy substantially more width and persist farther downward."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render has the intended black backdrop, bright yellow/orange/red ember palette, dense emission, and a discernible downward shift from t1 to t4. However, it still reads as a narrow central column of soft bead-like particles rather than the broader, scattered falling-sparks shower of the preset thumbnail. The lateral field is too constrained and the visible trail remains relatively compact, with the lower portion crowding/cropping near the bottom instead of sustaining a more extended descending shower."
+    },
+    {
+      "iter": 5,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render retains the correct black backdrop, dense warm fire palette, glow, and a visible downward progression from t1 to t4. However, it still reads as a compact, soft bead-like central plume instead of a broad field of individually falling sparks. At t4 the lower mass crowds into and clips at the bottom edge while the upper source remains narrow; the shower needs substantially more lateral distribution and less clustered particle scale."
     }
   ]
 }

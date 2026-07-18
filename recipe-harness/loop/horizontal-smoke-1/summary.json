@@ -21,6 +21,18 @@
       "score": 7,
       "verdict": "fail",
       "critique": "The render retains the intended black background, centered wide horizontal white-smoke band, soft volumetric texture, and subtle evolution from t1 to t4. However, it still reads as a chain of individually placed smoke sprites: pronounced dark vertical pinches separate the bright lobes, particularly through the middle and before the right end. The preset thumbnail intent is a more continuously merged, drifting plume, without this repeated bead-like segmentation."
+    },
+    {
+      "iter": 4,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render matches the intended black-background, centered horizontal white-smoke composition and shows soft evolving texture between t1 and t4. However, the core remains visibly segmented into a row of bright sprite lobes, with persistent dark vertical pinches through the center and near the right side. It still does not read as the thumbnail's continuously merged drifting smoke plume."
+    },
+    {
+      "iter": 5,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render preserves the key preset traits: black background, centered wide horizontal white-smoke band, soft diffuse texture, and visible temporal evolution from t1 to t4. It still fails the thumbnail match because the core plume is visibly constructed from repeated bright sprite lobes. Dark vertical pinches remain especially at center-left and throughout the brighter right half, making the smoke read as segmented beads instead of one continuously merged drifting stream."
     }
   ]
 }

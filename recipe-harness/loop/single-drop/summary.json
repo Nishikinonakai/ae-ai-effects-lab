@@ -21,6 +21,18 @@
       "score": 6,
       "verdict": "fail",
       "critique": "The black background, luminous amber particle color, and dense filament/dot rendering are convincing. Frame 1 is relatively compact, but it reads as a folded rosette with multiple rolled lobes rather than a unified liquid drop. By frame 4 it breaks into a tall, stringy turbulent plume with separated curls and a porous interior. The motion is substantially too violent and deforming for the intended cohesive Single Drop behavior."
+    },
+    {
+      "iter": 4,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The amber/gold Form particles, black background, and fine luminous mesh detail are on target. Frame 1 is substantially closer to a single cohesive drop than prior attempts, though it still has a pinched lower lobe and a small detached particle island. Motion is the major failure: by frame 4 the object has explosively separated into a high turbulent cloud, a distinct lower cluster, and another detached speck. This reads as a rapidly dispersing plume rather than a stable, unified fluid drop."
+    },
+    {
+      "iter": 5,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "The black field, luminous amber color, and fine Form particle texture are convincing. Frame 1 is a reasonably compact fluid mass, but its silhouette remains folded and irregular rather than reading as one rounded drop. More importantly, the motion is still much too disruptive: by frame 4 the mass has stretched into a large porous plume with a long, nearly detached upward tendril and a dispersed lower body. This does not preserve the cohesive, stable Single Drop character."
     }
   ]
 }

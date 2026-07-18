@@ -1,0 +1,193 @@
+{
+  "intent": "Reproduce the vendor Form preset \"String Twist 1\" (Lines); reference thumbnail: none shipped",
+  "pass_criteria": [],
+  "iteration": 5,
+  "max_iters": 5,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "tc Form",
+        "params": [
+          [
+            "tc Form-0003",
+            2,
+            "FXid_BaseShape (default-pair+enumOffset, high)"
+          ],
+          [
+            "tc Form-0489",
+            2,
+            "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+          ],
+          [
+            "tc Form-0012",
+            -1,
+            "FXid_BaseShapeAngleX (exact-name, high)"
+          ],
+          [
+            "tc Form-0014",
+            -9,
+            "FXid_BaseShapeAngleZ (exact-name, high)"
+          ],
+          [
+            "tc Form-0010",
+            [
+              640,
+              360
+            ],
+            "FXid_BaseShapeCenter (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0008",
+            28,
+            "FXid_BaseShapeParticlesY (exact-name, high)"
+          ],
+          [
+            "tc Form-0009",
+            1,
+            "FXid_BaseShapeParticlesZ (exact-name, high)"
+          ],
+          [
+            "tc Form-0004",
+            2040,
+            "FXid_BaseShapeSizeX (exact-name, high)"
+          ],
+          [
+            "tc Form-0037",
+            2,
+            "FXid_PTMode (ranked-candidate+enumOffset, med)"
+          ],
+          [
+            "tc Form-0033",
+            4,
+            "FXid_PSizeMax (exact-name, high)"
+          ],
+          [
+            "tc Form-0531",
+            2,
+            "FXid_OpacityCurveOver (exact-name+enumOffset, high)"
+          ],
+          [
+            "tc Form-0042",
+            1,
+            "FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]"
+          ],
+          [
+            "tc Form-0036",
+            [
+              0.48647810429171784,
+              0.7730954812198388,
+              0.6795028584902404,
+              1
+            ],
+            "FXid_PColor (default-pair, high) [flattened ColorMapArb]"
+          ],
+          [
+            "tc Form-0420",
+            [
+              0,
+              0,
+              0,
+              1
+            ],
+            "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+          ],
+          [
+            "tc Form-0159",
+            5,
+            "FXid_BaseShapeDisperse (default-pair, high)"
+          ],
+          [
+            "tc Form-0160",
+            3,
+            "FXid_SDTwisterAmount (default-pair, high)"
+          ],
+          [
+            "tc Form-0169",
+            58,
+            "FXid_FlowX (exact-name, high)"
+          ],
+          [
+            "tc Form-0527",
+            [
+              640,
+              360,
+              0
+            ],
+            "FXid_D1Pos (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0528",
+            [
+              640,
+              360,
+              0
+            ],
+            "FXid_D2Pos (ranked-candidate, med)"
+          ],
+          [
+            "tc Form-0608",
+            [
+              640,
+              360,
+              0
+            ],
+            "FXid_KCenter (ranked-candidate, med)"
+          ]
+        ],
+        "expressions": [
+          [
+            "tc Form-0160",
+            "3 + time*0.5",
+            "Greatly reduces Twister Amount phase cha [i5]"
+          ],
+          [
+            "tc Form-0169",
+            "58",
+            "Stops the additional Flow X travel that  [i5]"
+          ]
+        ]
+      }
+    ],
+    "camera": null,
+    "background": [
+      0,
+      0,
+      0
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/string-twist-1/iter5/string-twist-1_i5_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/string-twist-1/iter5/string-twist-1_i5_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The render has a convincing String Twist appearance: many fine mint/cyan parallel strings form a broad, symmetric pinched wave against clean black, with clear twist crossings at both side edges. However, frames 1 and 4 are visually identical, so the preset currently has no observable motion. A String Twist preset should read as flowing/twisting rather than as a completely frozen string lattice."
+    },
+    {
+      "iter": 2,
+      "score": 8,
+      "verdict": "fail",
+      "critique": "The still design strongly reads as a String Twist: thin luminous mint/cyan lines form a clean, broad symmetric wave, pinch tightly at the left and right twist nodes, and sit well against black. However, t1 and t4 remain visually identical. The attempted Flow X animation is not producing any observable deformation or travel, leaving the result frozen rather than behaving like an animated Form preset."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The result now has clear temporal change, but the motion is far too violent and unstable for a polished String Twist preset. At t1, the mint particle strings form recognizable looping/twisting waves on black. By t4, the coherent string structure has largely collapsed into a dense, noisy particle field with only a thin central oscillation remaining. The desired flowing twist should preserve the legible parallel strings while their pinch points and waves travel smoothly."
+    },
+    {
+      "iter": 4,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The mint-on-black string treatment is clean and attractive, and both frames retain recognizable curved parallel strands with bright pinch crossings. Motion is now observable, but it is still too fast and morphing: frame 1 has two broad, spacious twist lobes, while frame 4 has several tightly repeated lobes and extra dotted/crossing strands. That reads as abrupt structural reconfiguration rather than a smooth traveling String Twist. The animation should keep the same sparse, legible string lattice while the existing twist nodes drift gently."
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

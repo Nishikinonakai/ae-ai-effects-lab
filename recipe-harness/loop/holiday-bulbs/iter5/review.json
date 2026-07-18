@@ -1,0 +1,22 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The ornate amber/gold ornament sprites, black background, and visible time variation are strongly aligned with the Holiday Bulbs look. Individual bulb silhouettes are clear and the underlying rows are evident in the brighter areas. However, the opacity-driven deformation still creates very large near-black channels and fragmented clusters across both frames, especially through the center and lower half. This prevents the result from reading as a coherent Shape Grids array; the temporal change primarily shifts those empty channels rather than providing subtle organized variation.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0164",
+      "value": 15,
+      "why": "Reduce Fractal Affect Opacity from 47 so the fractal produces only restrained animated brightness variation instead of carving broad dark voids through the particle grid."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0246",
+      "value": 0,
+      "why": "Remove per-particle opacity randomness so adjacent bulbs retain consistent row density and the grid is not further broken by isolated dim ornaments."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

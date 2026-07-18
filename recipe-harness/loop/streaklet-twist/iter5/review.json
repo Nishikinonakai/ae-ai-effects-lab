@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The lime-green-on-black Streaklet treatment is clean, dense, and clearly animated between t1 and t4. This iteration is less aggressively edge-cropped than prior renders, especially at t1. However, the formation still reads chiefly as long flowing ribbon strands: t1 is a broad crossing bundle and t4 opens into a wide U/fan shape. The twist does not resolve into a compact, concentrated curled focal mass, so it remains less like a focused Streaklet Twist preset and more like rotating parallel arcs.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0004",
+      "value": 500,
+      "why": "Reduce Base Shape Size X to shorten the dominant sweeping strands and keep the streak system concentrated inside the frame."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0005",
+      "value": 250,
+      "why": "Reduce Base Shape Size Y so the silhouette occupies a tighter central region rather than opening into a broad fan."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0160",
+      "value": 11,
+      "why": "Increase the SD Twister amount to produce a more legible curled convergence and stronger internal twisting within the compact mass."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

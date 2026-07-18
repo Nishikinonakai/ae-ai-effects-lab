@@ -1,0 +1,118 @@
+{
+  "status": "done",
+  "name": "string-twist-1_i4",
+  "params": [
+    {
+      "p": "[1:tc Form] FXid_BaseShape (default-pair+enumOffset, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeOption (exact-name+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeAngleX (exact-name, high)",
+      "ok": true,
+      "v": "-1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeAngleZ (exact-name, high)",
+      "ok": true,
+      "v": "-9"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeCenter (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesY (exact-name, high)",
+      "ok": true,
+      "v": "28"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesZ (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeX (exact-name, high)",
+      "ok": true,
+      "v": "2040"
+    },
+    {
+      "p": "[1:tc Form] FXid_PTMode (ranked-candidate+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PSizeMax (exact-name, high)",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[1:tc Form] FXid_OpacityCurveOver (exact-name+enumOffset, high)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_PColor (default-pair, high) [flattened ColorMapArb]",
+      "ok": true,
+      "v": "0.48647809028625,0.77309"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Color (default-pair, med)",
+      "ok": true,
+      "v": "0,0,0,1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeDisperse (default-pair, high)",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[1:tc Form] FXid_SDTwisterAmount (default-pair, high)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_FlowX (exact-name, high)",
+      "ok": true,
+      "v": "58"
+    },
+    {
+      "p": "[1:tc Form] FXid_D1Pos (ranked-candidate, med)",
+      "ok": true,
+      "v": "640,360,0"
+    },
+    {
+      "p": "[1:tc Form] FXid_D2Pos (ranked-candidate, med)",
+      "ok": true,
+      "v": "640,360,0"
+    },
+    {
+      "p": "[1:tc Form] FXid_KCenter (ranked-candidate, med)",
+      "ok": true,
+      "v": "640,360,0"
+    },
+    {
+      "p": "[1:tc Form] The current Twister Amount animation cha [i4] (expr)",
+      "ok": true
+    },
+    {
+      "p": "[1:tc Form] Reduce the accompanying Flow X travel so [i4] (expr)",
+      "ok": true
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/string-twist-1/iter4/string-twist-1_i4_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/string-twist-1/iter4/string-twist-1_i4_t4.png"
+  ]
+}

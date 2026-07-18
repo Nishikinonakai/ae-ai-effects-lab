@@ -1,0 +1,175 @@
+{
+  "status": "done",
+  "name": "single-drop_i5",
+  "params": [
+    {
+      "p": "[1:tc Form] FXid_BaseShape (default-pair+enumOffset, high)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_FluidEnable (ranked-candidate, med)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeCenter (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesX (exact-name, high)",
+      "ok": true,
+      "v": "173"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesY (exact-name, high)",
+      "ok": true,
+      "v": "383"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesZ (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeX (exact-name, high)",
+      "ok": true,
+      "v": "190"
+    },
+    {
+      "p": "[1:tc Form] FXid_RelativePosition (exact-name, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_PTMode (ranked-candidate+enumOffset, med)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_PSizeMax (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_PColor (default-pair, high) [flattened ColorMapArb]",
+      "ok": true,
+      "v": "1,0.58560860157013,0.157"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Color (default-pair, med)",
+      "ok": true,
+      "v": "0,0,0,1"
+    },
+    {
+      "p": "[1:tc Form] FXid_FluidFlowSpeedX (exact-name, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_FluidFlowSpeedY (exact-name, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_FluidFlowSpeedZ (exact-name, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_FluidForceLife (default-pair, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_FluidViscosity (default-pair, high)",
+      "ok": true,
+      "v": "85"
+    },
+    {
+      "p": "[1:tc Form] FXid_FluidVortexCoreSize (exact-name, high)",
+      "ok": true,
+      "v": "50.2999992370605"
+    },
+    {
+      "p": "[1:tc Form] FXid_FluidVortexRelPos (default-pair, med)",
+      "ok": true,
+      "v": "0,0,0"
+    },
+    {
+      "p": "[1:tc Form] FXid_FluidVortexRotate (exact-name, high)",
+      "ok": true,
+      "v": "90"
+    },
+    {
+      "p": "[1:tc Form] FXid_FluidVortexScale (default-pair, med)",
+      "ok": true,
+      "v": "70"
+    },
+    {
+      "p": "[1:tc Form] FXid_FluidVortexStrength (exact-name, high)",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[1:tc Form] FXid_FluidVortexTilt (exact-name, high)",
+      "ok": true,
+      "v": "20"
+    },
+    {
+      "p": "[1:tc Form] FXid_RandomSwirlSeed (default-pair, high)",
+      "ok": true,
+      "v": "320"
+    },
+    {
+      "p": "[1:tc Form] FXid_RandomSwirlX (exact-name, high)",
+      "ok": true,
+      "v": "57"
+    },
+    {
+      "p": "[1:tc Form] FXid_RandomSwirlY (exact-name, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_RandomSwirlZ (exact-name, high)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_SwirlScale (exact-name, high)",
+      "ok": true,
+      "v": "24"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectPosX (exact-name, high)",
+      "ok": true,
+      "v": "24"
+    },
+    {
+      "p": "[1:tc Form] FXid_D1Pos (ranked-candidate, med)",
+      "ok": true,
+      "v": "640,360,0"
+    },
+    {
+      "p": "[1:tc Form] FXid_D2Pos (ranked-candidate, med)",
+      "ok": true,
+      "v": "640,360,0"
+    },
+    {
+      "p": "[1:tc Form] FXid_KCenterXY (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/single-drop/iter5/single-drop_i5_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/single-drop/iter5/single-drop_i5_t4.png"
+  ]
+}

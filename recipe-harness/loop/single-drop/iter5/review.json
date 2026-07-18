@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 4,
+  "critique": "The black field, luminous amber color, and fine Form particle texture are convincing. Frame 1 is a reasonably compact fluid mass, but its silhouette remains folded and irregular rather than reading as one rounded drop. More importantly, the motion is still much too disruptive: by frame 4 the mass has stretched into a large porous plume with a long, nearly detached upward tendril and a dispersed lower body. This does not preserve the cohesive, stable Single Drop character.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0567",
+      "value": 30,
+      "why": "Greatly reduce the dominant horizontal fluid flow that is pulling the initially compact drop into a broad, stretched plume over the short frame interval."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0568",
+      "value": -8,
+      "why": "Reduce vertical flow so the fluid does not rapidly elongate and separate into an upper tendril and lower cloud."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0556",
+      "value": 1,
+      "why": "Lower vortex strength to suppress the strong rolled curls and the detached-looking upward filament at frame 4."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0566",
+      "value": 98,
+      "why": "Increase viscosity to hold the particles together as a denser, smoother, more unified drop while retaining restrained internal motion."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0563",
+      "value": 18,
+      "why": "Reduce random swirl X so the outer particle field remains attached to the core instead of becoming porous and laterally ragged."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

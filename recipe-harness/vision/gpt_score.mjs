@@ -80,7 +80,31 @@ async function callWithRetry(body, tries = 3) {
       });
       if (resp.ok) return resp.json();
       const errText = (await resp.text()).slice(0, 400);
-      if (resp.status < 500 && resp.status !== 429) { console.error(`API ${resp.status}: ${errText}`); process.exit(1); }
+      if (resp.status < 500 && resp.status !== 429) {
+        // one image the endpoint can't parse (some vendor thumbs) — degrade: drop the
+        // reference attachment and retry text+frames only (fractal-lines, dim-gpt-r2)
+        if (errText.includes('image_parse_error')) {
+          // one attached image is unparseable: the reference thumb, or a frame corrupted
+          // by AE's late-session async saveFrameToPng. Strip one image per retry —
+          // reference first, then the LAST frame — until only one frame remains.
+          const msg = JSON.parse(body);
+          const c = msg.messages[0].content;
+          const ri = c.findIndex(x => x.type === 'text' && x.text.startsWith('REFERENCE (vendor thumbnail'));
+          const imgCount = c.filter(x => x.type === 'image_url').length;
+          if (ri >= 0) {
+            console.error('image_parse_error — retrying WITHOUT the reference thumbnail');
+            c.splice(ri, 2);
+          } else if (imgCount > 1) {
+            console.error('image_parse_error persists — dropping the last frame attachment');
+            for (let i = c.length - 1; i >= 0; i--) if (c[i].type === 'image_url') { c.splice(i - 1, 2); break; }
+          } else {
+            console.error(`API ${resp.status}: ${errText}`); process.exit(1);
+          }
+          body = JSON.stringify(msg);
+          continue;
+        }
+        console.error(`API ${resp.status}: ${errText}`); process.exit(1);
+      }
       console.error(`API ${resp.status} (attempt ${a}/${tries}): ${errText.slice(0, 120)}`);
     } catch (e) {
       console.error(`fetch error (attempt ${a}/${tries}): ${String(e).slice(0, 160)}`);

@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The render preserves the key Horns (Lines) surface language: black background, pale mint luminous strings, dotted particle trails, and visible animated change between t1 and t4. However, the overall form remains oversized and cropped. Large bundles still enter and leave through the top, bottom, and left edges, while the center is an overloaded crossing rather than a readable paired horn silhouette. The right-side arcs are the clearest horn-like elements, but they are unbalanced by the clipped, denser mass on the left.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0004",
+      "value": 500,
+      "why": "Reduce Base Shape X extent so the left and right string bundles fit within frame rather than being cut off at the side edges."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0005",
+      "value": 125,
+      "why": "Reduce the vertical base extent proportionally, keeping the horns more compact and reducing top/bottom clipping."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0006",
+      "value": 500,
+      "why": "Reduce depth extent with X/Y so the projected structure occupies less of the frame and the paired horn arcs read more clearly instead of merging into a central knot."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

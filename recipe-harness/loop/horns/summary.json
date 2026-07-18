@@ -1,0 +1,38 @@
+{
+  "intent": "Reproduce the vendor Form preset \"Horns\" (Lines); reference thumbnail: none shipped",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render has the essential Horns (Lines) character: luminous mint-white line strands, dotted particle traces, black field, and clearly changing geometry between t1 and t4. However, the composition is dominated by several oversized, clipped ribbons crossing through the frame, so the paired horn-like structure does not read cleanly. The brightest intersections also collapse into broad white bands, obscuring the finer line detail that makes the preset legible."
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render retains the expected black field, mint-white luminous line strings, particle-dot trails, and clear geometric change between t1 and t4. However, it still reads as a set of oversized intersecting ribbons rather than a coherent paired Horns structure. Major line bundles are clipped at every frame edge, and the center/upper-left crossings become dense bright bands that hide the individual string detail. Motion is evident, but it shifts the same cropped composition instead of keeping the horn-like forms legible in frame."
+    },
+    {
+      "iter": 3,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The black field, mint-white line strings, dotted particle trails, and animated deformation remain consistent with the Horns (Lines) look. Across t1 to t4, however, the form is still far too large for the frame: several bundles enter and exit through every edge, while the central crossing is a congested bright knot. The paired horn silhouette cannot be read as a complete, intentional structure, and the dense overlap obscures the individual line detail."
+    },
+    {
+      "iter": 4,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The render preserves the key Horns (Lines) surface language: black background, pale mint luminous strings, dotted particle trails, and visible animated change between t1 and t4. However, the overall form remains oversized and cropped. Large bundles still enter and leave through the top, bottom, and left edges, while the center is an overloaded crossing rather than a readable paired horn silhouette. The right-side arcs are the clearest horn-like elements, but they are unbalanced by the clipped, denser mass on the left."
+    },
+    {
+      "iter": 5,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render now fits comfortably within the frame and preserves the essential Horns (Lines) language: black field, pale mint-white luminous strands, repeated line strings, and clearly evolving geometry from t1 to t4. The upper and right arcs read more cleanly than before. However, it still resolves primarily as an asymmetric crossed ribbon/starburst rather than a legible paired-horns form. The center is overpacked into a broad white knot that hides the individual strands, while the left-side bundle remains comparatively weak and fragmented against the dominant upper-right and lower-right arcs."
+    }
+  ]
+}

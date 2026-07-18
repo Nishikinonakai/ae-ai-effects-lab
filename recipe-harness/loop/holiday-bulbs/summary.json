@@ -21,6 +21,18 @@
       "score": 7,
       "verdict": "fail",
       "critique": "The ornate gold ornament sprite, black field, and animated Form behavior strongly evoke the Holiday Bulbs preset. Individual bulbs are now mostly legible and the movement between t1 and t4 is present without becoming completely chaotic. However, the particle field still breaks into broad, irregular black channels and dense clumps rather than reading as a consistently organized Shape Grids pattern. The remaining twister/flow deformation is creating disconnected bands, while the randomized bulb scale makes the local grid spacing feel uneven."
+    },
+    {
+      "iter": 4,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The ornate amber/gold bulb sprite, black background, and visible change between t1 and t4 are on target for Holiday Bulbs. Bulb silhouettes are mostly clear. However, both frames still read as fragmented ribbons and clumps rather than a coherent Shape Grids field: large black channels cut through the array, especially across the center and lower portions, and the motion noticeably relocates those gaps. The remaining flow/twister displacement is overpowering the underlying grid; slight scale randomization also weakens the regular row spacing."
+    },
+    {
+      "iter": 5,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The ornate amber/gold ornament sprites, black background, and visible time variation are strongly aligned with the Holiday Bulbs look. Individual bulb silhouettes are clear and the underlying rows are evident in the brighter areas. However, the opacity-driven deformation still creates very large near-black channels and fragmented clusters across both frames, especially through the center and lower half. This prevents the result from reading as a coherent Shape Grids array; the temporal change primarily shifts those empty channels rather than providing subtle organized variation."
     }
   ]
 }

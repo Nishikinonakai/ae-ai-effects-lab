@@ -1,0 +1,43 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "The amber/gold Form particles, black background, and fine luminous mesh detail are on target. Frame 1 is substantially closer to a single cohesive drop than prior attempts, though it still has a pinched lower lobe and a small detached particle island. Motion is the major failure: by frame 4 the object has explosively separated into a high turbulent cloud, a distinct lower cluster, and another detached speck. This reads as a rapidly dispersing plume rather than a stable, unified fluid drop.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0556",
+      "value": 4,
+      "why": "Greatly reduce Fluid Vortex Strength so the initially cohesive mass does not roll itself into separated lobes and clusters within a few frames."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0566",
+      "value": 85,
+      "why": "Increase Fluid Viscosity to preserve a denser, smoother drop-like core and resist the severe frame-to-frame breakup."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0569",
+      "value": 8,
+      "why": "Reduce the strong positive Z flow, which is driving the pronounced vertical stretching and upper/lower separation at frame 4."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0592",
+      "value": 1,
+      "why": "Shorten Fluid Force Life so fluid forces do not continue accelerating and dispersing the drop across the sampled frames."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0565",
+      "value": 4,
+      "why": "Reduce Random Swirl Z to remove the remaining stringy turbulent breakup while retaining a small amount of organic fluid motion."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

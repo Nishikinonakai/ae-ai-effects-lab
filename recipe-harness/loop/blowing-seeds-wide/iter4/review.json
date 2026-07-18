@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The imagery is unmistakably dandelion seed material, and t4 has a much fuller cloud than the preceding sparse result. However, the motion still reads more as accumulating seeds in a loose, broadly distributed field than a defined wind-carried release. At t1 the seeds are already dispersed across a wide central area rather than visibly originating from a compact source, and by t4 the expansion has substantial vertical and backward scatter instead of a more coherent wide rightward plume. The seeds are also very small and dim against black, reducing the thumbnail-like legibility of the botanical cloud.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 3,
+      "why": "Shrink the emitter width so the early frame reads as a distinct seed-release source rather than seeds being born across a broad band."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0015",
+      "value": 3,
+      "why": "Shrink the emitter height with the width to concentrate the origin and preserve a recognizable directional plume."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0010",
+      "value": 18,
+      "why": "Narrow directional spread so the t4 cloud follows a clearer wind-driven outward/rightward trajectory instead of filling a diffuse random field."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 14,
+      "why": "Make individual seed sprites more visible so the wide cloud has the fuller, more legible botanical presence suggested by the preset thumbnail."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

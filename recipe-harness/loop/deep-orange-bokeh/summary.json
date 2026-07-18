@@ -2,7 +2,7 @@
   "intent": "Reproduce the vendor Form preset \"Deep Orange Bokeh\" (Bokeh); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Bokeh/Deep Orange Bokeh.png",
   "backend": "api",
   "outcome": "fail_max_iters",
-  "best_iter": 2,
+  "best_iter": 5,
   "iterations": [
     {
       "iter": 1,
@@ -21,6 +21,18 @@
       "score": 6,
       "verdict": "fail",
       "critique": "The black background, warm orange palette, soft circular sprite treatment, and subtle motion between t1 and t4 are directionally correct. However, both frames remain too sparse for a rich Deep Orange Bokeh field, with large uninterrupted black areas and a very uniform distribution of oversized discs. The orange is still muddy and low-luminance rather than glowing deep orange, while several particles retain visible dark center/sprite texture artifacts. The t1-to-t4 evolution is modest and consistent, but density and layered size variation need improvement more than additional travel."
+    },
+    {
+      "iter": 4,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "The render retains the correct black ground, warm deep-orange circular bokeh palette, soft sprite edges, and gentle coherent evolution from t1 to t4. It is still substantially more sparse and orderly than a rich preset bokeh field: broad black gaps dominate both samples, while most visible discs occupy a similarly large size range. The high opacity randomization leaves several particles nearly black and makes the overall orange read muted brown rather than a more consistently luminous deep orange. Sprite-center texture marks are still evident on the largest discs."
+    },
+    {
+      "iter": 5,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render now has a convincingly warm deep-orange-on-black bokeh direction, good soft circular silhouettes, substantial edge-to-edge coverage, and gentle coherent motion from t1 to t4. It is closer to the preset than prior versions, but the field still reads as a relatively orderly grid of similarly sized, textured brown discs rather than a rich, luminous layered bokeh cloud. Many particles remain too dim because of opacity variation, and the largest circles show visible mottled sprite-center detail instead of smooth defocused light. There are also still broad empty gaps, especially through the central areas."
     }
   ]
 }

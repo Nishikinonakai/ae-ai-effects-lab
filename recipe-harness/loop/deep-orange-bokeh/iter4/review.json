@@ -1,0 +1,36 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "The render retains the correct black ground, warm deep-orange circular bokeh palette, soft sprite edges, and gentle coherent evolution from t1 to t4. It is still substantially more sparse and orderly than a rich preset bokeh field: broad black gaps dominate both samples, while most visible discs occupy a similarly large size range. The high opacity randomization leaves several particles nearly black and makes the overall orange read muted brown rather than a more consistently luminous deep orange. Sprite-center texture marks are still evident on the largest discs.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0007",
+      "value": 18,
+      "why": "Increase the particle grid horizontally to fill the large empty black regions with a denser bokeh field."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0008",
+      "value": 13,
+      "why": "Increase vertical particle density along with the horizontal grid so both frames remain richly populated rather than leaving broad gaps."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0033",
+      "value": 260,
+      "why": "Slightly reduce the maximum disc diameter so the increased particle count creates layered bokeh variation instead of being dominated by uniformly oversized circles."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0246",
+      "value": 45,
+      "why": "Reduce opacity randomness so fewer particles fall to near-black and the orange field reads brighter and more consistently luminous."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

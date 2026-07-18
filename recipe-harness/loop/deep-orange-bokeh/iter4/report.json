@@ -1,0 +1,154 @@
+{
+  "status": "done",
+  "name": "deep-orange-bokeh_i4",
+  "params": [
+    {
+      "p": "[footage] SpriteTex",
+      "ok": true
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeOption (exact-name+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PType (default-pair+enumOffset, med)",
+      "ok": true,
+      "v": "7"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeCenter (ranked-candidate, med)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesX (exact-name, high)",
+      "ok": true,
+      "v": "12"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesY (exact-name, high)",
+      "ok": true,
+      "v": "9"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeParticlesZ (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeX (exact-name, high)",
+      "ok": true,
+      "v": "1920"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeY (exact-name, high)",
+      "ok": true,
+      "v": "1080"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeSizeZ (exact-name, high)",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:tc Form] FXid_PFeather (default-pair, high)",
+      "ok": true,
+      "v": "34"
+    },
+    {
+      "p": "[1:tc Form] FXid_PLayerTime (ranked-candidate+enumOffset, med)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_PTMode (ranked-candidate+enumOffset, med)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Form] FXid_PSizeMax (exact-name, high)",
+      "ok": true,
+      "v": "330"
+    },
+    {
+      "p": "[1:tc Form] FXid_PSizeRnd (exact-name, high)",
+      "ok": true,
+      "v": "70"
+    },
+    {
+      "p": "[1:tc Form] FXid_POpacMax (default-pair, high)",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Form] FXid_POpacRnd (exact-name, high)",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:tc Form] FXid_PColor (default-pair, high)",
+      "ok": true,
+      "v": "1,0.55000001192093,0.159"
+    },
+    {
+      "p": "[1:tc Form] FXid_Options_SmokeletShadow_Color (default-pair, med)",
+      "ok": true,
+      "v": "0,0,0,1"
+    },
+    {
+      "p": "[1:tc Form] FXid_BaseShapeDisperse (default-pair, high)",
+      "ok": true,
+      "v": "81"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectOpac (exact-name, high)",
+      "ok": true,
+      "v": "25"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectPosX (exact-name, high)",
+      "ok": true,
+      "v": "126"
+    },
+    {
+      "p": "[1:tc Form] FXid_FAffectSize (exact-name, high)",
+      "ok": true,
+      "v": "30.7999992370605"
+    },
+    {
+      "p": "[1:tc Form] FXid_FEvolution (default-pair, high)",
+      "ok": true,
+      "v": "10"
+    },
+    {
+      "p": "[1:tc Form] FXid_FLoop (exact-name, high)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Form] FXid_FLoopTime (exact-name, high)",
+      "ok": true,
+      "v": "10"
+    },
+    {
+      "p": "[1:tc Form] FXid_FlowZ (exact-name, high)",
+      "ok": true,
+      "v": "15"
+    },
+    {
+      "p": "[1:tc Form] Sprite texture layer (rg.p.sprite.id)",
+      "ok": true,
+      "v": "3"
+    },
+    {
+      "p": "[1:tc Form] FXid_PLayerTime (+enumOffset)",
+      "ok": true,
+      "v": "1"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/deep-orange-bokeh/iter4/deep-orange-bokeh_i4_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/deep-orange-bokeh/iter4/deep-orange-bokeh_i4_t4.png"
+  ]
+}

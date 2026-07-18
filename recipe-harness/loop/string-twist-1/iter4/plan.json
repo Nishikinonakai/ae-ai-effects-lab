@@ -1,0 +1,193 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Lines/String Twist 1.xbxc",
+  "_pack": "TC14",
+  "_category": "Lines",
+  "_effect": "tc Form",
+  "_map_coverage": "20 mapped / 0 unmapped / 5 curves",
+  "_unmapped": [],
+  "_notes": [],
+  "intent": "Reproduce the vendor Form preset \"String Twist 1\" (Lines); reference thumbnail: none shipped",
+  "name": "string-twist-1_i4",
+  "compName": "MinedForm_StringTwist1",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0003",
+          2,
+          "FXid_BaseShape (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0012",
+          -1,
+          "FXid_BaseShapeAngleX (exact-name, high)"
+        ],
+        [
+          "tc Form-0014",
+          -9,
+          "FXid_BaseShapeAngleZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0008",
+          28,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          1,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          2040,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0033",
+          4,
+          "FXid_PSizeMax (exact-name, high)"
+        ],
+        [
+          "tc Form-0531",
+          2,
+          "FXid_OpacityCurveOver (exact-name+enumOffset, high)"
+        ],
+        [
+          "tc Form-0042",
+          1,
+          "FXid_ColorMapOver (default-pair+enumOffset, med) [forced flat: gradient unscriptable]"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.48647810429171784,
+            0.7730954812198388,
+            0.6795028584902404,
+            1
+          ],
+          "FXid_PColor (default-pair, high) [flattened ColorMapArb]"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0159",
+          5,
+          "FXid_BaseShapeDisperse (default-pair, high)"
+        ],
+        [
+          "tc Form-0160",
+          3,
+          "FXid_SDTwisterAmount (default-pair, high)"
+        ],
+        [
+          "tc Form-0169",
+          58,
+          "FXid_FlowX (exact-name, high)"
+        ],
+        [
+          "tc Form-0527",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_D1Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0528",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_D2Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0608",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_KCenter (ranked-candidate, med)"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Form-0160",
+          "3 + time*2",
+          "The current Twister Amount animation cha [i4]"
+        ],
+        [
+          "tc Form-0169",
+          "58 + time*5",
+          "Reduce the accompanying Flow X travel so [i4]"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 4,
+      "applied": [
+        {
+          "type": "expression",
+          "effect": "tc Form",
+          "matchName": "tc Form-0160",
+          "expression": "3 + time*2",
+          "why": "The current Twister Amount animation changes the deformation so rapidly that the organized strings disintegrate into particle noise by t4; substantially slowing it should retain coherent twisting lines while still providing observable motion."
+        },
+        {
+          "type": "expression",
+          "effect": "tc Form",
+          "matchName": "tc Form-0169",
+          "expression": "58 + time*5",
+          "why": "Reduce the accompanying Flow X travel so the wave advances gently instead of compounding the Twister deformation into a near-total structural collapse."
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

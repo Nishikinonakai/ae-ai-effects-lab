@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 1,
+  "critique": "The magenta-on-black palette remains related to the Form preset family, but this frame is now an extreme close-up of soft, smooth, parallel diagonal bands. It lacks the reference preset's intricate, distributed fractal-string texture: there is virtually no visible branching, turbulent breakup, or fine layered line structure. The far-left bands are heavily blown out and the field has little black-space separation, so it reads as blurred light streaks rather than Fractal Lines.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0017",
+      "value": 20,
+      "why": "Reducing String Size Random should suppress the oversized soft foreground strings that are currently turning the result into broad luminous bands."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0033",
+      "value": 0.25,
+      "why": "Lower particle size will make individual strings substantially finer and allow gaps and fine fractal detail to remain visible instead of merging into thick streaks."
+    },
+    {
+      "type": "param",
+      "effect": "tc Form",
+      "matchName": "tc Form-0035",
+      "value": 7,
+      "why": "Reduccing maximum opacity will prevent the clipped, washed-out pink mass at the left and restore contrast between layered lines and the black background."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}
