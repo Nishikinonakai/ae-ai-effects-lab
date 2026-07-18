@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire Burst 1.xbxc",
   "_pack": "TC14",
   "_category": "Explosive",
-  "_map_coverage": "38 mapped / 2 unmapped / 4 curves",
+  "_map_coverage": "41 mapped / 2 unmapped / 4 curves",
   "_unmapped": {
     "FXid_PLayerMultiClips": 2,
     "FXid_PTMode": 2
@@ -699,6 +699,17 @@
     0,
     0
   ],
+  "footage": [
+    {
+      "path": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Sprites/Common/Smoke and Fire/Fire Explosion 1.mov",
+      "layerName": "SpriteTex"
+    }
+  ],
+  "master": {
+    "library": "library/particular-masters.aep",
+    "comp": "MASTER_particular_fire",
+    "layer": 1
+  },
   "hostName": "Mined",
   "effects": [
     {
@@ -711,8 +722,8 @@
         ],
         [
           "tc Particular-0703",
-          4,
-          "FXid_PType (alias+enumOffset) [sprite fallback -> Cloudlet]"
+          6,
+          "FXid_PType (alias+enumOffset) [Designer 5 -> Sprite + connected texture]"
         ],
         [
           "tc Particular-0146",
@@ -820,19 +831,14 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0694",
-          1,
-          "FXid_PUnmult (alias)"
-        ],
-        [
           "tc Particular-0070",
           [
-            0.788,
-            0.61,
-            0.315,
+            1,
+            1,
+            1,
             1
           ],
-          "FXid_PColor (alias) [tinted from vendor thumb]"
+          "FXid_PColor (alias)"
         ],
         [
           "tc Particular-0071",
@@ -841,8 +847,8 @@
         ],
         [
           "tc Particular-0088",
-          1,
-          "FXid_PSetColor (alias+enumOffset)"
+          2,
+          "FXid_PSetColor (alias+enumOffset) [Over Life: fire master gradient]"
         ],
         [
           "tc Particular-0033",
@@ -898,6 +904,28 @@
           "tc Particular-0276",
           0,
           "FXid_PRotateY (alias)"
+        ],
+        [
+          "tc Particular-0066",
+          {
+            "__layer": "SpriteTex"
+          },
+          "Sprite texture layer (mined PLayer)"
+        ],
+        [
+          "tc Particular-0067",
+          4,
+          "FXid_PLayerTime (+enumOffset)"
+        ],
+        [
+          "tc Particular-0694",
+          1,
+          "FXid_PUnmult (alias) [after sprite connect]"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Mode: Add (curated — fire-family luma sprite)"
         ]
       ],
       "expressions": [

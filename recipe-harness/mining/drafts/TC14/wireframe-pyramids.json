@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Wireframe Pyramids.xbxc",
   "_pack": "TC14",
   "_category": "Abstract and Geometric",
-  "_map_coverage": "38 mapped / 2 unmapped / 4 curves",
+  "_map_coverage": "40 mapped / 2 unmapped / 4 curves",
   "_unmapped": {
     "FXid_PLayerMultiClips": 2,
     "FXid_PTMode": 2
@@ -699,6 +699,12 @@
     0,
     0
   ],
+  "footage": [
+    {
+      "path": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Sprites/Common/3D Geometric Shapes/Pyramid Wireframe.mov",
+      "layerName": "SpriteTex"
+    }
+  ],
   "hostName": "Mined",
   "effects": [
     {
@@ -711,8 +717,8 @@
         ],
         [
           "tc Particular-0703",
-          2,
-          "FXid_PType (alias+enumOffset) [sprite fallback -> Glow Sphere]"
+          6,
+          "FXid_PType (alias+enumOffset) [Designer 5 -> Sprite + connected texture]"
         ],
         [
           "tc Particular-0146",
@@ -820,19 +826,14 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0694",
-          1,
-          "FXid_PUnmult (alias)"
-        ],
-        [
           "tc Particular-0070",
           [
-            0.064,
-            0.413,
-            0.415,
+            1,
+            1,
+            1,
             1
           ],
-          "FXid_PColor (alias) [tinted from vendor thumb]"
+          "FXid_PColor (alias)"
         ],
         [
           "tc Particular-0071",
@@ -898,6 +899,23 @@
           "tc Particular-0276",
           0,
           "FXid_PRotateY (alias)"
+        ],
+        [
+          "tc Particular-0066",
+          {
+            "__layer": "SpriteTex"
+          },
+          "Sprite texture layer (mined PLayer)"
+        ],
+        [
+          "tc Particular-0067",
+          7,
+          "FXid_PLayerTime (+enumOffset)"
+        ],
+        [
+          "tc Particular-0694",
+          1,
+          "FXid_PUnmult (alias) [after sprite connect]"
         ]
       ],
       "expressions": []

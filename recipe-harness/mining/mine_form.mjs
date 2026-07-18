@@ -107,10 +107,16 @@ for (const file of files) {
     params.push([e.target, val, `${k} (${e.via}${e.enumOffsetSuspect ? '+enumOffset' : ''}, ${e.confidence})`]);
   }
 
-  // gradient flatten: ColorMapArb / rg color curve → mean color to 0036, Set Color 0042=1
+  // gradient flatten: ColorMapArb / rg color curve → mean color to 0036, Set Color 0042=1.
+  // ONLY when the preset actually USES gradient mode: Designer serializes the ColorMapArb
+  // widget state even under ColorMapOver=0/Solid, and flattening that untouched default
+  // gradient OVERWROTE the authored PColor with its green mean — the whole r1
+  // "form-gradient-color" class (plasma-thing-1: authored blue 43/113/179, drafted green).
   const colArb = flat.FXid_ColorMapArb || assets['rg.custom.col.life'];
   const setColor = params.find(p => p[0] === 'tc Form-0042');
-  if (colArb?.PosP?.length > 1) {
+  const usesGradient = (flat.FXid_ColorMapOver ?? 0) !== 0;
+  if (!usesGradient && setColor) { setColor[1] = 1; setColor[2] += ' [solid per ColorMapOver=0]'; }
+  if (usesGradient && colArb?.PosP?.length > 1) {
     const P = colArb.PosP, span = P[P.length - 1] - P[0] || 1;
     const mean = ch => {
       let s = 0;
@@ -143,10 +149,31 @@ for (const file of files) {
       if (typeof plTime === 'number') params.push(['tc Form-0028', plTime + 1, 'FXid_PLayerTime (+enumOffset)']);
     }
   }
-  // OBJ presets: model connect is user-master territory — keep the look, mark the gate
-  // (rg.bf.obj.id rides along in most presets pointing at a default model; only
-  // BaseShape=3 actually renders from it)
-  if (flat.FXid_BaseShape === 3) objGated = true;
+  // OBJ presets: model connect is user-master territory. .obj can't be imported as AE
+  // footage, and model refs don't survive copyToComp — so each model gets a user-authored
+  // use-comp master (Base Form = 3D Model + Choose Model clicked once in UI, 2026-07-18).
+  // The draft DROPS 0003 so the mined Base Form value can't wipe the master's dropdown
+  // (Particular round-7a lesson, translated).
+  let objMaster = null;
+  if (flat.FXid_BaseShape === 3) {
+    objGated = true;
+    const objRef = assets['rg.bf.obj.id']?.footage || '';
+    const objBase = path.basename(objRef, '.obj');
+    const FORM_OBJ_MASTER = {
+      'Cube': 'MASTER_form_cube',
+      'Array_Bucky': 'MASTER_form_bucky',
+      'Array_Octa': 'MASTER_form_octa',
+      'Octa plus array': 'MASTER_form_octaplus',
+      'Icosa plus array': 'MASTER_form_icosaplus',
+      'Sine_wav': 'MASTER_form_sinewav',
+    };
+    if (FORM_OBJ_MASTER[objBase]) {
+      objMaster = FORM_OBJ_MASTER[objBase];
+      for (let i = params.length - 1; i >= 0; i--) {
+        if (params[i][0] === 'tc Form-0003') params.splice(i, 1);
+      }
+    }
+  }
 
   // texture opts are sprite-gated (hidden until 0027 connects — Particular r7 lesson):
   // emit them only on actual connected-sprite drafts
@@ -179,6 +206,13 @@ for (const file of files) {
   }
 
   let slug = base.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  // blend-blowout overrides (A/B probed 2026-07-18): PTMode→0037 with +1 (1=Add) is
+  // right for the glow family — genesis/plasma/chevrons all matched under it — but Add
+  // clips DENSE TWIST SHEETS to white; Normal reproduces their thumbs exactly.
+  if (slug === 'horizon-twist' || slug === 'ominous') {
+    const bm = params.find(p => p[0] === 'tc Form-0037');
+    if (bm) { bm[1] = 1; bm[2] += ' [Normal: dense-sheet Add clips white (A/B)]'; }
+  }
   if ((baseCount.get(base) || 0) > 1) slug = category.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '-' + slug;
 
   const draft = {
@@ -190,6 +224,7 @@ for (const file of files) {
     _unmapped: Object.keys(unmapped),
     _notes: notes,
     ...(objGated ? { _objGated: true } : {}),
+    ...(objMaster ? { master: { library: 'library/particular-masters.aep', comp: objMaster, layer: 1, mode: 'use-comp' } } : {}),
     intent: `Reproduce the vendor Form preset "${base}" (${category}); reference thumbnail: ${thumb || 'none shipped'}`,
     name: slug,
     compName: 'MinedForm_' + base.replace(/[^a-zA-Z0-9]+/g, ''),

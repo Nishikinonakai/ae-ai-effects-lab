@@ -1576,12 +1576,12 @@
         [
           "tc Particular-2118",
           [
-            0.375,
-            0.75,
-            0.375,
+            1,
+            1,
+            1,
             1
           ],
-          "Color S2 (flattened SE color curve)"
+          "Color S2 (inherit main (SE curve untouched default))"
         ]
       ],
       "expressions": []

@@ -1,0 +1,210 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Landscape/Flight Landscape.xbxc",
+  "_effect": "tc Form",
+  "_notes": [],
+  "intent": "Reproduce the vendor Form preset \"Flight Landscape\" (Landscape); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Landscape/Flight Landscape.png",
+  "name": "flight-landscape",
+  "compName": "MinedForm_FlightLandscape",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0007",
+          500,
+          "FXid_BaseShapeParticlesX (exact-name, high)"
+        ],
+        [
+          "tc Form-0008",
+          1,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          300,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          1180,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0005",
+          200,
+          "FXid_BaseShapeSizeY (exact-name, high)"
+        ],
+        [
+          "tc Form-0006",
+          1500,
+          "FXid_BaseShapeSizeZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0033",
+          1,
+          "FXid_PSizeMax (exact-name, high)"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.47843137254901963,
+            0.13725490196078433,
+            0.8,
+            1
+          ],
+          "FXid_PColor (default-pair, high)"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0.25098039215686274,
+            0.25098039215686274,
+            0.25098039215686274,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0421",
+          50,
+          "FXid_Options_SmokeletShadow_ColorStrength (default-pair, med)"
+        ],
+        [
+          "tc Form-0422",
+          50,
+          "FXid_Options_SmokeletShadow_Opacity (default-pair, med)"
+        ],
+        [
+          "tc Form-0165",
+          2,
+          "FXid_FAffectPosPopup (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0167",
+          -200,
+          "FXid_FAffectPosY (exact-name, high)"
+        ],
+        [
+          "tc Form-0181",
+          6,
+          "FXid_FComplex (default-pair, high)"
+        ],
+        [
+          "tc Form-0172",
+          0,
+          "FXid_FEvolution (default-pair, high)"
+        ],
+        [
+          "tc Form-0173",
+          1,
+          "FXid_FLoop (exact-name, high)"
+        ],
+        [
+          "tc Form-0174",
+          3,
+          "FXid_FLoopTime (exact-name, high)"
+        ],
+        [
+          "tc Form-0178",
+          0,
+          "FXid_FMin (exact-name, high)"
+        ],
+        [
+          "tc Form-0182",
+          0.6,
+          "FXid_FOctMult (default-pair, high)"
+        ],
+        [
+          "tc Form-0183",
+          1.8,
+          "FXid_FOctScale (default-pair, high)"
+        ],
+        [
+          "tc Form-0180",
+          2,
+          "FXid_FScale (exact-name, high)"
+        ],
+        [
+          "tc Form-0171",
+          -500,
+          "FXid_FlowZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0175",
+          2,
+          "FXid_FractalABS (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0527",
+          [
+            -614400,
+            -194400,
+            194400
+          ],
+          "FXid_D1Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0528",
+          [
+            -614400,
+            -194400,
+            194400
+          ],
+          "FXid_D2Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0608",
+          [
+            -614400,
+            -194400,
+            194400
+          ],
+          "FXid_KCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0210",
+          10,
+          "FXid_RWX (default-pair, high)"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_validated": {
+    "round": "form-r2",
+    "verdict": "match",
+    "backend": "agent-vision"
+  }
+}

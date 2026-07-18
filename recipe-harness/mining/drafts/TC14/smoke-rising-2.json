@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Rising 2.xbxc",
   "_pack": "TC14",
   "_category": "Smoke and Fire",
-  "_map_coverage": "54 mapped / 3 unmapped / 3 curves",
+  "_map_coverage": "56 mapped / 3 unmapped / 3 curves",
   "_dropped_inert": [
     [
       "tc Particular-0750",
@@ -499,6 +499,17 @@
     0,
     0
   ],
+  "footage": [
+    {
+      "path": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Sprites/Common/Smoke and Fire/Smoke Loop 2.mov",
+      "layerName": "SpriteTex"
+    }
+  ],
+  "master": {
+    "library": "library/particular-masters.aep",
+    "comp": "MASTER_particular_cloud",
+    "layer": 1
+  },
   "hostName": "Mined",
   "effects": [
     {
@@ -511,8 +522,8 @@
         ],
         [
           "tc Particular-0703",
-          4,
-          "FXid_PType (alias+enumOffset) [sprite fallback -> Cloudlet]"
+          6,
+          "FXid_PType (alias+enumOffset) [Designer 5 -> Sprite + connected texture]"
         ],
         [
           "tc Particular-0146",
@@ -620,19 +631,14 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0694",
-          1,
-          "FXid_PUnmult (alias)"
-        ],
-        [
           "tc Particular-0070",
           [
-            0.547,
-            0.547,
-            0.547,
+            1,
+            1,
+            1,
             1
           ],
-          "FXid_PColor (alias) [tinted from vendor thumb]"
+          "FXid_PColor (alias)"
         ],
         [
           "tc Particular-0071",
@@ -783,6 +789,23 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0066",
+          {
+            "__layer": "SpriteTex"
+          },
+          "Sprite texture layer (mined PLayer)"
+        ],
+        [
+          "tc Particular-0067",
+          7,
+          "FXid_PLayerTime (+enumOffset)"
+        ],
+        [
+          "tc Particular-0694",
+          1,
+          "FXid_PUnmult (alias) [after sprite connect]"
         ]
       ],
       "expressions": []

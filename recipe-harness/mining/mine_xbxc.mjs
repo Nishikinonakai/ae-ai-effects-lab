@@ -324,7 +324,20 @@ for (const file of files) {
   // booleans of v2023. Fallback below stays for refs we can't resolve on disk.
   const packRoot = path.join(PACKS, pack);
   let footageOut = null;
-  const plRef = flat.FXid_PLayer;
+  let plRef = flat.FXid_PLayer;
+  if (!(plRef && typeof plRef === 'object' && plRef.footage) && flat.FXid_PLayerMultiClips >= 1) {
+    // multi-clip sprite presets (FXid_PLayerMultiClips >= 2) carry their refs in extra
+    // block groups under the newer rg.p.sprite.id key, not FXid_PLayer — deep-scan and
+    // take the first clip (wireframe-pyramids: 2 clips, both Pyramid Wireframe.mov)
+    const stack = [d];
+    while (stack.length) {
+      const o = stack.pop();
+      if (o && typeof o === 'object') {
+        if (o['rg.p.sprite.id']?.footage) { plRef = o['rg.p.sprite.id']; break; }
+        for (const v of Object.values(o)) if (v && typeof v === 'object') stack.push(v);
+      }
+    }
+  }
   if (plRef && typeof plRef === 'object' && plRef.footage) {
     const resolved = plRef.footage
       .replace('${RootAssetPack}', packRoot)
@@ -479,6 +492,14 @@ for (const file of files) {
       };
       col2 = [mean(seCol.PosR || []), mean(seCol.PosG || []), mean(seCol.PosB || []), 1];
       colSrc = 'flattened SE color curve';
+      // Designer serializes the SE gradient widget even when the artist never touched it;
+      // the untouched default flattens to this exact green mean (same trap as Form's
+      // ColorMapArb, found on streak-brush 2026-07-18). Default = not authored → prefer
+      // the main system's mined color.
+      if (Math.abs(col2[0] - 0.375) < 0.01 && Math.abs(col2[1] - 0.75) < 0.01 && Math.abs(col2[2] - 0.375) < 0.01) {
+        col2 = mainCol ? mainCol[1] : [1, 1, 1, 1];
+        colSrc = mainCol ? 'inherit main (SE curve untouched default)' : 'white (SE curve untouched default)';
+      }
     }
     params.push(['tc Particular-2136', 1, 'Set Color S2: At Birth']);
     params.push(['tc Particular-2118', col2, `Color S2 (${colSrc})`]);
@@ -552,6 +573,36 @@ for (const file of files) {
 
   let slug = base.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   if ((baseCount.get(base) || 0) > 1) slug = category.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '-' + slug;
+  // artist curve masters (authored in UI 2026-07-18): cloud = size-over-life bell +
+  // opacity fade-out; fire = same curves + Set Color Over Life + white→yellow→orange→
+  // deep-red gradient. Clone-into-comp carries the curves (the 4b25c4b route). Priority:
+  // obj > aux-S2 (irreplaceable capabilities) > curves.
+  const CURVE_MASTER = {
+    'explode-out': 'MASTER_particular_cloud', 'explode-up': 'MASTER_particular_cloud',
+    'explode-up-dark': 'MASTER_particular_cloud', 'floating-dust': 'MASTER_particular_cloud',
+    'snowy-night-2': 'MASTER_particular_cloud', 'smoke-plume': 'MASTER_particular_cloud',
+    'simple-smoke': 'MASTER_particular_cloud', 'smoke-puff-1': 'MASTER_particular_cloud',
+    'smoke-rising-1': 'MASTER_particular_cloud', 'smoke-rising-2': 'MASTER_particular_cloud',
+    'smoke-trail': 'MASTER_particular_cloud',
+    'fire-burst-1': 'MASTER_particular_fire', 'ignition': 'MASTER_particular_fire',
+    'hazy-fire': 'MASTER_particular_fire', 'smokey-fire': 'MASTER_particular_fire',
+    'rocket-fire': 'MASTER_particular_fire', 'simple-fire': 'MASTER_particular_fire',
+    'falling-sparks': 'MASTER_particular_fire',
+  };
+  const curveMaster = (!objMaster && !hasAuxS2 && CURVE_MASTER[slug]) || null;
+  if (curveMaster === 'MASTER_particular_fire') {
+    // the master's gradient is the point — drop the flatten's At-Birth forcing and any
+    // thumb-tint flat color that would override it, and pin Set Color to Over Life
+    for (let i = params.length - 1; i >= 0; i--) {
+      const [id, , label = ''] = params[i];
+      if ((id === 'tc Particular-0088' && label.includes('forced At Birth')) ||
+          (id === 'tc Particular-0070' && (label.includes('flattened col.life') || label.includes('tinted from vendor thumb')))) {
+        params.splice(i, 1);
+      }
+    }
+    const sc = params.find(p => p[0] === 'tc Particular-0088');
+    if (sc) { sc[1] = 2; sc[2] += ' [Over Life: fire master gradient]'; }
+  }
   // use-comp masters render within the master's native 4s: a script-retimed comp stops
   // rendering particles at the ORIGINAL duration boundary (probed: t=3.9 lit, t=4.5 empty
   // with duration/outPoint/workArea all at 6 — plugin-private time cap, unexplained)
@@ -576,7 +627,9 @@ for (const file of files) {
       ? { library: 'library/particular-masters.aep', comp: objMaster, layer: 1, mode: 'use-comp' }
       : hasAuxS2
         ? { library: 'library/particular-masters.aep', comp: 'MASTER_particular_S2', layer: 1 }
-        : undefined,
+        : curveMaster
+          ? { library: 'library/particular-masters.aep', comp: curveMaster, layer: 1 }
+          : undefined,
     hostName: 'Mined',
     effects: [{ matchName: 'tc Particular', params, expressions: expressionsOut }],
     camera: null,

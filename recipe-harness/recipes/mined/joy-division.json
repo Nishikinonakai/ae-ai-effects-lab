@@ -1,0 +1,225 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Lines/Joy Division.xbxc",
+  "_effect": "tc Form",
+  "_notes": [
+    "low-conf skipped: FXid_OBJSequenceControlType"
+  ],
+  "intent": "Reproduce the vendor Form preset \"Joy Division\" (Lines); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Lines/Joy Division.png",
+  "name": "joy-division",
+  "compName": "MinedForm_JoyDivision",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0003",
+          2,
+          "FXid_BaseShape (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0008",
+          55,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          1,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          1130,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0005",
+          780,
+          "FXid_BaseShapeSizeY (exact-name, high)"
+        ],
+        [
+          "tc Form-0006",
+          0,
+          "FXid_BaseShapeSizeZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0542",
+          [
+            0,
+            0,
+            0
+          ],
+          "FXid_RelativePosition (exact-name, med)"
+        ],
+        [
+          "tc Form-0018",
+          3.2600000000000002,
+          "FXid_StringSizeRndDistr (exact-name, high)"
+        ],
+        [
+          "tc Form-0025",
+          0,
+          "FXid_PFeather (default-pair, high)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0033",
+          1,
+          "FXid_PSizeMax (exact-name, high)"
+        ],
+        [
+          "tc Form-0036",
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          "FXid_PColor (default-pair, high)"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0.25098039215686274,
+            0.25098039215686274,
+            0.25098039215686274,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0421",
+          50,
+          "FXid_Options_SmokeletShadow_ColorStrength (default-pair, med)"
+        ],
+        [
+          "tc Form-0422",
+          50,
+          "FXid_Options_SmokeletShadow_Opacity (default-pair, med)"
+        ],
+        [
+          "tc Form-0177",
+          -0.1542372881355932,
+          "FXid_FAdd (exact-name, high)"
+        ],
+        [
+          "tc Form-0165",
+          2,
+          "FXid_FAffectPosPopup (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0167",
+          125,
+          "FXid_FAffectPosY (exact-name, high)"
+        ],
+        [
+          "tc Form-0181",
+          5,
+          "FXid_FComplex (default-pair, high)"
+        ],
+        [
+          "tc Form-0172",
+          0,
+          "FXid_FEvolution (default-pair, high)"
+        ],
+        [
+          "tc Form-0173",
+          1,
+          "FXid_FLoop (exact-name, high)"
+        ],
+        [
+          "tc Form-0182",
+          1.4,
+          "FXid_FOctMult (default-pair, high)"
+        ],
+        [
+          "tc Form-0245",
+          12,
+          "FXid_FOffsetE (exact-name, high)"
+        ],
+        [
+          "tc Form-0180",
+          6,
+          "FXid_FScale (exact-name, high)"
+        ],
+        [
+          "tc Form-0169",
+          50,
+          "FXid_FlowX (exact-name, high)"
+        ],
+        [
+          "tc Form-0175",
+          2,
+          "FXid_FractalABS (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0499",
+          2,
+          "FXid_FractalStrengthOver (exact-name+enumOffset, high)"
+        ],
+        [
+          "tc Form-0527",
+          [
+            -614400,
+            -194400,
+            194400
+          ],
+          "FXid_D1Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0528",
+          [
+            -614400,
+            -194400,
+            194400
+          ],
+          "FXid_D2Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0206",
+          [
+            640,
+            360
+          ],
+          "FXid_KCenterXY (ranked-candidate, med)"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_validated": {
+    "round": "form-r2",
+    "verdict": "match",
+    "backend": "agent-vision"
+  }
+}

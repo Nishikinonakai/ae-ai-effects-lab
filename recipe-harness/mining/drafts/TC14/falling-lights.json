@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Falling Lights.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "51 mapped / 2 unmapped / 3 curves",
+  "_map_coverage": "54 mapped / 2 unmapped / 3 curves",
   "_unmapped": {
     "FXid_PLayerMultiClips": 2,
     "FXid_PTMode": 1
@@ -491,6 +491,12 @@
     0,
     0
   ],
+  "footage": [
+    {
+      "path": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Sprites/Common/Light and Magic/Iris 2.png",
+      "layerName": "SpriteTex"
+    }
+  ],
   "hostName": "Mined",
   "effects": [
     {
@@ -503,8 +509,8 @@
         ],
         [
           "tc Particular-0703",
-          2,
-          "FXid_PType (alias+enumOffset) [sprite fallback -> Glow Sphere]"
+          6,
+          "FXid_PType (alias+enumOffset) [Designer 6 -> Sprite + connected texture]"
         ],
         [
           "tc Particular-0146",
@@ -612,19 +618,14 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0694",
-          1,
-          "FXid_PUnmult (alias)"
-        ],
-        [
           "tc Particular-0070",
           [
-            0.493,
-            0.27,
-            0.155,
+            1,
+            0.4980392156862745,
+            0.25882352941176473,
             1
           ],
-          "FXid_PColor (alias) [tinted from vendor thumb]"
+          "FXid_PColor (alias)"
         ],
         [
           "tc Particular-0071",
@@ -755,6 +756,28 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0066",
+          {
+            "__layer": "SpriteTex"
+          },
+          "Sprite texture layer (mined PLayer)"
+        ],
+        [
+          "tc Particular-0700",
+          100,
+          "Colorize (Designer type variant, 0-100)"
+        ],
+        [
+          "tc Particular-0067",
+          2,
+          "FXid_PLayerTime (+enumOffset)"
+        ],
+        [
+          "tc Particular-0694",
+          1,
+          "FXid_PUnmult (alias) [after sprite connect]"
         ]
       ],
       "expressions": []

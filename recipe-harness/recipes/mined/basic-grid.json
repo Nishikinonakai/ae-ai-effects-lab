@@ -1,0 +1,110 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Basic Grid.xbxc",
+  "_effect": "tc Form",
+  "_notes": [],
+  "intent": "Reproduce the vendor Form preset \"Basic Grid\" (Basics); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Basic Grid.png",
+  "name": "basic-grid",
+  "compName": "MinedForm_BasicGrid",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0033",
+          4,
+          "FXid_PSizeMax (exact-name, high)"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.03137254901960784,
+            0.3333333333333333,
+            1,
+            1
+          ],
+          "FXid_PColor (default-pair, high)"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0166",
+          85,
+          "FXid_FAffectPosX (exact-name, high)"
+        ],
+        [
+          "tc Form-0169",
+          58,
+          "FXid_FlowX (exact-name, high)"
+        ],
+        [
+          "tc Form-0527",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_D1Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0528",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_D2Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0608",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_KCenter (ranked-candidate, med)"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_validated": {
+    "round": "form-r2",
+    "verdict": "match",
+    "backend": "agent-vision"
+  }
+}

@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Love Hearts.xbxc",
   "_pack": "TC14",
   "_category": "Light and Magic",
-  "_map_coverage": "49 mapped / 3 unmapped / 6 curves",
+  "_map_coverage": "52 mapped / 3 unmapped / 6 curves",
   "_unmapped": {
     "FXid_PLayerMultiClips": 2,
     "FXid_PTMode": 0,
@@ -914,6 +914,12 @@
     0,
     0
   ],
+  "footage": [
+    {
+      "path": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Sprites/Common/2D Shapes/Heart.png",
+      "layerName": "SpriteTex"
+    }
+  ],
   "hostName": "Mined",
   "effects": [
     {
@@ -926,8 +932,8 @@
         ],
         [
           "tc Particular-0703",
-          2,
-          "FXid_PType (alias+enumOffset) [sprite fallback -> Glow Sphere]"
+          6,
+          "FXid_PType (alias+enumOffset) [Designer 7 -> Sprite + connected texture]"
         ],
         [
           "tc Particular-0146",
@@ -1037,12 +1043,12 @@
         [
           "tc Particular-0070",
           [
-            0.573,
-            0.127,
-            0.11,
+            1,
+            0.14901960784313725,
+            0.12549019607843137,
             1
           ],
-          "FXid_PColor (alias) [tinted from vendor thumb]"
+          "FXid_PColor (alias)"
         ],
         [
           "tc Particular-0071",
@@ -1173,6 +1179,23 @@
           "tc Particular-0751",
           0,
           "FXid_WindZ (exact)"
+        ],
+        [
+          "tc Particular-0066",
+          {
+            "__layer": "SpriteTex"
+          },
+          "Sprite texture layer (mined PLayer)"
+        ],
+        [
+          "tc Particular-0701",
+          100,
+          "Color Fill (Designer type variant, 0-100)"
+        ],
+        [
+          "tc Particular-0067",
+          7,
+          "FXid_PLayerTime (+enumOffset)"
         ]
       ],
       "expressions": []

@@ -1120,6 +1120,11 @@
       "layerName": "SpriteTex"
     }
   ],
+  "master": {
+    "library": "library/particular-masters.aep",
+    "comp": "MASTER_particular_cloud",
+    "layer": 1
+  },
   "hostName": "Mined",
   "effects": [
     {

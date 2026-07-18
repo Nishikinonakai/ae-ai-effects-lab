@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Simple Fire.xbxc",
   "_pack": "TC14",
   "_category": "Smoke and Fire",
-  "_map_coverage": "68 mapped / 52 unmapped / 0 curves",
+  "_map_coverage": "66 mapped / 52 unmapped / 0 curves",
   "_unmapped": {
     "FXid_Gen1Pos": [
       0.5,
@@ -1141,6 +1141,11 @@
     0,
     0
   ],
+  "master": {
+    "library": "library/particular-masters.aep",
+    "comp": "MASTER_particular_fire",
+    "layer": 1
+  },
   "hostName": "Mined",
   "effects": [
     {
@@ -1386,24 +1391,9 @@
           "FXid_POpacRnd (alias)"
         ],
         [
-          "tc Particular-0070",
-          [
-            0.9764705896377563,
-            0.3235294222831726,
-            0,
-            1
-          ],
-          "FXid_PColor (alias) [flattened col.life gradient]"
-        ],
-        [
           "tc Particular-0071",
           10,
           "FXid_PColorRnd (alias)"
-        ],
-        [
-          "tc Particular-0088",
-          1,
-          "FXid_PSetColor (alias+enumOffset) [forced At Birth: gradient unscriptable]"
         ],
         [
           "tc Particular-0210",

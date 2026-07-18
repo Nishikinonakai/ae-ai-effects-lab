@@ -1,0 +1,181 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC15/Presets/Form/Fluid/String Swirl.xbxc",
+  "_effect": "tc Form",
+  "_notes": [
+    "low-conf skipped: FXid_OBJSequenceControlType",
+    "low-conf skipped: FXid_FluidDensity"
+  ],
+  "intent": "Reproduce the vendor Form preset \"String Swirl\" (Fluid); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC15/Form/Fluid/String Swirl.png",
+  "name": "string-swirl",
+  "compName": "MinedForm_StringSwirl",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0003",
+          2,
+          "FXid_BaseShape (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0553",
+          1,
+          "FXid_FluidEnable (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0007",
+          100,
+          "FXid_BaseShapeParticlesX (exact-name, high)"
+        ],
+        [
+          "tc Form-0008",
+          43,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          1,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          1450,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0542",
+          [
+            0,
+            0,
+            0
+          ],
+          "FXid_RelativePosition (exact-name, med)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0,
+            0.8745098039215686,
+            1,
+            1
+          ],
+          "FXid_PColor (default-pair, high)"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0555",
+          3,
+          "FXid_FluidMotionType (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0557",
+          23,
+          "FXid_FluidVortexCoreSize (exact-name, high)"
+        ],
+        [
+          "tc Form-0556",
+          46,
+          "FXid_FluidVortexStrength (exact-name, high)"
+        ],
+        [
+          "tc Form-0563",
+          13,
+          "FXid_RandomSwirlX (exact-name, high)"
+        ],
+        [
+          "tc Form-0564",
+          20,
+          "FXid_RandomSwirlY (exact-name, high)"
+        ],
+        [
+          "tc Form-0565",
+          12,
+          "FXid_RandomSwirlZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0527",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_D1Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0190",
+          368,
+          "FXid_D1Radius (exact-name, high)"
+        ],
+        [
+          "tc Form-0187",
+          100,
+          "FXid_D1Strength (default-pair, high)"
+        ],
+        [
+          "tc Form-0528",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_D2Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0206",
+          [
+            640,
+            360
+          ],
+          "FXid_KCenterXY (ranked-candidate, med)"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_validated": {
+    "round": "form-r2",
+    "verdict": "match",
+    "backend": "agent-vision"
+  }
+}

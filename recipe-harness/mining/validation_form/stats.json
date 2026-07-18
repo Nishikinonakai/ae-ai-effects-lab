@@ -30,51 +30,51 @@
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/basic-fractal-strings/basic-fractal-strings_t4.png"
  },
  "basic-grid": {
-  "coverage": 0.3858,
+  "coverage": 0.389,
   "mean_rgb": [
-   77,
-   131,
-   77
+   6,
+   68,
+   142
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/basic-grid/basic-grid_t4.png"
  },
  "flaxen": {
-  "coverage": 0.4542,
+  "coverage": 0.3636,
   "mean_rgb": [
-   35,
-   15,
-   23
+   32,
+   16,
+   9
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/flaxen/flaxen_t4.png"
  },
  "flow-strings": {
-  "coverage": 0.4587,
+  "coverage": 0.4847,
   "mean_rgb": [
-   71,
-   116,
-   71
+   92,
+   37,
+   27
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/flow-strings/flow-strings_t4.png"
  },
  "glow-banner": {
-  "coverage": 0.2307,
+  "coverage": 0.2427,
   "mean_rgb": [
-   75,
-   51,
-   59
+   83,
+   50,
+   30
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/glow-banner/glow-banner_t4.png"
  },
  "metallic-loop": {
-  "coverage": 0.4185,
+  "coverage": 0.426,
   "mean_rgb": [
-   41,
-   24,
-   30
+   7,
+   39,
+   56
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/metallic-loop/metallic-loop_t4.png"
@@ -82,49 +82,49 @@
  "plasma-thing-1": {
   "coverage": 0.0469,
   "mean_rgb": [
-   179,
-   196,
-   179
+   132,
+   185,
+   195
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/plasma-thing-1/plasma-thing-1_t4.png"
  },
  "plasma-thing-2": {
-  "coverage": 0.1114,
+  "coverage": 0.1107,
   "mean_rgb": [
-   111,
-   144,
-   111
+   134,
+   95,
+   69
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/plasma-thing-2/plasma-thing-2_t4.png"
  },
  "plasma-thing-3": {
-  "coverage": 0.1091,
+  "coverage": 0.1046,
   "mean_rgb": [
-   58,
-   84,
-   58
+   79,
+   48,
+   32
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/plasma-thing-3/plasma-thing-3_t4.png"
  },
  "plasma-thing-4": {
-  "coverage": 0.1592,
+  "coverage": 0.1455,
   "mean_rgb": [
-   44,
-   72,
-   44
+   66,
+   36,
+   23
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/plasma-thing-4/plasma-thing-4_t4.png"
  },
  "plasma-thing-5": {
-  "coverage": 0.2551,
+  "coverage": 0.3547,
   "mean_rgb": [
-   103,
-   140,
-   103
+   109,
+   69,
+   47
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/plasma-thing-5/plasma-thing-5_t4.png"
@@ -140,31 +140,31 @@
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/red-kaleidospace/red-kaleidospace_t4.png"
  },
  "red-shard": {
-  "coverage": 0.2051,
+  "coverage": 0.2188,
   "mean_rgb": [
-   43,
-   71,
-   43
+   72,
+   23,
+   23
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/red-shard/red-shard_t4.png"
  },
  "screen-banner": {
-  "coverage": 0.4462,
+  "coverage": 0.682,
   "mean_rgb": [
-   189,
-   144,
-   165
+   162,
+   105,
+   58
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/screen-banner/screen-banner_t4.png"
  },
  "string-cluster": {
-  "coverage": 0.2153,
+  "coverage": 0.2168,
   "mean_rgb": [
-   47,
-   74,
-   47
+   36,
+   58,
+   75
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/string-cluster/string-cluster_t4.png"
@@ -280,91 +280,91 @@
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/virus/virus_t4.png"
  },
  "colorful-square": {
-  "coverage": 0.0,
+  "coverage": 0.0824,
   "mean_rgb": [
-   0,
-   0,
-   0
+   65,
+   65,
+   65
   ],
-  "flag": "empty",
+  "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/colorful-square/colorful-square_t4.png"
  },
  "displaced-array": {
-  "coverage": 0.0,
+  "coverage": 0.1178,
   "mean_rgb": [
-   0,
-   0,
-   0
+   172,
+   172,
+   172
   ],
-  "flag": "empty",
+  "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/displaced-array/displaced-array_t4.png"
  },
  "icosa-spheres": {
-  "coverage": 0.0,
+  "coverage": 0.084,
   "mean_rgb": [
-   0,
-   0,
-   0
+   183,
+   183,
+   183
   ],
-  "flag": "empty",
+  "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/icosa-spheres/icosa-spheres_t4.png"
  },
  "octa-interior": {
-  "coverage": 0.0,
+  "coverage": 0.07,
   "mean_rgb": [
-   0,
-   0,
-   0
+   196,
+   196,
+   196
   ],
-  "flag": "empty",
+  "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/octa-interior/octa-interior_t4.png"
  },
  "pulsing-icosa": {
-  "coverage": 0.0,
+  "coverage": 0.1693,
   "mean_rgb": [
-   0,
-   0,
-   0
+   212,
+   212,
+   212
   ],
-  "flag": "empty",
+  "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/pulsing-icosa/pulsing-icosa_t4.png"
  },
  "sine-wave-flow": {
-  "coverage": 0.0,
+  "coverage": 0.0254,
   "mean_rgb": [
-   0,
-   0,
-   0
+   191,
+   191,
+   191
   ],
-  "flag": "empty",
+  "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/sine-wave-flow/sine-wave-flow_t4.png"
  },
  "ethereal-landscape": {
-  "coverage": 0.4608,
+  "coverage": 0.4619,
   "mean_rgb": [
-   176,
-   208,
-   176
+   212,
+   140,
+   157
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/ethereal-landscape/ethereal-landscape_t4.png"
  },
  "flight-landscape": {
-  "coverage": 0.1319,
+  "coverage": 0.385,
   "mean_rgb": [
-   102,
-   140,
-   102
+   58,
+   17,
+   83
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/flight-landscape/flight-landscape_t4.png"
  },
  "flight-mountain": {
-  "coverage": 0.384,
+  "coverage": 0.3854,
   "mean_rgb": [
-   46,
-   75,
-   46
+   56,
+   17,
+   78
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/flight-mountain/flight-mountain_t4.png"
@@ -390,11 +390,11 @@
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/horns/horns_t4.png"
  },
  "joy-division": {
-  "coverage": 0.5376,
+  "coverage": 0.5449,
   "mean_rgb": [
-   30,
-   52,
-   30
+   54,
+   54,
+   54
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/joy-division/joy-division_t4.png"
@@ -540,21 +540,21 @@
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/deco-circles/deco-circles_t4.png"
  },
  "deco-strokes": {
-  "coverage": 0.2603,
+  "coverage": 0.2622,
   "mean_rgb": [
-   163,
-   101,
-   13
+   205,
+   205,
+   205
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/deco-strokes/deco-strokes_t4.png"
  },
  "digital-stream": {
-  "coverage": 0.1099,
+  "coverage": 0.1368,
   "mean_rgb": [
-   28,
-   16,
-   20
+   20,
+   31,
+   8
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/digital-stream/digital-stream_t4.png"
@@ -660,11 +660,11 @@
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/dot-twister/dot-twister_t4.png"
  },
  "horizon-twist": {
-  "coverage": 0.303,
+  "coverage": 0.509,
   "mean_rgb": [
-   110,
-   121,
-   159
+   43,
+   51,
+   101
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/horizon-twist/horizon-twist_t4.png"
@@ -682,8 +682,8 @@
  "ominous": {
   "coverage": 0.398,
   "mean_rgb": [
-   109,
-   120,
+   88,
+   102,
    164
   ],
   "flag": "ok",
@@ -730,31 +730,31 @@
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/single-drop/single-drop_t4.png"
  },
  "sphere-drop": {
-  "coverage": 0.0633,
+  "coverage": 0.0738,
   "mean_rgb": [
-   17,
-   33,
-   17
+   7,
+   34,
+   37
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/sphere-drop/sphere-drop_t4.png"
  },
  "string-swirl": {
-  "coverage": 0.1969,
+  "coverage": 0.2233,
   "mean_rgb": [
-   22,
-   42,
-   22
+   0,
+   47,
+   51
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/string-swirl/string-swirl_t4.png"
  },
  "vortex-burst": {
-  "coverage": 0.1863,
+  "coverage": 0.2544,
   "mean_rgb": [
-   17,
-   33,
-   17
+   39,
+   39,
+   39
   ],
   "flag": "ok",
   "frame": "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/validation_form/frames/vortex-burst/vortex-burst_t4.png"

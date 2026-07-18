@@ -278,6 +278,43 @@ Residue classes (round-2 queue):
    hypothesis vs Screen/Normal on one draft.
 4. dim-faint (4) + ok-partials (15) — tune-loop material.
 
+## FORM round-2 + Particular round-9 (2026-07-18, user-assisted masters): library at 99
+
+**Form: 44 match / 33 partial / 0 fail** (r1: 25/46/6). **Particular: 55 match / 116
+partial / 15 fail** (r8: 49/107/30). One user session (≈20 min: 2 curve masters, 6 Form
+OBJ masters, S2 UI read, 2 dropdown reads) + the offline fixes it unlocked:
+
+- **The real green-bias killer**: the flatten was overwriting AUTHORED PColor with the
+  mean of the UNTOUCHED Designer default gradient (serialized even in Solid mode; mean =
+  that exact green). Flatten now runs only when ColorMapOver != Solid. 18 Form drafts
+  flipped to match (plasma family, red-shard, landscapes, joy-division...). Same trap
+  found+fixed in the Particular AUX SE-gradient (streak-brush/chemtrails/smoke-explosion
+  now inherit main color when the SE curve is the untouched default).
+- **S2 Color twins settled by A/B render**: 2118 = LIVE (green probe turned the spray),
+  2598 = dormant. The aux route had been right all along. User UI read corroborates:
+  one "Color" in Particle S2, gated by Set Color S2 = At Start.
+- **Form OBJ masters (use-comp)**: 6 user-authored MASTER_form_* comps; drafts drop
+  0003 so the mined Base Form can't wipe the master's 3D Model. All 6 obj fails now
+  render true geometry (partials: 4 no-thumb, 2 style).
+- **Curve masters**: MASTER_particular_cloud (size bell + opacity fade) routed to 11
+  smoke/cloud drafts; MASTER_particular_fire (+ Set Color Over Life + fire gradient) to
+  7 — simple-fire jumped to match (true flame column); cloud family improved but the
+  cloudlet-texture residue (size/count) remains its own class. floating-dust/
+  snowy-night-2 stay EMPTY — their emptiness is NOT curves.
+- **Multi-clip sprites**: refs live under rg.p.sprite.id in extra block groups (not
+  FXid_PLayer) — deep-scan fallback connected 9 more drafts; shooting-flares ×3,
+  shooting-stars-1, love-hearts (hearts!) all match; wireframe-pyramids renders its
+  cyan wire tangle (partial: scale).
+- **Blend blowout**: 0037 Add is right for the glow family but clips dense twist
+  sheets; horizon-twist matches under a per-slug Normal override (A/B-probed), ominous
+  upgraded partial.
+
+Round-10 queue: empty class root-cause (floating-dust/snowy-night-2 + Form's none —
+check psec/opacity chains), cloudlet-texture class (smoke family), streak-structure,
+two-tone gradients (flatten mean can't do teal→orange; needs curve-master gradients or
+Random-from-Gradient translation), light-path class (needs animated light positions),
+dim-faint batch through the tune loop.
+
 ## Round-7 queue (by yield)
 
 1. **Render-hang class — SOLVED 2026-07-17 (reverse bisect): the drafts are

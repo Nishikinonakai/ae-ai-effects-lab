@@ -458,6 +458,11 @@
     0,
     0
   ],
+  "master": {
+    "library": "library/particular-masters.aep",
+    "comp": "MASTER_particular_fire",
+    "layer": 1
+  },
   "hostName": "Mined",
   "effects": [
     {
@@ -596,7 +601,7 @@
         [
           "tc Particular-0088",
           2,
-          "FXid_PSetColor (alias+enumOffset)"
+          "FXid_PSetColor (alias+enumOffset) [Over Life: fire master gradient]"
         ],
         [
           "tc Particular-0033",

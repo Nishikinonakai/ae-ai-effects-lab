@@ -1,0 +1,250 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Landscape/Ethereal Landscape.xbxc",
+  "_effect": "tc Form",
+  "_notes": [],
+  "intent": "Reproduce the vendor Form preset \"Ethereal Landscape\" (Landscape); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Landscape/Ethereal Landscape.png",
+  "name": "ethereal-landscape",
+  "compName": "MinedForm_EtherealLandscape",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0024",
+          2,
+          "FXid_PType (default-pair+enumOffset, med)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0007",
+          200,
+          "FXid_BaseShapeParticlesX (exact-name, high)"
+        ],
+        [
+          "tc Form-0008",
+          1,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          200,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          1180,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0005",
+          200,
+          "FXid_BaseShapeSizeY (exact-name, high)"
+        ],
+        [
+          "tc Form-0006",
+          1500,
+          "FXid_BaseShapeSizeZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0255",
+          3,
+          "FXid_Settings_Glow_TransferMode (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0492",
+          3,
+          "FXid_SizeOver (exact-name+enumOffset, high)"
+        ],
+        [
+          "tc Form-0495",
+          200,
+          "FXid_OpacityCurveOffset (exact-name, high)"
+        ],
+        [
+          "tc Form-0531",
+          2,
+          "FXid_OpacityCurveOver (exact-name+enumOffset, high)"
+        ],
+        [
+          "tc Form-0246",
+          2,
+          "FXid_POpacRnd (exact-name, high)"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.8666666666666667,
+            0.22745098039215686,
+            0.28627450980392155,
+            1
+          ],
+          "FXid_PColor (default-pair, high)"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0.25098039215686274,
+            0.25098039215686274,
+            0.25098039215686274,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0421",
+          50,
+          "FXid_Options_SmokeletShadow_ColorStrength (default-pair, med)"
+        ],
+        [
+          "tc Form-0422",
+          50,
+          "FXid_Options_SmokeletShadow_Opacity (default-pair, med)"
+        ],
+        [
+          "tc Form-0165",
+          2,
+          "FXid_FAffectPosPopup (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0167",
+          -200,
+          "FXid_FAffectPosY (exact-name, high)"
+        ],
+        [
+          "tc Form-0181",
+          6,
+          "FXid_FComplex (default-pair, high)"
+        ],
+        [
+          "tc Form-0172",
+          0,
+          "FXid_FEvolution (default-pair, high)"
+        ],
+        [
+          "tc Form-0173",
+          1,
+          "FXid_FLoop (exact-name, high)"
+        ],
+        [
+          "tc Form-0174",
+          3,
+          "FXid_FLoopTime (exact-name, high)"
+        ],
+        [
+          "tc Form-0178",
+          0,
+          "FXid_FMin (exact-name, high)"
+        ],
+        [
+          "tc Form-0182",
+          0.6,
+          "FXid_FOctMult (default-pair, high)"
+        ],
+        [
+          "tc Form-0183",
+          1.8,
+          "FXid_FOctScale (default-pair, high)"
+        ],
+        [
+          "tc Form-0180",
+          2,
+          "FXid_FScale (exact-name, high)"
+        ],
+        [
+          "tc Form-0171",
+          -500,
+          "FXid_FlowZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0175",
+          2,
+          "FXid_FractalABS (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0527",
+          [
+            -307200,
+            -97200,
+            97200
+          ],
+          "FXid_D1Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0528",
+          [
+            -307200,
+            -97200,
+            97200
+          ],
+          "FXid_D2Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0608",
+          [
+            -307200,
+            -97200,
+            97200
+          ],
+          "FXid_KCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0232",
+          20,
+          "FXid_RWPosY (default-pair, high)"
+        ],
+        [
+          "tc Form-0233",
+          30,
+          "FXid_RWPosZ (default-pair, high)"
+        ],
+        [
+          "tc Form-0234",
+          189,
+          "FXid_RWScale (default-pair, high)"
+        ],
+        [
+          "tc Form-0210",
+          4,
+          "FXid_RWX (default-pair, high)"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_validated": {
+    "round": "form-r2",
+    "verdict": "match",
+    "backend": "agent-vision"
+  }
+}

@@ -2,7 +2,7 @@
   "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Large Snow 3D.xbxc",
   "_pack": "TC14",
   "_category": "Nature",
-  "_map_coverage": "44 mapped / 6 unmapped / 3 curves",
+  "_map_coverage": "46 mapped / 6 unmapped / 3 curves",
   "_unmapped": {
     "FXid_PLayerMultiClips": 2,
     "FXid_PTMode": 2,
@@ -495,6 +495,12 @@
     0,
     0
   ],
+  "footage": [
+    {
+      "path": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Sprites/Common/Water and Snow/Snow Flake Sequence 1.mov",
+      "layerName": "SpriteTex"
+    }
+  ],
   "hostName": "Mined",
   "effects": [
     {
@@ -507,8 +513,8 @@
         ],
         [
           "tc Particular-0703",
-          2,
-          "FXid_PType (alias+enumOffset) [sprite fallback -> Glow Sphere]"
+          6,
+          "FXid_PType (alias+enumOffset) [Designer 8 -> Sprite + connected texture]"
         ],
         [
           "tc Particular-0146",
@@ -616,11 +622,6 @@
           "FXid_PSizeRnd (alias)"
         ],
         [
-          "tc Particular-0694",
-          0,
-          "FXid_PUnmult (alias)"
-        ],
-        [
           "tc Particular-0070",
           [
             1,
@@ -724,6 +725,23 @@
           "tc Particular-0017",
           17,
           "FXid_Gravity (exact)"
+        ],
+        [
+          "tc Particular-0066",
+          {
+            "__layer": "SpriteTex"
+          },
+          "Sprite texture layer (mined PLayer)"
+        ],
+        [
+          "tc Particular-0067",
+          5,
+          "FXid_PLayerTime (+enumOffset)"
+        ],
+        [
+          "tc Particular-0694",
+          0,
+          "FXid_PUnmult (alias) [after sprite connect]"
         ]
       ],
       "expressions": []

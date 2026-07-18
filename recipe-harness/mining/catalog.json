@@ -52,7 +52,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Multipoint Stars.xbxc",
       "draft": "drafts/TC14/multipoint-stars.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Multipoint Stars.png",
-      "mapped": 50,
+      "mapped": 52,
       "unmapped": 3,
       "curves": [
         "rg.custom.xfer.life",
@@ -158,7 +158,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Abstract and Geometric/Wireframe Pyramids.xbxc",
       "draft": "drafts/TC14/wireframe-pyramids.json",
       "thumb": "thumbs/TC14/Abstract and Geometric/Wireframe Pyramids.png",
-      "mapped": 38,
+      "mapped": 40,
       "unmapped": 2,
       "curves": [
         "rg.custom.xfer.life",
@@ -674,7 +674,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Fire Burst 1.xbxc",
       "draft": "drafts/TC14/fire-burst-1.json",
       "thumb": "thumbs/TC14/Explosive/Fire Burst 1.png",
-      "mapped": 38,
+      "mapped": 41,
       "unmapped": 2,
       "curves": [
         "rg.custom.xfer.life",
@@ -822,7 +822,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Explosive/Ignition.xbxc",
       "draft": "drafts/TC14/ignition.json",
       "thumb": "thumbs/TC14/Explosive/Ignition.png",
-      "mapped": 38,
+      "mapped": 40,
       "unmapped": 2,
       "curves": [
         "rg.custom.xfer.life",
@@ -1285,7 +1285,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Falling Lights.xbxc",
       "draft": "drafts/TC14/falling-lights.json",
       "thumb": "thumbs/TC14/Light and Magic/Falling Lights.png",
-      "mapped": 51,
+      "mapped": 54,
       "unmapped": 2,
       "curves": [
         "rg.custom.xfer.life",
@@ -1439,7 +1439,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Love Hearts.xbxc",
       "draft": "drafts/TC14/love-hearts.json",
       "thumb": "thumbs/TC14/Light and Magic/Love Hearts.png",
-      "mapped": 49,
+      "mapped": 52,
       "unmapped": 3,
       "curves": [
         "rg.custom.xfer.life",
@@ -1573,7 +1573,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Shooting Flares 1.xbxc",
       "draft": "drafts/TC14/shooting-flares-1.json",
       "thumb": "thumbs/TC14/Light and Magic/Shooting Flares 1.png",
-      "mapped": 36,
+      "mapped": 39,
       "unmapped": 2,
       "curves": [
         "rg.custom.xfer.life",
@@ -1588,7 +1588,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Light and Magic/Shooting Flares 2.xbxc",
       "draft": "drafts/TC14/shooting-flares-2.json",
       "thumb": "thumbs/TC14/Light and Magic/Shooting Flares 2.png",
-      "mapped": 36,
+      "mapped": 39,
       "unmapped": 2,
       "curves": [
         "rg.custom.xfer.life",
@@ -1755,7 +1755,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Shooting Flares.xbxc",
       "draft": "drafts/TC14/shooting-flares.json",
       "thumb": "thumbs/TC14/Motion Graphics/Shooting Flares.png",
-      "mapped": 36,
+      "mapped": 39,
       "unmapped": 2,
       "curves": [
         "rg.custom.xfer.life",
@@ -1770,7 +1770,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Motion Graphics/Shooting Stars 1.xbxc",
       "draft": "drafts/TC14/shooting-stars-1.json",
       "thumb": "thumbs/TC14/Motion Graphics/Shooting Stars 1.png",
-      "mapped": 41,
+      "mapped": 43,
       "unmapped": 3,
       "curves": [
         "rg.custom.xfer.life",
@@ -2019,7 +2019,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Floating Cells.xbxc",
       "draft": "drafts/TC14/floating-cells.json",
       "thumb": "thumbs/TC14/Nature/Floating Cells.png",
-      "mapped": 45,
+      "mapped": 47,
       "unmapped": 2,
       "curves": [
         "rg.custom.xfer.life",
@@ -2045,7 +2045,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Nature/Large Snow 3D.xbxc",
       "draft": "drafts/TC14/large-snow-3d.json",
       "thumb": "thumbs/TC14/Nature/Large Snow 3D.png",
-      "mapped": 44,
+      "mapped": 46,
       "unmapped": 6,
       "curves": [
         "rg.custom.xfer.life",
@@ -2255,7 +2255,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Hazy Fire.xbxc",
       "draft": "drafts/TC14/hazy-fire.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Hazy Fire.png",
-      "mapped": 40,
+      "mapped": 43,
       "unmapped": 2,
       "curves": [
         "rg.custom.xfer.life",
@@ -2349,7 +2349,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Simple Fire.xbxc",
       "draft": "drafts/TC14/simple-fire.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Simple Fire.png",
-      "mapped": 68,
+      "mapped": 66,
       "unmapped": 52,
       "curves": []
     },
@@ -2417,7 +2417,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Rising 1.xbxc",
       "draft": "drafts/TC14/smoke-rising-1.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smoke Rising 1.png",
-      "mapped": 54,
+      "mapped": 56,
       "unmapped": 3,
       "curves": [
         "rg.custom.xfer.life",
@@ -2432,7 +2432,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Rising 2.xbxc",
       "draft": "drafts/TC14/smoke-rising-2.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smoke Rising 2.png",
-      "mapped": 54,
+      "mapped": 56,
       "unmapped": 3,
       "curves": [
         "rg.custom.xfer.life",
@@ -2447,7 +2447,7 @@
       "file": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Particular/Smoke and Fire/Smoke Trail.xbxc",
       "draft": "drafts/TC14/smoke-trail.json",
       "thumb": "thumbs/TC14/Smoke and Fire/Smoke Trail.png",
-      "mapped": 36,
+      "mapped": 38,
       "unmapped": 2,
       "curves": [
         "rg.custom.xfer.life",

@@ -1,0 +1,175 @@
+{
+  "_mined_from": "/Users/Shared/Red Giant/Trapcode Packs/TC14/Presets/Form/Basics/Plasma Thing 4.xbxc",
+  "_effect": "tc Form",
+  "_notes": [],
+  "intent": "Reproduce the vendor Form preset \"Plasma Thing 4\" (Basics); reference thumbnail: /Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/mining/thumbs/TC14/Form/Basics/Plasma Thing 4.png",
+  "name": "plasma-thing-4",
+  "compName": "MinedForm_PlasmaThing4",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [
+        [
+          "tc Form-0489",
+          2,
+          "FXid_BaseShapeSizeOption (exact-name+enumOffset, med)"
+        ],
+        [
+          "tc Form-0010",
+          [
+            640,
+            360
+          ],
+          "FXid_BaseShapeCenter (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0007",
+          613,
+          "FXid_BaseShapeParticlesX (exact-name, high)"
+        ],
+        [
+          "tc Form-0008",
+          40,
+          "FXid_BaseShapeParticlesY (exact-name, high)"
+        ],
+        [
+          "tc Form-0009",
+          1,
+          "FXid_BaseShapeParticlesZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0004",
+          660,
+          "FXid_BaseShapeSizeX (exact-name, high)"
+        ],
+        [
+          "tc Form-0005",
+          300,
+          "FXid_BaseShapeSizeY (exact-name, high)"
+        ],
+        [
+          "tc Form-0006",
+          200,
+          "FXid_BaseShapeSizeZ (exact-name, high)"
+        ],
+        [
+          "tc Form-0037",
+          2,
+          "FXid_PTMode (ranked-candidate+enumOffset, med)"
+        ],
+        [
+          "tc Form-0035",
+          50,
+          "FXid_POpacMax (default-pair, high)"
+        ],
+        [
+          "tc Form-0036",
+          [
+            0.5803921568627451,
+            0.2823529411764706,
+            0.1803921568627451,
+            1
+          ],
+          "FXid_PColor (default-pair, high)"
+        ],
+        [
+          "tc Form-0420",
+          [
+            0.25098039215686274,
+            0.25098039215686274,
+            0.25098039215686274,
+            1
+          ],
+          "FXid_Options_SmokeletShadow_Color (default-pair, med)"
+        ],
+        [
+          "tc Form-0421",
+          50,
+          "FXid_Options_SmokeletShadow_ColorStrength (default-pair, med)"
+        ],
+        [
+          "tc Form-0422",
+          50,
+          "FXid_Options_SmokeletShadow_Opacity (default-pair, med)"
+        ],
+        [
+          "tc Form-0166",
+          244,
+          "FXid_FAffectPosX (exact-name, high)"
+        ],
+        [
+          "tc Form-0172",
+          58,
+          "FXid_FEvolution (default-pair, high)"
+        ],
+        [
+          "tc Form-0169",
+          88,
+          "FXid_FlowX (exact-name, high)"
+        ],
+        [
+          "tc Form-0175",
+          2,
+          "FXid_FractalABS (default-pair+enumOffset, high)"
+        ],
+        [
+          "tc Form-0527",
+          [
+            640,
+            360,
+            0
+          ],
+          "FXid_D1Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0190",
+          160,
+          "FXid_D1Radius (exact-name, high)"
+        ],
+        [
+          "tc Form-0187",
+          100,
+          "FXid_D1Strength (default-pair, high)"
+        ],
+        [
+          "tc Form-0528",
+          [
+            -614400,
+            -194400,
+            194400
+          ],
+          "FXid_D2Pos (ranked-candidate, med)"
+        ],
+        [
+          "tc Form-0608",
+          [
+            -614400,
+            -194400,
+            194400
+          ],
+          "FXid_KCenter (ranked-candidate, med)"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_validated": {
+    "round": "form-r2",
+    "verdict": "match",
+    "backend": "agent-vision"
+  }
+}
