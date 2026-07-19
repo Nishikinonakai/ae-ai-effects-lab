@@ -1,0 +1,165 @@
+{
+ "effect": {
+  "name": "uni.Multitone",
+  "matchName": "RG_UNI_Stylize_Multitone"
+ },
+ "counts": {
+  "total": 14,
+  "leaf": 12,
+  "groups": 2,
+  "animatable": 8,
+  "customValue": 0,
+  "hiddenLevers": 0,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": "",
+   "matchName": "RG_UNI_Stylize_Multitone-9999990",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "com_redgiant_pc_mailbox",
+   "matchName": "RG_UNI_Stylize_Multitone-9999991",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 1000,
+   "animatable": true,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "",
+   "matchName": "RG_UNI_Stylize_Multitone-1001",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "",
+   "matchName": "RG_UNI_Stylize_Multitone-1002",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Color Scheme",
+   "matchName": "RG_UNI_Stylize_Multitone-0001",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 2,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Highlight",
+   "matchName": "RG_UNI_Stylize_Multitone-0002",
+   "type": "COLOR",
+   "value": "0.89803921568627,0.09803921568627,0.2,1",
+   "min": -3921568.62745098,
+   "max": 3921568.62745098,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Midtone",
+   "matchName": "RG_UNI_Stylize_Multitone-0003",
+   "type": "COLOR",
+   "value": "0.49803921568627,0.04705882352941,0.2980",
+   "min": -3921568.62745098,
+   "max": 3921568.62745098,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Shadow",
+   "matchName": "RG_UNI_Stylize_Multitone-0004",
+   "type": "COLOR",
+   "value": "0.09803921568627,0,0.2,1",
+   "min": -3921568.62745098,
+   "max": 3921568.62745098,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Contrast",
+   "matchName": "RG_UNI_Stylize_Multitone-0005",
+   "type": "1D",
+   "value": "15",
+   "min": 0,
+   "max": 100,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Midpoint",
+   "matchName": "RG_UNI_Stylize_Multitone-0006",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 10,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}

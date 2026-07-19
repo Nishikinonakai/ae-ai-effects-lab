@@ -1,0 +1,346 @@
+{
+ "effect": {
+  "name": "CC Plastic",
+  "matchName": "CC Plastic"
+ },
+ "counts": {
+  "total": 30,
+  "leaf": 28,
+  "groups": 2,
+  "animatable": 18,
+  "customValue": 0,
+  "hiddenLevers": 0,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": "Surface Bump",
+   "matchName": "CC Plastic-0001",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Bump Layer",
+   "matchName": "CC Plastic-0002",
+   "type": "LAYER_INDEX",
+   "value": "1",
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Property",
+   "matchName": "CC Plastic-0003",
+   "type": "1D",
+   "value": "5",
+   "min": 1,
+   "max": 6,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Softness",
+   "matchName": "CC Plastic-0004",
+   "type": "1D",
+   "value": "20",
+   "min": 0,
+   "max": 500,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Height",
+   "matchName": "CC Plastic-0005",
+   "type": "1D",
+   "value": "25",
+   "min": -100,
+   "max": 100,
+   "units": "pixels",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Cut Min",
+   "matchName": "CC Plastic-0006",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 100,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Cut Max",
+   "matchName": "CC Plastic-0007",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "",
+   "matchName": "CC Plastic-0008",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Light",
+   "matchName": "CC Plastic-0009",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Using",
+   "matchName": "CC Plastic-0026",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 2,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Light Intensity",
+   "matchName": "CC Plastic-0010",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 1000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Light Color",
+   "matchName": "CC Plastic-0011",
+   "type": "COLOR",
+   "value": "1,1,1,1",
+   "min": -3921568.62745098,
+   "max": 3921568.62745098,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Light Type",
+   "matchName": "CC Plastic-0012",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 2,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Light Height",
+   "matchName": "CC Plastic-0013",
+   "type": "1D",
+   "value": "65",
+   "min": -100,
+   "max": 100,
+   "units": "pixels",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Light Position",
+   "matchName": "CC Plastic-0014",
+   "type": "2D_SPATIAL",
+   "value": "160,90",
+   "units": "pixels",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Light Direction",
+   "matchName": "CC Plastic-0015",
+   "type": "1D",
+   "value": "-45",
+   "units": "degrees",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Ambient Light Color",
+   "matchName": "CC Plastic-0016",
+   "type": "COLOR",
+   "value": "1,1,1,1",
+   "min": -3921568.62745098,
+   "max": 3921568.62745098,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "",
+   "matchName": "CC Plastic-0017",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Shading",
+   "matchName": "CC Plastic-0018",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Ambient",
+   "matchName": "CC Plastic-0019",
+   "type": "1D",
+   "value": "75",
+   "min": 0,
+   "max": 200,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Diffuse",
+   "matchName": "CC Plastic-0020",
+   "type": "1D",
+   "value": "25",
+   "min": 0,
+   "max": 100,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Dust",
+   "matchName": "CC Plastic-0021",
+   "type": "1D",
+   "value": "25",
+   "min": 0,
+   "max": 100,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Specular",
+   "matchName": "CC Plastic-0022",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Roughness",
+   "matchName": "CC Plastic-0023",
+   "type": "1D",
+   "value": "0.02499389648438",
+   "min": 0.00099182128906,
+   "max": 0.5,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Metal",
+   "matchName": "CC Plastic-0024",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "",
+   "matchName": "CC Plastic-0025",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}

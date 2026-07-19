@@ -1,0 +1,14 @@
+{
+ "effect": "3D Stroke",
+ "_date": "2026-07-19",
+ "_method": "single-gate flips, one bridge round-trip each (visibility recomputes only between script executions)",
+ "_caveat": "single-gate only — a param needing TWO gates set together still reads as dead here",
+ "shutOnDefault": 2,
+ "conditionallyGated": 0,
+ "probablyDead": 2,
+ "gates": {},
+ "probablyDeadParams": [
+  "tc 3DStrokePath-0087",
+  "tc 3DStrokePath-0088"
+ ]
+}

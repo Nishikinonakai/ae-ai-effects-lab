@@ -1,0 +1,67 @@
+{
+ "effect": {
+  "name": "Inset Video - torn edges",
+  "matchName": "ADBE CM InsetVideoTorn"
+ },
+ "counts": {
+  "total": 5,
+  "leaf": 3,
+  "groups": 2,
+  "animatable": 2,
+  "customValue": 0,
+  "hiddenLevers": 0,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": "Crop Amount",
+   "matchName": "ADBE CM InsetVideoTorn-0001",
+   "type": "1D",
+   "value": "5",
+   "min": 0,
+   "max": 50,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}

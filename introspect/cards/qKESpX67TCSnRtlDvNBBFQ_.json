@@ -1,0 +1,258 @@
+{
+ "effect": {
+  "name": "Rounded Corners",
+  "matchName": "qKESpX67TCSnRtlDvNBBFQ=="
+ },
+ "counts": {
+  "total": 22,
+  "leaf": 20,
+  "groups": 2,
+  "animatable": 12,
+  "customValue": 5,
+  "hiddenLevers": 8,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0004",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0111",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0110",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": "Presets",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0109",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": "Crop With",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0112",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Uniform Margin",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0113",
+   "type": "1D",
+   "value": "0.20000000298023",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Margin Top",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0117",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Margin Left",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0115",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Margin Bottom",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0114",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Margin Right",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0116",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Point (1)",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0107",
+   "type": "2D_SPATIAL",
+   "value": "0,0",
+   "units": "pixels",
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Point (2)",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0108",
+   "type": "2D_SPATIAL",
+   "value": "640,360",
+   "units": "pixels",
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Corner Units",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0106",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 2,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Radius",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0102",
+   "type": "1D",
+   "value": "50",
+   "min": 0,
+   "max": 1000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Softness",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0104",
+   "type": "1D",
+   "value": "2",
+   "min": 0,
+   "max": 1000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Radius (% of frame)",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0103",
+   "type": "1D",
+   "value": "0.10000000149012",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Softness (% of radius)",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0105",
+   "type": "1D",
+   "value": "0.10000000149012",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Softness Curve",
+   "matchName": "qKESpX67TCSnRtlDvNBBFQ==-0118",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}

@@ -115,8 +115,8 @@
    "name": "Spread",
    "matchName": "PEDG-0011",
    "advertised": "range 0.01..100 percent, default 33 — shape/falloff of the glow",
-   "why": "HIDDEN on Deep Glow v1.5.5: the plugin exposes it to the scripting API (it reads back a value, range and units) but never opens it for writing — every setValue throws 'the property or a parent property is hidden'. Not conditional: probed against Blend Mode, Auto Iterations, View, Unmult, Fixed Steps and Enable Dither, and it stays shut in every combination, on a fresh instance, and after a render.",
-   "_probe": "2026-07-19 settability second pass (introspect_effect.mjs) on a settled instance"
+   "why": "NOT WRITABLE in the default state on Deep Glow v1.5.5: the plugin exposes it to the scripting API (it reads back a value, range and units) but setValue throws 'the property or a parent property is hidden'. Six candidate gates were flipped (Blend Mode, Auto Iterations, View, Unmult, Fixed Steps, Enable Dither), on a fresh instance and after a render, and it stayed shut in every one. CAVEAT: that is evidence, not proof. The same single-gate method failed to open Trapcode Form's Base Form Size Y — which a shipped recipe demonstrably CAN set — so a negative gate probe does not establish permanence. Treat as unreachable until a gate is found; do not offer it as a lever.",
+   "_probe": "2026-07-19 settability second pass + 6-gate flip probe; see introspect/SETTABILITY.md for the method's known blind spot"
   },
   {
    "name": "Smooth Blending",
@@ -144,5 +144,5 @@
    "why": "hidden — debug param, same probe"
   }
  ],
- "_settability_note": "Readable != writable. 9 of this effect's params report a name, range, units and current value through the scripting API yet reject every write. They are recorded in unreachable_levers so the planner and the tune loop's co-lever list never spend a move on them. Measured, not assumed — see _probe."
+ "_settability_note": "Readable != writable. 9 of this effect's params report a name, range, units and current value through the scripting API yet reject every write in the default state. They are recorded here so the planner and the tune loop's co-lever list never spend a move on them. Measured, not assumed — but see the caveat on Spread: 'not writable now' is established, 'never writable' is not."
 }

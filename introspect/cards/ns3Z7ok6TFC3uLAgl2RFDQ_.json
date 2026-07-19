@@ -1,0 +1,310 @@
+{
+ "effect": {
+  "name": "Output Levels",
+  "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ=="
+ },
+ "counts": {
+  "total": 26,
+  "leaf": 24,
+  "groups": 2,
+  "animatable": 16,
+  "customValue": 4,
+  "hiddenLevers": 12,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0004",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0120",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0121",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": "Presets",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0122",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": "Adjust Channels",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0119",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 2,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Low",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0102",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Mid",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0114",
+   "type": "1D",
+   "value": "0.5",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "High",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0109",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Hold Alpha",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0123",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 1,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Low (Red)",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0106",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Low (Green)",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0105",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Low (Blue)",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0104",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Low (Alpha)",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0103",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Mid (Red)",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0118",
+   "type": "1D",
+   "value": "0.5",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Mid (Green)",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0117",
+   "type": "1D",
+   "value": "0.5",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Mid (Blue)",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0116",
+   "type": "1D",
+   "value": "0.5",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Mid (Alpha)",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0115",
+   "type": "1D",
+   "value": "0.5",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "High (Red)",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0113",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "High (Green)",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0112",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "High (Blue)",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0111",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "High (Alpha)",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0110",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Output",
+   "matchName": "ns3Z7ok6TFC3uLAgl2RFDQ==-0005",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 2,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}

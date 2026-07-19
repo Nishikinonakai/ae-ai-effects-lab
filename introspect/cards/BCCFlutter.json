@@ -1,0 +1,399 @@
+{
+ "effect": {
+  "name": "BCC Flutter Cut",
+  "matchName": "BCCFlutter"
+ },
+ "counts": {
+  "total": 35,
+  "leaf": 33,
+  "groups": 2,
+  "animatable": 20,
+  "customValue": 0,
+  "hiddenLevers": 0,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": "Effect Presets & Docs",
+   "matchName": "BCCFlutter-0001",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Incoming Clip",
+   "matchName": "BCCFlutter-7405915",
+   "type": "LAYER_INDEX",
+   "value": "0",
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Outgoing Clip Settings",
+   "matchName": "BCCFlutter-7405916",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Outgoing Start Frames",
+   "matchName": "BCCFlutter-7405917",
+   "type": "1D",
+   "value": "2",
+   "min": 1,
+   "max": 30000,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Outgoing End Frames",
+   "matchName": "BCCFlutter-7405918",
+   "type": "1D",
+   "value": "2",
+   "min": 1,
+   "max": 30000,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Outgoing Acceleration",
+   "matchName": "BCCFlutter-7405919",
+   "type": "1D",
+   "value": "100",
+   "min": 100,
+   "max": 30000,
+   "units": "pixels",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Outgoing Fadeout",
+   "matchName": "BCCFlutter-7405920",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 100,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "",
+   "matchName": "BCCFlutter-7405921",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Incoming Clip Settings",
+   "matchName": "BCCFlutter-7405922",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Incoming Start Frames",
+   "matchName": "BCCFlutter-7405923",
+   "type": "1D",
+   "value": "2",
+   "min": 1,
+   "max": 30000,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Incoming End Frames",
+   "matchName": "BCCFlutter-7405924",
+   "type": "1D",
+   "value": "2",
+   "min": 1,
+   "max": 30000,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Incoming Acceleration",
+   "matchName": "BCCFlutter-7405925",
+   "type": "1D",
+   "value": "100",
+   "min": 100,
+   "max": 30000,
+   "units": "pixels",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Incoming Fadein",
+   "matchName": "BCCFlutter-7405926",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 100,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "",
+   "matchName": "BCCFlutter-7405927",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Colors",
+   "matchName": "BCCFlutter-7405928",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Color 1",
+   "matchName": "BCCFlutter-7405929",
+   "type": "COLOR",
+   "value": "1,1,1,1",
+   "min": -3921568.62745098,
+   "max": 3921568.62745098,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Color 1 From",
+   "matchName": "BCCFlutter-7405930",
+   "type": "LAYER_INDEX",
+   "value": "0",
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Color 1 Frames",
+   "matchName": "BCCFlutter-7405931",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 30000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Color 1 Order",
+   "matchName": "BCCFlutter-7405932",
+   "type": "1D",
+   "value": "4",
+   "min": 1,
+   "max": 5,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Color 2",
+   "matchName": "BCCFlutter-7405933",
+   "type": "COLOR",
+   "value": "0,0,0,1",
+   "min": -3921568.62745098,
+   "max": 3921568.62745098,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Color 2 From",
+   "matchName": "BCCFlutter-7405934",
+   "type": "LAYER_INDEX",
+   "value": "0",
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Color 2 Frames",
+   "matchName": "BCCFlutter-7405935",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 30000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Color 2 Order",
+   "matchName": "BCCFlutter-7405936",
+   "type": "1D",
+   "value": "4",
+   "min": 1,
+   "max": 5,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "",
+   "matchName": "BCCFlutter-7405937",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Effect Type",
+   "matchName": "BCCFlutter-7405938",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 4,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Effect Target",
+   "matchName": "BCCFlutter-7405939",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 5,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Effect Pattern",
+   "matchName": "BCCFlutter-7405940",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Normal Frames Before",
+   "matchName": "BCCFlutter-7405942",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 30000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Effect Frames",
+   "matchName": "BCCFlutter-7405941",
+   "type": "1D",
+   "value": "2",
+   "min": 0,
+   "max": 30000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Normal Frames After",
+   "matchName": "BCCFlutter-7405943",
+   "type": "1D",
+   "value": "2",
+   "min": 0,
+   "max": 30000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "",
+   "matchName": "BCCFlutter-7405944",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}

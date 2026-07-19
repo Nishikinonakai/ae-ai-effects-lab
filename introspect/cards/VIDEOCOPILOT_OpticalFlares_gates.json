@@ -1,0 +1,30 @@
+{
+ "effect": "VIDEOCOPILOT OpticalFlares",
+ "_date": "2026-07-19",
+ "_method": "single-gate flips, one bridge round-trip each (visibility recomputes only between script executions)",
+ "_caveat": "single-gate only — a param needing TWO gates set together still reads as dead here",
+ "shutOnDefault": 18,
+ "conditionallyGated": 0,
+ "probablyDead": 18,
+ "gates": {},
+ "probablyDeadParams": [
+  "VIDEOCOPILOT OpticalFlares-0060",
+  "VIDEOCOPILOT OpticalFlares-0071",
+  "VIDEOCOPILOT OpticalFlares-0011",
+  "VIDEOCOPILOT OpticalFlares-0012",
+  "VIDEOCOPILOT OpticalFlares-0040",
+  "VIDEOCOPILOT OpticalFlares-0013",
+  "VIDEOCOPILOT OpticalFlares-0015",
+  "VIDEOCOPILOT OpticalFlares-0014",
+  "VIDEOCOPILOT OpticalFlares-0016",
+  "VIDEOCOPILOT OpticalFlares-0055",
+  "VIDEOCOPILOT OpticalFlares-0042",
+  "VIDEOCOPILOT OpticalFlares-0043",
+  "VIDEOCOPILOT OpticalFlares-0049",
+  "VIDEOCOPILOT OpticalFlares-0074",
+  "VIDEOCOPILOT OpticalFlares-0075",
+  "VIDEOCOPILOT OpticalFlares-0047",
+  "VIDEOCOPILOT OpticalFlares-0046",
+  "VIDEOCOPILOT OpticalFlares-0093"
+ ]
+}

@@ -1,0 +1,234 @@
+{
+ "effect": {
+  "name": "Page Flip",
+  "matchName": "46Fh7c+gTbiF9p2Hr4yAng=="
+ },
+ "counts": {
+  "total": 20,
+  "leaf": 18,
+  "groups": 2,
+  "animatable": 7,
+  "customValue": 5,
+  "hiddenLevers": 2,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0004",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0100",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0101",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": "Presets",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0102",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": "Transition Layer",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0006",
+   "type": "LAYER_INDEX",
+   "value": "1",
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Transition Progress",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0011",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 1,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Transition Progress",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0007",
+   "type": "1D",
+   "value": "0.5",
+   "min": 0,
+   "max": 1,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Flip",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0103",
+   "type": "1D",
+   "value": "4",
+   "min": 1,
+   "max": 4,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Curl",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0104",
+   "type": "1D",
+   "value": "0.5",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Light Position",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0105",
+   "type": "2D_SPATIAL",
+   "value": "320,180",
+   "units": "pixels",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Shadows",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0106",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Transition Curve",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0107",
+   "type": "1D",
+   "value": "4",
+   "min": 1,
+   "max": 13,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0108",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": "Motion Blur",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0013",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 4,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Shutter (Angle)",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0014",
+   "type": "1D",
+   "value": "360",
+   "min": 0,
+   "max": 360,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Shutter (Offset)",
+   "matchName": "46Fh7c+gTbiF9p2Hr4yAng==-0514",
+   "type": "1D",
+   "value": "0",
+   "min": -1,
+   "max": 1,
+   "animatable": true,
+   "expr": false,
+   "settable": "hidden"
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}

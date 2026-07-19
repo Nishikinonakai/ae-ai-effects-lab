@@ -1,0 +1,212 @@
+{
+ "effect": {
+  "name": "uni.HalfLight",
+  "matchName": "Universe_Transitions_HalfLight"
+ },
+ "counts": {
+  "total": 18,
+  "leaf": 16,
+  "groups": 2,
+  "animatable": 11,
+  "customValue": 0,
+  "hiddenLevers": 0,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": "",
+   "matchName": "Universe_Transitions_HalfLight-9999990",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "com_redgiant_pc_mailbox",
+   "matchName": "Universe_Transitions_HalfLight-9999991",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 1000,
+   "animatable": true,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Transition B",
+   "matchName": "Universe_Transitions_HalfLight-0001",
+   "type": "LAYER_INDEX",
+   "value": "0",
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Mix",
+   "matchName": "Universe_Transitions_HalfLight-0002",
+   "type": "1D",
+   "value": "50",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "",
+   "matchName": "Universe_Transitions_HalfLight-1010",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "",
+   "matchName": "Universe_Transitions_HalfLight-1011",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Lens Flare",
+   "matchName": "Universe_Transitions_HalfLight-0003",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 15,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Blend Mode",
+   "matchName": "Universe_Transitions_HalfLight-0004",
+   "type": "1D",
+   "value": "2",
+   "min": 1,
+   "max": 27,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Opacity",
+   "matchName": "Universe_Transitions_HalfLight-0005",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Brightness",
+   "matchName": "Universe_Transitions_HalfLight-0006",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 2,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Saturation",
+   "matchName": "Universe_Transitions_HalfLight-0007",
+   "type": "1D",
+   "value": "0",
+   "min": -100,
+   "max": 100,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Hue",
+   "matchName": "Universe_Transitions_HalfLight-0008",
+   "type": "COLOR",
+   "value": "1,1,1,1",
+   "min": -3921568.62745098,
+   "max": 3921568.62745098,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Hue Intensity",
+   "matchName": "Universe_Transitions_HalfLight-0009",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Flip",
+   "matchName": "Universe_Transitions_HalfLight-0010",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 4,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}

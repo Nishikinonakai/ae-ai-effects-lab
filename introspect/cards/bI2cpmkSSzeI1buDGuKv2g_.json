@@ -1,0 +1,246 @@
+{
+ "effect": {
+  "name": "Blur (Box-shaped)",
+  "matchName": "bI2cpmkSSzeI1buDGuKv2g=="
+ },
+ "counts": {
+  "total": 21,
+  "leaf": 19,
+  "groups": 2,
+  "animatable": 8,
+  "customValue": 4,
+  "hiddenLevers": 0,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0004",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0102",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0103",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": "Presets",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0104",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": "Radius",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0100",
+   "type": "1D",
+   "value": "10",
+   "min": 0,
+   "max": 200,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Channels",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0114",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 9,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Repeat Edges",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0101",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 1,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Mask",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0105",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 7,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Custom Mask",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0108",
+   "type": "LAYER_INDEX",
+   "value": "0",
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Mask Center",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0113",
+   "type": "2D_SPATIAL",
+   "value": "320,180",
+   "units": "pixels",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Mask Scale",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0111",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 10,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Mask Aspect Ratio",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0107",
+   "type": "1D",
+   "value": "1",
+   "min": 0.00999999977648,
+   "max": 10,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Mask Angle",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0106",
+   "type": "1D",
+   "value": "0",
+   "units": "degrees",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Mask Softness",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0112",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 500,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Mask Invert",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0109",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Mask Preview",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0110",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Frame Margin",
+   "matchName": "bI2cpmkSSzeI1buDGuKv2g==-0002",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}

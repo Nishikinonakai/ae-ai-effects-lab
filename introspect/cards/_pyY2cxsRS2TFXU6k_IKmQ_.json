@@ -1,0 +1,117 @@
+{
+ "effect": {
+  "name": "Hole",
+  "matchName": "+pyY2cxsRS2TFXU6k/IKmQ=="
+ },
+ "counts": {
+  "total": 10,
+  "leaf": 8,
+  "groups": 2,
+  "animatable": 3,
+  "customValue": 4,
+  "hiddenLevers": 0,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "+pyY2cxsRS2TFXU6k/IKmQ==-0004",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "+pyY2cxsRS2TFXU6k/IKmQ==-0104",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": " ",
+   "matchName": "+pyY2cxsRS2TFXU6k/IKmQ==-0106",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": "Presets",
+   "matchName": "+pyY2cxsRS2TFXU6k/IKmQ==-0105",
+   "type": "CUSTOM",
+   "value": "",
+   "animatable": false,
+   "expr": false,
+   "settable": "n/a"
+  },
+  {
+   "depth": 0,
+   "name": "Center",
+   "matchName": "+pyY2cxsRS2TFXU6k/IKmQ==-0103",
+   "type": "2D_SPATIAL",
+   "value": "320,180",
+   "units": "pixels",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Radius",
+   "matchName": "+pyY2cxsRS2TFXU6k/IKmQ==-0102",
+   "type": "1D",
+   "value": "150",
+   "min": 0,
+   "max": 2000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}
