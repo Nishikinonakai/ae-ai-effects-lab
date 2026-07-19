@@ -1,5 +1,5 @@
 {
-  "name": "eval-e01_i1",
+  "name": "eval-e01_i2",
   "compName": "Eval_e01",
   "intent": "金色的细小尘埃粒子在黑背景上缓慢上升，微微发光",
   "comp": {
@@ -49,7 +49,7 @@
         ],
         [
           "tc Particular-0146",
-          170,
+          450,
           "Maintain many visible particles while preserving a fine dust character."
         ],
         [
@@ -74,7 +74,7 @@
         ],
         [
           "tc Particular-0027",
-          2.4,
+          1.35,
           "Use tiny particle cores appropriate for fine airborne dust."
         ],
         [
@@ -114,7 +114,7 @@
         ],
         [
           "tc Particular-0017",
-          -18,
+          -30,
           "Apply negative gravity to create a slow, clearly readable upward rise."
         ],
         [
@@ -212,5 +212,34 @@
     "upward drift readable between t1 and t4 frames",
     "fine dust scale — many small particles, not few large blobs",
     "soft glow, additive feel; no flat matte dots"
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0146",
+          "value": 450,
+          "why": "Increase particle birth rate substantially so the frame reads as many fine airborne dust grains rather than sparse isolated motes."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0027",
+          "value": 1.35,
+          "why": "Reduce the core size so the denser particle field remains delicate and avoids prominent glowing blobs."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0017",
+          "value": -30,
+          "why": "Strengthen the negative gravity enough to make the slow upward drift more clearly readable between sampled frames."
+        }
+      ],
+      "skipped": []
+    }
   ]
 }

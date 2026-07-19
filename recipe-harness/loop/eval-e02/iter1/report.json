@@ -3,114 +3,133 @@
   "name": "eval-e02_i1",
   "params": [
     {
-      "p": "[1:tc Particular] Emitter Type (Box)",
+      "p": "[1:tc Particular] Use a wide Box emitter so bubbles are born across the bottom of the frame",
       "ok": true,
       "v": "2"
     },
     {
-      "p": "[1:tc Particular] Position (bottom band)",
+      "p": "[1:tc Particular] Place emission just below the lower edge",
       "ok": true,
       "v": "640,760,0"
     },
     {
-      "p": "[1:tc Particular] Emitter Size mode (XYZ) — gate before Y/Z",
+      "p": "[1:tc Particular] Span nearly the full composition width at birth",
       "ok": true,
-      "v": "2"
+      "v": "1240"
     },
     {
-      "p": "[1:tc Particular] Emitter Size X",
+      "p": "[1:tc Particular] Moderate continuous particle density with readable individual bubbles",
       "ok": true,
-      "v": "1300"
+      "v": "28"
     },
     {
-      "p": "[1:tc Particular] Emitter Size Y",
-      "ok": false,
-      "err": "Error: After Effects error: Can not “set value” with this property, be"
-    },
-    {
-      "p": "[1:tc Particular] Emitter Size Z",
+      "p": "[1:tc Particular] Keep initial velocity gentle and aquatic",
       "ok": true,
-      "v": "200"
+      "v": "18"
     },
     {
-      "p": "[1:tc Particular] Particle Type (Sphere)",
+      "p": "[1:tc Particular] Uniform low-speed emission avoids a rigid vertical spray",
       "ok": true,
       "v": "1"
     },
     {
-      "p": "[1:tc Particular] Particles/sec",
+      "p": "[1:tc Particular] A restrained spread keeps the upward flow coherent",
       "ok": true,
-      "v": "220"
+      "v": "18"
     },
     {
-      "p": "[1:tc Particular] Velocity",
+      "p": "[1:tc Particular] Give bubbles enough lifetime to travel through the frame",
       "ok": true,
-      "v": "20"
+      "v": "7.5"
     },
     {
-      "p": "[1:tc Particular] Velocity Random %",
+      "p": "[1:tc Particular] Small, clearly legible bubble scale",
       "ok": true,
-      "v": "40"
+      "v": "7"
     },
     {
-      "p": "[1:tc Particular] Life (sec)",
+      "p": "[1:tc Particular] Vary bubble sizes for a natural underwater field",
       "ok": true,
-      "v": "4"
+      "v": "55"
     },
     {
-      "p": "[1:tc Particular] Life Random %",
+      "p": "[1:tc Particular] Keep bubbles luminous but not blown out",
       "ok": true,
-      "v": "30"
+      "v": "78"
     },
     {
-      "p": "[1:tc Particular] Gravity (buoyant rise)",
-      "ok": true,
-      "v": "-180"
-    },
-    {
-      "p": "[1:tc Particular] Size (small bubbles)",
-      "ok": true,
-      "v": "3.5"
-    },
-    {
-      "p": "[1:tc Particular] Size Random %",
+      "p": "[1:tc Particular] Subtle opacity variation adds depth and avoids uniform dots",
       "ok": true,
       "v": "35"
     },
     {
-      "p": "[1:tc Particular] Feather (soft bubble edge)",
+      "p": "[1:tc Particular] Set Color to At Birth before assigning the cyan bubble color",
       "ok": true,
-      "v": "40"
+      "v": "1"
     },
     {
-      "p": "[1:tc Particular] Opacity",
+      "p": "[1:tc Particular] Bright blue-cyan bubble palette",
       "ok": true,
-      "v": "95"
+      "v": "0.03999999910593,0.75999"
     },
     {
-      "p": "[1:tc Particular] Opacity Random %",
+      "p": "[1:tc Particular] Use Glow Sphere particles for round bubble-like highlights",
       "ok": true,
-      "v": "30"
+      "v": "2"
     },
     {
-      "p": "[1:tc Particular] Color (blue-cyan)",
+      "p": "[1:tc Particular] Additive blending gives the bubbles underwater luminescence",
       "ok": true,
-      "v": "0.44999998807907,0.80000"
+      "v": "2"
     },
     {
-      "p": "[1:tc Particular] TF Affect Position (sway)",
+      "p": "[1:tc Particular] Keep a compact halo around each readable bubble",
       "ok": true,
-      "v": "120"
+      "v": "90"
     },
     {
-      "p": "[1:tc Particular] TF Scale (small features = gentle sway)",
+      "p": "[1:tc Particular] Use restrained per-particle glow instead of foggy bloom",
       "ok": true,
-      "v": "9"
+      "v": "42"
     },
     {
-      "p": "[1:tc Particular] TF Evolution (slow)",
+      "p": "[1:tc Particular] Negative gravity creates the continuous buoyant rise",
       "ok": true,
-      "v": "4"
+      "v": "-22"
+    },
+    {
+      "p": "[1:tc Particular] Enable air resistance so wind and turbulence can influence trajectories",
+      "ok": true,
+      "v": "1.20000004768372"
+    },
+    {
+      "p": "[1:tc Particular] Apply gentle turbulent positional drift for organic non-vertical paths",
+      "ok": true,
+      "v": "28"
+    },
+    {
+      "p": "[1:tc Particular] Use broad turbulence features for slow lateral swaying",
+      "ok": true,
+      "v": "180"
+    },
+    {
+      "p": "[1:tc Particular] Keep turbulence smooth rather than noisy",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Enable modest motion blur for moving bubbles",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Natural shutter angle preserves their round appearance",
+      "ok": true,
+      "v": "180"
+    },
+    {
+      "p": "[1:tc Particular] Oscillating horizontal wind creates a visible, slow left-right underwater sway (expr)",
+      "ok": true
     }
   ],
   "frames": [

@@ -1,14 +1,20 @@
 {
   "intent": "金色的细小尘埃粒子在黑背景上缓慢上升，微微发光",
-  "backend": "agent",
-  "outcome": "pass",
-  "best_iter": 1,
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 2,
   "iterations": [
     {
       "iter": 1,
-      "score": 9,
-      "verdict": "pass",
-      "critique": "All four criteria met: fine golden/amber motes on near-black; population clearly risen between t1 (lower 45% band) and t4 (fills to upper quarter); hundreds of small particles at dust scale, no blobs; warm soft-edged additive dots with subtle halos. Matches the request as-is — usable frame."
+      "score": 5,
+      "verdict": "fail",
+      "critique": "The frame has a convincing near-black background and warm amber particles with soft luminous halos. However, the field is too sparse for fine golden dust: it reads as a few isolated glowing motes, including several comparatively large bright blobs, rather than a rich suspended dust cloud. The supplied render does not visibly provide a t4 comparison, so the intended upward motion cannot be confirmed from the available frame."
+    },
+    {
+      "iter": 2,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "At t4 the render convincingly shows a rich field of small amber-gold luminous dust over a near-black background, with soft additive-looking halos. However, t1 remains far too sparse, reading as isolated motes rather than a continuous suspended dust field; the large density jump by t4 reads as particle accumulation rather than a stable atmospheric field with clearly trackable upward drift. A few oversized bright motes also stand out against the otherwise fine scale."
     }
   ]
 }

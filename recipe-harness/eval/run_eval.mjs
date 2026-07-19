@@ -9,6 +9,12 @@
 // Per prompt:  plan_recipe (NL → recipe) → tune_loop (render → score → nudge, up to maxIters)
 // Recorded:    one-shot pass (iteration 1 scored a pass) and pass@N (any iteration did)
 //
+// ⚠ THIS IS NOT A LIKE-FOR-LIKE REMATCH OF ROUND-1. Round-1's planner was the agent reasoning in
+// session — a far stronger reasoner than the headless model used here, and one that no shipped
+// product could contain. So a lower number here does not mean the stack regressed; it means this
+// measures something different and more honest: what the PRODUCT achieves with nobody in the loop.
+// Treat these as a new baseline for the headless planner, and compare future runs against it.
+//
 // RESUMABLE by design. A full run is ~24 planning calls plus up to 24×N renders and vision calls;
 // AE can stall, a licence check can time out, a socket can drop. Results append to a JSONL ledger
 // and completed prompts are skipped, so an interrupted run is resumed rather than restarted.

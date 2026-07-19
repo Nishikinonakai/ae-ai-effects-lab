@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "At t4 the render convincingly shows a rich field of small amber-gold luminous dust over a near-black background, with soft additive-looking halos. However, t1 remains far too sparse, reading as isolated motes rather than a continuous suspended dust field; the large density jump by t4 reads as particle accumulation rather than a stable atmospheric field with clearly trackable upward drift. A few oversized bright motes also stand out against the otherwise fine scale.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 1600,
+      "why": "Raise the birth rate so the t1 frame immediately contains enough fine dust rather than requiring several seconds to build density."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 1.2,
+      "why": "Shorten lifetime to prevent the higher birth rate from making t4 excessively dense, producing a more consistent dust-field density across both sampled times."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0074",
+      "value": 38,
+      "why": "Reduce size variation so fewer particles become conspicuously large bright blobs and the field retains a finer dust scale."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

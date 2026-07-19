@@ -1,6 +1,6 @@
 {
   "status": "done",
-  "name": "eval-e01_i1",
+  "name": "eval-e01_i2",
   "params": [
     {
       "p": "[1:tc Particular] Use a wide Box emitter so many fine particles are born across the frame rather than from one obvious point.",
@@ -30,7 +30,7 @@
     {
       "p": "[1:tc Particular] Maintain many visible particles while preserving a fine dust character.",
       "ok": true,
-      "v": "170"
+      "v": "450"
     },
     {
       "p": "[1:tc Particular] Keep random birth velocity very low so the overall motion remains slow and calm.",
@@ -55,7 +55,7 @@
     {
       "p": "[1:tc Particular] Use tiny particle cores appropriate for fine airborne dust.",
       "ok": true,
-      "v": "2.40000009536743"
+      "v": "1.35000002384186"
     },
     {
       "p": "[1:tc Particular] Vary particle scale so the dust does not look mechanically uniform.",
@@ -90,7 +90,7 @@
     {
       "p": "[1:tc Particular] Apply negative gravity to create a slow, clearly readable upward rise.",
       "ok": true,
-      "v": "-18"
+      "v": "-30"
     },
     {
       "p": "[1:tc Particular] Use Add blending so overlapping dust has a light-emissive additive feel.",
@@ -163,7 +163,7 @@
     }
   ],
   "frames": [
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e01/iter1/eval-e01_i1_t1.png",
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e01/iter1/eval-e01_i1_t4.png"
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e01/iter2/eval-e01_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e01/iter2/eval-e01_i2_t4.png"
   ]
 }

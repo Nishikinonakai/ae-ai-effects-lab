@@ -259,3 +259,41 @@ Deep Glow `Auto Iterations=0` → `Glow Iterations`。
 > 遗留口径:目前只做单门翻转,**需要同时开两扇门的参数仍会被记成够不到**。
 
 详见 `introspect/SETTABILITY.md`。
+
+### 10.5 补记二:两个 headless planner + 一次 AE 卡死事故(session 末)
+
+**A. 绿地 planner 补齐 + Particular essence 卡(缺的那块终于补上)**
+
+- `recipe-harness/runner/plan_recipe.mjs` —— intent → 可直接跑的 recipe。`plan_edit` 补的是棕地
+  (改现有工程),这条补的是**从空合成起手**。两条以前都只存在于"agent 在会话里推理"——这正是
+  planner-eval round-1 必须一题一题手动驱动的原因。配方库是以**目录**形式给出的(每条一行:干什么用的 +
+  用了哪些效果),不是查找表,符合 2026-07-17 的泛化决策。
+- 第一次跑就暴露真问题:**Particular 返回了 0 个参数**——essence 索引里根本没有产品最核心效果的卡片,
+  于是模型(正确地)拒绝瞎猜 matchName,产出一个没用的方案。
+- 于是补上 `introspect/essence/Trapcode_Particular.essence.json`,**全部来自本仓库自己积累的本体**
+  (7657 参数实测 dump + 已发布配方实际用到的 135 个参数交叉核对),不是模型先验。卡里带着这个 lab
+  真金白银踩过的坑:0005 是 legacy popup **不是** psec(0146 才是)、0026 是 Particle Type 的死副本
+  (0703 才活)、Air Resistance=0 时 Wind/Turbulence 全部失效**且 AE 会弹模态卡死桥**、Set Color 不设
+  At Birth 时 Color 静默无效(当年造成 19 张该暖却发蓝的图)、over-life 曲线是 CUSTOM_VALUE 只能靠
+  master-clone、**没有涡旋力**——一切圆周运动都是靠扫描发射器画出来的。
+- 补卡后重跑:**24 个精挑参数,且所有门控规则模型自己就遵守了**——Air Resistance 先于 Wind/Turbulence、
+  Set Color 先于 Color、没有出现任何 legacy matchName。**真机渲染 29/29 参数全过,画面读得出意图。**
+
+**B. `recipe-harness/eval/run_eval.mjs` —— planner-eval 变成一条命令。** 每题 plan → tune_loop →
+打分,按 tier/family/dist 汇总,JSONL 台账可断点续跑。
+> **重要口径:这不是 round-1 的同条件复赛。** round-1 的 planner 是 agent 在会话里推理——比这里用的
+> headless 模型强得多,而且是任何可发布产品都装不下的。所以数字低不代表退步,它测的是**没有人在环时
+> 产品自己能做到什么**。当作 headless planner 的新基线,后续和它自己比。
+
+**C. 事故:gate 探针把 AE 弄卡死了。** 在 Particular 上翻 Emitter Type = Lights(合成里没有灯光层)
+直接把插件卡住,之后每次 round-trip 全部超时,而探针还傻乎乎地又烧了 12 次翻转刷"skipped(timeout)"。
+靠 `bridge_down.sh && bridge_up.sh` 恢复。已加两道保险:**选"源"而非"模式"的枚举**(emitter type /
+layer / light / model / texture / input)默认跳过(`--force` 才试),**第一次超时直接中止**并在报告里
+写 `_abortedAfter` / `_partial`——卡死之后的一切都是噪声,不能被当成完整结果。报告也记 `gatesProbed`,
+因为测试时一次 3-gate 的小样本静默覆盖掉了 19-gate 的好结果。
+> 顺带的真实数据:**Particular 默认状态下 258 个参数写不进去,候选门 1745 个**——`--max-gates=16`
+> 只是 0.9% 的抽样。真要做 Particular 的门控普查,需要一份**有针对性的门列表**,而不是任意枚举的前缀。
+
+**D. `test/smoke.mjs` —— 39 条离线自测**(不需要 AE),盯住环路盲目信任的纯逻辑:frame_delta 的
+inert/weak/changed 判定(8-bit 与 16-bit 两种深度结果必须一致)、**失败必须报 `ok:false` 而不是伪造出
+一个 "inert"**、以及 essence 三分杠杆(可用 / 门控 / 够不到)。
