@@ -1,0 +1,71 @@
+{
+  "cardType": "spatial-ml",
+  "matchName": "ADBE Samurai",
+  "displayName": "Roto Brush & Refine Edge",
+  "vendor": "Adobe (native AE)",
+  "category": "Matte / ML segmentation",
+  "effect_class": "ml-segmentation",
+  "essence": "A deep-learning foreground/background segmenter. The user paints green (foreground) and red (background) strokes on a base frame in the Layer panel; a trained matting model infers a per-pixel alpha from those strokes and temporally PROPAGATES it across a frame span as the user scrubs. Refine Edge recovers fine/soft boundaries (hair, motion-blurred edges) via a second matting pass. The effect's PRODUCT is an alpha matte on the layer — used to isolate a subject for compositing (the film-VFX backbone: cut the actor out of the plate, put them in a new environment). The load-bearing state is the strokes + propagated matte; the 45 leaf params are all post-hoc knobs that clean/feather/choke/decontaminate/motion-blur a matte the model already produced.",
+  "when_to_use": ["isolate / cut out a subject", "roto", "抠像 (non-green-screen)", "separate foreground from background", "matte a moving actor/object off a plate", "clean up an existing roto edge (hair, chatter, spill)"],
+
+  "state_model": {
+    "location": "hybrid",
+    "reasoning": "Split state. OPAQUE CORE: customValue count = 0, and the strokes appear only as a valueless GROUP 'ADBE Samurai Strokes Group' (no value/min/max/animatable) — the stroke geometry, learned fg/bg color model, base-frame span, and per-frame propagated matte have ZERO representation in the param tree; they live in the effect's internal Roto data store (cached to disk / persisted in the .aep), unreadable and unwritable via the param API. SCRIPTABLE SURFACE: 23 animatable scalar knobs genuinely shape the FINAL matte (Feather, Shift Edge, Contrast, Refine Edge radius, Decontaminate, Motion Blur). Opaque core + real in-params finishing surface ⇒ hybrid, not pure opaque."
+  },
+
+  "opaque_core": "The segmentation itself — the user's green/red fg/bg strokes, the base-frame(s), the deep-matting model's inferred alpha, and the matte propagated across the span. Entirely outside the scriptable surface (no customValue, no leaf params; only the valueless Strokes group). The product cannot create/read/edit/delete strokes, cannot trigger or read propagation, cannot know the base-frame span or where the matte is wrong. There is ALSO no scripting hook to invoke propagation — it is driven only by the user scrubbing frames in the Layer panel.",
+
+  "scriptable_surface": [
+    { "controls": "Roto matte edge refinement — reshape the boundary of the matte the model produced", "example_params": "Feather ADBE Samurai-0009 (0-1000), Contrast ADBE Samurai-0010 (0-100%), Shift Edge ADBE Samurai-0011 (-100..100%), Reduce Chatter ADBE Samurai-0012", "phase": "post_handoff" },
+    { "controls": "Refine Edge pass — fine/soft (hair) edges: radius + second-stage matte shaping", "example_params": "Base Refine Edge Radius (0-250), Refine Edge Matte group (Smooth/Feather/Shift/Chatter), Render Refine Edge toggle", "phase": "post_handoff" },
+    { "controls": "Propagation recipe — steers HOW the ML re-propagates (takes effect only when the user next scrubs; does NOT hold the matte)", "example_params": "Search Radius (1-100), Motion Threshold, Motion Damping, Edge Detection (1-3), Quality (1-2)", "phase": "pre_handoff" },
+    { "controls": "Matte finishing & compositing — spill removal, edge motion blur, invert, opacity, GPU", "example_params": "Decontaminate Edge Colors + Amount + Radius; Use Motion Blur + Samples + Shutter; Invert Foreground/Background; Effect Opacity; GPU Rendering", "phase": "post_handoff" }
+  ],
+
+  "capability_boundary": {
+    "product_can": [
+      { "cap": "Identify + classify this as an opaque-ML-core segmenter and route it to the handoff flow instead of trying to synthesize a matte", "phase": "pre_handoff" },
+      { "cap": "Pre-stage the propagation recipe (Search Radius, Motion Threshold/Damping, Edge Detection, Quality) BEFORE the user propagates, so the ML run uses the intended settings", "phase": "pre_handoff" },
+      { "cap": "Once a matte exists, translate a 'feeling X' request into a refine-edge recipe and set/keyframe/expression-drive every finishing knob — tighter edge (Shift Edge − / Contrast up), softer or hair edge (Refine Edge radius + feather), less boil (Reduce Chatter), spill-free comp (Decontaminate), matte motion blur matched to subject speed", "phase": "post_handoff" },
+      { "cap": "Invert the matte, set Effect Opacity, force GPU/CPU, and manage compositing masks around the roto result", "phase": "post_handoff" }
+    ],
+    "product_must_defer": [
+      { "task": "Create the segmentation (the base matte) — nothing downstream is meaningful until this exists, and it cannot be scripted", "deferral_reason": "opaque-state", "user_action_asked": "Double-click the layer to open the Layer panel, pick the Roto Brush tool, paint a green stroke along the subject on a good base frame (Alt/Opt-drag red strokes to carve out background), then scrub forward frame-by-frame (or hold-scrub the span) so Roto Brush 2 propagates the matte; stop when it holds.", "then_product_can": "Read that a matte exists and apply the full refine-edge + finishing recipe to the requested look." },
+      { "task": "Re-propagate after the product changes propagation-tuning params (setting Search Radius/Edge Detection etc. does NOT re-run the model)", "deferral_reason": "non-scriptable-trigger", "user_action_asked": "After I adjust the propagation settings, re-scrub the affected frame range in the Layer panel (there is no scripting call to trigger propagation).", "then_product_can": "Proceed to matte finishing and edge refinement on the freshly propagated result." },
+      { "task": "Fix the matte on specific frames where it slips (grabs background or drops part of the subject)", "deferral_reason": "perceptual-judgment", "user_action_asked": "Scrub to the offending frame, add a short corrective green (add) or red (subtract) stroke, let it re-propagate a few frames.", "then_product_can": "Continue automating all downstream refine/decontaminate/motion-blur knobs; the correction is invisible to params but the improved matte flows through." },
+      { "task": "Freeze / cache the Roto Brush for stable playback + render once the matte is final", "deferral_reason": "non-scriptable-trigger", "user_action_asked": "Click Freeze in the Layer panel to cache the segmentation.", "then_product_can": "Safely keyframe the scriptable refine-edge params against a stable matte without re-triggering propagation." }
+    ]
+  },
+
+  "perception_signal": {
+    "identify": "matchName 'ADBE Samurai' on a footage layer.",
+    "state_present_when": "There is no direct param that reports matte existence (the core is opaque). Best available tells: the layer's effect has been frozen (user-side), OR the artist confirms; treat the matte as present only once confirmed. Practically the product ASKS rather than assumes.",
+    "state_absent_when": "Freshly-applied ADBE Samurai with a valueless 'ADBE Samurai Strokes Group' and no user paint — the default state on a layer where nobody has painted. customValue = 0 always (does not distinguish painted vs unpainted — the matte is fully off-param), which is exactly why presence must be treated as unverified and gated by the handoff, not inferred."
+  },
+  "state_gate": {
+    "predicate": "Has the user painted + propagated a matte for this Roto Brush instance?",
+    "on_absent": "Do NOT apply the finishing surface as if it were a result. Pre-stage the propagation recipe, then issue handoff #1 (paint + propagate).",
+    "on_present": "Automate the refine/decontaminate/motion-blur finishing surface to the requested look; keyframe against the (frozen) matte."
+  },
+
+  "config_recipes": {
+    "clean hard cutout (graphic/product)": "Shift Edge −5..−15, Contrast 60-100, Feather 0-1, Reduce Chatter 20-40 — a crisp choked edge",
+    "natural hair edge (actor)": "Render Refine Edge ON, Base Refine Edge Radius 8-20 over the hair, Refine Edge Feather low, Decontaminate Edge Colors ON amount 30-60",
+    "stabilized / locked matte (talking head)": "Reduce Chatter 50-80 + Chatter Reduction 2-3 — kill boil on a mostly-static subject",
+    "motion-matched matte (fast subject)": "Use Motion Blur ON, Samples 16-32, Shutter matched to comp shutter — the matte edge blurs with the subject"
+  },
+  "reasoning_hooks": {
+    "edge too soft / haloing": "Shift Edge negative (choke) + raise Contrast",
+    "losing hair / hard chewy edge": "enable Render Refine Edge + raise Base Refine Edge Radius; add Decontaminate",
+    "matte boils / crawls frame to frame": "Reduce Chatter up (+ Chatter Reduction) — but if it SLIPS off the subject, that's the CORE, defer a corrective stroke (not a param)",
+    "colored fringe when comped over new bg": "Decontaminate Edge Colors ON + raise Amount",
+    "nothing is happening when I set params": "no matte exists yet (opaque core absent) — issue the paint+propagate handoff before any finishing param means anything"
+  },
+
+  "routing_tags": ["opaque-ml-core", "ml-segmentation", "roto-brush", "matte", "refine-edge", "handoff-required", "requires-user-paint", "requires-layer-panel", "propagation-not-scriptable", "hybrid-state", "scriptable-finishing-surface", "spatial", "film-vfx"],
+
+  "grounding": "introspect card (cards/ADBE_Samurai.json — 48 params, 45 leaf, 23 animatable, customValue 0, valueless 'Strokes' group) + state-model analysis (spatial-ml-state-model workflow, 2026-07-19) + model prior on Roto Brush 2. The opaque-core fingerprint (customValue 0 + valueless Strokes group) is read directly from the introspect card; the exact refine-param matchNames beyond the top few should be confirmed against cards/ADBE_Samurai.json before setting. Confidence: HIGH on the state-model + capability boundary + handoffs; MEDIUM on individual finishing-param ranges (not visually probed — matte edits need footage + an existing matte, which is itself the handoff).",
+  "_method": "introspect + state-model analysis (spatial/ML card pipeline — NO visual probe; the meaning is the capability boundary, not a param sweep)",
+  "_date": "2026-07-19",
+  "_reference": "This is the REFERENCE card for the spatial-ml cardType (canonical opaque-core hybrid). See essence/README.md for the card shape + the 3-tier classification of the class."
+}

@@ -60,6 +60,43 @@ See `BCC_Cross_Glitch.essence.json` (the reference implementation, 2026-07-19). 
   can EMIT onto a target layer to reproduce the technique (PRD §八 D). See
   `Layout_Animator_Rig.essence.json`. Decoded statically from the user's own project bytes
   (ghost_effect_groups + expressions_unique) — no live probe; the rig IS its expressions.
+- **spatial/ML card** (`cardType: "spatial-ml"`): effects whose LOAD-BEARING STATE is not scalar
+  params but a mask / solve / mesh+pins / 3D scene (Roto Brush, 3D Camera Tracker, Puppet,
+  Element 3D). The scalar card silently assumed "the effect's meaning IS its params"; here that
+  breaks — the params are a *finishing/settings surface layered on an opaque core*. So the card's
+  job is to draw the **capability boundary**, not describe more dials. New fields beyond the scalar
+  card: `state_model` (WHERE the load-bearing state lives + structural proof), `scriptable_surface`
+  (the partition the product CAN author, each tagged `phase: pre_handoff|post_handoff`),
+  `opaque_core` (what it CANNOT create/edit), `capability_boundary` (`product_can[]` +
+  `product_must_defer[]`, each defer = `{task, deferral_reason, user_action_asked, then_product_can}`),
+  `perception_signal` + `state_gate` (the runtime predicate: is the core state present? → automate,
+  else → issue the handoff). Reference: `Roto_Brush.essence.json`.
+
+  **Product principle (this class establishes it): "gate the core, own the surface — never bluff the
+  state."** When a request routes to an opaque-core effect, the product treats the load-bearing
+  state as a *verified precondition*, not an assumption: run `state_gate` first; if the core is
+  absent, DON'T synthesize a fake matte/solve/scene and DON'T silently apply the finishing surface as
+  a result — pre-stage every setting it legitimately can, issue the single precise handoff (exact
+  clicks), and resume automation the instant the state exists. The card tells the router *what it
+  can't fake* — so "generalize to any plugin" never degrades into confidently applying dials to a
+  matte that was never painted (PRD §八).
+
+  **3-tier classification of the class** (by automatable share):
+  - **Tier A — fully-scriptable** (`state_model: in-params`): **Bezier Warp** (all mesh points are
+    animatable params → author any warp from scratch; only deferral is a `perceptual-judgment` to
+    conform to image content); **BCC Chroma Key** (the *control case* — a keyer that looks spatial
+    but is scalar-param; **stays a normal effect card**, the boundary marker proving the new fields
+    are only needed once `state_model ≠ in-params`).
+  - **Tier B — hybrid** (own settings + finishing + can pre-stage; defer the CREATE/SOLVE):
+    **Puppet** (defer rig creation; once pins exist the whole motion is in-params), **3D Camera
+    Tracker** (defer the Analyze solve + Create-Camera extract; pre-stage Shot Type/Angle before,
+    drive the extracted Camera/Nulls after), **Roto Brush** (defer paint+propagate; own the 23-knob
+    refine/decontaminate/motion-blur finishing surface after).
+  - **Tier C — opaque-core-must-defer**: **Element 3D** (all 2431 params are inert until the user
+    builds a scene in the modal Scene Setup — an `external-authoring` + `linked-file` handoff).
+  Fingerprint the tier structurally: `customValue == 0` + all-scalar leaves ⇒ Tier A; a `customValue`
+  param or a valueless data-group (Roto "Strokes", Element "Scene Settings", Puppet "ARAP") ⇒ opaque
+  core ⇒ Tier B/C.
 
 ## Coverage so far
 
@@ -73,13 +110,24 @@ Optics, Mirror Edges, Motion Blur, Target, Angle Precision) and captures the dri
 templates that place driven layers off named controls. First card in the "generate + apply
 expressions" capability.
 
+1 spatial/ML card: **Roto Brush & Refine Edge** (`ADBE Samurai`) — the reference for the
+`spatial-ml` cardType (canonical opaque-core hybrid). Draws the capability boundary: opaque core
+(strokes+matte, fingerprinted by customValue 0 + valueless Strokes group) vs a 23-knob scriptable
+finishing surface, with 4 precise handoffs (paint+propagate / re-propagate / fix-slipping-frame /
+freeze) and a `state_gate`. Built from introspect + the state-model workflow (6 effects analyzed,
+all with structural perception fingerprints) — no visual probe; the meaning is the boundary, not a
+sweep. The other 5 (3D Tracker, Puppet, Bezier Warp, Element 3D, BCC Chroma Key) are
+introspect-carded + tier-classified above, essence-synthesized on demand.
+
 ## Next candidates
 
+- The other spatial/ML cards on demand: **Element 3D** as the Tier-C stress test (external-authoring
+  + linked-file + the opaque `Scene Settings` blob), **Bezier Warp** as the minimal Tier-A contrast
+  (fully in-params, `perceptual-judgment`-only deferral). Puppet + 3D Tracker when a request routes there.
+- Wire `perception_signal`/`state_gate` into `dump_comp` so it flags opaque-core effects + whether
+  their state is present (customValue / valueless-group detection) — the perception side of "gate the core".
 - More of the user's OWN rigs from the same kit / other projects (the float-id Corner-Pin / Optics
   internals need the .ffx or a live UI read to fully enumerate — MEDIUM-confidence in the current card).
-- The **spatial/ML/solve/scene** effect class surfaced by the cross-genre scan (Roto Brush /
-  3D Tracker / Puppet / Element 3D) — the frontier scalar-param essence can't fully capture
-  (state is masks/solves/pins/scenes, not dials). Needs a new card shape again.
 - AESweets Glitch 7in1, `uni.Unmult` (Universe) — other real-usage third-party effects.
 - Filter suites at large (BCC/Sapphire/Universe, ~900 effects) stay introspect-card-only, essence-
   synthesized ON DEMAND when a request routes to them (the whole point of shallow-for-breadth).

@@ -1,0 +1,422 @@
+{
+ "_note": "Per-effect state-model + capability-boundary analyses for the spatial/ML/solve/scene effect class. Source: spatial-ml-state-model workflow 2026-07-19. Drives authoring the spatial-ml essence cards on demand. Roto Brush already authored as the reference (Roto_Brush.essence.json).",
+ "_date": "2026-07-19",
+ "analyses": [
+  {
+   "effect": "Roto Brush & Refine Edge [ADBE Samurai]",
+   "matchName": "ADBE Samurai",
+   "effect_class": "ml-segmentation",
+   "what_it_does": "Roto Brush 2 is a deep-learning foreground/background segmenter. The user paints green (foreground) and red (background) strokes on a base frame in the Layer panel; a trained matting model infers a per-pixel alpha from those strokes and temporally propagates it across a frame span as the user scrubs. Refine Edge then recovers fine/soft boundaries (hair, motion-blurred edges) via a second matting pass. The effect's product is an alpha matte applied to the layer. The strokes + propagated matte are the effect; the 45 leaf params are all post-hoc knobs that clean, feather, choke, decontaminate, or motion-blur a matte the model already produced.",
+   "state_location": "hybrid",
+   "state_location_reasoning": "Split state, provably. (1) The load-bearing core is opaque-internal: customValue is 0 across all 48 params, and \"Strokes\" (ADBE Samurai Strokes Group) is emitted as a bare GROUP with no value/min/max/animatable — unlike every scalar param — so the stroke geometry, the learned fg/bg color model, the base-frame span, and the propagated per-frame matte have zero representation in the param tree. They live in the effect's internal Roto Brush data store (cached to disk / persisted in the .aep), unreadable and unwritable via the param API. (2) A genuine, meaningful scriptable layer DOES exist in-params: 23 animatable scalar knobs materially shape the final matte — e.g. /rmshiftedges (Shift Edge), /spatialsmoothing2 (Feather), /spatialsoftness2 (Contrast), /baserefineedgeradius, the whole Refine Edge Matte group (/HBspatialsmoothing, /HBspatialchoke...), Decontamination (/rmcleaningamount), and Motion Blur (/rmsamplesperframe, /rmshutterangle). Because the core is opaque-internal but a real, animatable finishing surface is in-params, the honest classification is hybrid rather than pure opaque-internal.",
+   "scriptable_surface": [
+    {
+     "controls": "Roto matte edge refinement — reshape the boundary of the matte the model produced (soften, choke/expand, harden falloff, de-boil)",
+     "example_params": "Feather /spatialsmoothing2 (0-1000), Contrast /spatialsoftness2 (0-100%), Shift Edge /rmshiftedges (-100..100%), Reduce Chatter /rmreducechatter (0-100%)"
+    },
+    {
+     "controls": "Refine Edge (fine/soft-edge, e.g. hair) pass — radius and second-stage matte shaping over the hair region",
+     "example_params": "Base Refine Edge Radius /baserefineedgeradius (0-250), Smooth /HBspatialsmoothing, Feather /HBspatialsoftness2, Shift Edge /HBspatialchoke, Chatter Reduction /chatter_reduction2 (1-4), Reduce Chatter /rm2reducechatter (0-400%), toggles /renderHB /rmrefinematte2enable"
+    },
+    {
+     "controls": "Propagation recipe — tuning knobs that steer HOW the ML re-propagates (take effect only when the user re-scrubs to propagate; do not hold the matte itself)",
+     "example_params": "Search Radius /winsize (1-100), Motion Threshold /staticdamping, Motion Damping /dynamicdamping, Edge Detection /edgedetection (1-3), Use Alternate Color Estimation /enfromulate, Quality /fm_quality (1-2)"
+    },
+    {
+     "controls": "Matte finishing & compositing — spill removal, edge motion blur, invert, output opacity, GPU",
+     "example_params": "Decontaminate /rmcleanedgecolors + Amount /rmcleaningamount + Increase Radius /rmadditionalcleaningradius; Use Motion Blur /rmusemotionblur + Samples /rmsamplesperframe + Shutter /rmshutterangle; Invert FG/BG /invertforegroundbackground; Effect Opacity, GPU Rendering /ADBE Force CPU GPU"
+    }
+   ],
+   "opaque_core": "The segmentation itself: the user's green/red foreground/background strokes, the base-frame(s) they define, the deep-matting model's inferred alpha, and the matte propagated across the frame span. This is the load-bearing state and it is entirely outside the scriptable surface — no customValue, no leaf params; exposed only as the valueless \"ADBE Samurai Strokes Group.\" The product cannot create, read, edit, or delete strokes; cannot trigger or read propagation; cannot know the base-frame span, matte coverage, or where the matte is wrong. There is also no scripting hook to invoke propagation — propagation is driven by the user scrubbing frames in the Layer panel.",
+   "product_can": [
+    "Detect and classify the effect as an opaque-ML-core segmenter (matchName ADBE Samurai + a valueless Strokes group + customValue 0 + Version/propagation_method=2 for Roto Brush 2), and route it to the handoff flow instead of trying to synthesize the matte",
+    "Once a matte exists, set / keyframe / expression-drive every refine-edge and finishing knob to hit a target feel: tighter edge (Shift Edge - / Contrast up), softer or hair edge (Base Refine Edge Radius + Refine Edge Matte feather), less boil (Reduce Chatter / Chatter Reduction), spill-free comp (Decontaminate Edge Colors + Amount), matte motion blur to match subject speed (Use Motion Blur + Samples/Shutter)",
+    "Translate a 'feeling X' request into a refine-edge param recipe (e.g. 'clean hard cutout' vs 'natural hair edge' vs 'stabilized locked matte') and apply it across the layer, scaling animated values to comp fps and duration",
+    "Pre-stage the propagation recipe (Search Radius, Motion Threshold/Damping, Edge Detection, Quality) BEFORE the user propagates, so the ML run uses the intended settings",
+    "Invert the matte, set Effect Opacity, force GPU/CPU, and manage Compositing Options masks around the roto result"
+   ],
+   "product_must_defer": [
+    {
+     "task": "Create the segmentation (the base matte). Nothing downstream is meaningful until this exists, and it cannot be scripted.",
+     "user_action_asked": "Double-click the layer to open the Layer panel, pick the Roto Brush tool, paint a green stroke along the subject on a good base frame (Alt/Opt-drag red strokes to carve out background), then scrub forward one frame at a time (or hold-scrub across the span) so Roto Brush 2 propagates the matte across the range you need; stop when the matte holds.",
+     "then_product_can": "Read that a matte now exists and apply the full refine-edge + finishing recipe: keyframe Shift Edge/Feather/Contrast, set Base Refine Edge Radius and Refine Edge Matte params for the target edge, add Decontamination and matte Motion Blur, and tune to the requested look."
+    },
+    {
+     "task": "Re-propagate after the product changes propagation-tuning params — setting /winsize, /edgedetection, /staticdamping etc. does not re-run the model.",
+     "user_action_asked": "After I adjust the propagation settings, re-scrub the affected frame range in the Layer panel so Roto Brush re-propagates with the new values (there is no scripting call to trigger propagation).",
+     "then_product_can": "Proceed to matte finishing and edge-refinement on the freshly propagated result."
+    },
+    {
+     "task": "Fix the matte on specific frames where it slips (grabs background or drops part of the subject).",
+     "user_action_asked": "Scrub to the offending frame and add a short corrective green (add) or red (subtract) stroke, then let it re-propagate a few frames.",
+     "then_product_can": "Continue automating all downstream refine/decontaminate/motion-blur knobs; the correction is invisible to params but the improved matte flows through."
+    },
+    {
+     "task": "Freeze / cache the Roto Brush for stable playback and render once the matte is final.",
+     "user_action_asked": "Click the Freeze button in the Layer panel to cache the segmentation.",
+     "then_product_can": "Safely keyframe and animate the scriptable refine-edge parameters against a stable matte without re-triggering propagation."
+    }
+   ],
+   "perception_signal": "Static scan / dump_comp recognizes this effect by matchName \"ADBE Samurai\". The opaque-ML-core state is recognized structurally: (a) customValue count = 0 and (b) the presence of a \"Strokes\" child emitted as GROUP \"ADBE Samurai Strokes Group\" carrying no value/min/max/animatable — a valueless group where a scalar would be, which is the fingerprint that the load-bearing state (strokes + matte) is NOT in the param tree. Version /propagation_method = 2 flags Roto Brush 2 (deep matting) vs classic. The scan CANNOT determine from params whether a matte has actually been painted/propagated, its frame coverage, or its quality — so the router must treat presence of ADBE Samurai as 'segmentation state is opaque; require user handoff before trusting the matte,' and treat the 23 animatable refine knobs (/rmshiftedges, /spatialsmoothing2, /baserefineedgeradius, decontam + motion-blur groups) as the automatable surface that only becomes meaningful after that handoff.",
+   "routing_tags": [
+    "opaque-ml-core",
+    "ml-segmentation",
+    "roto-brush",
+    "matte",
+    "refine-edge",
+    "handoff-required",
+    "requires-user-paint",
+    "requires-layer-panel",
+    "propagation-not-scriptable",
+    "no-customvalue",
+    "hybrid-state",
+    "scriptable-finishing-surface",
+    "spatial"
+   ]
+  },
+  {
+   "effect": "3D Camera Tracker [ADBE 3D Tracker]",
+   "effect_class": "camera-solve",
+   "matchName": "ADBE 3D Tracker",
+   "what_it_does": "Analyzes 2D footage to reconstruct the original camera's 3D motion (per-frame pose + focal length) and a sparse 3D point cloud of the scene, so the user can attach 3D layers that lock to the live-action plate. It is a match-move / camera-solve effect: its output is geometry, not a look.",
+   "state_location": "hybrid",
+   "state_location_reasoning": "Of the 24 introspected params, every leaf is either an analysis INPUT or a cosmetic overlay — none holds the solve. Inputs: Shot Type (ADBE 3D Tracker-0403, 1-4), Horizontal Angle of View (ADBE 3D Tracker-0414, 0-180deg), Solve Method (ADBE 3D Tracker-0410, 1-5), Detailed Analysis (ADBE 3D Tracker-0036), Auto-delete Points Across Time (ADBE 3D Tracker-0306). Cosmetic overlays: Show Track Points (0405), Render Track Points (0406), Track Point Size (0407), Target Size (0409), Effect Opacity, GPU Rendering (ADBE Force CPU GPU). Critically, all 3 animatable params (Track Point Size 0407, Target Size 0409, Effect Opacity) are purely display — none carries the solve. The ONLY non-setting/non-cosmetic entries are the CUSTOMVALUE 'AnalysisDeletedTrackPoints' (ADBE 3D Tracker-0305), an opaque blob recording which points the user culled, and two readout LABEL groups 'Average Error: -' (0313) / 'Average Error: %.2f pixels' (0311) that are format-string display labels, not readable numeric values. No per-point 3D coordinate and no camera-pose keyframe appears anywhere in the tree. Therefore settings are in-params but the load-bearing state (camera pose + point cloud) is opaque-internal → hybrid.",
+   "scriptable_surface": [
+    {
+     "controls": "Analysis SETTINGS consumed by the next solve — set these BEFORE asking the user to run the analysis (e.g. inject a known lens focal length, pick the right solve strategy for the shot).",
+     "example_params": "ADBE 3D Tracker-0403 Shot Type (1=Fixed Angle of View, 2=Variable Zoom, 3=Specify Angle of View); ADBE 3D Tracker-0414 Horizontal Angle of View (0-180deg); ADBE 3D Tracker-0410 Solve Method (Auto Detect / Typical / Mostly Flat Scene / Tripod Pan); ADBE 3D Tracker-0036 Detailed Analysis; ADBE 3D Tracker-0306 Auto-delete Points Across Time"
+    },
+    {
+     "controls": "Display / overlay toggles for the track-point HUD in the viewer — cosmetic, do not affect the solve. Two of these are the effect's only animatable properties besides opacity.",
+     "example_params": "ADBE 3D Tracker-0405 Show Track Points (1=2D Source, 2=3D Solved); ADBE 3D Tracker-0406 Render Track Points; ADBE 3D Tracker-0407 Track Point Size (animatable, %); ADBE 3D Tracker-0409 Target Size (animatable, %); ADBE 3D Tracker-0026 Hide Warning Banner"
+    },
+    {
+     "controls": "Render/plumbing params (built-in).",
+     "example_params": "ADBE Effect Mask Opacity Effect Opacity; ADBE Force CPU GPU GPU Rendering (1-3)"
+    },
+    {
+     "controls": "The REAL post-handoff surface: once the user extracts, the created Camera and Null layers are first-class scriptable 3D layers with baked Transform keyframes (position/orientation/zoom) — fully readable and drivable via layer/keyframe/expression APIs. This is where the product does its actual work.",
+     "example_params": "Camera layer 'ADBE Camera' Transform (Position/Point of Interest/Zoom keyframes); Null 'ADBE AV Layer' Transform group; parent-linking new layers to the solved nulls"
+    }
+   ],
+   "opaque_core": "The solved 3D camera (per-frame pose + focal length) and the sparse 3D point cloud (per-point world coordinates + per-frame validity) — computed by AE's background camera-solve analysis and held entirely in plugin-internal state. It surfaces in the param tree ONLY as the empty CUSTOMVALUE 'AnalysisDeletedTrackPoints' (ADBE 3D Tracker-0305) blob and the unreadable 'Average Error: %.2f pixels' (0311) label group. No individual track-point position, camera keyframe, or RMS error value is a readable/writable param. The product cannot create, read, edit, re-solve, or delete this state through scripting.",
+   "product_can": [
+    "Apply the ADBE 3D Tracker effect to a footage layer to arm it for tracking.",
+    "Pre-configure the analysis SETTINGS before the user solves: set Shot Type + Horizontal Angle of View when the plate's lens focal length is known, pick a Solve Method matched to the shot (tripod pan vs. free move vs. mostly-flat), and toggle Detailed Analysis / Auto-delete.",
+    "Toggle the cosmetic overlay params (Show/Render Track Points, Track Point Size, Target Size) and set GPU Rendering / Effect Opacity.",
+    "Detect whether a solve has already been extracted and read/drive the results — the extracted Camera and Null layers are ordinary 3D layers with baked Transform keyframes.",
+    "AFTER extraction: parent new content to the solved nulls, set 3D transforms, keyframe layers in the solved coordinate space, and build the whole composited scene programmatically around the recovered camera."
+   ],
+   "product_must_defer": [
+    {
+     "task": "Run the actual 3D solve (camera-track analysis). This is the load-bearing computation and it is not reliably scriptable — 'Analyze/Track Camera' and 'Cancel' are effect-UI buttons, not standard properties, and the result never lands in params.",
+     "user_action_asked": "In the Effect Controls (or Tracker panel), click 'Analyze' / 'Track Camera' on the 3D Camera Tracker effect and let the background solve finish; check that the 'Average Error' readout is acceptably low (re-solve with different settings if not).",
+     "then_product_can": "Infer a solve exists and pre-stage extraction targets (which points/plane to convert), and read the Average Error qualitatively via the presence of the readout / extracted layers."
+    },
+    {
+     "task": "Extract usable elements from the solved point cloud (the point cloud itself is opaque; converting points to layers is a viewer-only context action requiring point selection).",
+     "user_action_asked": "In the Composition viewer, select the desired track points (or hover a plane target), right-click and choose 'Create Camera', 'Create Null and Camera', 'Create Text and Camera', or 'Create Shadow Catcher and Camera'.",
+     "then_product_can": "Read, animate, and parent-link the newly created Camera + Null layers — these are first-class scriptable 3D layers with baked keyframes — and build the 3D scene on top of them."
+    },
+    {
+     "task": "Establish/refine the coordinate frame and cull bad points (recorded only in the opaque AnalysisDeletedTrackPoints blob).",
+     "user_action_asked": "Select 3 coplanar track points, right-click 'Set Ground Plane and Origin'; delete stray/rolling points in the viewer as needed.",
+     "then_product_can": "Place and orient generated layers correctly in the user-defined ground/origin space instead of AE's arbitrary default solve frame."
+    }
+   ],
+   "perception_signal": "Recognize the effect by matchName 'ADBE 3D Tracker' present on a footage layer, plus the CUSTOMVALUE 'AnalysisDeletedTrackPoints' (ADBE 3D Tracker-0305) — the fingerprint of an ML/solve effect whose state is opaque. Because the point cloud and camera pose are NOT enumerable in params, a completed & extracted solve is inferred indirectly: sibling layers spawned by the tracker (a Camera typically named '3D Tracker Camera' and one or more 'Track Null N' nulls) and a populated 'Average Error' readout group (0311/0313). Absence of those sibling layers + empty 0305 blob ⇒ effect applied but not yet solved/extracted → the product is in the pre-handoff state and must issue the Analyze ask.",
+   "routing_tags": [
+    "camera-solve",
+    "match-move",
+    "matchmove",
+    "3d",
+    "point-cloud",
+    "spatial",
+    "ml-analysis",
+    "opaque-state",
+    "ui-handoff",
+    "extract-to-layers",
+    "deferred-solve",
+    "hybrid-state"
+   ]
+  },
+  {
+   "effect": "Puppet [ADBE FreePin3]",
+   "matchName": "ADBE FreePin3",
+   "effect_class": "mesh-deform",
+   "what_it_does": "Mesh-based free-form deformation. When the user places the first Puppet Pin on the layer, AE auto-traces the layer's alpha outline, triangulates an As-Rigid-As-Possible (ARAP) deformation mesh over the opaque region, and binds the texels to that mesh. The user then drives the mesh with pins: Deform/Position pins translate (and in the Advanced engine rotate/scale) mesh regions, Starch pins add local rigidity, Overlap pins control front/back ordering where the mesh folds, Bend pins add rotation. Animating pin positions warps the artwork organically — character limbs, waving flags, cloth, squash-and-stretch — without frame-by-frame redraw.",
+   "state_location": "hybrid",
+   "state_location_reasoning": "On the scratch solid the card exposes only 6 leaves / 2 animatable (Mesh Rotation Refinement = ADBE FreePin3 Auto Rotate Pins, and Effect Opacity = ADBE Effect Mask Opacity), customValue:0, and the two load-bearing groups under ADBE FreePin3 ARAP Group — Auto-traced Shapes (ADBE FreePin3 Outlines) and Mesh (ADBE FreePin3 Mesh Group) — are EMPTY containers with no children or values. That proves the rig state (traced outline + triangulated mesh + pins) is NOT present in the base param tree; it is instantiated dynamically by the Puppet Pin tool. Once pins exist, each pin's Position surfaces as an ordinary animatable/expressible property inside a dynamic indexed Deform group under ARAP -> Mesh Group, so the ANIMATION state is genuinely in-params. But the triangulation itself is engine-generated geometry with no scalar param or customValue handle to author from scratch (customValue:0 confirms there is no opaque custom-data blob either) -> the mesh is opaque-internal generated structure. In-params pin animation layered on top of an opaque generated mesh, gated behind a UI creation step = hybrid.",
+   "scriptable_surface": [
+    {
+     "controls": "Global deformation config — always present, settable/keyframeable at any time",
+     "example_params": "Puppet Engine (ADBE FreePin3 Puppet Engine, 1=Legacy / 2=Advanced); Mesh Rotation Refinement (ADBE FreePin3 Auto Rotate Pins, 1-20, animatable+expr); On Transparent (ADBE FreePin3 On Transparent, checkbox); GPU Rendering (ADBE Force CPU GPU, 1-3)"
+    },
+    {
+     "controls": "Per-pin animation — the ENTIRE motion surface, exposed ONLY after the user places pins",
+     "example_params": "each Deform pin Position (ADBE FreePin3 PosPin Position; 2D in Legacy, +Rotation/+Scale in Advanced) inside the dynamic indexed Deform group under ARAP -> Mesh Group — read, set, keyframe, ease, express"
+    },
+    {
+     "controls": "Compositing / masking",
+     "example_params": "Effect Opacity (ADBE Effect Mask Opacity, 0-100%); Masks (ADBE Effect Mask Parade)"
+    }
+   ],
+   "opaque_core": "The traced alpha outline and the ARAP triangulation mesh (vertex graph + barycentric binding of texels to triangles), PLUS the act of pin instantiation itself, the pin TYPE choice (Deform vs Starch vs Overlap vs Bend), and the mesh triangle density/expansion set in the tool options bar. All of this is generated by the Puppet Pin tool at click time from the layer's alpha and the artist's spatial placement over the artwork. There is no scalar param, and customValue:0 confirms there is no custom-data blob either — so nothing here can be created or edited through the property/scripting API. The product also cannot see the artwork's semantics (where a joint, hinge, or rigid zone belongs) to place pins meaningfully.",
+   "product_can": [
+    "Set/read all global config params at any time — Puppet Engine, Mesh Rotation Refinement, On Transparent, GPU Rendering, Effect Opacity, Masks; e.g. switch Legacy->Advanced to unlock per-pin rotation/scale",
+    "After pins exist: enumerate the indexed Deform group, read every pin's current Position (and Rotation/Scale in Advanced)",
+    "Author the entire animation on existing pins — keyframe Positions to realize a described feeling, apply easing/velocity curves, add overshoot/settle, retime and scale keyframes",
+    "Stagger/offset pin keyframes for follow-through and secondary motion; drive pins with expressions (wiggle for idle sway, link a pin to a null/tracker/audio-amplitude, inertial follow, loopOut cycles)",
+    "Copy/duplicate an existing pin's keyframe pattern across other pins; tune Mesh Rotation Refinement to reduce Advanced-engine mesh artifacts"
+   ],
+   "product_must_defer": [
+    {
+     "task": "Create the deformation rig (auto-trace + triangulate mesh + place pins) — the load-bearing spatial state the product cannot author",
+     "user_action_asked": "With the layer selected, pick the Puppet Position Pin tool. In the tool options bar choose the Engine (Advanced if you want per-pin rotation/scale/bend) and the mesh Triangle density / Expansion, then CLICK on the artwork to place pins: a Deform pin at every point that should move (e.g. shoulder, elbow, wrist, hand for an arm), Starch pins where it should stay rigid, and Overlap pins where one part should pass in front of another. Placing the first pin auto-traces the alpha and triangulates the mesh; each additional click adds a pin to the indexed group.",
+     "then_product_can": "read the resulting indexed pin group and author ALL pin motion — keyframe positions to the requested feeling, apply easing/overshoot, stagger for follow-through, and add expression drivers (wiggle, null-link, loop)."
+    },
+    {
+     "task": "Decide pin-placement semantics and mesh resolution — the product cannot see the artwork to judge these",
+     "user_action_asked": "Confirm which pins are moving joints vs fixed anchors, and pick the mesh Triangle density (higher = smoother bends but slower). The product can suggest a rig plan from your description but you must place/confirm the pins on the actual artwork.",
+     "then_product_can": "keyframe the confirmed pins, and tune Mesh Rotation Refinement / Puppet Engine to match the deformation quality you want."
+    }
+   ],
+   "perception_signal": "Effect identified by matchName ADBE FreePin3. Rig-present vs uninitialized is read off the ARAP group (ADBE FreePin3 ARAP Group): on a scratch solid its Mesh Group (ADBE FreePin3 Mesh Group) and Auto-traced Shapes (ADBE FreePin3 Outlines) are empty and the animatable count is 2 (only Mesh Rotation Refinement + Effect Opacity). State is recognized by the appearance of a DYNAMIC indexed Deform group under ARAP -> Mesh Group carrying per-pin properties (ADBE FreePin3 PosPin / Position, plus Rotation/Scale in Advanced) whose animatable count > 2; the number of such pin properties = rig complexity. customValue:0 means the mesh is stored as a generated property group, NOT an opaque customValue blob, so dump_comp/static scan must detect state by counting pin Position properties under the ARAP mesh group rather than by reading a custom-data parameter.",
+   "routing_tags": [
+    "mesh-deform",
+    "puppet",
+    "warp",
+    "character-animation",
+    "pin-rig",
+    "arap",
+    "spatial",
+    "handoff-required",
+    "in-params-animation",
+    "opaque-mesh",
+    "tool-instantiated"
+   ]
+  },
+  {
+   "effect": "Bezier Warp",
+   "matchName": "ADBE BEZMESH",
+   "effect_class": "mesh-deform",
+   "what_it_does": "Warps the layer image through a single cubic-bezier patch. Four draggable corner vertices plus eight edge-tangent handles define four curved edges; the source image is warped to fill that patch. Critically, the topology is FIXED — one quad with 4 vertices + 8 tangents, no configurable Rows/Columns grid (this is what distinguishes it from ADBE MESH WARP). Used for banners/arcs, flag and cloth waves, page-edge curls, perspective corner-pulls, and conforming a flat texture onto a curved surface.",
+   "state_location": "in-params",
+   "state_location_reasoning": "Every load-bearing degree of freedom is an enumerated, named, animatable leaf param. The whole control mesh is exposed: ADBE BEZMESH-0001/-0004/-0007/-0010 (the 4 corner vertices) and -0002/-0003/-0005/-0006/-0008/-0009/-0011/-0012 (the 8 edge tangents), all type 2D_SPATIAL, animatable:true, expr:true. Render/blend scalars (Quality -0014, Effect Opacity, GPU Rendering) are likewise plain params. counts.customValue=0 means there is NO opaque plugin-internal blob; there is no param of a linked-layer or file-path type, so nothing lives in an external file; and because topology is fixed (exactly 12 points, not a variable grid), the mesh structure itself is fully known a priori and never hidden. 14 of 17 params animatable. Hence the state is essentially 100% in-params — the most scriptable member of the spatial/ML/solve/scene class.",
+   "scriptable_surface": [
+    {
+     "controls": "The full bezier control mesh — the entire load-bearing warp geometry, readable and writable point-by-point",
+     "example_params": "ADBE BEZMESH-0001 Top Left Vertex, -0004 Right Top Vertex, -0007 Bottom Right Vertex, -0010 Left Bottom Vertex (4 corners) + -0002/-0003 (top edge), -0005/-0006 (right edge), -0008/-0009 (bottom edge), -0011/-0012 (left edge) tangents — all 2D_SPATIAL in layer-pixel space"
+    },
+    {
+     "controls": "Keyframe + expression channel on every one of the 12 mesh points (all expr:true)",
+     "example_params": "keyframes/expressions on -0001..-0012: wiggle() flag flutter on edge tangents, sine breathing, link to a null/slider, audio-driven tangent motion, pose-to-pose interpolation"
+    },
+    {
+     "controls": "Render quality and blend scalars",
+     "example_params": "ADBE BEZMESH-0014 Quality (1–10 subdivision), ADBE Effect Mask Opacity Effect Opacity (0–100%), ADBE Force CPU GPU GPU Rendering (1–3, animatable:false)"
+    }
+   ],
+   "opaque_core": "Structurally NONE — no plugin-internal state blob (customValue=0), no linked file, no hidden or variable topology; every point of the mesh is a scriptable param. The only thing outside the scriptable surface is not hidden STATE but a perceptual JUDGMENT: deciding WHERE the control points must land to conform to specific rendered image content (match a label to a curved bottle, un-warp lens distortion, follow a moving surface). That requires seeing the composited pixels, which the product cannot do headless — so it is a see-the-result decision the product can't compute, not a state the plugin conceals.",
+   "product_can": [
+    "Read back the exact warp: reconstruct the full mesh geometry from the 4 vertices + 8 tangents + Quality, and diff it against the identity/rest pose",
+    "Author any PARAMETRIC warp from scratch with zero handoff — bulge, pinch, arc/banner, single-edge wave/flag, ripple, page-curl feel, perspective corner-pull — by writing the 12 spatial params relative to the layer's W×H (defaults show identity = tangents at exact edge thirds)",
+    "Keyframe and retime the warp: create, scale, offset, and ease keyframes on any mesh point for reveals, settles, and looping flag/cloth motion",
+    "Rig expressions on mesh points: wiggle() flutter on tangents, sine breathing, null/slider master control, layer-space links, audio-driven distortion",
+    "Interpolate between two saved warp POSES (essence-card presets) and blend them with a single 0–1 control; mirror, rotate, or reset a pose to identity",
+    "Set render/blend scalars (Quality, Effect Opacity, GPU Rendering) and normalize the mesh back to the rest state"
+   ],
+   "product_must_defer": [
+    {
+     "task": "Conform the mesh to specific IMAGE CONTENT the product cannot perceive — matching a texture to a curved/organic surface, un-warping footage, or fitting the patch to a real object in the layer",
+     "user_action_asked": "In the comp viewport, drag the 4 corner vertices and 8 tangent handles until the warp visually matches the target, and set at least a 'rest' pose plus one 'extreme' pose (or a pose keyframe at each frame where the surface changes shape). This eyeball-the-rendered-result step is the only thing the product can't do headless.",
+     "then_product_can": "Read those user-set poses straight back out of params -0001..-0012 and automate everything downstream: interpolate the in-betweens, add ease/overshoot, build a seamless loop, layer wiggle/sine flutter on top, retime, propagate the pose to sibling layers, and save it as a reusable essence pose."
+    },
+    {
+     "task": "Make the warp TRACK moving footage (surface that translates/rotates over time)",
+     "user_action_asked": "Either set the warp pose by hand on keyframes at the moving surface's extremes, OR run a track (e.g. mocha / 3D or point tracker) and hand back the tracked nulls — because the product cannot see motion in the rendered pixels to derive it itself.",
+     "then_product_can": "Parent/link the 12 mesh points to the tracked nulls or interpolate between the hand-set keyframe poses, then own all secondary animation and expression rigging on top."
+    }
+   ],
+   "perception_signal": "A static scan / dump_comp classifies this as a FULLY-IN-PARAMS mesh-deform (no structural handoff required for parametric use) by the signature: counts.customValue=0 (no opaque blob), all 12 geometry points present as fully-named 2D_SPATIAL animatable leaves ADBE BEZMESH-0001..-0012, FIXED topology (exactly 4 vertices + 8 tangents, NO Rows/Columns param), and no linked-layer or file-path param. Recognize a content-conform/track situation not from the effect's own params (they look identical) but from intent + the presence/absence of pose keyframes or tangents linked to tracked nulls. Contrast signatures: ADBE MESH WARP exposes Rows/Columns → variable topology; Puppet exposes a dynamic pin group / customValue mesh; Roto Brush / 3D Camera Tracker carry an opaque matte or solve (customValue/linked source) with no per-point scriptable geometry.",
+   "routing_tags": [
+    "mesh-deform",
+    "warp",
+    "distort",
+    "fully-scriptable",
+    "no-opaque-state",
+    "in-params",
+    "parametric-warp",
+    "flag-wave",
+    "banner-arc",
+    "perspective-pull",
+    "page-curl",
+    "bezier-patch",
+    "fixed-topology",
+    "expression-riggable",
+    "direct-manipulation-optional",
+    "content-conform-handoff",
+    "track-to-footage-handoff"
+   ]
+  },
+  {
+   "effect": "Element 3D [VIDEOCOPILOT 3DArray]",
+   "effect_class": "3d-scene",
+   "what_it_does": "A GPU-accelerated 3D renderer that lives inside a single AE effect. The user imports/builds a 3D scene (OBJ/C4D/E3D models, materials, texture maps) in Element's separate \"Scene Setup\" editor, assigns models to up to 5 replication \"Groups,\" then Element renders that scene into the layer with its own camera/lighting/shadow/AO/reflection/DOF pipeline. The 2431 effect params are a per-group particle-replicator + transform + material-tint + render/output control surface layered ON TOP of the imported geometry. Without a scene loaded, every one of those controls is inert — they replicate, transform, and shade nothing.",
+   "state_location": "hybrid",
+   "state_location_reasoning": "The load-bearing state is NOT in scalar params. See the fields above — grounded in Scene Settings CUSTOM -0004 (value=\"\"), the 5 isomorphic Group blocks, the render stack, and the 31 unassigned LAYER_INDEX pointers.",
+   "scriptable_surface": [
+    {
+     "controls": "Per-group particle replication / array layout (the 5 identical Group N blocks — this is what '3DArray' names)",
+     "example_params": "1. Particle Count (VIDEOCOPILOT 3DArray-0117, 0..1e6), 1. Grid X/Y/Z (-0119/-0120/-0121, 1..1000), 1. Replicator Shape (-0104), 1. 3D Object Percentage (-0118, 0..100), 1. Rows (-0106), 1. Distribution (-0107), Scatter (-0188) + X/Y/Z Scatter (-0352..), Surface Offset (-0189)"
+    },
+    {
+     "controls": "Per-group placement & orientation of the array in 3D",
+     "example_params": "1. Position XY (2D_SPATIAL -0202) + 1. Position Z (-0203), Scale XYZ group (1. X/Y/Z Scale -0210/-0211/-0212), Rotation group (1. X/Y/Z Rotation -0204/-0205/-0206), Particle Look size (1. Particle Size -0185, Particle Size XYZ -0362..)"
+    },
+    {
+     "controls": "Deformers applied per group (mesh warp on the imported geometry, driven by scalars)",
+     "example_params": "Deform (-0000): Taper (-0034), Twist (-0017), Bend (-0003), Noise (-0073), each animatable 1D"
+    },
+    {
+     "controls": "Global animation drivers & world transform",
+     "example_params": "Animation Engine (-0050): Directional/Radial Options, Dual Animation Mode (-0081), Time Delay (-0087); World Transform (-1700) incl. World Rotation (-1704), World Position XY (-1702)"
+    },
+    {
+     "controls": "Full render look — lighting, shadow, AO, reflection, atmospheric & post",
+     "example_params": "Exposure (-1533), Gamma (-1534), Lighting (-1050), Shadows (-5100)/Ray-Traced Shadows (-5124), SSAO (-1270)/RTAO (-1272), Reflection (-7000), Fog (-1200)+Fog Color (-1203), Motion Blur (-1100), Depth of Field (-1150), Glow (-6100)+Glow Tint (-6112), Ray-Tracer (-6400)"
+    },
+    {
+     "controls": "Color/material TINTS on already-assigned materials (not the material graph itself)",
+     "example_params": "1..5 Color Tint (COLOR -0152/-0552/-2952/-3352/-3752, RGBA), Shadow Tint (-6005), SSAO/RTAO Color (-1258/-1274)"
+    },
+    {
+     "controls": "Render output passes / AOVs",
+     "example_params": "Output (-1450): Z Depth Output (-1500), World Position Output (-1550), Multi-Pass Mixer (-1600), Sampling & Aliasing (-1461)"
+    },
+    {
+     "controls": "Comp-layer POINTERS for custom textures / masks / motion paths (pointer only)",
+     "example_params": "N. Custom Layer (LAYER_INDEX -0114/-0514/..), Custom Texture Maps 'Layer 1..10' (-1852..-1861), Custom Text and Masks 'Path Layer 1..15' (-1802..-1816), Override Layer (-0020) — all currently '0' (unassigned)"
+    }
+   ],
+   "opaque_core": "The 3D scene itself, which the scalar param API can neither read nor author: (1) imported geometry — OBJ/C4D/E3D model meshes and their vertex/UV data; (2) the material graph — shaders, per-channel maps (diffuse/spec/gloss/normal/reflection/emissive), Physical/reflectivity settings authored in the Materials panel; (3) texture-map file references (external image files bound to material channels); (4) the model→Group assignment (which imported models each of the 5 Groups replicates); (5) model-space Group Folders / sub-object hierarchy. All of this is serialized into the single \"Scene Settings\" CUSTOM param (VIDEOCOPILOT 3DArray-0004, arbitrary-data blob, introspects value=\"\") together with external linked model/texture files, and is only creatable/editable through Element's modal \"Scene Setup\" editor. There is no scriptable selector for 'which model shows in Group N', no material-graph params, and no texture-file-path param.",
+   "product_can": [
+    "Once a scene is loaded, drive the entire array/replication look from feeling→param: set Particle Count / Grid X/Y/Z / 3D Object Percentage / Replicator Shape per group to go from a single hero object to a dense field, a ring, a grid, a wall.",
+    "Place and orient each group in 3D via Position XY (2D_SPATIAL) + Position Z, Scale XYZ, Rotation XYZ, and animate them (all these leaves are animatable=true) — write keyframes/expressions exactly like the scalar-effect cards do.",
+    "Apply and animate deformers (Taper/Twist/Bend/Noise) and Scatter/Position-Noise to add organic motion to an existing model.",
+    "Dial the render mood: exposure/gamma/tint, lighting intensity, shadow softness, SSAO/RTAO, reflection, fog, DOF, motion blur, glow — a complete 'cinematic vs flat' feeling axis, all in-params.",
+    "Re-tint already-assigned materials via the 11 COLOR params (per-group Color Tint, Fog/Glow/Shadow tints) — a recolor without touching the material graph.",
+    "Enable/route output passes (Z-Depth, World Position, Multi-Pass) and set sampling/aliasing.",
+    "Bind an EXISTING comp layer to a Custom Layer / Custom Texture / motion-path slot by setting the LAYER_INDEX pointer (given the material slot already exists in the scene).",
+    "Trigger the AE-side utility actions that emit scriptable helpers (Create 3D Null, Generate 3D Position, Create World Transform Null, Group Export/Export Obj)."
+   ],
+   "product_must_defer": [
+    {
+     "task": "Create/populate the 3D scene — import or build the geometry the whole effect renders. The 2431 params replicate and shade nothing until this exists.",
+     "user_action_asked": "In the effect header click 'Scene Setup' to open Element's modal editor; import your OBJ/C4D/E3D model(s) (File > Import, or drag into the model window) so at least one model appears in the Scene panel, then click OK to bake it into the 'Scene Settings' param.",
+     "then_product_can": "Detect the now-non-empty scene, assign the model to a Group, and drive Particle Count / Grid / Position / Scale / Rotation / Deform / render params to build the requested array + look."
+    },
+    {
+     "task": "Assign which imported model each of the 5 Groups replicates (the group→model mapping is opaque; no scriptable selector exists).",
+     "user_action_asked": "In Scene Setup, drag each model into the Group Folder you want it in (Group 1..5) so each Group you intend to use contains its model, then click OK.",
+     "then_product_can": "Enable those Groups (N. Enable) and independently animate/replicate each group's model via its scriptable Group N block."
+    },
+    {
+     "task": "Author or edit the material graph — shaders and per-channel maps (diffuse/normal/reflection/gloss/emissive). No material params are exposed; only after-the-fact COLOR tints are.",
+     "user_action_asked": "In Scene Setup switch to the Materials/Scene Materials panel, create or edit the material, and drop your texture image files onto the desired channels; click OK when done.",
+     "then_product_can": "Modulate the resulting look via the COLOR tint params, reflection/AO/glow render controls, and by pointing Custom Texture Map LAYER_INDEX slots at comp layers."
+    },
+    {
+     "task": "Bind a live comp layer as a texture/decal/displacement source (requires a matching Custom Texture material slot to exist).",
+     "user_action_asked": "In Scene Setup, on the target material set a channel's texture to 'Custom Texture 1..5' (or Custom Layer), click OK; in the timeline make sure the source comp layer is present.",
+     "then_product_can": "Set the corresponding 'N. Custom Layer' / 'Layer N' LAYER_INDEX param to that comp layer and animate UV offsets via the Aux-Channel UV Offset params."
+    }
+   ],
+   "perception_signal": "Two-signal recognition. (1) STRUCTURE: exactly one CUSTOM/customValue param named 'Scene Settings' (matchName VIDEOCOPILOT 3DArray-0004) fronting a very large (2431-param), highly repetitive group tree — 5 isomorphic 'Group N' replicator blocks + a full render/output stack — is the fingerprint of an opaque-scene renderer, not a scalar effect. (2) STATE: whether a scene is actually loaded is inferred, since the customValue blob introspects as value=\"\" and is not directly readable. Proxy checks the product runs: are any LAYER_INDEX slots non-zero, are per-group 'N. Enable' set, or does an AE-side script probe (e.g. Element's own scene query / a render test) return a non-empty scene? If the customValue is empty AND all Group Enables/replicator counts are at defaults, treat the effect as scene-less → route to the handoff (ask the user to open Scene Setup) rather than attempting to apply any card. If a scene is present, route to the scriptable-surface automation path.",
+   "matchName": "VIDEOCOPILOT 3DArray",
+   "routing_tags": [
+    "3d-scene",
+    "opaque-plugin-state",
+    "linked-file",
+    "hybrid-state",
+    "scene-setup-handoff",
+    "customValue-gated",
+    "gpu-renderer",
+    "particle-replicator",
+    "material-graph-opaque",
+    "layer-pointer-hybrid",
+    "third-party-videocopilot",
+    "render-look-scriptable",
+    "geometry-not-scriptable",
+    "handoff-required"
+   ]
+  },
+  {
+   "effect": "BCC Chroma Key [BCC3Chroma Key]",
+   "effect_class": "keyer",
+   "matchName": "BCC3Chroma Key",
+   "what_it_does": "A chroma/color keyer. It generates a transparency matte by comparing each source pixel to a chosen key Color within a tolerance envelope (Density/Balance/Lightness plus per-channel Color Weight), neutralizes screen spill (Spill Ratio/Tone Mix/Tone Range), and clips the result to a rectangular garbage matte (Crop Top-Left/Bot-Right). Despite emitting a spatial alpha output, every load-bearing input is a scalar/color/coordinate param, and the matte is recomputed each frame as a deterministic function of those params and the input pixels — no stored matte state.",
+   "state_location": "in-params",
+   "state_location_reasoning": "Restated with citations: state is in-params because (1) customValue == 0 rules out any opaque plugin-internal blob; (2) the key itself is a scriptable COLOR param (Color -0006) plus scalar tolerances (Density -0003, Balance -0004, Lightness -0005) and the spill trio (-0014/-0015/-0016); (3) the only spatial params are two 2D_SPATIAL crop corners (-0017/-0018), i.e. a rectangle, not a mesh/segmentation; (4) no linked file and no matte-source LAYER (Host Layer -10158087 is compare-only). Every load-bearing value is present, readable, and writable in the param tree, and the matte is a deterministic function of them — so nothing load-bearing is opaque, linked, or hybrid.",
+   "scriptable_surface": [
+    {
+     "controls": "Key color (the single most load-bearing input)",
+     "example_params": "Color (BCC3Chroma Key-0006, COLOR) — currently 0.235,0.314,0.627, a blue screen; animatable+expr"
+    },
+    {
+     "controls": "Matte tightness / key strength",
+     "example_params": "Density (-0003, 0-200), Balance (-0004, 0-200), Lightness (-0005, 0-100)"
+    },
+    {
+     "controls": "Per-channel key weighting",
+     "example_params": "Color Weight > Red/Green/Blue (-0008/-0009/-0010, each 0-200)"
+    },
+    {
+     "controls": "Spill suppression",
+     "example_params": "Spill Ratio (-0014), Tone Mix (-0015), Tone Range (-0016), each 0-200"
+    },
+    {
+     "controls": "Rectangular garbage matte / crop",
+     "example_params": "Crop Top-Left (-0017, 2D_SPATIAL 0,0), Crop Bot-Right (-0018, 2D_SPATIAL 640,360) — keyframable corners"
+    },
+    {
+     "controls": "Output + standard compositing",
+     "example_params": "Output (-0002, 1=matte / 2=composite), Effect Opacity (ADBE Effect Mask Opacity, 0-100), Effect Mask Parade, GPU Rendering (ADBE Force CPU GPU)"
+    },
+    {
+     "controls": "Compare/preview scaffolding (non-key)",
+     "example_params": "Compare Mode (-10158081, 1-5), Wipe/Slide (-10158083), Right Offset (-10158084), Host Layer (-10158087, LAYER_INDEX)"
+    }
+   ],
+   "opaque_core": "None that is load-bearing. There is no ML matte, no solved geometry, no mesh, and no linked scene — customValue:0 confirms no opaque/arbitrary-data blob, and the output matte is recomputed deterministically each frame rather than stored. The single input that lives outside the param tree is the source footage's actual screen color (which RGB to key): reading it requires sampling source pixels, but writing it is just setting the scriptable Color param. This is the defining difference from the hard classes — the boundary here is a pixel sample, not an author-only opaque state.",
+   "product_can": [
+    "Route a feeling/quality target straight into params exactly like the existing scalar essence cards (BCC glitch, Deep Glow): tight-vs-soft key, edge/hair retention, and spill neutralization all map to Density/Balance/Lightness, Color Weight, and the Spill trio.",
+    "Set the key Color once the target RGB is known and drive every tolerance and spill control from an essence preset — no new capability tier required.",
+    "Keyframe and expression-drive all 14 animatable params (all expr:true) — e.g. ramp Density over a shot or animate the Crop rectangle to follow a moving subject.",
+    "Author and apply a reusable essence preset through the same apply path used for scalar effects (set params, scale keyframes, write expressions).",
+    "Toggle Output between matte and composite and manage Effect Opacity / masks for downstream compositing."
+   ],
+   "product_must_defer": [
+    {
+     "task": "Determine the actual screen color to key from the source footage (the one input not derivable from the param tree alone).",
+     "user_action_asked": "Eyedropper/click the green- or blue-screen region once, or tell the product the screen color — UNLESS the pipeline can sample source pixels itself, in which case no user action is needed at all.",
+     "then_product_can": "Write that RGB into Color (-0006) and drive Density/Balance/Lightness, per-channel weighting, spill suppression, and the crop rectangle entirely from the essence card — the full key is then automated, with keyframes/expressions as needed."
+    }
+   ],
+   "perception_signal": "Recognized statically from the card: matchName 'BCC3Chroma Key'; counts.customValue == 0 (no opaque data blob) with animatable == 14, all scalar (1D/COLOR/2D_SPATIAL); presence of a COLOR key param (-0006) alongside Density/Balance and a spill group, and the ABSENCE of any customData param, linked-matte LAYER source, mesh, or file reference. dump_comp / the static scan therefore sees a fully readable+writable scalar param tree and classifies this in-params (scalar essence) — a keyer that only looks spatial — rather than as an ml-segmentation / camera-solve / mesh-deform / 3d-scene effect. CONFIRMED: it fits the EXISTING essence model with no capability-boundary extension.",
+   "routing_tags": [
+    "keyer",
+    "chroma-key",
+    "scalar-essence",
+    "control-case",
+    "in-params",
+    "fits-existing-essence-model",
+    "bcc",
+    "spill-suppression",
+    "garbage-matte",
+    "fully-automatable",
+    "soft-handoff-color-sample"
+   ]
+  }
+ ]
+}
