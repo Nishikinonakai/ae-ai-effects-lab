@@ -305,6 +305,18 @@ const AEX = String.raw`(function () {
       if (R.camera.zoom) cam.property("Zoom").setValue(R.camera.zoom);
     }
 
+    // 7b) motion blur: Particular's own shutter (0035/0036) only streaks when the COMP's
+    // motion blur is on AND the host layer's motion-blur switch is enabled (rain streaks,
+    // fast motion). Recipes opt in with motionBlur:true.
+    if (R.motionBlur) {
+      try {
+        comp.motionBlur = true;
+        comp.motionBlurSamplesPerFrame = 32;
+        comp.shutterAngle = 360;
+      } catch (eMB) {}
+      for (var mbL = 1; mbL <= comp.numLayers; mbL++) { try { comp.layer(mbL).motionBlur = true; } catch (eML) {} }
+    }
+
     app.endUndoGroup();
 
     // 8) render frames (saveFrameToPng is async; driver polls for the files)

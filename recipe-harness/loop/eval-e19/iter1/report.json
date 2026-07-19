@@ -24,8 +24,8 @@
     },
     {
       "p": "[1:tc Particular] Emitter Size Y",
-      "ok": true,
-      "v": "200"
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
     },
     {
       "p": "[1:tc Particular] Emitter Size Z (depth spread)",
@@ -40,7 +40,7 @@
     {
       "p": "[1:tc Particular] Particles/sec (dense)",
       "ok": true,
-      "v": "3000"
+      "v": "8500"
     },
     {
       "p": "[1:tc Particular] Emitter Direction (Directional)",
@@ -60,12 +60,12 @@
     {
       "p": "[1:tc Particular] Velocity (rain speed)",
       "ok": true,
-      "v": "2500"
+      "v": "3200"
     },
     {
       "p": "[1:tc Particular] Velocity Random %",
       "ok": true,
-      "v": "20"
+      "v": "15"
     },
     {
       "p": "[1:tc Particular] Aspect Ratio",
@@ -80,7 +80,7 @@
     {
       "p": "[1:tc Particular] Life (screen crossing)",
       "ok": true,
-      "v": "1.20000004768372"
+      "v": "1"
     },
     {
       "p": "[1:tc Particular] Life Random %",
@@ -90,22 +90,22 @@
     {
       "p": "[1:tc Particular] Size (thin streaks)",
       "ok": true,
-      "v": "2"
+      "v": "2.5"
     },
     {
       "p": "[1:tc Particular] Size Random %",
       "ok": true,
-      "v": "50"
+      "v": "35"
     },
     {
       "p": "[1:tc Particular] Opacity",
       "ok": true,
-      "v": "90"
+      "v": "100"
     },
     {
       "p": "[1:tc Particular] Color (pale rain)",
       "ok": true,
-      "v": "0.5799999833107,0.819999"
+      "v": "0.75,1,1,1"
     },
     {
       "p": "[1:tc Particular] Motion Blur (streak the drops)",
@@ -115,17 +115,22 @@
     {
       "p": "[1:tc Particular] Shutter Angle",
       "ok": true,
-      "v": "180"
+      "v": "360"
+    },
+    {
+      "p": "[1:tc Particular] tc Particular-0017",
+      "ok": true,
+      "v": "0"
     },
     {
       "p": "[2:ADBE Tint] Map Black To (magenta-violet night)",
       "ok": true,
-      "v": "0.09000000357628,0.00999"
+      "v": "0.41999998688698,0.05999"
     },
     {
       "p": "[2:ADBE Tint] Map White To (neon cyan)",
       "ok": true,
-      "v": "0.5,0.98000001907349,0.9"
+      "v": "0.55000001192093,1,0.980"
     },
     {
       "p": "[2:ADBE Tint] Amount",
@@ -133,39 +138,44 @@
       "v": "100"
     },
     {
-      "p": "[3:ADBE Wave Warp] Wave Type (square)",
+      "p": "[3:ADBE Glo2] Glow Threshold",
+      "ok": true,
+      "v": "120"
+    },
+    {
+      "p": "[3:ADBE Glo2] Glow Radius",
+      "ok": true,
+      "v": "50"
+    },
+    {
+      "p": "[3:ADBE Glo2] Glow Intensity — bloom the cyan rain",
+      "ok": true,
+      "v": "1.5"
+    },
+    {
+      "p": "[4:ADBE Wave Warp] Wave Type (square)",
       "ok": true,
       "v": "5"
     },
     {
-      "p": "[3:ADBE Wave Warp] Wave Height",
+      "p": "[4:ADBE Wave Warp] Wave Height",
       "ok": true,
-      "v": "5"
+      "v": "0.40000000596046"
     },
     {
-      "p": "[3:ADBE Wave Warp] Wave Width",
+      "p": "[4:ADBE Wave Warp] Wave Width",
       "ok": true,
-      "v": "22"
+      "v": "110"
     },
     {
-      "p": "[3:ADBE Wave Warp] Direction",
+      "p": "[4:ADBE Wave Warp] Direction",
       "ok": true,
       "v": "0"
     },
     {
-      "p": "[3:ADBE Wave Warp] Wave Speed",
+      "p": "[4:ADBE Wave Warp] Wave Speed",
       "ok": true,
-      "v": "2.70000004768372"
-    },
-    {
-      "p": "[4:ADBE Shift Channels] Take Red From Blue",
-      "ok": true,
-      "v": "4"
-    },
-    {
-      "p": "[4:ADBE Shift Channels] Take Blue From Red",
-      "ok": true,
-      "v": "2"
+      "v": "4.5"
     }
   ],
   "frames": [

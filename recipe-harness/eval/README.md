@@ -94,6 +94,19 @@ Re-run after the round-1 forensics (four fails re-planned). **Net: one-shot
 ood 33%→50%, native family →100%. ALL PHASE-A EXIT METRICS MET (T1/T2 pass@3
 ≥85%, T3 ≥50%).**
 
+- **e19 赛博朋克雨夜 — FAIL(5/5/6) → still FAIL but improved to a stable 6/10.**
+  Round-1 rain was dots + the wrong colour (a constant Shift-Channels R↔B swap
+  turned the cyan grade yellow). Fixes: removed Shift Channels, Tint duotone gives
+  cyan-rain-on-magenta-night. **The streak breakthrough: motion blur is the lever
+  — Particular's own shutter (0035/0036) only elongates drops when the COMP motion
+  blur AND the host layer's motion-blur switch are ON** (new runner field
+  `motionBlur:true`). Rain now falls as dense straight cyan streaks. Uncrossed
+  ceiling: Particular renders DISCRETE particles, so motion-blur streaks read as
+  segmented/dashed ("digital falling characters") rather than continuous rain
+  lines (Streaklet type 0703=5 gave short scattered dashes instead); magenta
+  presence is limited by the dark duotone; and the glitch/flicker criterion is
+  hard to satisfy in two stills (the GPT scorer also intermittently reports
+  seeing only t1). The `motionBlur` primitive is the durable win.
 - **e17 魔法传送门 — FAIL(4/6/6/6/6) → PASS 9/10.** The portal was a slow pen-
   stroke: the emitter traced its circle only ONCE over the 4s clip (0.25 rev/s)
   so only a partial arc existed at any frame — misdiagnosed in round-1 as a
