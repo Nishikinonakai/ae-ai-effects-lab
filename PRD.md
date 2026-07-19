@@ -221,8 +221,9 @@
 4. **成本/延迟**:现在每轮 review 一次 vision 调用,tune 最多 4 轮;路由用便宜模型、判断用强模型、缓存。
 5. **运行时泛化(Phase C 预研)**:introspect-on-install 的版本/语言/插件探测。
 
-*(上手提示:`./shell/shell_up.sh` 起全套;`bridge_up.sh` 只起桥。真机验证一律 copy-then-open 或静态读、
-编辑后不保存。`recipe-harness/.env.api` 里的 OpenAI key 已 gitignore。记忆在 `memory/ae-ai-plugin-next-step.md`。)*
+*(上手提示:`./shell/shell_up.sh` 起全套;`bridge_up.sh` 只起桥;`node test/smoke.mjs` 跑离线自测(39 条,
+不需要 AE)。真机验证一律 copy-then-open 或静态读、编辑后不保存。`recipe-harness/.env.api` 里的 OpenAI key
+已 gitignore。记忆在 `memory/ae-ai-plugin-next-step.md`。)*
 
 ### 10.4 补记:settability 调查 + "显示才算数"(session 末,已收敛)
 

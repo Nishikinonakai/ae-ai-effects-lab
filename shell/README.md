@@ -56,11 +56,21 @@ These are the ones that decide whether this is usable on real work, so they are 
   Roll back — comp restored to its exact original param values.*
 - **The loop returns its best state, not its last.** A tune that peaks then tries a worse idea rolls
   back to the peak before handing over.
+- **A second request never orphans the first.** Asking another question while an edit is still
+  unaccepted carries the earlier rollback reports forward rather than overwriting them, so Roll back
+  unwinds everything the product did, newest first. The panel says how much that covers.
 - **Opaque cores are refused, not bluffed.** If the load-bearing state isn't scriptable (an unpainted
   Roto matte, an unbuilt Element 3D scene), the plan comes back empty with a `handoff` phase naming
   what the artist must do — rather than applying a param edit that looks like work and does nothing.
 - **Every matchName is validated against perception before anything is applied.** A hallucinated
   param is dropped at planning time instead of burning an apply→render→verify cycle.
+
+## Tests
+
+`node test/smoke.mjs` — 39 offline assertions, no AE required, covering the pure logic the loop
+trusts without checking: the frame-delta inert/weak/changed classification at both bit depths, the
+guarantee that a *failed* comparison reports `ok:false` rather than a fabricated "inert", and the
+essence lookup's three-way lever split (usable / gated / unreachable).
 
 ## Status
 
