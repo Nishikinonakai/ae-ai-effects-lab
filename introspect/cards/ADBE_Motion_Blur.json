@@ -1,13 +1,13 @@
 {
  "effect": {
-  "name": "Tint",
-  "matchName": "ADBE Tint"
+  "name": "Directional Blur",
+  "matchName": "ADBE Motion Blur"
  },
  "counts": {
-  "total": 8,
-  "leaf": 6,
+  "total": 6,
+  "leaf": 4,
   "groups": 2,
-  "animatable": 4,
+  "animatable": 3,
   "customValue": 0,
   "hiddenLevers": 0,
   "_settabilityProbe": "second pass, settled instance"
@@ -15,49 +15,26 @@
  "params": [
   {
    "depth": 0,
-   "name": "Map Black To",
-   "matchName": "ADBE Tint-0001",
-   "type": "COLOR",
-   "value": "0,0,0,0",
-   "min": -3921568.62745098,
-   "max": 3921568.62745098,
-   "animatable": true,
-   "expr": true,
-   "settable": "yes"
-  },
-  {
-   "depth": 0,
-   "name": "Map White To",
-   "matchName": "ADBE Tint-0002",
-   "type": "COLOR",
-   "value": "1,1,1,0",
-   "min": -3921568.62745098,
-   "max": 3921568.62745098,
-   "animatable": true,
-   "expr": true,
-   "settable": "yes"
-  },
-  {
-   "depth": 0,
-   "name": "Amount to Tint",
-   "matchName": "ADBE Tint-0003",
+   "name": "Direction",
+   "matchName": "ADBE Motion Blur-0001",
    "type": "1D",
-   "value": "100",
-   "min": 0,
-   "max": 100,
-   "units": "percent",
+   "value": "0",
+   "units": "degrees",
    "animatable": true,
    "expr": true,
    "settable": "yes"
   },
   {
    "depth": 0,
-   "name": "",
-   "matchName": "ADBE Tint-0004",
-   "type": "GROUP",
-   "value": "",
-   "animatable": false,
-   "expr": false
+   "name": "Blur Length",
+   "matchName": "ADBE Motion Blur-0002",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
   },
   {
    "depth": 0,

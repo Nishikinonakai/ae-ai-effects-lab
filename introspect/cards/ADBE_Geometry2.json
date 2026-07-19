@@ -49,7 +49,7 @@
   },
   {
    "depth": 0,
-   "name": "Scale Height",
+   "name": "Scale",
    "matchName": "ADBE Geometry2-0003",
    "type": "1D",
    "value": "100",
@@ -61,7 +61,7 @@
   },
   {
    "depth": 0,
-   "name": "Scale Width",
+   "name": " ",
    "matchName": "ADBE Geometry2-0004",
    "type": "1D",
    "value": "100",

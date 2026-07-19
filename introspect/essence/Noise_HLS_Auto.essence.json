@@ -1,0 +1,130 @@
+{
+ "matchName": "ADBE Noise HLS Auto2",
+ "displayName": "Noise HLS Auto",
+ "vendor": "Adobe (native)",
+ "category": "Noise & Grain",
+ "cardDepth": "shallow",
+ "essence": "Noise HLS Auto overlays animated random variation in hue, lightness, and saturation onto the source image. The Hue, Lightness, and Saturation amounts determine how strongly each color component is perturbed; Grain Size groups the randomness into larger or smaller patches, and Noise Animation Speed changes how quickly that pattern evolves over time. Lightness noise is the primary lever for visible monochrome grain, while hue and saturation noise mainly create colored speckling.",
+ "when_to_use": [
+  "film grain",
+  "颗粒感",
+  "animated grain",
+  "动态颗粒",
+  "color noise",
+  "彩色噪点",
+  "dirty up clean footage",
+  "让画面不那么干净",
+  "analog video texture",
+  "模拟录像噪点",
+  "flickering chroma noise",
+  "色彩闪烁噪点"
+ ],
+ "manifests_as": "The image develops a temporally changing field of fine-to-coarse brightness and/or color speckles, depending on which HLS channels receive noise.",
+ "key_levers": [
+  {
+   "name": "Noise",
+   "matchName": "ADBE Noise HLS Auto2-0001",
+   "range": [
+    1,
+    3
+   ],
+   "default": 1,
+   "units": "",
+   "enum": true,
+   "effect": "Selects the effect's noise mode/algorithm, which changes the character of the random variation before the HLS amount controls are applied; verify the specific mode labels in this AE build."
+  },
+  {
+   "name": "Hue",
+   "matchName": "ADBE Noise HLS Auto2-0002",
+   "range": [
+    0,
+    1000
+   ],
+   "default": 0,
+   "units": "percent",
+   "enum": false,
+   "effect": "Raises the amplitude of random hue shifts; at zero, the effect does not introduce hue variation. It is most legible in already saturated areas."
+  },
+  {
+   "name": "Lightness",
+   "matchName": "ADBE Noise HLS Auto2-0003",
+   "range": [
+    0,
+    1000
+   ],
+   "default": 0,
+   "units": "percent",
+   "enum": false,
+   "effect": "Raises random brightness variation per grain region; this is the most direct control for visible luminance grain and can quickly become harsh flicker at high values."
+  },
+  {
+   "name": "Saturation",
+   "matchName": "ADBE Noise HLS Auto2-0004",
+   "range": [
+    0,
+    1000
+   ],
+   "default": 0,
+   "units": "percent",
+   "enum": false,
+   "effect": "Raises random changes in color intensity, producing colored or desaturated speckles without necessarily shifting the hue."
+  },
+  {
+   "name": "Grain Size",
+   "matchName": "ADBE Noise HLS Auto2-0005",
+   "range": [
+    0,
+    10
+   ],
+   "default": 1,
+   "units": "",
+   "enum": false,
+   "effect": "Increases the spatial scale of the random pattern: low values read as fine grain, while higher values merge noise into visibly larger blotches or pixels."
+  },
+  {
+   "name": "Noise Animation Speed",
+   "matchName": "ADBE Noise HLS Auto2-0006",
+   "range": [
+    0,
+    200
+   ],
+   "default": 24,
+   "units": "",
+   "enum": false,
+   "effect": "Controls how rapidly the generated noise changes over time; lower values make the texture linger, while higher values produce more active crawling or flickering grain."
+  },
+  {
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Mixes the entire processed result with the original image; reduce it to soften all HLS noise channels together after their relative balance is established."
+  }
+ ],
+ "enums_to_verify": {
+  "Noise (ADBE Noise HLS Auto2-0001, 1-3)": "Unverified: this three-state selector appears to choose among noise modes/algorithms or distributions. Do not assume which numeric value corresponds to which visible mode without reading the dropdown in the target AE installation."
+ },
+ "config_recipes": {
+  "fine neutral film grain": "Noise=1 (default, verify mode); Hue=0%; Lightness=18%; Saturation=0%; Grain Size=1; Noise Animation Speed=24; Effect Opacity=100%.",
+  "subtle color-stock texture": "Noise=1 (default, verify mode); Hue=8%; Lightness=10%; Saturation=14%; Grain Size=1.5; Noise Animation Speed=18; Effect Opacity=70%.",
+  "coarse damaged-video speckle": "Noise=1 (default, verify mode); Hue=25%; Lightness=45%; Saturation=35%; Grain Size=4; Noise Animation Speed=40; Effect Opacity=75%.",
+  "mostly static dust-like texture": "Noise=1 (default, verify mode); Hue=0%; Lightness=25%; Saturation=5%; Grain Size=2; Noise Animation Speed=1; Effect Opacity=65%."
+ },
+ "reasoning_hooks": [
+  "At defaults, Hue, Lightness, and Saturation are all zero, so the effect can produce no visible noise even though it is enabled.",
+  "Lightness is the reliable first lever for conventional grain; Hue and Saturation alone can be nearly invisible on grayscale, low-saturation, or heavily compressed footage.",
+  "Grain Size changes the spatial character, not merely the strength: increase HLS amounts for stronger grain, and increase Grain Size only when the grain itself should become chunkier.",
+  "Noise Animation Speed only matters in moving footage or playback; a still frame cannot reveal whether the noise crawls, flickers, or holds.",
+  "Set the HLS channel balance and Grain Size first, then use Effect Opacity as a global finishing mix rather than as the primary grain-strength control.",
+  "High Lightness combined with high Noise Animation Speed reads as brightness flicker, not subtle film grain."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (8 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

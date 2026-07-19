@@ -1,0 +1,129 @@
+{
+ "matchName": "ADBE Wave Warp",
+ "displayName": "Wave Warp",
+ "vendor": "Adobe (native)",
+ "category": "Distort",
+ "cardDepth": "shallow",
+ "essence": "Wave Warp remaps the layer by displacing pixels along a repeating wave field. Wave Height sets displacement amplitude, Wave Width sets the wave’s spacing, and Direction plus Wave Speed determine where the pattern travels over time; Wave Type changes the shape of that displacement.",
+ "when_to_use": [
+  "animated ripple distortion",
+  "moving water shimmer",
+  "waving flag or fabric",
+  "heat haze distortion",
+  "循环波纹",
+  "水波扭曲",
+  "旗帜飘动",
+  "热浪抖动",
+  "让画面像被波浪推动"
+ ],
+ "manifests_as": "The image bends into repeating bands, ripples, or angular wave-shaped offsets that can drift continuously across the frame.",
+ "key_levers": [
+  {
+   "name": "Wave Type",
+   "matchName": "ADBE Wave Warp-0001",
+   "range": [
+    1,
+    9
+   ],
+   "default": 1,
+   "units": "",
+   "enum": true,
+   "effect": "Selects the waveform used to calculate pixel displacement, changing the distortion from smooth rolling motion to sharper, more geometric, or noise-like motion."
+  },
+  {
+   "name": "Wave Height",
+   "matchName": "ADBE Wave Warp-0002",
+   "range": [
+    -32000,
+    32000
+   ],
+   "default": 10,
+   "units": "",
+   "enum": false,
+   "effect": "Controls the amplitude of pixel displacement: larger absolute values create stronger bends, while reversing the sign flips the displacement direction."
+  },
+  {
+   "name": "Wave Width",
+   "matchName": "ADBE Wave Warp-0003",
+   "range": [
+    1,
+    32000
+   ],
+   "default": 40,
+   "units": "percent",
+   "enum": false,
+   "effect": "Controls wave spacing: lower values pack more waves into the image, while higher values produce fewer, broader bends."
+  },
+  {
+   "name": "Direction",
+   "matchName": "ADBE Wave Warp-0004",
+   "range": [
+    -360000,
+    360000
+   ],
+   "default": 90,
+   "units": "degrees",
+   "enum": false,
+   "effect": "Rotates the direction in which the wave pattern propagates, changing the orientation and travel path of the visible distortion."
+  },
+  {
+   "name": "Wave Speed",
+   "matchName": "ADBE Wave Warp-0005",
+   "range": [
+    -100,
+    100
+   ],
+   "default": 1,
+   "units": "pixels",
+   "enum": false,
+   "effect": "Sets how quickly the wave field advances over time; zero freezes the pattern, and negative values make it travel in the opposite direction."
+  },
+  {
+   "name": "Phase",
+   "matchName": "ADBE Wave Warp-0007",
+   "range": [
+    -360000,
+    360000
+   ],
+   "default": 0,
+   "units": "degrees",
+   "enum": false,
+   "effect": "Offsets the wave’s current position without changing its shape; animate it for manually timed wave travel or use it to align the pattern at a specific frame."
+  },
+  {
+   "name": "Pinning",
+   "matchName": "ADBE Wave Warp-0006",
+   "range": [
+    1,
+    11
+   ],
+   "default": 1,
+   "units": "",
+   "enum": true,
+   "effect": "Chooses which layer edges resist displacement, preventing selected borders from visibly rippling or pulling away from their original positions."
+  }
+ ],
+ "enums_to_verify": {
+  "Wave Type (ADBE Wave Warp-0001, 1-9)": "Unverified: value 1 is believed to be a sine-style smooth wave; remaining values are believed to select progressively different geometric and/or noise waveforms, but exact labels and ordering must be verified in this build.",
+  "Pinning (ADBE Wave Warp-0006, 1-11)": "Unverified: values are believed to represent no pinning plus combinations of pinned layer edges/corners; exact edge mappings and ordering must be verified in this build.",
+  "Antialiasing (Best Quality) (ADBE Wave Warp-0008, 1-3)": "Unverified: values are believed to select increasing edge-smoothing quality levels, with a render-speed versus smoothness tradeoff."
+ },
+ "config_recipes": {
+  "subtle water shimmer": "Wave Type 1, Wave Height 8, Wave Width 120%, Direction 90 degrees, Wave Speed 0.35, Phase 0 degrees; use no/low edge pinning unless the layer boundary must stay still.",
+  "broad rolling fabric": "Wave Type 1, Wave Height 25, Wave Width 220%, Direction 0 degrees, Wave Speed 0.7; pin the attachment edge if the fabric must appear fixed there.",
+  "aggressive heat-wave distortion": "Use a smooth or noise-like Wave Type after verification, Wave Height 18, Wave Width 55%, Direction 90 degrees, Wave Speed 1.5; reduce height if fine image detail becomes unreadable.",
+  "frozen ripple texture": "Wave Type 1, Wave Height 16, Wave Width 70%, Direction 45 degrees, Wave Speed 0, Phase 30 degrees; animate Phase only if the still pattern later needs timed movement."
+ },
+ "reasoning_hooks": [
+  "Wave Height is the primary intensity lever; increasing Wave Speed only makes the same distortion move faster and does not make it stronger.",
+  "Wave Width and Wave Height interact perceptually: a large height with a narrow width creates tightly folded, harsh distortion, while the same height with a wide width reads as broad rolling motion.",
+  "At Wave Speed 0, the effect can still be fully visible, but it reads as a static warped image rather than a wave animation.",
+  "Direction controls propagation orientation, not merely a decorative rotation; change it before judging whether the wave motion is traveling the intended way.",
+  "Use Pinning when a warped layer’s boundary must remain attached to another element; otherwise edge movement can expose transparent borders or create unwanted seam motion.",
+  "Phase is best for timing or offsetting the existing pattern; it does not change wave amplitude or spacing."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (10 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

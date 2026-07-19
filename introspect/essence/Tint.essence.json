@@ -1,0 +1,99 @@
+{
+ "matchName": "ADBE Tint",
+ "displayName": "Tint",
+ "vendor": "Adobe (native)",
+ "category": "Color Correction",
+ "cardDepth": "shallow",
+ "essence": "Tint replaces each pixel's black endpoint and white endpoint with two chosen colors, then linearly remaps all intermediate luminance values between them. Amount to Tint blends that two-color remap with the original image: 0% preserves source color, 100% produces the full duotone result. Effect Opacity mixes the effect result back over the untreated layer after the tint calculation.",
+ "when_to_use": [
+  "duotone recolor",
+  "two-color grade",
+  "replace black and white with colors",
+  "monochrome color treatment",
+  "map shadows and highlights to brand colors",
+  "双色调",
+  "双色调调色",
+  "将黑白映射为指定颜色",
+  "品牌色重着色",
+  "单色染色"
+ ],
+ "manifests_as": "The image reads as a luminance-preserving two-color treatment, with dark areas taking the Map Black To color, bright areas taking the Map White To color, and midtones becoming mixtures between them.",
+ "key_levers": [
+  {
+   "name": "Map Black To",
+   "matchName": "ADBE Tint-0001",
+   "range": [
+    -3921568.62745098,
+    3921568.62745098
+   ],
+   "default": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "units": "color",
+   "enum": false,
+   "effect": "Sets the replacement color for source black/dark luminance; changing it primarily recolors shadows and one endpoint of every midtone blend."
+  },
+  {
+   "name": "Map White To",
+   "matchName": "ADBE Tint-0002",
+   "range": [
+    -3921568.62745098,
+    3921568.62745098
+   ],
+   "default": [
+    1,
+    1,
+    1,
+    0
+   ],
+   "units": "color",
+   "enum": false,
+   "effect": "Sets the replacement color for source white/bright luminance; changing it primarily recolors highlights and the opposite endpoint of every midtone blend."
+  },
+  {
+   "name": "Amount to Tint",
+   "matchName": "ADBE Tint-0003",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Controls interpolation between the original source colors and the fully remapped two-color result; lower it to retain source color while adding the tint treatment."
+  },
+  {
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Mixes the entire already-tinted effect result with the untreated layer; use it as a final overall strength control when the mapping colors should remain fixed."
+  }
+ ],
+ "enums_to_verify": {
+  "GPU Rendering (ADBE Force CPU GPU, 1-3)": "Unverified: likely selects an automatic/CPU/GPU processing preference or status; it should affect render implementation rather than the intended color mapping."
+ },
+ "config_recipes": {
+  "warm cinematic duotone": "Map Black To: deep navy; Map White To: warm cream or amber; Amount to Tint: 100%; Effect Opacity: 100%.",
+  "subtle branded recolor": "Map Black To: brand dark color; Map White To: brand light color; Amount to Tint: 25%; Effect Opacity: 100%.",
+  "full monochrome sepia": "Map Black To: dark brown; Map White To: pale beige; Amount to Tint: 100%; Effect Opacity: 100%."
+ },
+ "reasoning_hooks": [
+  "At default settings, Map Black To is black and Map White To is white, so even with Amount to Tint at 100% the result can look unchanged; choose at least one non-default endpoint color before judging the effect.",
+  "Tint remaps by image luminance, not by hue selection: a saturated red and a saturated blue with similar brightness can receive similar output colors.",
+  "Amount to Tint blends source versus remapped colors before the final effect mix; Effect Opacity is a later whole-effect blend and is usually redundant if Amount to Tint alone is being used for strength.",
+  "Changing either endpoint recolors not only pure blacks or whites but all midtones, because every intermediate luminance is interpolated between both endpoint colors."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (5 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

@@ -1,0 +1,89 @@
+{
+ "matchName": "ADBE Mosaic",
+ "displayName": "Mosaic",
+ "vendor": "Adobe (native)",
+ "category": "Stylize",
+ "cardDepth": "shallow",
+ "essence": "Mosaic resamples the image into a rectangular grid, replacing each grid cell with a simplified color result so fine detail is lost at the cell scale. Horizontal Blocks and Vertical Blocks set the grid resolution: fewer blocks make larger, more obvious pixels; more blocks preserve more detail. Sharp Colors changes the cell-color treatment toward hard, discrete block colors, while Effect Opacity mixes the processed result back with the original.",
+ "when_to_use": [
+  "pixelate footage",
+  "mosaic censor",
+  "blocky low-resolution look",
+  "retro pixel grid",
+  "把画面马赛克化",
+  "像素化效果",
+  "马赛克遮挡",
+  "低分辨率方块感"
+ ],
+ "manifests_as": "The image appears divided into colored rectangular tiles, with detail reduced into large blocky pixels when the block counts are low.",
+ "key_levers": [
+  {
+   "name": "Horizontal Blocks",
+   "matchName": "ADBE Mosaic-0001",
+   "range": [
+    1,
+    4000
+   ],
+   "default": 10,
+   "units": "blocks",
+   "enum": false,
+   "effect": "Sets the number of mosaic columns across the frame; lowering it widens each block and strengthens horizontal pixelation, while raising it restores horizontal detail."
+  },
+  {
+   "name": "Vertical Blocks",
+   "matchName": "ADBE Mosaic-0002",
+   "range": [
+    1,
+    4000
+   ],
+   "default": 10,
+   "units": "blocks",
+   "enum": false,
+   "effect": "Sets the number of mosaic rows down the frame; lowering it makes taller blocks and stronger vertical detail loss, while raising it restores vertical detail."
+  },
+  {
+   "name": "Sharp Colors",
+   "matchName": "ADBE Mosaic-0003",
+   "range": [
+    0,
+    1
+   ],
+   "default": 0,
+   "units": "boolean",
+   "enum": false,
+   "effect": "Enables a harder, more discrete color treatment for mosaic cells, making the tiled result read more like distinct pixel blocks rather than softened color transitions."
+  },
+  {
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Controls how much of the mosaic result is composited into the image; at 0 the original remains visible, and at 100 the mosaic treatment is fully applied."
+  }
+ ],
+ "enums_to_verify": {
+  "GPU Rendering (ADBE Force CPU GPU, 1-3)": "Unverified rendering-device/mode selector; believed to choose CPU/GPU rendering behavior rather than intentionally change the mosaic design."
+ },
+ "config_recipes": {
+  "chunky pixelation": "Horizontal Blocks 24, Vertical Blocks 14, Sharp Colors 1, Effect Opacity 100",
+  "coarse censor mosaic": "Horizontal Blocks 12, Vertical Blocks 12, Sharp Colors 1, Effect Opacity 100",
+  "subtle digital simplification": "Horizontal Blocks 160, Vertical Blocks 90, Sharp Colors 0, Effect Opacity 55",
+  "square-ish pixel grid": "Use matched block density for the source aspect ratio, e.g. Horizontal Blocks 160 and Vertical Blocks 90 for a 16:9 frame; Sharp Colors 1, Effect Opacity 100"
+ },
+ "reasoning_hooks": [
+  "The block counts are counts, not block sizes: increasing either count makes blocks smaller and the effect less visible.",
+  "Horizontal and Vertical Blocks must be tuned together; equal numeric values produce rectangular cells on non-square compositions, so use counts proportional to frame width and height for square-looking pixels.",
+  "Sharp Colors changes the character of the cell colors, not the grid resolution; set the block counts first when judging pixel size.",
+  "At high block counts the effect can appear to do almost nothing because each cell approaches the size of the source detail or individual pixels.",
+  "Effect Opacity is a final mix control: use it to soften an already-established mosaic rather than expecting it to change cell size."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (5 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

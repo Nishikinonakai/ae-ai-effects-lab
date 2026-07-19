@@ -1,0 +1,103 @@
+{
+ "matchName": "ADBE Optics Compensation",
+ "displayName": "Optics Compensation",
+ "vendor": "Adobe (native)",
+ "category": "Distort",
+ "cardDepth": "shallow",
+ "essence": "Optics Compensation radially remaps the image around a chosen optical center, converting between a flat rectilinear view and a wide-angle/fisheye-like projection. Increasing Field Of View increases the strength of that projection remap; Reverse Lens Distortion switches to the inverse direction for lens-distortion correction, while Resize can enlarge the result to hide remap-created edge gaps.",
+ "when_to_use": [
+  "lens distortion correction",
+  "fix barrel distortion",
+  "fisheye conversion",
+  "wide-angle warp",
+  "镜头畸变校正",
+  "修复桶形畸变",
+  "鱼眼效果",
+  "广角镜头变形"
+ ],
+ "manifests_as": "Straight lines near the frame edges bend or unbend around the view center, often with stretched corners and transparent/cropped borders unless the result is resized.",
+ "key_levers": [
+  {
+   "name": "Field Of View (FOV)",
+   "matchName": "ADBE Optics Compensation-0001",
+   "range": [
+    0,
+    179.999984741211
+   ],
+   "default": 0,
+   "units": "degrees",
+   "enum": false,
+   "effect": "This is the distortion amount: 0 leaves the image visually unchanged, while larger values apply progressively stronger radial wide-angle projection remapping."
+  },
+  {
+   "name": "Reverse Lens Distortion",
+   "matchName": "ADBE Optics Compensation-0002",
+   "range": [
+    0,
+    1
+   ],
+   "default": 0,
+   "units": "",
+   "enum": false,
+   "effect": "Switches the radial remap to its inverse direction, making the effect useful for undoing rather than adding the corresponding lens-distortion shape."
+  },
+  {
+   "name": "FOV Orientation",
+   "matchName": "ADBE Optics Compensation-0003",
+   "range": [
+    1,
+    3
+   ],
+   "default": 1,
+   "units": "",
+   "enum": true,
+   "effect": "Chooses which image dimension the FOV value is measured across, changing how the same numeric FOV maps to the frame aspect ratio."
+  },
+  {
+   "name": "Optimal Pixels (Invalidates Reversal)",
+   "matchName": "ADBE Optics Compensation-0005",
+   "range": [
+    0,
+    1
+   ],
+   "default": 0,
+   "units": "",
+   "enum": false,
+   "effect": "Enables the effect's Optimal Pixels mode; this mode invalidates/overrides Reverse Lens Distortion, so it cannot be used as an inverse-distortion correction switch at the same time."
+  },
+  {
+   "name": "Resize",
+   "matchName": "ADBE Optics Compensation-0006",
+   "range": [
+    1,
+    4
+   ],
+   "default": 1,
+   "units": "",
+   "enum": true,
+   "effect": "Controls post-remap enlargement to trade away more of the source image in exchange for fewer empty or transparent borders created by the distortion."
+  }
+ ],
+ "enums_to_verify": {
+  "FOV Orientation (ADBE Optics Compensation-0003, 1-3)": "Believed to be 1=Horizontal, 2=Vertical, 3=Diagonal FOV measurement; verify dropdown labels in this AE build.",
+  "Resize (ADBE Optics Compensation-0006, 1-4)": "Believed to be 1=None, 2=100%, 3=200%, 4=400% maximum resize; verify dropdown labels and exact behavior in this AE build."
+ },
+ "config_recipes": {
+  "Subtle centered lens correction": "Field Of View (FOV)=55; Reverse Lens Distortion=1; FOV Orientation=1; Optimal Pixels (Invalidates Reversal)=0; Resize=2.",
+  "Strong inverse wide-angle correction": "Field Of View (FOV)=105; Reverse Lens Distortion=1; FOV Orientation=1; Optimal Pixels (Invalidates Reversal)=0; Resize=3.",
+  "Strong added wide-angle warp": "Field Of View (FOV)=105; Reverse Lens Distortion=0; FOV Orientation=1; Optimal Pixels (Invalidates Reversal)=0; Resize=3.",
+  "Optimal-pixel remap test": "Field Of View (FOV)=90; Reverse Lens Distortion=0; FOV Orientation=1; Optimal Pixels (Invalidates Reversal)=1; Resize=2."
+ },
+ "reasoning_hooks": [
+  "The default FOV is 0, so the effect can be present yet produce no visible geometric change.",
+  "Reverse Lens Distortion is direction control, not additional intensity; set FOV first, then choose the direction that bends lines toward the desired correction.",
+  "Optimal Pixels (Invalidates Reversal)=1 disables the usefulness of Reverse Lens Distortion; turn Optimal Pixels off when evaluating normal versus inverse correction.",
+  "View Center is the radial pivot: an off-center lens distortion must be centered on the real optical axis, or correction will improve one side while worsening the other.",
+  "Resize only manages edge coverage after the remap; it does not replace choosing an appropriate FOV or correction direction.",
+  "Large FOV changes are most legible on footage with straight architectural lines near the edges; low-detail or center-only imagery may make tuning direction ambiguous."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (8 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

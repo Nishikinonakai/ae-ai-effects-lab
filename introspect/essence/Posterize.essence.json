@@ -1,0 +1,66 @@
+{
+ "matchName": "ADBE Posterize",
+ "displayName": "Posterize",
+ "vendor": "Adobe (native)",
+ "category": "Stylize",
+ "cardDepth": "shallow",
+ "essence": "Posterize quantizes continuous image color values into a limited number of discrete tonal steps. Lowering Level reduces the available steps, forcing neighboring tones to share the same value and creating visible bands; raising it restores smoother tonal transitions. Effect Opacity mixes the quantized result back with the original image.",
+ "when_to_use": [
+  "posterize colors",
+  "reduce color levels",
+  "graphic color bands",
+  "limited palette shading",
+  "色调分级",
+  "减少颜色层级",
+  "海报化",
+  "色带效果",
+  "硬边渐变"
+ ],
+ "manifests_as": "Smooth gradients and subtle shading break into flat, stepped color regions, producing a graphic poster-print or low-bit-depth appearance.",
+ "key_levers": [
+  {
+   "name": "Level",
+   "matchName": "ADBE Posterize-0001",
+   "range": [
+    2,
+    255
+   ],
+   "default": 7,
+   "units": "tonal levels",
+   "enum": false,
+   "effect": "Lower values force more pixels into the same few tonal bins, making larger and harsher bands; higher values retain more tonal separation and look progressively closer to the source."
+  },
+  {
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Controls the mix of the posterized output over the original: 100 shows full quantization, while lower values retain original smooth shading beneath the stepped result."
+  }
+ ],
+ "enums_to_verify": {
+  "GPU Rendering (ADBE Force CPU GPU, 1-3)": "Unverified: likely selects a CPU/GPU rendering or compatibility mode. Its value-to-label mapping is unknown and it should not be assumed to change the intended posterization look."
+ },
+ "config_recipes": {
+  "bold poster bands": "Level: 3; Effect Opacity: 100%.",
+  "classic limited-color poster": "Level: 7; Effect Opacity: 100%.",
+  "subtle tonal stepping": "Level: 16; Effect Opacity: 55%.",
+  "near-natural with slight graphic breakup": "Level: 32; Effect Opacity: 35%."
+ },
+ "reasoning_hooks": [
+  "Level is the primary look control: it changes tonal quantization, not saturation, hue selection, or a fixed palette.",
+  "At Level 255 the effect may be nearly invisible on normal footage because most tonal precision is retained.",
+  "Effect Opacity does not create finer posterization; it only blends the already-quantized image with the untouched source.",
+  "Effects are evaluated in stack order: blur, glow, grain, or other smoothing applied after Posterize can soften or obscure its bands; placing Posterize after those effects quantizes their output too.",
+  "Posterization reads most clearly on gradients, soft lighting, skin shading, skies, and other areas with continuous tonal transitions."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (3 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

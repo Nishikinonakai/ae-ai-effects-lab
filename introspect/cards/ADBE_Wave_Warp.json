@@ -1,1 +1,150 @@
-{"effect":{"name":"Wave Warp","matchName":"ADBE Wave Warp"},"counts":{"total":12,"leaf":10,"groups":2,"animatable":9,"customValue":0},"params":[{"depth":0,"name":"Wave Type","matchName":"ADBE Wave Warp-0001","type":"1D","value":"1","min":1,"max":9,"animatable":true,"expr":true},{"depth":0,"name":"Wave Height","matchName":"ADBE Wave Warp-0002","type":"1D","value":"10","min":-32000,"max":32000,"animatable":true,"expr":true},{"depth":0,"name":"Wave Width","matchName":"ADBE Wave Warp-0003","type":"1D","value":"40","min":1,"max":32000,"units":"percent","animatable":true,"expr":true},{"depth":0,"name":"Direction","matchName":"ADBE Wave Warp-0004","type":"1D","value":"90","units":"degrees","animatable":true,"expr":true},{"depth":0,"name":"Wave Speed","matchName":"ADBE Wave Warp-0005","type":"1D","value":"1","min":-100,"max":100,"units":"pixels","animatable":true,"expr":true},{"depth":0,"name":"Pinning","matchName":"ADBE Wave Warp-0006","type":"1D","value":"1","min":1,"max":11,"animatable":true,"expr":true},{"depth":0,"name":"Phase","matchName":"ADBE Wave Warp-0007","type":"1D","value":"0","units":"degrees","animatable":true,"expr":true},{"depth":0,"name":"Antialiasing (Best Quality)","matchName":"ADBE Wave Warp-0008","type":"1D","value":"1","min":1,"max":3,"animatable":true,"expr":true},{"depth":0,"name":"Compositing Options","type":"GROUP","matchName":"ADBE Effect Built In Params"},{"depth":1,"name":"Masks","type":"GROUP","matchName":"ADBE Effect Mask Parade"},{"depth":1,"name":"Effect Opacity","matchName":"ADBE Effect Mask Opacity","type":"1D","value":"100","min":0,"max":100,"units":"percent","animatable":true,"expr":true},{"depth":1,"name":"GPU Rendering","matchName":"ADBE Force CPU GPU","type":"1D","value":"1","min":1,"max":3,"animatable":false,"expr":false}]}
+{
+ "effect": {
+  "name": "Wave Warp",
+  "matchName": "ADBE Wave Warp"
+ },
+ "counts": {
+  "total": 12,
+  "leaf": 10,
+  "groups": 2,
+  "animatable": 9,
+  "customValue": 0,
+  "hiddenLevers": 0,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": "Wave Type",
+   "matchName": "ADBE Wave Warp-0001",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 9,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Wave Height",
+   "matchName": "ADBE Wave Warp-0002",
+   "type": "1D",
+   "value": "10",
+   "min": -32000,
+   "max": 32000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Wave Width",
+   "matchName": "ADBE Wave Warp-0003",
+   "type": "1D",
+   "value": "40",
+   "min": 1,
+   "max": 32000,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Direction",
+   "matchName": "ADBE Wave Warp-0004",
+   "type": "1D",
+   "value": "90",
+   "units": "degrees",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Wave Speed",
+   "matchName": "ADBE Wave Warp-0005",
+   "type": "1D",
+   "value": "1",
+   "min": -100,
+   "max": 100,
+   "units": "pixels",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Pinning",
+   "matchName": "ADBE Wave Warp-0006",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 11,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Phase",
+   "matchName": "ADBE Wave Warp-0007",
+   "type": "1D",
+   "value": "0",
+   "units": "degrees",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Antialiasing (Best Quality)",
+   "matchName": "ADBE Wave Warp-0008",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}

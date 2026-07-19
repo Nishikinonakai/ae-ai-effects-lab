@@ -1,0 +1,157 @@
+{
+ "matchName": "ADBE Geometry2",
+ "displayName": "Transform",
+ "vendor": "Adobe (native)",
+ "category": "Distort",
+ "cardDepth": "shallow",
+ "essence": "Transform geometrically remaps the incoming layer image at its point in the effect stack: it places an anchor, then scales, shears, rotates, positions, and fades the pixels. Its main causal levers move the anchor’s screen location or change the image’s geometry around that anchor; it does not create new imagery or distort pixels locally.",
+ "when_to_use": [
+  "reposition or resize a layer without using layer transforms",
+  "rotate, scale, or skew an effect result",
+  "animate a logo move-in / punch-in",
+  "transform effect",
+  "移动、缩放、旋转图层效果",
+  "倾斜、拉伸、定位画面",
+  "给效果后的画面做位移或旋转"
+ ],
+ "manifests_as": "The whole incoming image appears moved, resized, rotated, sheared, and/or faded as one flat transformed result, with empty transparent areas revealed around it when it no longer fills the frame.",
+ "key_levers": [
+  {
+   "name": "Anchor Point",
+   "matchName": "ADBE Geometry2-0001",
+   "range": [
+    0,
+    0
+   ],
+   "default": [
+    320,
+    180
+   ],
+   "units": "pixels",
+   "enum": false,
+   "effect": "Sets the image-space pivot: Scale, Skew, and Rotation act around this point, while Position places that pivot in the output frame."
+  },
+  {
+   "name": "Position",
+   "matchName": "ADBE Geometry2-0002",
+   "range": [
+    0,
+    0
+   ],
+   "default": [
+    320,
+    180
+   ],
+   "units": "pixels",
+   "enum": false,
+   "effect": "Moves the transformed image by placing its Anchor Point at this output coordinate; animate it for a clean whole-image translation."
+  },
+  {
+   "name": "Uniform Scale",
+   "matchName": "ADBE Geometry2-0011",
+   "range": [
+    0,
+    1
+   ],
+   "default": 1,
+   "units": "",
+   "enum": false,
+   "effect": "Gates whether the two Scale values are linked: enabled keeps proportional sizing, while disabled permits independent horizontal and vertical stretching."
+  },
+  {
+   "name": "Scale X",
+   "matchName": "ADBE Geometry2-0003",
+   "range": [
+    -30000,
+    30000
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Changes horizontal size around the Anchor Point; values above 100 enlarge, values between 0 and 100 shrink, and negative values mirror horizontally."
+  },
+  {
+   "name": "Scale Y",
+   "matchName": "ADBE Geometry2-0004",
+   "range": [
+    -30000,
+    30000
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Changes vertical size around the Anchor Point; values above 100 enlarge, values between 0 and 100 shrink, and negative values mirror vertically."
+  },
+  {
+   "name": "Skew",
+   "matchName": "ADBE Geometry2-0005",
+   "range": [
+    -70,
+    70
+   ],
+   "default": 0,
+   "units": "degrees",
+   "enum": false,
+   "effect": "Shears the image into a slant rather than rotating it; the sign chooses the lean direction and Skew Axis chooses the shear orientation."
+  },
+  {
+   "name": "Skew Axis",
+   "matchName": "ADBE Geometry2-0006",
+   "range": [
+    0,
+    0
+   ],
+   "default": 0,
+   "units": "degrees",
+   "enum": false,
+   "effect": "Rotates the direction along which Skew is applied; it has no visible effect while Skew is 0."
+  },
+  {
+   "name": "Rotation",
+   "matchName": "ADBE Geometry2-0007",
+   "range": [
+    0,
+    0
+   ],
+   "default": 0,
+   "units": "degrees",
+   "enum": false,
+   "effect": "Rotates the entire image around the Anchor Point; animate it for spin or tilt, often alongside Position to keep a subject centered."
+  },
+  {
+   "name": "Opacity",
+   "matchName": "ADBE Geometry2-0008",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Fades the transformed result after its geometric change; 0 makes it invisible and 100 leaves its alpha unchanged."
+  }
+ ],
+ "enums_to_verify": {
+  "Sampling (ADBE Geometry2-0012, 1-2)": "Unverified belief: selects the transform resampling method/quality, likely a lower-quality faster mode versus a higher-quality smoother mode.",
+  "GPU Rendering (ADBE Force CPU GPU, 1-3)": "Unverified belief: selects automatic/CPU/GPU rendering behavior and affects performance or implementation rather than the intended geometry.",
+  "Use Composition’s Shutter Angle (ADBE Geometry2-0009, 0-1)": "Unverified belief: checkbox-like gate; enabled uses the composition shutter angle for Transform motion blur, disabled uses this effect's Shutter Angle value."
+ },
+ "config_recipes": {
+  "Centered proportional punch-in": "Anchor Point [320,180]; Position [320,180]; Uniform Scale 1; Scale X 125; Scale Y 125; Rotation 0; Opacity 100.",
+  "Independent widescreen stretch": "Uniform Scale 0; Scale X 135; Scale Y 85; Skew 0; Rotation 0; Opacity 100.",
+  "Perspective-like slant": "Uniform Scale 1; Scale X 105; Scale Y 105; Skew 25; Skew Axis 0; Rotation 0; Position [320,180].",
+  "Spin-and-fade exit": "Anchor Point [320,180]; animate Position away from [320,180], Rotation from 0 to 45, Scale X/Y from 100 to 115, and Opacity from 100 to 0."
+ },
+ "reasoning_hooks": [
+  "Anchor Point is the pivot and Position is where that pivot lands; changing Anchor Point without compensating Position can make the image appear to jump.",
+  "Uniform Scale must be disabled before Scale X and Scale Y can intentionally create non-proportional stretching.",
+  "Skew Axis is inert at Skew 0; choose Skew magnitude first, then rotate its axis only if the shear leans in the wrong direction.",
+  "Negative Scale values do not merely shrink: crossing 0 flips the image and can create a sudden mirror transition.",
+  "This effect transforms the pixels arriving from effects above it in the stack; effects below it process the already transformed result.",
+  "At defaults it is visually neutral: Anchor Point and Position coincide, scale is 100%, and Skew/Rotation are 0."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (14 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

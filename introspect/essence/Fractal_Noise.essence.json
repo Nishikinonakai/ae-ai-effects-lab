@@ -1,0 +1,160 @@
+{
+ "matchName": "ADBE Fractal Noise",
+ "displayName": "Fractal Noise",
+ "vendor": "Adobe (native)",
+ "category": "Noise & Grain",
+ "cardDepth": "shallow",
+ "essence": "Fractal Noise procedurally generates a continuous grayscale field by combining noise detail across multiple scales, then maps that field through contrast, brightness, and overflow handling before compositing it over the layer. Scale determines the size of the generated forms; Complexity and Sub controls add progressively smaller structure; Offset Turbulence or Evolution changes which part/state of the field is sampled, creating motion without moving source pixels. Use its grayscale output directly as clouds, smoke, grain, or texture, or as a matte/displacement-driving layer.",
+ "when_to_use": [
+  "procedural clouds",
+  "animated smoke texture",
+  "organic grayscale matte",
+  "turbulent background",
+  "film grain",
+  "颗粒感",
+  "噪波纹理",
+  "云雾背景",
+  "流动噪波",
+  "程序化遮罩",
+  "glow breakup",
+  "辉光扰动"
+ ],
+ "manifests_as": "A monochrome, endlessly variable field that can read as soft clouds, smoky turbulence, coarse grain, liquid blobs, or dense organic texture depending primarily on scale and detail settings.",
+ "key_levers": [
+  {
+   "name": "Fractal Type",
+   "matchName": "ADBE Fractal Noise-0001",
+   "range": [
+    1,
+    20
+   ],
+   "default": 1,
+   "units": "",
+   "enum": true,
+   "effect": "Selects the underlying fractal algorithm, changing the character of the generated structures before scale, contrast, and animation are applied."
+  },
+  {
+   "name": "Contrast",
+   "matchName": "ADBE Fractal Noise-0004",
+   "range": [
+    0,
+    10000
+   ],
+   "default": 100,
+   "units": "",
+   "enum": false,
+   "effect": "Separates light and dark regions: increasing it makes the field more mask-like and graphic, while reducing it leaves softer gray transitions."
+  },
+  {
+   "name": "Brightness",
+   "matchName": "ADBE Fractal Noise-0005",
+   "range": [
+    -10000,
+    10000
+   ],
+   "default": 0,
+   "units": "",
+   "enum": false,
+   "effect": "Shifts the entire generated field lighter or darker, controlling how much of it reads as white versus black after contrast."
+  },
+  {
+   "name": "Scale",
+   "matchName": "ADBE Fractal Noise-0010",
+   "range": [
+    1,
+    10000
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Sets the overall spatial size of noise features: higher values produce fewer, larger clouds/blobs; lower values produce finer texture and grain."
+  },
+  {
+   "name": "Complexity",
+   "matchName": "ADBE Fractal Noise-0015",
+   "range": [
+    1,
+    20
+   ],
+   "default": 6,
+   "units": "percent",
+   "enum": false,
+   "effect": "Adds more layers of progressively smaller noise detail; raise it for richer turbulent structure, lower it for simpler broad forms."
+  },
+  {
+   "name": "Sub Influence (%)",
+   "matchName": "ADBE Fractal Noise-0017",
+   "range": [
+    0.00001525878906,
+    10000
+   ],
+   "default": 70,
+   "units": "percent",
+   "enum": false,
+   "effect": "Controls how strongly the smaller sub-noise layer modifies the main pattern; higher values make fine structure more visible and disruptive."
+  },
+  {
+   "name": "Offset Turbulence",
+   "matchName": "ADBE Fractal Noise-0013",
+   "range": [
+    -2147483648,
+    2147483647
+   ],
+   "default": [
+    320,
+    180
+   ],
+   "units": "pixels",
+   "enum": false,
+   "effect": "Pans the sampling position through the procedural field, creating directional drifting motion while preserving the noise's internal scale and contrast."
+  },
+  {
+   "name": "Evolution",
+   "matchName": "ADBE Fractal Noise-0023",
+   "range": [
+    -2147483648,
+    2147483647
+   ],
+   "default": 0,
+   "units": "degrees",
+   "enum": false,
+   "effect": "Generates new states of the fractal over time rather than merely panning it; animate it for boiling, morphing, or churning texture."
+  },
+  {
+   "name": "Opacity",
+   "matchName": "ADBE Fractal Noise-0029",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Controls the visibility of the effect result in its selected blend mode without changing the underlying noise pattern."
+  }
+ ],
+ "enums_to_verify": {
+  "Fractal Type (ADBE Fractal Noise-0001, 1-20)": "Unverified: values are believed to select named fractal families such as Basic, Dynamic, Smeary, and related structural algorithms; exact numeric label mapping must be verified in this AE build.",
+  "Noise Type (ADBE Fractal Noise-0002, 1-4)": "Unverified: values are believed to select noise interpolation/appearance families, likely including soft and blockier variants; exact numeric label mapping must be verified.",
+  "Overflow (ADBE Fractal Noise-0006, 1-4)": "Unverified: values are believed to determine how values beyond the normal black-to-white range are clipped or remapped after contrast/brightness.",
+  "Blending Mode (ADBE Fractal Noise-0030, 1-21)": "Unverified: values are believed to select the effect's compositing blend mode; exact numeric label mapping must be verified."
+ },
+ "config_recipes": {
+  "soft drifting clouds": "Fractal Type=1; Contrast=120; Brightness=5; Scale=220%; Complexity=5; Sub Influence (%)=45%; animate Offset Turbulence slowly from [320,180] to [500,220].",
+  "dense smoky turbulence": "Fractal Type=1; Contrast=180; Brightness=-10; Scale=140%; Complexity=8; Sub Influence (%)=75%; animate Evolution at roughly 35 degrees per second.",
+  "fine film-grain-like breakup": "Fractal Type=1; Contrast=60; Brightness=0; Scale=18%; Complexity=2; Sub Influence (%)=20%; animate Evolution rapidly; reduce Opacity to 10-25%.",
+  "high-contrast animated matte": "Fractal Type=1; Contrast=350; Brightness=-20; Scale=170%; Complexity=4; Sub Influence (%)=55%; animate Evolution at roughly 20 degrees per second."
+ },
+ "reasoning_hooks": [
+  "Scale is the primary read-size control: set it before judging Complexity, because detail that looks excessive at one scale may disappear at another.",
+  "Offset Turbulence produces travel through a fixed field; Evolution changes the field itself. Use offset for wind/drift and evolution for boiling or morphing.",
+  "Contrast and Brightness act on the generated grayscale values, so establish the texture structure first, then use them to set matte coverage or black/white separation.",
+  "Uniform Scaling is enabled by default; Scale Width and Scale Height will not create independent stretching until Uniform Scaling is disabled.",
+  "A static Fractal Noise layer can look like a still texture rather than an effect; animate Offset Turbulence or Evolution when the request implies living smoke, water, energy, or grain.",
+  "Very high Complexity and Sub Influence can add expensive fine detail without improving a small or blurred final image; judge at delivery resolution."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (27 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

@@ -1,1 +1,102 @@
-{"effect":{"name":"Shift Channels","matchName":"ADBE Shift Channels"},"counts":{"total":8,"leaf":6,"groups":2,"animatable":5,"customValue":0},"params":[{"depth":0,"name":"Take Alpha From","matchName":"ADBE Shift Channels-0001","type":"1D","value":"1","min":1,"max":10,"animatable":true,"expr":true},{"depth":0,"name":"Take Red From","matchName":"ADBE Shift Channels-0002","type":"1D","value":"2","min":1,"max":10,"animatable":true,"expr":true},{"depth":0,"name":"Take Green From","matchName":"ADBE Shift Channels-0003","type":"1D","value":"3","min":1,"max":10,"animatable":true,"expr":true},{"depth":0,"name":"Take Blue From","matchName":"ADBE Shift Channels-0004","type":"1D","value":"4","min":1,"max":10,"animatable":true,"expr":true},{"depth":0,"name":"Compositing Options","type":"GROUP","matchName":"ADBE Effect Built In Params"},{"depth":1,"name":"Masks","type":"GROUP","matchName":"ADBE Effect Mask Parade"},{"depth":1,"name":"Effect Opacity","matchName":"ADBE Effect Mask Opacity","type":"1D","value":"100","min":0,"max":100,"units":"percent","animatable":true,"expr":true},{"depth":1,"name":"GPU Rendering","matchName":"ADBE Force CPU GPU","type":"1D","value":"1","min":1,"max":3,"animatable":false,"expr":false}]}
+{
+ "effect": {
+  "name": "Shift Channels",
+  "matchName": "ADBE Shift Channels"
+ },
+ "counts": {
+  "total": 8,
+  "leaf": 6,
+  "groups": 2,
+  "animatable": 5,
+  "customValue": 0,
+  "hiddenLevers": 0,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": "Take Alpha From",
+   "matchName": "ADBE Shift Channels-0001",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 10,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Take Red From",
+   "matchName": "ADBE Shift Channels-0002",
+   "type": "1D",
+   "value": "2",
+   "min": 1,
+   "max": 10,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Take Green From",
+   "matchName": "ADBE Shift Channels-0003",
+   "type": "1D",
+   "value": "3",
+   "min": 1,
+   "max": 10,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Take Blue From",
+   "matchName": "ADBE Shift Channels-0004",
+   "type": "1D",
+   "value": "4",
+   "min": 1,
+   "max": 10,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}

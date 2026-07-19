@@ -1,0 +1,146 @@
+{
+ "matchName": "ADBE Circle",
+ "displayName": "Circle",
+ "vendor": "Adobe (native)",
+ "category": "Generate",
+ "cardDepth": "shallow",
+ "essence": "Generates a solid, colored circular matte centered at Center, then composites it over the layer using its opacity and blending mode. Radius sets the circle boundary; edge mode and inner/outer feathering determine how that boundary transitions, while Invert Circle swaps the filled interior for the surrounding area.",
+ "when_to_use": [
+  "solid circle overlay",
+  "animated expanding circle",
+  "circular wipe matte",
+  "soft round vignette",
+  "圆形叠加",
+  "圆形遮罩",
+  "扩散圆环",
+  "圆形擦除",
+  "柔边圆形"
+ ],
+ "manifests_as": "A colored disk or inverted outside-area fill appears at a chosen point, with an optionally hard or feathered circular boundary.",
+ "key_levers": [
+  {
+   "name": "Center",
+   "matchName": "ADBE Circle-0001",
+   "range": [
+    0,
+    0
+   ],
+   "default": [
+    320,
+    180
+   ],
+   "units": "pixels",
+   "enum": false,
+   "effect": "Moves the circle's geometric center; animate it to make the generated disk travel across the frame."
+  },
+  {
+   "name": "Radius",
+   "matchName": "ADBE Circle-0002",
+   "range": [
+    -10000,
+    10000
+   ],
+   "default": 75,
+   "units": "pixels",
+   "enum": false,
+   "effect": "Expands or contracts the circular boundary around Center; increasing it makes the disk cover more of the image."
+  },
+  {
+   "name": "Edge",
+   "matchName": "ADBE Circle-0003",
+   "range": [
+    1,
+    5
+   ],
+   "default": 1,
+   "units": "",
+   "enum": true,
+   "effect": "Selects the circle boundary construction, determining which side(s) of the circular edge can be treated as an edge rather than a fully solid fill."
+  },
+  {
+   "name": "Feather Outer Edge",
+   "matchName": "ADBE Circle-0006",
+   "range": [
+    0,
+    10000
+   ],
+   "default": 0,
+   "units": "pixels",
+   "enum": false,
+   "effect": "Softens the transition outward from the circle boundary; larger values spread the circle's falloff into the outside area."
+  },
+  {
+   "name": "Feather Inner Edge",
+   "matchName": "ADBE Circle-0007",
+   "range": [
+    0,
+    10000
+   ],
+   "default": 0,
+   "units": "pixels",
+   "enum": false,
+   "effect": "Softens the transition inward from the circle boundary; larger values eat softness into the circle interior."
+  },
+  {
+   "name": "Invert Circle",
+   "matchName": "ADBE Circle-0009",
+   "range": [
+    0,
+    1
+   ],
+   "default": 0,
+   "units": "",
+   "enum": true,
+   "effect": "Reverses the generated region: instead of coloring the circular interior, it colors the area outside the circle."
+  },
+  {
+   "name": "Color",
+   "matchName": "ADBE Circle-0010",
+   "range": [
+    -3921568.62745098,
+    3921568.62745098
+   ],
+   "default": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "units": "RGBA color",
+   "enum": false,
+   "effect": "Sets the generated circle color before opacity and blend compositing."
+  },
+  {
+   "name": "Opacity",
+   "matchName": "ADBE Circle-0011",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Controls the visibility of the generated color; at 0 the Circle generation is invisible regardless of radius or feather."
+  }
+ ],
+ "enums_to_verify": {
+  "Edge (ADBE Circle-0003, 1-5)": "Unverified: believed to choose among boundary/edge treatments, likely controlling whether the inner edge, outer edge, both, or neither is rendered/feathered.",
+  "Invert Circle (ADBE Circle-0009, 0-1)": "Unverified: believed to be 0 = normal filled interior and 1 = inverted, filled exterior."
+ },
+ "config_recipes": {
+  "hard white disk": "Center 960,540; Radius 180; Edge 1 (default; verify); Feather Outer Edge 0; Feather Inner Edge 0; Invert Circle 0; Color white; Opacity 100.",
+  "soft expanding reveal": "Center 960,540; animate Radius from 0 to 1100; Feather Outer Edge 80; Feather Inner Edge 0; Invert Circle 0; Color white; Opacity 100.",
+  "soft outside vignette": "Center 960,540; Radius 430; Feather Outer Edge 0; Feather Inner Edge 140; Invert Circle 1; Color black; Opacity 55."
+ },
+ "reasoning_hooks": [
+  "Radius is measured from Center: moving Center relocates the whole construction, while changing Radius grows or shrinks it symmetrically.",
+  "Outer and inner feather act on opposite sides of the same circular boundary; use the feather matching the side you want to soften, especially after inversion.",
+  "Invert Circle changes which region receives the generated color, so a feather that looked like an outward glow in normal mode may read as an inward vignette after inversion.",
+  "Opacity only fades the generated Circle result; it does not alter the source layer's native alpha.",
+  "Edge is a mode selector with unavailable labels in introspection; verify its UI labels before relying on a numbered value in a preset."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (12 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

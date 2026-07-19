@@ -1,0 +1,123 @@
+{
+ "matchName": "ADBE Tile",
+ "displayName": "Motion Tile",
+ "vendor": "Adobe (native)",
+ "category": "Stylize",
+ "cardDepth": "shallow",
+ "essence": "Motion Tile repeats the layer’s pixels as a tiled grid around a tile center, then renders that repeated grid to a larger or smaller output area. Tile Width and Tile Height set the repeat cell size, so reducing them creates more, smaller repetitions while increasing them creates fewer, larger repetitions. Output Width and Output Height determine how much extra repeated coverage is produced; Mirror Edges flips neighboring copies to hide hard seams.",
+ "when_to_use": [
+  "extend footage beyond its edges for zoom or shake",
+  "seamless repeated background",
+  "tile a texture or graphic",
+  "mirror edges",
+  "无限延展画面",
+  "边缘补画面",
+  "重复平铺背景",
+  "镜像边缘",
+  "无缝纹理平铺"
+ ],
+ "manifests_as": "The source image appears as repeated copies filling an expanded rectangle, optionally with alternating copies flipped like a mirrored wallpaper pattern.",
+ "key_levers": [
+  {
+   "name": "Tile Width",
+   "matchName": "ADBE Tile-0002",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Sets the horizontal size of each repeated cell relative to the source: lower values pack in more, smaller horizontal repeats; higher values make each repeat wider."
+  },
+  {
+   "name": "Tile Height",
+   "matchName": "ADBE Tile-0003",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Sets the vertical size of each repeated cell relative to the source: lower values pack in more, smaller vertical repeats; higher values make each repeat taller."
+  },
+  {
+   "name": "Output Width",
+   "matchName": "ADBE Tile-0004",
+   "range": [
+    0,
+    30000
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Sets the width of the generated tiled output; increase it above 100 to create repeated pixel coverage beyond the original layer’s left and right edges."
+  },
+  {
+   "name": "Output Height",
+   "matchName": "ADBE Tile-0005",
+   "range": [
+    0,
+    30000
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Sets the height of the generated tiled output; increase it above 100 to create repeated pixel coverage beyond the original layer’s top and bottom edges."
+  },
+  {
+   "name": "Mirror Edges",
+   "matchName": "ADBE Tile-0006",
+   "range": [
+    0,
+    1
+   ],
+   "default": 0,
+   "units": "boolean",
+   "enum": false,
+   "effect": "When enabled, alternating neighboring tiles are flipped, making edge-to-edge repetition less visibly cut than simple identical copies."
+  },
+  {
+   "name": "Phase",
+   "matchName": "ADBE Tile-0007",
+   "range": [
+    0,
+    360
+   ],
+   "default": 0,
+   "units": "degrees",
+   "enum": false,
+   "effect": "Changes the periodic phase/alignment of the tile pattern; animate it when the repeated pattern needs to drift rather than remain locked in place."
+  },
+  {
+   "name": "Horizontal Phase Shift",
+   "matchName": "ADBE Tile-0008",
+   "range": [
+    0,
+    1
+   ],
+   "default": 0,
+   "units": "fraction of a repeat",
+   "enum": false,
+   "effect": "Offsets the tiled pattern horizontally within its repeat cycle; use it to alter horizontal registration or animate lateral tile travel."
+  }
+ ],
+ "enums_to_verify": {},
+ "config_recipes": {
+  "edge-coverage for a zoom or camera shake": "Tile Width 100, Tile Height 100, Output Width 300, Output Height 300, Mirror Edges 1, Phase 0, Horizontal Phase Shift 0.",
+  "dense repeated texture": "Tile Width 25, Tile Height 25, Output Width 200, Output Height 200, Mirror Edges 0, Phase 0, Horizontal Phase Shift 0.",
+  "mirrored wallpaper offset": "Tile Width 50, Tile Height 50, Output Width 250, Output Height 250, Mirror Edges 1, Phase 0, Horizontal Phase Shift 0.5."
+ },
+ "reasoning_hooks": [
+  "At the default Output Width and Output Height of 100, the effect does not provide extra border coverage; raising tile count alone will not extend a layer far enough for a zoom or shake.",
+  "Tile Width and Tile Height control repeat density, while Output Width and Output Height control how much of that pattern is available outside the original bounds—treat these as separate decisions.",
+  "Mirror Edges changes the orientation of adjacent copies, not the source itself; it helps hide discontinuities but can make text, faces, or directional graphics visibly reverse.",
+  "The effect only repeats the pixels and alpha it receives. Apply it after any treatment that creates the desired edge pixels, or transparent/undesired source edges will also be tiled.",
+  "Phase and Horizontal Phase Shift primarily matter when the pattern must move or be registered differently; at static default values they may produce no useful visible change."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (10 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

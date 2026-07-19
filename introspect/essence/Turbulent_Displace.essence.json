@@ -1,0 +1,143 @@
+{
+ "matchName": "ADBE Turbulent Displace",
+ "displayName": "Turbulent Displace",
+ "vendor": "Adobe (native)",
+ "category": "Distort",
+ "cardDepth": "shallow",
+ "essence": "Turbulent Displace generates a procedural turbulence field, then uses that field to remap where source pixels are sampled, bending the image without adding new imagery. Amount sets the displacement distance; Size sets the field's spatial scale, while Complexity adds smaller nested variation. Offset and Evolution move or evolve the field itself, making an otherwise static warp read as flowing, boiling, or unstable.",
+ "when_to_use": [
+  "organic distortion / 有机扭曲",
+  "heat haze / 热浪抖动",
+  "water ripple / 水波纹",
+  "wavy text / 文字波浪变形",
+  "boiling edge / 边缘翻涌",
+  "animated glitch-free warp / 动态扰动变形"
+ ],
+ "manifests_as": "The layer appears pushed and pulled by soft-to-sharp procedural waves, with contours wobbling, swelling, twisting, or rippling according to the selected displacement mode.",
+ "key_levers": [
+  {
+   "name": "Displacement",
+   "matchName": "ADBE Turbulent Displace-0001",
+   "range": [
+    1,
+    11
+   ],
+   "default": 1,
+   "units": "",
+   "enum": true,
+   "effect": "Selects the procedural displacement mode, changing the directional character of the warp (for example, broadly turbulent versus more directional or shape-like behavior); exact numeric label mapping must be verified."
+  },
+  {
+   "name": "Amount",
+   "matchName": "ADBE Turbulent Displace-0002",
+   "range": [
+    -10000,
+    10000
+   ],
+   "default": 50,
+   "units": "pixels",
+   "enum": false,
+   "effect": "Sets how far pixels are displaced by the turbulence field; larger absolute values make the warp stronger, while negative values reverse the field's displacement direction."
+  },
+  {
+   "name": "Size",
+   "matchName": "ADBE Turbulent Displace-0003",
+   "range": [
+    2,
+    1000
+   ],
+   "default": 100,
+   "units": "pixels",
+   "enum": false,
+   "effect": "Sets the size of the turbulence structures: lower values create dense, small ripples; higher values create broad, slow undulations."
+  },
+  {
+   "name": "Offset (Turbulence)",
+   "matchName": "ADBE Turbulent Displace-0004",
+   "range": [
+    0,
+    0
+   ],
+   "default": [
+    320,
+    180
+   ],
+   "units": "pixels",
+   "enum": false,
+   "effect": "Translates the procedural field across the layer without moving the layer itself; animating it makes the distortion travel in a chosen screen direction."
+  },
+  {
+   "name": "Complexity",
+   "matchName": "ADBE Turbulent Displace-0005",
+   "range": [
+    1,
+    10
+   ],
+   "default": 1,
+   "units": "percent",
+   "enum": false,
+   "effect": "Adds nested detail to the turbulence field; increasing it makes a simple broad warp break into more irregular, multi-scale distortion."
+  },
+  {
+   "name": "Evolution",
+   "matchName": "ADBE Turbulent Displace-0006",
+   "range": [
+    null,
+    null
+   ],
+   "default": 0,
+   "units": "degrees",
+   "enum": false,
+   "effect": "Changes the generated turbulence pattern over time; animating it produces internal boiling or morphing rather than a field merely sliding across the image."
+  },
+  {
+   "name": "Random Seed",
+   "matchName": "ADBE Turbulent Displace-0010",
+   "range": [
+    0,
+    100000
+   ],
+   "default": 0,
+   "units": "",
+   "enum": false,
+   "effect": "Chooses a different deterministic turbulence pattern while preserving the current Amount, Size, and Complexity character."
+  },
+  {
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Blends the processed distortion with the original layer; reduce it when the warp shape is right but its visible intensity is too aggressive."
+  }
+ ],
+ "enums_to_verify": {
+  "Displacement (ADBE Turbulent Displace-0001, 1-11)": "Unverified: numeric values map to distinct displacement field/mode labels. Value 1 is the build default, but its displayed label and the mapping of values 2-11 should be read from the AE UI.",
+  "Pinning (ADBE Turbulent Displace-0012, 1-17)": "Unverified: numeric values appear to control how distorted pixels are treated at layer boundaries, likely with different edge/side pinning choices. Verify displayed labels before relying on a specific value.",
+  "Resize Layer (ADBE Turbulent Displace-0013, 0-1)": "Unverified: likely toggles whether the layer bounds expand to retain displaced pixels rather than clipping them at the original bounds.",
+  "Antialiasing for Best Quality (ADBE Turbulent Displace-0014, 1-2)": "Unverified: likely selects an antialiasing/quality mode, with a tradeoff between edge smoothness and render cost.",
+  "GPU Rendering (ADBE Force CPU GPU, 1-3)": "Unverified: likely selects rendering backend/preference rather than changing the intended distortion design."
+ },
+ "config_recipes": {
+  "subtle heat shimmer": "Displacement=1, Amount=12, Size=180, Complexity=2, Evolution animated from 0 to 120 degrees over 2 seconds, Effect Opacity=70.",
+  "broad liquid wobble": "Displacement=1, Amount=55, Size=260, Complexity=2, Offset (Turbulence) animated 320,180 to 520,180 over 3 seconds, Effect Opacity=100.",
+  "violent boiling distortion": "Displacement=1, Amount=140, Size=55, Complexity=7, Evolution animated from 0 to 720 degrees over 2 seconds, Random Seed=24.",
+  "fine nervous edge flutter": "Displacement=1, Amount=18, Size=28, Complexity=4, Evolution animated from 0 to 180 degrees over 1 second, Effect Opacity=85."
+ },
+ "reasoning_hooks": [
+  "Amount at 0 produces no visible displacement regardless of Size, Complexity, Evolution, or the selected mode.",
+  "Size controls feature scale, not strength: increase Amount for a stronger warp; decrease Size for more numerous, tighter waves.",
+  "A static turbulence field can look like a one-time warped still. Animate Offset for directional drift, or Evolution for pattern morphing/boiling; they produce different motion reads.",
+  "Complexity is most useful after Size and Amount establish the main shape. Raising Complexity first can add busy detail without solving an overly weak or overly large-scale warp.",
+  "Large Amount values can push source sampling beyond the layer bounds; inspect edges and verify Pinning or Resize Layer behavior when edge clipping matters.",
+  "Cycle Evolution only matters when enabled; use it when a seamless repeating Evolution loop is required, and verify the cycle-length behavior in the UI."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (14 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

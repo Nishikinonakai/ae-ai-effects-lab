@@ -1,13 +1,13 @@
 {
  "effect": {
-  "name": "Tint",
-  "matchName": "ADBE Tint"
+  "name": "Posterize",
+  "matchName": "ADBE Posterize"
  },
  "counts": {
-  "total": 8,
-  "leaf": 6,
+  "total": 5,
+  "leaf": 3,
   "groups": 2,
-  "animatable": 4,
+  "animatable": 2,
   "customValue": 0,
   "hiddenLevers": 0,
   "_settabilityProbe": "second pass, settled instance"
@@ -15,49 +15,15 @@
  "params": [
   {
    "depth": 0,
-   "name": "Map Black To",
-   "matchName": "ADBE Tint-0001",
-   "type": "COLOR",
-   "value": "0,0,0,0",
-   "min": -3921568.62745098,
-   "max": 3921568.62745098,
-   "animatable": true,
-   "expr": true,
-   "settable": "yes"
-  },
-  {
-   "depth": 0,
-   "name": "Map White To",
-   "matchName": "ADBE Tint-0002",
-   "type": "COLOR",
-   "value": "1,1,1,0",
-   "min": -3921568.62745098,
-   "max": 3921568.62745098,
-   "animatable": true,
-   "expr": true,
-   "settable": "yes"
-  },
-  {
-   "depth": 0,
-   "name": "Amount to Tint",
-   "matchName": "ADBE Tint-0003",
+   "name": "Level",
+   "matchName": "ADBE Posterize-0001",
    "type": "1D",
-   "value": "100",
-   "min": 0,
-   "max": 100,
-   "units": "percent",
+   "value": "7",
+   "min": 2,
+   "max": 255,
    "animatable": true,
    "expr": true,
    "settable": "yes"
-  },
-  {
-   "depth": 0,
-   "name": "",
-   "matchName": "ADBE Tint-0004",
-   "type": "GROUP",
-   "value": "",
-   "animatable": false,
-   "expr": false
   },
   {
    "depth": 0,

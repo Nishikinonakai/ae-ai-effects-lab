@@ -1,0 +1,104 @@
+{
+ "matchName": "ADBE Shift Channels",
+ "displayName": "Shift Channels",
+ "vendor": "Adobe (native)",
+ "category": "Channel",
+ "cardDepth": "shallow",
+ "essence": "Shift Channels rebuilds the output RGBA channels independently by choosing which source channel feeds each destination channel. Changing a Take Red/Green/Blue selector reroutes that output color component; changing Take Alpha From reroutes transparency, so a color channel can become a matte or the existing alpha can be preserved.",
+ "when_to_use": [
+  "swap red and blue channels",
+  "RGB channel remap",
+  "use luminance as alpha",
+  "convert a channel into a matte",
+  "颜色通道互换",
+  "交换红蓝通道",
+  "用亮度做透明度",
+  "通道重映射",
+  "把颜色通道当遮罩"
+ ],
+ "manifests_as": "The image's colors, color separation, and/or transparency change according to which original channel is copied into each output channel.",
+ "key_levers": [
+  {
+   "name": "Take Alpha From",
+   "matchName": "ADBE Shift Channels-0001",
+   "range": [
+    1,
+    10
+   ],
+   "default": 1,
+   "units": "",
+   "enum": true,
+   "effect": "Selects the source used for output transparency; preserving the default keeps the original alpha, while selecting a color-derived source makes transparency follow that source."
+  },
+  {
+   "name": "Take Red From",
+   "matchName": "ADBE Shift Channels-0002",
+   "range": [
+    1,
+    10
+   ],
+   "default": 2,
+   "units": "",
+   "enum": true,
+   "effect": "Selects which source supplies the output red component; choosing another color channel swaps or duplicates that channel into red."
+  },
+  {
+   "name": "Take Green From",
+   "matchName": "ADBE Shift Channels-0003",
+   "range": [
+    1,
+    10
+   ],
+   "default": 3,
+   "units": "",
+   "enum": true,
+   "effect": "Selects which source supplies the output green component; matching all RGB outputs to one source produces a monochrome rendition of that source channel."
+  },
+  {
+   "name": "Take Blue From",
+   "matchName": "ADBE Shift Channels-0004",
+   "range": [
+    1,
+    10
+   ],
+   "default": 4,
+   "units": "",
+   "enum": true,
+   "effect": "Selects which source supplies the output blue component; changing it is especially useful for blue/red swaps and channel-isolation looks."
+  },
+  {
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Mixes the effect's channel-remapped result with the unmodified layer; lower values reduce the visible strength of the remap."
+  }
+ ],
+ "enums_to_verify": {
+  "Take Alpha From (ADBE Shift Channels-0001, 1-10)": "Unverified: values 1-4 are believed to be Alpha, Red, Green, Blue respectively because they are the identity defaults. Remaining values are believed to include derived brightness/channel constants, but their exact labels and ordering must be verified in this AE build.",
+  "Take Red From (ADBE Shift Channels-0002, 1-10)": "Unverified: values 1-4 are believed to be Alpha, Red, Green, Blue respectively. Remaining source choices and their ordering must be verified.",
+  "Take Green From (ADBE Shift Channels-0003, 1-10)": "Unverified: values 1-4 are believed to be Alpha, Red, Green, Blue respectively. Remaining source choices and their ordering must be verified.",
+  "Take Blue From (ADBE Shift Channels-0004, 1-10)": "Unverified: values 1-4 are believed to be Alpha, Red, Green, Blue respectively. Remaining source choices and their ordering must be verified."
+ },
+ "config_recipes": {
+  "Identity / no visible change": "Take Alpha From 1, Take Red From 2, Take Green From 3, Take Blue From 4, Effect Opacity 100%.",
+  "Red-blue swap": "Take Alpha From 1, Take Red From 4, Take Green From 3, Take Blue From 2, Effect Opacity 100%.",
+  "Green-channel monochrome": "Take Alpha From 1, Take Red From 3, Take Green From 3, Take Blue From 3, Effect Opacity 100%.",
+  "Red-channel monochrome": "Take Alpha From 1, Take Red From 2, Take Green From 2, Take Blue From 2, Effect Opacity 100%."
+ },
+ "reasoning_hooks": [
+  "The defaults are an identity mapping, so adding the effect produces no visible change until at least one Take selector differs from its default.",
+  "Each destination is independent: selecting the same source for Red, Green, and Blue duplicates that source into grayscale-like RGB, rather than isolating it as a colored channel.",
+  "Alpha is causally separate from RGB. A dramatic color remap can leave the silhouette unchanged if Take Alpha From remains at its default; conversely, changing alpha can hide or reveal pixels without changing their RGB values.",
+  "Use Effect Opacity only after establishing the desired channel routing: it blends the remapped result back toward the original rather than choosing channel sources."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (6 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

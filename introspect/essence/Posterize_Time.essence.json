@@ -1,0 +1,50 @@
+{
+ "matchName": "ADBE Posterize Time",
+ "displayName": "Posterize Time",
+ "vendor": "Adobe (native)",
+ "category": "Time",
+ "cardDepth": "shallow",
+ "essence": "Posterize Time resamples a layer's temporal output at a chosen frame rate, holding each sampled frame until the next sample instead of showing every source or comp frame. Lowering Frame Rate increases the duration of each hold, so motion becomes stepped and stroboscopic while individual frames remain otherwise unchanged.",
+ "when_to_use": [
+  "stop-motion / choppy animation",
+  "降低帧率 / 卡顿动画",
+  "stepped motion",
+  "定格感 / 抽帧效果",
+  "make animation look like 12 fps",
+  "做成 12 帧逐格动画"
+ ],
+ "manifests_as": "Moving footage or animation updates in discrete held poses, producing visible temporal stepping rather than smooth motion.",
+ "key_levers": [
+  {
+   "name": "Frame Rate",
+   "matchName": "ADBE Posterize Time-0001",
+   "range": [
+    0.00999450683594,
+    999
+   ],
+   "default": 24,
+   "units": "fps",
+   "enum": false,
+   "effect": "Sets the temporal sampling rate: lower values hold each sampled image longer and make motion more visibly stepped; higher values sample more often and approach smooth original timing."
+  }
+ ],
+ "enums_to_verify": {
+  "GPU Rendering (ADBE Force CPU GPU, 1-3)": "Unverified implementation/rendering preference selector, likely choosing an automatic/CPU/GPU processing path; it should not be treated as a creative temporal-look control without verification."
+ },
+ "config_recipes": {
+  "subtle animation cadence": "Frame Rate: 24 fps",
+  "traditional limited-animation feel": "Frame Rate: 12 fps",
+  "pronounced stop-motion stepping": "Frame Rate: 8 fps",
+  "very sparse time-lapse-like holds": "Frame Rate: 4 fps"
+ },
+ "reasoning_hooks": [
+  "This changes time sampling, not image frame rate export settings: a 60 fps comp can still display 12 fps-looking held motion after the effect.",
+  "The effect is most visible on motion or animated properties; a static layer will appear unchanged.",
+  "Place it after effects whose animation you want resampled; effects later in the stack can still animate smoothly between the posterized layer frames.",
+  "Frame Rate values above the comp or source's effective temporal detail generally cannot create new motion samples, so they may look identical to the original."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (3 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

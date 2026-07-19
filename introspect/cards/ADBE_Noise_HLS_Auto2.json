@@ -1,1 +1,129 @@
-{"effect":{"name":"Noise HLS Auto","matchName":"ADBE Noise HLS Auto2"},"counts":{"total":10,"leaf":8,"groups":2,"animatable":7,"customValue":0},"params":[{"depth":0,"name":"Noise","matchName":"ADBE Noise HLS Auto2-0001","type":"1D","value":"1","min":1,"max":3,"animatable":true,"expr":true},{"depth":0,"name":"Hue","matchName":"ADBE Noise HLS Auto2-0002","type":"1D","value":"0","min":0,"max":1000,"units":"percent","animatable":true,"expr":true},{"depth":0,"name":"Lightness","matchName":"ADBE Noise HLS Auto2-0003","type":"1D","value":"0","min":0,"max":1000,"units":"percent","animatable":true,"expr":true},{"depth":0,"name":"Saturation","matchName":"ADBE Noise HLS Auto2-0004","type":"1D","value":"0","min":0,"max":1000,"units":"percent","animatable":true,"expr":true},{"depth":0,"name":"Grain Size","matchName":"ADBE Noise HLS Auto2-0005","type":"1D","value":"1","min":0,"max":10,"animatable":true,"expr":true},{"depth":0,"name":"Noise Animation Speed","matchName":"ADBE Noise HLS Auto2-0006","type":"1D","value":"24","min":0,"max":200,"animatable":true,"expr":true},{"depth":0,"name":"Compositing Options","type":"GROUP","matchName":"ADBE Effect Built In Params"},{"depth":1,"name":"Masks","type":"GROUP","matchName":"ADBE Effect Mask Parade"},{"depth":1,"name":"Effect Opacity","matchName":"ADBE Effect Mask Opacity","type":"1D","value":"100","min":0,"max":100,"units":"percent","animatable":true,"expr":true},{"depth":1,"name":"GPU Rendering","matchName":"ADBE Force CPU GPU","type":"1D","value":"1","min":1,"max":3,"animatable":false,"expr":false}]}
+{
+ "effect": {
+  "name": "Noise HLS Auto",
+  "matchName": "ADBE Noise HLS Auto2"
+ },
+ "counts": {
+  "total": 10,
+  "leaf": 8,
+  "groups": 2,
+  "animatable": 7,
+  "customValue": 0,
+  "hiddenLevers": 0,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": "Noise",
+   "matchName": "ADBE Noise HLS Auto2-0001",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Hue",
+   "matchName": "ADBE Noise HLS Auto2-0002",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1000,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Lightness",
+   "matchName": "ADBE Noise HLS Auto2-0003",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1000,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Saturation",
+   "matchName": "ADBE Noise HLS Auto2-0004",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1000,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Grain Size",
+   "matchName": "ADBE Noise HLS Auto2-0005",
+   "type": "1D",
+   "value": "1",
+   "min": 0,
+   "max": 10,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Noise Animation Speed",
+   "matchName": "ADBE Noise HLS Auto2-0006",
+   "type": "1D",
+   "value": "24",
+   "min": 0,
+   "max": 200,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}

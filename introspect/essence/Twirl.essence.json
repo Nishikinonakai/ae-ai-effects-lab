@@ -1,0 +1,90 @@
+{
+ "matchName": "ADBE Twirl",
+ "displayName": "Twirl",
+ "vendor": "Adobe (native)",
+ "category": "Distort",
+ "cardDepth": "shallow",
+ "essence": "Twirl remaps pixels by rotating them around a chosen center, with the rotational displacement fading from strongest near the center to zero at the Twirl Radius boundary. Angle sets how much the image is wound or unwound; Radius limits the affected region; Center chooses the pivot.",
+ "when_to_use": [
+  "twist a face or logo",
+  "swirl distortion",
+  "spiral warp",
+  "make a vortex",
+  "扭曲旋转",
+  "漩涡效果",
+  "螺旋变形",
+  "把画面拧成旋涡"
+ ],
+ "manifests_as": "A circular area of the image appears twisted into a spiral around a pivot, while pixels outside the radius remain unchanged.",
+ "key_levers": [
+  {
+   "name": "Angle",
+   "matchName": "ADBE Twirl-0001",
+   "range": [
+    -9999,
+    9999
+   ],
+   "default": 0,
+   "units": "degrees",
+   "enum": false,
+   "effect": "Sets the amount and direction of rotational pixel displacement around the center; larger absolute values create a tighter, more obvious spiral."
+  },
+  {
+   "name": "Twirl Radius",
+   "matchName": "ADBE Twirl-0002",
+   "range": [
+    0,
+    100
+   ],
+   "default": 30,
+   "units": "",
+   "enum": false,
+   "effect": "Sets the size of the circular region that receives the twirl; increasing it spreads the twist farther from the center."
+  },
+  {
+   "name": "Twirl Center",
+   "matchName": "ADBE Twirl-0003",
+   "range": [
+    0,
+    0
+   ],
+   "default": [
+    320,
+    180
+   ],
+   "units": "pixels",
+   "enum": false,
+   "effect": "Moves the pivot and the center of the affected circular region; place it on the feature meant to become the vortex."
+  },
+  {
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Blends the twirled result with the original layer; lower values soften or partially remove the distortion without changing its geometry."
+  }
+ ],
+ "enums_to_verify": {
+  "GPU Rendering (ADBE Force CPU GPU, 1-3)": "Unverified: likely selects automatic/CPU/GPU rendering behavior rather than a creative visual mode; verify value labels in this AE build."
+ },
+ "config_recipes": {
+  "subtle localized twist": "Angle 25 degrees; Twirl Radius 25; Twirl Center on the detail to bend; Effect Opacity 100%.",
+  "obvious vortex": "Angle 180 degrees; Twirl Radius 70; Twirl Center on the vortex target; Effect Opacity 100%.",
+  "soft warped accent": "Angle 90 degrees; Twirl Radius 45; Twirl Center on the subject; Effect Opacity 45%."
+ },
+ "reasoning_hooks": [
+  "Angle at its default of 0 produces no visible twirl even when Radius and Center are set.",
+  "Radius is the boundary of the affected area: moving the Center changes where that boundary lands, so set Center on the subject before judging Radius.",
+  "Effect Opacity only mixes the finished distortion back toward the source; it does not reduce the Angle or shrink the affected region.",
+  "Animate Angle when the twist needs to evolve over time; animate Center when the vortex must track a moving feature."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (5 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

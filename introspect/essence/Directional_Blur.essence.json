@@ -1,0 +1,91 @@
+{
+ "matchName": "ADBE Motion Blur",
+ "displayName": "Directional Blur",
+ "vendor": "Adobe (native)",
+ "category": "Blur & Sharpen",
+ "cardDepth": "shallow",
+ "essence": "Directional Blur softens an image by averaging pixels along a single chosen axis, producing linear streaks rather than an all-direction blur. Direction sets the streak axis, Blur Length sets how far the sampling extends along that axis, and Effect Opacity mixes the blurred result back with the original.",
+ "when_to_use": [
+  "directional motion smear",
+  "horizontal streak blur",
+  "vertical blur trail",
+  "fake motion blur",
+  "linear blur",
+  "定向模糊",
+  "方向性拖影",
+  "水平拖影",
+  "垂直模糊",
+  "模拟运动模糊"
+ ],
+ "manifests_as": "Detail stretches and softens into straight, parallel streaks along the selected direction while detail perpendicular to that direction remains comparatively intact.",
+ "key_levers": [
+  {
+   "name": "Direction",
+   "matchName": "ADBE Motion Blur-0001",
+   "range": [
+    0,
+    360
+   ],
+   "default": 0,
+   "units": "degrees",
+   "enum": false,
+   "effect": "Rotates the axis along which pixels are sampled and smeared; use it to align the blur with perceived motion, such as 0° for a horizontal-looking streak direction and 90° for a vertical-looking one."
+  },
+  {
+   "name": "Blur Length",
+   "matchName": "ADBE Motion Blur-0002",
+   "range": [
+    0,
+    1000
+   ],
+   "default": 0,
+   "units": "pixels",
+   "enum": false,
+   "effect": "Increases the distance over which image detail is averaged along Direction; 0 produces no visible blur, while larger values create longer and softer streaks."
+  },
+  {
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Blends the processed directional blur with the unblurred source; lower values retain more original sharpness without changing the blur axis or length."
+  },
+  {
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "range": [
+    1,
+    3
+   ],
+   "default": 1,
+   "units": "",
+   "enum": true,
+   "effect": "Selects the effect's processing/rendering path; it is not intended as a creative blur-shape control, though implementation differences should be checked in the target render environment."
+  }
+ ],
+ "enums_to_verify": {
+  "GPU Rendering (ADBE Force CPU GPU, 1-3)": "Unverified belief: these values choose among CPU/GPU or project-controlled rendering modes; verify the exact labels and whether any mode changes output consistency before relying on it."
+ },
+ "config_recipes": {
+  "subtle horizontal motion softness": "Direction 0°, Blur Length 20, Effect Opacity 65%.",
+  "strong horizontal speed streak": "Direction 0°, Blur Length 140, Effect Opacity 100%.",
+  "vertical transition smear": "Direction 90°, Blur Length 90, Effect Opacity 85%.",
+  "diagonal action trail": "Direction 35°, Blur Length 180, Effect Opacity 75%."
+ },
+ "reasoning_hooks": [
+  "Blur Length defaults to 0, so changing Direction alone produces no visible result.",
+  "Direction defines an axis, not object motion detection: the effect blurs the entire processed layer uniformly along that line.",
+  "Animate Direction and/or Blur Length when the intended motion direction or intensity changes over time; a fixed value reads as a static smear.",
+  "Effect Opacity is a final mix control: reduce it to restore sharp source detail after choosing the actual streak direction and length.",
+  "This is not velocity-aware motion blur; moving objects, static backgrounds, and edge detail all receive the same directional sampling unless the effect is masked or isolated."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (4 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

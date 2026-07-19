@@ -1,0 +1,99 @@
+{
+ "matchName": "ADBE Emboss",
+ "displayName": "Emboss",
+ "vendor": "Adobe (native)",
+ "category": "Stylize",
+ "cardDepth": "shallow",
+ "essence": "Emboss derives directional edge changes from the image and shades them as highlights and shadows, making flat luminance boundaries read like raised or carved relief. Direction chooses the apparent light/shadow orientation; Relief scales the apparent height of those edge transitions, while Contrast hardens or softens their tonal separation. The processed result can then be mixed back with the untouched image.",
+ "when_to_use": [
+  "embossed edges",
+  "raised metal or paper relief",
+  "carved logo treatment",
+  "directional edge shading",
+  "浮雕效果",
+  "压印边缘",
+  "立体刻痕",
+  "让图形像被压出高度"
+ ],
+ "manifests_as": "The image becomes relief-like, with grayscale directional highlights and shadows tracing its edges, often reducing the readability of original color and texture at low original-image mix.",
+ "key_levers": [
+  {
+   "name": "Direction",
+   "matchName": "ADBE Emboss-0001",
+   "range": [
+    0,
+    360
+   ],
+   "default": 45,
+   "units": "degrees",
+   "enum": false,
+   "effect": "Rotates the apparent lighting direction, moving which side of each edge receives the bright highlight versus the dark shadow."
+  },
+  {
+   "name": "Relief",
+   "matchName": "ADBE Emboss-0002",
+   "range": [
+    0,
+    1000
+   ],
+   "default": 1,
+   "units": "",
+   "enum": false,
+   "effect": "Increases the apparent depth/height of the embossed edge shading; low values are subtle surface relief, while higher values produce stronger raised or carved-looking transitions."
+  },
+  {
+   "name": "Contrast",
+   "matchName": "ADBE Emboss-0003",
+   "range": [
+    0,
+    32767
+   ],
+   "default": 100,
+   "units": "",
+   "enum": false,
+   "effect": "Controls separation between emboss highlights and shadows; raise it for crisper, more graphic ridges and lower it for softer, flatter relief."
+  },
+  {
+   "name": "Blend With Original",
+   "matchName": "ADBE Emboss-0004",
+   "range": [
+    0,
+    100
+   ],
+   "default": 0,
+   "units": "percent",
+   "enum": false,
+   "effect": "Crossfades from the full emboss result at 0% toward the untouched source at 100%, preserving source color and detail as it rises."
+  },
+  {
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Scales the visibility of this effect's contribution; lower it to fade the emboss treatment without changing its Direction, Relief, or Contrast relationships."
+  }
+ ],
+ "enums_to_verify": {
+  "GPU Rendering (ADBE Force CPU GPU, 1-3)": "Unverified: likely selects an automatic/CPU/GPU rendering preference or capability mode; it should affect processing path/performance rather than the intended emboss appearance."
+ },
+ "config_recipes": {
+  "subtle paper emboss": "Direction 135°, Relief 3, Contrast 60, Blend With Original 35%, Effect Opacity 100%.",
+  "hard stamped logo": "Direction 45°, Relief 18, Contrast 180, Blend With Original 10%, Effect Opacity 100%.",
+  "mostly-original textured relief": "Direction 120°, Relief 8, Contrast 100, Blend With Original 55%, Effect Opacity 100%."
+ },
+ "reasoning_hooks": [
+  "Relief is the depth lever, but it only reads as three-dimensional when Direction gives the edge shading a believable orientation.",
+  "At Blend With Original 0%, the effect can substantially replace the source appearance with emboss shading; raise this blend when original color, texture, or legibility must remain visible.",
+  "Direction changes highlight/shadow placement, not the geometric outline of the source; animate it only when moving light or shifting relief orientation is desired.",
+  "Contrast can make minor source noise and compression edges emboss visibly, so reduce Contrast or pre-clean the source when unintended texture becomes ridges."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (6 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

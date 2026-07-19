@@ -1,0 +1,140 @@
+{
+ "matchName": "ADBE Ramp",
+ "displayName": "Gradient Ramp",
+ "vendor": "Adobe (native)",
+ "category": "Generate",
+ "cardDepth": "shallow",
+ "essence": "Gradient Ramp generates a two-color field by interpolating from Start Color at Start of Ramp toward End Color at End of Ramp. The two point controls define the gradient's direction, extent, or center/radius depending on Ramp Shape; Scatter adds noise-like variation to the interpolation, then Blend With Original mixes the generated field back over the incoming image.",
+ "when_to_use": [
+  "two-color background gradient",
+  "linear color fade",
+  "radial vignette gradient",
+  "animate a moving color wash",
+  "双色渐变背景",
+  "线性色彩过渡",
+  "径向渐变晕影",
+  "移动色彩光晕"
+ ],
+ "manifests_as": "A smooth color transition across the layer, either along an axis or radiating from a point, optionally broken up with dither-like scatter.",
+ "key_levers": [
+  {
+   "name": "Start of Ramp",
+   "matchName": "ADBE Ramp-0001",
+   "range": [
+    0,
+    1000000
+   ],
+   "default": [
+    320,
+    0
+   ],
+   "units": "pixels",
+   "enum": false,
+   "effect": "Places the start anchor: pixels nearest this point resolve toward Start Color, and moving it changes the gradient's direction or radial center."
+  },
+  {
+   "name": "Start Color",
+   "matchName": "ADBE Ramp-0002",
+   "range": [
+    -3921568.62745098,
+    3921568.62745098
+   ],
+   "default": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "units": "RGBA color",
+   "enum": false,
+   "effect": "Sets the generated color at the start anchor; changing it changes one endpoint of the entire color transition."
+  },
+  {
+   "name": "End of Ramp",
+   "matchName": "ADBE Ramp-0003",
+   "range": [
+    0,
+    1000000
+   ],
+   "default": [
+    320,
+    360
+   ],
+   "units": "pixels",
+   "enum": false,
+   "effect": "Places the end anchor: its distance and direction from Start of Ramp determine how quickly and in which direction the field reaches End Color."
+  },
+  {
+   "name": "End Color",
+   "matchName": "ADBE Ramp-0004",
+   "range": [
+    -3921568.62745098,
+    3921568.62745098
+   ],
+   "default": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "units": "RGBA color",
+   "enum": false,
+   "effect": "Sets the generated color at the end anchor and beyond the completed transition."
+  },
+  {
+   "name": "Ramp Shape",
+   "matchName": "ADBE Ramp-0005",
+   "range": [
+    1,
+    2
+   ],
+   "default": 1,
+   "units": "",
+   "enum": true,
+   "effect": "Selects the available geometry mode for how distance between the two ramp points is converted into the color interpolation."
+  },
+  {
+   "name": "Ramp Scatter",
+   "matchName": "ADBE Ramp-0006",
+   "range": [
+    0,
+    512
+   ],
+   "default": 0,
+   "units": "",
+   "enum": false,
+   "effect": "Adds randomized variation to the ramp interpolation; raise it to break up perfectly smooth bands or make the gradient feel grainier."
+  },
+  {
+   "name": "Blend With Original",
+   "matchName": "ADBE Ramp-0007",
+   "range": [
+    0,
+    1
+   ],
+   "default": 0,
+   "units": "percent",
+   "enum": false,
+   "effect": "Mixes the generated ramp with the pre-effect layer: 0 replaces the layer with the ramp, while higher values preserve more of the original image."
+  }
+ ],
+ "enums_to_verify": {
+  "Ramp Shape (ADBE Ramp-0005, 1-2)": "Unverified belief: 1 is Linear Ramp and 2 is Radial Ramp."
+ },
+ "config_recipes": {
+  "clean vertical black-to-white": "Ramp Shape 1; Start of Ramp [320,0]; End of Ramp [320,360]; Start Color [0,0,0,1]; End Color [1,1,1,1]; Ramp Scatter 0; Blend With Original 0.",
+  "subtle colored image wash": "Ramp Shape 1; Start of Ramp [0,0]; End of Ramp [640,360]; Start Color [0.08,0.2,0.5,1]; End Color [0.9,0.25,0.12,1]; Ramp Scatter 0; Blend With Original 0.7.",
+  "radial spotlight or vignette": "Ramp Shape 2; Start of Ramp [320,180]; End of Ramp [600,180]; Start Color [1,0.85,0.55,1]; End Color [0.03,0.03,0.06,1]; Ramp Scatter 4; Blend With Original 0."
+ },
+ "reasoning_hooks": [
+  "With Blend With Original at 0, the effect replaces the incoming layer with its generated colors; this is not merely a tint over footage.",
+  "The ramp points control geometry as a pair: moving only one point changes both placement and transition distance, while moving both together repositions the whole gradient.",
+  "Ramp Scatter changes texture in the transition, not the endpoint colors or the overall gradient direction.",
+  "A radial-looking result requires selecting the appropriate Ramp Shape mode; merely arranging the two points diagonally still does not make a linear mode radial.",
+  "For a visible animated color wash, animate ramp points and/or colors; Scatter alone mainly adds local breakup rather than clear directional motion."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (9 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}

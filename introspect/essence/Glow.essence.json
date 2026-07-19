@@ -1,0 +1,133 @@
+{
+ "matchName": "ADBE Glo2",
+ "displayName": "Glow",
+ "vendor": "Adobe (native)",
+ "category": "Stylize",
+ "cardDepth": "shallow",
+ "essence": "Glow isolates pixels that pass a brightness/alpha threshold, spreads that extracted signal outward with a blur-like radius, then mixes the resulting halo back with the source. Lowering Glow Threshold admits more source detail into the halo; increasing Glow Radius makes the admitted light spread farther; increasing Glow Intensity strengthens the generated halo before compositing.",
+ "when_to_use": [
+  "glow around bright text",
+  "neon sign glow",
+  "bloom highlights",
+  "soft luminous halo",
+  "辉光",
+  "发光边缘",
+  "霓虹灯发光",
+  "高光泛光",
+  "让文字有光晕"
+ ],
+ "manifests_as": "Bright qualifying areas bloom into a soft halo, potentially preserving, hiding, or differently blending the original artwork depending on compositing and operation modes.",
+ "key_levers": [
+  {
+   "name": "Glow Threshold",
+   "matchName": "ADBE Glo2-0002",
+   "range": [
+    0,
+    255
+   ],
+   "default": 153,
+   "units": "percent (host-reported)",
+   "enum": false,
+   "effect": "Sets the cutoff for source pixels that generate glow: lower values make more of the layer glow, while higher values restrict glow to the brightest or most opaque qualifying areas."
+  },
+  {
+   "name": "Glow Radius",
+   "matchName": "ADBE Glo2-0003",
+   "range": [
+    0,
+    1000
+   ],
+   "default": 10,
+   "units": "pixels",
+   "enum": false,
+   "effect": "Controls how far the extracted glow signal spreads; larger values create a wider, softer halo and can make nearby glows merge."
+  },
+  {
+   "name": "Glow Intensity",
+   "matchName": "ADBE Glo2-0004",
+   "range": [
+    0,
+    255
+   ],
+   "default": 1,
+   "units": "",
+   "enum": false,
+   "effect": "Multiplies the visible strength of the generated halo after thresholding and spreading; raise it for brighter bloom without expanding its footprint."
+  },
+  {
+   "name": "Glow Based On",
+   "matchName": "ADBE Glo2-0001",
+   "range": [
+    1,
+    2
+   ],
+   "default": 2,
+   "units": "",
+   "enum": true,
+   "effect": "Chooses which source property is tested by Glow Threshold, changing whether visible color brightness or transparency drives where glow originates."
+  },
+  {
+   "name": "Composite Original",
+   "matchName": "ADBE Glo2-0005",
+   "range": [
+    1,
+    3
+   ],
+   "default": 2,
+   "units": "",
+   "enum": true,
+   "effect": "Controls whether and how the unglowed source is retained relative to the generated halo; use it to decide whether the result reads as a glow overlay or glow-only output."
+  },
+  {
+   "name": "Glow Colors",
+   "matchName": "ADBE Glo2-0007",
+   "range": [
+    1,
+    3
+   ],
+   "default": 1,
+   "units": "",
+   "enum": true,
+   "effect": "Selects whether the halo inherits source color, uses the Color A/Color B gradient, or uses an animated color-loop treatment."
+  },
+  {
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "range": [
+    0,
+    100
+   ],
+   "default": 100,
+   "units": "percent",
+   "enum": false,
+   "effect": "Mixes the entire Glow result with the untreated layer; reduce it to soften all Glow changes together after the look is established."
+  }
+ ],
+ "enums_to_verify": {
+  "Glow Based On (ADBE Glo2-0001, 1-2)": "Unverified belief: the two choices are Alpha Channel and Color Channels; default 2 is likely Color Channels.",
+  "Composite Original (ADBE Glo2-0005, 1-3)": "Unverified belief: choices correspond to compositing the original on top, behind the glow, or omitting it; default 2 must be verified against this build.",
+  "Glow Operation (ADBE Glo2-0006, 1-25)": "Unverified belief: selects the blend operation used for the glow result; default 3 is likely an additive/lightening-style operation, but numeric labels must be inspected.",
+  "Glow Colors (ADBE Glo2-0007, 1-3)": "Unverified belief: choices are likely Original Colors, A & B Colors, and Color Loop; default 1 likely preserves source-derived glow color.",
+  "Color Looping (ADBE Glo2-0008, 1-4)": "Unverified belief: selects the traversal style for Color Loop colors, such as cycling, reversing, or mirroring; exact value labels require UI inspection.",
+  "Glow Dimensions (ADBE Glo2-0014, 1-3)": "Unverified belief: selects horizontal, vertical, or two-dimensional spreading; default 1 is likely two-dimensional, but labels require verification."
+ },
+ "config_recipes": {
+  "tight neon text": "Glow Threshold 180, Glow Radius 18, Glow Intensity 2.5; keep Glow Colors at 1 for source-colored neon, then use Effect Opacity 70-100% to taste.",
+  "broad soft bloom": "Glow Threshold 120, Glow Radius 90, Glow Intensity 1.5; retain the original through Composite Original and lower Effect Opacity to about 60-80% if the image washes out.",
+  "selective highlight bloom": "Glow Threshold 210, Glow Radius 45, Glow Intensity 2; this confines the halo mostly to the hottest highlights while leaving midtones comparatively clean.",
+  "graphic two-color aura": "Glow Threshold 140, Glow Radius 35, Glow Intensity 2; set Glow Colors to the unverified A/B-color mode, choose contrasting Color A and Color B, and adjust A & B Midpoint near 0.5."
+ },
+ "reasoning_hooks": [
+  "Threshold is the main eligibility gate: Radius and Intensity cannot create glow where the chosen Glow Based On signal does not pass the threshold.",
+  "Lower Threshold and larger Radius interact strongly: admitting midtones and spreading them widely quickly turns crisp artwork into a hazy wash.",
+  "Intensity changes halo energy, not its reach; use Radius for size and Intensity for brightness.",
+  "Glow Based On changes what Threshold means. A threshold tuned for bright RGB artwork may fail on an alpha-driven matte, and vice versa.",
+  "Color A, Color B, A & B Midpoint, Color Looping, Color Loops, and Color Phase matter only after Glow Colors selects the relevant non-original color mode.",
+  "Composite Original can make a correct halo appear missing or overly strong because it determines whether the source itself remains in the result; inspect it before compensating with excessive Intensity.",
+  "Effect Opacity is a final global mix control, not a substitute for Threshold: lowering it also weakens the retained original/composite result."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (16 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": "gpt-5.6-terra",
+ "_date": "2026-07-19"
+}
