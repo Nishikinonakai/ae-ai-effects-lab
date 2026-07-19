@@ -141,18 +141,21 @@ if (lc.levers.length && layerIdx) {
   catch (e) { console.log(`(could not read live lever values: ${String(e).slice(0, 80)} — proceeding without them)`); }
 }
 if (Object.keys(leverValues).length) {
-  lc.block = lc.block.replace(/^(\s*·(?:\(in play\))? .*?\[)([\w .#-]+)(\])/gm,
+  // Annotate the FIRST bracketed matchName on each lever line. Non-greedy so a gated lever's
+  // trailing "set <gate> [mn] = v" reference is not mistaken for the lever's own id, and loose
+  // enough on the prefix to cover plain, "(in play)" and "⟨gated⟩" lines alike.
+  lc.block = lc.block.replace(/^(\s*·.*?\[)([^\]]+)(\])/gm,
     (m, pre, mn, post) => leverValues[mn] !== undefined ? `${pre}${mn}${post} NOW=${leverValues[mn]}` : m);
   console.log(`essence: read ${Object.keys(leverValues).length} live lever value(s) from layer ${layerIdx}`);
 }
 
 // --- unreachable levers ------------------------------------------------------------------------
-// Widening the scorer's vocabulary (above) has a cost: the essence card lists what the effect CAN
-// expose, but on a given instance a lever may be HIDDEN behind a parent gate — Deep Glow's Spread
-// is hidden unless its parent style group opens it, and setValue throws outright. apply_edit records
-// that as a failed edit, but nothing told the scorer, so it would keep spending suggestions on a
-// lever that can never move. Feed the failures back: this iteration's, plus --blocked for the ones
-// earlier iterations already discovered (the tune loop accumulates them).
+// Widening the scorer's vocabulary (above) has a cost: a lever the card lists may still be shut on
+// THIS instance — either behind a gate the card does not know about, or with no reachable gate at
+// all (Deep Glow's Spread resists all 19 of the effect's gates). Either way setValue throws.
+// apply_edit records that as a failed edit, but nothing told the scorer, so it would keep spending
+// suggestions on a lever that cannot move. Feed the failures back: this iteration's, plus --blocked
+// for the ones earlier iterations already discovered (the tune loop accumulates them).
 const failedHere = (report.applied || []).filter(a => a && a.error);
 const blockedPrior = (arg('blocked', '') || '').split(',').map(s => s.trim()).filter(Boolean);
 // pair each failure with the param it was trying to move (applied[] is index-aligned with spec[])
