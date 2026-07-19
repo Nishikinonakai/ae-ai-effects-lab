@@ -86,6 +86,20 @@ find-or-create-idempotent, every iteration turns knobs on the SAME live comp.
     "pointOfInterest": [640, 430, 0],
     "zoom": null
   },
+  "shapes": [                         // OPTIONAL: native vector primitives (find-or-create by name).
+    {                                 // a glowing elliptical stroke is the reliable SOLID luminous
+      "name": "PortalRing",           // annulus Particular glow-spheres can only approximate as beads.
+      "ellipse": [500, 500],          // [w,h]; omit for a path-less layer
+      "position": [640, 360],
+      "stroke": [0.62, 0.5, 1, 1],    // RGBA; omit for no stroke
+      "strokeWidth": 9,
+      "fill": null,                   // RGBA or null
+      "rotate": "time*22",            // OPTIONAL Rotate-Z expression (the 'slowly rotating' cue)
+      "effects": [                    // OPTIONAL per-shape effects (e.g. Glow)
+        { "matchName": "ADBE Glo2", "params": [["ADBE Glo2-0003", 120], ["ADBE Glo2-0004", 2.2]] }
+      ]
+    }
+  ],                                  // shapes render above BG, below the particle host (natural order)
   "renderFrames": [4]                 // seconds; one PNG per entry
 }
 ```

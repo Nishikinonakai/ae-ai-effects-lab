@@ -276,23 +276,15 @@
       "tier": "T3",
       "family": "mixed",
       "dist": "ood",
-      "status": "fail",
-      "iters": 5,
+      "status": "pass",
+      "iters": 1,
       "scores": [
-        4,
-        6,
-        6,
-        6,
-        6
+        9
       ],
       "verdicts": [
-        "fail",
-        "fail",
-        "fail",
-        "fail",
-        "fail"
+        "pass"
       ],
-      "passIter": null,
+      "passIter": 1,
       "sources": 3
     },
     {

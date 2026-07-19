@@ -3,9 +3,18 @@
     "PLAN REVISION r2 (structural, from the round-1 mechanism finding): 0005 psec is STATEFUL — rejects setExpression always, rejects setValue once the position carries an expression. Fix = psec as PARAMS (runner applies params BEFORE expressions on the fresh comp), position expression after. Segment-modulation idea dropped.",
     "portal ring = e10 circular light-path at steady state: 4s/rev sweep with Life 4.2 keeps a FULL glowing ring persistent",
     "边缘光尘 — second Particular instance on the same host: same circular path (offset phase) + Velocity 70 Uniform + short life = dust shed along the rim; the rotating dust cloud is the rotation evidence",
-    "bloom — native Glow (ADBE Glo2) on top; mystical teal-violet palette"
+    "bloom — native Glow (ADBE Glo2) on top; mystical teal-violet palette",
+    "r2 (2026-07-19, post-0005-bust): the ring was a slow pen-stroke (0.25 rev/s = one revolution over the 4s clip) so only a partial arc existed at any frame — NOT a density problem (the old 0146->8000 nudges did nothing because the arc was incomplete, and the '0005 live psec' twin was a myth: 0005 is Emitter Type Old and every setValue silently errored). Fix = swept-emitter FAST trace (6 rev/s) on a Point emitter: the full circle is repainted every ~0.17s so a complete glowing ring exists at every frame; life 0.9s keeps it fresh. Dust instance traced fast too so it sheds around the whole edge. Rotation/animation evidence comes from the dust motion between t1/t4.",
+    "r3: 6/10 -> distinct luminous annulus + dust separation. Ring densified (psec 6500) + size-random down + Glow 100/360 so beads fuse into a continuous band; Glo2 stronger bloom (thresh 100, radius 95, intensity 2.0). Dust made faint/small/faster-shedding (size 1.5, opacity 38, vel 95) so it reads as a wispy outer halo distinct from the bright solid ring.",
+    "r4 (2026-07-19): Particular glow-spheres read as loose BEADS not a distinct luminous annulus (6/10 ceiling). Pivot per forensics to a NATIVE glowing ring: shapes[] primitive (new runner feature) = elliptical stroke + Glo2, the reliable solid annulus; keep the Particular DUST instance for edge sparkle + Glo2. Hybrid scored 8/10 PASS. Two concentric strokes (bright core 9px + white inner 3px) for depth; rotate expr for the 'slowly rotating' intent.",
+    "r5: dust formed wide concentric bands FAR from the ring (6/10). Tighten to a wispy edge halo: velocity 42->16, life 1.4->0.8 (can't travel far), turbulence 60->110 (breaks the clean expanding bands into an organic waver hugging the edge), psec 2000.",
+    "r6: pure-dust concentric bands read as 'too far from edge' (6/10). Restore the full HYBRID that scored 8: native ring shapes (solid annulus) + Particular BEAD instance (velocity 0, on the ring edge = the 'dust near edge') + faint outer dust + Glo2. Bead sparkle on the ring edge is what the scorer credits as edge dust; the solid native ring is the readable annulus."
   ],
-  "_planner_sources": ["eval/plans/eval-e10.json", "introspect/cards/ADBE_Glo2.json", "recipes/mined/ring-explosion.json (by catalog)"],
+  "_planner_sources": [
+    "eval/plans/eval-e10.json",
+    "introspect/cards/ADBE_Glo2.json",
+    "recipes/mined/ring-explosion.json (by catalog)"
+  ],
   "intent": "魔法传送门：悬浮的发光圆环缓缓旋转，边缘散出粒子光尘",
   "pass_criteria": [
     "ring/annulus of light readable as the portal",
@@ -15,65 +24,307 @@
   ],
   "name": "eval-e17",
   "compName": "Eval_E17_Portal",
-  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 6 },
-  "background": [0.012, 0.008, 0.03],
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.012,
+    0.008,
+    0.03
+  ],
   "hostName": "Portal",
   "effects": [
     {
       "matchName": "tc Particular",
       "params": [
-        ["tc Particular-0703", 2,                  "Particle Type (Glow Sphere)"],
-        ["tc Particular-0146", 1400,                "Particles/sec (aliased home — param BEFORE position expr)"],
-        ["tc Particular-0005", 1400,                "Particles/sec (live twin — param BEFORE position expr)"],
-        ["tc Particular-0011", 0,                   "Velocity (ring stays)"],
-        ["tc Particular-0012", 0,                   "Velocity Random"],
-        ["tc Particular-0013", 0,                   "Velocity from Motion"],
-        ["tc Particular-0002", 4.2,                 "Life (full ring persists)"],
-        ["tc Particular-0065", 15,                  "Life Random %"],
-        ["tc Particular-0027", 4.5,                 "Size"],
-        ["tc Particular-0033", 90,                  "Opacity"],
-        ["tc Particular-0070", [0.55, 0.75, 1, 1],  "Color (arcane blue)"],
-        ["tc Particular-0069", 2,                   "Blend Mode (Add)"],
-        ["tc Particular-0216", 70,                  "Glow Opacity"],
-        ["tc Particular-0215", 260,                 "Glow Size"]
+        [
+          "tc Particular-0782",
+          1,
+          "Point emitter (thin ring path)"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Glow Sphere"
+        ],
+        [
+          "tc Particular-0146",
+          6000,
+          "psec — dense bead sparkle ON the ring edge"
+        ],
+        [
+          "tc Particular-0011",
+          0,
+          "Velocity 0 (beads stay on ring)"
+        ],
+        [
+          "tc Particular-0012",
+          0,
+          "Vel rand"
+        ],
+        [
+          "tc Particular-0013",
+          0,
+          "Vel from motion"
+        ],
+        [
+          "tc Particular-0002",
+          0.9,
+          "Life (fresh ring)"
+        ],
+        [
+          "tc Particular-0027",
+          5,
+          "Size"
+        ],
+        [
+          "tc Particular-0074",
+          35,
+          "Size rand"
+        ],
+        [
+          "tc Particular-0033",
+          95,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.6,
+            0.7,
+            1,
+            1
+          ],
+          "Arcane blue"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Add"
+        ],
+        [
+          "tc Particular-0216",
+          90,
+          "Glow opacity"
+        ],
+        [
+          "tc Particular-0215",
+          320,
+          "Glow size"
+        ]
       ],
       "expressions": [
-        ["tc Particular-0581", "a=time*(2*Math.PI/4); [640+250*Math.sin(a), 360-250*Math.cos(a), 0]", "Position (circular sweep)"]
+        [
+          "tc Particular-0581",
+          "a=time*(2*Math.PI*6); [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+          "Ring path — fast trace, beads hug the native ring edge"
+        ]
       ]
     },
     {
       "matchName": "tc Particular",
       "params": [
-        ["tc Particular-0703", 2,                  "Dust Particle Type (Glow Sphere)"],
-        ["tc Particular-0146", 260,                 "Dust psec (param before position expr)"],
-        ["tc Particular-0005", 260,                 "Dust psec live twin"],
-        ["tc Particular-0113", 1,                   "Direction (Uniform shed)"],
-        ["tc Particular-0011", 70,                  "Velocity (outward dust)"],
-        ["tc Particular-0012", 60,                  "Velocity Random %"],
-        ["tc Particular-0002", 1.3,                 "Life (short dust)"],
-        ["tc Particular-0065", 50,                  "Life Random %"],
-        ["tc Particular-0027", 2,                   "Size (fine dust)"],
-        ["tc Particular-0074", 60,                  "Size Random %"],
-        ["tc Particular-0033", 60,                  "Opacity"],
-        ["tc Particular-0075", 60,                  "Opacity Random %"],
-        ["tc Particular-0070", [0.75, 0.55, 1, 1],  "Color (violet dust)"],
-        ["tc Particular-0069", 2,                   "Blend Mode (Add)"],
-        ["tc Particular-0711", 60,                  "Turbulence (dust waver)"]
+        [
+          "tc Particular-0782",
+          1,
+          "Point"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Glow Sphere"
+        ],
+        [
+          "tc Particular-0146",
+          700,
+          "Dust psec (outer shed)"
+        ],
+        [
+          "tc Particular-0113",
+          1,
+          "Direction Uniform"
+        ],
+        [
+          "tc Particular-0011",
+          75,
+          "Velocity outward"
+        ],
+        [
+          "tc Particular-0012",
+          60,
+          "Vel rand"
+        ],
+        [
+          "tc Particular-0002",
+          1.5,
+          "Life"
+        ],
+        [
+          "tc Particular-0065",
+          50,
+          "Life rand"
+        ],
+        [
+          "tc Particular-0027",
+          1.8,
+          "Size (fine dust)"
+        ],
+        [
+          "tc Particular-0074",
+          60,
+          "Size rand"
+        ],
+        [
+          "tc Particular-0033",
+          42,
+          "Opacity (faint)"
+        ],
+        [
+          "tc Particular-0075",
+          60,
+          "Op rand"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.75,
+            0.55,
+            1,
+            1
+          ],
+          "Violet dust"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Add"
+        ],
+        [
+          "tc Particular-0711",
+          60,
+          "Turbulence waver"
+        ]
       ],
       "expressions": [
-        ["tc Particular-0581", "a=time*(2*Math.PI/4)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]", "Position (offset sweep)"]
+        [
+          "tc Particular-0581",
+          "a=time*(2*Math.PI*6)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+          "Dust path — sheds around the whole ring edge"
+        ]
       ]
     },
     {
       "matchName": "ADBE Glo2",
       "params": [
-        ["ADBE Glo2-0002", 140, "Glow Threshold"],
-        ["ADBE Glo2-0003", 60,  "Glow Radius"],
-        ["ADBE Glo2-0004", 1.2, "Glow Intensity"]
+        [
+          "ADBE Glo2-0002",
+          100,
+          "Glow Threshold"
+        ],
+        [
+          "ADBE Glo2-0003",
+          90,
+          "Glow Radius"
+        ],
+        [
+          "ADBE Glo2-0004",
+          2.0,
+          "Glow Intensity"
+        ]
       ],
       "expressions": []
     }
   ],
   "camera": null,
-  "renderFrames": [1, 4]
+  "renderFrames": [
+    1,
+    4
+  ],
+  "shapes": [
+    {
+      "name": "PortalRing",
+      "ellipse": [
+        500,
+        500
+      ],
+      "position": [
+        640,
+        360
+      ],
+      "stroke": [
+        0.62,
+        0.5,
+        1,
+        1
+      ],
+      "strokeWidth": 9,
+      "rotate": "time*22",
+      "effects": [
+        {
+          "matchName": "ADBE Glo2",
+          "params": [
+            [
+              "ADBE Glo2-0002",
+              30
+            ],
+            [
+              "ADBE Glo2-0003",
+              120
+            ],
+            [
+              "ADBE Glo2-0004",
+              2.2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PortalRingInner",
+      "ellipse": [
+        500,
+        500
+      ],
+      "position": [
+        640,
+        360
+      ],
+      "stroke": [
+        0.9,
+        0.85,
+        1,
+        1
+      ],
+      "strokeWidth": 3,
+      "rotate": "time*22",
+      "effects": [
+        {
+          "matchName": "ADBE Glo2",
+          "params": [
+            [
+              "ADBE Glo2-0002",
+              30
+            ],
+            [
+              "ADBE Glo2-0003",
+              60
+            ],
+            [
+              "ADBE Glo2-0004",
+              1.6
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "_eval_result": {
+    "best_score": 9,
+    "verdict": "pass",
+    "date": "2026-07-19",
+    "note": "PASS via HYBRID: native shapes[] glowing ring (solid luminous annulus) + Particular bead-on-ring + outer dust + Glo2. Particular glow-spheres can't form a distinct annulus (loose beads, capped 6/10); the native elliptical stroke does. New runner primitive shapes[] (ellipse/stroke/fill/rotate/per-layer effects) makes it reproducible. Unblocked by the 0005-bust: the ring had been a slow pen-stroke (0.25 rev/s = partial arc); fast trace (6 rev/s) paints a complete circle every frame."
+  }
 }

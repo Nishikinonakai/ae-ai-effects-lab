@@ -1,0 +1,303 @@
+{
+  "_provenance": "eval-e17 pass (9/10, 2026-07-19) — hybrid native-ring + Particular, original param set",
+  "intent": "魔法传送门：悬浮的发光圆环（实心发光环）缓缓旋转，边缘散出粒子光尘。应见清晰发光环形 + 环边粒子尘 + 帧间动画 + 神秘辉光暗背景。",
+  "name": "native-portal-ring",
+  "compName": "Native_portal_ring",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.012,
+    0.008,
+    0.03
+  ],
+  "hostName": "Portal",
+  "shapes": [
+    {
+      "name": "PortalRing",
+      "ellipse": [
+        500,
+        500
+      ],
+      "position": [
+        640,
+        360
+      ],
+      "stroke": [
+        0.62,
+        0.5,
+        1,
+        1
+      ],
+      "strokeWidth": 9,
+      "rotate": "time*22",
+      "effects": [
+        {
+          "matchName": "ADBE Glo2",
+          "params": [
+            [
+              "ADBE Glo2-0002",
+              30
+            ],
+            [
+              "ADBE Glo2-0003",
+              120
+            ],
+            [
+              "ADBE Glo2-0004",
+              2.2
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PortalRingInner",
+      "ellipse": [
+        500,
+        500
+      ],
+      "position": [
+        640,
+        360
+      ],
+      "stroke": [
+        0.9,
+        0.85,
+        1,
+        1
+      ],
+      "strokeWidth": 3,
+      "rotate": "time*22",
+      "effects": [
+        {
+          "matchName": "ADBE Glo2",
+          "params": [
+            [
+              "ADBE Glo2-0002",
+              30
+            ],
+            [
+              "ADBE Glo2-0003",
+              60
+            ],
+            [
+              "ADBE Glo2-0004",
+              1.6
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          1,
+          "Point emitter (thin ring path)"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Glow Sphere"
+        ],
+        [
+          "tc Particular-0146",
+          6000,
+          "psec — dense bead sparkle ON the ring edge"
+        ],
+        [
+          "tc Particular-0011",
+          0,
+          "Velocity 0 (beads stay on ring)"
+        ],
+        [
+          "tc Particular-0012",
+          0,
+          "Vel rand"
+        ],
+        [
+          "tc Particular-0013",
+          0,
+          "Vel from motion"
+        ],
+        [
+          "tc Particular-0002",
+          0.9,
+          "Life (fresh ring)"
+        ],
+        [
+          "tc Particular-0027",
+          5,
+          "Size"
+        ],
+        [
+          "tc Particular-0074",
+          35,
+          "Size rand"
+        ],
+        [
+          "tc Particular-0033",
+          95,
+          "Opacity"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.6,
+            0.7,
+            1,
+            1
+          ],
+          "Arcane blue"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Add"
+        ],
+        [
+          "tc Particular-0216",
+          90,
+          "Glow opacity"
+        ],
+        [
+          "tc Particular-0215",
+          320,
+          "Glow size"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0581",
+          "a=time*(2*Math.PI*6); [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+          "Ring path — fast trace, beads hug the native ring edge"
+        ]
+      ]
+    },
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          1,
+          "Point"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Glow Sphere"
+        ],
+        [
+          "tc Particular-0146",
+          700,
+          "Dust psec (outer shed)"
+        ],
+        [
+          "tc Particular-0113",
+          1,
+          "Direction Uniform"
+        ],
+        [
+          "tc Particular-0011",
+          75,
+          "Velocity outward"
+        ],
+        [
+          "tc Particular-0012",
+          60,
+          "Vel rand"
+        ],
+        [
+          "tc Particular-0002",
+          1.5,
+          "Life"
+        ],
+        [
+          "tc Particular-0065",
+          50,
+          "Life rand"
+        ],
+        [
+          "tc Particular-0027",
+          1.8,
+          "Size (fine dust)"
+        ],
+        [
+          "tc Particular-0074",
+          60,
+          "Size rand"
+        ],
+        [
+          "tc Particular-0033",
+          42,
+          "Opacity (faint)"
+        ],
+        [
+          "tc Particular-0075",
+          60,
+          "Op rand"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.75,
+            0.55,
+            1,
+            1
+          ],
+          "Violet dust"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Blend Add"
+        ],
+        [
+          "tc Particular-0711",
+          60,
+          "Turbulence waver"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0581",
+          "a=time*(2*Math.PI*6)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+          "Dust path — sheds around the whole ring edge"
+        ]
+      ]
+    },
+    {
+      "matchName": "ADBE Glo2",
+      "params": [
+        [
+          "ADBE Glo2-0002",
+          100,
+          "Glow Threshold"
+        ],
+        [
+          "ADBE Glo2-0003",
+          90,
+          "Glow Radius"
+        ],
+        [
+          "ADBE Glo2-0004",
+          2.0,
+          "Glow Intensity"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_technique": "Solid luminous ring = NATIVE shapes[] (elliptical stroke + Glo2), NOT Particular (glow-spheres read as loose beads, cap ~6/10). Particular provides bead sparkle ON the ring edge (velocity 0, fast-trace 6 rev/s = complete circle every frame) + faint outer dust shed. Fast trace is essential: a slow trace draws only a partial arc per frame."
+}

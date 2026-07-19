@@ -147,6 +147,61 @@ const AEX = String.raw`(function () {
       }
     }
 
+    // 2e) shape layers (find-or-create by name): native vector primitives — a glowing
+    // elliptical stroke is the reliable "solid luminous annulus" that Particular glow-spheres
+    // can only approximate as loose beads (e17 portal). Recipes declare shapes: [{name,
+    // ellipse:[w,h], position, stroke:[r,g,b,a], strokeWidth, fill:[r,g,b,a]|null,
+    // rotate:"<expr>", effects:[{matchName, params:[[mn,val],...]}]}].
+    if (R.shapes) {
+      for (var si = 0; si < R.shapes.length; si++) {
+        var Sd = R.shapes[si];
+        try {
+          var slay = findLayer(comp, Sd.name);
+          if (!slay) {
+            slay = comp.layers.addShape();
+            slay.name = Sd.name;
+            var vgrp = slay.property("ADBE Root Vectors Group").addProperty("ADBE Vector Group");
+            var vc = vgrp.property("ADBE Vectors Group");
+            if (Sd.ellipse) {
+              var vell = vc.addProperty("ADBE Vector Shape - Ellipse");
+              vell.property("ADBE Vector Ellipse Size").setValue(Sd.ellipse);
+            }
+            if (Sd.fill) {
+              var vfill = vc.addProperty("ADBE Vector Graphic - Fill");
+              vfill.property("ADBE Vector Fill Color").setValue(Sd.fill);
+            }
+            if (Sd.stroke) {
+              var vst = vc.addProperty("ADBE Vector Graphic - Stroke");
+              vst.property("ADBE Vector Stroke Color").setValue(Sd.stroke);
+              vst.property("ADBE Vector Stroke Width").setValue(Sd.strokeWidth || 6);
+            }
+          }
+          slay.property("ADBE Transform Group").property("ADBE Position").setValue(Sd.position || [R.comp.width/2, R.comp.height/2]);
+          if (Sd.rotate) slay.property("ADBE Transform Group").property("ADBE Rotate Z").expression = Sd.rotate;
+          if (Sd.effects) {
+            for (var se = 0; se < Sd.effects.length; se++) {
+              var sfxSpec = Sd.effects[se];
+              var sfx = null;
+              for (var sfi = 1; sfi <= slay.Effects.numProperties; sfi++) {
+                try { if (slay.Effects.property(sfi).matchName === sfxSpec.matchName) { sfx = slay.Effects.property(sfi); break; } } catch (eSF) {}
+              }
+              if (!sfx) sfx = slay.Effects.addProperty(sfxSpec.matchName);
+              if (sfxSpec.params) for (var sp = 0; sp < sfxSpec.params.length; sp++) {
+                try { sfx.property(sfxSpec.params[sp][0]).setValue(sfxSpec.params[sp][1]); } catch (eSP) {}
+              }
+            }
+          }
+          // no moveToEnd: shapes are created after BG (so above it) and before the particle
+          // host (which lands on top), giving the correct host → shape → BG stacking. Opt in
+          // to bottom placement with moveToEnd:true only if a recipe needs it.
+          if (Sd.moveToEnd === true) slay.moveToEnd();
+          parts.push('{"p":"[shape] ' + esc(Sd.name) + '","ok":true}');
+        } catch (eS) {
+          parts.push('{"p":"[shape] ' + esc(Sd.name) + '","ok":false,"err":"' + esc(String(eS).substring(0,70)) + '"}');
+        }
+      }
+    }
+
     // 3) host layer: find (idempotent re-run) | clone from a curve-library master | new solid.
     // Masters carry CUSTOM_VALUE state (over-life curves, gradients) that setValue cannot
     // reach — layer copy is a full-state transfer, so curves ride along; the recipe's params

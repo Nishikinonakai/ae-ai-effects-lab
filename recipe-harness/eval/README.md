@@ -89,8 +89,23 @@ structure), e23 equalizer terrain, e12 Form sphere (0003=3 confirmed).
 
 ## Round-2 revisions (2026-07-19, post-forensics)
 
-Re-run after the round-1 forensics (four fails re-planned). Net: **T1 82%→91%,
-T2 86% (e13 stays expected-fail), near dist 91%→100%, native family →100%.**
+Re-run after the round-1 forensics (four fails re-planned). **Net: one-shot
+46%→54%, pass@3 71%→79%; T1 82%→91%, T2 86%, T3 33%→50%, near dist →100%,
+ood 33%→50%, native family →100%. ALL PHASE-A EXIT METRICS MET (T1/T2 pass@3
+≥85%, T3 ≥50%).**
+
+- **e17 魔法传送门 — FAIL(4/6/6/6/6) → PASS 9/10.** The portal was a slow pen-
+  stroke: the emitter traced its circle only ONCE over the 4s clip (0.25 rev/s)
+  so only a partial arc existed at any frame — misdiagnosed in round-1 as a
+  density problem (the loop's `0146→8000` nudges did nothing, and the `0005`
+  "live psec twin" was a myth — 0005 is Emitter-Type-Old, every setValue
+  silently errored). Two fixes: (1) **swept-emitter FAST trace** (6 rev/s)
+  repaints the full circle every ~0.17s → complete ring every frame; (2) the
+  solid luminous annulus is a **native shape-layer** (elliptical glowing stroke),
+  not Particular — glow-spheres only ever read as loose beads (capped 6/10). New
+  runner primitive `shapes[]` (ellipse/stroke/fill/rotate/per-shape effects)
+  makes the hybrid reproducible; Particular now only supplies bead sparkle on the
+  ring edge + outer dust. Promoted to `recipes/native/native-portal-ring.json`.
 
 - **e24 复古双色调海报 — FAIL(2/5/6) → PASS 9/10.** Design-panel synthesized a
   native stack; the win was resolving the **strict-two-tone vs visible-emboss

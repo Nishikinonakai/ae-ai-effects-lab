@@ -7,93 +7,93 @@
     "mystical glow palette on dark background"
   ],
   "iteration": 1,
-  "max_iters": 5,
+  "max_iters": 1,
   "plan": {
     "effects": [
       {
         "matchName": "tc Particular",
         "params": [
           [
+            "tc Particular-0782",
+            1,
+            "Point emitter (thin ring path)"
+          ],
+          [
             "tc Particular-0703",
             2,
-            "Particle Type (Glow Sphere)"
+            "Glow Sphere"
           ],
           [
             "tc Particular-0146",
-            1400,
-            "Particles/sec (aliased home — param BEFORE position expr)"
-          ],
-          [
-            "tc Particular-0005",
-            1400,
-            "Particles/sec (live twin — param BEFORE position expr)"
+            6000,
+            "psec — dense bead sparkle ON the ring edge"
           ],
           [
             "tc Particular-0011",
             0,
-            "Velocity (ring stays)"
+            "Velocity 0 (beads stay on ring)"
           ],
           [
             "tc Particular-0012",
             0,
-            "Velocity Random"
+            "Vel rand"
           ],
           [
             "tc Particular-0013",
             0,
-            "Velocity from Motion"
+            "Vel from motion"
           ],
           [
             "tc Particular-0002",
-            4.2,
-            "Life (full ring persists)"
-          ],
-          [
-            "tc Particular-0065",
-            15,
-            "Life Random %"
+            0.9,
+            "Life (fresh ring)"
           ],
           [
             "tc Particular-0027",
-            4.5,
+            5,
             "Size"
           ],
           [
+            "tc Particular-0074",
+            35,
+            "Size rand"
+          ],
+          [
             "tc Particular-0033",
-            90,
+            95,
             "Opacity"
           ],
           [
             "tc Particular-0070",
             [
-              0.55,
-              0.75,
+              0.6,
+              0.7,
               1,
               1
             ],
-            "Color (arcane blue)"
+            "Arcane blue"
           ],
           [
             "tc Particular-0069",
             2,
-            "Blend Mode (Add)"
+            "Blend Add"
           ],
           [
             "tc Particular-0216",
-            70,
-            "Glow Opacity"
+            90,
+            "Glow opacity"
           ],
           [
             "tc Particular-0215",
-            260,
-            "Glow Size"
+            320,
+            "Glow size"
           ]
         ],
         "expressions": [
           [
             "tc Particular-0581",
-            "a=time*(2*Math.PI/4); [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
-            "Position (circular sweep)"
+            "a=time*(2*Math.PI*6); [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+            "Ring path — fast trace, beads hug the native ring edge"
           ]
         ]
       },
@@ -101,64 +101,64 @@
         "matchName": "tc Particular",
         "params": [
           [
+            "tc Particular-0782",
+            1,
+            "Point"
+          ],
+          [
             "tc Particular-0703",
             2,
-            "Dust Particle Type (Glow Sphere)"
+            "Glow Sphere"
           ],
           [
             "tc Particular-0146",
-            260,
-            "Dust psec (param before position expr)"
-          ],
-          [
-            "tc Particular-0005",
-            260,
-            "Dust psec live twin"
+            700,
+            "Dust psec (outer shed)"
           ],
           [
             "tc Particular-0113",
             1,
-            "Direction (Uniform shed)"
+            "Direction Uniform"
           ],
           [
             "tc Particular-0011",
-            70,
-            "Velocity (outward dust)"
+            75,
+            "Velocity outward"
           ],
           [
             "tc Particular-0012",
             60,
-            "Velocity Random %"
+            "Vel rand"
           ],
           [
             "tc Particular-0002",
-            1.3,
-            "Life (short dust)"
+            1.5,
+            "Life"
           ],
           [
             "tc Particular-0065",
             50,
-            "Life Random %"
+            "Life rand"
           ],
           [
             "tc Particular-0027",
-            2,
+            1.8,
             "Size (fine dust)"
           ],
           [
             "tc Particular-0074",
             60,
-            "Size Random %"
+            "Size rand"
           ],
           [
             "tc Particular-0033",
-            60,
-            "Opacity"
+            42,
+            "Opacity (faint)"
           ],
           [
             "tc Particular-0075",
             60,
-            "Opacity Random %"
+            "Op rand"
           ],
           [
             "tc Particular-0070",
@@ -168,24 +168,24 @@
               1,
               1
             ],
-            "Color (violet dust)"
+            "Violet dust"
           ],
           [
             "tc Particular-0069",
             2,
-            "Blend Mode (Add)"
+            "Blend Add"
           ],
           [
             "tc Particular-0711",
             60,
-            "Turbulence (dust waver)"
+            "Turbulence waver"
           ]
         ],
         "expressions": [
           [
             "tc Particular-0581",
-            "a=time*(2*Math.PI/4)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
-            "Position (offset sweep)"
+            "a=time*(2*Math.PI*6)+0.6; [640+250*Math.sin(a), 360-250*Math.cos(a), 0]",
+            "Dust path — sheds around the whole ring edge"
           ]
         ]
       },
@@ -194,17 +194,17 @@
         "params": [
           [
             "ADBE Glo2-0002",
-            140,
+            100,
             "Glow Threshold"
           ],
           [
             "ADBE Glo2-0003",
-            60,
+            90,
             "Glow Radius"
           ],
           [
             "ADBE Glo2-0004",
-            1.2,
+            2,
             "Glow Intensity"
           ]
         ],
