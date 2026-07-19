@@ -1,6 +1,7 @@
 # PRD — AE 自然语言特效助手（简版路线书）
 
-*2026-07-19 · 基于 lab 全部实证数据（commit 6f27559 时点）*
+*2026-07-19 · 基于 lab 全部实证数据*
+*最新更新:2026-07-19 深夜 session 末(commit aa17696)—— 产品推理内核端到端打通、真机验证。**最新现状与下一步看 §九**(前面 §一~§八 为架构与论点,§九 是当前交接快照)。*
 
 ---
 
@@ -90,7 +91,7 @@
 
 **B. 情境接地（brownfield：读现状 → create-vs-modify + 层级）** —— 决定"新建一层还是改已有层、改哪层、放第几层",必须先看现状:
 - **感知原语已建**:`brownfield/dump_comp.mjs`(2026-07-19)—— 一次性 dump 活动合成:每个图层(名/类型/**推断角色**:background/generator/adjustment/text/shape/matte/element…)+ effect 链 + **每个 effect 的实际参数值**(+ 表达式/CUSTOM_VALUE 曲线标记)+ **当前渲染帧**。让模型同时看到"有什么/怎么配的/长什么样"。已在真实 comp 验证(读出 Particular 的实际 400 参数 + 角色 + 帧)。
-- **缺的是编辑协议**:把(结构+参数+帧+prompt)融成一个安全的决策与应用(undo group、"不碰我没建的图层"、逐轮接受/回滚)。这是 brownfield 北极星的下一步。
+- **编辑协议已建成(2026-07-19,详见 §九)**:`apply_edit.mjs`(可逆 param/addEffect/expression + 关键帧感知 + undo group + 确定性 rollback + opaque-core gate)+ `verify_edit.mjs`(视觉自检)+ `tune_edit.mjs`(自动收敛)。brownfield 北极星的编辑侧已跑通并真机验证。
 
 **C. 视觉环 = 让"对不确定插件推理"变安全的安全网。** 模型对冷门插件猜错参数,帧会露馅,环会纠——所以"泛化到任意插件"能成立恰恰因为有闭环兜底。三条 moat 在这套逻辑里合流:essence 索引(知识广度)+ 品味层(curation)+ 视觉闭环(纠错)。
 
@@ -99,3 +100,46 @@
 **D. 表达式生成与应用(一等能力,2026-07-19 用户点出)。** 产品不只"配效果",还应能**写并挂表达式**——尤其当用户明确请求"我想在 xx 图层给 xx 做 xx,表达式怎么写?"。表达式是 AE 里程序化运动/联动的主路径(loopOut、sourceText 联动、null 驱动、wiggle、pseudo-control 引用),lab 的 runner/aep_scan 已能读/写表达式,能力上可行。素材:真实工程里读到的表达式(23400 条 in AnoBando,含 `Pseudo/*` 控件引用 + ATOM 歌词时序)——**很多来自第三方效果预设而非用户自写,正好是一份"别人怎么写表达式"的可学语料**,未来沉淀成产品自己的表达式逻辑库(类似配方库,但针对表达式模式)。essence 卡里已带 `reasoning_hooks`,表达式模式可类似地做"意图→表达式模板"的检索层。
 
 **E. essence 卡管线已验证便宜(2026-07-19)。** 第一张第三方 essence 卡 BCC Cross Glitch 落地(`introspect/essence/`):专业插件参数**有语义名**,introspect 一把拿到名字/范围/枚举,模型先验 + 卡片覆盖大半,probe 只校准不确定的枚举/杠杆——**"给整套已装插件建 shallow essence 索引"成本低、可规模化**,坐实 §二 因果本体 moat 从 Particular 泛化到任意插件。
+
+---
+
+## 九、现状快照 + 下一步推荐（2026-07-19 深夜 session 末 · commit aa17696 · 交接给新会话）
+
+> 一句话:§八 描述的运行时认知回路,这个 session 从"设计"变成了"能跑的参考实现"——**产品推理内核已端到端打通、真机验证、对抗审查加固**。所有代码已 push 到 `Nishikinonakai/ae-ai-effects-lab`,每一件都带真机验证,工程原件从未被改(copy-then-open / 静态读 / 编辑后不保存)。
+
+### 9.1 本 session 建成的完整回路
+
+> **感知(时间/素材/门控感知) → essence 路由(scalar + 表达式-rig + spatial-ml) → create-vs-modify → 可逆+关键帧感知的编辑 → 视觉自检 → 自动收敛调优 → spatial/ML 能力边界**
+
+**感知层 `brownfield/`**
+- `dump_comp.mjs` —— 活动 comp 全量 dump,现已 **时间感知**(`activeNow`/`activeCount`:146 层里哪 13 层此刻真的活着)+ **素材感知**(`sourceMissing` + 警告:缺素材→色条占位帧,别拿它做视觉判断)+ **门控感知**(`⟨opaque-core⟩` 标记 Roto/Tracker/Puppet/Element3D + 各自 handoff)+ 每参数 `numKeys`(是否被 K 帧驱动)。
+- `comp_graph.mjs`(全工程嵌套树,重到渲不动也能读)、`aep_scan.py`/`aep_params.py`(静态 RIFX 读,不开 AE)。
+
+**essence 索引 `introspect/essence/`(三种卡型)**
+- **effect 卡 ×5**(BCC Cross Glitch 参考实现 + Deep Glow/Textures/Camera Shake/Damaged TV)。
+- **表达式-rig 卡 ×1**(Layout/In-Out Animator = 用户自己的 `Pseudo/0e3wiwbivl` MG rig,纯静态从工程字节解码,AMV×1477 + 营销×12 **跨类验证**):生成载荷 `driver_expression_patterns`,产品可直接 emit 复现技法(§八 D)。
+- **spatial/ML 卡 ×3(覆盖全 tier)** —— 新 `spatial-ml` 卡型,画的是**能力边界**不是旋钮表:Roto Brush(Tier-B 参考,真机端到端验证)/ Bezier Warp(Tier-A 全参数化)/ Element 3D(Tier-C 全 gated)。核心洞见:这类效果都有"可脚本的控制面 + 不透明的承重核",结构指纹 = `customValue` 计数(0+全 scalar=in-params;有 customValue 或空数据组=opaque core)。6 张 introspect 卡 + 6 份 state-model 分析已存(`spatial_ml_state_models.json`)。**产品原则:"gate the core, own the surface —— 决不假装状态存在"**,在感知(dump_comp)和编辑(apply_edit)两侧都已落地。
+
+**编辑协议 `brownfield/`(§八 B 北极星,已建成 + 真机验证)**
+- `apply_edit.mjs` —— 可逆编辑,3 种 op:**param**(静态 + **关键帧感知** scale/setAtTime,保 ease + 插值类型;**对抗审查工作流抓出并修了 6 个逆操作 bug**,含 HOLD 关键帧回滚变 bezier 的静默工程污染)/ **addEffect** / **expression**(§八 D 生成,已真机验证生成 layout-rig driver)。每步 undo group + 确定性 inverse rollback + opaque-core gate 警告。
+- `verify_edit.mjs` —— 视觉自检:BEFORE/AFTER 对**原始基线**打分(复用 GPT scorer)→ ACCEPT/TUNE/ROLLBACK + 退出码;正反双向验证过(该 accept accept、该 rollback 给出正确下一步)。
+- `tune_edit.mjs` —— **自动收敛回路(内核 capstone)**:apply → verify → 把 scorer 建议映射成下一步编辑 → 重复,跌落回滚 + 多杠杆调。真机验证:弱起手 glow **4/10 →(scorer 同时抬 Radius+Intensity)→ 9/10 accept**,全自动。把 KillKiss E2E 里手动做的调优变成自动。
+
+**真机端到端验证(只有真工程才暴露的坑,已全修)**
+- **KillKiss 真实 4K/146 层工程**:整条回路成立,且各部件互相印证(dump_comp 读出的歌词孪生层结构 = BCC Cross Glitch essence 卡记录的一模一样)。暴露并**全部修掉 6 个 E2E findings**(素材本地性 / K 帧 look 参数 / saveFrameToPng 异步半写帧误判 / 4K 帧过大 / 迭代基线 / 单杠杆高原)——见 `brownfield/E2E_FINDINGS.md`。
+- **Roto Brush 全流程真机验证,含 computer-use 亲手完成 handoff**:在 Layer 面板画 roto 笔触 → matte 生成 → 产品渲染出合成结果(主体抠到下层)→ 改 matte 边(/rmshiftedges)→ 回滚。**"gate the core → 人做创建 → 产品接管表面"整条链在真 opaque-core 效果上跑通**,并证明 computer-use 能驱动那一步人机 handoff。
+
+### 9.2 现状:哪些完成、哪些还缺
+
+- **内核(推理侧)—— 基本完成。** 感知 / essence 路由(三卡型)/ create-vs-modify / 可逆+关键帧编辑 / 视觉自检 / 自动收敛调优 / spatial-ML 能力边界,全部真机验证。E2E 6 findings 全 addressed。**这是本仓库这一 session 的主要产出。**
+- **还缺**(下节按推荐排序):产品外壳(§七,没开始)· essence→scorer 联动最后一截 · essence 广度(只 9 张卡)· 运行时泛化产品化(只这台 AE2022+TC2023 验过)· 配方重写+licensing(已定未干)· Phase A lab 遗留(UI 门控 / 曲线母版 / planner-eval r2 / 跨族组合)。
+
+### 9.3 下一步推荐(给新会话,按"离你能日常用最近"排序)
+
+1. **【推荐首选】产品外壳 MVP 起手(§七)。** 内核已足够撑起一个能用的东西。做最小三件套:薄 ScriptUI/CEP 面板(输入框 + 预览帧 + 接受·回滚按钮)+ Electron 大脑(装内核 + 密钥 + 知识库)+ 本地桥。lab 已把"装插件 / 修通信"脚本化,产品化 ≈ 套 UI + 接内核。**出口:你自己下一个 AMV 愿意开着它试。** 这是把这一 session 的内核变成产品的最短路径。
+2. **essence→scorer co-lever 联动(小、收尾 finding #6)。** tune_edit 的多杠杆 pivot 现在受限于"scorer 只看得到 plan 里已有的杠杆"。把命中的 essence 卡 `config_recipes` co-levers 注入 scorer 请求,让它能主动 pivot 到 Radius 这类还没上场的杠杆——直接提升自动调优质量,当天可完成。
+3. **真实工作流 dogfooding。** 拿你下一个 AMV/PV 当 testbed,跑"读现状 → 改一处 → 自检 → 收敛"整条,记录哪里手感不对。**这一 session 每次真机验证都比合成测试多抓坑**——比造更多卡片更能暴露真问题。
+4. **essence 广度按需扩。** Puppet / 3D Tracker 的 spatial-ml 卡(分析已备,`spatial_ml_state_models.json`)、你高频用的第三方效果卡;shallow-for-breadth,让路由覆盖更多请求。
+5. **运行时泛化(Phase C 预研)。** introspect-on-install 的版本 / 语言 / 插件探测 → 本体即时构建,朝"没见过的 AE 装机上也能端到端跑"推。
+
+*(新会话上手提示:`bridge_up.sh` 起桥;真机验证一律 copy-then-open 或静态读、编辑后不保存,决不碰工程原件;`recipe-harness/.env.api` 里的 OpenAI key 已 gitignore,别提交;记忆在 `memory/ae-ai-plugin-next-step.md`。)*
