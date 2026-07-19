@@ -59,7 +59,10 @@ const header = [
 const content = [{ type: 'text', text: header }];
 // mined drafts embed their target look as "reference thumbnail: <path>" in the intent —
 // attach it so the scorer judges image-vs-image (the validation criterion), not text-vs-image.
-const thumbMatch = (req.intent || '').match(/reference thumbnail:\s*(\/\S+\.png)/i);
+// path may contain SPACES (every vendor thumb does, e.g. "Smoke Hit.png") — \S+ silently
+// failed to match those, so the reference NEVER attached and every "image-vs-image" mining
+// score was actually text-vs-image. Match through spaces to the last .png on the line.
+const thumbMatch = (req.intent || '').match(/reference thumbnail:\s*(\/.+\.png)/i);
 if (thumbMatch && fs.existsSync(thumbMatch[1])) {
   content.push({ type: 'text', text: 'REFERENCE (vendor thumbnail — the TARGET look; judge the render against this):' });
   content.push({ type: 'image_url', image_url: { url: `data:image/png;base64,${b64(thumbMatch[1])}`, detail: 'high' } });

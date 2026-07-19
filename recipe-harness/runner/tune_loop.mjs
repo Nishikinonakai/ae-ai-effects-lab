@@ -133,6 +133,10 @@ function applySuggestions(plan, sugs, forIter) {
         else list.push([s.matchName, val, `${(s.why || 'added').slice(0, 40)} [i${forIter}]`]);
         applied.push(s);
       } else if (s.type === 'effect') {
+        // layer-transform pseudo-effects (e.g. "ADBE Transform") are not addable to a layer's
+        // effect group — the runner throws "Can not add a property with name ... to this
+        // PropertyGroup" and the whole loop aborts. Skip them like any other invalid suggestion.
+        if (/^ADBE Transform$/i.test(String(s.matchName || ''))) { skipped.push({ s, why: 'layer-transform not addable as an effect' }); continue; }
         if (effectAdds >= 1) { skipped.push({ s, why: 'max one new effect per iteration' }); continue; }
         if (p.effects.find(e => e.matchName === s.matchName)) { skipped.push({ s, why: 'already in stack' }); continue; }
         p.effects.push({ matchName: s.matchName, params: s.params || [], expressions: s.expressions || [] });
