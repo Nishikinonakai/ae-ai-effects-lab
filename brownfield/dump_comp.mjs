@@ -70,6 +70,18 @@ const AEX = String.raw`(function () {
     return fxCount > 0 ? "element-fx" : "element";   // has footage; effects on it = a treated element
   }
 
+  // --- spatial/ML opaque-core registry: effects whose LOAD-BEARING state (matte/solve/mesh/scene)
+  // is NOT in scriptable params, so the product must GATE (verify the state exists) before acting and
+  // hand the create-step back to the user. See introspect/essence/ (spatial-ml cards). Only the
+  // opaque-core classes are listed — Bezier Warp / Chroma Key are state-in-params, no gate needed.
+  function spatialML(mn){
+    if (mn === "ADBE Samurai") return '{"class":"ml-segmentation","opaque":"matte (strokes+ML propagation)","gate":"matte is not readable/writable via params — do NOT trust finishing knobs until the user has painted+propagated; then own the refine surface"}';
+    if (mn === "ADBE 3D Tracker") return '{"class":"camera-solve","opaque":"solved camera + 3D point cloud","gate":"solve is not scriptable — ask the user to Analyze then Create Camera/Null; then drive the EXTRACTED layers"}';
+    if (mn === "ADBE FreePin3") return '{"class":"mesh-deform","opaque":"ARAP mesh + pin instantiation","gate":"defer pin creation (place pins on the artwork); once pins exist their motion is fully in-params"}';
+    if (mn === "VIDEOCOPILOT 3DArray") return '{"class":"3d-scene","opaque":"3D scene (models+materials)","gate":"all group/material controls are INERT until the user builds a scene in the modal Scene Setup + links model files"}';
+    return null;
+  }
+
   // --- one effect: matchName + name + enabled + ACTUAL leaf param values ---
   function dumpEffect(fx){
     var params = [], count = { n: 0 };
@@ -105,7 +117,9 @@ const AEX = String.raw`(function () {
     walk(fx);
     var truncated = (count.n >= MAXP);
     var en = true; try { en = fx.enabled; } catch(e){}
+    var sml = null; try { sml = spatialML(fx.matchName); } catch(eSm){}
     return '{"matchName":'+jstr(fx.matchName)+',"name":'+jstr(fx.name)+',"enabled":'+(en?'true':'false')+
+           (sml?',"opaqueCore":'+sml:'')+
            ',"paramCount":'+count.n+(truncated?',"truncated":true':'')+',"params":['+params.join(',')+']}';
   }
 
@@ -195,13 +209,19 @@ try {
   const live = state.activeCount != null ? state.activeCount : state.layers.filter(L => L.activeNow).length;
   console.log(`comp "${state.comp}"  ${state.width}x${state.height} @${state.fps}fps  t=${state.time}s  ${state.numLayers} layers (${live} live at this frame)`);
   if (state.missingLive > 0) console.log(`  ⚠ ${state.missingLive} LIVE layer(s) have MISSING footage → the rendered frame is a color-bar placeholder; do NOT trust visual reasoning about it.`);
+  const gated = [];
   for (const L of state.layers) {
-    const fx = L.effects.map(e => e.name + (e.enabled ? '' : ':off')).join(', ');
+    const fx = L.effects.map(e => e.name + (e.enabled ? '' : ':off') + (e.opaqueCore ? ` ⟨opaque-core:${e.opaqueCore.class}⟩` : '')).join(', ');
+    for (const e of L.effects) if (e.opaqueCore) gated.push({ layer: L.index, name: e.name, gate: e.opaqueCore.gate });
     // mark layers that exist but are trimmed out of / disabled at the current frame — the reasoning
     // layer should not attribute anything in the rendered frame to a non-live layer.
     const dead = L.activeNow === false ? (L.enabled ? ' ·trimmed-out' : ' (disabled)') : '';
     const miss = L.sourceMissing ? ' ⚠MISSING-FOOTAGE' : '';
     console.log(`  [${L.index}] ${L.name}  <${L.role}>${dead}${miss}${L.threeD ? ' 3D' : ''}${fx ? '  fx: ' + fx : ''}`);
+  }
+  if (gated.length) {
+    console.log(`\n⟨GATE THE CORE⟩ ${gated.length} opaque-core effect(s) — verify state exists before acting; don't bluff it:`);
+    for (const g of gated) console.log(`  layer ${g.layer} ${g.name}: ${g.gate}`);
   }
   console.log(`\nstate → ${path.relative(REPO, finalJson)}`);
   console.log(`frame → ${fs.existsSync(finalPng) ? path.relative(REPO, finalPng) : '(frame not ready)'}`);
