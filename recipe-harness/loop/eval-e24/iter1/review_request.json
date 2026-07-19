@@ -7,7 +7,7 @@
     "poster-like graphic cohesion"
   ],
   "iteration": 1,
-  "max_iters": 3,
+  "max_iters": 1,
   "plan": {
     "effects": [
       {
@@ -15,55 +15,114 @@
         "params": [
           [
             "ADBE Fractal Noise-0001",
-            2,
-            "Fractal Type (sparse/threshold = graphic shapes)"
+            1,
+            "Fractal Type Basic (bold graphic masses)"
           ],
           [
             "ADBE Fractal Noise-0002",
-            3,
-            "Noise Type"
+            1,
+            "Noise Type BLOCK (hard-edged, not clouds)"
           ],
           [
             "ADBE Fractal Noise-0004",
-            260,
-            "Contrast (hard edges)"
+            200,
+            "Contrast (decisive dark/light fills)"
           ],
           [
             "ADBE Fractal Noise-0005",
-            -5,
-            "Brightness"
+            0,
+            "Brightness (balanced ~50/50 blue/cream)"
+          ],
+          [
+            "ADBE Fractal Noise-0006",
+            1,
+            "Overflow Clip (reinforce edges)"
           ],
           [
             "ADBE Fractal Noise-0010",
-            200,
-            "Scale"
-          ]
-        ],
-        "expressions": [
+            120,
+            "Scale (poster-scale masses)"
+          ],
+          [
+            "ADBE Fractal Noise-0013",
+            [
+              640,
+              360
+            ],
+            "Offset Turbulence = comp center (fill frame)"
+          ],
+          [
+            "ADBE Fractal Noise-0015",
+            2,
+            "Complexity (few clean shapes)"
+          ],
           [
             "ADBE Fractal Noise-0023",
-            "time*18",
-            "Evolution (slow)"
+            0,
+            "Evolution=0 static (frame stability, NO expression)"
+          ],
+          [
+            "ADBE Fractal Noise-0027",
+            5,
+            "Random Seed fixed"
           ]
-        ]
+        ],
+        "expressions": []
       },
       {
-        "matchName": "ADBE Tile",
+        "matchName": "ADBE Mosaic",
         "params": [
           [
-            "ADBE Tile-0004",
-            220,
-            "Output Width"
+            "ADBE Mosaic-0001",
+            12,
+            "Horizontal Blocks (bold poster grid)"
           ],
           [
-            "ADBE Tile-0005",
-            220,
-            "Output Height"
+            "ADBE Mosaic-0002",
+            7,
+            "Vertical Blocks (roughly square cells)"
           ],
           [
-            "ADBE Tile-0006",
+            "ADBE Mosaic-0003",
             1,
-            "Mirror Edges (kaleido symmetry)"
+            "Sharp Colors ON (flat hard-edged cells)"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE Posterize",
+        "params": [
+          [
+            "ADBE Posterize-0001",
+            2,
+            "Levels=2 — binarize BASE cells to pure black/white BEFORE emboss"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE Emboss",
+        "params": [
+          [
+            "ADBE Emboss-0001",
+            135,
+            "Direction 135"
+          ],
+          [
+            "ADBE Emboss-0002",
+            8,
+            "Relief 8 (lip width)"
+          ],
+          [
+            "ADBE Emboss-0003",
+            220,
+            "Contrast 220"
+          ],
+          [
+            "ADBE Emboss-0004",
+            78,
+            "Blend 78 — cells stay near-pure; only lips swing to relief mid-tones"
           ]
         ],
         "expressions": []
@@ -79,7 +138,7 @@
               0.25,
               1
             ],
-            "Map Black To (deep blue)"
+            "Map Black To deep blue ink"
           ],
           [
             "ADBE Tint-0002",
@@ -89,33 +148,12 @@
               0.78,
               1
             ],
-            "Map White To (cream)"
+            "Map White To cream paper"
           ],
           [
             "ADBE Tint-0003",
             100,
-            "Amount (strict duotone)"
-          ]
-        ],
-        "expressions": []
-      },
-      {
-        "matchName": "ADBE Emboss",
-        "params": [
-          [
-            "ADBE Emboss-0002",
-            3,
-            "Relief"
-          ],
-          [
-            "ADBE Emboss-0003",
-            170,
-            "Contrast"
-          ],
-          [
-            "ADBE Emboss-0004",
-            45,
-            "Blend With Original (keep duotone)"
+            "Amount 100 (only 2 input levels -> exactly 2 inks)"
           ]
         ],
         "expressions": []
@@ -133,5 +171,5 @@
     "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e24/iter1/eval-e24_i1_t4.png"
   ],
   "prior_iterations": [],
-  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
 }

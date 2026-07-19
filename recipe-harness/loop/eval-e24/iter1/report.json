@@ -3,78 +3,109 @@
   "name": "eval-e24_i1",
   "params": [
     {
-      "p": "[1:ADBE Fractal Noise] Fractal Type (sparse/threshold = graphic shapes)",
-      "ok": true,
-      "v": "2"
-    },
-    {
-      "p": "[1:ADBE Fractal Noise] Noise Type",
-      "ok": true,
-      "v": "3"
-    },
-    {
-      "p": "[1:ADBE Fractal Noise] Contrast (hard edges)",
-      "ok": true,
-      "v": "260"
-    },
-    {
-      "p": "[1:ADBE Fractal Noise] Brightness",
-      "ok": true,
-      "v": "-5"
-    },
-    {
-      "p": "[1:ADBE Fractal Noise] Scale",
-      "ok": true,
-      "v": "200"
-    },
-    {
-      "p": "[1:ADBE Fractal Noise] Evolution (slow) (expr)",
-      "ok": true
-    },
-    {
-      "p": "[2:ADBE Tile] Output Width",
-      "ok": true,
-      "v": "220"
-    },
-    {
-      "p": "[2:ADBE Tile] Output Height",
-      "ok": true,
-      "v": "220"
-    },
-    {
-      "p": "[2:ADBE Tile] Mirror Edges (kaleido symmetry)",
+      "p": "[1:ADBE Fractal Noise] Fractal Type Basic (bold graphic masses)",
       "ok": true,
       "v": "1"
     },
     {
-      "p": "[3:ADBE Tint] Map Black To (deep blue)",
+      "p": "[1:ADBE Fractal Noise] Noise Type BLOCK (hard-edged, not clouds)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Contrast (decisive dark/light fills)",
+      "ok": true,
+      "v": "200"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Brightness (balanced ~50/50 blue/cream)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Overflow Clip (reinforce edges)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Scale (poster-scale masses)",
+      "ok": true,
+      "v": "120"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Offset Turbulence = comp center (fill frame)",
+      "ok": true,
+      "v": "640,360"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Complexity (few clean shapes)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Evolution=0 static (frame stability, NO expression)",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] Random Seed fixed",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[2:ADBE Mosaic] Horizontal Blocks (bold poster grid)",
+      "ok": true,
+      "v": "12"
+    },
+    {
+      "p": "[2:ADBE Mosaic] Vertical Blocks (roughly square cells)",
+      "ok": true,
+      "v": "7"
+    },
+    {
+      "p": "[2:ADBE Mosaic] Sharp Colors ON (flat hard-edged cells)",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[3:ADBE Posterize] Levels=2 — binarize BASE cells to pure black/white BEFORE emboss",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[4:ADBE Emboss] Direction 135",
+      "ok": true,
+      "v": "135"
+    },
+    {
+      "p": "[4:ADBE Emboss] Relief 8 (lip width)",
+      "ok": true,
+      "v": "8"
+    },
+    {
+      "p": "[4:ADBE Emboss] Contrast 220",
+      "ok": true,
+      "v": "220"
+    },
+    {
+      "p": "[4:ADBE Emboss] Blend 78 — cells stay near-pure; only lips swing to relief mid-tones",
+      "ok": true,
+      "v": "78"
+    },
+    {
+      "p": "[5:ADBE Tint] Map Black To deep blue ink",
       "ok": true,
       "v": "0.07000000029802,0.10000"
     },
     {
-      "p": "[3:ADBE Tint] Map White To (cream)",
+      "p": "[5:ADBE Tint] Map White To cream paper",
       "ok": true,
       "v": "0.93000000715256,0.88999"
     },
     {
-      "p": "[3:ADBE Tint] Amount (strict duotone)",
+      "p": "[5:ADBE Tint] Amount 100 (only 2 input levels -> exactly 2 inks)",
       "ok": true,
       "v": "100"
-    },
-    {
-      "p": "[4:ADBE Emboss] Relief",
-      "ok": true,
-      "v": "3"
-    },
-    {
-      "p": "[4:ADBE Emboss] Contrast",
-      "ok": true,
-      "v": "170"
-    },
-    {
-      "p": "[4:ADBE Emboss] Blend With Original (keep duotone)",
-      "ok": true,
-      "v": "45"
     }
   ],
   "frames": [

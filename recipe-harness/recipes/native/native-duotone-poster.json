@@ -1,0 +1,173 @@
+{
+  "_provenance": "eval-e24 pass (9/10, 2026-07-19) — design-panel synthesized stack, original param set",
+  "intent": "复古双色调印刷海报：抽象直角几何块面，深蓝+米白双色，带浮雕压印线。应见清晰几何块、严格双色、块边高光/阴影浮雕线，画面静止稳定。",
+  "name": "native-duotone-poster",
+  "compName": "Native_duotone_poster",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "hostName": "Poster",
+  "effects": [
+    {
+      "matchName": "ADBE Fractal Noise",
+      "params": [
+        [
+          "ADBE Fractal Noise-0001",
+          1,
+          "Fractal Type Basic (bold graphic masses)"
+        ],
+        [
+          "ADBE Fractal Noise-0002",
+          1,
+          "Noise Type BLOCK (hard-edged, not clouds)"
+        ],
+        [
+          "ADBE Fractal Noise-0004",
+          200,
+          "Contrast (decisive dark/light fills)"
+        ],
+        [
+          "ADBE Fractal Noise-0005",
+          0,
+          "Brightness (balanced ~50/50 blue/cream)"
+        ],
+        [
+          "ADBE Fractal Noise-0006",
+          1,
+          "Overflow Clip (reinforce edges)"
+        ],
+        [
+          "ADBE Fractal Noise-0010",
+          120,
+          "Scale (poster-scale masses)"
+        ],
+        [
+          "ADBE Fractal Noise-0013",
+          [
+            640,
+            360
+          ],
+          "Offset Turbulence = comp center (fill frame)"
+        ],
+        [
+          "ADBE Fractal Noise-0015",
+          2,
+          "Complexity (few clean shapes)"
+        ],
+        [
+          "ADBE Fractal Noise-0023",
+          0,
+          "Evolution=0 static (frame stability, NO expression)"
+        ],
+        [
+          "ADBE Fractal Noise-0027",
+          5,
+          "Random Seed fixed"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Mosaic",
+      "params": [
+        [
+          "ADBE Mosaic-0001",
+          12,
+          "Horizontal Blocks (bold poster grid)"
+        ],
+        [
+          "ADBE Mosaic-0002",
+          7,
+          "Vertical Blocks (roughly square cells)"
+        ],
+        [
+          "ADBE Mosaic-0003",
+          1,
+          "Sharp Colors ON (flat hard-edged cells)"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Posterize",
+      "params": [
+        [
+          "ADBE Posterize-0001",
+          2,
+          "Levels=2 — binarize BASE cells to pure black/white BEFORE emboss"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Emboss",
+      "params": [
+        [
+          "ADBE Emboss-0001",
+          135,
+          "Direction 135"
+        ],
+        [
+          "ADBE Emboss-0002",
+          8,
+          "Relief 8 (lip width)"
+        ],
+        [
+          "ADBE Emboss-0003",
+          220,
+          "Contrast 220"
+        ],
+        [
+          "ADBE Emboss-0004",
+          78,
+          "Blend 78 — cells stay near-pure; only lips swing to relief mid-tones"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Tint",
+      "params": [
+        [
+          "ADBE Tint-0001",
+          [
+            0.07,
+            0.1,
+            0.25,
+            1
+          ],
+          "Map Black To deep blue ink"
+        ],
+        [
+          "ADBE Tint-0002",
+          [
+            0.93,
+            0.89,
+            0.78,
+            1
+          ],
+          "Map White To cream paper"
+        ],
+        [
+          "ADBE Tint-0003",
+          100,
+          "Amount 100 (only 2 input levels -> exactly 2 inks)"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_technique": "Duotone-relief architecture (resolves strict-two-tone vs visible-emboss tension): FN(Basic,BLOCK,static evolution) -> Mosaic(sharp cells) -> Posterize(2) BINARIZES BASE -> Emboss(blend 78, on binary field so only lips go grey) -> Tint(continuous, LAST). Key: binarize the base BEFORE emboss so the ONLY non-binary values Tint sees are the relief lips => pure navy/cream cells + grey-lip relief edges. Posterize AFTER emboss (or levels>2) muddies; emboss AFTER tint desaturates."
+}

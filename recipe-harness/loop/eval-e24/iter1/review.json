@@ -1,10 +1,7 @@
 {
-  "verdict": "fail",
-  "score": 2,
-  "critique": "Uniform flat slate frame at both t1 and t4 — no geometry, no duotone, no relief. Root cause: Fractal Type 2 (sparse/threshold) at Contrast 260 collapses to a near-uniform field; the mirror-tile of nothing is nothing, and Emboss over a featureless base outputs its neutral grey which the 45% blend mixes into the tint = the observed slate. The stack's structure is fine; the BASE generator degenerated.",
-  "suggestions": [
-    { "type": "param", "effect": "ADBE Fractal Noise", "matchName": "ADBE Fractal Noise-0001", "value": 13, "why": "enriched card: type 13 = liquid marble veins — strong graphic structure that survives thresholding, poster-like shapes" },
-    { "type": "param", "effect": "ADBE Fractal Noise", "matchName": "ADBE Fractal Noise-0004", "value": 180, "why": "260 crushed the field to one side; 180 keeps hard edges with both tones present" },
-    { "type": "param", "effect": "ADBE Fractal Noise", "matchName": "ADBE Fractal Noise-0005", "value": 0, "why": "neutral brightness so black/white both survive for the duotone map" }
-  ]
+  "verdict": "pass",
+  "score": 9,
+  "critique": "画面为清晰可读的抽象直角几何块面构成，深蓝与米白主导且没有全彩泄漏。块面边缘可见稳定的高光/阴影浮雕线，形成纸张压印般的层次；整体静止一致，t1与t4之间无意外运动或闪烁。构图、色调和硬边网格共同呈现出统一的复古双色印刷海报感。",
+  "suggestions": [],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

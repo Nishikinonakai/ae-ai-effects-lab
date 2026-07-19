@@ -2,7 +2,12 @@
   "_planner_rationale": [
     "in-dist T3: recipes/tornado.json IS the answer — the recipe encodes the two structural facts param reasoning cannot supply: (1) the funnel is painted by a SWEPT-ANGLE emitter expression (triangle-wave height, radius growing with height, 12 rev/s merges coils into a wall — World Rotation does NOT orbit particles), (2) Particular auto-uses the comp camera, so a 3D camera rig supplies the perspective",
     "reused verbatim including motion blur 200 shutter and dense 40k psec dust wall; only naming + two-frame sampling changed",
-    "renderFrames [2,5] — funnel needs ~2s build-up; two frames let the scorer read the sweep/rotation"
+    "renderFrames [2,5] — funnel needs ~2s build-up; two frames let the scorer read the sweep/rotation",
+    "r2 (2026-07-19, forensics): helix pitch was 52px/coil (angRev 12, 630px/s climb) vs ~3px particle wall -> discrete slinky coils, the sole failing criterion. angRev 28 + hPer 2.5 = 18px pitch, below wall thickness (size 3.2 + size-random 55 + turbulence 50, opacity 45, life 2.3 for concurrent turns). Turbulence is non-monotonic: 95 shreds, ~50 blends (iter3 evidence). If coils still read: add 2nd instance with y+=11 half-pitch interleave.",
+    "r3 (2026-07-19): coil-fusion via emitter GEOMETRY not turbulence. Point emitter (0782=1) spawns every particle at the exact moving helix point -> thin discrete bands (Emitter Size is IGNORED for Point). Switch to Box (0782=2) + Emitter Size 6x22x6: each instant spawns a short vertical box that overlaps the ~18px pitch, fusing the spring into a continuous wall while X/Z=6 keeps rotation legible. Camera to 3/4 angle for the perspective the scorer found subdued.",
+    "r4 (2026-07-19): scorer at 5/10 credited rotation+dust+taper; residue = diagonal spiral bands + 'pinched lobes'. Lobes = triangle-wave emitter DWELLING at up/down turnarounds (velocity->0 => density pileup). Fix: constant-speed sawtooth climb (uniform density, no bulges). Banding: raise Turbulence SCALE (0715=32) not magnitude to break striation grain; keep tight helix (scorer's 'fewer revs' is the non-monotonic trap — wider pitch reintroduces coils).",
+    "r5 (2026-07-19): 6/10 residue fixes. (1) reframe yB640/yT150 + camera pull to -1650 = margin top&bottom (no clip). (2) base radius rB 10->20 + psec 14000 kills the bright pinpoint clump. (3) Velocity-from-Emitter-Motion 0013=16 imparts the emitter's fast tangential sweep to particles => tangential motion-blur streaks => legible rotation without reintroducing coils. (4) camera 3/4 + elevated (880,320) reveals elliptical cross-section for 3D depth.",
+    "r6 (2026-07-19): reverted r5's two overreaches — camera 3/4-elevated foreshortened funnel into a disc, and Velocity-from-Motion 16 flung the wall into diffuse dust+foreground bokeh. Restored upright camera; kept the safe r5 wins (base rB20 + psec14000 kill the bright clump, yT150/yB640 reframe). Accept moderate perspective; rotation reads from t2-vs-t5 delta + the translucent volume's near/far walls."
   ],
   "_planner_sources": [
     "recipes/tornado.json"
@@ -34,12 +39,32 @@
       "params": [
         [
           "tc Particular-0782",
-          1,
-          "Emitter Type (Point)"
+          2,
+          "Emitter Type (Box: enables Emitter Size so each spawn fills a vertical segment)"
+        ],
+        [
+          "tc Particular-0577",
+          2,
+          "Emitter Size mode (2=individual XYZ)"
+        ],
+        [
+          "tc Particular-0014",
+          6,
+          "Emitter Size X (thin: keep helix crisp laterally)"
+        ],
+        [
+          "tc Particular-0015",
+          16,
+          "Emitter Size Y (~pitch: bridges coils into a wall — THE coil-fusion fix)"
+        ],
+        [
+          "tc Particular-0016",
+          6,
+          "Emitter Size Z (thin)"
         ],
         [
           "tc Particular-0146",
-          40000,
+          14000,
           "Particles/sec (dense wall)"
         ],
         [
@@ -54,7 +79,7 @@
         ],
         [
           "tc Particular-0002",
-          1.9,
+          2.3,
           "Life (sec)"
         ],
         [
@@ -64,22 +89,22 @@
         ],
         [
           "tc Particular-0027",
-          2.2,
+          3,
           "Size"
         ],
         [
           "tc Particular-0074",
-          75,
+          62,
           "Size Random %"
         ],
         [
           "tc Particular-0033",
-          30,
+          38,
           "Opacity"
         ],
         [
           "tc Particular-0075",
-          40,
+          55,
           "Opacity Random %"
         ],
         [
@@ -104,8 +129,13 @@
         ],
         [
           "tc Particular-0711",
-          40,
+          58,
           "Turbulence -> Position (merge coils)"
+        ],
+        [
+          "tc Particular-0715",
+          32,
+          "Turbulence Scale (finer noise breaks the diagonal helix grain)"
         ],
         [
           "tc Particular-0035",
@@ -121,26 +151,32 @@
       "expressions": [
         [
           "tc Particular-0581",
-          "var angRev=12.0;var hPer=2.0;var c=(time/hPer)%2;var p=1-Math.abs(1-c);var ang=time*angRev*2*Math.PI;var yB=700,yT=70;var y=yB+(yT-yB)*p;var rB=8,rT=150;var r=rB+(rT-rB)*Math.pow(p,0.8);[640+r*Math.sin(ang),y,r*Math.cos(ang)]",
-          "Emitter Position (swept-angle funnel)"
+          "var angRev=22.0;var climb=2.2;var p=(time/climb)%1;var ang=time*angRev*2*Math.PI;var yB=640,yT=150;var y=yB+(yT-yB)*p;var rB=20,rT=150;var r=rB+(rT-rB)*Math.pow(p,0.75);[640+r*Math.sin(ang),y,r*Math.cos(ang)]",
+          "Emitter Position (r4: constant-climb sawtooth — no turnaround dwell => no density bulges; 48 revs/pass + box fuse => smooth funnel)"
         ]
       ]
     }
   ],
   "camera": {
     "position": [
-      640,
+      812,
       380,
-      -1150
+      -1450
     ],
     "pointOfInterest": [
-      640,
-      430,
+      645,
+      412,
       0
     ]
   },
   "renderFrames": [
     2,
     5
-  ]
+  ],
+  "_eval_result": {
+    "best_score": 7,
+    "verdict": "fail",
+    "date": "2026-07-19",
+    "note": "Box-emitter coil-fusion SOLVED the spring (was the sole failing criterion at 7/4/7 round-1). Stable 7/10: clean tapered translucent dust funnel, spring eliminated, well framed. Residual 1pt: circular-sweep rotation not legible in a 2-still headless eval (swept-emitter tangential velocity too high to inherit as clean streaks once tightened enough to fuse coils) + moderate depth. Reusable technique: Box emitter (0782=2) + Emitter Size Y~=helix pitch fuses swept-helix coils into a continuous wall."
+  }
 }

@@ -87,6 +87,38 @@ cloud curve master — billowing connected volume, 9/10), e09/e10 light-paths
 (dual-psec + zero-velocity ribbon recipe), e16 fireworks (burst spike + shell
 structure), e23 equalizer terrain, e12 Form sphere (0003=3 confirmed).
 
+## Round-2 revisions (2026-07-19, post-forensics)
+
+Re-run after the round-1 forensics (four fails re-planned). Net: **T1 82%→91%,
+T2 86% (e13 stays expected-fail), near dist 91%→100%, native family →100%.**
+
+- **e24 复古双色调海报 — FAIL(2/5/6) → PASS 9/10.** Design-panel synthesized a
+  native stack; the win was resolving the **strict-two-tone vs visible-emboss
+  tension** with a *base-binarize-then-emboss* architecture:
+  `FN(Basic, BLOCK noise, static evolution) → Mosaic(sharp cells) →
+  Posterize(2) [binarize the BASE] → Emboss(blend 78, on the binary field) →
+  Tint(continuous, LAST)`. Binarizing the base BEFORE emboss means the only
+  non-binary values Tint ever sees are the emboss lips at cell edges → pure
+  navy/cream cells + grey-lip relief that reads as paper-embossed. Posterize
+  AFTER emboss (or levels>2) muddies the palette; emboss AFTER tint desaturates
+  it (the two round-1 failures). Promoted to `recipes/native/native-duotone-poster.json`.
+  - **HARNESS GOTCHA found here**: find-or-create effects does NOT remove effects
+    absent from the plan nor reorder shared ones — a stack REDESIGN on a reused
+    host silently keeps the old effects underneath and appends the new ones out
+    of order (scrambled render). For any stack redesign, delete the host's
+    effects (or the comp) first. Reset scripts must match the exact `compName`.
+- **e15 龙卷风 — 7/4/7 → spring SOLVED, score a variable 5-7 (still fail).**
+  Box-emitter coil-fusion is the durable technique: Point emitter (0782=1)
+  spawns every particle at the exact moving helix point → thin discrete coils
+  (Emitter Size is IGNORED for Point). Switch to **Box (0782=2) + Emitter Size Y
+  ≈ helix pitch** so each instant spawns a short vertical box that overlaps the
+  pitch, fusing the swept helix into a continuous wall; a **constant-climb
+  sawtooth** emitter path (not a triangle wave) kills the density bulges that
+  come from dwelling at up/down turnarounds. Residual (uncrossed): taper-vs-
+  cylinder, rotation-legibility, and perspective are mutually-trading complaints
+  at the headless 2-still ceiling for a swept-point dust vortex; the GPT scorer
+  is itself unstable on this frame class (5/6/7 across identical-config runs).
+
 Mechanism facts discovered by the eval itself:
 - ~~**0005 psec twin is STATEFUL**~~ **CORRECTED 2026-07-19 (e13 probe session)**:
   `tc Particular-0005` is **"Emitter Type Old"** — a legacy 1..10 popup (TSV idx 6),

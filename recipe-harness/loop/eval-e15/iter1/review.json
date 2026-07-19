@@ -1,9 +1,15 @@
 {
   "verdict": "fail",
-  "score": 7,
-  "critique": "The recipe's structure carries: t2 reads as a genuine funnel (wide top, tapering base, 3D coil ellipses under the camera rig) and t5 shows sweep/rotation evolution with a nicely dissipating dust crown. Miss: the coil-spring residue — at t5 the lower funnel reads as discrete stacked loops rather than a fused dust wall (the recipe's documented residual; turbulence 40 merges only partially).",
+  "score": 5,
+  "critique": "两帧都呈现出足够密集的烟尘粒子体，颗粒的前后遮挡和明暗密度提供了一些纵深感，且帧间内部颗粒纹理确有变化。但整体轮廓更像几乎等宽的竖直圆柱，漏斗上宽下窄的形状非常弱；旋转被过高频率与高密度融合成静态噪点，缺少可读的环绕扫动或涡旋结构。因此它目前更像一根体积化尘柱，而不是明确的龙卷风漏斗。",
   "suggestions": [
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0711", "value": 95, "why": "stronger position turbulence fuses adjacent coil turns into a continuous wall" },
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0033", "value": 38, "why": "slightly higher opacity thickens the wall so gaps between turns close visually" }
-  ]
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0581",
+      "expression": "var angRev=6.0;var climb=2.2;var p=(time/climb)%1;var ang=time*angRev*2*Math.PI;var yB=640,yT=150;var y=yB+(yT-yB)*p;var rB=8,rT=235;var r=rB+(rT-rB)*Math.pow(p,1.15);[640+r*Math.sin(ang),y,r*Math.cos(ang)]",
+      "why": "显著缩小底部半径并扩大顶部半径，建立清晰的漏斗轮廓；将每秒旋转从22降至6，使跨帧的环绕扫动更可读，同时仍保留足够旋转与粒子融合来避免明显弹簧线圈。"
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

@@ -1,8 +1,0 @@
-{
-  "verdict": "fail",
-  "score": 4,
-  "critique": "Overshot: turbulence 95 shredded the funnel — t2 is a chaotic scribble tangle with no readable silhouette, t5 keeps a coil core but drowns it in scattered wisps. Worse than iter1 (compositional params are non-monotonic — the recipe's tuned 40 was closer than 95). Split the difference.",
-  "suggestions": [
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0711", "value": 55, "why": "between the recipe's tuned 40 (coily but coherent) and 95 (shredded) — fuse turns without destroying the wall" }
-  ]
-}

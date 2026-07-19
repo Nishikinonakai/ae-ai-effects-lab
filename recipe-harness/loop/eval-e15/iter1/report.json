@@ -3,14 +3,34 @@
   "name": "eval-e15_i1",
   "params": [
     {
-      "p": "[1:tc Particular] Emitter Type (Point)",
+      "p": "[1:tc Particular] Emitter Type (Box: enables Emitter Size so each spawn fills a vertical segment)",
       "ok": true,
-      "v": "1"
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size mode (2=individual XYZ)",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size X (thin: keep helix crisp laterally)",
+      "ok": true,
+      "v": "6"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Y (~pitch: bridges coils into a wall — THE coil-fusion fix)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
+    },
+    {
+      "p": "[1:tc Particular] Emitter Size Z (thin)",
+      "ok": false,
+      "err": "Error: After Effects error: Can not “set value” with this property, be"
     },
     {
       "p": "[1:tc Particular] Particles/sec (dense wall)",
       "ok": true,
-      "v": "40000"
+      "v": "14000"
     },
     {
       "p": "[1:tc Particular] Velocity",
@@ -25,7 +45,7 @@
     {
       "p": "[1:tc Particular] Life (sec)",
       "ok": true,
-      "v": "1.89999997615814"
+      "v": "2.29999995231628"
     },
     {
       "p": "[1:tc Particular] Life Random %",
@@ -35,22 +55,22 @@
     {
       "p": "[1:tc Particular] Size",
       "ok": true,
-      "v": "2.20000004768372"
+      "v": "3"
     },
     {
       "p": "[1:tc Particular] Size Random %",
       "ok": true,
-      "v": "75"
+      "v": "62"
     },
     {
       "p": "[1:tc Particular] Opacity",
       "ok": true,
-      "v": "30"
+      "v": "38"
     },
     {
       "p": "[1:tc Particular] Opacity Random %",
       "ok": true,
-      "v": "40"
+      "v": "55"
     },
     {
       "p": "[1:tc Particular] Color (dust)",
@@ -70,7 +90,12 @@
     {
       "p": "[1:tc Particular] Turbulence -> Position (merge coils)",
       "ok": true,
-      "v": "40"
+      "v": "58"
+    },
+    {
+      "p": "[1:tc Particular] Turbulence Scale (finer noise breaks the diagonal helix grain)",
+      "ok": true,
+      "v": "32"
     },
     {
       "p": "[1:tc Particular] Motion Blur (on)",
@@ -83,7 +108,7 @@
       "v": "200"
     },
     {
-      "p": "[1:tc Particular] Emitter Position (swept-angle funnel) (expr)",
+      "p": "[1:tc Particular] Emitter Position (r4: constant-climb sawtooth — no turnaround dwell => no density bulges; 48 revs/pass + box fuse => smooth funnel) (expr)",
       "ok": true
     }
   ],

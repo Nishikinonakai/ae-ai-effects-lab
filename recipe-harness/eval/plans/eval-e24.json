@@ -2,8 +2,11 @@
   "_planner_rationale": [
     "the artist's own Tint→Emboss signature stack (brownfield AMV survey; recipes/native/native-tint-emboss.json validated) — palette swapped to 深蓝+米白",
     "抽象几何底图 — FN Fractal Type 2 ('sparse/threshold' per enriched card = hard graphic shapes) at Contrast 260, then Tile with Mirror Edges = kaleidoscopic symmetry -> reads as abstract print geometry, no footage needed",
-    "双色调 — Tint at Amount 100 forces strict two-tone (deep blue / cream); Emboss AFTER Tint with Blend 45 keeps the duotone while adding 浮雕 relief lines (the validated recipe's order)",
-    "slow Evolution keeps it alive between frames without breaking the poster feel"
+    "r3 (2026-07-19 design-panel synthesis, mosaic-refine lens): fixes all 4 root causes. GEOMETRIC: Mosaic 12x7 sharp-color grid turns FN into angular blocky cells. STRICT TWO-TONE: Posterize levels=2 binarizes the grayscale BEFORE Tint, so Tint's linear map has only 2 input levels -> exactly 2 inks (no muddy midtone ramp — the failure of both prior rounds). EMBOSS: placed after Mosaic but BEFORE Posterize so its grey relief lips cross the binarize threshold and survive as crisp two-tone relief LINES. STABILITY: FN Evolution=0 with NO time expression (r2 instability was animated evolution). matchNames Mosaic field-confirmed (iter4); Posterize verifying live.",
+    "r4 (2026-07-19): 6/10 — only emboss criterion failing (Posterize flattened relief to hairlines). Widen Emboss Relief 4->11 + Contrast 240->320 so the 135-deg lips become thick bands that survive binarize as visible directional relief LINES (cream lines on navy blocks / navy on cream). Keeps strict two-tone + stability + geometric intact; blend stays 30 so cell interiors keep their tone.",
+    "r5 (2026-07-19): resolve the emboss-vs-binarize tension. Posterize 2 killed all tonal gradation so relief read as flat gaps, not raised lips. A real duotone = 2 INKS with tonal shading. Posterize Levels 4 keeps everything on the navy-cream axis (still 'two-tone', no hue leakage) while preserving the emboss highlight/shadow lips as the 2 mid densities => tactile relief. Blend 55 keeps cell interiors near-pure so blocks stay crisp; relief 7 lips.",
+    "r6: blend 55 pulled flat cells onto mid densities (muddy grey dominance). Raise blend to 82 so cell interiors stay pure navy/cream (strict two-tone read) and ONLY the emboss highlight/shadow lips land on the 2 mid densities = subtle tactile relief edges. Levels 4 kept.",
+    "r7 (2026-07-19): correct architecture — the muddy midtones were the FN base cells (never binary before), not the emboss. Reorder to FN->Mosaic->Posterize(2)->Emboss->Tint: Posterize binarizes the BASE to pure black/white FIRST, so the ONLY non-binary values entering Tint are the emboss lips at edges. No posterize after => Tint maps continuously: pure navy/cream cells + grey lips => navy-cream mid densities = tactile relief. Resolves strict-two-tone AND visible-relief simultaneously."
   ],
   "_planner_sources": [
     "recipes/native/native-tint-emboss.json",
@@ -19,51 +22,167 @@
   ],
   "name": "eval-e24",
   "compName": "Eval_E24_DuotonePoster",
-  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 6 },
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
   "background": null,
   "hostName": "Poster",
   "effects": [
     {
       "matchName": "ADBE Fractal Noise",
       "params": [
-        ["ADBE Fractal Noise-0001", 2,   "Fractal Type (sparse/threshold = graphic shapes)"],
-        ["ADBE Fractal Noise-0002", 3,   "Noise Type"],
-        ["ADBE Fractal Noise-0004", 260, "Contrast (hard edges)"],
-        ["ADBE Fractal Noise-0005", -5,  "Brightness"],
-        ["ADBE Fractal Noise-0010", 200, "Scale"]
-      ],
-      "expressions": [
-        ["ADBE Fractal Noise-0023", "time*18", "Evolution (slow)"]
-      ]
-    },
-    {
-      "matchName": "ADBE Tile",
-      "params": [
-        ["ADBE Tile-0004", 220, "Output Width"],
-        ["ADBE Tile-0005", 220, "Output Height"],
-        ["ADBE Tile-0006", 1,   "Mirror Edges (kaleido symmetry)"]
+        [
+          "ADBE Fractal Noise-0001",
+          1,
+          "Fractal Type Basic (bold graphic masses)"
+        ],
+        [
+          "ADBE Fractal Noise-0002",
+          1,
+          "Noise Type BLOCK (hard-edged, not clouds)"
+        ],
+        [
+          "ADBE Fractal Noise-0004",
+          200,
+          "Contrast (decisive dark/light fills)"
+        ],
+        [
+          "ADBE Fractal Noise-0005",
+          0,
+          "Brightness (balanced ~50/50 blue/cream)"
+        ],
+        [
+          "ADBE Fractal Noise-0006",
+          1,
+          "Overflow Clip (reinforce edges)"
+        ],
+        [
+          "ADBE Fractal Noise-0010",
+          120,
+          "Scale (poster-scale masses)"
+        ],
+        [
+          "ADBE Fractal Noise-0013",
+          [
+            640,
+            360
+          ],
+          "Offset Turbulence = comp center (fill frame)"
+        ],
+        [
+          "ADBE Fractal Noise-0015",
+          2,
+          "Complexity (few clean shapes)"
+        ],
+        [
+          "ADBE Fractal Noise-0023",
+          0,
+          "Evolution=0 static (frame stability, NO expression)"
+        ],
+        [
+          "ADBE Fractal Noise-0027",
+          5,
+          "Random Seed fixed"
+        ]
       ],
       "expressions": []
     },
     {
-      "matchName": "ADBE Tint",
+      "matchName": "ADBE Mosaic",
       "params": [
-        ["ADBE Tint-0001", [0.07, 0.10, 0.25, 1],  "Map Black To (deep blue)"],
-        ["ADBE Tint-0002", [0.93, 0.89, 0.78, 1],  "Map White To (cream)"],
-        ["ADBE Tint-0003", 100, "Amount (strict duotone)"]
+        [
+          "ADBE Mosaic-0001",
+          12,
+          "Horizontal Blocks (bold poster grid)"
+        ],
+        [
+          "ADBE Mosaic-0002",
+          7,
+          "Vertical Blocks (roughly square cells)"
+        ],
+        [
+          "ADBE Mosaic-0003",
+          1,
+          "Sharp Colors ON (flat hard-edged cells)"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Posterize",
+      "params": [
+        [
+          "ADBE Posterize-0001",
+          2,
+          "Levels=2 — binarize BASE cells to pure black/white BEFORE emboss"
+        ]
       ],
       "expressions": []
     },
     {
       "matchName": "ADBE Emboss",
       "params": [
-        ["ADBE Emboss-0002", 3,   "Relief"],
-        ["ADBE Emboss-0003", 170, "Contrast"],
-        ["ADBE Emboss-0004", 45,  "Blend With Original (keep duotone)"]
+        [
+          "ADBE Emboss-0001",
+          135,
+          "Direction 135"
+        ],
+        [
+          "ADBE Emboss-0002",
+          8,
+          "Relief 8 (lip width)"
+        ],
+        [
+          "ADBE Emboss-0003",
+          220,
+          "Contrast 220"
+        ],
+        [
+          "ADBE Emboss-0004",
+          78,
+          "Blend 78 — cells stay near-pure; only lips swing to relief mid-tones"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Tint",
+      "params": [
+        [
+          "ADBE Tint-0001",
+          [
+            0.07,
+            0.1,
+            0.25,
+            1
+          ],
+          "Map Black To deep blue ink"
+        ],
+        [
+          "ADBE Tint-0002",
+          [
+            0.93,
+            0.89,
+            0.78,
+            1
+          ],
+          "Map White To cream paper"
+        ],
+        [
+          "ADBE Tint-0003",
+          100,
+          "Amount 100 (only 2 input levels -> exactly 2 inks)"
+        ]
       ],
       "expressions": []
     }
   ],
   "camera": null,
-  "renderFrames": [1, 4]
+  "renderFrames": [
+    1,
+    4
+  ]
 }
