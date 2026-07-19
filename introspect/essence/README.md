@@ -51,16 +51,35 @@ See `BCC_Cross_Glitch.essence.json` (the reference implementation, 2026-07-19). 
   desaturate; default composite = warp+roll-bar+torn edge. Break/roll are time-driven (noted). See
   `BCC_Damaged_TV.essence.json`.
 
+## Card sub-types
+
+- **effect card** (the 5 below): one third-party/native effect. `key_levers` = param dials.
+- **expression-rig card** (`cardType: "expression-rig"`): a CLUSTER of expression-control
+  pseudo-effects that together form a technique (a layout/transition rig, a template knob kit).
+  Its generative payload is `driver_expression_patterns` — the reusable expressions the product
+  can EMIT onto a target layer to reproduce the technique (PRD §八 D). See
+  `Layout_Animator_Rig.essence.json`. Decoded statically from the user's own project bytes
+  (ghost_effect_groups + expressions_unique) — no live probe; the rig IS its expressions.
+
 ## Coverage so far
 
-5 essence cards = the AMV third-party backbone: **BCC Cross Glitch, BCC Camera Shake, BCC Textures,
+5 effect cards = the AMV third-party backbone: **BCC Cross Glitch, BCC Camera Shake, BCC Textures,
 Deep Glow, BCC Damaged TV** (all introspect + probe + synth, all with semantic param names).
+
+1 expression-rig card: **Layout / In-Out Transition Animator** (`Pseudo/0e3wiwbivl` + kit) — the
+user's own MG rig, cross-genre-verified (AnoBando AMV ×1477 uses AND 语音房 marketing ×12). Maps
+each opaque `Pseudo/<id>` matchName → its display name (Position In/Out, Corner Pin, Skew, Scale,
+Optics, Mirror Edges, Motion Blur, Target, Angle Precision) and captures the driver-expression
+templates that place driven layers off named controls. First card in the "generate + apply
+expressions" capability.
 
 ## Next candidates
 
-- The user's OWN `Pseudo/*` expression-control rigs (AnoBando ×1477 etc.) — harder: no model prior,
-  so read the pseudo-effect definition (the .ffx/preset that installs it) + probe. Ties into the
-  expression-pattern library idea (PRD §八 D).
+- More of the user's OWN rigs from the same kit / other projects (the float-id Corner-Pin / Optics
+  internals need the .ffx or a live UI read to fully enumerate — MEDIUM-confidence in the current card).
+- The **spatial/ML/solve/scene** effect class surfaced by the cross-genre scan (Roto Brush /
+  3D Tracker / Puppet / Element 3D) — the frontier scalar-param essence can't fully capture
+  (state is masks/solves/pins/scenes, not dials). Needs a new card shape again.
 - AESweets Glitch 7in1, `uni.Unmult` (Universe) — other real-usage third-party effects.
 - Filter suites at large (BCC/Sapphire/Universe, ~900 effects) stay introspect-card-only, essence-
   synthesized ON DEMAND when a request routes to them (the whole point of shallow-for-breadth).

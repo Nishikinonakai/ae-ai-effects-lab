@@ -1,0 +1,46 @@
+{
+  "cardType": "expression-rig",
+  "rigId": "layout-animator (In/Out transition kit)",
+  "primaryMatchName": "Pseudo/0e3wiwbivl",
+  "displayName": "Layout / In-Out Transition Animator",
+  "vendor": "third-party MG expression-rig preset kit (installed pseudo-effects; NOT a native effect)",
+  "category": "Motion-graphics rig / expression-driven layout + transition",
+  "essence": "A MODULAR LAYOUT + IN/OUT TRANSITION rig, not a single effect. A master control layer (named 'Animator' or 'Controls') carries a cluster of expression-control effects, each holding a control value — and most come in an IN state and an OUT state (the pose the element animates FROM on entry and TO on exit). Child layers do NOT keyframe their own Transform; instead their Position/Scale/Corners carry DRIVER EXPRESSIONS that read the master controls and place the element (e.g. centre-of-comp + the Position control's offset). Change one control on the master → every driven layer re-lays-out. This is how a template stays swappable: the look is authored once as expressions against named controls, and re-skinning = editing control values, never touching per-layer keyframes.",
+  "how_it_is_recognised": "A layer named 'Animator'/'Controls' stacked with many effects whose matchName is 'Pseudo/<id>' (opaque hex/float ids) and whose DISPLAY names are 'Position In', 'Position Out', 'Corner Pin In/Out', 'Skew', 'Scale', 'Stretch', 'Optics In/Out', 'Mirror Edges', 'Motion Blur', 'Target Control', 'Angle Precision [for Corners]'. Other layers' Transform properties carry expressions of the form thisComp.layer(\"Animator\").effect(\"<control>\")(\"Pseudo/<id>-000N\"). The -0001/-0002 suffixes are the control's sub-params (0001=X, 0002=Y for a 2D control).",
+  "sub_rigs": [
+    { "name": "Position In",  "matchName": "Pseudo/0e3wiwbivl", "params": { "-0001": "X offset (entry pose)", "-0002": "Y offset (entry pose)", "-0003": "aux / toggle", "-0004": "aux / toggle" }, "role": "where the element sits at the IN (entry) state, as an offset from comp centre" },
+    { "name": "Position Out", "matchName": "Pseudo/0e3wiwbivl", "params": { "-0001": "X offset (exit pose)", "-0002": "Y offset (exit pose)", "-0003": "aux", "-0004": "aux" }, "role": "where it sits at the OUT (exit) state" },
+    { "name": "Corner Pin In",  "matchName": "Pseudo/0.8354219773410188", "role": "4-corner perspective at entry (16 params = 4 corners × ...)" },
+    { "name": "Corner Pin Out", "matchName": "Pseudo/0.6324589077268643", "role": "4-corner perspective at exit" },
+    { "name": "Skew",    "matchName": "Pseudo/0.9027566763692654", "role": "shear (used across both AMV + marketing)" },
+    { "name": "Scale / Stretch", "matchName": "Pseudo/060uhhyz3w", "params": { "-0001": "primary scale/stretch axis", "-0002": "secondary" }, "role": "non-uniform scale; appears as both 'Scale' and 'Stretch'" },
+    { "name": "Optics In / Out", "matchName": "Pseudo/0.7432142064907483 / Pseudo/0.1375370724898204", "role": "lens/optics (blur/distortion) at entry/exit" },
+    { "name": "Mirror Edges", "matchName": "Pseudo/0baofvfswu", "role": "edge mirroring/tiling so a scaled element fills frame without hard edges" },
+    { "name": "Motion Blur", "matchName": "Pseudo/0e4hkvtv57", "role": "rig-controlled motion blur amount" },
+    { "name": "Target Control", "matchName": "Pseudo/0.6353432337188027", "role": "target/anchor the layout aims at" },
+    { "name": "Angle Precision [for Corners]", "matchName": "Pseudo/0.4796131283168923", "role": "DIVISOR used in the corner/position math (expressions divide by it — a smoothing/precision knob, NOT a look param)" }
+  ],
+  "driver_expression_patterns": {
+    "_note": "THESE are the reusable, GENERATIVE artifact (PRD §八 D). The rig's value is not the controls themselves but these driver templates on the DRIVEN layers. The product can emit these verbatim against a control layer to reproduce the technique on any element.",
+    "position_from_control_2D": "x=thisComp.width/2 + thisComp.layer(\"Animator\").effect(\"Position In\")('Pseudo/0e3wiwbivl-0001');\ny=thisComp.height/2 + thisComp.layer(\"Animator\").effect(\"Position In\")('Pseudo/0e3wiwbivl-0002');\n[x,y]",
+    "position_axis_locked": "x=thisComp.width/2;\ny=thisComp.height/2 + thisComp.layer(\"Animator\").effect(\"Position In\")('Pseudo/0e3wiwbivl-0002');\n[x,y]   // lock X to centre, drive only Y",
+    "control_scaled_by_aspect": "effect(\"Position In\")(\"Pseudo/0e3wiwbivl-0001\")/1.777;   // divide by 16:9 (or /1.2, /1.4) to remap a control authored at one aspect to another",
+    "corner_with_precision_divisor": "value/2*thisComp.height/1080 + effect(\"Position In\")(\"Pseudo/0e3wiwbivl-0001\")/thisComp.layer(\"Controls\").effect(\"Angle Precision [for Corners]\")(\"Pseudo/0.4796131283168923-0001\");   // corner position = base + control/precision, and *height/1080 keeps it resolution-independent"
+  },
+  "when_to_use": ["in/out transition", "template layout", "swappable card rig", "auto-animate a placed element", "AMV lyric/element entrance+exit", "marketing card in/out", "resolution-independent layout", "corner-pin screen replacement rig"],
+  "reasoning_hooks": {
+    "make the element enter from further off": "raise the Position In X/Y offset magnitude on the master (child layers follow via their drivers — do NOT keyframe the child)",
+    "reskin the template with new content": "swap the driven layers' SOURCE; leave the driver expressions + control values intact — that is the whole point of the rig",
+    "it looks right at 1080 but breaks at another res": "the drivers already normalise via thisComp.width/height and /1.777-style aspect divisors; check the element was authored against comp centre, not absolute px",
+    "add motion blur to the move": "the rig has a Motion Blur control (Pseudo/0e4hkvtv57) — enable comp+layer motion blur and set it there, don't add a separate effect",
+    "the corners jitter / over-shoot": "the 'Angle Precision [for Corners]' control is the divisor in the corner math — raise it to damp"
+  },
+  "product_implications": {
+    "generation": "This card lets the product GENERATE the technique: create a control layer with the named expression-controls, then write the driver_expression_patterns onto the target layer's Transform. Even without the original .ffx installed, the position/scale/corner drivers are plain AE expressions that reproduce the layout-rig behaviour with native Expression Controls (Slider/Point/Angle) as the control home.",
+    "perception": "When dump_comp sees a layer named Animator/Controls full of Pseudo/* effects + driven Transform expressions, it should recognise this rig cluster and NOT treat the controls as unknown effects — route to this card.",
+    "cross_genre": "Same matchNames + same driver idioms appear in AnoBando (AMV, 0e3wiwbivl ×1477 uses) AND 语音房 (marketing, ×12 refs) — this is a genuinely reusable, genre-spanning rig. Learning it pays off across the router's genre lanes."
+  },
+  "grounding": "Decoded PURELY from the static aep_scan of two of the user's real projects (no model prior, no .ffx in hand — the README-flagged hardest essence case): ghost_effect_groups gave usage counts (0e3wiwbivl ×1477 in AnoBando), and expressions_unique gave BOTH the matchName↔display-name map (via effect(\"Name\")(\"Pseudo/id-000N\") calls) AND the driver templates (the consuming Transform expressions). Confidence: HIGH on identity/param-map/driver-patterns (read directly from the user's own project bytes); MEDIUM on the exact semantics of the -0003/-0004 aux params and the Optics/Corner internal param layout (would need to open the pseudo-effect UI or the .ffx to fully enumerate).",
+  "_method": "static brownfield decode (ghost_effect_groups + expressions_unique) — no live probe needed; the rig IS its expressions",
+  "_date": "2026-07-19"
+}
