@@ -1,0 +1,41 @@
+{
+  "matchName": "BCC Cross Glitch",
+  "displayName": "BCC Cross Glitch",
+  "vendor": "Boris FX Continuum (BCC)",
+  "category": "Stylize / Glitch",
+  "essence": "A datamosh / digital-signal glitch. Over the source it stamps horizontal bands of 'damaged' corrupted blocks (grey noise + block artifacts), fired in bursts over time, with an optional horizontal pixel shift. The canonical 故障 / broken-signal look — grey blocky bands slicing across the image. Source shows through untouched between bands.",
+  "when_to_use": ["glitch", "datamosh", "故障", "digital corruption", "broken signal / VHS", "cyberpunk rhythm hit", "lyric stutter accent", "harsh transition"],
+  "manifests_as": "horizontal grey/noisy corrupted BANDS across the frame (not a full-frame wash) — verified by probe",
+  "key_levers": [
+    { "name": "Glitch Intensity", "matchName": "BCC Cross Glitch-10682374", "range": [0, 100], "default": 50, "effect": "MASTER dial — amount/coverage of glitch bands. 0 = clean (off), ~30-50 = occasional band, ~90 = heavy corruption. Probe-confirmed." },
+    { "name": "Block Size", "matchName": "BCC Cross Glitch-10682384", "range": [1, 7], "default": 5, "enum": true, "effect": "scale of the corrupted blocks. 1 = thin fine datamosh stripes; 7 = large chunky square blocks. Probe-confirmed 1↔7." },
+    { "name": "Block Damage Intensity", "matchName": "BCC Cross Glitch-10682381", "range": [0, 100], "default": 70, "effect": "how corrupted/grey-noisy the damaged blocks read (low = source-tinted, high = flat grey static)." },
+    { "name": "Glitch Interval", "matchName": "BCC Cross Glitch-10682369", "range": [1, 100], "default": 10, "effect": "time between glitch bursts. LOW ≈ near-constant glitching, HIGH = rare flashes. (Set low to make the glitch visible in a still.)" },
+    { "name": "Glitch Duration", "matchName": "BCC Cross Glitch-10682371", "range": [0, 100], "default": 95, "effect": "how long each burst holds." },
+    { "name": "Shift Group Intensity", "matchName": "BCC Cross Glitch-10682454", "range": [0, 100], "default": 50, "effect": "horizontal pixel-shift / displacement of the glitched bands (subtle at a static frame)." },
+    { "name": "Pattern Amount", "matchName": "BCC Cross Glitch-10682393", "range": [0, 100], "default": 40, "effect": "amount of digital-noise pattern inside the damaged blocks." }
+  ],
+  "enums_to_verify": {
+    "Block Blend Mode (1-7)": "how damaged blocks composite over source — likely Normal/Add/Screen/Lighten/… (probe if a specific blend is needed)",
+    "Edge Handling (1-3)": "treatment of band edges",
+    "Animation (1-2)": "static vs animated glitch",
+    "Trigger Mode (1-2)": "how bursts fire (interval vs threshold)",
+    "Duration Mode (1-2)": "fixed vs randomised burst length"
+  },
+  "config_recipes": {
+    "subtle rhythm-hit glitch": "Glitch Intensity 30-50, Block Size 2-3, Interval 15-30, Duration 20-40 — brief flashes on the beat",
+    "heavy constant datamosh": "Glitch Intensity 80-100, Block Size 5-7, Block Damage 80-100, Interval 1-3, Duration 90-100",
+    "fine-stripe corruption": "Block Size 1-2, Glitch Intensity 60-80 — thin scanline-ish datamosh",
+    "artist's KillKiss usage (observed)": "on a duplicated lyric layer with Fill, Camera-Shake OFF — Glitch Duration 95; used as a per-lyric stutter accent, paired with a clean twin (Ramp+Textures) that carries the base look"
+  },
+  "reasoning_hooks": {
+    "make it subtler": "lower Glitch Intensity (→30-40) and/or raise Interval (rarer bursts)",
+    "bigger chunkier glitch": "raise Block Size (→6-7) + Block Damage Intensity",
+    "finer / scanline glitch": "Block Size 1-2",
+    "make it flicker occasionally not constantly": "raise Glitch Interval, lower Glitch Duration",
+    "not showing in a still frame": "the glitch is interval-triggered — set Interval low / Duration high, or it's simply between bursts at that time"
+  },
+  "grounding": "introspect card (95 params, full SEMANTIC names + ranges + enum spans — cards/BCC_Cross_Glitch.json) + visual probe (introspect/frames/bcc_*: Intensity=band amount, Block Size 1=stripes/7=blocks) + model prior on BCC Cross Glitch. Confidence: high on the levers, medium on the untested enums.",
+  "_method": "introspect + focused probe + synth (the essence-card pipeline)",
+  "_date": "2026-07-19"
+}
