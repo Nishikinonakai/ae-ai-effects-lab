@@ -232,6 +232,27 @@ const AEX = String.raw`(function(){
 const res = await runAE(AEX);
 if (res.err) bail('apply error: ' + res.err);
 
+// saveFrameToPng is ASYNC — the ExtendScript returns before the PNG finishes writing (a 4K frame
+// takes ~12s). If we build the report / hand the frame to the scorer too early, it reads a
+// half-written frame (bottom rows black) and the visual self-check FALSE-fails. So wait until each
+// frame's size is STABLE across two reads before trusting it (resolution-agnostic — no fixed
+// threshold works for 640x360 vs 4K). Surfaced by the KillKiss E2E (finding #3).
+async function waitForFrameSettle(fp, timeoutMs = 45000) {
+  const deadline = Date.now() + timeoutMs;
+  let prev = -1, stable = 0;
+  while (Date.now() < deadline) {
+    await new Promise(r => setTimeout(r, 800));
+    let sz = 0; try { sz = fs.statSync(fp).size; } catch { sz = 0; }
+    if (sz > 0 && sz === prev) { if (++stable >= 2) return sz; }
+    else stable = 0;
+    prev = sz;
+  }
+  return -1;   // never settled — caller still gets a report, but the frame may be partial
+}
+const beforeSz = await waitForFrameSettle(beforePng);
+const afterSz = await waitForFrameSettle(afterPng);
+if (beforeSz < 0 || afterSz < 0) console.error('⚠ a frame did not finish writing in time — it may be partial; re-render before scoring.');
+
 const report = {
   label, comp: res.comp, time: res.time,
   spec: spec.edits,

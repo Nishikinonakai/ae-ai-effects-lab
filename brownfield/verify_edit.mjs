@@ -42,12 +42,25 @@ for (const [lbl, fp] of [['before', beforeAbs], ['after', afterAbs]]) {
   if (!fs.existsSync(fp)) { console.error(`${lbl} frame missing: ${fp}`); process.exit(1); }
 }
 
+// A full-res AE frame can be huge (a 4K PNG is ~28MB → ~37MB base64, past the vision API's per-image
+// limit — the scorer would reject or choke). Downscale a COPY to maxdim before sending; never touch
+// the originals (rollback + the report still point at full-res). Surfaced by the KillKiss E2E
+// (finding #4). sips is macOS-native (this is a darwin project); if it fails we fall back to the original.
+const maxdim = Number(arg('maxdim', 1600));
+function scaledCopy(fp) {
+  const out = fp.replace(/\.png$/i, `_verify${maxdim}.png`);
+  const r = spawnSync('sips', ['-Z', String(maxdim), fp, '--out', out], { encoding: 'utf8' });
+  return (r.status === 0 && fs.existsSync(out)) ? out : fp;
+}
+const beforeScaled = scaledCopy(beforeAbs);
+const afterScaled = scaledCopy(afterAbs);
+
 // Build a review_request the shared scorer understands. Frame ORDER carries the meaning, so the
 // instructions pin frame 1 = BEFORE, frame 2 = AFTER, and ask specifically about the DELTA.
 const pass_criteria = (arg('pass', '') || '').split('||').map(s => s.trim()).filter(Boolean);
 const reviewInstructions = [
-  `The FIRST frame (${path.basename(beforeAbs)}) is the comp BEFORE the edit.`,
-  `The SECOND frame (${path.basename(afterAbs)}) is the SAME comp+frame AFTER the edit was applied.`,
+  `The FIRST frame (${path.basename(beforeScaled)}) is the comp BEFORE the edit.`,
+  `The SECOND frame (${path.basename(afterScaled)}) is the SAME comp+frame AFTER the edit was applied.`,
   'Judge whether the AFTER frame better achieves the INTENT than BEFORE — and did NOT break the composition',
   '(introduce clipping/blowout, hide the subject, or add an unwanted artifact). A no-op (frames identical)',
   'is a FAIL. score = how well AFTER realizes the intent (10 = exactly, would ship; 0 = wrong or broken).',
@@ -63,7 +76,7 @@ const req = {
   max_iters: 1,
   plan: report.applied || report.spec || [],
   prior_iterations: [],
-  frames: [beforeAbs, afterAbs],
+  frames: [beforeScaled, afterScaled],
   review_instructions: reviewInstructions,
 };
 const reqDir = path.dirname(reportPath);
