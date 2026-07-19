@@ -121,22 +121,29 @@ Optics, Mirror Edges, Motion Blur, Target, Angle Precision) and captures the dri
 templates that place driven layers off named controls. First card in the "generate + apply
 expressions" capability.
 
-1 spatial/ML card: **Roto Brush & Refine Edge** (`ADBE Samurai`) — the reference for the
-`spatial-ml` cardType (canonical opaque-core hybrid). Draws the capability boundary: opaque core
-(strokes+matte, fingerprinted by customValue 0 + valueless Strokes group) vs a 23-knob scriptable
-finishing surface, with 4 precise handoffs (paint+propagate / re-propagate / fix-slipping-frame /
-freeze) and a `state_gate`. Built from introspect + the state-model workflow (6 effects analyzed,
-all with structural perception fingerprints) — no visual probe; the meaning is the boundary, not a
-sweep. The other 5 (3D Tracker, Puppet, Bezier Warp, Element 3D, BCC Chroma Key) are
-introspect-carded + tier-classified above, essence-synthesized on demand.
+3 spatial/ML cards (the `spatial-ml` cardType, one per tier of the automatable-share axis):
+- **Roto Brush & Refine Edge** (`ADBE Samurai`) — the REFERENCE (Tier-B canonical opaque-core hybrid):
+  opaque matte (fingerprinted by customValue 0 + valueless Strokes group) vs a 23-knob scriptable
+  finishing surface, 4 precise handoffs, `state_gate`. LIVE-VALIDATED end-to-end (see above).
+- **Bezier Warp** (`ADBE BEZMESH`) — Tier-A minimal contrast (fully in-params): the whole 12-point
+  mesh is scriptable, opaque_core = NONE; introduces the SOFT `perceptual-judgment` deferral (the
+  product can't *see* where to land points to match unseen content — closable by the visual loop, not
+  a hard handoff). Shows the end of the axis where the new fields nearly collapse.
+- **Element 3D** (`VIDEOCOPILOT 3DArray`) — Tier-C stress test (opaque scene + linked files): a
+  2431-param control surface entirely GATED behind the modal Scene Setup (`external-authoring`), with
+  4 handoffs. Validates the schema against a third-party monster — the opposite extreme from Bezier.
+
+The remaining 3 (3D Tracker, Puppet, BCC Chroma Key) are introspect-carded + tier-classified above,
+essence-synthesized on demand. All 6 state-model analyses live in `spatial_ml_state_models.json`.
 
 ## Next candidates
 
-- The other spatial/ML cards on demand: **Element 3D** as the Tier-C stress test (external-authoring
-  + linked-file + the opaque `Scene Settings` blob), **Bezier Warp** as the minimal Tier-A contrast
-  (fully in-params, `perceptual-judgment`-only deferral). Puppet + 3D Tracker when a request routes there.
-- Wire `perception_signal`/`state_gate` into `dump_comp` so it flags opaque-core effects + whether
-  their state is present (customValue / valueless-group detection) — the perception side of "gate the core".
+- Puppet + 3D Tracker essence cards when a request routes there (both Tier-B hybrids; analyses ready
+  in `spatial_ml_state_models.json`).
+- ✅ DONE: `dump_comp` flags opaque-core effects + their gate (the perception side of "gate the core");
+  `apply_edit` emits `gateWarns[]` (the act side). Both live-validated on a real Roto Brush.
+- A real-footage Roto validation to exercise cross-frame PROPAGATION (the synthetic ellipse proved the
+  base-frame mechanism + the handoff; real footage would test the temporal handoff).
 - More of the user's OWN rigs from the same kit / other projects (the float-id Corner-Pin / Optics
   internals need the .ffx or a live UI read to fully enumerate — MEDIUM-confidence in the current card).
 - AESweets Glitch 7in1, `uni.Unmult` (Universe) — other real-usage third-party effects.

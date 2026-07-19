@@ -1,0 +1,73 @@
+{
+  "cardType": "spatial-ml",
+  "matchName": "VIDEOCOPILOT 3DArray",
+  "displayName": "Element 3D",
+  "vendor": "Video Copilot (third-party)",
+  "category": "3D / scene renderer",
+  "effect_class": "3d-scene",
+  "tier": "C (opaque-core-must-defer — the largest opaque partition in the class)",
+  "essence": "A GPU-accelerated 3D renderer living inside one AE effect. The user imports/builds a 3D scene (OBJ/C4D/E3D models, materials, texture maps) in Element's separate modal 'Scene Setup' editor, assigns models to up to 5 replication 'Groups', then Element renders that scene into the layer with its own camera/lighting/shadow/AO/reflection/DOF pipeline. The 2431 effect params are a per-group particle-replicator + transform + material-tint + render/output control surface layered ON TOP of the imported scene — and they render NOTHING until a scene exists. Used for 3D logos/titles, replicated object arrays (floating shards, coins, cards), 3D-tracked scene integration.",
+  "when_to_use": ["3D logo / title", "extruded text in 3D", "replicated object array (shards/coins/cards/particles-as-geometry)", "3D model in the shot", "GPU 3D render inside AE without a full 3D app"],
+
+  "state_model": {
+    "location": "hybrid",
+    "reasoning": "The load-bearing state is NOT in scalar params: it is (1) the imported GEOMETRY (OBJ/C4D/E3D meshes + vertex/UV data), (2) the MATERIAL GRAPH (shaders, per-channel maps: diffuse/spec/gloss/normal/reflection/emissive), (3) the group→model ASSIGNMENT — all authored in the modal Scene Setup editor + linked texture/model FILES, serialized into ONE opaque `Scene Settings` CUSTOM param (VIDEOCOPILOT 3DArray-0004, value=\"\"). The 2431 scalar params (5 isomorphic Group replicator blocks + a full render/output stack + 31 unassigned LAYER_INDEX pointers) are a rich control surface layered on top — but they are INERT until the scene exists. Opaque core + large scriptable surface ⇒ hybrid, but the surface is entirely GATED (unlike Roto, where the finishing surface works the moment a matte exists)."
+  },
+  "opaque_core": "The 3D scene: imported geometry (model meshes + vertex/UV), the material graph (shaders + per-channel texture maps), and the group→model assignment. The scalar param API can neither read nor author any of it — it lives in the modal Scene Setup editor and the linked model/texture files, fronted by the empty `Scene Settings` CUSTOM blob.",
+
+  "scriptable_surface": [
+    { "controls": "Per-group particle replication / array layout (the 5 identical Group N blocks — the '3DArray')", "example_params": "Particle Count -0117 (0..1e6), Grid X/Y/Z -0119/-0120/-0121 (1..1000), replicator shape/spacing", "phase": "post_handoff" },
+    { "controls": "Per-group placement & orientation of the array in 3D", "example_params": "Position XY -0202 (2D_SPATIAL) + Position Z -0203, Scale XYZ -0210/-02.., Rotation group", "phase": "post_handoff" },
+    { "controls": "Per-group deformers on the imported geometry", "example_params": "Deform -0000: Taper -0034, Twist -0017, Bend -0003, Noise -0073 (each animatable 1D)", "phase": "post_handoff" },
+    { "controls": "Global animation drivers + world transform", "example_params": "Animation Engine -0050 (Directional/Radial, Dual Animation Mode -0081, Time Delay -0087)", "phase": "post_handoff" },
+    { "controls": "Full render look — lighting, shadow, AO, reflection, atmospheric, post", "example_params": "Exposure -1533, Gamma -1534, Lighting -1050, Shadows -5100 / Ray-Traced -5124, SSAO", "phase": "post_handoff" },
+    { "controls": "Color/material TINTS on already-assigned materials (NOT the material graph itself)", "example_params": "1..5 Color Tint COLOR -0152/-0552/-2952/-3352/-3752 (RGBA), Shadow Tint -6005", "phase": "post_handoff" },
+    { "controls": "Render output passes / AOVs", "example_params": "Output -1450: Z Depth -1500, World Position -1550, Multi-Pass Mixer -1600", "phase": "post_handoff" },
+    { "controls": "Comp-layer POINTERS for custom textures/masks/motion paths (pointer only — the texture channel binding is authored in Scene Setup)", "example_params": "N. Custom Layer LAYER_INDEX -0114/-0514/.., Custom Texture Maps 'Layer 1..10' -1852..-1861", "phase": "post_handoff" }
+  ],
+
+  "capability_boundary": {
+    "product_can": [
+      { "cap": "Once a scene is loaded: drive the entire array/replication look feeling→param (Particle Count, Grid, spacing, replicator shape)", "phase": "post_handoff" },
+      { "cap": "Place/orient each group in 3D (Position XY+Z, Scale, Rotation); apply + animate deformers (Taper/Twist/Bend/Noise) + Scatter for organic variation", "phase": "post_handoff" },
+      { "cap": "Dial the render mood: exposure/gamma/tint, lighting, shadow softness, SSAO/RTAO, reflection, DOF, glow/fog", "phase": "post_handoff" },
+      { "cap": "Re-tint already-assigned materials via the 11 COLOR params; drive Animation Engine for reveal/build animations", "phase": "post_handoff" },
+      { "cap": "Point a Custom Layer/Texture param at a comp layer AFTER the user has bound that channel in Scene Setup", "phase": "post_handoff" }
+    ],
+    "product_must_defer": [
+      { "task": "Create/populate the 3D scene — import or build the geometry the whole effect renders (the 2431 params are inert until this exists)", "deferral_reason": "external-authoring", "user_action_asked": "In the effect header click 'Scene Setup' to open Element's modal editor; import your OBJ/C4D/E3D model(s) (File > Import, or drag in), or use Element's extrude/text if that's the goal; click OK.", "then_product_can": "Detect the now-non-empty scene, and drive Particle Count / Grid / Position / render-look on it." },
+      { "task": "Assign which imported model each of the 5 Groups replicates (the group→model mapping is opaque; no scriptable hook)", "deferral_reason": "external-authoring", "user_action_asked": "In Scene Setup, drag each model into the Group Folder (Group 1..5) you want it in.", "then_product_can": "Enable those Groups (N. Enable) and independently replicate/animate each group's model via its scriptable block." },
+      { "task": "Author or edit the material graph — shaders + per-channel maps (diffuse/normal/reflection/gloss/emissive)", "deferral_reason": "external-authoring", "user_action_asked": "In Scene Setup switch to the Materials panel, create/edit the material, and drop your texture image files onto the channels.", "then_product_can": "Modulate the look via the COLOR tint params + reflection/AO/glow render controls (but not the shader/maps themselves)." },
+      { "task": "Bind a live comp layer as a texture/decal/displacement source (needs a matching Custom Texture channel set in Scene Setup)", "deferral_reason": "external-authoring", "user_action_asked": "In Scene Setup, on the target material set a channel's texture to 'Custom Texture 1..5' (or Custom Layer), click OK.", "then_product_can": "Set the corresponding 'N. Custom Layer' / 'Layer N' LAYER_INDEX param to that comp layer and animate it." }
+    ]
+  },
+
+  "perception_signal": {
+    "identify": "matchName 'VIDEOCOPILOT 3DArray' + the fingerprint: exactly one CUSTOM `Scene Settings` param (VIDEOCOPILOT 3DArray-0004) fronting a very large (~2431-param), highly repetitive tree — 5 isomorphic 'Group N' replicator blocks + a full render/output stack.",
+    "state_present_when": "There is no scriptable read of scene emptiness (the CUSTOM blob is opaque). Practical tells: a rendered frame shows geometry (visual loop), OR the artist confirms a scene is loaded. Treat as unverified until confirmed — like Roto, ASK rather than assume.",
+    "state_absent_when": "Freshly-applied Element with `Scene Settings` = \"\" and no rendered geometry (the layer renders empty/transparent). All 2431 params are present but inert."
+  },
+  "state_gate": {
+    "predicate": "Does the effect have a non-empty scene (imported geometry assigned to at least one Group)?",
+    "on_absent": "Do NOT set replication/render params as if they'd do anything — they're inert. Issue handoff #1 (Scene Setup → import + assign to a Group).",
+    "on_present": "Automate the replication + placement + render-look surface to the requested look; re-tint materials; drive the Animation Engine."
+  },
+
+  "config_recipes": {
+    "floating shard/coin array": "after scene load: Group 1 Particle Count 40-200, Grid or Scatter for spread, Position-Noise + Rotation-per-particle for organic tumble, add Bend/Twist deform lightly",
+    "3D title reveal": "extruded text scene → Animation Engine Directional + Time Delay for a per-character build; Reflection + a soft key light + SSAO for depth",
+    "polished-metal look": "Reflection on + an environment map (Scene Setup), high gloss, SSAO subtle, exposure to taste, Color Tint for hue"
+  },
+  "reasoning_hooks": {
+    "nothing renders / layer is empty": "no scene loaded — the whole effect is inert; issue the Scene Setup import handoff before ANY param means something",
+    "params set but the object doesn't change": "the target Group has no model assigned, or isn't Enabled — that assignment is opaque (Scene Setup), defer it",
+    "want more/denser copies": "Particle Count + Grid on the group (replication IS scriptable once a model is assigned)",
+    "material looks wrong / want a different texture": "the material graph is opaque — re-tint via COLOR params for hue, but a real texture/shader change is a Scene Setup handoff"
+  },
+
+  "routing_tags": ["3d-scene", "opaque-plugin-state", "linked-file", "hybrid-state", "scene-setup-handoff", "customValue-gated", "gpu-renderer", "particle-replicator", "material-graph-opaque", "geometry-not-scriptable", "render-look-scriptable", "tier-C", "third-party-videocopilot", "handoff-required", "external-authoring", "spatial"],
+
+  "grounding": "introspect card (cards/VIDEOCOPILOT_3DArray.json — 2431 params, 1601 animatable, 1 CUSTOM `Scene Settings`) + state-model analysis (spatial-ml-state-model workflow, 2026-07-19) + model prior on Element 3D. HIGH confidence on the state-model + gate + the external-authoring handoffs; the specific scriptable matchNames are sampled from the huge tree (confirm against the introspect card before setting). Teaching value: the Tier-C stress test — validates the spatial-ml schema against a 2431-param third-party monster where the ENTIRE scriptable surface is gated behind a modal + linked-file handoff (`external-authoring`), the extreme opposite of Bezier Warp.",
+  "_method": "introspect + state-model analysis (spatial/ML card pipeline)",
+  "_date": "2026-07-19"
+}

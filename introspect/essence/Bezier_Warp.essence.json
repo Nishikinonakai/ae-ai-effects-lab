@@ -1,0 +1,66 @@
+{
+  "cardType": "spatial-ml",
+  "matchName": "ADBE BEZMESH",
+  "displayName": "Bezier Warp",
+  "vendor": "Adobe (native AE)",
+  "category": "Distort / mesh-deform",
+  "effect_class": "mesh-deform",
+  "tier": "A (fully-scriptable — the boundary marker for the class)",
+  "essence": "Warps the layer image through a single cubic-bezier patch: 4 draggable corner vertices + 8 edge-tangent handles define four curved edges, and the source is warped to fill that patch. Topology is FIXED — one quad, 4 vertices + 8 tangents, no Rows/Columns grid (this is what distinguishes it from ADBE MESH WARP). Used for banners/arcs, flag & cloth waves, page-edge curls, perspective corner-pulls, and conforming a flat texture onto a curved surface.",
+  "when_to_use": ["bend / arc a layer", "banner or ribbon curve", "flag / cloth wave", "page curl", "perspective corner-pull", "conform a flat texture to a curved surface", "warp a title into a shape"],
+
+  "state_model": {
+    "location": "in-params",
+    "reasoning": "customValue = 0. Every load-bearing degree of freedom is an enumerated, named, animatable 2D_SPATIAL leaf: the 4 corners (ADBE BEZMESH-0001 top-left / -0004 top-right / -0007 bottom-right / -0010 bottom-left) + the 8 edge tangents (-0002/-0003/-0005/-0006/-0008/-0009/-0011/-0012), all expr:true. Render/blend scalars (Quality -0014, Effect Opacity, GPU) are plain params too. There is NO opaque core — the whole warp geometry is scriptable point-by-point. This card exists to mark the fully-scriptable END of the spatial/ML axis: the new capability-boundary fields nearly collapse here."
+  },
+  "opaque_core": "NONE (structurally — no plugin-internal blob, no linked file, no hidden/variable topology). The only thing outside the scriptable surface is not hidden STATE but a PERCEPTUAL JUDGMENT: deciding WHERE the 12 points must land to match specific image content or moving footage the product can't see.",
+
+  "scriptable_surface": [
+    { "controls": "The full bezier control mesh — the ENTIRE load-bearing warp geometry, readable and writable point-by-point", "example_params": "corners ADBE BEZMESH-0001/-0004/-0007/-0010, tangents -0002/-0003/-0005/-0006/-0008/-0009/-0011/-0012 (all 2D_SPATIAL, animatable)", "phase": "direct" },
+    { "controls": "Keyframe + expression channel on every one of the 12 mesh points (all expr:true)", "example_params": "wiggle() flutter on edge tangents (flag), sine breathing, link corners to tracker nulls/sliders", "phase": "direct" },
+    { "controls": "Render quality + blend scalars", "example_params": "Quality ADBE BEZMESH-0014 (1-10 subdivision), Effect Opacity (0-100%), GPU Rendering", "phase": "direct" }
+  ],
+
+  "capability_boundary": {
+    "product_can": [
+      { "cap": "Read back the exact warp: reconstruct the full mesh from the 4 vertices + 8 tangents", "phase": "direct" },
+      { "cap": "Author ANY parametric warp from scratch with ZERO handoff — bulge, pinch, arc/banner, single-corner perspective pull, page curl — by setting the 12 points", "phase": "direct" },
+      { "cap": "Keyframe + retime the warp (create/scale/offset/ease keys on any point) and rig expressions (wiggle flutter, sine breathing, null/slider drivers)", "phase": "direct" },
+      { "cap": "Interpolate between two saved warp POSES (essence-card presets) and blend them with a single slider", "phase": "direct" }
+    ],
+    "product_must_defer": [
+      { "task": "Conform the mesh to specific IMAGE CONTENT the product cannot perceive (match a texture to a curved surface in the frame)", "deferral_reason": "perceptual-judgment", "user_action_asked": "In the comp viewport, drag the 4 corner vertices + 8 tangent handles until the warp visually matches the target surface, and set at least one keyframe if it moves.", "then_product_can": "Read those user-set poses straight back out of params -0001..-0012 and automate everything downstream (retime, ease, rig, blend to other poses). NOTE: if the pipeline can read rendered pixels, the visual loop can close this WITHOUT a handoff — this deferral is soft, unlike an opaque-core one." },
+      { "task": "Make the warp TRACK moving footage (a surface that translates/rotates over time)", "deferral_reason": "perceptual-judgment", "user_action_asked": "Either set the warp pose by hand on keyframes at the moving surface's extremes, OR run a track (mocha / point / 3D tracker) on the surface.", "then_product_can": "Parent/link the 12 mesh points to the tracked nulls, or interpolate between the hand-set keyframe poses." }
+    ]
+  },
+
+  "perception_signal": {
+    "identify": "matchName 'ADBE BEZMESH'; customValue = 0; 12 named 2D_SPATIAL animatable leaves ADBE BEZMESH-0001..-0012; fixed topology.",
+    "state_present_when": "ALWAYS — the mesh points exist as params from the moment the effect is applied (default = an identity quad matching the layer corners). There is no create-step to gate.",
+    "state_absent_when": "n/a — Tier A has no opaque core to be absent."
+  },
+  "state_gate": {
+    "predicate": "none — state is always in-params",
+    "on_absent": "n/a",
+    "on_present": "author/keyframe/rig the mesh directly; defer ONLY the perceptual-judgment of where points land to match unseen image content (soft — the visual loop can close it)"
+  },
+
+  "config_recipes": {
+    "arc / banner (smile curve)": "raise the two TOP tangents' Y (or lower the two BOTTOM) so the top edge bows — corners fixed, tangents pull the mid-edge up",
+    "flag / cloth wave": "wiggle() on the edge tangents' X/Y at ~1-2 Hz, small amplitude, phase-offset left→right for a travelling ripple",
+    "single-corner perspective pull": "drag ONE corner vertex inward + adjust its two adjacent tangents; leave the opposite corner fixed",
+    "page curl (corner)": "pull one corner back + curl its tangents so that edge rolls"
+  },
+  "reasoning_hooks": {
+    "warp too stiff / faceted": "raise Quality (subdivision) toward 10",
+    "edges kink at the tangents": "the tangent handles are too short/misaligned — lengthen them along the intended curve direction",
+    "want it to breathe/flutter": "expression the tangents (wiggle/sine), not the corners — corners set the frame, tangents set the motion",
+    "can't tell where to put the points": "that's the perceptual-judgment deferral — either the user drags to match the frame, OR (if pixels are readable) the visual loop nudges the points toward the target"
+  },
+
+  "routing_tags": ["mesh-deform", "warp", "distort", "fully-scriptable", "no-opaque-state", "in-params", "parametric-warp", "flag-wave", "banner-arc", "perspective-pull", "page-curl", "bezier-patch", "fixed-topology", "expression-riggable", "tier-A", "content-conform-handoff", "track-to-footage-handoff", "spatial"],
+
+  "grounding": "introspect card (cards/ADBE_BEZMESH.json — 17 params, 15 leaf, 14 animatable, customValue 0) + state-model analysis (spatial-ml-state-model workflow, 2026-07-19) + model prior. HIGH confidence — the whole state is enumerated params, read directly. Teaching value: the Tier-A contrast to Roto/Element — shows that the spatial/ML fields are only load-bearing once state_model ≠ in-params, and introduces the SOFT `perceptual-judgment` deferral (distinct from an opaque-state hard handoff).",
+  "_method": "introspect + state-model analysis (spatial/ML card pipeline)",
+  "_date": "2026-07-19"
+}
