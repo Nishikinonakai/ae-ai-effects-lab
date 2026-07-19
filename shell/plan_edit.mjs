@@ -119,6 +119,9 @@ Rules:
   · Read the CURRENT VALUES before choosing. If a lever is already at the value you want, it is not
     the lever to move. If a gate-like param (a luminance threshold, an enable, a view mode) is set
     so the effect cannot contribute, open it FIRST — nothing downstream can matter while it is shut.
+  · A lever marked ⟨gated⟩ in the lever list is NOT writable until its named gate is opened. To use
+    one, emit TWO edits in order: the gate first, then the lever. Emitting the lever alone throws
+    and wastes the whole apply→render→verify cycle. Edits are applied in the order you list them.
   · Edit a layer that is LIVE at this frame; the dump lists only those.
   · If an effect is marked opaqueCore, its load-bearing state (matte/solve/scene) is NOT scriptable.
     Do not pretend a param edit creates it. Either edit a different layer, or return an empty edits

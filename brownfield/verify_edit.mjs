@@ -171,7 +171,8 @@ if (failedDetail.length || blockedPrior.length) {
     ...failedDetail.map(f => `  ✗ ${f.target} — ${f.reason}`),
     ...blockedPrior.filter(b => !failedDetail.some(f => f.target === b)).map(b => `  ✗ ${b} — rejected in an earlier iteration of this tune`),
     'If a lever is hidden behind a parent gate, you may suggest the GATE (the toggle/mode that opens it)',
-    'instead — but never the hidden lever itself.',
+    'instead — but never the hidden lever itself. Levers marked ⟨gated⟩ in the list above already name',
+    'their gate: suggest the gate and the lever together, gate first, and both will apply.',
   ].join('\n');
 }
 

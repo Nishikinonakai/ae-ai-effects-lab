@@ -50,6 +50,10 @@ const effect = process.argv[2];
 if (!effect || effect.startsWith('--')) { console.error('usage: node introspect/probe_gates.mjs "<effect matchName>" [--max-gates=14] [--max-values=4]'); process.exit(1); }
 const maxGates = Number(arg('max-gates', 14));
 const maxValues = Number(arg('max-values', 4));
+// Heavy effects need a bigger budget: Particular's baseline walk touches 6046 params (each an
+// identity setValue) and its first apply in a session includes a licence check. 120s is fine for a
+// 50-param filter and nowhere near enough for those.
+const SLOW_MS = Number(arg('timeout', 900)) * 1000;
 
 async function runAE(script, timeoutMs = 120000) {
   fs.writeFileSync(RES, JSON.stringify({ status: 'waiting' }));
@@ -102,7 +106,7 @@ await runAE(`(function(){
   s.Effects.addProperty(${JSON.stringify(effect)});
   app.endUndoGroup();
   return "applied";
-})()`);
+})()`, SLOW_MS);
 
 // 2) baseline shut-set + candidate gates, read on a SETTLED instance (next round-trip)
 const meta = JSON.parse(await runAE(`(function(){${PRE}
@@ -131,7 +135,7 @@ const meta = JSON.parse(await runAE(`(function(){${PRE}
   }
   walk(fx);
   return '{"shut":[' + shut.join(",") + '],"gates":[' + gates.join(",") + ']}';
-})()`));
+})()`, SLOW_MS));
 
 if (meta.error) { console.error(meta.error); process.exit(1); }
 const shut0 = meta.shut;
@@ -154,7 +158,7 @@ for (let gi = 0; gi < gates.length; gi++) {
       })()`);
       stillShut = (await runAE(`(function(){${PRE}
         var fx = fxOf(); return shutSet(fx, ${JSON.stringify(shut0)});
-      })()`)).split(',').filter(Boolean);
+      })()`, SLOW_MS)).split(',').filter(Boolean);
     } catch (e) { console.log(`skipped (${String(e).slice(0, 40)})`); continue; }
 
     const nowOpen = shut0.filter(mn => !stillShut.includes(mn));
