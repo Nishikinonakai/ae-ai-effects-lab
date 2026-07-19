@@ -12,10 +12,13 @@
 //      model verifies against is the one actually live at comp.time),
 //   4) never touches a user's original file — operate on a copy or scratch comp only.
 //
-// Two proven ops (the create-vs-modify pair the E2E demo exercised):
-//   { "op":"param",     "layerIndex":N, "effectMatchName":"BCC Cross Glitch",
+// Three ops (create-vs-modify pair + expression generation, PRD §八 D):
+//   { "op":"param",      "layerIndex":N, "effectMatchName":"BCC Cross Glitch",
 //     "paramMatchName":"BCC Cross Glitch-10682374", "value":80 [, "effectIndex":I] }
-//   { "op":"addEffect", "layerIndex":N, "effectMatchName":"PEDG" [, "name":"Deep Glow"] }
+//   { "op":"addEffect",  "layerIndex":N, "effectMatchName":"PEDG" [, "name":"Deep Glow"] }
+//   { "op":"expression", "layerIndex":N, "target":"position"|"scale"|"rotation"|"opacity"|"anchor"
+//     (or "propertyPath":["ADBE Effect Parade","<fx>",...]), "expression":"...AE expr..." }
+//     — inverse restores the prior expression text + enabled state (empty text clears it).
 //
 // usage:
 //   apply:    node brownfield/apply_edit.mjs --spec=<spec.json> [--out=<dir>] [--label="..."]
@@ -81,6 +84,21 @@ const PREAMBLE = String.raw`
       if (pr.numProperties){ var deep = findParam(pr, matchName); if (deep) return deep; }
     }
     return null;
+  }
+  // resolve the property an 'expression' op targets: either a named Transform target or an
+  // explicit propertyPath (array of matchNames walked from the layer root).
+  var XFORM = {
+    position: ["ADBE Transform Group","ADBE Position"], scale: ["ADBE Transform Group","ADBE Scale"],
+    rotation: ["ADBE Transform Group","ADBE Rotate Z"], opacity: ["ADBE Transform Group","ADBE Opacity"],
+    anchor: ["ADBE Transform Group","ADBE Anchor Point"]
+  };
+  function resolveProp(L, ed){
+    var pathArr = ed.propertyPath;
+    if (!pathArr && ed.target && XFORM[ed.target]) pathArr = XFORM[ed.target];
+    if (!pathArr) return null;
+    var pr = L;
+    for (var i=0;i<pathArr.length;i++){ try { pr = pr.property(pathArr[i]); } catch(e){ return null; } if (!pr) return null; }
+    return pr;
   }`;
 
 function bail(msg) { console.error(msg); process.exit(1); }
@@ -114,6 +132,15 @@ if (rollbackPath) {
           var parade = L.property("ADBE Effect Parade");
           try { parade.property(op.effectIndex).remove(); done.push('{"removed_effect_at":'+op.effectIndex+'}'); }
           catch(e){ done.push('{"skip":"effect gone at '+op.effectIndex+'"}'); }
+        } else if (op.op === 'setExpression'){
+          var xp = resolveProp(L, op);
+          if (!xp){ done.push('{"skip":"prop gone","i":'+i+'}'); continue; }
+          try {
+            xp.expression = op.expression || '';                  // restore prior text (empty clears)
+            if (xp.expression === '') { try { xp.expressionEnabled = false; } catch(eD){} }
+            else { try { xp.expressionEnabled = op.enabled; } catch(eE2){} }
+            done.push('{"restored_expr_on":'+jstr(op.target||String(op.propertyPath))+'}');
+          } catch(e){ done.push('{"skip":"setExpr threw","i":'+i+'}'); }
         }
       }
     } catch(e){ app.endUndoGroup(); return '{"err":'+jstr(String(e))+'}'; }
@@ -173,6 +200,21 @@ const AEX = String.raw`(function(){
         var newIdx = parade.numProperties;   // added at the end
         applied.push('{"op":"addEffect","layer":'+ed.layerIndex+',"effect":'+jstr(ed.effectMatchName)+',"index":'+newIdx+'}');
         inverse.push('{"op":"removeEffect","layerIndex":'+ed.layerIndex+',"effectIndex":'+newIdx+'}');
+      } else if (ed.op === 'expression'){
+        // GENERATE + APPLY an expression (PRD §八 D). Target = a Transform prop or an explicit
+        // propertyPath. Record the prior expression + enabled state so rollback restores it exactly.
+        var xp = resolveProp(L, ed);
+        if (!xp){ applied.push('{"error":"property not found","which":'+jstr(ed.target||String(ed.propertyPath))+'}'); continue; }
+        if (!xp.canSetExpression){ applied.push('{"error":"property takes no expression","which":'+jstr(ed.target||String(ed.propertyPath))+'}'); continue; }
+        var oldExpr = ''; var oldEn = false;
+        try { oldExpr = xp.expression; } catch(eX){}
+        try { oldEn = xp.expressionEnabled; } catch(eEn){}
+        try { xp.expression = ed.expression; }
+        catch(eSet){ applied.push('{"error":"setExpression threw","detail":'+jstr(String(eSet))+'}'); continue; }
+        applied.push('{"op":"expression","layer":'+ed.layerIndex+',"target":'+jstr(ed.target||String(ed.propertyPath))+',"had_expr":'+(oldEn?'true':'false')+'}');
+        inverse.push('{"op":"setExpression","layerIndex":'+ed.layerIndex+
+          (ed.target?',"target":'+jstr(ed.target):',"propertyPath":'+jval(ed.propertyPath))+
+          ',"expression":'+jstr(oldExpr)+',"enabled":'+(oldEn?'true':'false')+'}');
       } else {
         applied.push('{"error":"unknown op","op":'+jstr(String(ed.op))+'}');
       }
@@ -206,6 +248,7 @@ for (const a of res.applied) {
   if (a.error) console.log(`  ✗ ${a.error}: ${a.which || a.op || ''}`);
   else if (a.op === 'param') console.log(`  ~ param ${a.param} on layer ${a.layer}: ${JSON.stringify(a.old)} → ${JSON.stringify(a.new)}`);
   else if (a.op === 'addEffect') console.log(`  + effect ${a.effect} on layer ${a.layer} (parade idx ${a.index})`);
+  else if (a.op === 'expression') console.log(`  ƒ expression on layer ${a.layer} ${a.target}${a.had_expr ? ' (replaced prior)' : ''}`);
 }
 const errs = res.applied.filter(a => a.error).length;
 console.log(`\nbefore → ${report.beforePng}`);
