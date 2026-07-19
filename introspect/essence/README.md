@@ -98,6 +98,17 @@ See `BCC_Cross_Glitch.essence.json` (the reference implementation, 2026-07-19). 
   param or a valueless data-group (Roto "Strokes", Element "Scene Settings", Puppet "ARAP") ⇒ opaque
   core ⇒ Tier B/C.
 
+  **★ LIVE-VALIDATED end-to-end (2026-07-19), including the human handoff.** On a real Roto Brush:
+  (1) `dump_comp` flagged `⟨opaque-core:ml-segmentation⟩` + the gate; (2) `apply_edit`'s `⟨GATE⟩`
+  guard fired when a finishing param was set (flagged it would be inert without a matte); (3) the
+  handoff was performed for real — a Roto Brush stroke painted via **computer-use** in the Layer
+  panel → the ML matte materialized; (4) the product then rendered the composited result (subject
+  isolated onto the layer below) and (5) **owned the finishing surface** — choked the matte edge via
+  the scriptable Shift Edge param (`/rmshiftedges` 0→−80, visible edge change), then rolled it back.
+  The full "gate the core → user creates it → own the surface" loop works on a live opaque-core
+  effect. `apply_edit` carries a shared opaque-core registry that emits a `gateWarns[]` (not a hard
+  refuse — pre-staging is legit) so the act layer enforces the principle too.
+
 ## Coverage so far
 
 5 effect cards = the AMV third-party backbone: **BCC Cross Glitch, BCC Camera Shake, BCC Textures,

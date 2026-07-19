@@ -74,6 +74,17 @@ const PREAMBLE = String.raw`
     return jstr(v);
   }
   function getComp(){ var c = app.project.activeItem; return (c && c instanceof CompItem) ? c : null; }
+  // opaque-core registry (shared vocabulary with dump_comp): editing params on these effects may be
+  // BLUFFING — the load-bearing state (matte/solve/scene) isn't in params, so a "finishing" edit does
+  // nothing until the user has performed the handoff. We don't hard-refuse (pre-staging propagation/
+  // analysis settings IS legitimate), but we flag it loudly so the caller verifies the gate.
+  function opaqueGate(mn){
+    if (mn === "ADBE Samurai") return "Roto Brush: matte lives outside params. A finishing edit is INERT until the user has painted+propagated. Pre-staging propagation settings is OK; verify a matte exists before trusting refine knobs.";
+    if (mn === "ADBE 3D Tracker") return "3D Tracker: the solve isn't scriptable. Pre-staging analysis settings is OK; the RESULT is the extracted Camera/Null layers (drive those), not these params.";
+    if (mn === "ADBE FreePin3") return "Puppet: pins must be placed by the user first; once they exist their motion is in-params.";
+    if (mn === "VIDEOCOPILOT 3DArray") return "Element 3D: all controls are INERT until a scene is built in the modal Scene Setup.";
+    return null;
+  }
   // scale a keyframe value by a factor — scalar or per-component (position/color/etc.)
   function mulVal(v, f){ if (v instanceof Array){ var a=[]; for (var i=0;i<v.length;i++) a.push(v[i]*f); return a; } return v*f; }
   // A key's full "shape": interpolation TYPE (hold/linear/bezier, in+out) AND temporal ease
@@ -248,7 +259,7 @@ const AEX = String.raw`(function(){
   // BEFORE frame at the current playhead (F2: the live frame the edit is judged against)
   try { comp.saveFrameToPng(comp.time, BEFORE); } catch(e){}
 
-  var applied = [], inverse = [];
+  var applied = [], inverse = [], gateWarns = [];
   app.beginUndoGroup(${JSON.stringify('apply: ' + label)});
   try {
     for (var i=0;i<EDITS.length;i++){
@@ -257,6 +268,10 @@ const AEX = String.raw`(function(){
       if (ed.op === 'param'){
         var fx = findFx(L, ed.effectMatchName, ed.effectIndex);
         if (!fx){ applied.push('{"error":"effect not found","which":'+jstr(ed.effectMatchName)+'}'); continue; }
+        // opaque-core gate (spatial/ML): flag that this edit may be inert unless the user handoff is
+        // done. Not a refuse — pre-staging is legit — but the caller must verify the gate.
+        var gmsg = opaqueGate(fx.matchName);
+        if (gmsg && !ed.gateAck){ gateWarns.push('{"layer":'+ed.layerIndex+',"effect":'+jstr(fx.matchName)+',"gate":'+jstr(gmsg)+'}'); }
         var pr = findParam(fx, ed.paramMatchName);
         if (!pr){ applied.push('{"error":"param not found","which":'+jstr(ed.paramMatchName)+'}'); continue; }
         // A value/keyframe edit under a LIVE expression has NO visible effect — the expression drives
@@ -349,7 +364,7 @@ const AEX = String.raw`(function(){
   try { comp.saveFrameToPng(comp.time, AFTER); } catch(e){}
 
   return '{"ok":true,"comp":'+jstr(comp.name)+',"time":'+jnum(comp.time)+
-         ',"applied":['+applied.join(',')+'],"inverse":['+inverse.join(',')+']}';
+         ',"applied":['+applied.join(',')+'],"inverse":['+inverse.join(',')+'],"gateWarns":['+gateWarns.join(',')+']}';
 })();`;
 
 const res = await runAE(AEX);
@@ -381,6 +396,7 @@ const report = {
   spec: spec.edits,
   applied: res.applied,
   inverse: res.inverse,
+  gateWarns: res.gateWarns || [],
   beforePng: path.relative(REPO, beforePng),
   afterPng: path.relative(REPO, afterPng),
 };
@@ -396,6 +412,7 @@ for (const a of res.applied) {
   else if (a.op === 'addEffect') console.log(`  + effect ${a.effect} on layer ${a.layer} (parade idx ${a.index})`);
   else if (a.op === 'expression') console.log(`  ƒ expression on layer ${a.layer} ${a.target}${a.had_expr ? ' (replaced prior)' : ''}`);
 }
+for (const g of (res.gateWarns || [])) console.log(`  ⟨GATE⟩ layer ${g.layer} ${g.effect}: ${g.gate}`);
 const errs = res.applied.filter(a => a.error).length;
 console.log(`\nbefore → ${report.beforePng}`);
 console.log(`after  → ${report.afterPng}`);
