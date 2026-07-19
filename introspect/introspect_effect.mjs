@@ -131,22 +131,27 @@ function buildScript(effectName, cardPath) {
     .replace('__CARDPATH__', cardPath.replace(/\\/g, '\\\\'));
 }
 
-// SETTABILITY — a SECOND pass, and it must be a second bridge round-trip.
+// SETTABILITY — a SECOND pass, on a DISPLAYED comp, in its own bridge round-trip.
 //
 // Readable does not imply writable: Deep Glow's Spread reads perfectly (value 33, range
 // 0.01..100, units %) but every setValue throws "the property or a parent property is hidden".
-// A card built from readability alone therefore advertises levers that can NEVER move, and
-// everything downstream — the planner, the scorer's co-lever list, the tune loop — spends moves
-// on them. (This cost a real tune: the scorer pivoted to Spread, the edit threw, the iteration
-// was wasted.)
+// A card built from readability alone therefore advertises levers that cannot move, and everything
+// downstream — the planner, the scorer's co-lever list, the tune loop — spends moves on them. (This
+// cost a real tune: the scorer pivoted to Spread, the edit threw, the iteration was wasted.)
 //
-// Why a separate round-trip: a plugin decides which params to hide in its own params-UI pass,
-// which AE runs AFTER the script that created the effect returns. Probe inside the creating
-// script and every param still reports settable — measured directly: same instance, "settable"
-// during creation, "hidden" on the very next round-trip. So settability is only meaningful on a
-// SETTLED instance. An identity setValue (same value in, same value out) is then an exact,
-// side-effect-free probe, and it runs on the __Introspect scratch solid, so nothing user-owned
-// is touched.
+// THE DISPLAY REQUIREMENT, which is the whole trick:
+// a plugin computes which params to hide in its params-UI pass, and AE only runs that pass once the
+// comp has been shown in a viewer. On a comp that has never been displayed, EVERY param reports
+// settable — a permissive fiction, not a measurement. Verified directly: a virgin comp reported all
+// of Deep Glow's params open; `openInViewer()` + selecting the layer, and the same instance
+// immediately reported Spread, Smooth Blending and Glow Iterations hidden. Rendering the comp does
+// NOT trigger it; only display does.
+//
+// So the probe must (a) open the comp in a viewer and select the layer, and (b) run in a round-trip
+// AFTER the one that created the effect. Skip either and the results are confidently wrong in
+// opposite directions. An identity setValue (same value in, same value out) is then an exact,
+// side-effect-free probe, and it runs on the __Introspect scratch solid, so nothing user-owned is
+// touched.
 function buildSettableScript() {
   return String.raw`(function () {
   var esc = function (s) { return String(s).replace(/\\/g, "\\\\").replace(/"/g, '\"').replace(/[\r\n\t]/g, " "); };
@@ -188,6 +193,9 @@ function buildSettableScript() {
     var solid = null;
     for (var L = 1; L <= comp.numLayers; L++) if (comp.layer(L).name === "probe") solid = comp.layer(L);
     if (!solid || solid.Effects.numProperties < 1) return '{"status":"error","message":"no probe effect"}';
+    // DISPLAY FIRST — without this the plugin never runs its params-UI pass and every param
+    // reports settable. Re-asserted on every probe: another comp may have been fronted since.
+    try { comp.openInViewer(); solid.selected = true; } catch (eDisp) {}
     app.beginUndoGroup("Introspect settability");
     walk(solid.Effects.property(1));
     app.endUndoGroup();

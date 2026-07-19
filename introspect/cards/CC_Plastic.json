@@ -27,7 +27,7 @@
    "name": "Bump Layer",
    "matchName": "CC Plastic-0002",
    "type": "LAYER_INDEX",
-   "value": "1",
+   "value": "2",
    "animatable": false,
    "expr": false,
    "settable": "yes"

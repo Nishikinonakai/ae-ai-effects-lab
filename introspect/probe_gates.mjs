@@ -11,7 +11,8 @@
 //     probed against six plausible gates, on fresh instances and after renders, always shut. Those
 //     must not be offered as levers, because reaching for one costs a whole tune iteration.
 //
-// Whether that second category exists at all is still open — see the STATUS warning below.
+// Both categories are real: Deep Glow's Spread stays shut under every gate tried, while Form's
+// Base Form Size Y opens the moment its linked/individual gate flips.
 //
 // Calling both "phantom levers" would be wrong in opposite directions — it would write off usable
 // params, and it would keep recommending dead ones. So: enumerate the candidate gates (the small
@@ -23,11 +24,14 @@
 // settability probe: the same instance reported everything settable during creation and 9 params
 // hidden on the very next round-trip.)
 //
-// ⚠ STATUS: NOT A VALIDATED INSTRUMENT. It reported 0 conditionally-gated params across 105 flips
-// on three effects, and that is demonstrably wrong: `tc Form-0005` (Base Form Size Y) probes as
-// hidden and this tool fails to open it by flipping `tc Form-0489` — yet a live recipe run sets
-// exactly that gate and then writes Size Y successfully. A negative result here means NOTHING about
-// permanence until that discrepancy is understood. See SETTABILITY.md.
+// THE DISPLAY REQUIREMENT — the reason the first version of this tool was blind:
+// AE only runs a plugin's params-UI pass (the code that decides what to hide) once the comp has
+// been shown in a viewer, and it re-runs it for the comp currently being displayed. The first
+// version reused a scratch comp that some other step had since pushed out of the viewer, so every
+// flip re-measured stale visibility and it reported "0 conditionally gated" across 105 flips —
+// confidently wrong. It now opens its own comp in the viewer and selects the layer on EVERY probe.
+// Validated against a known-good case: Form's `tc Form-0489` (Base Form Size, linked→individual)
+// opens `tc Form-0005/0006` while `tc Form-0010` correctly stays shut.
 //
 // usage: node introspect/probe_gates.mjs "<effect matchName>" [--max-gates=14] [--max-values=4]
 import fs from 'fs';
@@ -66,10 +70,13 @@ const PRE = `
   function fxOf(){
     var comp = null;
     for (var i = 1; i <= app.project.numItems; i++){ var it = app.project.item(i);
-      if (it instanceof CompItem && it.name === "__Introspect") { comp = it; break; } }
+      if (it instanceof CompItem && it.name === "__GateProbe") { comp = it; break; } }
     if (!comp) return null;
     var s = null; for (var L = 1; L <= comp.numLayers; L++) if (comp.layer(L).name === "probe") s = comp.layer(L);
     if (!s || s.Effects.numProperties < 1) return null;
+    // Re-assert display EVERY time: another comp may have been fronted since the last call, and a
+    // stale viewer means every reading below is the previous state, not the current one.
+    try { comp.openInViewer(); s.selected = true; } catch (eD) {}
     return s.Effects.property(1);
   }
   function shutSet(fx, list){
@@ -82,14 +89,14 @@ const PRE = `
   }`;
 
 // 1) fresh instance of the effect on the scratch solid
-console.log(`applying ${effect} to the __Introspect scratch layer…`);
+console.log(`applying ${effect} to the __GateProbe scratch layer…`);
 await runAE(`(function(){
   var comp = null;
   for (var i = 1; i <= app.project.numItems; i++){ var it = app.project.item(i);
-    if (it instanceof CompItem && it.name === "__Introspect") { comp = it; break; } }
-  if (!comp) comp = app.project.items.addComp("__Introspect", 640, 360, 1, 2, 30);
+    if (it instanceof CompItem && it.name === "__GateProbe") { comp = it; break; } }
+  if (!comp) comp = app.project.items.addComp("__GateProbe", 1280, 720, 1, 4, 30);
   var s = null; for (var L = 1; L <= comp.numLayers; L++) if (comp.layer(L).name === "probe") s = comp.layer(L);
-  if (!s) s = comp.layers.addSolid([0.5,0.5,0.5], "probe", 640, 360, 1, 2);
+  if (!s) s = comp.layers.addSolid([0.5,0.5,0.5], "probe", 1280, 720, 1, 4);
   app.beginUndoGroup("probe gates");
   while (s.Effects.numProperties > 0) s.Effects.property(1).remove();
   s.Effects.addProperty(${JSON.stringify(effect)});
@@ -169,7 +176,7 @@ const dead = shut0.filter(mn => !opened.has(mn));
 const out = {
   effect, _date: new Date().toISOString().slice(0, 10),
   _method: 'single-gate flips, one bridge round-trip each (visibility recomputes only between script executions)',
-  _caveat: 'UNVALIDATED INSTRUMENT — a negative result proves nothing. Known false negative: tc Form-0489=2 does open tc Form-0005 in a recipe context but not here. Also single-gate only, so a param needing two gates set together reads as dead.',
+  _caveat: 'single-gate flips only — a param that needs two gates open together still reads as shut. Requires the comp to be displayed (this tool asserts that on every probe); without it AE reports every param settable.',
   shutOnDefault: shut0.length,
   conditionallyGated: conditional.length,
   probablyDead: dead.length,
@@ -189,6 +196,5 @@ if (byGate.size) {
   console.log('\nwhich gate opens how many:');
   for (const [k, n] of [...byGate].sort((a, b) => b[1] - a[1]).slice(0, 12)) console.log(`  ${k.padEnd(38)} → ${n}`);
 }
-console.log(`\n⚠ a "still shut" result does NOT mean the param is permanently dead — this probe has a known`);
-console.log(`  false negative (tc Form Base Form Size Y). See introspect/SETTABILITY.md before acting on it.`);
+console.log(`\nnote: single-gate flips only — a param needing TWO gates open together still reads as shut here.`);
 console.log(`\nreport → ${path.relative(path.resolve(__dirname, '..'), outPath)}`);

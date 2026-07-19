@@ -1,6 +1,6 @@
 # Settability — what "this param exists" is actually worth
 
-*2026-07-19/20 · method, results, and the one place the method is known to be wrong*
+*2026-07-19/20 · method, results, and the measurement requirement that makes them mean anything*
 
 ## Why this exists
 
@@ -31,10 +31,12 @@ same value out, so the probe cannot change anything — and classifies any throw
 - `driven` → keyframes/expression hold it: writable in principle
 - `n/a` → no-value/custom/marker types, which have no `setValue`
 
-**It must be a second bridge round-trip.** A plugin computes param visibility in a UI pass AE runs
-*after* the creating script returns. Probed inside that script every param reports settable; probed
-on the very next round-trip the same Deep Glow instance reports 9 hidden. The first implementation
-did it in-script and confidently reported `hidden=0` for everything.
+**It must be a second bridge round-trip, on a displayed comp.** A plugin computes param visibility
+in a UI pass AE runs *after* the creating script returns — and only for a comp that is being shown.
+Probed inside the creating script, every param reports settable; probed on the very next round-trip
+the same Deep Glow instance reports 9 hidden. The first implementation did it in-script and
+confidently reported `hidden=0` for everything. See "the measurement requirement" below — the
+display half of this rule is the one that took longest to find.
 
 > **ExtendScript hazard found here:** a chained ternary `a ? x : (b) ? y : z` returned `y` with `a`
 > demonstrably true (`indexOf` returned 113). Every hidden param was silently mislabelled `driven`.
@@ -59,41 +61,63 @@ did it in-script and confidently reported `hidden=0` for everything.
 param-level figure (20.3%) is dominated by Trapcode Form alone (2080 of 2458) and should not be read
 as an ecosystem rate — the per-effect figure is the meaningful one.
 
-## The known blind spot — read this before trusting a "dead param" claim
+## The measurement requirement — display, or you measure nothing
 
-"Not writable **now**" and "not writable **ever**" are different claims, and only the first is
-measured. Params can be *conditionally gated*: hidden until a parent enum or toggle opens them.
-That is the "hidden parameter gating" the causal ontology exists to capture, and those params are
-perfectly usable once the gate is set.
+**Settability is only meaningful on a comp that has been DISPLAYED in a viewer.**
 
-`probe_gates.mjs` was written to separate the two: flip every small-integer param (enums and
-checkboxes) to each of its values and re-measure what opens. **It found zero conditionally-gated
-params across 105 flips on three effects — and that result is wrong.**
+AE runs a plugin's params-UI pass — the code that decides which params to hide — only when the comp
+is shown. On a comp that has never been displayed, *every* param reports settable. That is not a
+measurement; it is a permissive default, and it looks exactly like a real result.
 
-The counter-example is decisive:
+Verified directly, and it cost most of a day to find:
 
-- `tc Form-0005` (Base Form Size Y) probes as `hidden`.
-- `probe_gates` flipped `tc Form-0489` (Base Form Size) to 2 and saw nothing open.
-- But **49 shipped recipes set `tc Form-0005`, and a live run confirms it applies**: the runner
-  sets `tc Form-0489 = 2` and then `Size Y = 700` ✓ `Size Z = 200` ✓ in the same script — while
-  `tc Form-0010` in that same run fails ✗ with the hidden error, so the effect is genuinely
-  discriminating, not universally permissive.
+| context | Deep Glow `Spread` |
+|---|---|
+| virgin comp, never displayed | **OPEN** (false) |
+| same comp, after rendering a frame | **OPEN** (rendering is not the trigger) |
+| same comp, after `openInViewer()` + selecting the layer | **hidden** (true) |
 
-Same gate, same value, opposite outcome in the two contexts. Whatever `probe_gates` is missing about
-the instance or the ordering, it is not yet a reliable instrument.
+The same applies to *changing* a gate: the probe must re-assert display on every measurement,
+because another comp being fronted in between leaves you re-reading stale visibility.
 
-**Consequences for anything reading this data:**
+`introspect_effect.mjs` and `probe_gates.mjs` both assert display on every probe. Anything else
+reading param state should assume the permissive fiction until it does the same.
 
-1. `settable: "hidden"` is a warning, not a verdict. Do not offer such a param as a lever — but do
-   not delete it from the ontology either.
-2. A negative `probe_gates` result establishes nothing about permanence. Deep Glow's `Spread` is
-   *treated* as unreachable on that basis, and its card says so explicitly.
-3. The reliable escalation is the one the tune loop already implements: attempt the edit, and when
-   the frame does not move, use the measured inert signal to go hunting for the gate. Ground truth
-   is the render.
+## Gated vs unreachable — the split, now measured
 
-## Open
+`probe_gates.mjs` flips every enum/checkbox param through its values, with display asserted, and
+re-measures what opens. Its first version reused a scratch comp that other steps kept pushing out
+of the viewer, so it re-read stale visibility and reported "0 conditionally gated" across 105 flips
+— confidently wrong. Fixed, it reproduces both known-good cases:
 
-- Why the recipe context can write `tc Form-0005` and the probe context cannot — instance state,
-  param ordering, or something about the host layer. Resolving this fixes `probe_gates`.
-- Re-run the survey with a working gate probe to get the real conditional/permanent split.
+- **Trapcode Form** — `Base Form Size` (linked → individual) opens `Size Y` and `Size Z`, while
+  `Center XY` correctly stays shut. This matches ground truth: 49 shipped recipes set `Size Y`, and
+  a live run confirms the runner sets the gate first, then writes Y ✓ Z ✓ while `Center XY` fails ✗.
+- **Deep Glow** — `Auto Iterations = 0` opens `Glow Iterations`. The remaining 8 params resist all
+  19 gates and are treated as unreachable.
+
+So both categories are real, and the essence cards now carry both:
+
+```
+key_levers          usable now
+gated_levers        usable AFTER opening a named gate, in the same edit
+unreachable_levers  never offer — no gate found
+```
+
+Offering a gated lever naked produces an edit that throws; hiding it throws away usable range.
+Recording the gate is the whole point — this is the "hidden parameter gating" the causal ontology
+exists to hold.
+
+**Caveat that remains:** single-gate flips only. A param needing two gates open together still
+reads as unreachable. Form's 2078 remaining shut params are mostly this plus per-form-type
+branches — the per-effect count is the meaningful figure, not the param percentage.
+
+## What generalises
+
+- **An instrument that has never produced a known-good positive is not an instrument.** The gate
+  probe's "0 across 105 flips" looked like a finding and was a bug. It only became trustworthy once
+  it reproduced two cases whose answers were already known from shipped recipes.
+- **Introspection reports capability, not availability.** Three states, three measurements:
+  readable (property walk), writable (this probe, on a displayed comp), effective (the render).
+- The reliable escalation in the product is still the loop's: attempt the edit, and when the frame
+  does not move, use the measured inert signal to hunt the gate. The render is ground truth.

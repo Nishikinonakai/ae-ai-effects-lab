@@ -122,17 +122,23 @@ it to perceive it. Also revealed: an inert frame has two causes, and the edit re
 them — if the param never took its value the edit was gated; if it *did* take its value and the
 frame still did not move, the lever is real but absorbed/saturated in this state.
 
-**#6c — essence cards advertised levers that can never move.** The pivot at #6a picked `PEDG-0011`
+**#6c — essence cards advertised levers that cannot move.** The pivot at #6a picked `PEDG-0011`
 Spread… and `setValue` threw *"the property or a parent property is hidden"*. Deep Glow exposes 9
-params to the scripting API — full name, range, units, live value — that it never opens for writing.
-Probed against Blend Mode, Auto Iterations, View, Unmult, Fixed Steps and Enable Dither, on fresh
-instances and after renders: they stay shut in every combination. Two fixes: `introspect_effect.mjs`
-now records **settability**, and unreachable levers are filtered out of what the scorer is offered.
+params to the scripting API — full name, range, units, live value — that reject every write in the
+default state. `introspect_effect.mjs` now records **settability**, and the cards split three ways:
+`key_levers` (usable now) / `gated_levers` (usable after opening a named gate, offered *with* that
+gate) / `unreachable_levers` (never offered). Deep Glow's `Glow Iterations` turned out to be gated
+behind `Auto Iterations = 0`; the other 8, Spread included, resist all 19 of the effect's gates.
 
-> **The settability probe must be a SECOND bridge round-trip.** A plugin decides which params to
-> hide in its own params-UI pass, which AE runs *after* the creating script returns. Probed inside
-> that script, every param reports settable; probed on the very next round-trip, the same instance
-> reports 9 hidden. Measured directly — this is why the first implementation reported `hidden=0`.
+> **Settability is only measurable on a DISPLAYED comp** — the finding that cost the most to reach.
+> AE runs a plugin's params-UI pass (the code that decides what to hide) only when the comp is shown
+> in a viewer. On a never-displayed comp every param reports settable: a permissive fiction that
+> looks exactly like a real measurement. Rendering does not trigger it; only display does. The probe
+> must also be a second round-trip AND re-assert display each time — a different comp being fronted
+> in between leaves you re-reading stale visibility. That last one silently broke the gate probe,
+> which reported "0 conditionally gated" across 105 flips: a bug wearing a finding's clothes. It
+> earned trust only by reproducing two cases shipped recipes already knew the answer to (Form
+> `Base Form Size` → `Size Y/Z`; Deep Glow `Auto Iterations` → `Glow Iterations`).
 >
 > **ExtendScript bug found en route:** a chained ternary
 > `a ? x : (b) ? y : z` evaluated to `y` with `a` demonstrably true (`indexOf` returned 113).
@@ -168,6 +174,10 @@ Two loop-mechanics bugs fixed alongside, both surfaced by these runs:
 
 - **Measure what the model is bad at, don't ask it to perceive it.** Inert-vs-weak is a pixel diff.
 - **Readable ≠ writable ≠ effective.** Three distinct states, and the ontology needs all three:
-  introspection gives readable, the settability probe gives writable, only the render gives effective.
+  introspection gives readable, the settability probe (on a displayed comp) gives writable, only the
+  render gives effective.
+- **An instrument that has never produced a known-good positive is not an instrument.** "0 across
+  105 flips" read as a result and was a bug; it earned trust only by reproducing answers that
+  shipped recipes already knew.
 - **Show current state, not just capability.** A causal model plus a live value is a diagnosis; a
   causal model alone is a guess.

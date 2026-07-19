@@ -92,7 +92,7 @@
    "name": "Mix Layer",
    "matchName": "BCC3Composite-0002",
    "type": "LAYER_INDEX",
-   "value": "1",
+   "value": "2",
    "animatable": false,
    "expr": false,
    "settable": "yes"

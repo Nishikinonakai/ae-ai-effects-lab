@@ -18,7 +18,7 @@
    "name": "Environment",
    "matchName": "CC Environment-0001",
    "type": "LAYER_INDEX",
-   "value": "1",
+   "value": "2",
    "animatable": false,
    "expr": false,
    "settable": "yes"

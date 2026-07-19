@@ -1,11 +1,12 @@
 {
  "_date": "2026-07-19",
  "_method": "introspect_effect settability second pass (settled instance) on a stratified sample",
+ "_meaning": "hidden = not writable in the DEFAULT state. Conditionally-gated params count here too — see SETTABILITY.md.",
  "sampled": 82,
  "probed": 81,
  "skipped": 1,
  "totals": {
-  "effectsWithPhantomLevers": 14,
+  "effectsWithHidden": 14,
   "leaves": 13549,
   "hidden": 2744
  },

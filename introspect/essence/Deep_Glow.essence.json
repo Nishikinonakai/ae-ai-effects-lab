@@ -115,34 +115,46 @@
    "name": "Spread",
    "matchName": "PEDG-0011",
    "advertised": "range 0.01..100 percent, default 33 — shape/falloff of the glow",
-   "why": "NOT WRITABLE in the default state on Deep Glow v1.5.5: the plugin exposes it to the scripting API (it reads back a value, range and units) but setValue throws 'the property or a parent property is hidden'. Six candidate gates were flipped (Blend Mode, Auto Iterations, View, Unmult, Fixed Steps, Enable Dither), on a fresh instance and after a render, and it stayed shut in every one. CAVEAT: that is evidence, not proof. The same single-gate method failed to open Trapcode Form's Base Form Size Y — which a shipped recipe demonstrably CAN set — so a negative gate probe does not establish permanence. Treat as unreachable until a gate is found; do not offer it as a lever.",
-   "_probe": "2026-07-19 settability second pass + 6-gate flip probe; see introspect/SETTABILITY.md for the method's known blind spot"
+   "why": "NOT WRITABLE on Deep Glow v1.5.5. Every setValue throws 'the property or a parent property is hidden'. All 19 of the effect's enum/checkbox params were flipped through their values with the comp displayed (the validated gate probe) and none opened it. Treat as unreachable.",
+   "_probe": "2026-07-20 probe_gates.mjs (validated instrument — it correctly finds Auto Iterations→Glow Iterations on this same effect, and Base Form Size→Size Y/Z on Trapcode Form)"
   },
   {
    "name": "Smooth Blending",
    "matchName": "PEDG-0035",
-   "why": "hidden — same probe"
-  },
-  {
-   "name": "Glow Iterations",
-   "matchName": "PEDG-0021",
-   "why": "hidden — same probe (Auto Iterations does not unlock it)"
+   "why": "not writable; no single gate opened it across 19 gates"
   },
   {
    "name": "Edge Behaviour",
    "matchName": "PEDG-0055",
-   "why": "hidden — same probe"
+   "why": "not writable; no single gate opened it across 19 gates"
   },
   {
    "name": "Edge margins Left/Top/Right/Bottom",
    "matchName": "PEDG-0026..0029",
-   "why": "hidden — same probe"
+   "why": "not writable; no single gate opened them across 19 gates"
   },
   {
    "name": "Show Buffers",
    "matchName": "PEDG-0066",
-   "why": "hidden — debug param, same probe"
+   "why": "debug param; not writable, no gate found"
   }
  ],
- "_settability_note": "Readable != writable. 9 of this effect's params report a name, range, units and current value through the scripting API yet reject every write in the default state. They are recorded here so the planner and the tune loop's co-lever list never spend a move on them. Measured, not assumed — but see the caveat on Spread: 'not writable now' is established, 'never writable' is not."
+ "_settability_note": "Readable != writable. Nine of this effect's params report a name, range, units and current value through the scripting API yet reject every write in the default state. One of them (Glow Iterations) is CONDITIONALLY GATED — open its gate and it works, see gated_levers. The other eight resisted every single-gate flip and are listed in unreachable_levers so the planner and the tune loop never spend a move on them.\n\nMEASUREMENT REQUIREMENT: settability is only meaningful on a comp that has been DISPLAYED in a viewer. AE runs a plugin's params-UI pass (which decides what to hide) only on display; on a never-displayed comp every param reports settable, which is a permissive fiction rather than a measurement. See introspect/SETTABILITY.md.",
+ "gated_levers": [
+  {
+   "name": "Glow Iterations",
+   "matchName": "PEDG-0021",
+   "range": [
+    6,
+    10
+   ],
+   "gate": {
+    "matchName": "PEDG-0050",
+    "name": "Auto Iterations",
+    "setTo": 0
+   },
+   "effect": "manual control of the glow's iteration count — quality/cost tradeoff. Hidden while Auto Iterations is ON (the default); set Auto Iterations = 0 first, THEN this becomes writable.",
+   "_probe": "2026-07-20 probe_gates.mjs, validated"
+  }
+ ]
 }

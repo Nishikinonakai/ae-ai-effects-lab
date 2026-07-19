@@ -1,0 +1,28 @@
+{
+ "effect": "PEDG",
+ "_date": "2026-07-19",
+ "_method": "single-gate flips, one bridge round-trip each (visibility recomputes only between script executions)",
+ "_caveat": "single-gate flips only — a param that needs two gates open together still reads as shut. Requires the comp to be displayed (this tool asserts that on every probe); without it AE reports every param settable.",
+ "shutOnDefault": 9,
+ "conditionallyGated": 1,
+ "probablyDead": 8,
+ "gates": {
+  "PEDG-0021": [
+   {
+    "gate": "PEDG-0050",
+    "name": "Auto Iterations",
+    "value": 0
+   }
+  ]
+ },
+ "probablyDeadParams": [
+  "PEDG-0035",
+  "PEDG-0011",
+  "PEDG-0055",
+  "PEDG-0066",
+  "PEDG-0026",
+  "PEDG-0027",
+  "PEDG-0028",
+  "PEDG-0029"
+ ]
+}

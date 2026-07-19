@@ -213,9 +213,9 @@
 1. **【推荐首选】你亲自开面板试一次 + 真实工程 dogfooding。** 外壳已经能跑,但**没有被人手用过**——
    `./shell/shell_up.sh` 然后在 AE 里选一层、说一句话。这一 session 每次真机验证都比合成测试多抓坑,
    而面板 UI 是唯一还没被真实使用过的一层。拿下一个 AMV/PV 当 testbed,记录哪里手感不对。
-2. **settability 探针跑一遍全部已装效果。** 现在只有 3 个效果测过(Deep Glow 9 个幻影杠杆、
-   两个原生 0 个)。`introspect_effect.mjs` 已经会记了,批量重跑一次就能知道**幻影杠杆在整个插件
-   生态里有多普遍**——这直接决定 planner 和调优环有多少力气花在推不动的旋钮上。
+2. **(§10.4 已完成)settability 调查 + gate 探针都已跑通并验证。** 剩下的增量:把 `probe_gates.mjs`
+   跑遍你高频用的效果,给 essence 卡补 `gated_levers`——每记录一扇门,planner 就多一片本来够不到
+   的可用量程,而这正是 §二 moat 的原料。
 3. **essence 广度按需扩** + planner-eval round-2(现在有 headless planner,评测可以自动跑了——
    这是本 session 顺带解锁的:r2 不再需要 agent 逐题推理)。
 4. **成本/延迟**:现在每轮 review 一次 vision 调用,tune 最多 4 轮;路由用便宜模型、判断用强模型、缓存。
@@ -224,26 +224,37 @@
 *(上手提示:`./shell/shell_up.sh` 起全套;`bridge_up.sh` 只起桥。真机验证一律 copy-then-open 或静态读、
 编辑后不保存。`recipe-harness/.env.api` 里的 OpenAI key 已 gitignore。记忆在 `memory/ae-ai-plugin-next-step.md`。)*
 
-### 10.4 补记:settability 调查 + 一个被自己证伪的工具(session 末)
+### 10.4 补记:settability 调查 + "显示才算数"(session 末,已收敛)
 
-在 §10.1 的 6c 之后顺势做了两件事,结论**比初看到的数字更窄,写清楚很重要**:
+在 §10.1 的 6c 之后顺势做了两件事,并**在过程中推翻又修好了自己的工具**:
 
 - `introspect/survey_settable.mjs` —— 跨厂商分层抽样。81 个效果里 **14 个**至少有一个参数在默认状态
-  下写不进去;Trapcode / Video Copilot / FxFactory 几乎承包了全部,Cycore 与 RG Universe 为 0。
-- `introspect/probe_gates.mjs` —— 本想把"条件门控"和"永久死参"分开:翻转每个枚举/勾选再重测。
+  下写不进去;Trapcode / Video Copilot / FxFactory 几乎承包全部,Cycore 与 RG Universe 为 0。
+  (参数级 20.3% 那个数被 Form 一个效果的内部树 2080/2458 主导,**按效果数读,别按参数比例读**。)
+- `introspect/probe_gates.mjs` —— 把"条件门控"和"够不到"分开:翻转每个枚举/勾选再重测。
 
-**但这个工具被真实数据证伪了,已标为未验证。** 它在 3 个效果、105 次翻转里报告"0 个条件门控",
-而这是错的:`tc Form-0005`(Base Form Size Y)探针报 hidden、probe_gates 翻 `tc Form-0489` 也打不开,
-可是 **49 条已验证配方都在设它,实跑确认能写进去**(runner 先设 0489=2,然后 Size Y ✓ Size Z ✓;
-同一次运行里 `tc Form-0010` 却 ✗ 报 hidden——所以效果本身是真的在区别对待,不是全放行)。
-同一个门、同一个值,两个上下文里结果相反。
+**最关键的机制发现:参数可见性只有在合成被"显示"过之后才算数。**
+AE 只在合成被 viewer 显示时才跑插件的 params-UI pass(决定隐藏哪些参数)。**从没显示过的合成里,
+每个参数都报"可写"——那是个宽容的假象,长得和真实测量一模一样。渲染不触发,只有显示触发。**
 
-所以口径必须收窄:**"当前状态写不进去"是测到的,"永远写不进去"没有测到。** 20.3% 那个参数级数字
-被 Form 一个效果的内部参数树(2080/2458)主导,不能当生态率读;Deep Glow 卡里关于 Spread 的说法
-也已从"永久死"改回"六个候选门都试过仍打不开,按不可达处理"。详见 `introspect/SETTABILITY.md`。
+| 上下文 | Deep Glow `Spread` |
+|---|---|
+| 全新合成,从未显示 | **OPEN**(假) |
+| 同一合成,渲染一帧之后 | **OPEN**(渲染不是触发条件) |
+| 同一合成,`openInViewer()` + 选中图层之后 | **hidden**(真) |
 
-> 可靠的升级路径仍然是 tune_edit 已经实现的那条:**先试着改,帧不动时用测出来的 inert 信号去找门。
-> 渲染才是 ground truth。** 这也再次印证 §10.1 的两条教训。
+而且每次测量都要**重新**确保显示——中途别的合成被切到前台,读到的就是上一次的状态。这一条曾静默
+地毁掉 gate 探针:它在 105 次翻转里报"0 个条件门控",**那不是发现,是穿着发现外衣的 bug**。
+修好后它复现了两个"配方早就知道答案"的已知案例才算数:Form `Base Form Size` → `Size Y/Z`;
+Deep Glow `Auto Iterations=0` → `Glow Iterations`。
 
-*(遗留:为什么配方上下文能写 `tc Form-0005` 而探针上下文不能——查清就能修好 probe_gates,
-然后重跑调查拿到真正的"条件/永久"分布。)*
+**结论落地:essence 卡现在三分**——`key_levers`(现在能用)/ `gated_levers`(**连门一起**给出,
+先开门再写)/ `unreachable_levers`(不提供)。裸给一个门控杠杆会让编辑抛错;把它藏起来则白白丢掉
+可用量程——**记录那扇门本身,才是 §二 因果本体("隐藏参数门控")真正要存的东西。**
+
+> 通用教训(补 §10.1 那两条):**③ 一个从没产出过"已知正确的阳性结果"的仪器,不算仪器。**
+> ④ introspect 报的是"能力",不是"可用性":可读(属性遍历)/ 可写(显示态下的 settability 探针)/
+> 有效(渲染)——三种状态,三种测量。
+> 遗留口径:目前只做单门翻转,**需要同时开两扇门的参数仍会被记成够不到**。
+
+详见 `introspect/SETTABILITY.md`。

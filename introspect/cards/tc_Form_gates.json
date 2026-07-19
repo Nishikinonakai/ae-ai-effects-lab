@@ -2,14 +2,27 @@
  "effect": "tc Form",
  "_date": "2026-07-19",
  "_method": "single-gate flips, one bridge round-trip each (visibility recomputes only between script executions)",
- "_caveat": "single-gate only — a param needing TWO gates set together still reads as dead here",
+ "_caveat": "single-gate flips only — a param that needs two gates open together still reads as shut. Requires the comp to be displayed (this tool asserts that on every probe); without it AE reports every param settable.",
  "shutOnDefault": 2080,
- "conditionallyGated": 0,
- "probablyDead": 2080,
- "gates": {},
+ "conditionallyGated": 2,
+ "probablyDead": 2078,
+ "gates": {
+  "tc Form-0005": [
+   {
+    "gate": "tc Form-0489",
+    "name": "Base Form Size",
+    "value": 2
+   }
+  ],
+  "tc Form-0006": [
+   {
+    "gate": "tc Form-0489",
+    "name": "Base Form Size",
+    "value": 2
+   }
+  ]
+ },
  "probablyDeadParams": [
-  "tc Form-0005",
-  "tc Form-0006",
   "tc Form-0010",
   "tc Form-0011",
   "tc Form-0542",

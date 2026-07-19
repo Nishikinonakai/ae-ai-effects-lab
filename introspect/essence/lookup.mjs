@@ -97,6 +97,16 @@ export function leverContext(effectMatchNames, usedParams = [], dir = __dirname)
       lines.push(`  ${inPlay ? '·(in play)' : '·'} ${l.name} [${l.matchName}]${rangeStr(l)}${l.enum ? ' ENUM' : ''} — ${clip(l.effect)}`);
     }
 
+    // --- gated levers: real, useful, but they need their gate opened FIRST ---
+    // These are the "hidden parameter gating" cases the ontology exists to hold. Hiding them would
+    // throw away usable range; offering them naked would produce an edit that throws. So they are
+    // offered WITH their gate, as a two-step instruction.
+    for (const g of card.gated_levers || []) {
+      levers.push({ effect: cardKey(card), name: g.name, matchName: g.matchName, inPlay: used.has(g.matchName), gated: true });
+      const gate = g.gate ? ` — GATED: set ${g.gate.name} [${g.gate.matchName}] = ${g.gate.setTo} FIRST, in the same edit, or this write throws` : '';
+      lines.push(`  ·⟨gated⟩ ${g.name} [${g.matchName}]${rangeStr(g)} — ${clip(g.effect, 140)}${gate}`);
+    }
+
     // --- spatial-ml cards: the surface is phase-gated, so say which phase each band needs ---
     for (const s of card.scriptable_surface || []) {
       const phase = s.phase ? ` (phase: ${s.phase})` : '';
