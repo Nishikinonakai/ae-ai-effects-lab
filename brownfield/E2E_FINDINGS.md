@@ -38,7 +38,7 @@ the pieces corroborated each other on real content:
 | 2 | **Keyframed look-params** — the active lyric's Glitch Intensity has 2 keyframes (an animated burst envelope, =0 at this still). `apply_edit`'s `param` op is a plain `setValue`, which **can't touch a keyframed property**. Real projects animate their look-driving params constantly. | High | **FIXED** — see "Keyframe-aware act" below |
 | 3 | **Async `saveFrameToPng` not awaited** — the ExtendScript returns before the PNG finishes (a 4K frame takes ~12s). A half-written frame (bottom rows black) got scored **0/10 "catastrophically broken"** — a false negative that would derail the tune loop. | **Critical** | **FIXED** — `apply_edit` now `waitForFrameSettle` (size stable across 2 reads, resolution-agnostic) before trusting a frame |
 | 4 | **4K frames too big for the vision API** — a 28MB PNG is ~37MB base64, past the per-image limit. Had to downscale by hand. | High | **FIXED** — `verify_edit` downscales a COPY to `--maxdim` (default 1600) via `sips` before scoring; originals untouched |
-| 5 | **Iterative-tune baseline** — verify compared the tune's *intermediate* before (65) vs after (100), a small delta, so convergence looked invisible (3/10 "indistinguishable"). The verify "before" should be the **original baseline**, not the previous iteration's state. | Medium | **OPEN** — add a `--baseline=<original report/frame>` to `verify_edit` for multi-step tunes |
+| 5 | **Iterative-tune baseline** — verify compared the tune's *intermediate* before (65) vs after (100), a small delta, so convergence looked invisible (3/10 "indistinguishable"). The verify "before" should be the **original baseline**, not the previous iteration's state. | Medium | **FIXED** — `verify_edit --baseline=<first report.json or orig .png>` judges the AFTER against the ORIGINAL baseline, so cumulative convergence is visible across a multi-step tune |
 | 6 | **Single-lever chase plateaus** — "dreamy bloom" really wants **Glow Radius (softness)**, not just Intensity; the scorer kept climbing Intensity (34→65→100→150) with little visible gain. Essence routing should offer *multiple* levers per intent, and the loop should switch levers when one plateaus. | Medium | **OPEN** — essence `config_recipes` should bundle co-levers; tune loop should detect plateau and pivot lever |
 
 ### Net
@@ -46,8 +46,9 @@ the pieces corroborated each other on real content:
 The core loop **coheres on real content** — that was the thing to prove, and it did, including the
 self-correcting visual safety net. The gaps are exactly the kind a real project surfaces that a
 throwaway comp can't: animated params, async render timing, resolution, iterative-baseline, and
-lever-choice. Fixed in-session: #3 (critical), #4 (high), and #2 (high, below). On the roadmap:
-#1 footage handling, #5 iterative baseline, #6 multi-lever routing.
+lever-choice. Fixed: #1 (footage-missing perception), #2 (keyframe-aware act, high — below),
+#3 (critical async frame), #4 (4K downscale), #5 (verify baseline). Only #6 (multi-lever essence
+routing) remains — it pairs with the essence-breadth / config-recipe work, not the edit protocol.
 
 ## Keyframe-aware act (finding #2, fixed + adversarially reviewed)
 
