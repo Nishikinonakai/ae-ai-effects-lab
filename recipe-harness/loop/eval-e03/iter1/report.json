@@ -3,72 +3,133 @@
   "name": "eval-e03_i1",
   "params": [
     {
-      "p": "[1:ADBE Fractal Noise] Fractal Type (soft clouds)",
+      "p": "[1:tc Particular] Use a wide Box emitter so the soft particle volume spans the composition.",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Make the emission volume broad enough to avoid a localized cloud with visible boundaries.",
+      "ok": true,
+      "v": "1600"
+    },
+    {
+      "p": "[1:tc Particular] Build a dense but still diffuse atmospheric field.",
+      "ok": true,
+      "v": "150"
+    },
+    {
+      "p": "[1:tc Particular] Keep particle travel slow for a drifting nebula rather than a particle burst.",
+      "ok": true,
+      "v": "9"
+    },
+    {
+      "p": "[1:tc Particular] Emit uniformly in all directions for amorphous cloud structure.",
       "ok": true,
       "v": "1"
     },
     {
-      "p": "[1:ADBE Fractal Noise] Noise Type (smoothest)",
+      "p": "[1:tc Particular] Keep particles alive long enough for a continuous fog-like volume.",
       "ok": true,
-      "v": "3"
+      "v": "12"
     },
     {
-      "p": "[1:ADBE Fractal Noise] Contrast",
+      "p": "[1:tc Particular] Use Glow Sphere particles to merge into soft cloud masses.",
       "ok": true,
-      "v": "125"
+      "v": "2"
     },
     {
-      "p": "[1:ADBE Fractal Noise] Brightness (dark)",
+      "p": "[1:tc Particular] Use oversized soft particles so individual dots fuse into nebula forms.",
       "ok": true,
-      "v": "-18"
+      "v": "300"
     },
     {
-      "p": "[1:ADBE Fractal Noise] Scale (nebula masses)",
+      "p": "[1:tc Particular] Vary particle sizes to prevent regular-looking blobs.",
+      "ok": true,
+      "v": "65"
+    },
+    {
+      "p": "[1:tc Particular] Keep each particle dim so the overall result remains a dark background-grade violet.",
+      "ok": true,
+      "v": "7"
+    },
+    {
+      "p": "[1:tc Particular] Introduce restrained opacity variation for organic mottling.",
+      "ok": true,
+      "v": "35"
+    },
+    {
+      "p": "[1:tc Particular] Set Color to At Birth before assigning the violet particle color.",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Color the luminous fog a deep violet rather than bright white.",
+      "ok": true,
+      "v": "0.28999999165535,0.07000"
+    },
+    {
+      "p": "[1:tc Particular] Additively blend the dim glow spheres into soft nebula density.",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Enable air resistance before turbulence so turbulent motion affects the cloud.",
+      "ok": true,
+      "v": "0.69999998807907"
+    },
+    {
+      "p": "[1:tc Particular] Gently displace particles with turbulence to morph the cloud structure over time.",
+      "ok": true,
+      "v": "42"
+    },
+    {
+      "p": "[1:tc Particular] Use large turbulence features for broad gaseous curls instead of fine jitter.",
       "ok": true,
       "v": "260"
     },
     {
-      "p": "[1:ADBE Fractal Noise] Evolution (slow churn) (expr)",
-      "ok": true
-    },
-    {
-      "p": "[1:ADBE Fractal Noise] Offset (slow drift) (expr)",
-      "ok": true
-    },
-    {
-      "p": "[2:ADBE Tint] Map Black To (deep violet)",
-      "ok": true,
-      "v": "0.02999999932945,0.00999"
-    },
-    {
-      "p": "[2:ADBE Tint] Map White To (purple)",
-      "ok": true,
-      "v": "0.55000001192093,0.34999"
-    },
-    {
-      "p": "[2:ADBE Tint] Amount",
-      "ok": true,
-      "v": "100"
-    },
-    {
-      "p": "[3:ADBE Noise HLS Auto2] Noise type (grain)",
+      "p": "[1:tc Particular] Add enough turbulence detail for layered cloud variation.",
       "ok": true,
       "v": "3"
     },
     {
-      "p": "[3:ADBE Noise HLS Auto2] Lightness noise (subtle)",
+      "p": "[1:tc Particular] Enable modest motion blur to keep moving cloud particles smooth.",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Use a natural shutter angle that does not smear the soft texture excessively.",
+      "ok": true,
+      "v": "180"
+    },
+    {
+      "p": "[1:tc Particular] Slowly drift the emitting cloud mass across the frame so t1 and t4 visibly evolve. (expr)",
+      "ok": true
+    },
+    {
+      "p": "[2:BCC_TEXTURES] Add only a restrained surface grain so the cloud remains soft and dominant.",
+      "ok": true,
+      "v": "14"
+    },
+    {
+      "p": "[2:BCC_TEXTURES] Increase fine texture detail for subtle close-inspection particle character.",
+      "ok": true,
+      "v": "18"
+    },
+    {
+      "p": "[2:BCC_TEXTURES] Use a tight texture scale so the texture reads as grain rather than paper.",
       "ok": true,
       "v": "60"
     },
     {
-      "p": "[3:ADBE Noise HLS Auto2] Grain Size (fine)",
+      "p": "[2:BCC_TEXTURES] Keep the grain scale even in both dimensions.",
       "ok": true,
-      "v": "0.80000001192093"
+      "v": "60"
     },
     {
-      "p": "[3:ADBE Noise HLS Auto2] Noise Animation Speed",
+      "p": "[2:BCC_TEXTURES] Choose a non-default texture variation to avoid a generic repeating pattern.",
       "ok": true,
-      "v": "20"
+      "v": "31"
     }
   ],
   "frames": [

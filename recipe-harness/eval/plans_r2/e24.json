@@ -1,0 +1,59 @@
+{
+  "name": "eval-e24",
+  "compName": "Eval_e24",
+  "intent": "复古双色调印刷海报感：抽象几何底图，画面转为深蓝与米白双色，带浮雕纹理线条",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.91,
+    0.86,
+    0.74
+  ],
+  "hostName": "Artwork",
+  "effects": [
+    {
+      "matchName": "ADBE Fractal Noise",
+      "params": [],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Mosaic",
+      "params": [],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Posterize",
+      "params": [],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Emboss",
+      "params": [],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Tint",
+      "params": [],
+      "expressions": []
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_rationale": "先用分形噪波生成可读的抽象块面，再经马赛克与色阶压缩成硬边的印刷几何构图。Emboss 在色调映射前刻出压印高光与阴影线，Tint 将整张图统一限制为深蓝与米白的复古双色海报语言。",
+  "_planner": {
+    "model": "gpt-5.6-terra",
+    "date": "2026-07-19"
+  },
+  "pass_criteria": [
+    "abstract geometric base readable",
+    "strict two-tone palette (deep blue + cream), no full-color leakage",
+    "emboss/relief line texture visible",
+    "poster-like graphic cohesion"
+  ]
+}

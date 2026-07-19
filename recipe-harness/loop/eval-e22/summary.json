@@ -1,6 +1,6 @@
 {
   "intent": "来点好看的科技感粒子背景",
-  "backend": "agent",
+  "backend": "api",
   "outcome": "fail_max_iters",
   "best_iter": 2,
   "iterations": [
@@ -8,19 +8,19 @@
       "iter": 1,
       "score": 3,
       "verdict": "fail",
-      "critique": "Reads as a broken render, not a tech background: faint tiny speckles crawling in from the left, right half empty at t4, streaklets too small/dim to read as streaks or anything deliberate. The left-edge-source design starves frame coverage and the particle scale is below the visibility floor (the miner's sub-pixel lesson)."
+      "critique": "The navy base and abundant central negative space are usable, but the intended polished tech particle background is not present yet. At t1 the frame is almost entirely empty except for a tiny violet cluster at the lower-right; the cyan upper stream is not visible. By t4, a sparse violet/blue particle trail has grown across the lower half, so there is frame-to-frame change, but it reads as a partially initialized emitter simulation rather than a deliberate, balanced composition. The visible particles are too dim and too blue-violet, with no clear cyan counterpart, grid, or clean framing geometry."
     },
     {
       "iter": 2,
-      "score": 5,
+      "score": 4,
       "verdict": "fail",
-      "critique": "Coverage and brightness fixed — full-frame cyan field on dark blue, background-grade density. But the 'tech' read is still missing: streaklet clumps render as roundish dot clusters (motion per frame too small to elongate them), so it reads as dim blue snow, not data streams. Needs actual directional elongation."
+      "critique": "The dark navy base and broad central negative space are usable, and the lower particle trail clearly changes between t1 and t4. However, the result is still a single dim blue-violet particle ribbon concentrated along the lower edge. The planned cyan upper stream is entirely absent in both frames, leaving the composition unbalanced and too empty. The visible trail has a loose, partially initialized simulation feel rather than polished tech geometry, and it does not yet communicate a deliberate cyan/violet data-frame composition."
     },
     {
       "iter": 3,
       "score": 3,
       "verdict": "fail",
-      "critique": "Third direction also failed: aspect-7 glow spheres at 550 wind with motion blur render as giant smeared ellipses filling the frame wall-to-wall, with hard VERTICAL SEAM artifacts (sub-buffer edges) cutting the field — overpowering and visibly broken, worse than iter2's usable-but-bland dot field. Max-iters reached; best remains iter2 (5/10). Eval lesson recorded: for vague prompts the planner should adapt the closest CURATED library recipe (data-flow) wholesale instead of improvising particle-craft — three self-authored directions each missed taste."
+      "critique": "画面仍未达到可交付的科技感粒子背景：两帧都是接近纯黑的深海军蓝底，仅下方出现一条很暗的蓝紫色稀疏粒子轨迹。t1 到 t4 的下方粒子数量和形态确有变化，说明存在运动；但计划中的上方青绿色数据流在两帧中完全不可见，构图严重失衡。可用的中央留白很多，但当前更像粒子模拟刚启动时的局部残影，而非经过设计的科技数据框景；亮度、密度与色彩辨识度都不足，且蓝紫单色观感接近此前失败的默认蓝意外。"
     }
   ]
 }

@@ -12,154 +12,124 @@
     "effects": [
       {
         "matchName": "tc Form",
+        "params": [],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE Wave Warp",
+        "params": [],
+        "expressions": []
+      },
+      {
+        "matchName": "BCC_TEXTURES",
         "params": [
           [
-            "tc Form-0489",
-            2,
-            "Base Shape Size option"
+            "BCC_TEXTURES-1001",
+            18,
+            "轻微织物纹理叠加，让高密度粒子曲面获得丝绸般细腻纤维感"
           ],
           [
-            "tc Form-0010",
-            [
-              640,
-              360
-            ],
-            "Base Shape Center"
+            "BCC_TEXTURES-1002",
+            8,
+            "保留平滑明暗渐变，仅加入克制的细节层次"
           ],
           [
-            "tc Form-0007",
-            720,
-            "Particles in X"
+            "BCC_TEXTURES-1018",
+            65,
+            "使用较细密的横向织纹尺度"
           ],
           [
-            "tc Form-0008",
-            580,
-            "Particles in Y"
-          ],
-          [
-            "tc Form-0009",
-            1,
-            "Particles in Z (sheet)"
-          ],
-          [
-            "tc Form-0004",
-            900,
-            "Size X"
-          ],
-          [
-            "tc Form-0005",
-            700,
-            "Size Y"
-          ],
-          [
-            "tc Form-0006",
-            200,
-            "Size Z"
-          ],
-          [
-            "tc Form-0037",
-            2,
-            "PTMode"
-          ],
-          [
-            "tc Form-0033",
-            1,
-            "Particle Size"
-          ],
-          [
-            "tc Form-0035",
-            50,
-            "Particle Opacity"
-          ],
-          [
-            "tc Form-0042",
-            1,
-            "Set Color (Solid — must pair with PColor)"
-          ],
-          [
-            "tc Form-0036",
-            [
-              0.789,
-              0.173,
-              0.189,
-              1
-            ],
-            "Particle Color (crimson)"
-          ],
-          [
-            "tc Form-0420",
-            [
-              0.251,
-              0.251,
-              0.251,
-              1
-            ],
-            "Smokelet Shadow Color"
-          ],
-          [
-            "tc Form-0421",
-            50,
-            "Shadow Color Strength"
-          ],
-          [
-            "tc Form-0422",
-            50,
-            "Shadow Opacity"
-          ],
-          [
-            "tc Form-0166",
-            200,
-            "Field Affect Pos X (the silk waves)"
-          ],
-          [
-            "tc Form-0172",
-            20,
-            "Field Evolution (slow undulation)"
-          ],
-          [
-            "tc Form-0173",
-            1,
-            "Field Loop"
-          ],
-          [
-            "tc Form-0174",
-            6,
-            "Field Loop Time"
-          ],
-          [
-            "tc Form-0183",
-            1.75,
-            "Octave Scale"
-          ],
-          [
-            "tc Form-0180",
-            5,
-            "Field Scale"
-          ],
-          [
-            "tc Form-0169",
-            -20,
-            "Flow X"
-          ],
-          [
-            "tc Form-0170",
-            -100,
-            "Flow Y"
-          ],
-          [
-            "tc Form-0234",
-            226,
-            "RW Scale"
+            "BCC_TEXTURES-1019",
+            65,
+            "保持织纹比例均匀，避免粗糙纸张感"
           ]
         ],
         "expressions": []
+      },
+      {
+        "matchName": "PEDG",
+        "params": [
+          [
+            "PEDG-0002",
+            0.8,
+            "柔和提亮粒子曲面上的高光，形成红色丝绸反光感"
+          ],
+          [
+            "PEDG-0001",
+            420,
+            "让亮部在相邻粒子之间平滑融合为连续布面"
+          ],
+          [
+            "PEDG-0004",
+            55,
+            "只让较亮的波峰产生柔和辉光，保留深红阴影"
+          ],
+          [
+            "PEDG-0005",
+            55,
+            "柔化高光阈值过渡，避免颗粒高光生硬"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "ADBE BEZMESH",
+        "params": [
+          [
+            "ADBE BEZMESH-0014",
+            8,
+            "提高曲面变形细分质量，使波浪边缘与布面扭曲更平滑"
+          ]
+        ],
+        "expressions": [
+          [
+            "ADBE BEZMESH-0002",
+            "value + [0,Math.sin(time*1.05)*48]",
+            "左上边缘控制柄缓慢上下呼吸，形成布料起伏"
+          ],
+          [
+            "ADBE BEZMESH-0003",
+            "value + [0,Math.sin(time*1.05+1.1)*34]",
+            "左上第二控制柄与主波错相，避免机械对称"
+          ],
+          [
+            "ADBE BEZMESH-0005",
+            "value + [0,Math.sin(time*1.05+2.4)*58]",
+            "右上控制柄延迟波形，形成由左至右传播的波浪"
+          ],
+          [
+            "ADBE BEZMESH-0006",
+            "value + [0,Math.sin(time*1.05+3.2)*38]",
+            "右上辅助控制柄制造不规则的柔软波峰"
+          ],
+          [
+            "ADBE BEZMESH-0008",
+            "value + [0,Math.sin(time*0.82+3.7)*44]",
+            "左下边缘以较慢频率起伏，增加宽幅布面纵深"
+          ],
+          [
+            "ADBE BEZMESH-0009",
+            "value + [0,Math.sin(time*0.82+4.6)*30]",
+            "左下辅助柄使阴影褶皱持续变化"
+          ],
+          [
+            "ADBE BEZMESH-0011",
+            "value + [0,Math.sin(time*0.82+5.4)*54]",
+            "右下控制柄与左侧错相，令t1和t4波形结构明显不同"
+          ],
+          [
+            "ADBE BEZMESH-0012",
+            "value + [0,Math.sin(time*0.82+0.5)*36]",
+            "右下辅助柄平衡曲面并维持整幅宽带覆盖"
+          ]
+        ]
       }
     ],
     "camera": null,
     "background": [
-      0,
-      0,
-      0
+      0.14,
+      0.002,
+      0.008
     ],
     "renderFrames": [
       1,
@@ -171,5 +141,5 @@
     "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e06/iter1/eval-e06_i1_t4.png"
   ],
   "prior_iterations": [],
-  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
 }

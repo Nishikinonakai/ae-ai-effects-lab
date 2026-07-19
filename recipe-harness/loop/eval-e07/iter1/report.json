@@ -3,139 +3,142 @@
   "name": "eval-e07_i1",
   "params": [
     {
-      "p": "[1:tc Particular] Emitter Type (Box)",
+      "p": "[1:tc Particular] Box emitter distributes snow across the frame width",
       "ok": true,
       "v": "2"
     },
     {
-      "p": "[1:tc Particular] Position (above top edge)",
+      "p": "[1:tc Particular] Emit just above the top edge so flakes enter naturally",
       "ok": true,
-      "v": "640,-60,0"
+      "v": "640,-70,0"
     },
     {
-      "p": "[1:tc Particular] Emitter Size mode (XYZ)",
+      "p": "[1:tc Particular] Wide emitter covers beyond both screen edges",
       "ok": true,
-      "v": "2"
+      "v": "1800"
     },
     {
-      "p": "[1:tc Particular] Emitter Size X",
-      "ok": true,
-      "v": "1450"
-    },
-    {
-      "p": "[1:tc Particular] Emitter Size Y",
-      "ok": false,
-      "err": "Error: After Effects error: Can not “set value” with this property, be"
-    },
-    {
-      "p": "[1:tc Particular] Emitter Size Z",
-      "ok": false,
-      "err": "Error: After Effects error: Can not “set value” with this property, be"
-    },
-    {
-      "p": "[1:tc Particular] Particle Type (Sphere)",
-      "ok": true,
-      "v": "1"
-    },
-    {
-      "p": "[1:tc Particular] Feather (soft flake)",
-      "ok": true,
-      "v": "55"
-    },
-    {
-      "p": "[1:tc Particular] Particles/sec",
-      "ok": true,
-      "v": "90"
-    },
-    {
-      "p": "[1:tc Particular] Emitter Direction (Directional)",
-      "ok": true,
-      "v": "2"
-    },
-    {
-      "p": "[1:tc Particular] Angle X (straight down)",
-      "ok": true,
-      "v": "270"
-    },
-    {
-      "p": "[1:tc Particular] Direction Spread",
-      "ok": true,
-      "v": "12"
-    },
-    {
-      "p": "[1:tc Particular] Velocity (gentle fall)",
+      "p": "[1:tc Particular] Sustained moderate density while keeping individual large flakes readable",
       "ok": true,
       "v": "110"
     },
     {
-      "p": "[1:tc Particular] Velocity Random %",
+      "p": "[1:tc Particular] Low initial velocity keeps the snowfall calm",
       "ok": true,
-      "v": "25"
+      "v": "12"
     },
     {
-      "p": "[1:tc Particular] Life (crosses the frame)",
+      "p": "[1:tc Particular] Uniform launch variation prevents rigid parallel paths",
       "ok": true,
-      "v": "7"
+      "v": "1"
     },
     {
-      "p": "[1:tc Particular] Life Random %",
+      "p": "[1:tc Particular] Long lifetime lets flakes travel through the full composition",
       "ok": true,
-      "v": "20"
+      "v": "9"
     },
     {
-      "p": "[1:tc Particular] Gravity (near-terminal, from recipe)",
+      "p": "[1:tc Particular] Glow Sphere gives each white flake a naturally soft edge",
       "ok": true,
-      "v": "17"
+      "v": "2"
     },
     {
-      "p": "[1:tc Particular] Size (large flakes)",
+      "p": "[1:tc Particular] Clearly readable large snowflake scale rather than fine dust",
       "ok": true,
-      "v": "11"
+      "v": "22"
     },
     {
-      "p": "[1:tc Particular] Size Random %",
+      "p": "[1:tc Particular] Strong size variation creates foreground and background flake depth",
       "ok": true,
-      "v": "40"
+      "v": "65"
     },
     {
-      "p": "[1:tc Particular] Opacity",
+      "p": "[1:tc Particular] White flakes remain visible against the dark background",
       "ok": true,
-      "v": "100"
+      "v": "88"
     },
     {
-      "p": "[1:tc Particular] Opacity Random %",
+      "p": "[1:tc Particular] Subtle opacity variance avoids a uniform synthetic particle field",
       "ok": true,
-      "v": "20"
+      "v": "22"
     },
     {
-      "p": "[1:tc Particular] Color (white)",
+      "p": "[1:tc Particular] Set Color to At Birth so the white color setting is active",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Clean soft white snowflake color",
       "ok": true,
       "v": "1,1,1,1"
     },
     {
-      "p": "[1:tc Particular] TF Affect Position (wander)",
+      "p": "[1:tc Particular] Normal compositing preserves opaque snow instead of luminous additive dots",
       "ok": true,
-      "v": "60"
+      "v": "1"
     },
     {
-      "p": "[1:tc Particular] TF Scale",
+      "p": "[1:tc Particular] Gentle positive gravity drives a slow downward fall",
       "ok": true,
-      "v": "5"
+      "v": "105"
     },
     {
-      "p": "[1:tc Particular] TF Evolution",
+      "p": "[1:tc Particular] Air resistance slows movement and enables wind-driven drifting",
       "ok": true,
-      "v": "30"
+      "v": "2.20000004768372"
     },
     {
-      "p": "[1:tc Particular] Glow Opacity (softness)",
+      "p": "[1:tc Particular] Light horizontal wind gives the snowfall its lateral drift",
       "ok": true,
-      "v": "25"
+      "v": "18"
     },
     {
-      "p": "[1:tc Particular] Glow Size",
+      "p": "[1:tc Particular] Turbulence adds slight natural side-to-side wandering",
       "ok": true,
-      "v": "300"
+      "v": "28"
+    },
+    {
+      "p": "[1:tc Particular] Large turbulence scale makes broad graceful drift instead of jitter",
+      "ok": true,
+      "v": "260"
+    },
+    {
+      "p": "[1:tc Particular] Low-complexity turbulence keeps the movement soft and uncluttered",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Slowly varies the horizontal wind so flakes gently wander left and right (expr)",
+      "ok": true
+    },
+    {
+      "p": "[1:tc Particular] Very slow emitter sweep prevents the falling field from feeling mechanically fixed (expr)",
+      "ok": true
+    },
+    {
+      "p": "[2:PEDG] A restrained bloom softens flake edges without washing out the scene",
+      "ok": true,
+      "v": "0.64999997615814"
+    },
+    {
+      "p": "[2:PEDG] Small glow radius creates delicate halos around large flakes",
+      "ok": true,
+      "v": "75"
+    },
+    {
+      "p": "[2:PEDG] Threshold limits glow mainly to the bright white snow",
+      "ok": true,
+      "v": "75"
+    },
+    {
+      "p": "[2:PEDG] Feathered threshold keeps the snow glow natural",
+      "ok": true,
+      "v": "35"
+    },
+    {
+      "p": "[2:PEDG] Retain the crisp white flake cores beneath the soft bloom",
+      "ok": true,
+      "v": "100"
     }
   ],
   "frames": [

@@ -1,12 +1,36 @@
 {
   "verdict": "fail",
-  "score": 5,
-  "critique": "Coverage and brightness fixed — full-frame cyan field on dark blue, background-grade density. But the 'tech' read is still missing: streaklet clumps render as roundish dot clusters (motion per frame too small to elongate them), so it reads as dim blue snow, not data streams. Needs actual directional elongation.",
+  "score": 4,
+  "critique": "The dark navy base and broad central negative space are usable, and the lower particle trail clearly changes between t1 and t4. However, the result is still a single dim blue-violet particle ribbon concentrated along the lower edge. The planned cyan upper stream is entirely absent in both frames, leaving the composition unbalanced and too empty. The visible trail has a loose, partially initialized simulation feel rather than polished tech geometry, and it does not yet communicate a deliberate cyan/violet data-frame composition.",
   "suggestions": [
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0703", "value": 2, "why": "Glow Sphere responds to aspect-ratio stretching cleanly" },
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0524", "value": 7, "why": "aspect ratio 7 = elongated dashes" },
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0726", "value": 1, "why": "orient to motion — dashes align with the flow = data-stream read" },
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0035", "value": 2, "why": "motion blur on for streak smear" },
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0749", "value": 550, "why": "faster flow = longer per-frame travel, stronger streaking" }
-  ]
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0581",
+      "expression": "[640+560*Math.sin(time*1.05),155+42*Math.sin(time*2.15),0];",
+      "why": "The first emitter is not visibly contributing; explicitly reapplying its upper-third sweep should restore the missing cyan framing stream."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 260,
+      "why": "The absent upper stream needs substantially more emitted particles to become a readable, continuous cyan data ribbon at the evaluated early frame."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0033",
+      "value": 100,
+      "why": "Raise the primary stream's visible particle intensity so its authored cyan color and glow survive the dark render instead of disappearing."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0033",
+      "value": 40,
+      "why": "Reduce the lower violet layer slightly so it remains an accent once the primary cyan stream becomes visible, preserving balanced title-safe negative space."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

@@ -1,0 +1,161 @@
+{
+  "name": "eval-e08",
+  "compName": "Eval_e08",
+  "intent": "信号故障效果：彩色抽象底图上，画面周期性轻微抖动、RGB 通道错位",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.035,
+    0.008,
+    0.09
+  ],
+  "hostName": "Artwork",
+  "effects": [
+    {
+      "matchName": "ADBE Fractal Noise",
+      "params": [],
+      "expressions": []
+    },
+    {
+      "matchName": "BCC4Damaged TV",
+      "params": [
+        [
+          "BCC4Damaged TV-8192008",
+          30,
+          "适中的信号损坏让抽象纹理产生可控的电视故障撕裂。"
+        ],
+        [
+          "BCC4Damaged TV-8192011",
+          85,
+          "让撕裂和信号故障在时间中持续变化，而不是静态滤镜。"
+        ],
+        [
+          "BCC4Damaged TV-8192004",
+          15,
+          "保持轻微的横向模拟信号偏移，避免画面彻底失真。"
+        ],
+        [
+          "BCC4Damaged TV-8192021",
+          14,
+          "加入少量动态电视噪点，使故障具有明确的电子信号质感。"
+        ],
+        [
+          "BCC4Damaged TV-8192015",
+          16,
+          "叠加克制的CRT扫描线，强化故障风格但不遮蔽彩色底图。"
+        ],
+        [
+          "BCC4Damaged TV-8192032",
+          [
+            8,
+            0
+          ],
+          "将红色枪口向右错位，制造清晰红色边缘。"
+        ],
+        [
+          "BCC4Damaged TV-8192035",
+          [
+            0,
+            0
+          ],
+          "保留绿色通道作为稳定的画面基准。"
+        ],
+        [
+          "BCC4Damaged TV-8192038",
+          [
+            -8,
+            0
+          ],
+          "将蓝色枪口向左错位，与红色形成明显RGB分离。"
+        ],
+        [
+          "BCC4Damaged TV-8192025",
+          0,
+          "不做去色，保留RGB错位产生的饱和彩色抽象纹理。"
+        ],
+        [
+          "BCC4Damaged TV-8192019",
+          8,
+          "增加低强度综合干扰，让信号故障更像刻意设计的CRT风格。"
+        ],
+        [
+          "BCC4Damaged TV-8192002",
+          37,
+          "固定一组具有辨识度的故障噪声图案。"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "BCC_CAMERASHAKE",
+      "params": [
+        [
+          "BCC_CAMERASHAKE-1001",
+          145,
+          "中高速率产生轻微而持续的电子信号抖动。"
+        ],
+        [
+          "BCC_CAMERASHAKE-1000",
+          5,
+          "限制为细微的位置偏移，保持画面可读。"
+        ],
+        [
+          "BCC_CAMERASHAKE-1014",
+          125,
+          "略微强调横向抖动，贴合电视信号失锁的感觉。"
+        ],
+        [
+          "BCC_CAMERASHAKE-1015",
+          70,
+          "保留少量纵向跳动，避免运动过于机械。"
+        ],
+        [
+          "BCC_CAMERASHAKE-1002",
+          1,
+          "只保留极弱缩放扰动，不让抖动变成冲击镜头。"
+        ],
+        [
+          "BCC_CAMERASHAKE-1003",
+          0,
+          "关闭旋转，维持信号水平撕裂的屏幕语言。"
+        ],
+        [
+          "BCC_CAMERASHAKE-1016",
+          108,
+          "提供过扫描边界，防止抖动时出现黑边。"
+        ],
+        [
+          "BCC_CAMERASHAKE-1012",
+          2,
+          "用边缘填充维持完整画面。"
+        ]
+      ],
+      "expressions": [
+        [
+          "BCC_CAMERASHAKE-1013",
+          "20 + 18*Math.sin(time*2.37)",
+          "让抖动幅度周期性呼吸，在不同采样秒数呈现不同的帧内容偏移。"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_rationale": "Fractal Noise 提供有大量边缘的抽象基础，Damaged TV 的红蓝 Color Gun Offset 将其直接转化为可见的彩色RGB错位纹理，并辅以受控扫描线和信号噪点。最后的 Camera Shake 使用周期性幅度表达式和高速程序位移，让两个采样时刻的整体构图确实不同，同时保持精致而非损坏渲染般的强度。",
+  "_planner": {
+    "model": "gpt-5.6-terra",
+    "date": "2026-07-19"
+  },
+  "pass_criteria": [
+    "chromatic base image visible (colorful, not greyscale)",
+    "RGB channel separation/fringing visible at edges",
+    "frame content offset/jitter differs between sampled frames",
+    "glitch reads as intentional style, not broken render"
+  ]
+}

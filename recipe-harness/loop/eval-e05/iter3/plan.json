@@ -1,0 +1,252 @@
+{
+  "name": "eval-e05_i3",
+  "compName": "Eval_e05",
+  "intent": "萤火虫：暖黄绿色的光点在黑暗中缓慢漂浮，忽明忽暗地闪烁",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.004,
+    0.008,
+    0.003
+  ],
+  "hostName": "Artwork",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          2,
+          "Box emitter distributes fireflies across a broad atmospheric field"
+        ],
+        [
+          "tc Particular-0577",
+          2,
+          "Open the individual XYZ emitter-size controls before setting field dimensions"
+        ],
+        [
+          "tc Particular-0014",
+          1500,
+          "Spread births beyond the comp width so edges remain naturally populated"
+        ],
+        [
+          "tc Particular-0015",
+          850,
+          "Fill the full comp height rather than creating a horizontal strip"
+        ],
+        [
+          "tc Particular-0016",
+          500,
+          "Give the swarm depth variation for organic scale and brightness differences"
+        ],
+        [
+          "tc Particular-0146",
+          5,
+          "Keep the population sparse and readable as individual fireflies"
+        ],
+        [
+          "tc Particular-0011",
+          5,
+          "Very low initial speed prevents rain-like directional travel"
+        ],
+        [
+          "tc Particular-0113",
+          1,
+          "Uniform emission removes any single travel direction"
+        ],
+        [
+          "tc Particular-0010",
+          100,
+          "Allow movement to disperse in every direction"
+        ],
+        [
+          "tc Particular-0002",
+          2,
+          "Long enough life for slow floating motion without becoming a dense cloud"
+        ],
+        [
+          "tc Particular-0017",
+          0,
+          "No gravity so particles do not read as falling snow or rising embers"
+        ],
+        [
+          "tc Particular-0018",
+          0.8,
+          "Enable air resistance so wind and turbulence can create gentle wandering"
+        ],
+        [
+          "tc Particular-0711",
+          38,
+          "Turbulence bends each particle into slow independent wandering paths"
+        ],
+        [
+          "tc Particular-0715",
+          260,
+          "Large turbulence features create broad drifting curves rather than jitter"
+        ],
+        [
+          "tc Particular-0716",
+          2,
+          "Keep motion simple and calm instead of chaotic"
+        ],
+        [
+          "tc Particular-0027",
+          3.2,
+          "Small point-sized bodies preserve the firefly look"
+        ],
+        [
+          "tc Particular-0074",
+          60,
+          "Vary particle scale so the field has near and far specimens"
+        ],
+        [
+          "tc Particular-0033",
+          78,
+          "Leave enough core brightness for the glow to bloom"
+        ],
+        [
+          "tc Particular-0075",
+          72,
+          "Strong per-particle opacity variation creates a natural blink population"
+        ],
+        [
+          "tc Particular-0088",
+          1,
+          "Set Color to At Birth so the warm yellow-green color is used"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.82,
+            1,
+            0.22,
+            1
+          ],
+          "Warm yellow-green bioluminescent firefly color"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Use Glow Sphere particles for soft luminous points"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Additive blending makes overlapping lights feel emissive"
+        ],
+        [
+          "tc Particular-0215",
+          260,
+          "Create a substantial soft halo around each light"
+        ],
+        [
+          "tc Particular-0216",
+          55,
+          "Keep halos visible but avoid turning the sparse field into fog"
+        ],
+        [
+          "tc Particular-0035",
+          2,
+          "Enable modest motion blur for the occasional moving light"
+        ],
+        [
+          "tc Particular-0036",
+          180,
+          "Natural shutter value without streaking the dots"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0581",
+          "[thisComp.width/2 + Math.sin(time*0.19)*85, thisComp.height/2 + Math.cos(time*0.16)*48, 0]",
+          "The emitter slowly breathes around the frame center, preventing a static-looking field"
+        ]
+      ]
+    },
+    {
+      "matchName": "PEDG",
+      "params": [
+        [
+          "PEDG-0002",
+          1.15,
+          "Add restrained HDR bloom to the brightest fireflies"
+        ],
+        [
+          "PEDG-0001",
+          95,
+          "Keep glow halos soft and local rather than washing the black background"
+        ],
+        [
+          "PEDG-0004",
+          35,
+          "Favor the brighter blinking lights while letting dim fireflies remain subtle"
+        ],
+        [
+          "PEDG-0005",
+          45,
+          "Feather the glow threshold for smooth brightness transitions"
+        ],
+        [
+          "PEDG-0024",
+          100,
+          "Retain the crisp luminous cores beneath the bloom"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_rationale": "Trapcode Particular supplies a sparse, full-frame field of additive yellow-green Glow Spheres, with low speed and large-scale turbulence producing non-directional wandering. Opacity and size randomness create mixed bright/dim fireflies, while Deep Glow adds restrained soft halos against the near-black background.",
+  "_planner": {
+    "model": "gpt-5.6-terra",
+    "date": "2026-07-19"
+  },
+  "pass_criteria": [
+    "sparse warm yellow-green glow points on near-black",
+    "slow wandering motion (not directional rain/snow)",
+    "brightness variation across the population (some dim, some bright = blink feel)",
+    "soft glow halos, not hard dots"
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0146",
+          "value": 3,
+          "why": "Lower the emission rate so the later frame remains genuinely sparse and the scene does not rapidly build into a dense field."
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "for_iter": 3,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0146",
+          "value": 5,
+          "why": "Raise the emission rate so the early sample contains a small but readable firefly population instead of only two isolated lights."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0002",
+          "value": 2,
+          "why": "Shorten lifetime while raising emission so the t4 population stays sparse and reaches a stable count sooner, reducing the visible accumulation between t1 and t4."
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

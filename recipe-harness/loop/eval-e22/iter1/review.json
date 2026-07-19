@@ -1,12 +1,36 @@
 {
   "verdict": "fail",
   "score": 3,
-  "critique": "Reads as a broken render, not a tech background: faint tiny speckles crawling in from the left, right half empty at t4, streaklets too small/dim to read as streaks or anything deliberate. The left-edge-source design starves frame coverage and the particle scale is below the visibility floor (the miner's sub-pixel lesson).",
+  "critique": "The navy base and abundant central negative space are usable, but the intended polished tech particle background is not present yet. At t1 the frame is almost entirely empty except for a tiny violet cluster at the lower-right; the cyan upper stream is not visible. By t4, a sparse violet/blue particle trail has grown across the lower half, so there is frame-to-frame change, but it reads as a partially initialized emitter simulation rather than a deliberate, balanced composition. The visible particles are too dim and too blue-violet, with no clear cyan counterpart, grid, or clean framing geometry.",
   "suggestions": [
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0581", "value": [640, 360, 0], "why": "emit across the whole frame — immediate full coverage instead of a slow left-to-right fill" },
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0014", "value": 1400, "why": "full-width emitter box" },
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0027", "value": 9, "why": "streaklets above the visibility floor — readable data-streak scale" },
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0033", "value": 95, "why": "full opacity so the streams pop on the dark bg" },
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0146", "value": 200, "why": "density for an ambient field (still background-grade)" }
-  ]
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0581",
+      "expression": "[640+560*Math.sin(time*1.05),155+42*Math.sin(time*2.15),0];",
+      "why": "Keep the cyan emitter within the visible upper region from the first rendered frame, instead of beginning off-canvas and leaving the upper stream absent."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0581",
+      "expression": "[640-560*Math.sin(time*0.92),570+34*Math.sin(time*1.8+1.4),0];",
+      "why": "Keep the lower accent emitter visible immediately while preserving opposing directional motion and the central title-safe area."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 120,
+      "why": "Increase cyan particle presence so the primary stream is clearly visible and can balance the violet accent."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0146",
+      "value": 72,
+      "why": "Make the lower stream read as an intentional continuous data ribbon rather than scattered, underpopulated dots."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

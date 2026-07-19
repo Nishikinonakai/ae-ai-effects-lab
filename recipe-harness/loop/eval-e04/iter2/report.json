@@ -1,0 +1,83 @@
+{
+  "status": "done",
+  "name": "eval-e04_i2",
+  "params": [
+    {
+      "p": "[2:BCC_TEXTURES] 以中等强度叠加细密纹理，形成清晰可见的老胶片颗粒",
+      "ok": true,
+      "v": "38"
+    },
+    {
+      "p": "[2:BCC_TEXTURES] 提高纹理细节，让颗粒比默认画布纹更细碎",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[2:BCC_TEXTURES] 缩小纹理平铺尺寸，使其读取为细颗粒而非大块纸纹",
+      "ok": true,
+      "v": "55"
+    },
+    {
+      "p": "[2:BCC_TEXTURES] 保持纹理纵横比例一致",
+      "ok": true,
+      "v": "55"
+    },
+    {
+      "p": "[2:BCC_TEXTURES] 每帧改变纹理随机种子，使颗粒具有胶片噪点的闪动感 (expr)",
+      "ok": true
+    },
+    {
+      "p": "[3:BCC4Damaged TV] 关闭明显的信号撕裂，保留柔和云雾主体",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[3:BCC4Damaged TV] 补充轻微模拟胶片雪花噪点",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[3:BCC4Damaged TV] 将全画面灰阶云雾充分转换为怀旧色调",
+      "ok": true,
+      "v": "48"
+    },
+    {
+      "p": "[3:BCC4Damaged TV] 选择使用自定义染色色彩而非纯单色",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[3:BCC4Damaged TV] 以低饱和深褐色统一染色，得到整体偏褐的旧胶片观感",
+      "ok": true,
+      "v": "0.34000000357628,0.20999"
+    },
+    {
+      "p": "[4:PEDG] 用宽半径将云雾边缘进一步柔化成朦胧底图",
+      "ok": true,
+      "v": "650"
+    },
+    {
+      "p": "[4:PEDG] 让整个明暗云雾都参与极轻微的柔光，而不只处理高光",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[4:PEDG] 平滑全画面辉光的亮度过渡",
+      "ok": true,
+      "v": "35"
+    },
+    {
+      "p": "[4:PEDG] 维持克制的柔光，避免吞没纹理颗粒",
+      "ok": true,
+      "v": "0.38"
+    },
+    {
+      "p": "[4:PEDG] 缓慢且轻微地改变全画面柔光亮度，模拟老胶片在 t1 与 t4 的曝光闪烁 (expr)",
+      "ok": true
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e04/iter2/eval-e04_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e04/iter2/eval-e04_i2_t4.png"
+  ]
+}

@@ -1,6 +1,22 @@
 {
-  "verdict": "pass",
-  "score": 8,
-  "critique": "Reads as aged film stock: soft cloud base clearly visible under the treatment, dense authentic-looking grain (a deliberate feature per the request), full-frame sepia/brown grade, and global luminance/structure differs between t1 and t4 (flicker + evolution). All four criteria met — usable as-is.",
-  "suggestions": []
+  "verdict": "fail",
+  "score": 5,
+  "critique": "整体褐色色调和云雾状底图已经成立，画面中也有可见的细碎噪点质感。但云雾被明显的电视损坏式波纹破坏：左侧有强烈连续的竖向锯齿扭曲，画面下部还有一条突兀的水平暗带，不像克制的老胶片颗粒，而更像模拟信号故障。颗粒与云雾局部混成较脏的块状纹理，灰阶柔和感不足。仅提供了t1画面，无法确认t1与t4之间是否存在恰当的轻微亮度闪烁。",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "BCC4Damaged TV",
+      "matchName": "BCC4Damaged TV-8192021",
+      "value": 0,
+      "why": "关闭该效果残留的雪花/损坏电视干扰，避免竖向波纹和水平暗带继续压过柔和云雾主体；细颗粒可由BCC_TEXTURES保留。"
+    },
+    {
+      "type": "param",
+      "effect": "BCC4Damaged TV",
+      "matchName": "BCC4Damaged TV-8192025",
+      "value": 48,
+      "why": "略减弱过重的褐色染色，使底层明暗云雾更接近可辨识的柔和灰阶，同时仍保留整体偏褐的旧胶片色调。"
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

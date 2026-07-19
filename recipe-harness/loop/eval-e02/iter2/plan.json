@@ -1,0 +1,214 @@
+{
+  "name": "eval-e02_i2",
+  "compName": "Eval_e02",
+  "intent": "深海气泡：蓝青色小气泡从画面底部升起，轻微左右摇摆，深蓝近黑背景",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.005,
+    0.018,
+    0.055
+  ],
+  "hostName": "Artwork",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          2,
+          "Use a wide Box emitter so bubbles are born across the bottom of the frame"
+        ],
+        [
+          "tc Particular-0581",
+          [
+            640,
+            760,
+            0
+          ],
+          "Place emission just below the lower edge"
+        ],
+        [
+          "tc Particular-0014",
+          1240,
+          "Span nearly the full composition width at birth"
+        ],
+        [
+          "tc Particular-0146",
+          34,
+          "Moderate continuous particle density with readable individual bubbles"
+        ],
+        [
+          "tc Particular-0011",
+          18,
+          "Keep initial velocity gentle and aquatic"
+        ],
+        [
+          "tc Particular-0113",
+          1,
+          "Uniform low-speed emission avoids a rigid vertical spray"
+        ],
+        [
+          "tc Particular-0010",
+          18,
+          "A restrained spread keeps the upward flow coherent"
+        ],
+        [
+          "tc Particular-0002",
+          7.5,
+          "Give bubbles enough lifetime to travel through the frame"
+        ],
+        [
+          "tc Particular-0027",
+          7,
+          "Small, clearly legible bubble scale"
+        ],
+        [
+          "tc Particular-0074",
+          55,
+          "Vary bubble sizes for a natural underwater field"
+        ],
+        [
+          "tc Particular-0033",
+          78,
+          "Keep bubbles luminous but not blown out"
+        ],
+        [
+          "tc Particular-0075",
+          35,
+          "Subtle opacity variation adds depth and avoids uniform dots"
+        ],
+        [
+          "tc Particular-0088",
+          1,
+          "Set Color to At Birth before assigning the cyan bubble color"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.04,
+            0.76,
+            1,
+            1
+          ],
+          "Bright blue-cyan bubble palette"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Use Glow Sphere particles for round bubble-like highlights"
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Additive blending gives the bubbles underwater luminescence"
+        ],
+        [
+          "tc Particular-0215",
+          90,
+          "Keep a compact halo around each readable bubble"
+        ],
+        [
+          "tc Particular-0216",
+          42,
+          "Use restrained per-particle glow instead of foggy bloom"
+        ],
+        [
+          "tc Particular-0017",
+          -22,
+          "Negative gravity creates the continuous buoyant rise"
+        ],
+        [
+          "tc Particular-0018",
+          1.2,
+          "Enable air resistance so wind and turbulence can influence trajectories"
+        ],
+        [
+          "tc Particular-0711",
+          42,
+          "Apply gentle turbulent positional drift for organic non-vertical paths"
+        ],
+        [
+          "tc Particular-0715",
+          180,
+          "Use broad turbulence features for slow lateral swaying"
+        ],
+        [
+          "tc Particular-0716",
+          2,
+          "Keep turbulence smooth rather than noisy"
+        ],
+        [
+          "tc Particular-0035",
+          2,
+          "Enable modest motion blur for moving bubbles"
+        ],
+        [
+          "tc Particular-0036",
+          180,
+          "Natural shutter angle preserves their round appearance"
+        ],
+        [
+          "tc Particular-0749",
+          32,
+          "Increase horizontal wind amplitude so th [i2]"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0749",
+          "Math.sin(time*1.15)*16;",
+          "Oscillating horizontal wind creates a visible, slow left-right underwater sway"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_rationale": "A single Trapcode Particular system provides a wide bottom emitter, buoyant upward motion, cyan glow spheres, and a moderate persistent population. Air resistance unlocks a sinusoidal wind plus low-complexity turbulence, preventing perfectly vertical paths while retaining small readable bubbles against the near-black deep-blue background.",
+  "_planner": {
+    "model": "gpt-5.6-terra",
+    "date": "2026-07-19"
+  },
+  "pass_criteria": [
+    "small round bubble-like particles rising from the bottom region",
+    "blue-cyan palette on a deep dark blue background",
+    "lateral sway visible — trajectories not perfectly vertical",
+    "moderate density; individual bubbles readable"
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0749",
+          "value": 32,
+          "why": "Increase horizontal wind amplitude so the rising paths show a clearly visible slow left-right sway rather than reading as nearly vertical drift."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0711",
+          "value": 42,
+          "why": "Strengthen broad turbulence enough to add organic lateral curvature to individual bubble trajectories."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0146",
+          "value": 34,
+          "why": "Slightly raise the continuous birth rate so the early portion of the animation is less empty while retaining readable individual particles."
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

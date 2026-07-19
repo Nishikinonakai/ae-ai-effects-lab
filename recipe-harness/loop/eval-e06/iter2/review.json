@@ -1,0 +1,57 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "红/深红调色已明显成立，粒子密度也足以读成一张规则的起伏网格；t1与t4的上下边缘和内部褶皱位置确有变化，满足缓慢波动的基础运动要求。但画面仍主要由清晰、分离的亮点组成，纵向重复纹样和点阵感很强，更像红色LED珠帘而非具有连续柔亮反射的丝绸曲面。主体横向只覆盖画面中央约45%，两侧留白过大，未形成宽幅横向波带。",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "PEDG",
+      "matchName": "PEDG-0002",
+      "value": 1,
+      "why": "显著增强相邻红色粒子间的柔和光晕融合，压低独立点阵的LED感，使明暗更接近连续丝绸反光。"
+    },
+    {
+      "type": "param",
+      "effect": "PEDG",
+      "matchName": "PEDG-0004",
+      "value": 25,
+      "why": "降低仅波峰发光的门槛，让中间调粒子也产生连续的柔和亮度过渡，而不是只保留锐利亮点。"
+    },
+    {
+      "type": "param",
+      "effect": "BCC_TEXTURES",
+      "matchName": "BCC_TEXTURES-1001",
+      "value": 5,
+      "why": "大幅减弱当前造成重复纵向条纹和摩尔纹感的织物细节，保留平滑的红色亮暗层次。"
+    },
+    {
+      "type": "expression",
+      "effect": "ADBE BEZMESH",
+      "matchName": "ADBE BEZMESH-0002",
+      "expression": "var c=thisComp.width/2; [c+(value[0]-c)*1.55,value[1]+Math.sin(time*1.05)*48]",
+      "why": "将左上网格控制点从画面中心向外扩展，配合其余边缘控制点的同类横向扩展可使波带填满更宽的画面。"
+    },
+    {
+      "type": "expression",
+      "effect": "ADBE BEZMESH",
+      "matchName": "ADBE BEZMESH-0005",
+      "expression": "var c=thisComp.width/2; [c+(value[0]-c)*1.55,value[1]+Math.sin(time*1.05+2.4)*58]",
+      "why": "同步将右上网格控制点向外拉开，直接扩大曲面横向覆盖，同时保留左右错相的波浪传播。"
+    },
+    {
+      "type": "expression",
+      "effect": "ADBE BEZMESH",
+      "matchName": "ADBE BEZMESH-0008",
+      "expression": "var c=thisComp.width/2; [c+(value[0]-c)*1.55,value[1]+Math.sin(time*0.82+3.7)*44]",
+      "why": "扩大左下边界，避免只拉宽上沿而使布面变成梯形。"
+    },
+    {
+      "type": "expression",
+      "effect": "ADBE BEZMESH",
+      "matchName": "ADBE BEZMESH-0011",
+      "expression": "var c=thisComp.width/2; [c+(value[0]-c)*1.55,value[1]+Math.sin(time*0.82+5.4)*54]",
+      "why": "扩大右下边界，使整张粒子布面成为接近全宽的横向波带。"
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

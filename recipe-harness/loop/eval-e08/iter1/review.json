@@ -1,6 +1,47 @@
 {
-  "verdict": "pass",
-  "score": 8,
-  "critique": "Analog-glitch read achieved: chromatic blue/amber base (channel-crossed teal/orange), square-wave zigzag jitter across every edge with clearly different phase/structure between t1 and t4, and color-separation banding at the warped mass boundaries. Reads as intentional signal-distortion style. Fringing is the softest criterion — separation shows at boundaries rather than as tri-color ghosting, acceptable for the ask.",
-  "suggestions": []
+  "verdict": "fail",
+  "score": 3,
+  "critique": "画面具有横向扫描线、局部撕裂和极弱的红蓝边缘，但整体几乎完全是灰阶，未呈现“彩色抽象底图”。右侧云状纹理与左侧条纹区域在两张采样帧中基本一致，未能看出明确的周期性画面偏移或轻微抖动。当前大面积规则的灰色分区更像渲染/信号异常，而非可辨识的、有意设计的彩色RGB故障风格。",
+  "suggestions": [
+    {
+      "type": "effect",
+      "matchName": "ADBE Tint",
+      "params": [
+        [
+          "ADBE Tint-0001",
+          [
+            0.03,
+            0.08,
+            0.8,
+            1
+          ],
+          "将暗部映射为高饱和蓝色，建立彩色抽象底图。"
+        ],
+        [
+          "ADBE Tint-0002",
+          [
+            1,
+            0.08,
+            0.32,
+            1
+          ],
+          "将亮部映射为洋红红色，使灰阶噪波变为鲜明彩色纹理。"
+        ],
+        [
+          "ADBE Tint-0003",
+          100,
+          "完全应用双色映射，避免底图仍然呈灰阶。"
+        ]
+      ],
+      "why": "Fractal Noise 当前输出为灰阶；先将其明确色彩化，现有红绿蓝枪口偏移才能在高对比边缘产生可见且风格化的RGB分离。"
+    },
+    {
+      "type": "param",
+      "effect": "BCC_CAMERASHAKE",
+      "matchName": "BCC_CAMERASHAKE-1000",
+      "value": 10,
+      "why": "当前两帧画面位置几乎无可见差异；适度提高位置抖动幅度，使不同采样帧能读出轻微信号偏移。"
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

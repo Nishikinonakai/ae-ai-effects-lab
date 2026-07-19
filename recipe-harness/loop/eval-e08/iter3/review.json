@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "彩色抽象底图已成立：蓝紫与洋红纹理、扫描线和分区撕裂能读作有意的电视信号故障，而非灰阶坏渲染。两帧的云状纹理和横条位置存在极轻微变化，但整体构图仍几乎重合，画面偏移/抖动不够明确。更关键的是画面没有可辨识的红、绿、蓝细边：Tint 在 RGB 枪口偏移之后以较高强度重新双色化，压平了通道错位，因此当前更像双色CRT纹理而非RGB分离故障。",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "ADBE Tint",
+      "matchName": "ADBE Tint-0003",
+      "value": 52,
+      "why": "降低后置Tint的覆盖比例，保留蓝紫/洋红底图的同时让Damaged TV已产生的红蓝枪口位移重新在纹理、分区和亮暗边界上可见。"
+    },
+    {
+      "type": "expression",
+      "effect": "BCC_CAMERASHAKE",
+      "matchName": "BCC_CAMERASHAKE-1013",
+      "expression": "65 + 55*Math.sin(time*3.7)",
+      "why": "显著拉开不同时间采样时的抖动强度，并维持周期性起伏，使t1与t4的画面内容偏移能明确可见而不是近乎重合。"
+    },
+    {
+      "type": "param",
+      "effect": "BCC_CAMERASHAKE",
+      "matchName": "BCC_CAMERASHAKE-1000",
+      "value": 28,
+      "why": "适度提高位置抖动基准，使周期强度变化实际转化为可见的轻微横向信号跳动，同时仍远低于破坏构图的强烈镜头摇晃。"
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

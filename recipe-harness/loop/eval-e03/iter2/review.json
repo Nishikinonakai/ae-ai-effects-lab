@@ -1,8 +1,22 @@
 {
   "verdict": "fail",
-  "score": 7,
-  "critique": "Both nudges moved it: cloud masses now read as a proper dark-purple nebula with deep voids (background-grade luminance ok), evolution clear between frames. Remaining miss is degree, not absence: grain is still visible everywhere at normal viewing distance — the request said 少量颗粒感 (subtle, close-inspection level), and at animation speed 20 this amount would shimmer hard on a background layer.",
+  "score": 3,
+  "critique": "The frame is appropriately dark and within a deep violet palette, with no obvious hard emitter edge visible. However, the nebula itself is nearly imperceptible: there is only extremely faint, mostly uniform purple shading rather than readable soft cloud masses filling the composition. No meaningful layered gaseous structure or close-inspection grain is visible at this brightness. Only a t1 frame is present here, so evolution from t1 to t4 cannot be verified.",
   "suggestions": [
-    { "type": "param", "effect": "ADBE Noise HLS Auto2", "matchName": "ADBE Noise HLS Auto2-0003", "value": 7, "why": "halve the grain again — target film-grain subtlety, not visible texture" }
-  ]
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0033",
+      "value": 7,
+      "why": "Raise the very low particle brightness/opacity enough to reveal the existing oversized glow-sphere cloud structure while retaining a dark background-grade result."
+    },
+    {
+      "type": "param",
+      "effect": "BCC_TEXTURES",
+      "matchName": "BCC_TEXTURES-1001",
+      "value": 24,
+      "why": "Make the fine texture perceptible on close inspection once the cloud field is visible, without turning it into dominant coarse noise."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

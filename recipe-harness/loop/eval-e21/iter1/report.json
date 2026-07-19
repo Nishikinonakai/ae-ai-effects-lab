@@ -3,139 +3,128 @@
   "name": "eval-e21_i1",
   "params": [
     {
-      "p": "[1:tc Particular] Emitter Type (Box)",
+      "p": "[1:tc Particular] Box emitter spreads a small, countable snowfall across the frame width",
       "ok": true,
       "v": "2"
     },
     {
-      "p": "[1:tc Particular] Position (top, biased right for left drift)",
-      "ok": true,
-      "v": "700,-60,0"
-    },
-    {
-      "p": "[1:tc Particular] Emitter Size mode (XYZ)",
-      "ok": true,
-      "v": "2"
-    },
-    {
-      "p": "[1:tc Particular] Emitter Size X",
+      "p": "[1:tc Particular] Emitter is wider than the comp so flakes enter across the entire top edge",
       "ok": true,
       "v": "1500"
     },
     {
-      "p": "[1:tc Particular] Emitter Size Y",
+      "p": "[1:tc Particular] Low emission rate keeps the flake population clearly countable",
       "ok": true,
-      "v": "60"
+      "v": "6"
     },
     {
-      "p": "[1:tc Particular] Emitter Size Z",
+      "p": "[1:tc Particular] Long enough life for flakes to remain visible while falling slowly",
       "ok": true,
-      "v": "400"
+      "v": "6"
     },
     {
-      "p": "[1:tc Particular] Particle Type (Sphere)",
+      "p": "[1:tc Particular] No launch velocity keeps the movement gentle rather than stormy",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Uniform emission avoids a directional spray pattern",
       "ok": true,
       "v": "1"
     },
     {
-      "p": "[1:tc Particular] Feather (soft flake)",
+      "p": "[1:tc Particular] Positive gravity provides the primary slow downward fall",
       "ok": true,
-      "v": "55"
+      "v": "58"
     },
     {
-      "p": "[1:tc Particular] Particles/sec (sparse)",
+      "p": "[1:tc Particular] Air resistance makes wind influence smooth and prevents fast acceleration",
       "ok": true,
-      "v": "40"
+      "v": "4"
     },
     {
-      "p": "[1:tc Particular] Emitter Direction (Directional)",
+      "p": "[1:tc Particular] Negative X wind produces a consistent leftward drift",
+      "ok": true,
+      "v": "-22"
+    },
+    {
+      "p": "[1:tc Particular] No vertical wind so gravity remains the readable downward motion",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Glow Sphere particle type gives every flake a naturally soft edge",
       "ok": true,
       "v": "2"
     },
     {
-      "p": "[1:tc Particular] Angle X (down)",
+      "p": "[1:tc Particular] Small flake size preserves a sparse snow-scale appearance",
       "ok": true,
-      "v": "270"
+      "v": "7"
     },
     {
-      "p": "[1:tc Particular] Direction Spread",
+      "p": "[1:tc Particular] High size variation makes individual flakes feel organic",
       "ok": true,
-      "v": "10"
+      "v": "60"
     },
     {
-      "p": "[1:tc Particular] Velocity (slow fall)",
+      "p": "[1:tc Particular] Moderate opacity keeps teal flakes visible but delicate",
       "ok": true,
-      "v": "70"
+      "v": "72"
     },
     {
-      "p": "[1:tc Particular] Velocity Random %",
-      "ok": true,
-      "v": "25"
-    },
-    {
-      "p": "[1:tc Particular] Life",
-      "ok": true,
-      "v": "8"
-    },
-    {
-      "p": "[1:tc Particular] Life Random %",
+      "p": "[1:tc Particular] Subtle opacity variation avoids identical-looking particles",
       "ok": true,
       "v": "20"
     },
     {
-      "p": "[1:tc Particular] Gravity (near-terminal)",
+      "p": "[1:tc Particular] Set Color to At Birth before assigning the teal flake color",
       "ok": true,
-      "v": "14"
+      "v": "1"
     },
     {
-      "p": "[1:tc Particular] Wind X (leftward drift)",
+      "p": "[1:tc Particular] Cool teal tint for the snowflakes",
       "ok": true,
-      "v": "-85"
+      "v": "0.11999999731779,0.81999"
     },
     {
-      "p": "[1:tc Particular] Size",
+      "p": "[1:tc Particular] Normal compositing keeps snow soft and opaque rather than neon-additive",
       "ok": true,
-      "v": "9"
+      "v": "1"
     },
     {
-      "p": "[1:tc Particular] Size Random %",
+      "p": "[1:tc Particular] Small particle glow radius feathers each flake",
       "ok": true,
-      "v": "40"
+      "v": "110"
     },
     {
-      "p": "[1:tc Particular] Opacity",
+      "p": "[1:tc Particular] Restrained glow opacity keeps flakes soft without hazing the frame",
       "ok": true,
-      "v": "100"
+      "v": "24"
     },
     {
-      "p": "[1:tc Particular] Color (teal)",
-      "ok": true,
-      "v": "0.34999999403954,0.85000"
+      "p": "[1:tc Particular] Keeps the wide emitter just above frame while giving the snowfall a nearly imperceptible natural lateral variation (expr)",
+      "ok": true
     },
     {
-      "p": "[1:tc Particular] TF Affect Position (gentle wander)",
+      "p": "[2:PEDG] Very gentle bloom softens only the visible flake highlights",
       "ok": true,
-      "v": "45"
+      "v": "0.55000001192093"
     },
     {
-      "p": "[1:tc Particular] TF Scale",
+      "p": "[2:PEDG] Compact bloom radius preserves separated, countable flakes",
       "ok": true,
-      "v": "5"
+      "v": "85"
     },
     {
-      "p": "[1:tc Particular] TF Evolution",
+      "p": "[2:PEDG] Threshold limits bloom to bright teal flakes and leaves the dark background clean",
       "ok": true,
-      "v": "25"
+      "v": "55"
     },
     {
-      "p": "[1:tc Particular] Glow Opacity",
+      "p": "[2:PEDG] Soft threshold transition avoids harsh halo edges",
       "ok": true,
-      "v": "25"
-    },
-    {
-      "p": "[1:tc Particular] Glow Size",
-      "ok": true,
-      "v": "300"
+      "v": "35"
     }
   ],
   "frames": [

@@ -3,88 +3,103 @@
   "name": "eval-e08_i1",
   "params": [
     {
-      "p": "[1:ADBE Fractal Noise] Fractal Type (soft clouds)",
+      "p": "[2:BCC4Damaged TV] 适中的信号损坏让抽象纹理产生可控的电视故障撕裂。",
       "ok": true,
-      "v": "1"
+      "v": "30"
     },
     {
-      "p": "[1:ADBE Fractal Noise] Noise Type (spline)",
+      "p": "[2:BCC4Damaged TV] 让撕裂和信号故障在时间中持续变化，而不是静态滤镜。",
       "ok": true,
-      "v": "3"
+      "v": "85"
     },
     {
-      "p": "[1:ADBE Fractal Noise] Contrast",
+      "p": "[2:BCC4Damaged TV] 保持轻微的横向模拟信号偏移，避免画面彻底失真。",
       "ok": true,
-      "v": "200"
+      "v": "15"
     },
     {
-      "p": "[1:ADBE Fractal Noise] Scale",
+      "p": "[2:BCC4Damaged TV] 加入少量动态电视噪点，使故障具有明确的电子信号质感。",
       "ok": true,
-      "v": "160"
+      "v": "14"
     },
     {
-      "p": "[1:ADBE Fractal Noise] Evolution churn (expr)",
-      "ok": true
-    },
-    {
-      "p": "[2:ADBE Tint] Map Black To (teal)",
+      "p": "[2:BCC4Damaged TV] 叠加克制的CRT扫描线，强化故障风格但不遮蔽彩色底图。",
       "ok": true,
-      "v": "0,0.34999999403954,0.5,1"
+      "v": "16"
     },
     {
-      "p": "[2:ADBE Tint] Map White To (orange)",
+      "p": "[2:BCC4Damaged TV] 将红色枪口向右错位，制造清晰红色边缘。",
       "ok": true,
-      "v": "1,0.55000001192093,0.150"
+      "v": "8,0"
     },
     {
-      "p": "[2:ADBE Tint] Amount",
+      "p": "[2:BCC4Damaged TV] 保留绿色通道作为稳定的画面基准。",
       "ok": true,
-      "v": "100"
+      "v": "0,0"
     },
     {
-      "p": "[3:ADBE Tile] Output Width",
+      "p": "[2:BCC4Damaged TV] 将蓝色枪口向左错位，与红色形成明显RGB分离。",
       "ok": true,
-      "v": "160"
+      "v": "-8,0"
     },
     {
-      "p": "[3:ADBE Tile] Mirror Edges",
-      "ok": true,
-      "v": "1"
-    },
-    {
-      "p": "[4:ADBE Shift Channels] Take Red From Blue",
-      "ok": true,
-      "v": "4"
-    },
-    {
-      "p": "[4:ADBE Shift Channels] Take Blue From Red",
-      "ok": true,
-      "v": "2"
-    },
-    {
-      "p": "[5:ADBE Wave Warp] Wave Type (square)",
-      "ok": true,
-      "v": "5"
-    },
-    {
-      "p": "[5:ADBE Wave Warp] Wave Height",
-      "ok": true,
-      "v": "6"
-    },
-    {
-      "p": "[5:ADBE Wave Warp] Wave Width",
-      "ok": true,
-      "v": "18"
-    },
-    {
-      "p": "[5:ADBE Wave Warp] Direction",
+      "p": "[2:BCC4Damaged TV] 不做去色，保留RGB错位产生的饱和彩色抽象纹理。",
       "ok": true,
       "v": "0"
     },
     {
-      "p": "[5:ADBE Wave Warp] Wave Speed",
+      "p": "[2:BCC4Damaged TV] 增加低强度综合干扰，让信号故障更像刻意设计的CRT风格。",
       "ok": true,
-      "v": "2.5"
+      "v": "8"
+    },
+    {
+      "p": "[2:BCC4Damaged TV] 固定一组具有辨识度的故障噪声图案。",
+      "ok": true,
+      "v": "37"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 中高速率产生轻微而持续的电子信号抖动。",
+      "ok": true,
+      "v": "145"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 限制为细微的位置偏移，保持画面可读。",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 略微强调横向抖动，贴合电视信号失锁的感觉。",
+      "ok": true,
+      "v": "125"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 保留少量纵向跳动，避免运动过于机械。",
+      "ok": true,
+      "v": "70"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 只保留极弱缩放扰动，不让抖动变成冲击镜头。",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 关闭旋转，维持信号水平撕裂的屏幕语言。",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 提供过扫描边界，防止抖动时出现黑边。",
+      "ok": true,
+      "v": "108"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 用边缘填充维持完整画面。",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 让抖动幅度周期性呼吸，在不同采样秒数呈现不同的帧内容偏移。 (expr)",
+      "ok": true
     }
   ],
   "frames": [

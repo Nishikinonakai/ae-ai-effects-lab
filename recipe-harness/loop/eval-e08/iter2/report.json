@@ -1,0 +1,124 @@
+{
+  "status": "done",
+  "name": "eval-e08_i2",
+  "params": [
+    {
+      "p": "[2:BCC4Damaged TV] 适中的信号损坏让抽象纹理产生可控的电视故障撕裂。",
+      "ok": true,
+      "v": "30"
+    },
+    {
+      "p": "[2:BCC4Damaged TV] 让撕裂和信号故障在时间中持续变化，而不是静态滤镜。",
+      "ok": true,
+      "v": "85"
+    },
+    {
+      "p": "[2:BCC4Damaged TV] 保持轻微的横向模拟信号偏移，避免画面彻底失真。",
+      "ok": true,
+      "v": "15"
+    },
+    {
+      "p": "[2:BCC4Damaged TV] 加入少量动态电视噪点，使故障具有明确的电子信号质感。",
+      "ok": true,
+      "v": "14"
+    },
+    {
+      "p": "[2:BCC4Damaged TV] 叠加克制的CRT扫描线，强化故障风格但不遮蔽彩色底图。",
+      "ok": true,
+      "v": "16"
+    },
+    {
+      "p": "[2:BCC4Damaged TV] 将红色枪口向右错位，制造清晰红色边缘。",
+      "ok": true,
+      "v": "8,0"
+    },
+    {
+      "p": "[2:BCC4Damaged TV] 保留绿色通道作为稳定的画面基准。",
+      "ok": true,
+      "v": "0,0"
+    },
+    {
+      "p": "[2:BCC4Damaged TV] 将蓝色枪口向左错位，与红色形成明显RGB分离。",
+      "ok": true,
+      "v": "-8,0"
+    },
+    {
+      "p": "[2:BCC4Damaged TV] 不做去色，保留RGB错位产生的饱和彩色抽象纹理。",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[2:BCC4Damaged TV] 增加低强度综合干扰，让信号故障更像刻意设计的CRT风格。",
+      "ok": true,
+      "v": "8"
+    },
+    {
+      "p": "[2:BCC4Damaged TV] 固定一组具有辨识度的故障噪声图案。",
+      "ok": true,
+      "v": "37"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 中高速率产生轻微而持续的电子信号抖动。",
+      "ok": true,
+      "v": "145"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 限制为细微的位置偏移，保持画面可读。",
+      "ok": true,
+      "v": "10"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 略微强调横向抖动，贴合电视信号失锁的感觉。",
+      "ok": true,
+      "v": "125"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 保留少量纵向跳动，避免运动过于机械。",
+      "ok": true,
+      "v": "70"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 只保留极弱缩放扰动，不让抖动变成冲击镜头。",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 关闭旋转，维持信号水平撕裂的屏幕语言。",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 提供过扫描边界，防止抖动时出现黑边。",
+      "ok": true,
+      "v": "108"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 用边缘填充维持完整画面。",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[3:BCC_CAMERASHAKE] 让抖动幅度周期性呼吸，在不同采样秒数呈现不同的帧内容偏移。 (expr)",
+      "ok": true
+    },
+    {
+      "p": "[4:ADBE Tint] 将暗部映射为高饱和蓝色，建立彩色抽象底图。",
+      "ok": true,
+      "v": "0.02999999932945,0.07999"
+    },
+    {
+      "p": "[4:ADBE Tint] 将亮部映射为洋红红色，使灰阶噪波变为鲜明彩色纹理。",
+      "ok": true,
+      "v": "1,0.07999999821186,0.319"
+    },
+    {
+      "p": "[4:ADBE Tint] 完全应用双色映射，避免底图仍然呈灰阶。",
+      "ok": true,
+      "v": "100"
+    }
+  ],
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e08/iter2/eval-e08_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e08/iter2/eval-e08_i2_t4.png"
+  ]
+}

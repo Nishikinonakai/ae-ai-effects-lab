@@ -1,6 +1,41 @@
 {
   "verdict": "fail",
   "score": 3,
-  "critique": "Third direction also failed: aspect-7 glow spheres at 550 wind with motion blur render as giant smeared ellipses filling the frame wall-to-wall, with hard VERTICAL SEAM artifacts (sub-buffer edges) cutting the field — overpowering and visibly broken, worse than iter2's usable-but-bland dot field. Max-iters reached; best remains iter2 (5/10). Eval lesson recorded: for vague prompts the planner should adapt the closest CURATED library recipe (data-flow) wholesale instead of improvising particle-craft — three self-authored directions each missed taste.",
-  "suggestions": []
+  "critique": "画面仍未达到可交付的科技感粒子背景：两帧都是接近纯黑的深海军蓝底，仅下方出现一条很暗的蓝紫色稀疏粒子轨迹。t1 到 t4 的下方粒子数量和形态确有变化，说明存在运动；但计划中的上方青绿色数据流在两帧中完全不可见，构图严重失衡。可用的中央留白很多，但当前更像粒子模拟刚启动时的局部残影，而非经过设计的科技数据框景；亮度、密度与色彩辨识度都不足，且蓝紫单色观感接近此前失败的默认蓝意外。",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 900,
+      "why": "上方流在短时间采样帧内完全不可见；显著提高第一套粒子的出生密度，确保其在t1和t4都形成清晰可见的青色上沿数据带。"
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 5,
+      "why": "将上方主流粒子核心放大，避免其在深色底上小到不可见，并建立主流与下方辅流的视觉层级。"
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0216",
+      "value": 75,
+      "why": "加强第一套青色粒子的可见发光轮廓，使其从当前几乎全黑的上半画面中明确分离出来。"
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular#2",
+      "matchName": "tc Particular-0070",
+      "value": [
+        0.16,
+        0.75,
+        1,
+        1
+      ],
+      "why": "将当前近默认蓝紫的下方粒子调整为更干净的冷青蓝辅色，减少默认蓝意外感，并让其与应出现的青色主流形成统一科技配色。"
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

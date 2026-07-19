@@ -1,9 +1,15 @@
 {
   "verdict": "fail",
-  "score": 7,
-  "critique": "Wandering float (no directional lean between t1/t4), population brightness variation (bright/dim mix = blink feel), and soft-edged glow points all read. Two degree-misses: color is green-dominant and slightly cold where 暖黄绿 was asked (fireflies want warmer chartreuse), and steady-state density at t4 (~70 points) drifts toward starfield — the sparse countable-fireflies read of t1 is better.",
+  "score": 6,
+  "critique": "The visual treatment is strong: the near-black field, warm yellow-green color, varied intensities, and soft diffuse halos all read as fireflies rather than hard particle dots. However, population density is inconsistent across the sampled times: t1 has only about six isolated lights, while t4 contains roughly thirty lights and begins to feel like a populated particle field rather than a sparse firefly scene. The sampled frames do not clearly demonstrate slow wandering because the much larger number of newly visible particles dominates the temporal change.",
   "suggestions": [
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0070", "value": [0.92, 0.98, 0.22, 1], "why": "shift toward warm chartreuse-yellow — firefly warmth" },
-    { "type": "param", "effect": "tc Particular", "matchName": "tc Particular-0146", "value": 15, "why": "steady-state count ~38 keeps the sparse firefly read at t4" }
-  ]
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 3,
+      "why": "Lower the emission rate so the later frame remains genuinely sparse and the scene does not rapidly build into a dense field."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

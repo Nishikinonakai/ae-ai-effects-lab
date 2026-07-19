@@ -1,0 +1,188 @@
+{
+  "name": "eval-e04_i3",
+  "compName": "Eval_e04",
+  "intent": "老胶片效果的抽象背景：柔和的灰阶云雾底，叠加胶片颗粒噪点、轻微亮度闪烁、整体偏褐色调",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.08,
+    0.07,
+    0.05
+  ],
+  "hostName": "Artwork",
+  "effects": [
+    {
+      "matchName": "ADBE Fractal Noise",
+      "params": [],
+      "expressions": []
+    },
+    {
+      "matchName": "BCC_TEXTURES",
+      "params": [
+        [
+          "BCC_TEXTURES-1001",
+          24,
+          "以中等强度叠加细密纹理，形成清晰可见的老胶片颗粒"
+        ],
+        [
+          "BCC_TEXTURES-1002",
+          30,
+          "提高纹理细节，让颗粒比默认画布纹更细碎"
+        ],
+        [
+          "BCC_TEXTURES-1018",
+          55,
+          "缩小纹理平铺尺寸，使其读取为细颗粒而非大块纸纹"
+        ],
+        [
+          "BCC_TEXTURES-1019",
+          55,
+          "保持纹理纵横比例一致"
+        ]
+      ],
+      "expressions": [
+        [
+          "BCC_TEXTURES-1003",
+          "seedRandom(Math.floor(time*30),true); random(0,100);",
+          "每帧改变纹理随机种子，使颗粒具有胶片噪点的闪动感"
+        ]
+      ]
+    },
+    {
+      "matchName": "BCC4Damaged TV",
+      "params": [
+        [
+          "BCC4Damaged TV-8192008",
+          0,
+          "关闭明显的信号撕裂，保留柔和云雾主体"
+        ],
+        [
+          "BCC4Damaged TV-8192021",
+          0,
+          "补充轻微模拟胶片雪花噪点"
+        ],
+        [
+          "BCC4Damaged TV-8192025",
+          48,
+          "将全画面灰阶云雾充分转换为怀旧色调"
+        ],
+        [
+          "BCC4Damaged TV-8192026",
+          2,
+          "选择使用自定义染色色彩而非纯单色"
+        ],
+        [
+          "BCC4Damaged TV-8192027",
+          [
+            0.34,
+            0.21,
+            0.12,
+            1
+          ],
+          "以低饱和深褐色统一染色，得到整体偏褐的旧胶片观感"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "PEDG",
+      "params": [
+        [
+          "PEDG-0001",
+          380,
+          "用宽半径将云雾边缘进一步柔化成朦胧底图"
+        ],
+        [
+          "PEDG-0004",
+          0,
+          "让整个明暗云雾都参与极轻微的柔光，而不只处理高光"
+        ],
+        [
+          "PEDG-0005",
+          35,
+          "平滑全画面辉光的亮度过渡"
+        ],
+        [
+          "PEDG-0002",
+          0.26,
+          "维持克制的柔光，避免吞没纹理颗粒"
+        ]
+      ],
+      "expressions": [
+        [
+          "PEDG-0002",
+          "0.38 + 0.07*Math.sin(time*5.13);",
+          "缓慢且轻微地改变全画面柔光亮度，模拟老胶片在 t1 与 t4 的曝光闪烁"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_rationale": "Fractal Noise 提供可辨认的灰阶云雾底，宽幅 Deep Glow 将其处理成柔和的雾状背景，同时仍让纹理留在表面。BCC Textures 的逐帧随机细纹与少量模拟噪点提供胶片颗粒，Damaged TV 的褐色染色则统一覆盖整个画面。",
+  "_planner": {
+    "model": "gpt-5.6-terra",
+    "date": "2026-07-19"
+  },
+  "pass_criteria": [
+    "soft greyscale cloud base readable under the treatment",
+    "film grain clearly present",
+    "sepia/brown tint over the whole frame",
+    "brightness differs slightly between t1 and t4 (flicker)"
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "BCC4Damaged TV",
+          "matchName": "BCC4Damaged TV-8192021",
+          "value": 0,
+          "why": "关闭该效果残留的雪花/损坏电视干扰，避免竖向波纹和水平暗带继续压过柔和云雾主体；细颗粒可由BCC_TEXTURES保留。"
+        },
+        {
+          "type": "param",
+          "effect": "BCC4Damaged TV",
+          "matchName": "BCC4Damaged TV-8192025",
+          "value": 48,
+          "why": "略减弱过重的褐色染色，使底层明暗云雾更接近可辨识的柔和灰阶，同时仍保留整体偏褐的旧胶片色调。"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "for_iter": 3,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "BCC_TEXTURES",
+          "matchName": "BCC_TEXTURES-1001",
+          "value": 24,
+          "why": "降低叠加纹理强度，减少云雾被纹理压成脏块的感觉，让柔和的灰阶云雾底图重新成为主体。"
+        },
+        {
+          "type": "param",
+          "effect": "PEDG",
+          "matchName": "PEDG-0001",
+          "value": 380,
+          "why": "缩小过大的辉光半径，避免全画面被过度抹开，同时保留更易辨认的细碎颗粒。"
+        },
+        {
+          "type": "param",
+          "effect": "PEDG",
+          "matchName": "PEDG-0002",
+          "value": 0.26,
+          "why": "降低基础柔光强度，使云雾保持柔和但不掩盖胶片颗粒；现有亮度表达式仍可提供轻微闪烁。"
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

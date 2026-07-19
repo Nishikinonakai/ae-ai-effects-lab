@@ -12,136 +12,137 @@
     "effects": [
       {
         "matchName": "ADBE Fractal Noise",
+        "params": [],
+        "expressions": []
+      },
+      {
+        "matchName": "BCC4Damaged TV",
         "params": [
           [
-            "ADBE Fractal Noise-0001",
+            "BCC4Damaged TV-8192008",
+            30,
+            "适中的信号损坏让抽象纹理产生可控的电视故障撕裂。"
+          ],
+          [
+            "BCC4Damaged TV-8192011",
+            85,
+            "让撕裂和信号故障在时间中持续变化，而不是静态滤镜。"
+          ],
+          [
+            "BCC4Damaged TV-8192004",
+            15,
+            "保持轻微的横向模拟信号偏移，避免画面彻底失真。"
+          ],
+          [
+            "BCC4Damaged TV-8192021",
+            14,
+            "加入少量动态电视噪点，使故障具有明确的电子信号质感。"
+          ],
+          [
+            "BCC4Damaged TV-8192015",
+            16,
+            "叠加克制的CRT扫描线，强化故障风格但不遮蔽彩色底图。"
+          ],
+          [
+            "BCC4Damaged TV-8192032",
+            [
+              8,
+              0
+            ],
+            "将红色枪口向右错位，制造清晰红色边缘。"
+          ],
+          [
+            "BCC4Damaged TV-8192035",
+            [
+              0,
+              0
+            ],
+            "保留绿色通道作为稳定的画面基准。"
+          ],
+          [
+            "BCC4Damaged TV-8192038",
+            [
+              -8,
+              0
+            ],
+            "将蓝色枪口向左错位，与红色形成明显RGB分离。"
+          ],
+          [
+            "BCC4Damaged TV-8192025",
+            0,
+            "不做去色，保留RGB错位产生的饱和彩色抽象纹理。"
+          ],
+          [
+            "BCC4Damaged TV-8192019",
+            8,
+            "增加低强度综合干扰，让信号故障更像刻意设计的CRT风格。"
+          ],
+          [
+            "BCC4Damaged TV-8192002",
+            37,
+            "固定一组具有辨识度的故障噪声图案。"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "BCC_CAMERASHAKE",
+        "params": [
+          [
+            "BCC_CAMERASHAKE-1001",
+            145,
+            "中高速率产生轻微而持续的电子信号抖动。"
+          ],
+          [
+            "BCC_CAMERASHAKE-1000",
+            5,
+            "限制为细微的位置偏移，保持画面可读。"
+          ],
+          [
+            "BCC_CAMERASHAKE-1014",
+            125,
+            "略微强调横向抖动，贴合电视信号失锁的感觉。"
+          ],
+          [
+            "BCC_CAMERASHAKE-1015",
+            70,
+            "保留少量纵向跳动，避免运动过于机械。"
+          ],
+          [
+            "BCC_CAMERASHAKE-1002",
             1,
-            "Fractal Type (soft clouds)"
+            "只保留极弱缩放扰动，不让抖动变成冲击镜头。"
           ],
           [
-            "ADBE Fractal Noise-0002",
-            3,
-            "Noise Type (spline)"
+            "BCC_CAMERASHAKE-1003",
+            0,
+            "关闭旋转，维持信号水平撕裂的屏幕语言。"
           ],
           [
-            "ADBE Fractal Noise-0004",
-            200,
-            "Contrast"
+            "BCC_CAMERASHAKE-1016",
+            108,
+            "提供过扫描边界，防止抖动时出现黑边。"
           ],
           [
-            "ADBE Fractal Noise-0010",
-            160,
-            "Scale"
+            "BCC_CAMERASHAKE-1012",
+            2,
+            "用边缘填充维持完整画面。"
           ]
         ],
         "expressions": [
           [
-            "ADBE Fractal Noise-0023",
-            "time*35",
-            "Evolution churn"
+            "BCC_CAMERASHAKE-1013",
+            "20 + 18*Math.sin(time*2.37)",
+            "让抖动幅度周期性呼吸，在不同采样秒数呈现不同的帧内容偏移。"
           ]
         ]
-      },
-      {
-        "matchName": "ADBE Tint",
-        "params": [
-          [
-            "ADBE Tint-0001",
-            [
-              0,
-              0.35,
-              0.5,
-              1
-            ],
-            "Map Black To (teal)"
-          ],
-          [
-            "ADBE Tint-0002",
-            [
-              1,
-              0.55,
-              0.15,
-              1
-            ],
-            "Map White To (orange)"
-          ],
-          [
-            "ADBE Tint-0003",
-            100,
-            "Amount"
-          ]
-        ],
-        "expressions": []
-      },
-      {
-        "matchName": "ADBE Tile",
-        "params": [
-          [
-            "ADBE Tile-0004",
-            160,
-            "Output Width"
-          ],
-          [
-            "ADBE Tile-0006",
-            1,
-            "Mirror Edges"
-          ]
-        ],
-        "expressions": []
-      },
-      {
-        "matchName": "ADBE Shift Channels",
-        "params": [
-          [
-            "ADBE Shift Channels-0002",
-            4,
-            "Take Red From Blue"
-          ],
-          [
-            "ADBE Shift Channels-0004",
-            2,
-            "Take Blue From Red"
-          ]
-        ],
-        "expressions": []
-      },
-      {
-        "matchName": "ADBE Wave Warp",
-        "params": [
-          [
-            "ADBE Wave Warp-0001",
-            5,
-            "Wave Type (square)"
-          ],
-          [
-            "ADBE Wave Warp-0002",
-            6,
-            "Wave Height"
-          ],
-          [
-            "ADBE Wave Warp-0003",
-            18,
-            "Wave Width"
-          ],
-          [
-            "ADBE Wave Warp-0004",
-            0,
-            "Direction"
-          ],
-          [
-            "ADBE Wave Warp-0005",
-            2.5,
-            "Wave Speed"
-          ]
-        ],
-        "expressions": []
       }
     ],
     "camera": null,
     "background": [
-      0,
-      0,
-      0
+      0.035,
+      0.008,
+      0.09
     ],
     "renderFrames": [
       1,
@@ -153,5 +154,5 @@
     "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e08/iter1/eval-e08_i1_t4.png"
   ],
   "prior_iterations": [],
-  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
 }

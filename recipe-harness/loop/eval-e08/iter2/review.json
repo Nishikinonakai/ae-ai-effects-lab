@@ -1,0 +1,42 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "彩色底图已明显改善：画面具有饱和的蓝紫、洋红色抽象纹理，横向扫描线和分区撕裂也能读作电视信号故障，而非单纯灰阶渲染错误。但 t1 与 t4 的云状区域、左侧条纹及整体构图几乎完全重合，未见可确认的帧间抖动或内容偏移。当前颜色主要是整体双色调映射，边缘没有清晰可辨的红/绿/蓝通道错位细边；Tint 置于故障与 RGB 枪口偏移之后，基本压平了原有的通道差异。",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "ADBE Tint",
+      "matchName": "ADBE Tint-0003",
+      "value": 82,
+      "why": "降低双色 Tint 的完全覆盖程度，保留 Damaged TV 已产生的原始 RGB 枪口偏移，使高对比边缘出现可见的彩色分离，而仍维持彩色底图。"
+    },
+    {
+      "type": "param",
+      "effect": "BCC4Damaged TV",
+      "matchName": "BCC4Damaged TV-8192032",
+      "value": [
+        12,
+        0
+      ],
+      "why": "加大红通道的横向偏移，在条纹、撕裂边界和明暗交界处建立更明确的红色 fringe。"
+    },
+    {
+      "type": "param",
+      "effect": "BCC4Damaged TV",
+      "matchName": "BCC4Damaged TV-8192038",
+      "value": [
+        -12,
+        0
+      ],
+      "why": "与增强后的红通道反向错位配对，让 RGB 分离在当前大面积平滑紫色画面中仍清晰可见。"
+    },
+    {
+      "type": "param",
+      "effect": "BCC_CAMERASHAKE",
+      "matchName": "BCC_CAMERASHAKE-1000",
+      "value": 18,
+      "why": "目前两张采样帧的构图基本静止；适度提高位置位移可让纹理和撕裂区在相邻采样帧之间产生明确但仍属轻微的信号抖动。"
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

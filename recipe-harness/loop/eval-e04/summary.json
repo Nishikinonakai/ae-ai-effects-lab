@@ -1,14 +1,26 @@
 {
   "intent": "老胶片效果的抽象背景：柔和的灰阶云雾底，叠加胶片颗粒噪点、轻微亮度闪烁、整体偏褐色调",
-  "backend": "agent",
-  "outcome": "pass",
+  "backend": "api",
+  "outcome": "fail_max_iters",
   "best_iter": 1,
   "iterations": [
     {
       "iter": 1,
-      "score": 8,
-      "verdict": "pass",
-      "critique": "Reads as aged film stock: soft cloud base clearly visible under the treatment, dense authentic-looking grain (a deliberate feature per the request), full-frame sepia/brown grade, and global luminance/structure differs between t1 and t4 (flicker + evolution). All four criteria met — usable as-is."
+      "score": 5,
+      "verdict": "fail",
+      "critique": "整体褐色色调和云雾状底图已经成立，画面中也有可见的细碎噪点质感。但云雾被明显的电视损坏式波纹破坏：左侧有强烈连续的竖向锯齿扭曲，画面下部还有一条突兀的水平暗带，不像克制的老胶片颗粒，而更像模拟信号故障。颗粒与云雾局部混成较脏的块状纹理，灰阶柔和感不足。仅提供了t1画面，无法确认t1与t4之间是否存在恰当的轻微亮度闪烁。"
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "整体偏褐色调已经稳定覆盖全画面，云雾状明暗底图也可读；t4相较t1略亮，存在可感知但不过分的曝光闪烁。然而画面左侧持续出现强烈的多重竖向波浪扭曲，底部还有明显水平分界暗带，仍然像电视信号损坏而非老胶片。当前颗粒也被大面积柔化和云雾纹理吞没，细密胶片颗粒不够清晰，整体质感偏脏、偏水波纹。"
+    },
+    {
+      "iter": 3,
+      "score": 4,
+      "verdict": "fail",
+      "critique": "偏褐色调与柔和的云雾明暗底图仍然可读，t4也比t1略亮，轻微曝光闪烁成立。但左侧持续存在高对比、多重竖向蛇形扭曲边缘，底部仍有横向波纹/暗带，视觉上是模拟电视信号故障而不是克制的老胶片。全画面纹理主要表现为被拉扯的水波状云雾，细密、独立可辨的胶片颗粒仍不够清楚。"
     }
   ]
 }

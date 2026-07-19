@@ -16,126 +16,179 @@
           [
             "tc Particular-0782",
             2,
-            "Emitter Type (Box)"
-          ],
-          [
-            "tc Particular-0581",
-            [
-              640,
-              380,
-              0
-            ],
-            "Position (frame center)"
+            "Box emitter distributes fireflies across a broad atmospheric field"
           ],
           [
             "tc Particular-0577",
             2,
-            "Emitter Size mode (XYZ)"
+            "Open the individual XYZ emitter-size controls before setting field dimensions"
           ],
           [
             "tc Particular-0014",
-            1300,
-            "Emitter Size X"
+            1500,
+            "Spread births beyond the comp width so edges remain naturally populated"
           ],
           [
             "tc Particular-0015",
-            520,
-            "Emitter Size Y"
+            850,
+            "Fill the full comp height rather than creating a horizontal strip"
           ],
           [
             "tc Particular-0016",
-            300,
-            "Emitter Size Z"
-          ],
-          [
-            "tc Particular-0703",
-            2,
-            "Particle Type (Glow Sphere)"
+            500,
+            "Give the swarm depth variation for organic scale and brightness differences"
           ],
           [
             "tc Particular-0146",
-            15,
-            "Particles/sec (sparse)"
+            3,
+            "Keep the population sparse and readable as individual fireflies"
           ],
           [
             "tc Particular-0011",
-            12,
-            "Velocity (near-still)"
+            5,
+            "Very low initial speed prevents rain-like directional travel"
           ],
           [
-            "tc Particular-0012",
-            50,
-            "Velocity Random %"
+            "tc Particular-0113",
+            1,
+            "Uniform emission removes any single travel direction"
+          ],
+          [
+            "tc Particular-0010",
+            100,
+            "Allow movement to disperse in every direction"
           ],
           [
             "tc Particular-0002",
-            2.5,
-            "Life (short = async fade in/out)"
-          ],
-          [
-            "tc Particular-0065",
-            60,
-            "Life Random %"
+            6,
+            "Long enough life for slow floating motion without becoming a dense cloud"
           ],
           [
             "tc Particular-0017",
             0,
-            "Gravity (float)"
+            "No gravity so particles do not read as falling snow or rising embers"
+          ],
+          [
+            "tc Particular-0018",
+            0.8,
+            "Enable air resistance so wind and turbulence can create gentle wandering"
+          ],
+          [
+            "tc Particular-0711",
+            38,
+            "Turbulence bends each particle into slow independent wandering paths"
+          ],
+          [
+            "tc Particular-0715",
+            260,
+            "Large turbulence features create broad drifting curves rather than jitter"
+          ],
+          [
+            "tc Particular-0716",
+            2,
+            "Keep motion simple and calm instead of chaotic"
           ],
           [
             "tc Particular-0027",
-            3,
-            "Size"
+            3.2,
+            "Small point-sized bodies preserve the firefly look"
           ],
           [
             "tc Particular-0074",
-            45,
-            "Size Random %"
+            60,
+            "Vary particle scale so the field has near and far specimens"
           ],
           [
             "tc Particular-0033",
-            90,
-            "Opacity"
+            78,
+            "Leave enough core brightness for the glow to bloom"
           ],
           [
             "tc Particular-0075",
-            100,
-            "Opacity Random % (blink proxy)"
+            72,
+            "Strong per-particle opacity variation creates a natural blink population"
+          ],
+          [
+            "tc Particular-0088",
+            1,
+            "Set Color to At Birth so the warm yellow-green color is used"
           ],
           [
             "tc Particular-0070",
             [
-              0.92,
-              0.98,
+              0.82,
+              1,
               0.22,
               1
             ],
-            "Color (warm yellow-green)"
+            "Warm yellow-green bioluminescent firefly color"
+          ],
+          [
+            "tc Particular-0703",
+            2,
+            "Use Glow Sphere particles for soft luminous points"
           ],
           [
             "tc Particular-0069",
             2,
-            "Blend Mode (Add)"
-          ],
-          [
-            "tc Particular-0216",
-            80,
-            "Glow Opacity"
+            "Additive blending makes overlapping lights feel emissive"
           ],
           [
             "tc Particular-0215",
-            300,
-            "Glow Size (halo)"
+            260,
+            "Create a substantial soft halo around each light"
           ],
           [
-            "tc Particular-0711",
-            130,
-            "Turbulence -> Position (wander)"
+            "tc Particular-0216",
+            55,
+            "Keep halos visible but avoid turning the sparse field into fog"
           ],
           [
-            "tc Particular-0715",
-            14,
-            "Turbulence Scale (broad wander)"
+            "tc Particular-0035",
+            2,
+            "Enable modest motion blur for the occasional moving light"
+          ],
+          [
+            "tc Particular-0036",
+            180,
+            "Natural shutter value without streaking the dots"
+          ]
+        ],
+        "expressions": [
+          [
+            "tc Particular-0581",
+            "[thisComp.width/2 + Math.sin(time*0.19)*85, thisComp.height/2 + Math.cos(time*0.16)*48, 0]",
+            "The emitter slowly breathes around the frame center, preventing a static-looking field"
+          ]
+        ]
+      },
+      {
+        "matchName": "PEDG",
+        "params": [
+          [
+            "PEDG-0002",
+            1.15,
+            "Add restrained HDR bloom to the brightest fireflies"
+          ],
+          [
+            "PEDG-0001",
+            95,
+            "Keep glow halos soft and local rather than washing the black background"
+          ],
+          [
+            "PEDG-0004",
+            35,
+            "Favor the brighter blinking lights while letting dim fireflies remain subtle"
+          ],
+          [
+            "PEDG-0005",
+            45,
+            "Feather the glow threshold for smooth brightness transitions"
+          ],
+          [
+            "PEDG-0024",
+            100,
+            "Retain the crisp luminous cores beneath the bloom"
           ]
         ],
         "expressions": []
@@ -143,9 +196,9 @@
     ],
     "camera": null,
     "background": [
+      0.004,
       0.008,
-      0.012,
-      0.004
+      0.003
     ],
     "renderFrames": [
       1,
@@ -159,10 +212,10 @@
   "prior_iterations": [
     {
       "iter": 1,
-      "score": 7,
+      "score": 6,
       "verdict": "fail",
-      "critique": "Wandering float (no directional lean between t1/t4), population brightness variation (bright/dim mix = blink feel), and soft-edged glow points all read. Two degree-misses: color is green-dominant and slightly cold where 暖黄绿 was asked (fireflies want warmer chartreuse), and steady-state density at t4 (~70 points) drifts toward starfield — the sparse countable-fireflies read of t1 is better."
+      "critique": "The visual treatment is strong: the near-black field, warm yellow-green color, varied intensities, and soft diffuse halos all read as fireflies rather than hard particle dots. However, population density is inconsistent across the sampled times: t1 has only about six isolated lights, while t4 contains roughly thirty lights and begins to feel like a populated particle field rather than a sparse firefly scene. The sampled frames do not clearly demonstrate slow wandering because the much larger number of newly visible particles dominates the temporal change."
     }
   ],
-  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
 }

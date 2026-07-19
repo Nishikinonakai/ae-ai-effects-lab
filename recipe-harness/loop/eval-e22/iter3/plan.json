@@ -1,24 +1,7 @@
 {
-  "_planner_rationale": [
-    "vague prompt — planner supplies curated defaults. Taste anchors from the library's tech family (data-flow / digital-stream): horizontal light-streak flow, cool cyan on near-black, additive glow, generous negative space",
-    "Streaklet particle type (0703=5, streaklet params from the validated snow/large-2d recipe family: NoSpheres 7 / Spread 60) elongates each particle along motion = data-stream read without any footage",
-    "flow — full-height box emitter at frame left + Wind X 380 (Air Resistance untouched keeps it live); Life 3.5 crosses the frame",
-    "背景 usability — density modest (psec 120), opacity 70, size small: reads as ambient tech texture, not a hero element"
-  ],
-  "_planner_sources": [
-    "recipes/mined/large-snow-2d.json (streaklet params)",
-    "recipes/mined/data-flow.json (taste anchor, by catalog)",
-    "recipes/golden-dust.json"
-  ],
-  "intent": "来点好看的科技感粒子背景",
-  "pass_criteria": [
-    "coherent, polished particle background (no debug look, no default-blue accident)",
-    "reads as 'tech' (e.g. grids, data streams, clean geometry, cool palette — planner's taste)",
-    "usable as a background: not overpowering, decent negative space",
-    "motion present between frames"
-  ],
   "name": "eval-e22_i3",
-  "compName": "Eval_E22_TechBG",
+  "compName": "Eval_e22",
+  "intent": "来点好看的科技感粒子背景",
   "comp": {
     "width": 1280,
     "height": 720,
@@ -27,214 +10,323 @@
   },
   "background": [
     0.008,
-    0.015,
-    0.03
+    0.02,
+    0.055
   ],
-  "hostName": "TechBG",
+  "hostName": "Artwork",
   "effects": [
     {
       "matchName": "tc Particular",
       "params": [
         [
           "tc Particular-0782",
-          2,
-          "Emitter Type (Box)"
-        ],
-        [
-          "tc Particular-0581",
-          [
-            640,
-            360,
-            0
-          ],
-          "Position (left edge)"
-        ],
-        [
-          "tc Particular-0577",
-          2,
-          "Emitter Size mode (XYZ)"
-        ],
-        [
-          "tc Particular-0014",
-          1400,
-          "Emitter Size X (thin source)"
-        ],
-        [
-          "tc Particular-0015",
-          760,
-          "Emitter Size Y (full height)"
-        ],
-        [
-          "tc Particular-0016",
-          300,
-          "Emitter Size Z"
-        ],
-        [
-          "tc Particular-0703",
-          2,
-          "Particle Type (Streaklet)"
-        ],
-        [
-          "tc Particular-0314",
-          7,
-          "Streaklet No Spheres"
-        ],
-        [
-          "tc Particular-0315",
-          60,
-          "Streaklet Spread"
+          1,
+          "Use a point emitter so a precisely animated emitter can draw a clean upper data-stream path."
         ],
         [
           "tc Particular-0146",
-          200,
-          "Particles/sec"
+          260,
+          "Moderate density keeps individual luminous particles visible instead of turning the upper stream into fog."
         ],
         [
           "tc Particular-0011",
-          30,
-          "Velocity"
+          18,
+          "Low velocity lets the emitter animation create readable connected data trails."
         ],
         [
-          "tc Particular-0012",
-          40,
-          "Velocity Random %"
+          "tc Particular-0113",
+          4,
+          "Disc emission gives the stream a controlled planar spread rather than a spherical dust cloud."
+        ],
+        [
+          "tc Particular-0010",
+          18,
+          "Keep the particle ribbon narrow and intentional."
         ],
         [
           "tc Particular-0002",
-          3.5,
-          "Life (crosses frame)"
-        ],
-        [
-          "tc Particular-0065",
-          30,
-          "Life Random %"
-        ],
-        [
-          "tc Particular-0749",
-          550,
-          "Wind X (rightward stream)"
+          5.4,
+          "Long particle life leaves an elegant persistent trail across the upper edge."
         ],
         [
           "tc Particular-0027",
-          9,
-          "Size"
+          3.2,
+          "Small particles read as refined digital points."
         ],
         [
           "tc Particular-0074",
           55,
-          "Size Random %"
+          "Size variation avoids an artificial uniform-dot pattern."
         ],
         [
           "tc Particular-0033",
-          95,
-          "Opacity"
+          100,
+          "Restrained particle opacity preserves the dark background and negative space."
         ],
         [
           "tc Particular-0075",
-          40,
-          "Opacity Random %"
+          58,
+          "Opacity randomness gives the stream a subtle data-signal flicker."
         ],
         [
-          "tc Particular-0070",
-          [
-            0.35,
-            0.85,
-            1,
-            1
-          ],
-          "Color (cyan)"
+          "tc Particular-0703",
+          2,
+          "Glow Sphere particles create polished luminous points."
         ],
         [
           "tc Particular-0069",
           2,
-          "Blend Mode (Add)"
+          "Additive blending makes the cyan particles feel emissive."
         ],
         [
-          "tc Particular-0216",
-          55,
-          "Glow Opacity"
-        ],
-        [
-          "tc Particular-0215",
-          240,
-          "Glow Size"
+          "tc Particular-0018",
+          1.1,
+          "Enable air resistance before turbulence and keep the flow controlled."
         ],
         [
           "tc Particular-0711",
-          30,
-          "Turbulence -> Position (subtle waver)"
+          16,
+          "Add mild organic drift so the upper stream evolves between frames."
         ],
         [
           "tc Particular-0715",
-          8,
-          "Turbulence Scale"
+          115,
+          "Use medium-scale turbulence for graceful bends rather than noisy jitter."
         ],
         [
-          "tc Particular-0524",
-          7,
-          "aspect ratio 7 = elongated dashes [i3]"
-        ],
-        [
-          "tc Particular-0726",
-          1,
-          "orient to motion — dashes align with the [i3]"
-        ],
-        [
-          "tc Particular-0035",
+          "tc Particular-0716",
           2,
-          "motion blur on for streak smear [i3]"
+          "Keep turbulence simple and clean."
+        ],
+        [
+          "tc Particular-0088",
+          1,
+          "Set color at birth so the authored cyan color is used."
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.08,
+            0.92,
+            0.82,
+            1
+          ],
+          "Use a vivid mint-cyan instead of default blue for a contemporary tech palette."
+        ],
+        [
+          "tc Particular-0215",
+          230,
+          "Give each particle a controlled electronic halo."
+        ],
+        [
+          "tc Particular-0216",
+          45,
+          "Keep the particle glow subtle enough for background use."
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0581",
+          "[640+560*Math.sin(time*1.05),155+42*Math.sin(time*2.15),0];",
+          "Sweep the emitter across the upper third to continuously write a flowing cyan data ribbon."
+        ]
+      ]
+    },
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          1,
+          "A second point emitter creates a complementary lower data stream without filling the center."
+        ],
+        [
+          "tc Particular-0146",
+          72,
+          "Lower density makes this a quiet accent beneath the primary cyan stream."
+        ],
+        [
+          "tc Particular-0011",
+          14,
+          "Slow movement produces a stable, premium background rhythm."
+        ],
+        [
+          "tc Particular-0113",
+          4,
+          "Disc emission keeps the lower particles aligned as a slender stream."
+        ],
+        [
+          "tc Particular-0010",
+          14,
+          "Limit spread to retain a crisp technical geometry."
+        ],
+        [
+          "tc Particular-0002",
+          5.8,
+          "Long-lived particles form a smooth lower-edge trail."
+        ],
+        [
+          "tc Particular-0027",
+          2.4,
+          "Slightly smaller particles establish depth behind the main stream."
+        ],
+        [
+          "tc Particular-0074",
+          60,
+          "Natural point-size variation adds dimensionality."
+        ],
+        [
+          "tc Particular-0033",
+          40,
+          "Lower opacity keeps this violet layer secondary."
+        ],
+        [
+          "tc Particular-0075",
+          62,
+          "Gentle stochastic flicker suggests transmitted data."
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Use luminous glow spheres for visual cohesion."
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Additive compositing preserves a clean neon-light look."
+        ],
+        [
+          "tc Particular-0018",
+          1,
+          "Enable controlled turbulence."
+        ],
+        [
+          "tc Particular-0711",
+          12,
+          "Introduce a small flowing deviation between frames."
+        ],
+        [
+          "tc Particular-0715",
+          150,
+          "Broader turbulence creates a slow elegant undulation."
+        ],
+        [
+          "tc Particular-0716",
+          2,
+          "Avoid visual noise in the lower accent."
+        ],
+        [
+          "tc Particular-0088",
+          1,
+          "Set color at birth before applying the violet accent color."
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.42,
+            0.3,
+            1,
+            1
+          ],
+          "Add a restrained ultraviolet accent that complements the cyan without becoming default-blue."
+        ],
+        [
+          "tc Particular-0215",
+          180,
+          "Provide a tighter halo than the primary stream for depth separation."
+        ],
+        [
+          "tc Particular-0216",
+          32,
+          "Keep the secondary glow quiet."
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0581",
+          "[640-560*Math.sin(time*0.92),570+34*Math.sin(time*1.8+1.4),0];",
+          "Send a violet stream in the opposite direction along the lower third, framing a clear central title-safe area."
+        ]
+      ]
+    },
+    {
+      "matchName": "PEDG",
+      "params": [
+        [
+          "PEDG-0004",
+          35,
+          "Restrict bloom mostly to the luminous particle highlights so the navy background stays crisp."
+        ],
+        [
+          "PEDG-0005",
+          45,
+          "Feather the glow threshold for smooth premium halos."
+        ],
+        [
+          "PEDG-0002",
+          1.15,
+          "Add restrained HDR bloom rather than an overpowering haze."
+        ],
+        [
+          "PEDG-0001",
+          185,
+          "Create a soft shared light atmosphere around the two particle streams."
+        ],
+        [
+          "PEDG-0024",
+          100,
+          "Retain the sharp particle cores beneath the bloom."
         ]
       ],
       "expressions": []
     }
   ],
-  "camera": null,
   "renderFrames": [
     1,
     4
+  ],
+  "_rationale": "Two counter-flowing, color-separated Particular passes create recognizable animated data streams while deliberately leaving the center calm for usable background space. Highlight-only Deep Glow unifies the cyan and ultraviolet particles into a polished futuristic light field without washing out the dark navy palette.",
+  "_planner": {
+    "model": "gpt-5.6-terra",
+    "date": "2026-07-19"
+  },
+  "pass_criteria": [
+    "coherent, polished particle background (no debug look, no default-blue accident)",
+    "reads as 'tech' (e.g. grids, data streams, clean geometry, cool palette — planner's taste)",
+    "usable as a background: not overpowering, decent negative space",
+    "motion present between frames"
   ],
   "_loop_history": [
     {
       "for_iter": 2,
       "applied": [
         {
-          "type": "param",
+          "type": "expression",
           "effect": "tc Particular",
           "matchName": "tc Particular-0581",
-          "value": [
-            640,
-            360,
-            0
-          ],
-          "why": "emit across the whole frame — immediate full coverage instead of a slow left-to-right fill"
+          "expression": "[640+560*Math.sin(time*1.05),155+42*Math.sin(time*2.15),0];",
+          "why": "Keep the cyan emitter within the visible upper region from the first rendered frame, instead of beginning off-canvas and leaving the upper stream absent."
         },
         {
-          "type": "param",
-          "effect": "tc Particular",
-          "matchName": "tc Particular-0014",
-          "value": 1400,
-          "why": "full-width emitter box"
-        },
-        {
-          "type": "param",
-          "effect": "tc Particular",
-          "matchName": "tc Particular-0027",
-          "value": 9,
-          "why": "streaklets above the visibility floor — readable data-streak scale"
-        },
-        {
-          "type": "param",
-          "effect": "tc Particular",
-          "matchName": "tc Particular-0033",
-          "value": 95,
-          "why": "full opacity so the streams pop on the dark bg"
+          "type": "expression",
+          "effect": "tc Particular#2",
+          "matchName": "tc Particular-0581",
+          "expression": "[640-560*Math.sin(time*0.92),570+34*Math.sin(time*1.8+1.4),0];",
+          "why": "Keep the lower accent emitter visible immediately while preserving opposing directional motion and the central title-safe area."
         },
         {
           "type": "param",
           "effect": "tc Particular",
           "matchName": "tc Particular-0146",
-          "value": 200,
-          "why": "density for an ambient field (still background-grade)"
+          "value": 120,
+          "why": "Increase cyan particle presence so the primary stream is clearly visible and can balance the violet accent."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular#2",
+          "matchName": "tc Particular-0146",
+          "value": 72,
+          "why": "Make the lower stream read as an intentional continuous data ribbon rather than scattered, underpopulated dots."
         }
       ],
       "skipped": []
@@ -243,39 +335,32 @@
       "for_iter": 3,
       "applied": [
         {
-          "type": "param",
+          "type": "expression",
           "effect": "tc Particular",
-          "matchName": "tc Particular-0703",
-          "value": 2,
-          "why": "Glow Sphere responds to aspect-ratio stretching cleanly"
+          "matchName": "tc Particular-0581",
+          "expression": "[640+560*Math.sin(time*1.05),155+42*Math.sin(time*2.15),0];",
+          "why": "The first emitter is not visibly contributing; explicitly reapplying its upper-third sweep should restore the missing cyan framing stream."
         },
         {
           "type": "param",
           "effect": "tc Particular",
-          "matchName": "tc Particular-0524",
-          "value": 7,
-          "why": "aspect ratio 7 = elongated dashes"
+          "matchName": "tc Particular-0146",
+          "value": 260,
+          "why": "The absent upper stream needs substantially more emitted particles to become a readable, continuous cyan data ribbon at the evaluated early frame."
         },
         {
           "type": "param",
           "effect": "tc Particular",
-          "matchName": "tc Particular-0726",
-          "value": 1,
-          "why": "orient to motion — dashes align with the flow = data-stream read"
+          "matchName": "tc Particular-0033",
+          "value": 100,
+          "why": "Raise the primary stream's visible particle intensity so its authored cyan color and glow survive the dark render instead of disappearing."
         },
         {
           "type": "param",
-          "effect": "tc Particular",
-          "matchName": "tc Particular-0035",
-          "value": 2,
-          "why": "motion blur on for streak smear"
-        },
-        {
-          "type": "param",
-          "effect": "tc Particular",
-          "matchName": "tc Particular-0749",
-          "value": 550,
-          "why": "faster flow = longer per-frame travel, stronger streaking"
+          "effect": "tc Particular#2",
+          "matchName": "tc Particular-0033",
+          "value": 40,
+          "why": "Reduce the lower violet layer slightly so it remains an accent once the primary cyan stream becomes visible, preserving balanced title-safe negative space."
         }
       ],
       "skipped": []

@@ -12,112 +12,116 @@
     "effects": [
       {
         "matchName": "ADBE Fractal Noise",
-        "params": [
-          [
-            "ADBE Fractal Noise-0001",
-            1,
-            "Fractal Type (soft clouds)"
-          ],
-          [
-            "ADBE Fractal Noise-0002",
-            3,
-            "Noise Type (smoothest)"
-          ],
-          [
-            "ADBE Fractal Noise-0004",
-            105,
-            "Contrast (soft)"
-          ],
-          [
-            "ADBE Fractal Noise-0005",
-            -6,
-            "Brightness"
-          ],
-          [
-            "ADBE Fractal Noise-0010",
-            210,
-            "Scale (big soft billows)"
-          ]
-        ],
-        "expressions": [
-          [
-            "ADBE Fractal Noise-0023",
-            "time*25",
-            "Evolution (slow)"
-          ]
-        ]
-      },
-      {
-        "matchName": "ADBE Noise HLS Auto2",
-        "params": [
-          [
-            "ADBE Noise HLS Auto2-0001",
-            3,
-            "Noise type (grain)"
-          ],
-          [
-            "ADBE Noise HLS Auto2-0003",
-            20,
-            "Lightness noise (visible film grain)"
-          ],
-          [
-            "ADBE Noise HLS Auto2-0005",
-            0.9,
-            "Grain Size"
-          ],
-          [
-            "ADBE Noise HLS Auto2-0006",
-            24,
-            "Noise Animation Speed (per-frame refresh)"
-          ]
-        ],
-        "expressions": []
-      },
-      {
-        "matchName": "ADBE Exposure2",
         "params": [],
+        "expressions": []
+      },
+      {
+        "matchName": "BCC_TEXTURES",
+        "params": [
+          [
+            "BCC_TEXTURES-1001",
+            38,
+            "以中等强度叠加细密纹理，形成清晰可见的老胶片颗粒"
+          ],
+          [
+            "BCC_TEXTURES-1002",
+            30,
+            "提高纹理细节，让颗粒比默认画布纹更细碎"
+          ],
+          [
+            "BCC_TEXTURES-1018",
+            55,
+            "缩小纹理平铺尺寸，使其读取为细颗粒而非大块纸纹"
+          ],
+          [
+            "BCC_TEXTURES-1019",
+            55,
+            "保持纹理纵横比例一致"
+          ]
+        ],
         "expressions": [
           [
-            "ADBE Exposure2-0003",
-            "0.22*Math.sin(time*13) + 0.14*Math.sin(time*29+1.7)",
-            "Master Exposure flicker (stops)"
+            "BCC_TEXTURES-1003",
+            "seedRandom(Math.floor(time*30),true); random(0,100);",
+            "每帧改变纹理随机种子，使颗粒具有胶片噪点的闪动感"
           ]
         ]
       },
       {
-        "matchName": "ADBE Tint",
+        "matchName": "BCC4Damaged TV",
         "params": [
           [
-            "ADBE Tint-0001",
-            [
-              0.09,
-              0.055,
-              0.03,
-              1
-            ],
-            "Map Black To (warm dark brown)"
+            "BCC4Damaged TV-8192008",
+            0,
+            "关闭明显的信号撕裂，保留柔和云雾主体"
           ],
           [
-            "ADBE Tint-0002",
-            [
-              0.89,
-              0.79,
-              0.62,
-              1
-            ],
-            "Map White To (aged paper)"
+            "BCC4Damaged TV-8192021",
+            8,
+            "补充轻微模拟胶片雪花噪点"
           ],
           [
-            "ADBE Tint-0003",
-            100,
-            "Amount"
+            "BCC4Damaged TV-8192025",
+            62,
+            "将全画面灰阶云雾充分转换为怀旧色调"
+          ],
+          [
+            "BCC4Damaged TV-8192026",
+            2,
+            "选择使用自定义染色色彩而非纯单色"
+          ],
+          [
+            "BCC4Damaged TV-8192027",
+            [
+              0.34,
+              0.21,
+              0.12,
+              1
+            ],
+            "以低饱和深褐色统一染色，得到整体偏褐的旧胶片观感"
           ]
         ],
         "expressions": []
+      },
+      {
+        "matchName": "PEDG",
+        "params": [
+          [
+            "PEDG-0001",
+            650,
+            "用宽半径将云雾边缘进一步柔化成朦胧底图"
+          ],
+          [
+            "PEDG-0004",
+            0,
+            "让整个明暗云雾都参与极轻微的柔光，而不只处理高光"
+          ],
+          [
+            "PEDG-0005",
+            35,
+            "平滑全画面辉光的亮度过渡"
+          ],
+          [
+            "PEDG-0002",
+            0.38,
+            "维持克制的柔光，避免吞没纹理颗粒"
+          ]
+        ],
+        "expressions": [
+          [
+            "PEDG-0002",
+            "0.38 + 0.07*Math.sin(time*5.13);",
+            "缓慢且轻微地改变全画面柔光亮度，模拟老胶片在 t1 与 t4 的曝光闪烁"
+          ]
+        ]
       }
     ],
     "camera": null,
-    "background": null,
+    "background": [
+      0.08,
+      0.07,
+      0.05
+    ],
     "renderFrames": [
       1,
       4
@@ -128,5 +132,5 @@
     "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e04/iter1/eval-e04_i1_t4.png"
   ],
   "prior_iterations": [],
-  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
 }

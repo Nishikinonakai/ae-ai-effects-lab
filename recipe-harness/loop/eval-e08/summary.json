@@ -1,14 +1,26 @@
 {
   "intent": "信号故障效果：彩色抽象底图上，画面周期性轻微抖动、RGB 通道错位",
-  "backend": "agent",
-  "outcome": "pass",
-  "best_iter": 1,
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 3,
   "iterations": [
     {
       "iter": 1,
-      "score": 8,
-      "verdict": "pass",
-      "critique": "Analog-glitch read achieved: chromatic blue/amber base (channel-crossed teal/orange), square-wave zigzag jitter across every edge with clearly different phase/structure between t1 and t4, and color-separation banding at the warped mass boundaries. Reads as intentional signal-distortion style. Fringing is the softest criterion — separation shows at boundaries rather than as tri-color ghosting, acceptable for the ask."
+      "score": 3,
+      "verdict": "fail",
+      "critique": "画面具有横向扫描线、局部撕裂和极弱的红蓝边缘，但整体几乎完全是灰阶，未呈现“彩色抽象底图”。右侧云状纹理与左侧条纹区域在两张采样帧中基本一致，未能看出明确的周期性画面偏移或轻微抖动。当前大面积规则的灰色分区更像渲染/信号异常，而非可辨识的、有意设计的彩色RGB故障风格。"
+    },
+    {
+      "iter": 2,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "彩色底图已明显改善：画面具有饱和的蓝紫、洋红色抽象纹理，横向扫描线和分区撕裂也能读作电视信号故障，而非单纯灰阶渲染错误。但 t1 与 t4 的云状区域、左侧条纹及整体构图几乎完全重合，未见可确认的帧间抖动或内容偏移。当前颜色主要是整体双色调映射，边缘没有清晰可辨的红/绿/蓝通道错位细边；Tint 置于故障与 RGB 枪口偏移之后，基本压平了原有的通道差异。"
+    },
+    {
+      "iter": 3,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "彩色抽象底图已成立：蓝紫与洋红纹理、扫描线和分区撕裂能读作有意的电视信号故障，而非灰阶坏渲染。两帧的云状纹理和横条位置存在极轻微变化，但整体构图仍几乎重合，画面偏移/抖动不够明确。更关键的是画面没有可辨识的红、绿、蓝细边：Tint 在 RGB 枪口偏移之后以较高强度重新双色化，压平了通道错位，因此当前更像双色CRT纹理而非RGB分离故障。"
     }
   ]
 }

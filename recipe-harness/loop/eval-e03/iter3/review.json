@@ -1,6 +1,29 @@
 {
-  "verdict": "pass",
-  "score": 9,
-  "critique": "Converged: dark violet nebula billows with deep voids at background luminance, structure clearly morphed between t1 and t4, and the grain is now genuinely subtle — visible on close inspection, invisible at composition distance. Matches 暗紫色星云/缓慢演化/少量颗粒感 on all counts.",
-  "suggestions": []
+  "verdict": "fail",
+  "score": 3,
+  "critique": "The violet palette and faint fine texture are present, and the frames do differ substantially in brightness. However, the visible volume still reads as a large rectangular emitter region with a distinct horizontal top boundary, especially at t4. The t4 image is much too bright and saturated for a dark background-grade nebula. Inside the volume, the result remains mostly smooth and uniform rather than layered, amorphous gaseous cloud forms; the change from t1 to t4 reads primarily as particle accumulation/brightening rather than readable internal morphing.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 4,
+      "why": "Shorten particle lifetime to prevent the large accumulated bright rectangular volume seen at t4 and keep the overall background luminance dark."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0711",
+      "value": 140,
+      "why": "Increase turbulence displacement so the particle field breaks up into visibly evolving cloud masses instead of retaining the emitter-shaped volume."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0715",
+      "value": 150,
+      "why": "Use moderately smaller turbulence features to introduce layered nebula variation and reduce the broad uniform rectangular appearance."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

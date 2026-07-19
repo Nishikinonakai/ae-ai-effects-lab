@@ -1,6 +1,52 @@
 {
-  "verdict": "pass",
-  "score": 9,
-  "critique": "Continuous particle sheet with clear fine-grid Form structure, deep crimson with bright silky fold highlights (smooth luminance gradations), whole-frame coverage, and the fold topology fully reorganized between t1 and t4 (slow undulation). All criteria met; the one failed param (Base Shape Center, dimension mismatch) was harmless — default center is frame center. Usable as-is.",
-  "suggestions": []
+  "verdict": "fail",
+  "score": 3,
+  "critique": "画面已有高密度、规则排列的粒子网格，并且上下边缘呈连续波浪轮廓；但当前主体是发白的点阵幕布，缺少红/深红的丝绸色彩与连续柔和的明暗反光。粒子间距和独立白点过于明显，视觉更接近LED点阵或发光珠帘，而非由粒子构成的细腻波浪曲面。主体只占画面中央约一半宽度，未形成横向铺开的宽幅波带。所给画面中未见t4帧，无法确认波形在时间上是否确实发生了结构变化。",
+  "suggestions": [
+    {
+      "type": "effect",
+      "matchName": "ADBE Tint",
+      "params": [
+        [
+          "ADBE Tint-0001",
+          [
+            0.07,
+            0.001,
+            0.004
+          ],
+          "将黑部映射为近黑酒红，保留深红阴影层次"
+        ],
+        [
+          "ADBE Tint-0002",
+          [
+            0.92,
+            0.018,
+            0.05
+          ],
+          "将白色粒子和辉光映射为鲜明深红高光"
+        ],
+        [
+          "ADBE Tint-0003",
+          100,
+          "完全替换目前的白色发光点阵为红色丝绸调色"
+        ]
+      ],
+      "why": "当前最主要的偏差是粒子和辉光几乎纯白；整体映射至深红—猩红范围可立即建立红色丝绸的基础色彩关系。"
+    },
+    {
+      "type": "param",
+      "effect": "PEDG",
+      "matchName": "PEDG-0002",
+      "value": 0.45,
+      "why": "降低过强的白色辉光扩散，使点阵边界更克制，避免画面继续呈现LED灯点而非柔润织物反光。"
+    },
+    {
+      "type": "param",
+      "effect": "PEDG",
+      "matchName": "PEDG-0001",
+      "value": 650,
+      "why": "增大相邻粒子的柔和融合范围，削弱规则独立点的观感，让亮暗更接近连续丝绸曲面的渐变。"
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

@@ -1,0 +1,50 @@
+{
+  "verdict": "fail",
+  "score": 6,
+  "critique": "红/深红色调已成立，粒子排列足以连续读作一张起伏的曲面，t1到t4的顶部、底部波峰和内部竖向褶皱均有可见变化。主体覆盖范围较前次扩大，但两侧仍留有明显暗区，尚未形成横向铺满画面的宽幅波带。最主要的问题是粒子亮点仍然逐颗清晰可辨，规则纵向条纹和点阵边缘使其更像发光LED网格；整体亮度几乎均一，缺少丝绸所需的深红阴影、柔和过渡与局部流动高光。",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "PEDG",
+      "matchName": "PEDG-0002",
+      "value": 3,
+      "why": "提高柔光融合强度，让相邻红色粒子之间形成连续的柔亮布面，削弱逐颗发光点的LED观感。"
+    },
+    {
+      "type": "param",
+      "effect": "PEDG",
+      "matchName": "PEDG-0004",
+      "value": 15,
+      "why": "降低仅作用于极亮点的阈值，使更多中间亮度区域参与柔和辉光，建立更平滑的红色明暗渐变。"
+    },
+    {
+      "type": "expression",
+      "effect": "ADBE BEZMESH",
+      "matchName": "ADBE BEZMESH-0002",
+      "expression": "var c=thisComp.width/2; [c+(value[0]-c)*2.15,value[1]+Math.sin(time*1.05)*48]",
+      "why": "进一步向左扩展上边缘曲面，使宽幅波带接近画面左右边界。"
+    },
+    {
+      "type": "expression",
+      "effect": "ADBE BEZMESH",
+      "matchName": "ADBE BEZMESH-0005",
+      "expression": "var c=thisComp.width/2; [c+(value[0]-c)*2.15,value[1]+Math.sin(time*1.05+2.4)*58]",
+      "why": "同步向右扩展上边缘，避免仅拉伸一侧并让曲面横向覆盖更完整。"
+    },
+    {
+      "type": "expression",
+      "effect": "ADBE BEZMESH",
+      "matchName": "ADBE BEZMESH-0008",
+      "expression": "var c=thisComp.width/2; [c+(value[0]-c)*2.15,value[1]+Math.sin(time*0.82+3.7)*44]",
+      "why": "扩展左下边缘以维持整张布面宽度和自然倾斜轮廓。"
+    },
+    {
+      "type": "expression",
+      "effect": "ADBE BEZMESH",
+      "matchName": "ADBE BEZMESH-0011",
+      "expression": "var c=thisComp.width/2; [c+(value[0]-c)*2.15,value[1]+Math.sin(time*0.82+5.4)*54]",
+      "why": "扩展右下边缘，与上方扩展配合形成真正宽幅的连续波浪曲面。"
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

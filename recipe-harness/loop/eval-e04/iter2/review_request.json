@@ -1,0 +1,143 @@
+{
+  "intent": "老胶片效果的抽象背景：柔和的灰阶云雾底，叠加胶片颗粒噪点、轻微亮度闪烁、整体偏褐色调",
+  "pass_criteria": [
+    "soft greyscale cloud base readable under the treatment",
+    "film grain clearly present",
+    "sepia/brown tint over the whole frame",
+    "brightness differs slightly between t1 and t4 (flicker)"
+  ],
+  "iteration": 2,
+  "max_iters": 3,
+  "plan": {
+    "effects": [
+      {
+        "matchName": "ADBE Fractal Noise",
+        "params": [],
+        "expressions": []
+      },
+      {
+        "matchName": "BCC_TEXTURES",
+        "params": [
+          [
+            "BCC_TEXTURES-1001",
+            38,
+            "以中等强度叠加细密纹理，形成清晰可见的老胶片颗粒"
+          ],
+          [
+            "BCC_TEXTURES-1002",
+            30,
+            "提高纹理细节，让颗粒比默认画布纹更细碎"
+          ],
+          [
+            "BCC_TEXTURES-1018",
+            55,
+            "缩小纹理平铺尺寸，使其读取为细颗粒而非大块纸纹"
+          ],
+          [
+            "BCC_TEXTURES-1019",
+            55,
+            "保持纹理纵横比例一致"
+          ]
+        ],
+        "expressions": [
+          [
+            "BCC_TEXTURES-1003",
+            "seedRandom(Math.floor(time*30),true); random(0,100);",
+            "每帧改变纹理随机种子，使颗粒具有胶片噪点的闪动感"
+          ]
+        ]
+      },
+      {
+        "matchName": "BCC4Damaged TV",
+        "params": [
+          [
+            "BCC4Damaged TV-8192008",
+            0,
+            "关闭明显的信号撕裂，保留柔和云雾主体"
+          ],
+          [
+            "BCC4Damaged TV-8192021",
+            0,
+            "补充轻微模拟胶片雪花噪点"
+          ],
+          [
+            "BCC4Damaged TV-8192025",
+            48,
+            "将全画面灰阶云雾充分转换为怀旧色调"
+          ],
+          [
+            "BCC4Damaged TV-8192026",
+            2,
+            "选择使用自定义染色色彩而非纯单色"
+          ],
+          [
+            "BCC4Damaged TV-8192027",
+            [
+              0.34,
+              0.21,
+              0.12,
+              1
+            ],
+            "以低饱和深褐色统一染色，得到整体偏褐的旧胶片观感"
+          ]
+        ],
+        "expressions": []
+      },
+      {
+        "matchName": "PEDG",
+        "params": [
+          [
+            "PEDG-0001",
+            650,
+            "用宽半径将云雾边缘进一步柔化成朦胧底图"
+          ],
+          [
+            "PEDG-0004",
+            0,
+            "让整个明暗云雾都参与极轻微的柔光，而不只处理高光"
+          ],
+          [
+            "PEDG-0005",
+            35,
+            "平滑全画面辉光的亮度过渡"
+          ],
+          [
+            "PEDG-0002",
+            0.38,
+            "维持克制的柔光，避免吞没纹理颗粒"
+          ]
+        ],
+        "expressions": [
+          [
+            "PEDG-0002",
+            "0.38 + 0.07*Math.sin(time*5.13);",
+            "缓慢且轻微地改变全画面柔光亮度，模拟老胶片在 t1 与 t4 的曝光闪烁"
+          ]
+        ]
+      }
+    ],
+    "camera": null,
+    "background": [
+      0.08,
+      0.07,
+      0.05
+    ],
+    "renderFrames": [
+      1,
+      4
+    ]
+  },
+  "frames": [
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e04/iter2/eval-e04_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e04/iter2/eval-e04_i2_t4.png"
+  ],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "整体褐色色调和云雾状底图已经成立，画面中也有可见的细碎噪点质感。但云雾被明显的电视损坏式波纹破坏：左侧有强烈连续的竖向锯齿扭曲，画面下部还有一条突兀的水平暗带，不像克制的老胶片颗粒，而更像模拟信号故障。颗粒与云雾局部混成较脏的块状纹理，灰阶柔和感不足。仅提供了t1画面，无法确认t1与t4之间是否存在恰当的轻微亮度闪烁。"
+    }
+  ],
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+}

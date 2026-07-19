@@ -1,6 +1,7 @@
 {
   "verdict": "pass",
-  "score": 8,
-  "critique": "Teal soft-feathered flakes on near-black, slow fall (population only reaches ~2/3 down by t4 = 'slowly'), and the right-biased emitter spread has clearly shifted left-and-down by t4 (leftward drift readable at population level). Flakes stay individually countable, though t4's upper half sits at the dense end of 'sparse' — acceptable. English prompt handled identically to the zh library reasoning.",
-  "suggestions": []
+  "score": 9,
+  "critique": "The render shows a clearly countable, sparse set of teal flakes against an almost-black background. Between t1 and t4, persistent flakes visibly travel downward and leftward. The particles have soft, feathered glow edges without filling the background with haze.",
+  "suggestions": [],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

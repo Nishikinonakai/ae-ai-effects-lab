@@ -1,0 +1,23 @@
+{
+  "verdict": "pass",
+  "score": 8,
+  "critique": "The near-black field, sparse warm yellow-green points, varied intensities, and soft local glow halos are all visually on target. Population density is now reasonably consistent between t1 (about four lights) and t4 (about five), avoiding the earlier accumulation problem. However, the visible lights at t4 are largely a different set from t1, so the sampled change reads more like rapid particle turnover than a small persistent population slowly wandering and blinking. Longer-lived particles with a correspondingly lower birth rate would make the intended drifting motion legible without making the scene denser.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0002",
+      "value": 5,
+      "why": "Extend particle persistence so individual fireflies remain visible across sampled times and can read as slowly wandering rather than being replaced."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 2,
+      "why": "Reduce the birth rate in proportion to the longer lifetime, preserving the current sparse population while preventing renewed buildup."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra",
+  "_normalized_pass_at": 8
+}

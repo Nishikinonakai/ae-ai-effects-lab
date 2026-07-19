@@ -1,139 +1,183 @@
 {
-  "_planner_rationale": [
-    "pattern = plans/plan-smoke-bg.json (one-shot-passed native stack): Fractal Noise soft clouds + Tint recolor + evolution/offset expressions — same structure, new palette + grain layer",
-    "星云状 — Fractal Type 1 ('soft billowy clouds' per the enriched card) + Scale 260 (bigger billows than smoke-bg's 220 = nebula masses), Contrast 125 for cloud/void separation",
-    "暗紫色 — Tint maps black->[0.03,0.01,0.06] deep violet, white->[0.55,0.35,0.75]; Brightness -18 keeps it background-grade dark",
-    "缓慢演化 — Evolution time*30 (slower than smoke-bg's 40) + slight Offset drift",
-    "颗粒感 — stack ADBE Noise HLS Auto2 (card: 0001 Noise type max 3 = grain-most, 0003 Lightness amount, 0005 Grain Size, 0006 animation speed): Lightness 60, Grain Size 0.8, animated so grain shimmers"
-  ],
-  "_planner_sources": [
-    "plans/plan-smoke-bg.json",
-    "introspect/enrichment/ADBE_Fractal_Noise.enriched.json",
-    "introspect/cards/ADBE_Noise_HLS_Auto2.json",
-    "introspect/cards/ADBE_Tint.json"
-  ],
-  "intent": "暗紫色的星云状流动背景，缓慢演化，带少量颗粒感",
-  "pass_criteria": [
-    "soft cloud/nebula structure filling the frame (no hard edges)",
-    "dark purple/violet palette, dark overall (background-grade luminance)",
-    "evolution between t1 and t4 (structure moved/morphed)",
-    "subtle grain visible on close inspection"
-  ],
   "name": "eval-e03_i2",
-  "compName": "Eval_E03_Nebula",
+  "compName": "Eval_e03",
+  "intent": "暗紫色的星云状流动背景，缓慢演化，带少量颗粒感",
   "comp": {
     "width": 1280,
     "height": 720,
     "fps": 30,
     "duration": 6
   },
-  "background": null,
-  "hostName": "Nebula",
+  "background": [
+    0.025,
+    0.008,
+    0.06
+  ],
+  "hostName": "Artwork",
   "effects": [
     {
-      "matchName": "ADBE Fractal Noise",
+      "matchName": "tc Particular",
       "params": [
         [
-          "ADBE Fractal Noise-0001",
+          "tc Particular-0782",
+          2,
+          "Use a wide Box emitter so the soft particle volume spans the composition."
+        ],
+        [
+          "tc Particular-0014",
+          2400,
+          "Make the emission volume broad enough to avoid a localized cloud with visible boundaries."
+        ],
+        [
+          "tc Particular-0146",
+          95,
+          "Build a dense but still diffuse atmospheric field."
+        ],
+        [
+          "tc Particular-0011",
+          9,
+          "Keep particle travel slow for a drifting nebula rather than a particle burst."
+        ],
+        [
+          "tc Particular-0113",
           1,
-          "Fractal Type (soft clouds)"
+          "Emit uniformly in all directions for amorphous cloud structure."
         ],
         [
-          "ADBE Fractal Noise-0002",
-          3,
-          "Noise Type (smoothest)"
+          "tc Particular-0002",
+          12,
+          "Keep particles alive long enough for a continuous fog-like volume."
         ],
         [
-          "ADBE Fractal Noise-0004",
-          125,
-          "Contrast"
+          "tc Particular-0703",
+          2,
+          "Use Glow Sphere particles to merge into soft cloud masses."
         ],
         [
-          "ADBE Fractal Noise-0005",
-          -28,
-          "Brightness (dark)"
+          "tc Particular-0027",
+          300,
+          "Use oversized soft particles so individual dots fuse into nebula forms."
         ],
         [
-          "ADBE Fractal Noise-0010",
+          "tc Particular-0074",
+          65,
+          "Vary particle sizes to prevent regular-looking blobs."
+        ],
+        [
+          "tc Particular-0033",
+          2,
+          "Keep each particle dim so the overall result remains a dark background-grade violet."
+        ],
+        [
+          "tc Particular-0075",
+          35,
+          "Introduce restrained opacity variation for organic mottling."
+        ],
+        [
+          "tc Particular-0088",
+          1,
+          "Set Color to At Birth before assigning the violet particle color."
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.29,
+            0.07,
+            0.58,
+            1
+          ],
+          "Color the luminous fog a deep violet rather than bright white."
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Additively blend the dim glow spheres into soft nebula density."
+        ],
+        [
+          "tc Particular-0018",
+          0.7,
+          "Enable air resistance before turbulence so turbulent motion affects the cloud."
+        ],
+        [
+          "tc Particular-0711",
+          65,
+          "Gently displace particles with turbulence to morph the cloud structure over time."
+        ],
+        [
+          "tc Particular-0715",
           260,
-          "Scale (nebula masses)"
+          "Use large turbulence features for broad gaseous curls instead of fine jitter."
+        ],
+        [
+          "tc Particular-0716",
+          3,
+          "Add enough turbulence detail for layered cloud variation."
+        ],
+        [
+          "tc Particular-0035",
+          2,
+          "Enable modest motion blur to keep moving cloud particles smooth."
+        ],
+        [
+          "tc Particular-0036",
+          180,
+          "Use a natural shutter angle that does not smear the soft texture excessively."
         ]
       ],
       "expressions": [
         [
-          "ADBE Fractal Noise-0023",
-          "time*30",
-          "Evolution (slow churn)"
-        ],
-        [
-          "ADBE Fractal Noise-0013",
-          "[320 + time*12, 180 + time*4]",
-          "Offset (slow drift)"
+          "tc Particular-0581",
+          "[thisComp.width/2 + Math.sin(time*0.18)*150, thisComp.height/2 + Math.cos(time*0.14)*85, 0]",
+          "Slowly drift the emitting cloud mass across the frame so t1 and t4 visibly evolve."
         ]
       ]
     },
     {
-      "matchName": "ADBE Tint",
+      "matchName": "BCC_TEXTURES",
       "params": [
         [
-          "ADBE Tint-0001",
-          [
-            0.03,
-            0.01,
-            0.06,
-            1
-          ],
-          "Map Black To (deep violet)"
+          "BCC_TEXTURES-1001",
+          14,
+          "Add only a restrained surface grain so the cloud remains soft and dominant."
         ],
         [
-          "ADBE Tint-0002",
-          [
-            0.55,
-            0.35,
-            0.75,
-            1
-          ],
-          "Map White To (purple)"
+          "BCC_TEXTURES-1002",
+          18,
+          "Increase fine texture detail for subtle close-inspection particle character."
         ],
         [
-          "ADBE Tint-0003",
-          100,
-          "Amount"
-        ]
-      ],
-      "expressions": []
-    },
-    {
-      "matchName": "ADBE Noise HLS Auto2",
-      "params": [
-        [
-          "ADBE Noise HLS Auto2-0001",
-          3,
-          "Noise type (grain)"
+          "BCC_TEXTURES-1018",
+          60,
+          "Use a tight texture scale so the texture reads as grain rather than paper."
         ],
         [
-          "ADBE Noise HLS Auto2-0003",
-          15,
-          "Lightness noise (subtle)"
+          "BCC_TEXTURES-1019",
+          60,
+          "Keep the grain scale even in both dimensions."
         ],
         [
-          "ADBE Noise HLS Auto2-0005",
-          0.8,
-          "Grain Size (fine)"
-        ],
-        [
-          "ADBE Noise HLS Auto2-0006",
-          20,
-          "Noise Animation Speed"
+          "BCC_TEXTURES-1003",
+          31,
+          "Choose a non-default texture variation to avoid a generic repeating pattern."
         ]
       ],
       "expressions": []
     }
   ],
-  "camera": null,
   "renderFrames": [
     1,
     4
+  ],
+  "_rationale": "A dense field of large, low-opacity violet Glow Sphere particles accumulates into soft, edge-free nebula clouds over the near-black purple background. Low velocity, broad turbulence, and a slow emitter drift provide visible four-second structural evolution, while a low-strength fine BCC texture supplies the requested restrained grain.",
+  "_planner": {
+    "model": "gpt-5.6-terra",
+    "date": "2026-07-19"
+  },
+  "pass_criteria": [
+    "soft cloud/nebula structure filling the frame (no hard edges)",
+    "dark purple/violet palette, dark overall (background-grade luminance)",
+    "evolution between t1 and t4 (structure moved/morphed)",
+    "subtle grain visible on close inspection"
   ],
   "_loop_history": [
     {
@@ -141,17 +185,31 @@
       "applied": [
         {
           "type": "param",
-          "effect": "ADBE Noise HLS Auto2",
-          "matchName": "ADBE Noise HLS Auto2-0003",
-          "value": 15,
-          "why": "drop lightness-noise amount to a subtle film-grain level"
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0014",
+          "value": 2400,
+          "why": "Expand the Box emission volume well beyond the composition so its rectangular boundaries fall outside frame."
         },
         {
           "type": "param",
-          "effect": "ADBE Fractal Noise",
-          "matchName": "ADBE Fractal Noise-0005",
-          "value": -28,
-          "why": "darken the base so the bright billows sit at background luminance"
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0033",
+          "value": 2,
+          "why": "Reduce particle opacity substantially so additive accumulation remains dark violet instead of blooming into bright magenta."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0146",
+          "value": 95,
+          "why": "Lower emission density to prevent the field from progressively filling into a flat, overbright solid color at later times."
+        },
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0711",
+          "value": 65,
+          "why": "Increase broad turbulent displacement so the visible density develops more distinct slow-moving gaseous variations rather than mainly changing overall brightness."
         }
       ],
       "skipped": []

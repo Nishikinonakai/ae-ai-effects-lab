@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 5,
+  "critique": "深灰蓝背景正确，白色颗粒尺度总体可读，t1到t4可见粒子场持续下落并发生位置变化。但t4粒子数量急剧堆积，形成大量相贴的亮团，远离舒缓、可分辨的大片雪花。颗粒仍主要读作过曝发光圆点：白色核心太硬太亮，外围光晕明显，缺少更柔和、低对比的雪花质感。",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 22,
+      "why": "显著降低持续发射量，避免在t4累积成拥挤、相连的亮团，同时保留可读的大颗粒雪景。"
+    },
+    {
+      "type": "param",
+      "effect": "PEDG",
+      "matchName": "PEDG-0002",
+      "value": 0,
+      "why": "移除额外Glow造成的过大光晕和白核膨胀，让Particular自身的软边保留为更自然的雪花质感。"
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0074",
+      "value": 40,
+      "why": "收窄尺寸随机幅度，减少异常巨大的过曝圆团，并让大雪花尺度更稳定、易辨认。"
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

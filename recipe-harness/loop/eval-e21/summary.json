@@ -1,14 +1,14 @@
 {
   "intent": "sparse teal snowfall drifting slowly to the left, dark background",
-  "backend": "agent",
+  "backend": "api",
   "outcome": "pass",
   "best_iter": 1,
   "iterations": [
     {
       "iter": 1,
-      "score": 8,
+      "score": 9,
       "verdict": "pass",
-      "critique": "Teal soft-feathered flakes on near-black, slow fall (population only reaches ~2/3 down by t4 = 'slowly'), and the right-biased emitter spread has clearly shifted left-and-down by t4 (leftward drift readable at population level). Flakes stay individually countable, though t4's upper half sits at the dense end of 'sparse' — acceptable. English prompt handled identically to the zh library reasoning."
+      "critique": "The render shows a clearly countable, sparse set of teal flakes against an almost-black background. Between t1 and t4, persistent flakes visibly travel downward and leftward. The particles have soft, feathered glow edges without filling the background with haze."
     }
   ]
 }

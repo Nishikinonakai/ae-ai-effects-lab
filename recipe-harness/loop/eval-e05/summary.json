@@ -1,20 +1,26 @@
 {
   "intent": "萤火虫：暖黄绿色的光点在黑暗中缓慢漂浮，忽明忽暗地闪烁",
-  "backend": "agent",
+  "backend": "api",
   "outcome": "pass",
-  "best_iter": 2,
+  "best_iter": 3,
   "iterations": [
     {
       "iter": 1,
-      "score": 7,
+      "score": 6,
       "verdict": "fail",
-      "critique": "Wandering float (no directional lean between t1/t4), population brightness variation (bright/dim mix = blink feel), and soft-edged glow points all read. Two degree-misses: color is green-dominant and slightly cold where 暖黄绿 was asked (fireflies want warmer chartreuse), and steady-state density at t4 (~70 points) drifts toward starfield — the sparse countable-fireflies read of t1 is better."
+      "critique": "The visual treatment is strong: the near-black field, warm yellow-green color, varied intensities, and soft diffuse halos all read as fireflies rather than hard particle dots. However, population density is inconsistent across the sampled times: t1 has only about six isolated lights, while t4 contains roughly thirty lights and begins to feel like a populated particle field rather than a sparse firefly scene. The sampled frames do not clearly demonstrate slow wandering because the much larger number of newly visible particles dominates the temporal change."
     },
     {
       "iter": 2,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The near-black background, yellow-green emissive color, and soft local halos are visually on target. At t4 the field is sparse and has a convincing mix of dimmer and brighter fireflies, with no rain- or snow-like directionality. However, the population remains temporally inconsistent: t1 contains only two visible lights and feels nearly empty, while t4 has roughly ten. This reads more as particles accumulating after emission begins than a continuously inhabited firefly field. The two sampled stills also do not yet make the intended slow wandering motion clearly legible."
+    },
+    {
+      "iter": 3,
       "score": 8,
       "verdict": "pass",
-      "critique": "Both nudges landed: color is now warm chartreuse-yellow (firefly warmth) and steady-state density (~40 at t4) keeps the sparse countable read. Wandering float without directional lean, clear bright/dim population mix for the blink feel, soft-edged glows on near-black. Satisfies the request as-is."
+      "critique": "The near-black field, sparse warm yellow-green points, varied intensities, and soft local glow halos are all visually on target. Population density is now reasonably consistent between t1 (about four lights) and t4 (about five), avoiding the earlier accumulation problem. However, the visible lights at t4 are largely a different set from t1, so the sampled change reads more like rapid particle turnover than a small persistent population slowly wandering and blinking. Longer-lived particles with a correspondingly lower birth rate would make the intended drifting motion legible without making the scene denser."
     }
   ]
 }

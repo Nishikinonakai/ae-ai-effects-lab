@@ -11,107 +11,160 @@
   "plan": {
     "effects": [
       {
-        "matchName": "ADBE Fractal Noise",
+        "matchName": "tc Particular",
         "params": [
           [
-            "ADBE Fractal Noise-0001",
+            "tc Particular-0782",
+            2,
+            "Use a wide Box emitter so the soft particle volume spans the composition."
+          ],
+          [
+            "tc Particular-0014",
+            2400,
+            "Make the emission volume broad enough to avoid a localized cloud with visible boundaries."
+          ],
+          [
+            "tc Particular-0146",
+            95,
+            "Build a dense but still diffuse atmospheric field."
+          ],
+          [
+            "tc Particular-0011",
+            9,
+            "Keep particle travel slow for a drifting nebula rather than a particle burst."
+          ],
+          [
+            "tc Particular-0113",
             1,
-            "Fractal Type (soft clouds)"
+            "Emit uniformly in all directions for amorphous cloud structure."
           ],
           [
-            "ADBE Fractal Noise-0002",
-            3,
-            "Noise Type (smoothest)"
+            "tc Particular-0002",
+            12,
+            "Keep particles alive long enough for a continuous fog-like volume."
           ],
           [
-            "ADBE Fractal Noise-0004",
-            125,
-            "Contrast"
+            "tc Particular-0703",
+            2,
+            "Use Glow Sphere particles to merge into soft cloud masses."
           ],
           [
-            "ADBE Fractal Noise-0005",
-            -28,
-            "Brightness (dark)"
+            "tc Particular-0027",
+            300,
+            "Use oversized soft particles so individual dots fuse into nebula forms."
           ],
           [
-            "ADBE Fractal Noise-0010",
+            "tc Particular-0074",
+            65,
+            "Vary particle sizes to prevent regular-looking blobs."
+          ],
+          [
+            "tc Particular-0033",
+            2,
+            "Keep each particle dim so the overall result remains a dark background-grade violet."
+          ],
+          [
+            "tc Particular-0075",
+            35,
+            "Introduce restrained opacity variation for organic mottling."
+          ],
+          [
+            "tc Particular-0088",
+            1,
+            "Set Color to At Birth before assigning the violet particle color."
+          ],
+          [
+            "tc Particular-0070",
+            [
+              0.29,
+              0.07,
+              0.58,
+              1
+            ],
+            "Color the luminous fog a deep violet rather than bright white."
+          ],
+          [
+            "tc Particular-0069",
+            2,
+            "Additively blend the dim glow spheres into soft nebula density."
+          ],
+          [
+            "tc Particular-0018",
+            0.7,
+            "Enable air resistance before turbulence so turbulent motion affects the cloud."
+          ],
+          [
+            "tc Particular-0711",
+            65,
+            "Gently displace particles with turbulence to morph the cloud structure over time."
+          ],
+          [
+            "tc Particular-0715",
             260,
-            "Scale (nebula masses)"
+            "Use large turbulence features for broad gaseous curls instead of fine jitter."
+          ],
+          [
+            "tc Particular-0716",
+            3,
+            "Add enough turbulence detail for layered cloud variation."
+          ],
+          [
+            "tc Particular-0035",
+            2,
+            "Enable modest motion blur to keep moving cloud particles smooth."
+          ],
+          [
+            "tc Particular-0036",
+            180,
+            "Use a natural shutter angle that does not smear the soft texture excessively."
           ]
         ],
         "expressions": [
           [
-            "ADBE Fractal Noise-0023",
-            "time*30",
-            "Evolution (slow churn)"
-          ],
-          [
-            "ADBE Fractal Noise-0013",
-            "[320 + time*12, 180 + time*4]",
-            "Offset (slow drift)"
+            "tc Particular-0581",
+            "[thisComp.width/2 + Math.sin(time*0.18)*150, thisComp.height/2 + Math.cos(time*0.14)*85, 0]",
+            "Slowly drift the emitting cloud mass across the frame so t1 and t4 visibly evolve."
           ]
         ]
       },
       {
-        "matchName": "ADBE Tint",
+        "matchName": "BCC_TEXTURES",
         "params": [
           [
-            "ADBE Tint-0001",
-            [
-              0.03,
-              0.01,
-              0.06,
-              1
-            ],
-            "Map Black To (deep violet)"
+            "BCC_TEXTURES-1001",
+            14,
+            "Add only a restrained surface grain so the cloud remains soft and dominant."
           ],
           [
-            "ADBE Tint-0002",
-            [
-              0.55,
-              0.35,
-              0.75,
-              1
-            ],
-            "Map White To (purple)"
+            "BCC_TEXTURES-1002",
+            18,
+            "Increase fine texture detail for subtle close-inspection particle character."
           ],
           [
-            "ADBE Tint-0003",
-            100,
-            "Amount"
-          ]
-        ],
-        "expressions": []
-      },
-      {
-        "matchName": "ADBE Noise HLS Auto2",
-        "params": [
-          [
-            "ADBE Noise HLS Auto2-0001",
-            3,
-            "Noise type (grain)"
+            "BCC_TEXTURES-1018",
+            60,
+            "Use a tight texture scale so the texture reads as grain rather than paper."
           ],
           [
-            "ADBE Noise HLS Auto2-0003",
-            15,
-            "Lightness noise (subtle)"
+            "BCC_TEXTURES-1019",
+            60,
+            "Keep the grain scale even in both dimensions."
           ],
           [
-            "ADBE Noise HLS Auto2-0005",
-            0.8,
-            "Grain Size (fine)"
-          ],
-          [
-            "ADBE Noise HLS Auto2-0006",
-            20,
-            "Noise Animation Speed"
+            "BCC_TEXTURES-1003",
+            31,
+            "Choose a non-default texture variation to avoid a generic repeating pattern."
           ]
         ],
         "expressions": []
       }
     ],
     "camera": null,
-    "background": null,
+    "background": [
+      0.025,
+      0.008,
+      0.06
+    ],
     "renderFrames": [
       1,
       4
@@ -124,10 +177,10 @@
   "prior_iterations": [
     {
       "iter": 1,
-      "score": 6,
+      "score": 3,
       "verdict": "fail",
-      "critique": "Nebula cloud structure is right (soft billows, whole-frame, clear morph between t1 and t4) and the palette is violet/purple. Two misses: the grain is far from '少量/subtle' — coarse noise dominates every pixel and competes with the cloud read (Lightness 60 renders much stronger than the intended 6%); and overall luminance is mid-bright in large areas, above background grade for 暗紫色."
+      "critique": "The palette is violet, but the result is far too bright and saturated for a dark background-grade nebula, especially at t4 where most of the frame becomes electric purple. The cloud field has a clearly visible rectangular emitter boundary across the upper area and at the side edges, which breaks the no-hard-edges requirement. Within that rectangle the image is largely smooth and uniform rather than showing layered, cloud-like nebula structure; grain is only barely perceptible. Between t1 and t4 there is substantial overall brightening, but little readable internal morphing or drifting structure."
     }
   ],
-  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
 }

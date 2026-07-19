@@ -1,0 +1,177 @@
+{
+  "name": "eval-e21",
+  "compName": "Eval_e21",
+  "intent": "sparse teal snowfall drifting slowly to the left, dark background",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.008,
+    0.025,
+    0.035
+  ],
+  "hostName": "Artwork",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          2,
+          "Box emitter spreads a small, countable snowfall across the frame width"
+        ],
+        [
+          "tc Particular-0014",
+          1500,
+          "Emitter is wider than the comp so flakes enter across the entire top edge"
+        ],
+        [
+          "tc Particular-0146",
+          6,
+          "Low emission rate keeps the flake population clearly countable"
+        ],
+        [
+          "tc Particular-0002",
+          6,
+          "Long enough life for flakes to remain visible while falling slowly"
+        ],
+        [
+          "tc Particular-0011",
+          0,
+          "No launch velocity keeps the movement gentle rather than stormy"
+        ],
+        [
+          "tc Particular-0113",
+          1,
+          "Uniform emission avoids a directional spray pattern"
+        ],
+        [
+          "tc Particular-0017",
+          58,
+          "Positive gravity provides the primary slow downward fall"
+        ],
+        [
+          "tc Particular-0018",
+          4,
+          "Air resistance makes wind influence smooth and prevents fast acceleration"
+        ],
+        [
+          "tc Particular-0749",
+          -22,
+          "Negative X wind produces a consistent leftward drift"
+        ],
+        [
+          "tc Particular-0750",
+          0,
+          "No vertical wind so gravity remains the readable downward motion"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Glow Sphere particle type gives every flake a naturally soft edge"
+        ],
+        [
+          "tc Particular-0027",
+          7,
+          "Small flake size preserves a sparse snow-scale appearance"
+        ],
+        [
+          "tc Particular-0074",
+          60,
+          "High size variation makes individual flakes feel organic"
+        ],
+        [
+          "tc Particular-0033",
+          72,
+          "Moderate opacity keeps teal flakes visible but delicate"
+        ],
+        [
+          "tc Particular-0075",
+          20,
+          "Subtle opacity variation avoids identical-looking particles"
+        ],
+        [
+          "tc Particular-0088",
+          1,
+          "Set Color to At Birth before assigning the teal flake color"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.12,
+            0.82,
+            0.78,
+            1
+          ],
+          "Cool teal tint for the snowflakes"
+        ],
+        [
+          "tc Particular-0069",
+          1,
+          "Normal compositing keeps snow soft and opaque rather than neon-additive"
+        ],
+        [
+          "tc Particular-0215",
+          110,
+          "Small particle glow radius feathers each flake"
+        ],
+        [
+          "tc Particular-0216",
+          24,
+          "Restrained glow opacity keeps flakes soft without hazing the frame"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0581",
+          "[thisComp.width/2 + Math.sin(time*0.35)*18, -35, 0]",
+          "Keeps the wide emitter just above frame while giving the snowfall a nearly imperceptible natural lateral variation"
+        ]
+      ]
+    },
+    {
+      "matchName": "PEDG",
+      "params": [
+        [
+          "PEDG-0002",
+          0.55,
+          "Very gentle bloom softens only the visible flake highlights"
+        ],
+        [
+          "PEDG-0001",
+          85,
+          "Compact bloom radius preserves separated, countable flakes"
+        ],
+        [
+          "PEDG-0004",
+          55,
+          "Threshold limits bloom to bright teal flakes and leaves the dark background clean"
+        ],
+        [
+          "PEDG-0005",
+          35,
+          "Soft threshold transition avoids harsh halo edges"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_rationale": "A single low-rate Box-emitter Particular system supplies a clearly countable snowfall, with gravity driving downward motion and negative X wind making it drift left between the sampled frames. Glow Sphere particles plus restrained Deep Glow create soft teal flakes while the near-black blue-green background stays uncluttered.",
+  "_planner": {
+    "model": "gpt-5.6-terra",
+    "date": "2026-07-19"
+  },
+  "pass_criteria": [
+    "sparse population (clearly countable flakes)",
+    "teal-tinted flakes on dark background",
+    "downward fall with leftward drift between frames",
+    "soft flake rendering"
+  ]
+}

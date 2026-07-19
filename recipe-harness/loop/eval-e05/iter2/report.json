@@ -3,119 +3,168 @@
   "name": "eval-e05_i2",
   "params": [
     {
-      "p": "[1:tc Particular] Emitter Type (Box)",
+      "p": "[1:tc Particular] Box emitter distributes fireflies across a broad atmospheric field",
       "ok": true,
       "v": "2"
     },
     {
-      "p": "[1:tc Particular] Position (frame center)",
-      "ok": true,
-      "v": "640,380,0"
-    },
-    {
-      "p": "[1:tc Particular] Emitter Size mode (XYZ)",
+      "p": "[1:tc Particular] Open the individual XYZ emitter-size controls before setting field dimensions",
       "ok": true,
       "v": "2"
     },
     {
-      "p": "[1:tc Particular] Emitter Size X",
+      "p": "[1:tc Particular] Spread births beyond the comp width so edges remain naturally populated",
       "ok": true,
-      "v": "1300"
+      "v": "1500"
     },
     {
-      "p": "[1:tc Particular] Emitter Size Y",
+      "p": "[1:tc Particular] Fill the full comp height rather than creating a horizontal strip",
       "ok": true,
-      "v": "520"
+      "v": "850"
     },
     {
-      "p": "[1:tc Particular] Emitter Size Z",
+      "p": "[1:tc Particular] Give the swarm depth variation for organic scale and brightness differences",
       "ok": true,
-      "v": "300"
+      "v": "500"
     },
     {
-      "p": "[1:tc Particular] Particle Type (Glow Sphere)",
-      "ok": true,
-      "v": "2"
-    },
-    {
-      "p": "[1:tc Particular] Particles/sec (sparse)",
-      "ok": true,
-      "v": "15"
-    },
-    {
-      "p": "[1:tc Particular] Velocity (near-still)",
-      "ok": true,
-      "v": "12"
-    },
-    {
-      "p": "[1:tc Particular] Velocity Random %",
-      "ok": true,
-      "v": "50"
-    },
-    {
-      "p": "[1:tc Particular] Life (short = async fade in/out)",
-      "ok": true,
-      "v": "2.5"
-    },
-    {
-      "p": "[1:tc Particular] Life Random %",
-      "ok": true,
-      "v": "60"
-    },
-    {
-      "p": "[1:tc Particular] Gravity (float)",
-      "ok": true,
-      "v": "0"
-    },
-    {
-      "p": "[1:tc Particular] Size",
+      "p": "[1:tc Particular] Keep the population sparse and readable as individual fireflies",
       "ok": true,
       "v": "3"
     },
     {
-      "p": "[1:tc Particular] Size Random %",
+      "p": "[1:tc Particular] Very low initial speed prevents rain-like directional travel",
       "ok": true,
-      "v": "45"
+      "v": "5"
     },
     {
-      "p": "[1:tc Particular] Opacity",
+      "p": "[1:tc Particular] Uniform emission removes any single travel direction",
       "ok": true,
-      "v": "90"
+      "v": "1"
     },
     {
-      "p": "[1:tc Particular] Opacity Random % (blink proxy)",
+      "p": "[1:tc Particular] Allow movement to disperse in every direction",
       "ok": true,
       "v": "100"
     },
     {
-      "p": "[1:tc Particular] Color (warm yellow-green)",
+      "p": "[1:tc Particular] Long enough life for slow floating motion without becoming a dense cloud",
       "ok": true,
-      "v": "0.9200000166893,0.980000"
+      "v": "6"
     },
     {
-      "p": "[1:tc Particular] Blend Mode (Add)",
+      "p": "[1:tc Particular] No gravity so particles do not read as falling snow or rising embers",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[1:tc Particular] Enable air resistance so wind and turbulence can create gentle wandering",
+      "ok": true,
+      "v": "0.80000001192093"
+    },
+    {
+      "p": "[1:tc Particular] Turbulence bends each particle into slow independent wandering paths",
+      "ok": true,
+      "v": "38"
+    },
+    {
+      "p": "[1:tc Particular] Large turbulence features create broad drifting curves rather than jitter",
+      "ok": true,
+      "v": "260"
+    },
+    {
+      "p": "[1:tc Particular] Keep motion simple and calm instead of chaotic",
       "ok": true,
       "v": "2"
     },
     {
-      "p": "[1:tc Particular] Glow Opacity",
+      "p": "[1:tc Particular] Small point-sized bodies preserve the firefly look",
       "ok": true,
-      "v": "80"
+      "v": "3.20000004768372"
     },
     {
-      "p": "[1:tc Particular] Glow Size (halo)",
+      "p": "[1:tc Particular] Vary particle scale so the field has near and far specimens",
       "ok": true,
-      "v": "300"
+      "v": "60"
     },
     {
-      "p": "[1:tc Particular] Turbulence -> Position (wander)",
+      "p": "[1:tc Particular] Leave enough core brightness for the glow to bloom",
       "ok": true,
-      "v": "130"
+      "v": "78"
     },
     {
-      "p": "[1:tc Particular] Turbulence Scale (broad wander)",
+      "p": "[1:tc Particular] Strong per-particle opacity variation creates a natural blink population",
       "ok": true,
-      "v": "14"
+      "v": "72"
+    },
+    {
+      "p": "[1:tc Particular] Set Color to At Birth so the warm yellow-green color is used",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Warm yellow-green bioluminescent firefly color",
+      "ok": true,
+      "v": "0.81999999284744,1,0.219"
+    },
+    {
+      "p": "[1:tc Particular] Use Glow Sphere particles for soft luminous points",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Additive blending makes overlapping lights feel emissive",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Create a substantial soft halo around each light",
+      "ok": true,
+      "v": "260"
+    },
+    {
+      "p": "[1:tc Particular] Keep halos visible but avoid turning the sparse field into fog",
+      "ok": true,
+      "v": "55"
+    },
+    {
+      "p": "[1:tc Particular] Enable modest motion blur for the occasional moving light",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[1:tc Particular] Natural shutter value without streaking the dots",
+      "ok": true,
+      "v": "180"
+    },
+    {
+      "p": "[1:tc Particular] The emitter slowly breathes around the frame center, preventing a static-looking field (expr)",
+      "ok": true
+    },
+    {
+      "p": "[2:PEDG] Add restrained HDR bloom to the brightest fireflies",
+      "ok": true,
+      "v": "1.14999997615814"
+    },
+    {
+      "p": "[2:PEDG] Keep glow halos soft and local rather than washing the black background",
+      "ok": true,
+      "v": "95"
+    },
+    {
+      "p": "[2:PEDG] Favor the brighter blinking lights while letting dim fireflies remain subtle",
+      "ok": true,
+      "v": "35"
+    },
+    {
+      "p": "[2:PEDG] Feather the glow threshold for smooth brightness transitions",
+      "ok": true,
+      "v": "45"
+    },
+    {
+      "p": "[2:PEDG] Retain the crisp luminous cores beneath the bloom",
+      "ok": true,
+      "v": "100"
     }
   ],
   "frames": [

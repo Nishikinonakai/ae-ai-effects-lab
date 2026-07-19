@@ -3,129 +3,237 @@
   "name": "eval-e22_i2",
   "params": [
     {
-      "p": "[1:tc Particular] Emitter Type (Box)",
+      "p": "[1:tc Particular] Use a point emitter so a precisely animated emitter can draw a clean upper data-stream path.",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[1:tc Particular] Moderate density keeps individual luminous particles visible instead of turning the upper stream into fog.",
+      "ok": true,
+      "v": "120"
+    },
+    {
+      "p": "[1:tc Particular] Low velocity lets the emitter animation create readable connected data trails.",
+      "ok": true,
+      "v": "18"
+    },
+    {
+      "p": "[1:tc Particular] Disc emission gives the stream a controlled planar spread rather than a spherical dust cloud.",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[1:tc Particular] Keep the particle ribbon narrow and intentional.",
+      "ok": true,
+      "v": "18"
+    },
+    {
+      "p": "[1:tc Particular] Long particle life leaves an elegant persistent trail across the upper edge.",
+      "ok": true,
+      "v": "5.40000009536743"
+    },
+    {
+      "p": "[1:tc Particular] Small particles read as refined digital points.",
+      "ok": true,
+      "v": "3.20000004768372"
+    },
+    {
+      "p": "[1:tc Particular] Size variation avoids an artificial uniform-dot pattern.",
+      "ok": true,
+      "v": "55"
+    },
+    {
+      "p": "[1:tc Particular] Restrained particle opacity preserves the dark background and negative space.",
+      "ok": true,
+      "v": "72"
+    },
+    {
+      "p": "[1:tc Particular] Opacity randomness gives the stream a subtle data-signal flicker.",
+      "ok": true,
+      "v": "58"
+    },
+    {
+      "p": "[1:tc Particular] Glow Sphere particles create polished luminous points.",
       "ok": true,
       "v": "2"
     },
     {
-      "p": "[1:tc Particular] Position (left edge)",
-      "ok": true,
-      "v": "640,360,0"
-    },
-    {
-      "p": "[1:tc Particular] Emitter Size mode (XYZ)",
+      "p": "[1:tc Particular] Additive blending makes the cyan particles feel emissive.",
       "ok": true,
       "v": "2"
     },
     {
-      "p": "[1:tc Particular] Emitter Size X (thin source)",
+      "p": "[1:tc Particular] Enable air resistance before turbulence and keep the flow controlled.",
       "ok": true,
-      "v": "1400"
+      "v": "1.10000002384186"
     },
     {
-      "p": "[1:tc Particular] Emitter Size Y (full height)",
+      "p": "[1:tc Particular] Add mild organic drift so the upper stream evolves between frames.",
       "ok": true,
-      "v": "760"
+      "v": "16"
     },
     {
-      "p": "[1:tc Particular] Emitter Size Z",
+      "p": "[1:tc Particular] Use medium-scale turbulence for graceful bends rather than noisy jitter.",
       "ok": true,
-      "v": "300"
+      "v": "115"
     },
     {
-      "p": "[1:tc Particular] Particle Type (Streaklet)",
+      "p": "[1:tc Particular] Keep turbulence simple and clean.",
       "ok": true,
-      "v": "5"
+      "v": "2"
     },
     {
-      "p": "[1:tc Particular] Streaklet No Spheres",
+      "p": "[1:tc Particular] Set color at birth so the authored cyan color is used.",
       "ok": true,
-      "v": "7"
+      "v": "1"
     },
     {
-      "p": "[1:tc Particular] Streaklet Spread",
+      "p": "[1:tc Particular] Use a vivid mint-cyan instead of default blue for a contemporary tech palette.",
+      "ok": true,
+      "v": "0.07999999821186,0.92000"
+    },
+    {
+      "p": "[1:tc Particular] Give each particle a controlled electronic halo.",
+      "ok": true,
+      "v": "230"
+    },
+    {
+      "p": "[1:tc Particular] Keep the particle glow subtle enough for background use.",
+      "ok": true,
+      "v": "45"
+    },
+    {
+      "p": "[1:tc Particular] Sweep the emitter across the upper third to continuously write a flowing cyan data ribbon. (expr)",
+      "ok": true
+    },
+    {
+      "p": "[2:tc Particular] A second point emitter creates a complementary lower data stream without filling the center.",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[2:tc Particular] Lower density makes this a quiet accent beneath the primary cyan stream.",
+      "ok": true,
+      "v": "72"
+    },
+    {
+      "p": "[2:tc Particular] Slow movement produces a stable, premium background rhythm.",
+      "ok": true,
+      "v": "14"
+    },
+    {
+      "p": "[2:tc Particular] Disc emission keeps the lower particles aligned as a slender stream.",
+      "ok": true,
+      "v": "4"
+    },
+    {
+      "p": "[2:tc Particular] Limit spread to retain a crisp technical geometry.",
+      "ok": true,
+      "v": "14"
+    },
+    {
+      "p": "[2:tc Particular] Long-lived particles form a smooth lower-edge trail.",
+      "ok": true,
+      "v": "5.80000019073486"
+    },
+    {
+      "p": "[2:tc Particular] Slightly smaller particles establish depth behind the main stream.",
+      "ok": true,
+      "v": "2.40000009536743"
+    },
+    {
+      "p": "[2:tc Particular] Natural point-size variation adds dimensionality.",
       "ok": true,
       "v": "60"
     },
     {
-      "p": "[1:tc Particular] Particles/sec",
-      "ok": true,
-      "v": "200"
-    },
-    {
-      "p": "[1:tc Particular] Velocity",
-      "ok": true,
-      "v": "30"
-    },
-    {
-      "p": "[1:tc Particular] Velocity Random %",
-      "ok": true,
-      "v": "40"
-    },
-    {
-      "p": "[1:tc Particular] Life (crosses frame)",
-      "ok": true,
-      "v": "3.5"
-    },
-    {
-      "p": "[1:tc Particular] Life Random %",
-      "ok": true,
-      "v": "30"
-    },
-    {
-      "p": "[1:tc Particular] Wind X (rightward stream)",
-      "ok": true,
-      "v": "380"
-    },
-    {
-      "p": "[1:tc Particular] Size",
-      "ok": true,
-      "v": "9"
-    },
-    {
-      "p": "[1:tc Particular] Size Random %",
+      "p": "[2:tc Particular] Lower opacity keeps this violet layer secondary.",
       "ok": true,
       "v": "55"
     },
     {
-      "p": "[1:tc Particular] Opacity",
+      "p": "[2:tc Particular] Gentle stochastic flicker suggests transmitted data.",
       "ok": true,
-      "v": "95"
+      "v": "62"
     },
     {
-      "p": "[1:tc Particular] Opacity Random %",
-      "ok": true,
-      "v": "40"
-    },
-    {
-      "p": "[1:tc Particular] Color (cyan)",
-      "ok": true,
-      "v": "0.34999999403954,0.85000"
-    },
-    {
-      "p": "[1:tc Particular] Blend Mode (Add)",
+      "p": "[2:tc Particular] Use luminous glow spheres for visual cohesion.",
       "ok": true,
       "v": "2"
     },
     {
-      "p": "[1:tc Particular] Glow Opacity",
+      "p": "[2:tc Particular] Additive compositing preserves a clean neon-light look.",
       "ok": true,
-      "v": "55"
+      "v": "2"
     },
     {
-      "p": "[1:tc Particular] Glow Size",
+      "p": "[2:tc Particular] Enable controlled turbulence.",
       "ok": true,
-      "v": "240"
+      "v": "1"
     },
     {
-      "p": "[1:tc Particular] Turbulence -> Position (subtle waver)",
+      "p": "[2:tc Particular] Introduce a small flowing deviation between frames.",
       "ok": true,
-      "v": "30"
+      "v": "12"
     },
     {
-      "p": "[1:tc Particular] Turbulence Scale",
+      "p": "[2:tc Particular] Broader turbulence creates a slow elegant undulation.",
       "ok": true,
-      "v": "8"
+      "v": "150"
+    },
+    {
+      "p": "[2:tc Particular] Avoid visual noise in the lower accent.",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[2:tc Particular] Set color at birth before applying the violet accent color.",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[2:tc Particular] Add a restrained ultraviolet accent that complements the cyan without becoming default-blue.",
+      "ok": true,
+      "v": "0.41999998688698,0.30000"
+    },
+    {
+      "p": "[2:tc Particular] Provide a tighter halo than the primary stream for depth separation.",
+      "ok": true,
+      "v": "180"
+    },
+    {
+      "p": "[2:tc Particular] Keep the secondary glow quiet.",
+      "ok": true,
+      "v": "32"
+    },
+    {
+      "p": "[2:tc Particular] Send a violet stream in the opposite direction along the lower third, framing a clear central title-safe area. (expr)",
+      "ok": true
+    },
+    {
+      "p": "[3:PEDG] Restrict bloom mostly to the luminous particle highlights so the navy background stays crisp.",
+      "ok": true,
+      "v": "35"
+    },
+    {
+      "p": "[3:PEDG] Feather the glow threshold for smooth premium halos.",
+      "ok": true,
+      "v": "45"
+    },
+    {
+      "p": "[3:PEDG] Add restrained HDR bloom rather than an overpowering haze.",
+      "ok": true,
+      "v": "1.14999997615814"
+    },
+    {
+      "p": "[3:PEDG] Create a soft shared light atmosphere around the two particle streams.",
+      "ok": true,
+      "v": "185"
+    },
+    {
+      "p": "[3:PEDG] Retain the sharp particle cores beneath the bloom.",
+      "ok": true,
+      "v": "100"
     }
   ],
   "frames": [

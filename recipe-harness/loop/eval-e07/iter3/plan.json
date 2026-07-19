@@ -1,0 +1,225 @@
+{
+  "name": "eval-e07_i3",
+  "compName": "Eval_e07",
+  "intent": "大片雪花缓缓飘落，轻微左右飘动，深灰蓝背景",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.055,
+    0.08,
+    0.12
+  ],
+  "hostName": "Artwork",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          2,
+          "Box emitter distributes snow across the frame width"
+        ],
+        [
+          "tc Particular-0581",
+          [
+            640,
+            -70,
+            0
+          ],
+          "Emit just above the top edge so flakes enter naturally"
+        ],
+        [
+          "tc Particular-0014",
+          1800,
+          "Wide emitter covers beyond both screen edges"
+        ],
+        [
+          "tc Particular-0146",
+          60,
+          "Sustained moderate density while keeping individual large flakes readable"
+        ],
+        [
+          "tc Particular-0011",
+          12,
+          "Low initial velocity keeps the snowfall calm"
+        ],
+        [
+          "tc Particular-0113",
+          1,
+          "Uniform launch variation prevents rigid parallel paths"
+        ],
+        [
+          "tc Particular-0002",
+          9,
+          "Long lifetime lets flakes travel through the full composition"
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Glow Sphere gives each white flake a naturally soft edge"
+        ],
+        [
+          "tc Particular-0027",
+          22,
+          "Clearly readable large snowflake scale rather than fine dust"
+        ],
+        [
+          "tc Particular-0074",
+          65,
+          "Strong size variation creates foreground and background flake depth"
+        ],
+        [
+          "tc Particular-0033",
+          88,
+          "White flakes remain visible against the dark background"
+        ],
+        [
+          "tc Particular-0075",
+          22,
+          "Subtle opacity variance avoids a uniform synthetic particle field"
+        ],
+        [
+          "tc Particular-0088",
+          1,
+          "Set Color to At Birth so the white color setting is active"
+        ],
+        [
+          "tc Particular-0070",
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          "Clean soft white snowflake color"
+        ],
+        [
+          "tc Particular-0069",
+          1,
+          "Normal compositing preserves opaque snow instead of luminous additive dots"
+        ],
+        [
+          "tc Particular-0017",
+          105,
+          "Gentle positive gravity drives a slow downward fall"
+        ],
+        [
+          "tc Particular-0018",
+          2.2,
+          "Air resistance slows movement and enables wind-driven drifting"
+        ],
+        [
+          "tc Particular-0749",
+          18,
+          "Light horizontal wind gives the snowfall its lateral drift"
+        ],
+        [
+          "tc Particular-0711",
+          28,
+          "Turbulence adds slight natural side-to-side wandering"
+        ],
+        [
+          "tc Particular-0715",
+          260,
+          "Large turbulence scale makes broad graceful drift instead of jitter"
+        ],
+        [
+          "tc Particular-0716",
+          2,
+          "Low-complexity turbulence keeps the movement soft and uncluttered"
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0749",
+          "18 + Math.sin(time*0.55)*10",
+          "Slowly varies the horizontal wind so flakes gently wander left and right"
+        ],
+        [
+          "tc Particular-0581",
+          "[thisProperty.value[0] + Math.sin(time*0.22)*55, thisProperty.value[1], thisProperty.value[2]]",
+          "Very slow emitter sweep prevents the falling field from feeling mechanically fixed"
+        ]
+      ]
+    },
+    {
+      "matchName": "PEDG",
+      "params": [
+        [
+          "PEDG-0002",
+          0.12,
+          "A restrained bloom softens flake edges without washing out the scene"
+        ],
+        [
+          "PEDG-0001",
+          20,
+          "Small glow radius creates delicate halos around large flakes"
+        ],
+        [
+          "PEDG-0004",
+          75,
+          "Threshold limits glow mainly to the bright white snow"
+        ],
+        [
+          "PEDG-0005",
+          35,
+          "Feathered threshold keeps the snow glow natural"
+        ],
+        [
+          "PEDG-0024",
+          100,
+          "Retain the crisp white flake cores beneath the soft bloom"
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_rationale": "Trapcode Particular produces a wide field of large, white, softly edged particles with gravity for downward motion and gated wind/turbulence for gentle lateral wandering. A restrained highlight-only Deep Glow keeps the snow soft and visible while the dark grey-blue comp background remains clean and atmospheric.",
+  "_planner": {
+    "model": "gpt-5.6-terra",
+    "date": "2026-07-19"
+  },
+  "pass_criteria": [
+    "white soft flakes falling downward",
+    "large-flake scale readable (not fine dust)",
+    "slight lateral drift/wander",
+    "dark grey-blue background"
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 3,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "tc Particular",
+          "matchName": "tc Particular-0146",
+          "value": 60,
+          "why": "降低持续发射量，避免后续时刻粒子堆积成密集亮团，使大雪花之间保持可读间距。"
+        },
+        {
+          "type": "param",
+          "effect": "PEDG",
+          "matchName": "PEDG-0002",
+          "value": 0.12,
+          "why": "大幅收敛附加辉光，压低过曝光晕，让颗粒更接近柔软的白色雪花而不是发亮圆球。"
+        },
+        {
+          "type": "param",
+          "effect": "PEDG",
+          "matchName": "PEDG-0001",
+          "value": 20,
+          "why": "缩小辉光半径，保留轻微软边但避免相邻雪花的光晕彼此融合。"
+        }
+      ],
+      "skipped": []
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "name": "eval-e06",
+  "compName": "Eval_e06",
+  "intent": "红色丝绸质感的抽象波浪曲面，缓缓起伏",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.14,
+    0.002,
+    0.008
+  ],
+  "hostName": "Artwork",
+  "effects": [
+    {
+      "matchName": "tc Form",
+      "params": [],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Wave Warp",
+      "params": [],
+      "expressions": []
+    },
+    {
+      "matchName": "BCC_TEXTURES",
+      "params": [
+        [
+          "BCC_TEXTURES-1001",
+          18,
+          "轻微织物纹理叠加，让高密度粒子曲面获得丝绸般细腻纤维感"
+        ],
+        [
+          "BCC_TEXTURES-1002",
+          8,
+          "保留平滑明暗渐变，仅加入克制的细节层次"
+        ],
+        [
+          "BCC_TEXTURES-1018",
+          65,
+          "使用较细密的横向织纹尺度"
+        ],
+        [
+          "BCC_TEXTURES-1019",
+          65,
+          "保持织纹比例均匀，避免粗糙纸张感"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "PEDG",
+      "params": [
+        [
+          "PEDG-0002",
+          0.8,
+          "柔和提亮粒子曲面上的高光，形成红色丝绸反光感"
+        ],
+        [
+          "PEDG-0001",
+          420,
+          "让亮部在相邻粒子之间平滑融合为连续布面"
+        ],
+        [
+          "PEDG-0004",
+          55,
+          "只让较亮的波峰产生柔和辉光，保留深红阴影"
+        ],
+        [
+          "PEDG-0005",
+          55,
+          "柔化高光阈值过渡，避免颗粒高光生硬"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE BEZMESH",
+      "params": [
+        [
+          "ADBE BEZMESH-0014",
+          8,
+          "提高曲面变形细分质量，使波浪边缘与布面扭曲更平滑"
+        ]
+      ],
+      "expressions": [
+        [
+          "ADBE BEZMESH-0002",
+          "value + [0,Math.sin(time*1.05)*48]",
+          "左上边缘控制柄缓慢上下呼吸，形成布料起伏"
+        ],
+        [
+          "ADBE BEZMESH-0003",
+          "value + [0,Math.sin(time*1.05+1.1)*34]",
+          "左上第二控制柄与主波错相，避免机械对称"
+        ],
+        [
+          "ADBE BEZMESH-0005",
+          "value + [0,Math.sin(time*1.05+2.4)*58]",
+          "右上控制柄延迟波形，形成由左至右传播的波浪"
+        ],
+        [
+          "ADBE BEZMESH-0006",
+          "value + [0,Math.sin(time*1.05+3.2)*38]",
+          "右上辅助控制柄制造不规则的柔软波峰"
+        ],
+        [
+          "ADBE BEZMESH-0008",
+          "value + [0,Math.sin(time*0.82+3.7)*44]",
+          "左下边缘以较慢频率起伏，增加宽幅布面纵深"
+        ],
+        [
+          "ADBE BEZMESH-0009",
+          "value + [0,Math.sin(time*0.82+4.6)*30]",
+          "左下辅助柄使阴影褶皱持续变化"
+        ],
+        [
+          "ADBE BEZMESH-0011",
+          "value + [0,Math.sin(time*0.82+5.4)*54]",
+          "右下控制柄与左侧错相，令t1和t4波形结构明显不同"
+        ],
+        [
+          "ADBE BEZMESH-0012",
+          "value + [0,Math.sin(time*0.82+0.5)*36]",
+          "右下辅助柄平衡曲面并维持整幅宽带覆盖"
+        ]
+      ]
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_rationale": "Trapcode Form建立高密度、连续的粒子曲面，默认波浪与Bezier网格的错相动画共同让它在四秒间持续重组而不是散成独立粒子。深绯红背景、细密织纹及只作用于波峰的柔和辉光，将粒子间的明暗过渡融合成宽幅红色丝绸质感。",
+  "_planner": {
+    "model": "gpt-5.6-terra",
+    "date": "2026-07-19"
+  },
+  "pass_criteria": [
+    "continuous undulating surface/sheet made of particles (Form-style), not scattered particles",
+    "red/crimson palette with smooth luminance gradations (silk feel)",
+    "wave structure changed between t1 and t4",
+    "fills a wide band of the frame"
+  ]
+}

@@ -16,146 +16,139 @@
           [
             "tc Particular-0782",
             2,
-            "Emitter Type (Box)"
-          ],
-          [
-            "tc Particular-0581",
-            [
-              700,
-              -60,
-              0
-            ],
-            "Position (top, biased right for left drift)"
-          ],
-          [
-            "tc Particular-0577",
-            2,
-            "Emitter Size mode (XYZ)"
+            "Box emitter spreads a small, countable snowfall across the frame width"
           ],
           [
             "tc Particular-0014",
             1500,
-            "Emitter Size X"
-          ],
-          [
-            "tc Particular-0015",
-            60,
-            "Emitter Size Y"
-          ],
-          [
-            "tc Particular-0016",
-            400,
-            "Emitter Size Z"
-          ],
-          [
-            "tc Particular-0703",
-            1,
-            "Particle Type (Sphere)"
-          ],
-          [
-            "tc Particular-0029",
-            55,
-            "Feather (soft flake)"
+            "Emitter is wider than the comp so flakes enter across the entire top edge"
           ],
           [
             "tc Particular-0146",
-            40,
-            "Particles/sec (sparse)"
-          ],
-          [
-            "tc Particular-0113",
-            2,
-            "Emitter Direction (Directional)"
-          ],
-          [
-            "tc Particular-0112",
-            270,
-            "Angle X (down)"
-          ],
-          [
-            "tc Particular-0010",
-            10,
-            "Direction Spread"
-          ],
-          [
-            "tc Particular-0011",
-            70,
-            "Velocity (slow fall)"
-          ],
-          [
-            "tc Particular-0012",
-            25,
-            "Velocity Random %"
+            6,
+            "Low emission rate keeps the flake population clearly countable"
           ],
           [
             "tc Particular-0002",
-            8,
-            "Life"
+            6,
+            "Long enough life for flakes to remain visible while falling slowly"
           ],
           [
-            "tc Particular-0065",
-            20,
-            "Life Random %"
+            "tc Particular-0011",
+            0,
+            "No launch velocity keeps the movement gentle rather than stormy"
+          ],
+          [
+            "tc Particular-0113",
+            1,
+            "Uniform emission avoids a directional spray pattern"
           ],
           [
             "tc Particular-0017",
-            14,
-            "Gravity (near-terminal)"
+            58,
+            "Positive gravity provides the primary slow downward fall"
+          ],
+          [
+            "tc Particular-0018",
+            4,
+            "Air resistance makes wind influence smooth and prevents fast acceleration"
           ],
           [
             "tc Particular-0749",
-            -85,
-            "Wind X (leftward drift)"
+            -22,
+            "Negative X wind produces a consistent leftward drift"
+          ],
+          [
+            "tc Particular-0750",
+            0,
+            "No vertical wind so gravity remains the readable downward motion"
+          ],
+          [
+            "tc Particular-0703",
+            2,
+            "Glow Sphere particle type gives every flake a naturally soft edge"
           ],
           [
             "tc Particular-0027",
-            9,
-            "Size"
+            7,
+            "Small flake size preserves a sparse snow-scale appearance"
           ],
           [
             "tc Particular-0074",
-            40,
-            "Size Random %"
+            60,
+            "High size variation makes individual flakes feel organic"
           ],
           [
             "tc Particular-0033",
-            100,
-            "Opacity"
+            72,
+            "Moderate opacity keeps teal flakes visible but delicate"
+          ],
+          [
+            "tc Particular-0075",
+            20,
+            "Subtle opacity variation avoids identical-looking particles"
+          ],
+          [
+            "tc Particular-0088",
+            1,
+            "Set Color to At Birth before assigning the teal flake color"
           ],
           [
             "tc Particular-0070",
             [
-              0.35,
-              0.85,
-              0.8,
+              0.12,
+              0.82,
+              0.78,
               1
             ],
-            "Color (teal)"
+            "Cool teal tint for the snowflakes"
           ],
           [
-            "tc Particular-0042",
-            45,
-            "TF Affect Position (gentle wander)"
-          ],
-          [
-            "tc Particular-0046",
-            5,
-            "TF Scale"
-          ],
-          [
-            "tc Particular-0052",
-            25,
-            "TF Evolution"
-          ],
-          [
-            "tc Particular-0216",
-            25,
-            "Glow Opacity"
+            "tc Particular-0069",
+            1,
+            "Normal compositing keeps snow soft and opaque rather than neon-additive"
           ],
           [
             "tc Particular-0215",
-            300,
-            "Glow Size"
+            110,
+            "Small particle glow radius feathers each flake"
+          ],
+          [
+            "tc Particular-0216",
+            24,
+            "Restrained glow opacity keeps flakes soft without hazing the frame"
+          ]
+        ],
+        "expressions": [
+          [
+            "tc Particular-0581",
+            "[thisComp.width/2 + Math.sin(time*0.35)*18, -35, 0]",
+            "Keeps the wide emitter just above frame while giving the snowfall a nearly imperceptible natural lateral variation"
+          ]
+        ]
+      },
+      {
+        "matchName": "PEDG",
+        "params": [
+          [
+            "PEDG-0002",
+            0.55,
+            "Very gentle bloom softens only the visible flake highlights"
+          ],
+          [
+            "PEDG-0001",
+            85,
+            "Compact bloom radius preserves separated, countable flakes"
+          ],
+          [
+            "PEDG-0004",
+            55,
+            "Threshold limits bloom to bright teal flakes and leaves the dark background clean"
+          ],
+          [
+            "PEDG-0005",
+            35,
+            "Soft threshold transition avoids harsh halo edges"
           ]
         ],
         "expressions": []
@@ -163,9 +156,9 @@
     ],
     "camera": null,
     "background": [
-      0.015,
+      0.008,
       0.025,
-      0.03
+      0.035
     ],
     "renderFrames": [
       1,
@@ -177,5 +170,5 @@
     "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e21/iter1/eval-e21_i1_t4.png"
   ],
   "prior_iterations": [],
-  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
+  "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
 }

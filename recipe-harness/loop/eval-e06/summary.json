@@ -1,14 +1,26 @@
 {
   "intent": "红色丝绸质感的抽象波浪曲面，缓缓起伏",
-  "backend": "agent",
-  "outcome": "pass",
-  "best_iter": 1,
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 2,
   "iterations": [
     {
       "iter": 1,
-      "score": 9,
-      "verdict": "pass",
-      "critique": "Continuous particle sheet with clear fine-grid Form structure, deep crimson with bright silky fold highlights (smooth luminance gradations), whole-frame coverage, and the fold topology fully reorganized between t1 and t4 (slow undulation). All criteria met; the one failed param (Base Shape Center, dimension mismatch) was harmless — default center is frame center. Usable as-is."
+      "score": 3,
+      "verdict": "fail",
+      "critique": "画面已有高密度、规则排列的粒子网格，并且上下边缘呈连续波浪轮廓；但当前主体是发白的点阵幕布，缺少红/深红的丝绸色彩与连续柔和的明暗反光。粒子间距和独立白点过于明显，视觉更接近LED点阵或发光珠帘，而非由粒子构成的细腻波浪曲面。主体只占画面中央约一半宽度，未形成横向铺开的宽幅波带。所给画面中未见t4帧，无法确认波形在时间上是否确实发生了结构变化。"
+    },
+    {
+      "iter": 2,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "红/深红调色已明显成立，粒子密度也足以读成一张规则的起伏网格；t1与t4的上下边缘和内部褶皱位置确有变化，满足缓慢波动的基础运动要求。但画面仍主要由清晰、分离的亮点组成，纵向重复纹样和点阵感很强，更像红色LED珠帘而非具有连续柔亮反射的丝绸曲面。主体横向只覆盖画面中央约45%，两侧留白过大，未形成宽幅横向波带。"
+    },
+    {
+      "iter": 3,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "红/深红色调已成立，粒子排列足以连续读作一张起伏的曲面，t1到t4的顶部、底部波峰和内部竖向褶皱均有可见变化。主体覆盖范围较前次扩大，但两侧仍留有明显暗区，尚未形成横向铺满画面的宽幅波带。最主要的问题是粒子亮点仍然逐颗清晰可辨，规则纵向条纹和点阵边缘使其更像发光LED网格；整体亮度几乎均一，缺少丝绸所需的深红阴影、柔和过渡与局部流动高光。"
     }
   ]
 }

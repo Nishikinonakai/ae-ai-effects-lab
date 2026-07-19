@@ -1,14 +1,26 @@
 {
   "intent": "大片雪花缓缓飘落，轻微左右飘动，深灰蓝背景",
-  "backend": "agent",
-  "outcome": "pass",
+  "backend": "api",
+  "outcome": "fail_max_iters",
   "best_iter": 1,
   "iterations": [
     {
       "iter": 1,
-      "score": 8,
-      "verdict": "pass",
-      "critique": "Soft white large flakes with good size variation falling from the top (t1 = fresh top band, t4 = frame filled downward), irregular clumped distribution consistent with gentle wander, dark grey-blue background. Sphere+feather substitution for the sprite texture reads convincingly as snow. All criteria met."
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render clearly has white, soft-edged, readable large flakes over a suitably dark grey-blue background. However, the flakes read more like strongly bloomed circular light orbs than snow: their cores are heavily blown out and halos are oversized. This reduces the sense of individual soft snowflakes. The supplied view does not provide a visible second time sample to confirm the intended slow downward fall and subtle lateral wandering."
+    },
+    {
+      "iter": 2,
+      "score": 6,
+      "verdict": "fail",
+      "critique": "深灰蓝背景和白色大颗粒均符合方向，颗粒尺度清晰，画面中也能看出粒子场在持续下落。但雪仍明显读成高亮发光圆点而非柔软雪花：白色核心过曝、光晕偏大。t4相较t1的粒子密度显著堆积，出现大量相互贴连的亮团，画面变得拥挤，削弱了“大片雪花缓缓飘落”的舒缓、可读感。"
+    },
+    {
+      "iter": 3,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "深灰蓝背景正确，白色颗粒尺度总体可读，t1到t4可见粒子场持续下落并发生位置变化。但t4粒子数量急剧堆积，形成大量相贴的亮团，远离舒缓、可分辨的大片雪花。颗粒仍主要读作过曝发光圆点：白色核心太硬太亮，外围光晕明显，缺少更柔和、低对比的雪花质感。"
     }
   ]
 }

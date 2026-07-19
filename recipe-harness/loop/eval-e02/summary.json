@@ -1,0 +1,26 @@
+{
+  "intent": "深海气泡：蓝青色小气泡从画面底部升起，轻微左右摇摆，深蓝近黑背景",
+  "backend": "api",
+  "outcome": "fail_max_iters",
+  "best_iter": 1,
+  "iterations": [
+    {
+      "iter": 1,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The render has the intended near-black deep-blue background and a clean cyan particle palette. By t4, the field reaches a readable moderate density with mostly small round luminous particles distributed through the frame, including new bubbles along the bottom edge. However, t1 is extremely sparse, and across the two frames the particles read primarily as glowing dots rather than clearly bubble-like forms. The lateral sway is not visually demonstrable from the displayed motion: the flow appears broadly upward/dispersed, without an obvious side-to-side arc."
+    },
+    {
+      "iter": 2,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The deep near-black blue background and cyan palette match well. By t4 there is a readable moderate field of small luminous particles distributed across the frame, with new particles visible near the bottom. However, t1 remains too sparse, and the particles still read more as soft glowing dots than distinct bubbles. Comparing t1 and t4 does not clearly demonstrate individual side-to-side swaying arcs; the motion reads primarily as dispersed upward movement."
+    },
+    {
+      "iter": 3,
+      "score": 7,
+      "verdict": "fail",
+      "critique": "The near-black deep-blue background and cyan palette match the requested underwater look. At t4 there is a broadly distributed, readable particle field, but it is slightly crowded and the particles read as soft glowing dots rather than distinct small bubbles. The t1 field is still very sparse. Comparing t1 and t4, upward/dispersed movement is apparent, but individual lateral sway or curved side-to-side trajectories are not visually clear."
+    }
+  ]
+}

@@ -3,72 +3,77 @@
   "name": "eval-e04_i1",
   "params": [
     {
-      "p": "[1:ADBE Fractal Noise] Fractal Type (soft clouds)",
+      "p": "[2:BCC_TEXTURES] 以中等强度叠加细密纹理，形成清晰可见的老胶片颗粒",
       "ok": true,
-      "v": "1"
+      "v": "38"
     },
     {
-      "p": "[1:ADBE Fractal Noise] Noise Type (smoothest)",
+      "p": "[2:BCC_TEXTURES] 提高纹理细节，让颗粒比默认画布纹更细碎",
       "ok": true,
-      "v": "3"
+      "v": "30"
     },
     {
-      "p": "[1:ADBE Fractal Noise] Contrast (soft)",
+      "p": "[2:BCC_TEXTURES] 缩小纹理平铺尺寸，使其读取为细颗粒而非大块纸纹",
       "ok": true,
-      "v": "105"
+      "v": "55"
     },
     {
-      "p": "[1:ADBE Fractal Noise] Brightness",
+      "p": "[2:BCC_TEXTURES] 保持纹理纵横比例一致",
       "ok": true,
-      "v": "-6"
+      "v": "55"
     },
     {
-      "p": "[1:ADBE Fractal Noise] Scale (big soft billows)",
-      "ok": true,
-      "v": "210"
-    },
-    {
-      "p": "[1:ADBE Fractal Noise] Evolution (slow) (expr)",
+      "p": "[2:BCC_TEXTURES] 每帧改变纹理随机种子，使颗粒具有胶片噪点的闪动感 (expr)",
       "ok": true
     },
     {
-      "p": "[2:ADBE Noise HLS Auto2] Noise type (grain)",
+      "p": "[3:BCC4Damaged TV] 关闭明显的信号撕裂，保留柔和云雾主体",
       "ok": true,
-      "v": "3"
+      "v": "0"
     },
     {
-      "p": "[2:ADBE Noise HLS Auto2] Lightness noise (visible film grain)",
+      "p": "[3:BCC4Damaged TV] 补充轻微模拟胶片雪花噪点",
       "ok": true,
-      "v": "20"
+      "v": "8"
     },
     {
-      "p": "[2:ADBE Noise HLS Auto2] Grain Size",
+      "p": "[3:BCC4Damaged TV] 将全画面灰阶云雾充分转换为怀旧色调",
       "ok": true,
-      "v": "0.89999997615814"
+      "v": "62"
     },
     {
-      "p": "[2:ADBE Noise HLS Auto2] Noise Animation Speed (per-frame refresh)",
+      "p": "[3:BCC4Damaged TV] 选择使用自定义染色色彩而非纯单色",
       "ok": true,
-      "v": "24"
+      "v": "2"
     },
     {
-      "p": "[3:ADBE Exposure2] Master Exposure flicker (stops) (expr)",
+      "p": "[3:BCC4Damaged TV] 以低饱和深褐色统一染色，得到整体偏褐的旧胶片观感",
+      "ok": true,
+      "v": "0.34000000357628,0.20999"
+    },
+    {
+      "p": "[4:PEDG] 用宽半径将云雾边缘进一步柔化成朦胧底图",
+      "ok": true,
+      "v": "650"
+    },
+    {
+      "p": "[4:PEDG] 让整个明暗云雾都参与极轻微的柔光，而不只处理高光",
+      "ok": true,
+      "v": "0"
+    },
+    {
+      "p": "[4:PEDG] 平滑全画面辉光的亮度过渡",
+      "ok": true,
+      "v": "35"
+    },
+    {
+      "p": "[4:PEDG] 维持克制的柔光，避免吞没纹理颗粒",
+      "ok": true,
+      "v": "0.37999999523163"
+    },
+    {
+      "p": "[4:PEDG] 缓慢且轻微地改变全画面柔光亮度，模拟老胶片在 t1 与 t4 的曝光闪烁 (expr)",
       "ok": true
-    },
-    {
-      "p": "[4:ADBE Tint] Map Black To (warm dark brown)",
-      "ok": true,
-      "v": "0.09000000357628,0.05499"
-    },
-    {
-      "p": "[4:ADBE Tint] Map White To (aged paper)",
-      "ok": true,
-      "v": "0.88999998569489,0.79000"
-    },
-    {
-      "p": "[4:ADBE Tint] Amount",
-      "ok": true,
-      "v": "100"
     }
   ],
   "frames": [

@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The deep near-black blue background and cyan palette match well. By t4 there is a readable moderate field of small luminous particles distributed across the frame, with new particles visible near the bottom. However, t1 remains too sparse, and the particles still read more as soft glowing dots than distinct bubbles. Comparing t1 and t4 does not clearly demonstrate individual side-to-side swaying arcs; the motion reads primarily as dispersed upward movement.",
+  "suggestions": [
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 48,
+      "why": "Raise the continuous birth rate so the early frame has a more consistently moderate, readable bubble density rather than appearing nearly empty."
+    },
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0749",
+      "expression": "Math.sin(time*1.15)*38;",
+      "why": "Increase the oscillating horizontal wind displacement so the lateral sway becomes visibly apparent over the rendered time interval."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0027",
+      "value": 9,
+      "why": "Slightly enlarge the particles so their rounded cyan halos read more clearly as bubble-like forms rather than tiny point lights."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

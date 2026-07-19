@@ -1,0 +1,29 @@
+{
+  "verdict": "fail",
+  "score": 7,
+  "critique": "The near-black deep-blue background and cyan palette match the requested underwater look. At t4 there is a broadly distributed, readable particle field, but it is slightly crowded and the particles read as soft glowing dots rather than distinct small bubbles. The t1 field is still very sparse. Comparing t1 and t4, upward/dispersed movement is apparent, but individual lateral sway or curved side-to-side trajectories are not visually clear.",
+  "suggestions": [
+    {
+      "type": "expression",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0749",
+      "expression": "Math.sin(time*1.8)*72;",
+      "why": "A larger, somewhat faster horizontal wind oscillation will make the lateral displacement legible over the sampled time range instead of reading as primarily vertical rise."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0711",
+      "value": 70,
+      "why": "Increasing turbulent positional drift adds more visibly curved, individual underwater paths rather than a uniformly dispersed upward field."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0216",
+      "value": 22,
+      "why": "Reducing the per-particle glow intensity will sharpen the particle edges so they read less like blurred light dots and more like discrete bubble-sized forms."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
+}

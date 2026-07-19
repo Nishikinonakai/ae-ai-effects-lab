@@ -7,160 +7,41 @@
     "poster-like graphic cohesion"
   ],
   "iteration": 1,
-  "max_iters": 1,
+  "max_iters": 3,
   "plan": {
     "effects": [
       {
         "matchName": "ADBE Fractal Noise",
-        "params": [
-          [
-            "ADBE Fractal Noise-0001",
-            1,
-            "Fractal Type Basic (bold graphic masses)"
-          ],
-          [
-            "ADBE Fractal Noise-0002",
-            1,
-            "Noise Type BLOCK (hard-edged, not clouds)"
-          ],
-          [
-            "ADBE Fractal Noise-0004",
-            200,
-            "Contrast (decisive dark/light fills)"
-          ],
-          [
-            "ADBE Fractal Noise-0005",
-            0,
-            "Brightness (balanced ~50/50 blue/cream)"
-          ],
-          [
-            "ADBE Fractal Noise-0006",
-            1,
-            "Overflow Clip (reinforce edges)"
-          ],
-          [
-            "ADBE Fractal Noise-0010",
-            120,
-            "Scale (poster-scale masses)"
-          ],
-          [
-            "ADBE Fractal Noise-0013",
-            [
-              640,
-              360
-            ],
-            "Offset Turbulence = comp center (fill frame)"
-          ],
-          [
-            "ADBE Fractal Noise-0015",
-            2,
-            "Complexity (few clean shapes)"
-          ],
-          [
-            "ADBE Fractal Noise-0023",
-            0,
-            "Evolution=0 static (frame stability, NO expression)"
-          ],
-          [
-            "ADBE Fractal Noise-0027",
-            5,
-            "Random Seed fixed"
-          ]
-        ],
+        "params": [],
         "expressions": []
       },
       {
         "matchName": "ADBE Mosaic",
-        "params": [
-          [
-            "ADBE Mosaic-0001",
-            12,
-            "Horizontal Blocks (bold poster grid)"
-          ],
-          [
-            "ADBE Mosaic-0002",
-            7,
-            "Vertical Blocks (roughly square cells)"
-          ],
-          [
-            "ADBE Mosaic-0003",
-            1,
-            "Sharp Colors ON (flat hard-edged cells)"
-          ]
-        ],
+        "params": [],
         "expressions": []
       },
       {
         "matchName": "ADBE Posterize",
-        "params": [
-          [
-            "ADBE Posterize-0001",
-            2,
-            "Levels=2 — binarize BASE cells to pure black/white BEFORE emboss"
-          ]
-        ],
+        "params": [],
         "expressions": []
       },
       {
         "matchName": "ADBE Emboss",
-        "params": [
-          [
-            "ADBE Emboss-0001",
-            135,
-            "Direction 135"
-          ],
-          [
-            "ADBE Emboss-0002",
-            8,
-            "Relief 8 (lip width)"
-          ],
-          [
-            "ADBE Emboss-0003",
-            220,
-            "Contrast 220"
-          ],
-          [
-            "ADBE Emboss-0004",
-            78,
-            "Blend 78 — cells stay near-pure; only lips swing to relief mid-tones"
-          ]
-        ],
+        "params": [],
         "expressions": []
       },
       {
         "matchName": "ADBE Tint",
-        "params": [
-          [
-            "ADBE Tint-0001",
-            [
-              0.07,
-              0.1,
-              0.25,
-              1
-            ],
-            "Map Black To deep blue ink"
-          ],
-          [
-            "ADBE Tint-0002",
-            [
-              0.93,
-              0.89,
-              0.78,
-              1
-            ],
-            "Map White To cream paper"
-          ],
-          [
-            "ADBE Tint-0003",
-            100,
-            "Amount 100 (only 2 input levels -> exactly 2 inks)"
-          ]
-        ],
+        "params": [],
         "expressions": []
       }
     ],
     "camera": null,
-    "background": null,
+    "background": [
+      0.91,
+      0.86,
+      0.74
+    ],
     "renderFrames": [
       1,
       4

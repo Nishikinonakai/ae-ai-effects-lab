@@ -1,9 +1,36 @@
 {
   "verdict": "fail",
-  "score": 6,
-  "critique": "Nebula cloud structure is right (soft billows, whole-frame, clear morph between t1 and t4) and the palette is violet/purple. Two misses: the grain is far from '少量/subtle' — coarse noise dominates every pixel and competes with the cloud read (Lightness 60 renders much stronger than the intended 6%); and overall luminance is mid-bright in large areas, above background grade for 暗紫色.",
+  "score": 3,
+  "critique": "The palette is violet, but the result is far too bright and saturated for a dark background-grade nebula, especially at t4 where most of the frame becomes electric purple. The cloud field has a clearly visible rectangular emitter boundary across the upper area and at the side edges, which breaks the no-hard-edges requirement. Within that rectangle the image is largely smooth and uniform rather than showing layered, cloud-like nebula structure; grain is only barely perceptible. Between t1 and t4 there is substantial overall brightening, but little readable internal morphing or drifting structure.",
   "suggestions": [
-    { "type": "param", "effect": "ADBE Noise HLS Auto2", "matchName": "ADBE Noise HLS Auto2-0003", "value": 15, "why": "drop lightness-noise amount to a subtle film-grain level" },
-    { "type": "param", "effect": "ADBE Fractal Noise", "matchName": "ADBE Fractal Noise-0005", "value": -28, "why": "darken the base so the bright billows sit at background luminance" }
-  ]
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0014",
+      "value": 2400,
+      "why": "Expand the Box emission volume well beyond the composition so its rectangular boundaries fall outside frame."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0033",
+      "value": 2,
+      "why": "Reduce particle opacity substantially so additive accumulation remains dark violet instead of blooming into bright magenta."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0146",
+      "value": 95,
+      "why": "Lower emission density to prevent the field from progressively filling into a flat, overbright solid color at later times."
+    },
+    {
+      "type": "param",
+      "effect": "tc Particular",
+      "matchName": "tc Particular-0711",
+      "value": 65,
+      "why": "Increase broad turbulent displacement so the visible density develops more distinct slow-moving gaseous variations rather than mainly changing overall brightness."
+    }
+  ],
+  "_backend": "gpt-api:gpt-5.6-terra"
 }

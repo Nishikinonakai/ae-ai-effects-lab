@@ -1,0 +1,299 @@
+{
+  "name": "eval-e22",
+  "compName": "Eval_e22",
+  "intent": "来点好看的科技感粒子背景",
+  "comp": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "duration": 6
+  },
+  "background": [
+    0.008,
+    0.02,
+    0.055
+  ],
+  "hostName": "Artwork",
+  "effects": [
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          1,
+          "Use a point emitter so a precisely animated emitter can draw a clean upper data-stream path."
+        ],
+        [
+          "tc Particular-0146",
+          72,
+          "Moderate density keeps individual luminous particles visible instead of turning the upper stream into fog."
+        ],
+        [
+          "tc Particular-0011",
+          18,
+          "Low velocity lets the emitter animation create readable connected data trails."
+        ],
+        [
+          "tc Particular-0113",
+          4,
+          "Disc emission gives the stream a controlled planar spread rather than a spherical dust cloud."
+        ],
+        [
+          "tc Particular-0010",
+          18,
+          "Keep the particle ribbon narrow and intentional."
+        ],
+        [
+          "tc Particular-0002",
+          5.4,
+          "Long particle life leaves an elegant persistent trail across the upper edge."
+        ],
+        [
+          "tc Particular-0027",
+          3.2,
+          "Small particles read as refined digital points."
+        ],
+        [
+          "tc Particular-0074",
+          55,
+          "Size variation avoids an artificial uniform-dot pattern."
+        ],
+        [
+          "tc Particular-0033",
+          72,
+          "Restrained particle opacity preserves the dark background and negative space."
+        ],
+        [
+          "tc Particular-0075",
+          58,
+          "Opacity randomness gives the stream a subtle data-signal flicker."
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Glow Sphere particles create polished luminous points."
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Additive blending makes the cyan particles feel emissive."
+        ],
+        [
+          "tc Particular-0018",
+          1.1,
+          "Enable air resistance before turbulence and keep the flow controlled."
+        ],
+        [
+          "tc Particular-0711",
+          16,
+          "Add mild organic drift so the upper stream evolves between frames."
+        ],
+        [
+          "tc Particular-0715",
+          115,
+          "Use medium-scale turbulence for graceful bends rather than noisy jitter."
+        ],
+        [
+          "tc Particular-0716",
+          2,
+          "Keep turbulence simple and clean."
+        ],
+        [
+          "tc Particular-0088",
+          1,
+          "Set color at birth so the authored cyan color is used."
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.08,
+            0.92,
+            0.82,
+            1
+          ],
+          "Use a vivid mint-cyan instead of default blue for a contemporary tech palette."
+        ],
+        [
+          "tc Particular-0215",
+          230,
+          "Give each particle a controlled electronic halo."
+        ],
+        [
+          "tc Particular-0216",
+          45,
+          "Keep the particle glow subtle enough for background use."
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0581",
+          "var p=time%6;[linear(p,0,6,-90,1370),150+52*Math.sin(p*2.15),0];",
+          "Sweep the emitter across the upper third to continuously write a flowing cyan data ribbon."
+        ]
+      ]
+    },
+    {
+      "matchName": "tc Particular",
+      "params": [
+        [
+          "tc Particular-0782",
+          1,
+          "A second point emitter creates a complementary lower data stream without filling the center."
+        ],
+        [
+          "tc Particular-0146",
+          48,
+          "Lower density makes this a quiet accent beneath the primary cyan stream."
+        ],
+        [
+          "tc Particular-0011",
+          14,
+          "Slow movement produces a stable, premium background rhythm."
+        ],
+        [
+          "tc Particular-0113",
+          4,
+          "Disc emission keeps the lower particles aligned as a slender stream."
+        ],
+        [
+          "tc Particular-0010",
+          14,
+          "Limit spread to retain a crisp technical geometry."
+        ],
+        [
+          "tc Particular-0002",
+          5.8,
+          "Long-lived particles form a smooth lower-edge trail."
+        ],
+        [
+          "tc Particular-0027",
+          2.4,
+          "Slightly smaller particles establish depth behind the main stream."
+        ],
+        [
+          "tc Particular-0074",
+          60,
+          "Natural point-size variation adds dimensionality."
+        ],
+        [
+          "tc Particular-0033",
+          55,
+          "Lower opacity keeps this violet layer secondary."
+        ],
+        [
+          "tc Particular-0075",
+          62,
+          "Gentle stochastic flicker suggests transmitted data."
+        ],
+        [
+          "tc Particular-0703",
+          2,
+          "Use luminous glow spheres for visual cohesion."
+        ],
+        [
+          "tc Particular-0069",
+          2,
+          "Additive compositing preserves a clean neon-light look."
+        ],
+        [
+          "tc Particular-0018",
+          1,
+          "Enable controlled turbulence."
+        ],
+        [
+          "tc Particular-0711",
+          12,
+          "Introduce a small flowing deviation between frames."
+        ],
+        [
+          "tc Particular-0715",
+          150,
+          "Broader turbulence creates a slow elegant undulation."
+        ],
+        [
+          "tc Particular-0716",
+          2,
+          "Avoid visual noise in the lower accent."
+        ],
+        [
+          "tc Particular-0088",
+          1,
+          "Set color at birth before applying the violet accent color."
+        ],
+        [
+          "tc Particular-0070",
+          [
+            0.42,
+            0.3,
+            1,
+            1
+          ],
+          "Add a restrained ultraviolet accent that complements the cyan without becoming default-blue."
+        ],
+        [
+          "tc Particular-0215",
+          180,
+          "Provide a tighter halo than the primary stream for depth separation."
+        ],
+        [
+          "tc Particular-0216",
+          32,
+          "Keep the secondary glow quiet."
+        ]
+      ],
+      "expressions": [
+        [
+          "tc Particular-0581",
+          "var p=time%6;[linear(p,0,6,1370,-90),570+42*Math.sin(p*1.8+1.4),0];",
+          "Send a violet stream in the opposite direction along the lower third, framing a clear central title-safe area."
+        ]
+      ]
+    },
+    {
+      "matchName": "PEDG",
+      "params": [
+        [
+          "PEDG-0004",
+          35,
+          "Restrict bloom mostly to the luminous particle highlights so the navy background stays crisp."
+        ],
+        [
+          "PEDG-0005",
+          45,
+          "Feather the glow threshold for smooth premium halos."
+        ],
+        [
+          "PEDG-0002",
+          1.15,
+          "Add restrained HDR bloom rather than an overpowering haze."
+        ],
+        [
+          "PEDG-0001",
+          185,
+          "Create a soft shared light atmosphere around the two particle streams."
+        ],
+        [
+          "PEDG-0024",
+          100,
+          "Retain the sharp particle cores beneath the bloom."
+        ]
+      ],
+      "expressions": []
+    }
+  ],
+  "renderFrames": [
+    1,
+    4
+  ],
+  "_rationale": "Two counter-flowing, color-separated Particular passes create recognizable animated data streams while deliberately leaving the center calm for usable background space. Highlight-only Deep Glow unifies the cyan and ultraviolet particles into a polished futuristic light field without washing out the dark navy palette.",
+  "_planner": {
+    "model": "gpt-5.6-terra",
+    "date": "2026-07-19"
+  },
+  "pass_criteria": [
+    "coherent, polished particle background (no debug look, no default-blue accident)",
+    "reads as 'tech' (e.g. grids, data streams, clean geometry, cool palette — planner's taste)",
+    "usable as a background: not overpowering, decent negative space",
+    "motion present between frames"
+  ]
+}
