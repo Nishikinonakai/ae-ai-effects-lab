@@ -25,7 +25,7 @@
       "params": [
         [
           "BCC_TEXTURES-1001",
-          38,
+          55,
           "以中等强度叠加细密纹理，形成清晰可见的老胶片颗粒"
         ],
         [
@@ -67,7 +67,7 @@
         ],
         [
           "BCC4Damaged TV-8192025",
-          48,
+          62,
           "将全画面灰阶云雾充分转换为怀旧色调"
         ],
         [
@@ -108,7 +108,7 @@
         ],
         [
           "PEDG-0002",
-          0.38,
+          0.2,
           "维持克制的柔光，避免吞没纹理颗粒"
         ]
       ],
@@ -142,17 +142,24 @@
       "applied": [
         {
           "type": "param",
-          "effect": "BCC4Damaged TV",
-          "matchName": "BCC4Damaged TV-8192021",
-          "value": 0,
-          "why": "关闭该效果残留的雪花/损坏电视干扰，避免竖向波纹和水平暗带继续压过柔和云雾主体；细颗粒可由BCC_TEXTURES保留。"
+          "effect": "PEDG",
+          "matchName": "PEDG-0002",
+          "value": 0.2,
+          "why": "降低全画面辉光覆盖，保留云雾柔和度的同时让细颗粒更容易被看见。"
+        },
+        {
+          "type": "param",
+          "effect": "BCC_TEXTURES",
+          "matchName": "BCC_TEXTURES-1001",
+          "value": 55,
+          "why": "提高纹理混合强度，使胶片颗粒在降低辉光后能清晰读取。"
         },
         {
           "type": "param",
           "effect": "BCC4Damaged TV",
-          "matchName": "BCC4Damaged TV-8192025",
-          "value": 48,
-          "why": "略减弱过重的褐色染色，使底层明暗云雾更接近可辨识的柔和灰阶，同时仍保留整体偏褐的旧胶片色调。"
+          "matchName": "BCC4Damaged TV-8192021",
+          "value": 0,
+          "why": "移除该受损电视效果带来的明显信号式横向和边缘波纹倾向，避免其压过旧胶片云雾主体。"
         }
       ],
       "skipped": []

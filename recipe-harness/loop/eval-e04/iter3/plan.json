@@ -25,7 +25,7 @@
       "params": [
         [
           "BCC_TEXTURES-1001",
-          24,
+          18,
           "以中等强度叠加细密纹理，形成清晰可见的老胶片颗粒"
         ],
         [
@@ -62,12 +62,12 @@
         ],
         [
           "BCC4Damaged TV-8192021",
-          0,
+          8,
           "补充轻微模拟胶片雪花噪点"
         ],
         [
           "BCC4Damaged TV-8192025",
-          48,
+          62,
           "将全画面灰阶云雾充分转换为怀旧色调"
         ],
         [
@@ -93,7 +93,7 @@
       "params": [
         [
           "PEDG-0001",
-          380,
+          650,
           "用宽半径将云雾边缘进一步柔化成朦胧底图"
         ],
         [
@@ -108,7 +108,7 @@
         ],
         [
           "PEDG-0002",
-          0.26,
+          0.38,
           "维持克制的柔光，避免吞没纹理颗粒"
         ]
       ],
@@ -119,6 +119,17 @@
           "缓慢且轻微地改变全画面柔光亮度，模拟老胶片在 t1 与 t4 的曝光闪烁"
         ]
       ]
+    },
+    {
+      "matchName": "ADBE Noise",
+      "params": [
+        [
+          "ADBE Noise-0001",
+          7,
+          "以低量全幅单色噪点补充均匀细颗粒"
+        ]
+      ],
+      "expressions": []
     }
   ],
   "renderFrames": [
@@ -138,48 +149,26 @@
   ],
   "_loop_history": [
     {
-      "for_iter": 2,
-      "applied": [
-        {
-          "type": "param",
-          "effect": "BCC4Damaged TV",
-          "matchName": "BCC4Damaged TV-8192021",
-          "value": 0,
-          "why": "关闭该效果残留的雪花/损坏电视干扰，避免竖向波纹和水平暗带继续压过柔和云雾主体；细颗粒可由BCC_TEXTURES保留。"
-        },
-        {
-          "type": "param",
-          "effect": "BCC4Damaged TV",
-          "matchName": "BCC4Damaged TV-8192025",
-          "value": 48,
-          "why": "略减弱过重的褐色染色，使底层明暗云雾更接近可辨识的柔和灰阶，同时仍保留整体偏褐的旧胶片色调。"
-        }
-      ],
-      "skipped": []
-    },
-    {
       "for_iter": 3,
       "applied": [
         {
           "type": "param",
           "effect": "BCC_TEXTURES",
           "matchName": "BCC_TEXTURES-1001",
-          "value": 24,
-          "why": "降低叠加纹理强度，减少云雾被纹理压成脏块的感觉，让柔和的灰阶云雾底图重新成为主体。"
+          "value": 18,
+          "why": "显著降低中央纹理块的覆盖强度，减弱画面中部矩形边缘和大块脏纹，使云雾底图不再被局部纹理层切割。"
         },
         {
-          "type": "param",
-          "effect": "PEDG",
-          "matchName": "PEDG-0001",
-          "value": 380,
-          "why": "缩小过大的辉光半径，避免全画面被过度抹开，同时保留更易辨认的细碎颗粒。"
-        },
-        {
-          "type": "param",
-          "effect": "PEDG",
-          "matchName": "PEDG-0002",
-          "value": 0.26,
-          "why": "降低基础柔光强度，使云雾保持柔和但不掩盖胶片颗粒；现有亮度表达式仍可提供轻微闪烁。"
+          "type": "effect",
+          "matchName": "ADBE Noise",
+          "params": [
+            [
+              "ADBE Noise-0001",
+              7,
+              "以低量全幅单色噪点补充均匀细颗粒"
+            ]
+          ],
+          "why": "在整个画面上建立均匀、细小的胶片颗粒，避免只依赖当前中央区域明显而边缘较弱的纹理覆盖。"
         }
       ],
       "skipped": []

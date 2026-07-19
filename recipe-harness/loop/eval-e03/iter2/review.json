@@ -1,21 +1,33 @@
 {
   "verdict": "fail",
-  "score": 3,
-  "critique": "The frame is appropriately dark and within a deep violet palette, with no obvious hard emitter edge visible. However, the nebula itself is nearly imperceptible: there is only extremely faint, mostly uniform purple shading rather than readable soft cloud masses filling the composition. No meaningful layered gaseous structure or close-inspection grain is visible at this brightness. Only a t1 frame is present here, so evolution from t1 to t4 cannot be verified.",
+  "score": 7,
+  "critique": "暗紫/紫罗兰色盘、全画幅柔软无硬边的云雾感和颗粒均已具备，且t1到t4的云团位置与形态有明确变化。问题是时间一致性不够稳定：t1整体过于接近均匀的近黑紫色，仅有很弱的右侧和左下云雾；t4则出现了清晰而较亮的大尺度环状云团，亮度和结构对比明显高于t1，演化更像从几乎无云到强云的跳变，而非持续缓慢的暗背景星云。t4的颗粒也略偏显眼，接近噪点纹理而不只是近看可见的细微颗粒。",
   "suggestions": [
     {
       "type": "param",
-      "effect": "tc Particular",
-      "matchName": "tc Particular-0033",
-      "value": 7,
-      "why": "Raise the very low particle brightness/opacity enough to reveal the existing oversized glow-sphere cloud structure while retaining a dark background-grade result."
+      "effect": "ADBE Fractal Noise",
+      "matchName": "ADBE Fractal Noise-0004",
+      "value": 205,
+      "why": "提高基础云雾的明暗分离，使t1中原本过弱的大尺度云团也能保持可辨识的柔和层次。"
     },
     {
       "type": "param",
-      "effect": "BCC_TEXTURES",
-      "matchName": "BCC_TEXTURES-1001",
-      "value": 24,
-      "why": "Make the fine texture perceptible on close inspection once the cloud field is visible, without turning it into dominant coarse noise."
+      "effect": "ADBE Tint",
+      "matchName": "ADBE Tint-0002",
+      "value": [
+        0.23,
+        0.05,
+        0.36,
+        1
+      ],
+      "why": "压低亮部紫罗兰映射，抑制t4过亮、过饱和的云团，同时保留暗紫背景级整体亮度。"
+    },
+    {
+      "type": "param",
+      "effect": "ADBE Noise HLS Auto2",
+      "matchName": "ADBE Noise HLS Auto2-0003",
+      "value": 5,
+      "why": "将当前较明显的亮度噪点收敛为仅在近看时可见的细腻颗粒，避免颗粒削弱云雾的柔软感。"
     }
   ],
   "_backend": "gpt-api:gpt-5.6-terra"

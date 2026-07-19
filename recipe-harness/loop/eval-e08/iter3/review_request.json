@@ -20,7 +20,7 @@
         "params": [
           [
             "BCC4Damaged TV-8192008",
-            30,
+            10,
             "适中的信号损坏让抽象纹理产生可控的电视故障撕裂。"
           ],
           [
@@ -46,7 +46,7 @@
           [
             "BCC4Damaged TV-8192032",
             [
-              12,
+              16,
               0
             ],
             "将红色枪口向右错位，制造清晰红色边缘。"
@@ -62,7 +62,7 @@
           [
             "BCC4Damaged TV-8192038",
             [
-              -12,
+              -16,
               0
             ],
             "将蓝色枪口向左错位，与红色形成明显RGB分离。"
@@ -95,7 +95,7 @@
           ],
           [
             "BCC_CAMERASHAKE-1000",
-            18,
+            16,
             "限制为细微的位置偏移，保持画面可读。"
           ],
           [
@@ -132,41 +132,10 @@
         "expressions": [
           [
             "BCC_CAMERASHAKE-1013",
-            "20 + 18*Math.sin(time*2.37)",
+            "34 + 28*Math.sin(time*7.5)",
             "让抖动幅度周期性呼吸，在不同采样秒数呈现不同的帧内容偏移。"
           ]
         ]
-      },
-      {
-        "matchName": "ADBE Tint",
-        "params": [
-          [
-            "ADBE Tint-0001",
-            [
-              0.03,
-              0.08,
-              0.8,
-              1
-            ],
-            "将暗部映射为高饱和蓝色，建立彩色抽象底图。"
-          ],
-          [
-            "ADBE Tint-0002",
-            [
-              1,
-              0.08,
-              0.32,
-              1
-            ],
-            "将亮部映射为洋红红色，使灰阶噪波变为鲜明彩色纹理。"
-          ],
-          [
-            "ADBE Tint-0003",
-            82,
-            "完全应用双色映射，避免底图仍然呈灰阶。"
-          ]
-        ],
-        "expressions": []
       }
     ],
     "camera": null,
@@ -187,15 +156,15 @@
   "prior_iterations": [
     {
       "iter": 1,
-      "score": 3,
+      "score": 4,
       "verdict": "fail",
-      "critique": "画面具有横向扫描线、局部撕裂和极弱的红蓝边缘，但整体几乎完全是灰阶，未呈现“彩色抽象底图”。右侧云状纹理与左侧条纹区域在两张采样帧中基本一致，未能看出明确的周期性画面偏移或轻微抖动。当前大面积规则的灰色分区更像渲染/信号异常，而非可辨识的、有意设计的彩色RGB故障风格。"
+      "critique": "画面保留了紫红、蓝紫的彩色抽象底图，并有横向扫描线与信号纹理，因此不是灰阶，也具备一定刻意的CRT故障风格。但两个采样帧的构图、右侧竖向条纹和纹理位置几乎完全一致，没有可辨识的帧间抖动或内容偏移。RGB分离也不够清晰：画面主要是整体紫/洋红混色，没有在纹理、条纹或边界上读到明确独立的红、绿、蓝色边缘。右侧从约半幅开始的硬竖向分界与重复条纹较像渲染/处理接缝，削弱了“受控信号故障”的观感。"
     },
     {
       "iter": 2,
       "score": 5,
       "verdict": "fail",
-      "critique": "彩色底图已明显改善：画面具有饱和的蓝紫、洋红色抽象纹理，横向扫描线和分区撕裂也能读作电视信号故障，而非单纯灰阶渲染错误。但 t1 与 t4 的云状区域、左侧条纹及整体构图几乎完全重合，未见可确认的帧间抖动或内容偏移。当前颜色主要是整体双色调映射，边缘没有清晰可辨的红/绿/蓝通道错位细边；Tint 置于故障与 RGB 枪口偏移之后，基本压平了原有的通道差异。"
+      "critique": "彩色底图与横向CRT扫描线清晰可见，紫红和蓝紫纹理也使画面保持彩色，并非灰阶；整体有一定人为设计的电视信号风格。但t1与t4的主要构图、右侧竖条、横线及纹理位置几乎一致，未读到足够明确的帧间整体偏移/抖动。RGB错位仍主要表现为紫红混色，没有在横线、右侧竖条或画面分界处看到可分辨的红/绿/蓝独立彩边。画面中央偏右的硬性竖直切分和其后的规则重复竖条依然像处理接缝，削弱了受控故障效果。"
     }
   ],
   "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."

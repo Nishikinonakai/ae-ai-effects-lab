@@ -20,7 +20,7 @@
         "params": [
           [
             "BCC_TEXTURES-1001",
-            24,
+            18,
             "以中等强度叠加细密纹理，形成清晰可见的老胶片颗粒"
           ],
           [
@@ -57,12 +57,12 @@
           ],
           [
             "BCC4Damaged TV-8192021",
-            0,
+            8,
             "补充轻微模拟胶片雪花噪点"
           ],
           [
             "BCC4Damaged TV-8192025",
-            48,
+            62,
             "将全画面灰阶云雾充分转换为怀旧色调"
           ],
           [
@@ -88,7 +88,7 @@
         "params": [
           [
             "PEDG-0001",
-            380,
+            650,
             "用宽半径将云雾边缘进一步柔化成朦胧底图"
           ],
           [
@@ -103,7 +103,7 @@
           ],
           [
             "PEDG-0002",
-            0.26,
+            0.38,
             "维持克制的柔光，避免吞没纹理颗粒"
           ]
         ],
@@ -114,6 +114,17 @@
             "缓慢且轻微地改变全画面柔光亮度，模拟老胶片在 t1 与 t4 的曝光闪烁"
           ]
         ]
+      },
+      {
+        "matchName": "ADBE Noise",
+        "params": [
+          [
+            "ADBE Noise-0001",
+            7,
+            "以低量全幅单色噪点补充均匀细颗粒"
+          ]
+        ],
+        "expressions": []
       }
     ],
     "camera": null,
@@ -134,15 +145,15 @@
   "prior_iterations": [
     {
       "iter": 1,
-      "score": 5,
+      "score": 6,
       "verdict": "fail",
-      "critique": "整体褐色色调和云雾状底图已经成立，画面中也有可见的细碎噪点质感。但云雾被明显的电视损坏式波纹破坏：左侧有强烈连续的竖向锯齿扭曲，画面下部还有一条突兀的水平暗带，不像克制的老胶片颗粒，而更像模拟信号故障。颗粒与云雾局部混成较脏的块状纹理，灰阶柔和感不足。仅提供了t1画面，无法确认t1与t4之间是否存在恰当的轻微亮度闪烁。"
+      "critique": "整体偏褐色调和柔和的云雾明暗底图已经成立，t4相较t1也有可见但不过分的亮度变化。问题是画面目前更像受损电视信号：左侧持续的粗亮波纹、底部及中部的横向分界/扭曲非常显眼，干扰了抽象云雾背景。细密胶片颗粒不够清晰，主要被较重的柔光和大尺度的纹理起伏吞没。"
     },
     {
       "iter": 2,
-      "score": 5,
+      "score": 4,
       "verdict": "fail",
-      "critique": "整体偏褐色调已经稳定覆盖全画面，云雾状明暗底图也可读；t4相较t1略亮，存在可感知但不过分的曝光闪烁。然而画面左侧持续出现强烈的多重竖向波浪扭曲，底部还有明显水平分界暗带，仍然像电视信号损坏而非老胶片。当前颗粒也被大面积柔化和云雾纹理吞没，细密胶片颗粒不够清晰，整体质感偏脏、偏水波纹。"
+      "critique": "偏褐色调和柔和的云雾明暗仍然可读，但画面依旧明显像受损电视信号而非干净的老胶片抽象背景：左侧有连续的粗亮蛇形波纹，画面中部与下方有很清晰的横向分界和矩形区域边缘。颗粒主要集中在中央矩形内，导致纹理覆盖不均，也强化了拼贴/故障块感。当前可见帧中的颗粒有一定存在感，但需要更均匀的全幅细颗粒；亮度闪烁无法仅凭所示单帧确认。"
     }
   ],
   "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."

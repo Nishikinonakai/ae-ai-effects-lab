@@ -1,35 +1,21 @@
 {
   "verdict": "fail",
-  "score": 3,
-  "critique": "The palette is violet, but the result is far too bright and saturated for a dark background-grade nebula, especially at t4 where most of the frame becomes electric purple. The cloud field has a clearly visible rectangular emitter boundary across the upper area and at the side edges, which breaks the no-hard-edges requirement. Within that rectangle the image is largely smooth and uniform rather than showing layered, cloud-like nebula structure; grain is only barely perceptible. Between t1 and t4 there is substantial overall brightening, but little readable internal morphing or drifting structure.",
+  "score": 6,
+  "critique": "画面具备暗紫/紫罗兰色盘，整体亮度保持在背景级，细密颗粒也清晰可见且没有硬边。但云雾主体的明暗分离过弱：大部分画面接近均匀的暗紫噪点，只能隐约看见右侧与左下的柔和区域，缺少足够可辨识、覆盖全幅的星云状云团层次。提供的画面中未见t4帧，因此无法确认t1至t4之间是否存在明确的结构漂移或形变。",
   "suggestions": [
     {
       "type": "param",
-      "effect": "tc Particular",
-      "matchName": "tc Particular-0014",
-      "value": 2400,
-      "why": "Expand the Box emission volume well beyond the composition so its rectangular boundaries fall outside frame."
+      "effect": "ADBE Fractal Noise",
+      "matchName": "ADBE Fractal Noise-0004",
+      "value": 175,
+      "why": "提高分形云层的明暗层次，使柔和的大尺度星云结构从当前近乎均匀的暗紫底中显现。"
     },
     {
       "type": "param",
-      "effect": "tc Particular",
-      "matchName": "tc Particular-0033",
-      "value": 2,
-      "why": "Reduce particle opacity substantially so additive accumulation remains dark violet instead of blooming into bright magenta."
-    },
-    {
-      "type": "param",
-      "effect": "tc Particular",
-      "matchName": "tc Particular-0146",
-      "value": 95,
-      "why": "Lower emission density to prevent the field from progressively filling into a flat, overbright solid color at later times."
-    },
-    {
-      "type": "param",
-      "effect": "tc Particular",
-      "matchName": "tc Particular-0711",
-      "value": 65,
-      "why": "Increase broad turbulent displacement so the visible density develops more distinct slow-moving gaseous variations rather than mainly changing overall brightness."
+      "effect": "ADBE Fractal Noise",
+      "matchName": "ADBE Fractal Noise-0005",
+      "value": -10,
+      "why": "在仍保持整体暗调的前提下略微抬升云团中间调，让紫色云雾可见而不变成明亮背景。"
     }
   ],
   "_backend": "gpt-api:gpt-5.6-terra"

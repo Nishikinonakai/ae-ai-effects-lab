@@ -9,156 +9,210 @@
     "duration": 6
   },
   "background": [
-    0.025,
     0.008,
-    0.06
+    0.003,
+    0.018
   ],
   "hostName": "Artwork",
   "effects": [
     {
-      "matchName": "tc Particular",
+      "matchName": "ADBE Fractal Noise",
       "params": [
         [
-          "tc Particular-0782",
-          2,
-          "Use a wide Box emitter so the soft particle volume spans the composition."
-        ],
-        [
-          "tc Particular-0014",
-          1600,
-          "Make the emission volume broad enough to avoid a localized cloud with visible boundaries."
-        ],
-        [
-          "tc Particular-0146",
-          150,
-          "Build a dense but still diffuse atmospheric field."
-        ],
-        [
-          "tc Particular-0011",
-          9,
-          "Keep particle travel slow for a drifting nebula rather than a particle burst."
-        ],
-        [
-          "tc Particular-0113",
+          "ADBE Fractal Noise-0001",
           1,
-          "Emit uniformly in all directions for amorphous cloud structure."
+          "柔和的分形云团基础"
         ],
         [
-          "tc Particular-0002",
-          12,
-          "Keep particles alive long enough for a continuous fog-like volume."
+          "ADBE Fractal Noise-0004",
+          135,
+          "保持云雾边缘柔软而具层次"
         ],
         [
-          "tc Particular-0703",
-          2,
-          "Use Glow Sphere particles to merge into soft cloud masses."
+          "ADBE Fractal Noise-0005",
+          -18,
+          "压低整体亮度，作为深色背景"
         ],
         [
-          "tc Particular-0027",
-          300,
-          "Use oversized soft particles so individual dots fuse into nebula forms."
+          "ADBE Fractal Noise-0010",
+          275,
+          "生成覆盖全画幅的大尺度星云结构"
         ],
         [
-          "tc Particular-0074",
-          65,
-          "Vary particle sizes to prevent regular-looking blobs."
+          "ADBE Fractal Noise-0015",
+          6,
+          "加入适量多尺度云雾细节"
         ],
         [
-          "tc Particular-0033",
-          7,
-          "Keep each particle dim so the overall result remains a dark background-grade violet."
+          "ADBE Fractal Noise-0017",
+          48,
+          "保留柔和主体并避免噪声过碎"
         ],
         [
-          "tc Particular-0075",
-          35,
-          "Introduce restrained opacity variation for organic mottling."
-        ],
-        [
-          "tc Particular-0088",
-          1,
-          "Set Color to At Birth before assigning the violet particle color."
-        ],
-        [
-          "tc Particular-0070",
-          [
-            0.29,
-            0.07,
-            0.58,
-            1
-          ],
-          "Color the luminous fog a deep violet rather than bright white."
-        ],
-        [
-          "tc Particular-0069",
-          2,
-          "Additively blend the dim glow spheres into soft nebula density."
-        ],
-        [
-          "tc Particular-0018",
-          0.7,
-          "Enable air resistance before turbulence so turbulent motion affects the cloud."
-        ],
-        [
-          "tc Particular-0711",
-          42,
-          "Gently displace particles with turbulence to morph the cloud structure over time."
-        ],
-        [
-          "tc Particular-0715",
-          260,
-          "Use large turbulence features for broad gaseous curls instead of fine jitter."
-        ],
-        [
-          "tc Particular-0716",
-          3,
-          "Add enough turbulence detail for layered cloud variation."
-        ],
-        [
-          "tc Particular-0035",
-          2,
-          "Enable modest motion blur to keep moving cloud particles smooth."
-        ],
-        [
-          "tc Particular-0036",
-          180,
-          "Use a natural shutter angle that does not smear the soft texture excessively."
+          "ADBE Fractal Noise-0029",
+          100,
+          "让程序云层完整填满画面"
         ]
       ],
       "expressions": [
         [
-          "tc Particular-0581",
-          "[thisComp.width/2 + Math.sin(time*0.18)*150, thisComp.height/2 + Math.cos(time*0.14)*85, 0]",
-          "Slowly drift the emitting cloud mass across the frame so t1 and t4 visibly evolve."
+          "ADBE Fractal Noise-0013",
+          "[640 + time*22, 360 + time*9]",
+          "缓慢横向漂移星云采样区域"
+        ],
+        [
+          "ADBE Fractal Noise-0023",
+          "time*24",
+          "缓慢改变云团内部形态，使第1秒与第4秒显著演化"
         ]
       ]
     },
     {
-      "matchName": "BCC_TEXTURES",
+      "matchName": "ADBE Tint",
       "params": [
         [
-          "BCC_TEXTURES-1001",
-          14,
-          "Add only a restrained surface grain so the cloud remains soft and dominant."
+          "ADBE Tint-0001",
+          [
+            0.018,
+            0.004,
+            0.045,
+            1
+          ],
+          "将暗部映射为近黑暗紫"
         ],
         [
-          "BCC_TEXTURES-1002",
-          18,
-          "Increase fine texture detail for subtle close-inspection particle character."
+          "ADBE Tint-0002",
+          [
+            0.31,
+            0.075,
+            0.48,
+            1
+          ],
+          "将亮部映射为低亮度紫罗兰云光"
         ],
         [
-          "BCC_TEXTURES-1018",
+          "ADBE Tint-0003",
+          100,
+          "统一形成暗紫双色星云色盘"
+        ],
+        [
+          "ADBE Effect Mask Opacity",
+          100,
+          "保留完整紫色调色结果"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Turbulent Displace",
+      "params": [
+        [
+          "ADBE Turbulent Displace-0001",
+          1,
+          "使用自然湍流置换模式"
+        ],
+        [
+          "ADBE Turbulent Displace-0002",
+          22,
+          "仅轻微扭曲，避免产生硬边或液态夸张感"
+        ],
+        [
+          "ADBE Turbulent Displace-0003",
+          310,
+          "维持宽广、云雾尺度的流动"
+        ],
+        [
+          "ADBE Turbulent Displace-0005",
+          2,
+          "加入少量不规则层次"
+        ],
+        [
+          "ADBE Effect Mask Opacity",
+          75,
+          "让柔和原始云团仍占主导"
+        ]
+      ],
+      "expressions": [
+        [
+          "ADBE Turbulent Displace-0004",
+          "[640 + time*14, 360 - time*6]",
+          "缓慢推动湍流场穿过星云"
+        ],
+        [
+          "ADBE Turbulent Displace-0006",
+          "time*18",
+          "令云雾在缓慢漂移外持续细微变形"
+        ]
+      ]
+    },
+    {
+      "matchName": "PEDG",
+      "params": [
+        [
+          "PEDG-0002",
+          0.65,
+          "给较亮的紫色云团增加克制的柔光"
+        ],
+        [
+          "PEDG-0001",
+          420,
+          "使云光形成宽阔柔和的星云晕染"
+        ],
+        [
+          "PEDG-0004",
+          42,
+          "只让较亮区域产生辉光，保持整体暗调"
+        ],
+        [
+          "PEDG-0005",
+          45,
+          "平滑辉光阈值过渡，消除硬轮廓"
+        ],
+        [
+          "PEDG-0024",
+          100,
+          "保留云层主体细节"
+        ]
+      ],
+      "expressions": []
+    },
+    {
+      "matchName": "ADBE Noise HLS Auto2",
+      "params": [
+        [
+          "ADBE Noise HLS Auto2-0001",
+          1,
+          "使用细腻随机噪点模式"
+        ],
+        [
+          "ADBE Noise HLS Auto2-0002",
+          2,
+          "仅加入极轻微紫色色相颗粒"
+        ],
+        [
+          "ADBE Noise HLS Auto2-0003",
+          10,
+          "提供近看可见但不抢眼的亮度颗粒"
+        ],
+        [
+          "ADBE Noise HLS Auto2-0004",
+          5,
+          "使颗粒有少量色彩变化"
+        ],
+        [
+          "ADBE Noise HLS Auto2-0005",
+          1,
+          "保持细小胶片般颗粒尺度"
+        ],
+        [
+          "ADBE Noise HLS Auto2-0006",
+          12,
+          "让颗粒缓慢活动而非闪烁"
+        ],
+        [
+          "ADBE Effect Mask Opacity",
           60,
-          "Use a tight texture scale so the texture reads as grain rather than paper."
-        ],
-        [
-          "BCC_TEXTURES-1019",
-          60,
-          "Keep the grain scale even in both dimensions."
-        ],
-        [
-          "BCC_TEXTURES-1003",
-          31,
-          "Choose a non-default texture variation to avoid a generic repeating pattern."
+          "将颗粒压至背景级的微妙程度"
         ]
       ],
       "expressions": []
@@ -168,7 +222,7 @@
     1,
     4
   ],
-  "_rationale": "A dense field of large, low-opacity violet Glow Sphere particles accumulates into soft, edge-free nebula clouds over the near-black purple background. Low velocity, broad turbulence, and a slow emitter drift provide visible four-second structural evolution, while a low-strength fine BCC texture supplies the requested restrained grain.",
+  "_rationale": "分形噪波提供全画幅、没有硬边的大尺度云雾主体，深紫 Tint 与克制的 Deep Glow 将其塑造成暗紫星云。湍流置换和分形演化共同保证第1秒到第4秒的缓慢形变，末端低强度 HLS 噪波只留下近看可见的细颗粒。",
   "_planner": {
     "model": "gpt-5.6-terra",
     "date": "2026-07-19"

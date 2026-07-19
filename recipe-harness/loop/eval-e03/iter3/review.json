@@ -1,28 +1,26 @@
 {
   "verdict": "fail",
-  "score": 3,
-  "critique": "The violet palette and faint fine texture are present, and the frames do differ substantially in brightness. However, the visible volume still reads as a large rectangular emitter region with a distinct horizontal top boundary, especially at t4. The t4 image is much too bright and saturated for a dark background-grade nebula. Inside the volume, the result remains mostly smooth and uniform rather than layered, amorphous gaseous cloud forms; the change from t1 to t4 reads primarily as particle accumulation/brightening rather than readable internal morphing.",
+  "score": 7,
+  "critique": "t1具备暗紫/紫罗兰色盘、全幅无硬边的柔和雾状底纹，整体亮度也维持在背景级；细微颗粒存在但未过分抢眼。不过当前t1的云雾明暗层次仍偏弱，画面主体接近均匀近黑紫，只有左下和中右可辨识到非常微弱的宽广云带，星云结构不够清晰。所给内容未包含可见的t4画面，无法确认本轮是否已消除此前从弱云到强环状云的亮度跳变问题。",
   "suggestions": [
     {
       "type": "param",
-      "effect": "tc Particular",
-      "matchName": "tc Particular-0002",
-      "value": 4,
-      "why": "Shorten particle lifetime to prevent the large accumulated bright rectangular volume seen at t4 and keep the overall background luminance dark."
+      "effect": "ADBE Tint",
+      "matchName": "ADBE Tint-0002",
+      "value": [
+        0.27,
+        0.06,
+        0.42,
+        1
+      ],
+      "why": "适度抬高云团亮部的紫罗兰映射，使现有大尺度柔和云带在t1也保持可辨识的明暗分离，同时仍维持暗背景级亮度。"
     },
     {
-      "type": "param",
-      "effect": "tc Particular",
-      "matchName": "tc Particular-0711",
-      "value": 140,
-      "why": "Increase turbulence displacement so the particle field breaks up into visibly evolving cloud masses instead of retaining the emitter-shaped volume."
-    },
-    {
-      "type": "param",
-      "effect": "tc Particular",
-      "matchName": "tc Particular-0715",
-      "value": 150,
-      "why": "Use moderately smaller turbulence features to introduce layered nebula variation and reduce the broad uniform rectangular appearance."
+      "type": "expression",
+      "effect": "ADBE Fractal Noise",
+      "matchName": "ADBE Fractal Noise-0023",
+      "expression": "time*8",
+      "why": "显著降低Evolution推进速度，避免短时间内采样到截然不同的分形状态，从而让t1至t4呈现连续缓慢的云雾形变而非强弱跳变。"
     }
   ],
   "_backend": "gpt-api:gpt-5.6-terra"

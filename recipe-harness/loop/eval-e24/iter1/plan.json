@@ -9,43 +9,153 @@
     "duration": 6
   },
   "background": [
-    0.91,
-    0.86,
-    0.74
+    0.94,
+    0.88,
+    0.72
   ],
   "hostName": "Artwork",
   "effects": [
     {
       "matchName": "ADBE Fractal Noise",
-      "params": [],
-      "expressions": []
+      "params": [
+        [
+          "ADBE Fractal Noise-0001",
+          1,
+          "Use a stable broad fractal field as the abstract source artwork"
+        ],
+        [
+          "ADBE Fractal Noise-0004",
+          520,
+          "Create strong light-dark separation before geometric simplification"
+        ],
+        [
+          "ADBE Fractal Noise-0005",
+          -18,
+          "Bias the field toward substantial deep-blue shadow areas"
+        ],
+        [
+          "ADBE Fractal Noise-0010",
+          235,
+          "Keep the source structures broad enough to become readable poster blocks"
+        ],
+        [
+          "ADBE Fractal Noise-0015",
+          2,
+          "Limit fine detail so the base remains graphic rather than photographic"
+        ],
+        [
+          "ADBE Fractal Noise-0017",
+          28,
+          "Retain a little uneven print-like variation inside the larger forms"
+        ]
+      ]
     },
     {
       "matchName": "ADBE Mosaic",
-      "params": [],
-      "expressions": []
+      "params": [
+        [
+          "ADBE Mosaic-0001",
+          20,
+          "Divide the artwork into clear vertical geometric block columns"
+        ],
+        [
+          "ADBE Mosaic-0002",
+          11,
+          "Create a complementary set of broad horizontal block rows"
+        ],
+        [
+          "ADBE Mosaic-0003",
+          1,
+          "Force crisp hard-edged cells for a printed geometric-poster construction"
+        ],
+        [
+          "ADBE Effect Mask Opacity",
+          100,
+          "Apply the geometric reduction fully"
+        ]
+      ]
     },
     {
       "matchName": "ADBE Posterize",
-      "params": [],
-      "expressions": []
+      "params": [
+        [
+          "ADBE Posterize-0001",
+          3,
+          "Restrict the geometry to a bold limited-tone print structure"
+        ],
+        [
+          "ADBE Effect Mask Opacity",
+          100,
+          "Keep the graphic tonal banding fully visible"
+        ]
+      ]
     },
     {
       "matchName": "ADBE Emboss",
-      "params": [],
-      "expressions": []
+      "params": [
+        [
+          "ADBE Emboss-0001",
+          135,
+          "Light the printed relief from upper-left for coherent stamped edges"
+        ],
+        [
+          "ADBE Emboss-0002",
+          11,
+          "Make block boundaries visibly raised and carved without destroying their silhouettes"
+        ],
+        [
+          "ADBE Emboss-0003",
+          175,
+          "Give the relief lines crisp ink-and-paper contrast"
+        ],
+        [
+          "ADBE Emboss-0004",
+          22,
+          "Preserve enough of the poster block fill beneath the embossed ridge detail"
+        ]
+      ]
     },
     {
       "matchName": "ADBE Tint",
-      "params": [],
-      "expressions": []
+      "params": [
+        [
+          "ADBE Tint-0001",
+          [
+            0.02,
+            0.07,
+            0.18,
+            1
+          ],
+          "Map all dark ink and embossed shadows to deep navy blue"
+        ],
+        [
+          "ADBE Tint-0002",
+          [
+            0.94,
+            0.88,
+            0.72,
+            1
+          ],
+          "Map paper highlights and relief ridges to warm cream"
+        ],
+        [
+          "ADBE Tint-0003",
+          100,
+          "Enforce the deep-blue and cream duotone across the entire composition"
+        ],
+        [
+          "ADBE Effect Mask Opacity",
+          100,
+          "Prevent any original full-color source from leaking through"
+        ]
+      ]
     }
   ],
   "renderFrames": [
     1,
     4
   ],
-  "_rationale": "先用分形噪波生成可读的抽象块面，再经马赛克与色阶压缩成硬边的印刷几何构图。Emboss 在色调映射前刻出压印高光与阴影线，Tint 将整张图统一限制为深蓝与米白的复古双色海报语言。",
+  "_rationale": "Fractal Noise supplies a broad abstract field, while Mosaic and Posterize turn it into immediately readable hard-edged geometric print blocks. Emboss creates directional pressed-paper linework before Tint locks every resulting tone into a cohesive deep-navy and warm-cream poster palette.",
   "_planner": {
     "model": "gpt-5.6-terra",
     "date": "2026-07-19"

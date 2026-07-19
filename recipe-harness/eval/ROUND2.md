@@ -71,3 +71,41 @@ node recipe-harness/eval/run_eval.mjs --only=e03 --replan        # re-plan one p
 ```
 
 The ledger is append-only JSONL; the rollup recomputes from it, so an interrupted run just resumes.
+
+---
+
+## Follow-up: does breadth actually help? (same day, n=4)
+
+The 0/4 native result implied a fix — shallow essence cards for the native set — so the index went
+from 9 cards to 28 and the four native prompts were re-planned and re-run.
+
+| prompt | before | after | best |
+|---|---|---|---|
+| e03 nebula | `3 → 3 → 3` | `6 → 7 → 7` | 3 → **7** |
+| e04 old film | `5 → 5 → 4` | `6 → 4 → 5` | 5 → 6 |
+| e08 signal glitch | `3 → 5 → 6` | `4 → 5 → 5` | 6 → 5 |
+| e24 duotone poster | `3` (stalled) | `5 → 7 → 6` | 3 → **7** |
+
+**Pass rate: still 0/4.** Mean best score 4.25 → 6.25. So this is not a fix, and the cards should
+not be credited with one — nothing crossed the bar. What did change is worth recording:
+
+1. **The flat trajectories are gone.** `3 → 3 → 3` was a loop nudging params on a stack that could
+   never work. Every prompt now moves under tuning, which is the loop having something real to
+   work with.
+2. **The routing-bias hypothesis is confirmed.** e03 went from `tc Particular → BCC_TEXTURES` — a
+   particle system for a flowing nebula, chosen because Particular was the only effect with a
+   causal model — to `Fractal Noise → Tint → Turbulent Displace → Deep Glow → Noise HLS`. Give the
+   planner a causal model of the right family and it routes to the right family. The n=1 caution in
+   the section above is now resolved: **an index with uneven depth biases routing toward whatever
+   it knows deeply.**
+3. **e24 rediscovered the architecture round-1 found by hand** — Fractal Noise → Mosaic → Posterize
+   → Emboss → Tint, the binarize-before-emboss duotone relief — and scored 7. Round-1 reached 9/10
+   on that stack with hand-tuned params. The structure is now reachable headlessly; the parameter
+   values are not yet.
+
+Which sharpens the round-2 finding rather than overturning it: **structure is now mostly reachable;
+the gap is parameter values.** That is a different problem from "the planner picks the wrong stack",
+and it is much closer to what the visual loop is actually designed to close — so the next question
+is why the loop stalls at 5-7 instead of climbing, not why the plan is wrong.
+
+n=4, single run, no repeats. Treat the direction as real and the magnitude as noisy.

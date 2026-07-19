@@ -1,6 +1,6 @@
 {
   "status": "done",
-  "name": "eval-e24_i1",
+  "name": "eval-e24_i3",
   "params": [
     {
       "p": "[1:ADBE Fractal Noise] Use a stable broad fractal field as the abstract source artwork",
@@ -55,7 +55,7 @@
     {
       "p": "[3:ADBE Posterize] Restrict the geometry to a bold limited-tone print structure",
       "ok": true,
-      "v": "3"
+      "v": "2"
     },
     {
       "p": "[3:ADBE Posterize] Keep the graphic tonal banding fully visible",
@@ -70,17 +70,17 @@
     {
       "p": "[4:ADBE Emboss] Make block boundaries visibly raised and carved without destroying their silhouettes",
       "ok": true,
-      "v": "11"
+      "v": "3"
     },
     {
       "p": "[4:ADBE Emboss] Give the relief lines crisp ink-and-paper contrast",
       "ok": true,
-      "v": "175"
+      "v": "235"
     },
     {
       "p": "[4:ADBE Emboss] Preserve enough of the poster block fill beneath the embossed ridge detail",
       "ok": true,
-      "v": "22"
+      "v": "38"
     },
     {
       "p": "[5:ADBE Tint] Map all dark ink and embossed shadows to deep navy blue",
@@ -104,7 +104,7 @@
     }
   ],
   "frames": [
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e24/iter1/eval-e24_i1_t1.png",
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e24/iter1/eval-e24_i1_t4.png"
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e24/iter3/eval-e24_i3_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e24/iter3/eval-e24_i3_t4.png"
   ]
 }

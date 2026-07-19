@@ -25,7 +25,7 @@
       "params": [
         [
           "BCC4Damaged TV-8192008",
-          30,
+          10,
           "适中的信号损坏让抽象纹理产生可控的电视故障撕裂。"
         ],
         [
@@ -51,7 +51,7 @@
         [
           "BCC4Damaged TV-8192032",
           [
-            12,
+            16,
             0
           ],
           "将红色枪口向右错位，制造清晰红色边缘。"
@@ -67,7 +67,7 @@
         [
           "BCC4Damaged TV-8192038",
           [
-            -12,
+            -16,
             0
           ],
           "将蓝色枪口向左错位，与红色形成明显RGB分离。"
@@ -100,7 +100,7 @@
         ],
         [
           "BCC_CAMERASHAKE-1000",
-          18,
+          16,
           "限制为细微的位置偏移，保持画面可读。"
         ],
         [
@@ -137,41 +137,10 @@
       "expressions": [
         [
           "BCC_CAMERASHAKE-1013",
-          "20 + 18*Math.sin(time*2.37)",
+          "34 + 28*Math.sin(time*7.5)",
           "让抖动幅度周期性呼吸，在不同采样秒数呈现不同的帧内容偏移。"
         ]
       ]
-    },
-    {
-      "matchName": "ADBE Tint",
-      "params": [
-        [
-          "ADBE Tint-0001",
-          [
-            0.03,
-            0.08,
-            0.8,
-            1
-          ],
-          "将暗部映射为高饱和蓝色，建立彩色抽象底图。"
-        ],
-        [
-          "ADBE Tint-0002",
-          [
-            1,
-            0.08,
-            0.32,
-            1
-          ],
-          "将亮部映射为洋红红色，使灰阶噪波变为鲜明彩色纹理。"
-        ],
-        [
-          "ADBE Tint-0003",
-          82,
-          "完全应用双色映射，避免底图仍然呈灰阶。"
-        ]
-      ],
-      "expressions": []
     }
   ],
   "renderFrames": [
@@ -194,43 +163,25 @@
       "for_iter": 2,
       "applied": [
         {
-          "type": "effect",
-          "matchName": "ADBE Tint",
-          "params": [
-            [
-              "ADBE Tint-0001",
-              [
-                0.03,
-                0.08,
-                0.8,
-                1
-              ],
-              "将暗部映射为高饱和蓝色，建立彩色抽象底图。"
-            ],
-            [
-              "ADBE Tint-0002",
-              [
-                1,
-                0.08,
-                0.32,
-                1
-              ],
-              "将亮部映射为洋红红色，使灰阶噪波变为鲜明彩色纹理。"
-            ],
-            [
-              "ADBE Tint-0003",
-              100,
-              "完全应用双色映射，避免底图仍然呈灰阶。"
-            ]
-          ],
-          "why": "Fractal Noise 当前输出为灰阶；先将其明确色彩化，现有红绿蓝枪口偏移才能在高对比边缘产生可见且风格化的RGB分离。"
+          "type": "param",
+          "effect": "BCC4Damaged TV",
+          "matchName": "BCC4Damaged TV-8192008",
+          "value": 18,
+          "why": "降低整体损坏量，减轻右半幅硬接缝和大面积重复竖条，使故障更像可控设计而非画面损坏。"
         },
         {
           "type": "param",
           "effect": "BCC_CAMERASHAKE",
           "matchName": "BCC_CAMERASHAKE-1000",
-          "value": 10,
-          "why": "当前两帧画面位置几乎无可见差异；适度提高位置抖动幅度，使不同采样帧能读出轻微信号偏移。"
+          "value": 9,
+          "why": "当前相邻采样帧几乎没有可见内容位移；适度提高位置抖动量可让帧间偏移明确可读，同时仍保持轻微信号抖动。"
+        },
+        {
+          "type": "expression",
+          "effect": "BCC_CAMERASHAKE",
+          "matchName": "BCC_CAMERASHAKE-1013",
+          "expression": "34 + 28*Math.sin(time*7.5)",
+          "why": "提高周期变化速度和幅度，让短时间采样的不同帧也出现明确但受控的抖动差异。"
         }
       ],
       "skipped": []
@@ -240,37 +191,37 @@
       "applied": [
         {
           "type": "param",
-          "effect": "ADBE Tint",
-          "matchName": "ADBE Tint-0003",
-          "value": 82,
-          "why": "降低双色 Tint 的完全覆盖程度，保留 Damaged TV 已产生的原始 RGB 枪口偏移，使高对比边缘出现可见的彩色分离，而仍维持彩色底图。"
-        },
-        {
-          "type": "param",
           "effect": "BCC4Damaged TV",
           "matchName": "BCC4Damaged TV-8192032",
           "value": [
-            12,
+            16,
             0
           ],
-          "why": "加大红通道的横向偏移，在条纹、撕裂边界和明暗交界处建立更明确的红色 fringe。"
+          "why": "加大红通道水平偏移，让高对比横线和竖条边缘出现可识别的红色彩边。"
         },
         {
           "type": "param",
           "effect": "BCC4Damaged TV",
           "matchName": "BCC4Damaged TV-8192038",
           "value": [
-            -12,
+            -16,
             0
           ],
-          "why": "与增强后的红通道反向错位配对，让 RGB 分离在当前大面积平滑紫色画面中仍清晰可见。"
+          "why": "与增强后的红通道反向拉开蓝通道，避免RGB分离继续被压成单一紫色混合。"
         },
         {
           "type": "param",
           "effect": "BCC_CAMERASHAKE",
           "matchName": "BCC_CAMERASHAKE-1000",
-          "value": 18,
-          "why": "目前两张采样帧的构图基本静止；适度提高位置位移可让纹理和撕裂区在相邻采样帧之间产生明确但仍属轻微的信号抖动。"
+          "value": 16,
+          "why": "提高位置抖动幅度，使相隔采样时间的画面内容产生肉眼可辨但仍属轻微信号跳动的位移。"
+        },
+        {
+          "type": "param",
+          "effect": "BCC4Damaged TV",
+          "matchName": "BCC4Damaged TV-8192008",
+          "value": 10,
+          "why": "降低损坏强度，减弱中央硬竖向分界与规则条纹接缝感，让彩边和轻微抖动成为主要的刻意故障语言。"
         }
       ],
       "skipped": []

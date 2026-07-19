@@ -2,25 +2,25 @@
   "intent": "暗紫色的星云状流动背景，缓慢演化，带少量颗粒感",
   "backend": "api",
   "outcome": "fail_max_iters",
-  "best_iter": 1,
+  "best_iter": 2,
   "iterations": [
     {
       "iter": 1,
-      "score": 3,
+      "score": 6,
       "verdict": "fail",
-      "critique": "The palette is violet, but the result is far too bright and saturated for a dark background-grade nebula, especially at t4 where most of the frame becomes electric purple. The cloud field has a clearly visible rectangular emitter boundary across the upper area and at the side edges, which breaks the no-hard-edges requirement. Within that rectangle the image is largely smooth and uniform rather than showing layered, cloud-like nebula structure; grain is only barely perceptible. Between t1 and t4 there is substantial overall brightening, but little readable internal morphing or drifting structure."
+      "critique": "画面具备暗紫/紫罗兰色盘，整体亮度保持在背景级，细密颗粒也清晰可见且没有硬边。但云雾主体的明暗分离过弱：大部分画面接近均匀的暗紫噪点，只能隐约看见右侧与左下的柔和区域，缺少足够可辨识、覆盖全幅的星云状云团层次。提供的画面中未见t4帧，因此无法确认t1至t4之间是否存在明确的结构漂移或形变。"
     },
     {
       "iter": 2,
-      "score": 3,
+      "score": 7,
       "verdict": "fail",
-      "critique": "The frame is appropriately dark and within a deep violet palette, with no obvious hard emitter edge visible. However, the nebula itself is nearly imperceptible: there is only extremely faint, mostly uniform purple shading rather than readable soft cloud masses filling the composition. No meaningful layered gaseous structure or close-inspection grain is visible at this brightness. Only a t1 frame is present here, so evolution from t1 to t4 cannot be verified."
+      "critique": "暗紫/紫罗兰色盘、全画幅柔软无硬边的云雾感和颗粒均已具备，且t1到t4的云团位置与形态有明确变化。问题是时间一致性不够稳定：t1整体过于接近均匀的近黑紫色，仅有很弱的右侧和左下云雾；t4则出现了清晰而较亮的大尺度环状云团，亮度和结构对比明显高于t1，演化更像从几乎无云到强云的跳变，而非持续缓慢的暗背景星云。t4的颗粒也略偏显眼，接近噪点纹理而不只是近看可见的细微颗粒。"
     },
     {
       "iter": 3,
-      "score": 3,
+      "score": 7,
       "verdict": "fail",
-      "critique": "The violet palette and faint fine texture are present, and the frames do differ substantially in brightness. However, the visible volume still reads as a large rectangular emitter region with a distinct horizontal top boundary, especially at t4. The t4 image is much too bright and saturated for a dark background-grade nebula. Inside the volume, the result remains mostly smooth and uniform rather than layered, amorphous gaseous cloud forms; the change from t1 to t4 reads primarily as particle accumulation/brightening rather than readable internal morphing."
+      "critique": "t1具备暗紫/紫罗兰色盘、全幅无硬边的柔和雾状底纹，整体亮度也维持在背景级；细微颗粒存在但未过分抢眼。不过当前t1的云雾明暗层次仍偏弱，画面主体接近均匀近黑紫，只有左下和中右可辨识到非常微弱的宽广云带，星云结构不够清晰。所给内容未包含可见的t4画面，无法确认本轮是否已消除此前从弱云到强环状云的亮度跳变问题。"
     }
   ]
 }

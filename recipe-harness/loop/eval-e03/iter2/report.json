@@ -3,133 +3,160 @@
   "name": "eval-e03_i2",
   "params": [
     {
-      "p": "[1:tc Particular] Use a wide Box emitter so the soft particle volume spans the composition.",
-      "ok": true,
-      "v": "2"
-    },
-    {
-      "p": "[1:tc Particular] Make the emission volume broad enough to avoid a localized cloud with visible boundaries.",
-      "ok": true,
-      "v": "2400"
-    },
-    {
-      "p": "[1:tc Particular] Build a dense but still diffuse atmospheric field.",
-      "ok": true,
-      "v": "95"
-    },
-    {
-      "p": "[1:tc Particular] Keep particle travel slow for a drifting nebula rather than a particle burst.",
-      "ok": true,
-      "v": "9"
-    },
-    {
-      "p": "[1:tc Particular] Emit uniformly in all directions for amorphous cloud structure.",
+      "p": "[1:ADBE Fractal Noise] 柔和的分形云团基础",
       "ok": true,
       "v": "1"
     },
     {
-      "p": "[1:tc Particular] Keep particles alive long enough for a continuous fog-like volume.",
+      "p": "[1:ADBE Fractal Noise] 保持云雾边缘柔软而具层次",
+      "ok": true,
+      "v": "175"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] 压低整体亮度，作为深色背景",
+      "ok": true,
+      "v": "-10"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] 生成覆盖全画幅的大尺度星云结构",
+      "ok": true,
+      "v": "275"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] 加入适量多尺度云雾细节",
+      "ok": true,
+      "v": "6"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] 保留柔和主体并避免噪声过碎",
+      "ok": true,
+      "v": "48"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] 让程序云层完整填满画面",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] 缓慢横向漂移星云采样区域 (expr)",
+      "ok": true
+    },
+    {
+      "p": "[1:ADBE Fractal Noise] 缓慢改变云团内部形态，使第1秒与第4秒显著演化 (expr)",
+      "ok": true
+    },
+    {
+      "p": "[2:ADBE Tint] 将暗部映射为近黑暗紫",
+      "ok": true,
+      "v": "0.01799999922514,0.00400"
+    },
+    {
+      "p": "[2:ADBE Tint] 将亮部映射为低亮度紫罗兰云光",
+      "ok": true,
+      "v": "0.31000000238419,0.07500"
+    },
+    {
+      "p": "[2:ADBE Tint] 统一形成暗紫双色星云色盘",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[2:ADBE Tint] 保留完整紫色调色结果",
+      "ok": false,
+      "err": "TypeError: null is not an object"
+    },
+    {
+      "p": "[3:ADBE Turbulent Displace] 使用自然湍流置换模式",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[3:ADBE Turbulent Displace] 仅轻微扭曲，避免产生硬边或液态夸张感",
+      "ok": true,
+      "v": "22"
+    },
+    {
+      "p": "[3:ADBE Turbulent Displace] 维持宽广、云雾尺度的流动",
+      "ok": true,
+      "v": "310"
+    },
+    {
+      "p": "[3:ADBE Turbulent Displace] 加入少量不规则层次",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[3:ADBE Turbulent Displace] 让柔和原始云团仍占主导",
+      "ok": false,
+      "err": "TypeError: null is not an object"
+    },
+    {
+      "p": "[3:ADBE Turbulent Displace] 缓慢推动湍流场穿过星云 (expr)",
+      "ok": true
+    },
+    {
+      "p": "[3:ADBE Turbulent Displace] 令云雾在缓慢漂移外持续细微变形 (expr)",
+      "ok": true
+    },
+    {
+      "p": "[4:PEDG] 给较亮的紫色云团增加克制的柔光",
+      "ok": true,
+      "v": "0.64999997615814"
+    },
+    {
+      "p": "[4:PEDG] 使云光形成宽阔柔和的星云晕染",
+      "ok": true,
+      "v": "420"
+    },
+    {
+      "p": "[4:PEDG] 只让较亮区域产生辉光，保持整体暗调",
+      "ok": true,
+      "v": "42"
+    },
+    {
+      "p": "[4:PEDG] 平滑辉光阈值过渡，消除硬轮廓",
+      "ok": true,
+      "v": "45"
+    },
+    {
+      "p": "[4:PEDG] 保留云层主体细节",
+      "ok": true,
+      "v": "100"
+    },
+    {
+      "p": "[5:ADBE Noise HLS Auto2] 使用细腻随机噪点模式",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[5:ADBE Noise HLS Auto2] 仅加入极轻微紫色色相颗粒",
+      "ok": true,
+      "v": "2"
+    },
+    {
+      "p": "[5:ADBE Noise HLS Auto2] 提供近看可见但不抢眼的亮度颗粒",
+      "ok": true,
+      "v": "10"
+    },
+    {
+      "p": "[5:ADBE Noise HLS Auto2] 使颗粒有少量色彩变化",
+      "ok": true,
+      "v": "5"
+    },
+    {
+      "p": "[5:ADBE Noise HLS Auto2] 保持细小胶片般颗粒尺度",
+      "ok": true,
+      "v": "1"
+    },
+    {
+      "p": "[5:ADBE Noise HLS Auto2] 让颗粒缓慢活动而非闪烁",
       "ok": true,
       "v": "12"
     },
     {
-      "p": "[1:tc Particular] Use Glow Sphere particles to merge into soft cloud masses.",
-      "ok": true,
-      "v": "2"
-    },
-    {
-      "p": "[1:tc Particular] Use oversized soft particles so individual dots fuse into nebula forms.",
-      "ok": true,
-      "v": "300"
-    },
-    {
-      "p": "[1:tc Particular] Vary particle sizes to prevent regular-looking blobs.",
-      "ok": true,
-      "v": "65"
-    },
-    {
-      "p": "[1:tc Particular] Keep each particle dim so the overall result remains a dark background-grade violet.",
-      "ok": true,
-      "v": "2"
-    },
-    {
-      "p": "[1:tc Particular] Introduce restrained opacity variation for organic mottling.",
-      "ok": true,
-      "v": "35"
-    },
-    {
-      "p": "[1:tc Particular] Set Color to At Birth before assigning the violet particle color.",
-      "ok": true,
-      "v": "1"
-    },
-    {
-      "p": "[1:tc Particular] Color the luminous fog a deep violet rather than bright white.",
-      "ok": true,
-      "v": "0.28999999165535,0.07000"
-    },
-    {
-      "p": "[1:tc Particular] Additively blend the dim glow spheres into soft nebula density.",
-      "ok": true,
-      "v": "2"
-    },
-    {
-      "p": "[1:tc Particular] Enable air resistance before turbulence so turbulent motion affects the cloud.",
-      "ok": true,
-      "v": "0.69999998807907"
-    },
-    {
-      "p": "[1:tc Particular] Gently displace particles with turbulence to morph the cloud structure over time.",
-      "ok": true,
-      "v": "65"
-    },
-    {
-      "p": "[1:tc Particular] Use large turbulence features for broad gaseous curls instead of fine jitter.",
-      "ok": true,
-      "v": "260"
-    },
-    {
-      "p": "[1:tc Particular] Add enough turbulence detail for layered cloud variation.",
-      "ok": true,
-      "v": "3"
-    },
-    {
-      "p": "[1:tc Particular] Enable modest motion blur to keep moving cloud particles smooth.",
-      "ok": true,
-      "v": "2"
-    },
-    {
-      "p": "[1:tc Particular] Use a natural shutter angle that does not smear the soft texture excessively.",
-      "ok": true,
-      "v": "180"
-    },
-    {
-      "p": "[1:tc Particular] Slowly drift the emitting cloud mass across the frame so t1 and t4 visibly evolve. (expr)",
-      "ok": true
-    },
-    {
-      "p": "[2:BCC_TEXTURES] Add only a restrained surface grain so the cloud remains soft and dominant.",
-      "ok": true,
-      "v": "14"
-    },
-    {
-      "p": "[2:BCC_TEXTURES] Increase fine texture detail for subtle close-inspection particle character.",
-      "ok": true,
-      "v": "18"
-    },
-    {
-      "p": "[2:BCC_TEXTURES] Use a tight texture scale so the texture reads as grain rather than paper.",
-      "ok": true,
-      "v": "60"
-    },
-    {
-      "p": "[2:BCC_TEXTURES] Keep the grain scale even in both dimensions.",
-      "ok": true,
-      "v": "60"
-    },
-    {
-      "p": "[2:BCC_TEXTURES] Choose a non-default texture variation to avoid a generic repeating pattern.",
-      "ok": true,
-      "v": "31"
+      "p": "[5:ADBE Noise HLS Auto2] 将颗粒压至背景级的微妙程度",
+      "ok": false,
+      "err": "TypeError: null is not an object"
     }
   ],
   "frames": [

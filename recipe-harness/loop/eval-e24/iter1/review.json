@@ -1,39 +1,28 @@
 {
   "verdict": "fail",
-  "score": 3,
-  "critique": "几何块状底图可读，且 t1 与 t4 画面一致、没有异常运动；但当前成片整体是低对比灰色。深蓝与米白的复古双色调完全没有建立，浮雕只表现为极细微的灰亮/灰暗边线，缺乏可辨识的压印纹理和海报式墨色对比，因此整体不具备目标的双色印刷海报凝聚力。",
+  "score": 5,
+  "critique": "抽象几何底图清晰，硬边的迷宫式块面也有一定海报图形感；t1与t4画面完全一致，没有可见时间变化。深蓝与米白线条已出现，但大面积存在灰褐色中间调，未达到严格深蓝+米白双色。当前的线条更像双层描边/路径，而非可辨识的压印浮雕纹理；整体缺少纸张压印带来的明暗起伏。",
   "suggestions": [
     {
-      "type": "effect",
-      "matchName": "ADBE Tint",
-      "params": [
-        [
-          "ADBE Tint-0001",
-          [
-            0.035,
-            0.11,
-            0.24,
-            1
-          ],
-          "Map Black To"
-        ],
-        [
-          "ADBE Tint-0002",
-          [
-            0.91,
-            0.86,
-            0.74,
-            1
-          ],
-          "Map White To"
-        ],
-        [
-          "ADBE Tint-0003",
-          100,
-          "Amount to Tint"
-        ]
-      ],
-      "why": "将当前灰阶几何与浮雕明暗严格重映射为深蓝和米白，消除灰色外观与全彩泄漏，并以更明确的双色明暗对比让边缘浮雕线条更可见。"
+      "type": "param",
+      "effect": "ADBE Posterize",
+      "matchName": "ADBE Posterize-0001",
+      "value": 2,
+      "why": "将几何底图限制为黑白两级，减少进入Tint前的中间灰阶，帮助消除目前占画面大面积的第三种灰褐色。"
+    },
+    {
+      "type": "param",
+      "effect": "ADBE Emboss",
+      "matchName": "ADBE Emboss-0004",
+      "value": 70,
+      "why": "提高与原始二级图形的混合，保留深蓝和米白的大块双色基础，同时仍留下部分Emboss边缘作为压印线条，而非让浮雕生成的中灰覆盖画面。"
+    },
+    {
+      "type": "param",
+      "effect": "ADBE Emboss",
+      "matchName": "ADBE Emboss-0002",
+      "value": 6,
+      "why": "收窄浮雕高度/宽度，使压印集中在几何边界附近，减少目前粗大的双轨线条，并让边缘更像纸面压印。"
     }
   ],
   "_backend": "gpt-api:gpt-5.6-terra"

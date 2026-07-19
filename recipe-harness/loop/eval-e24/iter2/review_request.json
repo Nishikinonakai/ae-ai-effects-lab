@@ -6,7 +6,7 @@
     "emboss/relief line texture visible",
     "poster-like graphic cohesion"
   ],
-  "iteration": 1,
+  "iteration": 2,
   "max_iters": 3,
   "plan": {
     "effects": [
@@ -75,7 +75,7 @@
         "params": [
           [
             "ADBE Posterize-0001",
-            3,
+            2,
             "Restrict the geometry to a bold limited-tone print structure"
           ],
           [
@@ -95,7 +95,7 @@
           ],
           [
             "ADBE Emboss-0002",
-            11,
+            6,
             "Make block boundaries visibly raised and carved without destroying their silhouettes"
           ],
           [
@@ -105,7 +105,7 @@
           ],
           [
             "ADBE Emboss-0004",
-            22,
+            70,
             "Preserve enough of the poster block fill beneath the embossed ridge detail"
           ]
         ]
@@ -158,9 +158,16 @@
     ]
   },
   "frames": [
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e24/iter1/eval-e24_i1_t1.png",
-    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e24/iter1/eval-e24_i1_t4.png"
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e24/iter2/eval-e24_i2_t1.png",
+    "/Users/renzhongyi/Documents/AE_plugins_proj/recipe-harness/loop/eval-e24/iter2/eval-e24_i2_t4.png"
   ],
-  "prior_iterations": [],
+  "prior_iterations": [
+    {
+      "iter": 1,
+      "score": 5,
+      "verdict": "fail",
+      "critique": "抽象几何底图清晰，硬边的迷宫式块面也有一定海报图形感；t1与t4画面完全一致，没有可见时间变化。深蓝与米白线条已出现，但大面积存在灰褐色中间调，未达到严格深蓝+米白双色。当前的线条更像双层描边/路径，而非可辨识的压印浮雕纹理；整体缺少纸张压印带来的明暗起伏。"
+    }
+  ],
   "review_instructions": "Return STRICT JSON only:\n{\"verdict\":\"pass\"|\"fail\",\"score\":<0-10 int>,\"critique\":\"<what matches / what does not, concrete and visual>\",\"suggestions\":[...]}\n\nverdict=pass ONLY if the render would satisfy the requesting artist as-is (then suggestions MUST be []).\nWhen verdict=fail, suggestions are param nudges the loop applies mechanically. Shapes:\n  {\"type\":\"param\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"value\":<number | [r,g,b(,a)] 0..1>,\"why\":\"<causal reason>\"}\n  {\"type\":\"expression\",\"effect\":\"<effect matchName>\",\"matchName\":\"<param matchName>\",\"expression\":\"<AE expression string>\",\"why\":\"...\"}\n  {\"type\":\"effect\",\"matchName\":\"<effect matchName to ADD to the stack>\",\"params\":[[<param matchName>,<value>,\"<label>\"],...],\"why\":\"...\"}   (max ONE per review)\n  {\"type\":\"camera\",\"value\":{\"position\":[x,y,z],\"pointOfInterest\":[x,y,z],\"zoom\":null} | null,\"why\":\"...\"}\n  {\"type\":\"background\",\"value\":[r,g,b],\"why\":\"...\"}\n\nOnly reference param matchNames visible in the request's plan (for type:\"effect\", well-known AE matchNames are allowed).\nIf the plan has MULTIPLE instances of the same effect matchName, target the Nth instance by suffixing: \"effect\":\"tc Particular#2\" (1-based; no suffix = first instance).\nPrefer FEW causal nudges over many speculative ones. Frames are captioned with comp time (t1/t4 etc.) — compare them to judge MOTION, not just a single still."
 }

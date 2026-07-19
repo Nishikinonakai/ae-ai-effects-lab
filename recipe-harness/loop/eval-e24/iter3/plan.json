@@ -1,5 +1,5 @@
 {
-  "name": "eval-e24",
+  "name": "eval-e24_i3",
   "compName": "Eval_e24",
   "intent": "复古双色调印刷海报感：抽象几何底图，画面转为深蓝与米白双色，带浮雕纹理线条",
   "comp": {
@@ -80,7 +80,7 @@
       "params": [
         [
           "ADBE Posterize-0001",
-          3,
+          2,
           "Restrict the geometry to a bold limited-tone print structure"
         ],
         [
@@ -100,17 +100,17 @@
         ],
         [
           "ADBE Emboss-0002",
-          11,
+          3,
           "Make block boundaries visibly raised and carved without destroying their silhouettes"
         ],
         [
           "ADBE Emboss-0003",
-          175,
+          235,
           "Give the relief lines crisp ink-and-paper contrast"
         ],
         [
           "ADBE Emboss-0004",
-          22,
+          38,
           "Preserve enough of the poster block fill beneath the embossed ridge detail"
         ]
       ]
@@ -165,5 +165,61 @@
     "strict two-tone palette (deep blue + cream), no full-color leakage",
     "emboss/relief line texture visible",
     "poster-like graphic cohesion"
+  ],
+  "_loop_history": [
+    {
+      "for_iter": 2,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "ADBE Posterize",
+          "matchName": "ADBE Posterize-0001",
+          "value": 2,
+          "why": "将几何底图限制为黑白两级，减少进入Tint前的中间灰阶，帮助消除目前占画面大面积的第三种灰褐色。"
+        },
+        {
+          "type": "param",
+          "effect": "ADBE Emboss",
+          "matchName": "ADBE Emboss-0004",
+          "value": 70,
+          "why": "提高与原始二级图形的混合，保留深蓝和米白的大块双色基础，同时仍留下部分Emboss边缘作为压印线条，而非让浮雕生成的中灰覆盖画面。"
+        },
+        {
+          "type": "param",
+          "effect": "ADBE Emboss",
+          "matchName": "ADBE Emboss-0002",
+          "value": 6,
+          "why": "收窄浮雕高度/宽度，使压印集中在几何边界附近，减少目前粗大的双轨线条，并让边缘更像纸面压印。"
+        }
+      ],
+      "skipped": []
+    },
+    {
+      "for_iter": 3,
+      "applied": [
+        {
+          "type": "param",
+          "effect": "ADBE Emboss",
+          "matchName": "ADBE Emboss-0004",
+          "value": 38,
+          "why": "降低与原始硬边块面的混合，减少当前明显的双层偏移描边，让压印明暗更成为边缘本身的 relief 细节。"
+        },
+        {
+          "type": "param",
+          "effect": "ADBE Emboss",
+          "matchName": "ADBE Emboss-0002",
+          "value": 3,
+          "why": "收窄浮雕宽度，避免宽灰色台阶边产生第三种中间色观感，并让线条更接近精细的纸张压印。"
+        },
+        {
+          "type": "param",
+          "effect": "ADBE Emboss",
+          "matchName": "ADBE Emboss-0003",
+          "value": 235,
+          "why": "提高窄幅压印边缘的明暗分离，使深蓝/米白边界上的浮雕线更清楚可读。"
+        }
+      ],
+      "skipped": []
+    }
   ]
 }

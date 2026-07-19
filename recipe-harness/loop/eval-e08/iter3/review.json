@@ -1,28 +1,34 @@
 {
   "verdict": "fail",
-  "score": 6,
-  "critique": "彩色抽象底图已成立：蓝紫与洋红纹理、扫描线和分区撕裂能读作有意的电视信号故障，而非灰阶坏渲染。两帧的云状纹理和横条位置存在极轻微变化，但整体构图仍几乎重合，画面偏移/抖动不够明确。更关键的是画面没有可辨识的红、绿、蓝细边：Tint 在 RGB 枪口偏移之后以较高强度重新双色化，压平了通道错位，因此当前更像双色CRT纹理而非RGB分离故障。",
+  "score": 5,
+  "critique": "画面保留了紫、洋红与蓝色的抽象底图，横向扫描线和噪声也让它具备一定刻意的CRT/信号故障质感，不是灰阶或完全损坏的渲染。但 t1 与 t4 的主要构图、中央竖直切分位置、右侧重复竖条和水平条纹几乎重合，帧间整体内容偏移仍不可辨识。RGB 分离也没有形成明确独立的红、绿、蓝彩边；当前主要仍是紫红混色。中央偏右的硬竖向分界及右侧规则条纹依旧更像处理接缝，而非有节奏的信号错位。",
   "suggestions": [
     {
       "type": "param",
-      "effect": "ADBE Tint",
-      "matchName": "ADBE Tint-0003",
-      "value": 52,
-      "why": "降低后置Tint的覆盖比例，保留蓝紫/洋红底图的同时让Damaged TV已产生的红蓝枪口位移重新在纹理、分区和亮暗边界上可见。"
+      "effect": "BCC4Damaged TV",
+      "matchName": "BCC4Damaged TV-8192032",
+      "value": [
+        40,
+        0
+      ],
+      "why": "显著增大红色通道的水平偏移，使高对比横线、纹理边缘和画面分界出现可读的红色彩边。"
     },
     {
-      "type": "expression",
-      "effect": "BCC_CAMERASHAKE",
-      "matchName": "BCC_CAMERASHAKE-1013",
-      "expression": "65 + 55*Math.sin(time*3.7)",
-      "why": "显著拉开不同时间采样时的抖动强度，并维持周期性起伏，使t1与t4的画面内容偏移能明确可见而不是近乎重合。"
+      "type": "param",
+      "effect": "BCC4Damaged TV",
+      "matchName": "BCC4Damaged TV-8192038",
+      "value": [
+        -40,
+        0
+      ],
+      "why": "与增强后的红通道反向拉开蓝通道，避免继续只读成紫/洋红混色，并形成明确RGB分离。"
     },
     {
       "type": "param",
       "effect": "BCC_CAMERASHAKE",
       "matchName": "BCC_CAMERASHAKE-1000",
-      "value": 28,
-      "why": "适度提高位置抖动基准，使周期强度变化实际转化为可见的轻微横向信号跳动，同时仍远低于破坏构图的强烈镜头摇晃。"
+      "value": 38,
+      "why": "当前采样帧中整体画面位置几乎不变；提高位置抖动强度，让不同时间采样能够清楚看到但仍属轻微的内容横向偏移。"
     }
   ],
   "_backend": "gpt-api:gpt-5.6-terra"
