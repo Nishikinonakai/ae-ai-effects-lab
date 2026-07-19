@@ -33,7 +33,16 @@
 // Validated against a known-good case: Form's `tc Form-0489` (Base Form Size, linked→individual)
 // opens `tc Form-0005/0006` while `tc Form-0010` correctly stays shut.
 //
+// WEDGE HAZARD (learned the hard way, 2026-07-20): flipping enums blindly can hang AE outright.
+// Setting Particular's Emitter Type to "Lights" with no light layer in the comp wedged the plugin —
+// every subsequent bridge round-trip timed out, and the probe cheerfully burned twelve more flips
+// producing nothing but "skipped (bridge timeout)" before the run ended. Two guards now: enums whose
+// values REFERENCE SCENE OBJECTS that may not exist are skipped by default (--force to include
+// them), and the first timeout aborts the run, because everything after a wedge is noise and the
+// only real fix is ./bridge_down.sh && ./bridge_up.sh.
+//
 // usage: node introspect/probe_gates.mjs "<effect matchName>" [--max-gates=14] [--max-values=4]
+//        [--timeout=900] [--force]
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
@@ -54,6 +63,13 @@ const maxValues = Number(arg('max-values', 4));
 // identity setValue) and its first apply in a session includes a licence check. 120s is fine for a
 // 50-param filter and nowhere near enough for those.
 const SLOW_MS = Number(arg('timeout', 900)) * 1000;
+const force = process.argv.includes('--force');
+
+// Enums that select a SOURCE rather than a mode. Their values point at scene objects (a light, a
+// layer, an imported model) and choosing one that does not exist can raise a plugin-native modal or
+// hang the effect — neither of which a headless bridge can clear. They are also poor gate
+// candidates: what they reveal is a different input path, not a hidden knob.
+const SOURCE_ENUM = /emitter type|source type|layer|light|model|texture|obj|input|map from|use (a )?layer/i;
 
 async function runAE(script, timeoutMs = 120000) {
   fs.writeFileSync(RES, JSON.stringify({ status: 'waiting' }));
@@ -145,8 +161,13 @@ if (!shut0.length) { console.log('nothing is gated on a default instance — no 
 // 3) flip each gate to each value, one round-trip per flip, and see what opens
 const gates = meta.gates.slice(0, maxGates);
 const opened = new Map();      // matchName -> [{gate,name,value}]
+let wedged = null;
 for (let gi = 0; gi < gates.length; gi++) {
   const g = gates[gi];
+  if (!force && SOURCE_ENUM.test(g.name)) {
+    console.log(`[${gi + 1}/${gates.length}] ${g.name} … skipped (source-selecting enum — can wedge AE; --force to include)`);
+    continue;
+  }
   const values = [];
   for (let v = g.lo; v <= g.hi && values.length < maxValues; v++) if (v !== g.now) values.push(v);
   for (const v of values) {
@@ -159,7 +180,16 @@ for (let gi = 0; gi < gates.length; gi++) {
       stillShut = (await runAE(`(function(){${PRE}
         var fx = fxOf(); return shutSet(fx, ${JSON.stringify(shut0)});
       })()`, SLOW_MS)).split(',').filter(Boolean);
-    } catch (e) { console.log(`skipped (${String(e).slice(0, 40)})`); continue; }
+    } catch (e) {
+      const msg = String(e);
+      if (msg.includes('timeout')) {
+        wedged = `${g.name} = ${v}`;
+        console.log(`TIMED OUT — aborting.`);
+        break;
+      }
+      console.log(`skipped (${msg.slice(0, 40)})`);
+      continue;
+    }
 
     const nowOpen = shut0.filter(mn => !stillShut.includes(mn));
     if (nowOpen.length) {
@@ -170,8 +200,14 @@ for (let gi = 0; gi < gates.length; gi++) {
       console.log(`opened ${nowOpen.length}`);
     } else console.log('—');
   }
+  if (wedged) break;
   // restore this gate before moving on, so gates are measured independently
   try { await runAE(`(function(){${PRE} var fx=fxOf(); app.beginUndoGroup("g"); fx.property(${JSON.stringify(g.mn)}).setValue(${g.now}); app.endUndoGroup(); return "ok"; })()`); } catch {}
+}
+if (wedged) {
+  console.error(`\n⚠ AE stopped answering after "${wedged}" — that flip wedged the plugin.`);
+  console.error('  Results below cover only the gates probed BEFORE that point.');
+  console.error('  Recover with: ./bridge_down.sh && ./bridge_up.sh');
 }
 
 // ---- report --------------------------------------------------------------------------------------
@@ -181,6 +217,8 @@ const out = {
   effect, _date: new Date().toISOString().slice(0, 10),
   _method: 'single-gate flips, one bridge round-trip each (visibility recomputes only between script executions)',
   _caveat: 'single-gate flips only — a param that needs two gates open together still reads as shut. Requires the comp to be displayed (this tool asserts that on every probe); without it AE reports every param settable.',
+  ...(wedged ? { _abortedAfter: wedged, _partial: true } : {}),
+  gatesProbed: gates.length,
   shutOnDefault: shut0.length,
   conditionallyGated: conditional.length,
   probablyDead: dead.length,
