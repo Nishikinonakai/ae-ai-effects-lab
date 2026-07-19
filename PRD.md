@@ -1,7 +1,7 @@
 # PRD — AE 自然语言特效助手（简版路线书）
 
 *2026-07-19 · 基于 lab 全部实证数据*
-*最新更新:2026-07-19 深夜 session 末(commit aa17696)—— 产品推理内核端到端打通、真机验证。**最新现状与下一步看 §九**(前面 §一~§八 为架构与论点,§九 是当前交接快照)。*
+*最新更新:2026-07-19 (commit d27cc90)—— **产品外壳 MVP 已建成**:AE 面板 + kernel + headless planner,不再需要 agent 会话驱动。**最新现状与下一步看 §十**(§一~§八 为架构与论点,§九 是上一次交接快照,§十 是当前)。*
 
 ---
 
@@ -143,3 +143,83 @@
 5. **运行时泛化(Phase C 预研)。** introspect-on-install 的版本 / 语言 / 插件探测 → 本体即时构建,朝"没见过的 AE 装机上也能端到端跑"推。
 
 *(新会话上手提示:`bridge_up.sh` 起桥;真机验证一律 copy-then-open 或静态读、编辑后不保存,决不碰工程原件;`recipe-harness/.env.api` 里的 OpenAI key 已 gitignore,别提交;记忆在 `memory/ae-ai-plugin-next-step.md`。)*
+
+---
+
+## 十、现状快照 + 下一步推荐(2026-07-19 第二次自治 session 末 · commit d27cc90)
+
+> 一句话:§九 交接的内核**从"需要 agent 会话逐步驱动"变成了"一条命令自己跑完"**——产品外壳 MVP 建成,
+> 同时 §九 遗留的 finding #6 关掉了,并牵出三个更深的缺陷(全部已修+实证)。
+
+### 10.1 本 session 建成
+
+**A. 抗-overload 引擎的最后一截:essence→scorer 联动(§九 推荐 #2,已完成)**
+
+`introspect/essence/lookup.mjs` —— essence 索引的**运行时读侧**。卡片以前只有人和 planner 在读,
+现在视觉环也能读:命中效果的**已验证杠杆 + config_recipes** 注入评分请求,scorer 可以主动 pivot
+到 plan 里没出现过的杠杆。反幻觉护栏没丢(matchName 仍来自 ground truth,只是从 plan 换成索引)。
+
+在专门造的对照 fixture 上做 A/B(`brownfield/fixtures/colever_glow_stage.json`:Deep Glow 弱在
+**错误的维度**——Exposure 已正常,Radius 掐到 60,Threshold 停在 260% 导致**没有任何像素能通过**),
+牵出三个更深的问题,每个都修了:
+
+| # | 问题 | 修法 |
+|---|---|---|
+| 6a | scorer 没有 pivot 的词汇 | essence 杠杆注入。**对照实验:关掉时它想说"加大 spread"却只看得见 Exposure,于是把这个意图挂到了错的 matchName 上——会应用一个因果错误的编辑** |
+| 6b | 模型分不清"改动很小"和"完全没改动" | `brownfield/frame_delta.mjs`(零依赖 8/16-bit PNG diff)**测**出来告诉它,而不是让它去"看"出来 |
+| 6c | essence 卡在推销**永远推不动**的杠杆 | introspect 新增 **settability 探针**;Deep Glow 有 9 个参数对脚本 API 报出名字/范围/单位/实时值却拒绝一切写入 |
+| 6d | scorer 在**看不到当前值**的情况下做因果诊断 | verify_edit 一次 round-trip 读实时值,块里标 `NOW=260` |
+
+**同一 fixture、同一 seed、同一 intent 的轨迹:`3→3→3→3`(从不收敛)变成 `1→7→9`(第一次 review 就诊断对)。**
+
+> 两条通用教训:①**模型不擅长的事就去测量,别让它"感知"**;②**可读 ≠ 可写 ≠ 有效**——三种不同状态,
+> 本体三种都要记:introspect 给可读,settability 探针给可写,只有渲染给有效。
+>
+> 顺带挖到一个 ExtendScript 引擎 bug:链式三元 `a ? x : (b) ? y : z` 在 a 为真时返回了 y
+> (indexOf 返回 113),把每个 hidden 参数都静默标成了 driven。**ExtendScript 里用 if/else。**
+
+**B. 产品外壳 MVP(§七 / §九 推荐 #1,已建成)** —— `shell/`
+
+- **`shell/plan_edit.mjs` —— 以前没有的那块。** intent + 感知 + essence 索引 + 当前帧 → 一份
+  **经过校验的** apply_edit spec。其余每一段本来就是 headless 的,唯独"决定改什么"一直是 agent
+  在会话里推理——这正是 lab 离不开人的根本原因。返回的每个 matchName 在写 spec 前都对着感知
+  dump 校验,幻觉参数在规划期就被丢掉,而不是浪费一整个 apply→render→verify 循环。
+- **`shell/kernel.mjs` —— 大脑守护进程**:感知 → 规划 → 执行+自检+收敛 → 呈现 → 接受/回滚。
+  自带独立通道(`~/Documents/ae-ai-shell/`),和 MCP 桥分开——那条是 kernel 自己的手,共用会死锁。
+- **`shell/panel/ae-ai-panel.jsx` —— 薄 ScriptUI 面板**:输入框/进度/预览帧/接受·回滚。**不做任何决策**,
+  只渲染 state.json,所以产品行为可以整个改掉而不必重装 AE 那一侧。
+- **`shell/shell_up.sh`** —— 桥 + 面板安装/启动 + kernel,一条命令,幂等。
+
+**真机验证**:中英文 intent 都规划正确(planner 自己从帧里诊断出 Threshold 门被关死)、应用、自检
+8~9/10、并回滚到**逐参数完全一致**的原始值。
+
+**外壳暴露并修掉的两个安全性缺陷**:
+- **session 必须持久化**。kernel 在 review 阶段死掉,artist 就被留在一堆产品再也撤不回的编辑上。
+  已验证:带着未接受的编辑杀掉 kernel → 新进程起来 → 按回滚 → comp 精确还原。
+- **tune_edit 的 bestScore 报的是"最后一次超过前值的分"**,于是 7→9-accept 的一轮告诉面板"7"。
+  接受的那一轮就是最终状态,它的分才是结果。
+
+### 10.2 现状:哪些完成、哪些还缺
+
+- **内核 + 外壳 —— 可以自己跑完一整轮了。** 感知 / essence 路由 / headless 规划 / 可逆编辑 /
+  视觉自检 / 自动收敛 / 接受·回滚 / 崩溃后仍可回滚,全部真机验证。
+- **还缺**:①**面板 UI 没有被人手真正用过**(本次 session 没有屏幕权限,只验证了脚本加载 + 转义 +
+  预览尺寸);②**没跑过真实 4K/146 层工程的完整外壳**;③ essence 广度(仍只 9 张卡);
+  ④ 运行时泛化(只这台 AE2022+TC2023);⑤ 配方重写+licensing;⑥ 成本/延迟工程、密钥与计费;
+  ⑦ Phase A lab 遗留(UI 门控 / 曲线母版 / planner-eval r2 / 跨族组合)。
+
+### 10.3 下一步推荐(按"离你能日常用最近"排序)
+
+1. **【推荐首选】你亲自开面板试一次 + 真实工程 dogfooding。** 外壳已经能跑,但**没有被人手用过**——
+   `./shell/shell_up.sh` 然后在 AE 里选一层、说一句话。这一 session 每次真机验证都比合成测试多抓坑,
+   而面板 UI 是唯一还没被真实使用过的一层。拿下一个 AMV/PV 当 testbed,记录哪里手感不对。
+2. **settability 探针跑一遍全部已装效果。** 现在只有 3 个效果测过(Deep Glow 9 个幻影杠杆、
+   两个原生 0 个)。`introspect_effect.mjs` 已经会记了,批量重跑一次就能知道**幻影杠杆在整个插件
+   生态里有多普遍**——这直接决定 planner 和调优环有多少力气花在推不动的旋钮上。
+3. **essence 广度按需扩** + planner-eval round-2(现在有 headless planner,评测可以自动跑了——
+   这是本 session 顺带解锁的:r2 不再需要 agent 逐题推理)。
+4. **成本/延迟**:现在每轮 review 一次 vision 调用,tune 最多 4 轮;路由用便宜模型、判断用强模型、缓存。
+5. **运行时泛化(Phase C 预研)**:introspect-on-install 的版本/语言/插件探测。
+
+*(上手提示:`./shell/shell_up.sh` 起全套;`bridge_up.sh` 只起桥。真机验证一律 copy-then-open 或静态读、
+编辑后不保存。`recipe-harness/.env.api` 里的 OpenAI key 已 gitignore。记忆在 `memory/ae-ai-plugin-next-step.md`。)*
