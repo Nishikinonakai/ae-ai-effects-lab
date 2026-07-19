@@ -146,7 +146,15 @@ for (let n = 0; n <= maxIters; n++) {
   fs.writeFileSync(historyPath, JSON.stringify(trace.map(t => ({ iter: t.iter, verdict: t.verdict, score: t.score, critique: t.critique })), null, 2));
   console.log(`  → iter ${n}: ${v.verdict} ${v.score}/10 (${v.decision})`);
 
-  if (v.decision === 'accept') { console.log(`\n✅ ACCEPTED at iter ${n} (score ${v.score}).`); accepted = true; break; }
+  if (v.decision === 'accept') {
+    // The accepting iteration IS the final state, so its score is the result. Without this,
+    // bestScore reported the last score that beat its predecessor — a run that went 7 then 9-accept
+    // told the caller "7", which is what the panel then showed the artist.
+    best = { score: v.score, reportPath: current.reportPath, depth: stack.length };
+    console.log(`\n✅ ACCEPTED at iter ${n} (score ${v.score}).`);
+    accepted = true;
+    break;
+  }
   if (n === maxIters) {
     if (v.score > best.score) best = { score: v.score, reportPath: current.reportPath, depth: stack.length };
     console.log(`\n⏹ max iters reached — best score ${best.score}.`);
@@ -202,6 +210,14 @@ if (!accepted) {
 }
 
 const summaryPath = path.join(outDir, 'tune_summary.json');
-fs.writeFileSync(summaryPath, JSON.stringify({ intent, targetLayer, acceptBar, trace, bestScore: best.score, accepted, rolledBackToBest: restored, blockedLevers: [...blockedLevers] }, null, 2));
+fs.writeFileSync(summaryPath, JSON.stringify({
+  intent, targetLayer, acceptBar, trace, bestScore: best.score, accepted,
+  rolledBackToBest: restored, blockedLevers: [...blockedLevers],
+  // What is STILL APPLIED to the comp when this loop exits, oldest first. A caller that wants to
+  // undo the whole tune (the panel's Rollback button undoes an entire request, not one iteration)
+  // rolls these back newest-first; without it there is no record of what the loop left behind.
+  appliedReports: stack.map(s => path.relative(REPO, s.reportPath)),
+  finalFrame: path.relative(REPO, path.resolve(REPO, JSON.parse(fs.readFileSync(stack[stack.length - 1].reportPath, 'utf8')).afterPng)),
+}, null, 2));
 console.log(`\ntrajectory: ${trace.map(t => `${t.score}`).join(' → ')}`);
 console.log(`summary → ${path.relative(REPO, summaryPath)}`);

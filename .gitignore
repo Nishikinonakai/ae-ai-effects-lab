@@ -5,3 +5,4 @@ node_modules/
 .env.api
 brownfield/dumps/
 brownfield/real_test/
+shell/out/
