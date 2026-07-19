@@ -7,9 +7,11 @@
 //     showing 2080/2458 shut is almost certainly this: a Form built as a Box does not expose the
 //     Sphere's parameters. These are USABLE, and knowing which gate opens them is precisely the
 //     "hidden parameter gating" knowledge the causal ontology exists to hold.
-//   · PERMANENTLY DEAD — never writable under any combination. Deep Glow's Spread is one: probed
-//     against every plausible gate, on fresh instances, after renders, always shut. These must be
-//     struck from the cards, because offering one costs a tune iteration.
+//   · PERMANENTLY DEAD — never writable under any combination. Deep Glow's Spread is the candidate:
+//     probed against six plausible gates, on fresh instances and after renders, always shut. Those
+//     must not be offered as levers, because reaching for one costs a whole tune iteration.
+//
+// Whether that second category exists at all is still open — see the STATUS warning below.
 //
 // Calling both "phantom levers" would be wrong in opposite directions — it would write off usable
 // params, and it would keep recommending dead ones. So: enumerate the candidate gates (the small

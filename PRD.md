@@ -223,3 +223,27 @@
 
 *(上手提示:`./shell/shell_up.sh` 起全套;`bridge_up.sh` 只起桥。真机验证一律 copy-then-open 或静态读、
 编辑后不保存。`recipe-harness/.env.api` 里的 OpenAI key 已 gitignore。记忆在 `memory/ae-ai-plugin-next-step.md`。)*
+
+### 10.4 补记:settability 调查 + 一个被自己证伪的工具(session 末)
+
+在 §10.1 的 6c 之后顺势做了两件事,结论**比初看到的数字更窄,写清楚很重要**:
+
+- `introspect/survey_settable.mjs` —— 跨厂商分层抽样。81 个效果里 **14 个**至少有一个参数在默认状态
+  下写不进去;Trapcode / Video Copilot / FxFactory 几乎承包了全部,Cycore 与 RG Universe 为 0。
+- `introspect/probe_gates.mjs` —— 本想把"条件门控"和"永久死参"分开:翻转每个枚举/勾选再重测。
+
+**但这个工具被真实数据证伪了,已标为未验证。** 它在 3 个效果、105 次翻转里报告"0 个条件门控",
+而这是错的:`tc Form-0005`(Base Form Size Y)探针报 hidden、probe_gates 翻 `tc Form-0489` 也打不开,
+可是 **49 条已验证配方都在设它,实跑确认能写进去**(runner 先设 0489=2,然后 Size Y ✓ Size Z ✓;
+同一次运行里 `tc Form-0010` 却 ✗ 报 hidden——所以效果本身是真的在区别对待,不是全放行)。
+同一个门、同一个值,两个上下文里结果相反。
+
+所以口径必须收窄:**"当前状态写不进去"是测到的,"永远写不进去"没有测到。** 20.3% 那个参数级数字
+被 Form 一个效果的内部参数树(2080/2458)主导,不能当生态率读;Deep Glow 卡里关于 Spread 的说法
+也已从"永久死"改回"六个候选门都试过仍打不开,按不可达处理"。详见 `introspect/SETTABILITY.md`。
+
+> 可靠的升级路径仍然是 tune_edit 已经实现的那条:**先试着改,帧不动时用测出来的 inert 信号去找门。
+> 渲染才是 ground truth。** 这也再次印证 §10.1 的两条教训。
+
+*(遗留:为什么配方上下文能写 `tc Form-0005` 而探针上下文不能——查清就能修好 probe_gates,
+然后重跑调查拿到真正的"条件/永久"分布。)*
