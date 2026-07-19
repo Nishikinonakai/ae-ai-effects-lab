@@ -33,7 +33,7 @@ const framePath = path.join(outDir, '__frame.png');
 // curves (over-life gradients) are noted, not serialized — they're not readable as scalars.
 const AEX = String.raw`(function () {
   var MAXP = __MAXP__, OUTJSON = "__JSONPATH__", OUTPNG = "__PNGPATH__";
-  function esc(s){ return String(s).replace(/\\/g,"\\\\").replace(/"/g,'\"').replace(/[\r\n\t]/g,' '); }
+  function esc(s){ return String(s).replace(/\\/g,"\\\\").replace(/"/g,'\\"').replace(/[\r\n\t]/g,' '); }
   function jstr(s){ return '"' + esc(s) + '"'; }
   function jval(v){
     if (v === null || v === undefined) return 'null';
