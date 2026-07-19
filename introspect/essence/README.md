@@ -34,9 +34,33 @@ See `BCC_Cross_Glitch.essence.json` (the reference implementation, 2026-07-19). 
   (KillKiss ×49). Closes the "I read the values but not the meaning" gap surfaced by the brownfield
   dump: now `BCC Cross Glitch-10682371=95` reads as `Glitch Duration = 95`, and "make it subtler"
   maps to a concrete dial move.
+- **Deep Glow** (`PEDG`) — done (introspect + 5-frame probe + synth). Bloom/glow. Fully semantic
+  introspect; probe grounded Exposure=intensity (0 off / 6 blown white), Radius=reach (1500 wide
+  wash), Threshold=luminance gate (200% → only brightest bloom). See `Deep_Glow.essence.json`.
+- **BCC Textures** (`BCC_TEXTURES`) — done (introspect + 5-frame probe + synth). Grunge/texture
+  overlay. Probe grounded Amount=overlay strength (0/40/100), Complexity=detail, View 2 = isolated
+  texture map; Texture itself is a UI-only preset picker (CUSTOM, default canvas weave). See
+  `BCC_Textures.essence.json`.
+- **BCC Camera Shake** (`BCC_CAMERASHAKE`) — done (introspect + 2-frame static confirm + synth).
+  MOTION effect — static probe only confirms frame displacement/overscan; shake dynamics
+  (Amplitude/Speed) grounded on semantic names + model prior (limitation noted in card). Live dials
+  are the `-10xx` group + Beat Reactor for audio-sync. See `BCC_Camera_Shake.essence.json`.
+- **BCC Damaged TV** (`BCC4Damaged TV`) — done (introspect + 6-frame probe + synth). All-in-one
+  broken-CRT composite (198 leaf params). Probe isolated each artifact generator: noise=snow,
+  scanline alpha=CRT lines, color-gun offset=RGB split, lines=diagonal interference, degrade=
+  desaturate; default composite = warp+roll-bar+torn edge. Break/roll are time-driven (noted). See
+  `BCC_Damaged_TV.essence.json`.
 
-## Next candidates (by the user's real usage)
+## Coverage so far
 
-BCC Camera Shake, BCC Textures, Deep Glow (`PEDG`), BCC Damaged TV — the AMV backbone; then the
-user's OWN `Pseudo/*` expression-control rigs (harder: no model prior — read the pseudo-effect
-definition + probe). Filter suites at large stay introspect-card-only until a request needs them.
+5 essence cards = the AMV third-party backbone: **BCC Cross Glitch, BCC Camera Shake, BCC Textures,
+Deep Glow, BCC Damaged TV** (all introspect + probe + synth, all with semantic param names).
+
+## Next candidates
+
+- The user's OWN `Pseudo/*` expression-control rigs (AnoBando ×1477 etc.) — harder: no model prior,
+  so read the pseudo-effect definition (the .ffx/preset that installs it) + probe. Ties into the
+  expression-pattern library idea (PRD §八 D).
+- AESweets Glitch 7in1, `uni.Unmult` (Universe) — other real-usage third-party effects.
+- Filter suites at large (BCC/Sapphire/Universe, ~900 effects) stay introspect-card-only, essence-
+  synthesized ON DEMAND when a request routes to them (the whole point of shallow-for-breadth).

@@ -1,0 +1,52 @@
+{
+  "matchName": "BCC4Damaged TV",
+  "displayName": "BCC Damaged TV",
+  "vendor": "Boris FX Continuum (BCC)",
+  "category": "Stylize / Glitch / Retro",
+  "essence": "An all-in-one broken-CRT / analog-TV composite. It bundles many artifact generators into one effect: horizontal signal tearing & warp, vertical/horizontal roll (hold slippage / roll-bars), color-gun (per-channel RGB) misregistration, analog snow/noise, CRT scanlines, ghosting (double image), diagonal interference lines, and color degradation/desaturation. The canonical 坏电视 / dead-signal / VHS-death look — reach for it when you want a whole TV-breakdown composite rather than a single glitch band (that's Cross Glitch's job).",
+  "when_to_use": ["broken TV", "坏电视", "CRT", "analog TV", "VHS death", "dead signal", "no signal / snow", "bad reception", "retro TV", "signal breakup", "channel roll", "scanlines", "RGB channel split"],
+  "manifests_as": "source torn & horizontally warped into wavy bands with roll-bars, RGB color fringing, scanlines, snow and interference — probe-confirmed. The tearing/roll are partly TIME-DRIVEN (Signal Strength + Breaking Frequency + rolling speeds animate); a still catches whatever phase the break is in.",
+  "key_levers": [
+    { "name": "Signal Strength", "matchName": "BCC4Damaged TV-8192008", "range": [0, 100], "default": 60, "effect": "MASTER severity of the signal breakup/tearing (gated together with Min/Max Signal Threshold below). Drives how much the source tears and warps. Default 60 already reads heavily broken. Higher = more severe (direction inferred, medium confidence)." },
+    { "name": "Breaking Frequency", "matchName": "BCC4Damaged TV-8192011", "range": [0, 500], "default": 50, "effect": "rate at which the signal breaks/tears over time — like a glitch interval. Higher = more frequent break events. Time-driven (see manifests_as)." },
+    { "name": "Distorted Amount", "matchName": "BCC4Damaged TV-8192004", "range": [-100, 100], "units": "pixels", "default": 50, "effect": "magnitude of the horizontal tear/warp displacement — how far the torn bands smear sideways. The wavy horizontal smearing seen in the probe default. Pair with Edge Jaggedness (8192051) + Edge Shapes (8192052) for the tear-edge character." },
+    { "name": "Noise Amount", "matchName": "BCC4Damaged TV-8192021", "range": [0, 100], "default": 0, "effect": "analog snow/static density. 100 = full-screen colored TV-snow (dead-channel look) — probe-confirmed. Pair Noise Size (8192022) for grain scale." },
+    { "name": "Scanline Alpha", "matchName": "BCC4Damaged TV-8192015", "range": [0, 100], "default": 10, "effect": "opacity of the CRT scanlines. Low = faint, 100 = bold black venetian-blind scanlines (probe-confirmed). Pair Thickness (8192014), Spacing (8192017), Smoothing (8192018) for scanline pitch/softness." },
+    { "name": "Color Gun Offset (Red/Green/Blue)", "matchName": "BCC4Damaged TV-8192032", "range": null, "default": [320, 180], "effect": "2D per-channel RGB misregistration — Red (8192032), Green (8192035), Blue (8192038) offsets. Shift them apart for the classic misaligned-color-channel / chromatic-split fringing (probe-confirmed)." },
+    { "name": "Degraded Amount", "matchName": "BCC4Damaged TV-8192025", "range": [0, 100], "default": 0, "effect": "color degradation toward monochrome/tint. 100 = full greyscale (probe-confirmed). Degraded To (8192026, 1-2) picks monochrome vs the Tint Color (8192027)." },
+    { "name": "Ghost Strength", "matchName": "BCC4Damaged TV-8192043", "range": [0, 100], "default": 0, "effect": "double/multi-image ghosting intensity — Ghost Count (8192041, 0-10) sets how many echoes, Ghost Distance (8192042 px) their spacing." },
+    { "name": "Lines Strength", "matchName": "BCC4Damaged TV-8192049", "range": [0, 100], "default": 0, "effect": "diagonal interference-line pattern intensity (probe: dotted diagonal lines). Direction (8192046 deg) + Spacing (8192047) set angle/pitch." },
+    { "name": "V-Rolling Speed", "matchName": "BCC4Damaged TV-8192006", "range": [-100, 100], "units": "pixels", "default": 20, "effect": "vertical roll — the black hold-bar that slides up/down the frame (vertical-hold slippage). H-Rolling Speed (8192055) is the horizontal analogue. Offsets: V (8192005) / H (8192056)." },
+    { "name": "Interference", "matchName": "BCC4Damaged TV-8192019", "range": [0, 100], "default": 0, "effect": "general signal interference amount layered over the image." },
+    { "name": "Seed", "matchName": "BCC4Damaged TV-8192002", "range": [0, 100], "default": 50, "effect": "randomization seed for the whole break/noise pattern — change to get a different instance of the same damage." }
+  ],
+  "enums_to_verify": {
+    "Signal Strength direction (8192008)": "higher = more OR less broken — inferred higher = more severe (default 60 already heavy); probe if exact direction matters (medium confidence)",
+    "Control Type (BCC4Damaged TV-8192001, 1-2)": "global control mode",
+    "Degraded To (BCC4Damaged TV-8192026, 1-2)": "monochrome vs tint-color target for Degraded Amount",
+    "Edge Shapes (BCC4Damaged TV-8192052, 1-3)": "shape of the distorted/torn edge",
+    "Min/Max Signal Threshold (8192010 / 8192009)": "the gates that decide when the break fires (with Signal Strength)"
+  },
+  "config_recipes": {
+    "subtle bad-reception": "Signal Strength 20-40, Noise 10-20, Scanline Alpha 10-20, small Color Gun Offset, Distorted 10-20",
+    "heavy broken TV": "Signal Strength 70-100, Distorted 60-100, Breaking Frequency 100-300, Noise 30-60, Ghost Strength 40",
+    "dead-channel snow": "Noise Amount 100 (full static), Signal Strength low",
+    "clean retro CRT": "Scanline Alpha 40-70 + Thickness, small RGB gun offset, Degraded 20-40, low Signal Strength/Noise",
+    "VHS chroma-bleed": "Color Gun Offset Red/Blue split + Degraded 30-50 + Noise 20 + Ghost Strength 20"
+  },
+  "reasoning_hooks": {
+    "more broken / worse signal": "raise Signal Strength + Distorted Amount + Breaking Frequency",
+    "add TV snow / static": "raise Noise Amount",
+    "add CRT scanlines": "raise Scanline Alpha (+ Thickness / Spacing)",
+    "add color-channel misalignment / chromatic split": "offset the Red / Green / Blue guns apart",
+    "add a rolling bar": "set V-Rolling Speed (and/or H-Rolling) nonzero",
+    "desaturate / old-TV color": "raise Degraded Amount (Degraded To picks mono vs tint)",
+    "add a ghost / double image": "Ghost Strength + Ghost Count + Ghost Distance",
+    "add interference lines": "raise Lines Strength",
+    "not showing breakup in a still": "the tear/roll are time-driven — scrub in time, or raise Breaking Frequency / Signal Strength / Distorted Amount",
+    "make it subtler": "lower Signal Strength + Distorted Amount, keep only Scanline/Noise low"
+  },
+  "grounding": "introspect card (198 leaf params, full SEMANTIC names + ranges + units — cards/BCC4Damaged_TV.json) + 6-frame visual probe on a Fractal-Noise+Tint textured base (introspect/frames/ess_dtv_*: default = heavy warp+roll-bar+torn edge; noise100 = full color snow; scanA100 = bold scanlines; gunsplit = RGB channel separation; lines100 = diagonal interference dots; degrade100 = full greyscale) + model prior on BCC Damaged TV. Confidence: high on the isolated artifact levers; medium on Signal-Strength direction and the exact time-gating of break/roll.",
+  "_method": "introspect + focused probe + synth (the essence-card pipeline)",
+  "_date": "2026-07-19"
+}

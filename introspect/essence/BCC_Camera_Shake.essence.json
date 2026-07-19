@@ -1,0 +1,45 @@
+{
+  "matchName": "BCC_CAMERASHAKE",
+  "displayName": "BCC Camera Shake",
+  "vendor": "Boris FX Continuum (BCC)",
+  "category": "Lens / Motion / Distort",
+  "essence": "A MOTION effect: procedurally shakes/displaces the whole frame over time — positional jitter plus optional zoom-pulse and rotational wobble, driven by an Amplitude (magnitude) and Speed (rate). Produces handheld / impact / earthquake / rhythm-hit camera motion. Post Scale overscans the frame so the shake doesn't reveal black edges. Has a Beat Reactor to drive the shake from an audio layer.",
+  "when_to_use": ["camera shake", "handheld", "镜头抖动", "impact / hit shake", "earthquake", "rumble", "beat-synced shake", "punch on the drop", "add motion energy", "screen rattle"],
+  "manifests_as": "the whole frame jitters/displaces (+ optional zoom & rotate wobble) animated over time. A STILL only shows ONE frozen displaced/scaled frame — the shake itself is temporal and cannot be seen in a single frame (static-probe limitation).",
+  "key_levers": [
+    { "name": "Amplitude", "matchName": "BCC_CAMERASHAKE-1013", "range": [0, 1000], "default": 100, "effect": "MASTER shake magnitude — overall displacement amount. 0 = no shake; scales everything (translation/scale/rotation). Keyframe it to spike-then-decay for an impact hit. Probe-confirmed it displaces the frame at high values." },
+    { "name": "Speed", "matchName": "BCC_CAMERASHAKE-1001", "range": [1, 1000], "default": 100, "effect": "frequency/rate of the shake — how fast the frame jitters. Low = slow lazy sway, high = frantic rattle." },
+    { "name": "Translation", "matchName": "BCC_CAMERASHAKE-1000", "range": [0, 50], "default": 1, "effect": "amount of POSITIONAL (X/Y) shake — the core handheld jitter component." },
+    { "name": "Translation X / Y", "matchName": "BCC_CAMERASHAKE-1014", "range": [0, 200], "default": 100, "effect": "per-axis weighting of the positional shake (paired Y = BCC_CAMERASHAKE-1015). Set Y to 0 for a horizontal-only rattle, X to 0 for vertical-only." },
+    { "name": "Scale", "matchName": "BCC_CAMERASHAKE-1002", "range": [0, 50], "default": 0, "effect": "zoom-PULSE shake — adds punchy in/out scale jitter (0 = none). Great for impact hits." },
+    { "name": "Rotation", "matchName": "BCC_CAMERASHAKE-1003", "range": [0, 50], "default": 0, "effect": "rotational WOBBLE amount (0 = none) — tilts/rolls the frame as it shakes." },
+    { "name": "Randomize", "matchName": "BCC_CAMERASHAKE-1004", "range": [0, 100], "default": 0, "effect": "seed/variation of the shake pattern — change to get a different random motion of the same character." },
+    { "name": "Post Scale", "matchName": "BCC_CAMERASHAKE-1016", "range": [100, 200], "default": 100, "effect": "overscan — pre-scales the frame up so the translation/rotation shake doesn't reveal empty/black edges. Raise if edges show during a big shake. Probe-confirmed hides edges at 130." },
+    { "name": "Edge Mode", "matchName": "BCC_CAMERASHAKE-1012", "range": [1, 4], "default": 3, "enum": true, "effect": "how any edges revealed by the shake are filled (repeat / reflect / transparent / etc)." }
+  ],
+  "enums_to_verify": {
+    "Edge Mode (BCC_CAMERASHAKE-1012, 1-4)": "revealed-edge fill treatment (repeat/reflect/transparent/color)",
+    "Beat Reactor (BCC_CAMERASHAKE-8001 enable + 8003 audio layer)": "drives the shake from an audio layer's amplitude — the beat-synced-shake path; Audio Samplers A/B/C map bands to shake params",
+    "Motion Blur (BCC_CAMERASHAKE-1006 enable + 1007 Shutter Angle)": "adds directional motion blur to the shake for realism"
+  },
+  "config_recipes": {
+    "subtle handheld": "Amplitude 20-50, Translation 2-6, Speed 60-120, Rotation 2-5, Post Scale 105-110",
+    "impact / hit shake": "Amplitude 300-600, Speed 300-600, Translation 15-30, Scale 10-20 — keyframe Amplitude to spike on the frame then decay to 0",
+    "earthquake / heavy rumble": "Amplitude 600-1000, Scale 10-30, Rotation 10-30, Speed 400+, Post Scale 120-140",
+    "horizontal-only rattle": "Translation X 200 / Translation Y 0, Amplitude 100-300",
+    "beat-synced": "enable Beat Reactor, pick the audio layer, map an Audio Sampler to Amplitude/Scale"
+  },
+  "reasoning_hooks": {
+    "more violent / bigger shake": "raise Amplitude",
+    "faster / more frantic": "raise Speed",
+    "add a zoom punch": "raise Scale",
+    "add rotational wobble / roll": "raise Rotation",
+    "black edges showing during the shake": "raise Post Scale (overscan) and/or check Edge Mode",
+    "shake only left-right (or up-down)": "set Translation Y 0 (or X 0) and raise the other",
+    "make it react to the music": "enable Beat Reactor + select the audio layer",
+    "one-shot hit not a constant shake": "keyframe Amplitude: 0 -> spike -> decay to 0"
+  },
+  "grounding": "introspect card (159 leaf params, full SEMANTIC names + ranges — cards/BCC_CAMERASHAKE.json; the live shake dials are the BCC_CAMERASHAKE-10xx group) + model prior on BCC Camera Shake + a 2-frame STATIC confirm (introspect/frames/ess_shake_amp0 vs ess_shake_ampMax: the frame is clearly displaced/scaled at high Amplitude, Post Scale hides edges). NOTE: a static probe cannot show the temporal shake motion — Amplitude/Speed/frequency behaviour is grounded on names + model prior, only frame displacement was visually verified. Confidence: high on the lever identities; the shake dynamics are inferred (motion effect).",
+  "_method": "introspect + static confirm + synth (motion effect — probe intentionally minimal)",
+  "_date": "2026-07-19"
+}

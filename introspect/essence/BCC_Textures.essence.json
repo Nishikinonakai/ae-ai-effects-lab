@@ -1,0 +1,42 @@
+{
+  "matchName": "BCC_TEXTURES",
+  "displayName": "BCC Textures",
+  "vendor": "Boris FX Continuum (BCC)",
+  "category": "Stylize / Texture / Grunge",
+  "essence": "Overlays a picked texture map (canvas / paper / grunge / organic, from BCC's built-in texture-preset library) over the source, compositing weave / grain / dirt onto the image. The go-to way to add analog surface, film-grunge, paper, or fabric texture on top of a clean layer. Amount = how strongly the texture is stamped on; the actual texture is chosen from a preset picker.",
+  "when_to_use": ["texture overlay", "grunge", "grain", "质感", "canvas / paper / fabric", "dirt / grime", "analog surface", "film texture", "aged / distressed look", "roughen a clean plate"],
+  "manifests_as": "a woven / grungy texture pattern composited over the source, darkening and roughening it — probe-confirmed (Amount 0 clean, 40 subtle grain, 100 heavy weave; View=2 isolates the grey canvas texture map)",
+  "key_levers": [
+    { "name": "Amount", "matchName": "BCC_TEXTURES-1001", "range": [0, 100], "default": 40, "effect": "MASTER — strength/opacity of the texture over the source. 0 = clean (off), ~20-40 = subtle grain/canvas, ~70-100 = heavy grunge stamp that darkens and roughens the image. Probe-confirmed." },
+    { "name": "Complexity", "matchName": "BCC_TEXTURES-1002", "range": [0, 50], "default": 0, "effect": "detail/roughness of the texture pattern (extra octaves). Higher = denser, more chaotic, finer-grained weave. Probe-confirmed 0 vs 50." },
+    { "name": "Texture", "matchName": "BCC_TEXTURES-1000", "range": null, "default": null, "effect": "the texture-PRESET picker (a library of canvas/paper/grunge/organic maps). CUSTOM_VALUE UI control — NOT settable via numeric setValue; default is a woven canvas. Change via the effect UI or a saved preset." },
+    { "name": "Randomize", "matchName": "BCC_TEXTURES-1003", "range": [0, 100], "default": 0, "effect": "seed/variation — shifts the texture pattern to a different random instance without changing its character." },
+    { "name": "Texture Scale X / Y", "matchName": "BCC_TEXTURES-1018", "range": [0, 500], "default": 100, "effect": "size of the texture tiling (paired Scale Y = BCC_TEXTURES-1019). Small = fine tight grain, large = big coarse texture. Part of the Transform group (Position 1017, Rotate 1021)." },
+    { "name": "View", "matchName": "BCC_TEXTURES-0003", "range": [1, 2], "default": 1, "enum": true, "effect": "1 = Output (texture composited over source), 2 = Texture (the texture map shown ISOLATED for setup). Probe-confirmed." }
+  ],
+  "enums_to_verify": {
+    "View (BCC_TEXTURES-0003, 1-2)": "probe-confirmed: 1 = composite output, 2 = texture-map only",
+    "Texture preset (BCC_TEXTURES-1000, CUSTOM)": "which canvas/paper/grunge/organic map — requires the effect UI picker; default = canvas weave",
+    "Filter (BCC_TEXTURES-1027, 1-8)": "texture sampling quality/filter",
+    "Edge Mode (BCC_TEXTURES-1030, 1-4)": "how the texture tiles/repeats at edges",
+    "Fit (BCC_TEXTURES-1028, 1-4)": "how the texture is fit to the frame"
+  },
+  "config_recipes": {
+    "subtle film-grain / canvas": "Amount 20-40, Complexity 0-10 — light surface texture, source still dominant",
+    "heavy grunge overlay": "Amount 70-100, Complexity 20-50 — gritty distressed stamp",
+    "large coarse texture": "Texture Scale 200-400, Amount 50-70 — big paper/wall feel",
+    "fine tight weave": "Texture Scale 40-80, Complexity 25-40, Amount 40-60",
+    "isolate to design the texture": "View = 2 to see the texture map alone, then set back to 1"
+  },
+  "reasoning_hooks": {
+    "stronger / more visible texture": "raise Amount",
+    "more detailed / rougher texture": "raise Complexity",
+    "change which texture (canvas vs paper vs grunge)": "pick from the Texture preset library in the effect UI (CUSTOM, not numeric)",
+    "bigger / smaller texture grain": "Texture Scale up / down",
+    "vary the pattern without changing look": "Randomize",
+    "texture too dark / heavy": "lower Amount"
+  },
+  "grounding": "introspect card (108 leaf params, full SEMANTIC names + ranges — cards/BCC_TEXTURES.json) + 5-frame visual probe on a Fractal-Noise+Tint textured base (introspect/frames/ess_tex_*: amt0 clean, amt40 subtle grain, amt100 heavy weave, +Complexity denser, View=2 shows the grey canvas map) + model prior on BCC Textures. Confidence: high on Amount/Complexity/View; the Texture preset itself is a UI-only picker (noted).",
+  "_method": "introspect + focused probe + synth (the essence-card pipeline)",
+  "_date": "2026-07-19"
+}
