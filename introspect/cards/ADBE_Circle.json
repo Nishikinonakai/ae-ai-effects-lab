@@ -1,0 +1,192 @@
+{
+ "effect": {
+  "name": "Circle",
+  "matchName": "ADBE Circle"
+ },
+ "counts": {
+  "total": 16,
+  "leaf": 14,
+  "groups": 2,
+  "animatable": 11,
+  "customValue": 0,
+  "hiddenLevers": 0,
+  "_settabilityProbe": "second pass, settled instance"
+ },
+ "params": [
+  {
+   "depth": 0,
+   "name": "Center",
+   "matchName": "ADBE Circle-0001",
+   "type": "2D_SPATIAL",
+   "value": "320,180",
+   "units": "pixels",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Radius",
+   "matchName": "ADBE Circle-0002",
+   "type": "1D",
+   "value": "75",
+   "min": -10000,
+   "max": 10000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Edge",
+   "matchName": "ADBE Circle-0003",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 5,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Not in use",
+   "matchName": "ADBE Circle-0004",
+   "type": "1D",
+   "value": "10",
+   "min": 0,
+   "max": 10000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Feather",
+   "matchName": "ADBE Circle-0005",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Feather Outer Edge",
+   "matchName": "ADBE Circle-0006",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 10000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Feather Inner Edge",
+   "matchName": "ADBE Circle-0007",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 10000,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Feather Inner Edge",
+   "matchName": "ADBE Circle-0008",
+   "type": "GROUP",
+   "value": "",
+   "animatable": false,
+   "expr": false
+  },
+  {
+   "depth": 0,
+   "name": "Invert Circle",
+   "matchName": "ADBE Circle-0009",
+   "type": "1D",
+   "value": "0",
+   "min": 0,
+   "max": 1,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Color",
+   "matchName": "ADBE Circle-0010",
+   "type": "COLOR",
+   "value": "1,1,1,1",
+   "min": -3921568.62745098,
+   "max": 3921568.62745098,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Opacity",
+   "matchName": "ADBE Circle-0011",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Blending Mode",
+   "matchName": "ADBE Circle-0012",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 23,
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 0,
+   "name": "Compositing Options",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Built In Params"
+  },
+  {
+   "depth": 1,
+   "name": "Masks",
+   "type": "GROUP",
+   "matchName": "ADBE Effect Mask Parade"
+  },
+  {
+   "depth": 1,
+   "name": "Effect Opacity",
+   "matchName": "ADBE Effect Mask Opacity",
+   "type": "1D",
+   "value": "100",
+   "min": 0,
+   "max": 100,
+   "units": "percent",
+   "animatable": true,
+   "expr": true,
+   "settable": "yes"
+  },
+  {
+   "depth": 1,
+   "name": "GPU Rendering",
+   "matchName": "ADBE Force CPU GPU",
+   "type": "1D",
+   "value": "1",
+   "min": 1,
+   "max": 3,
+   "animatable": false,
+   "expr": false,
+   "settable": "yes"
+  }
+ ]
+}

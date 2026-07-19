@@ -1,0 +1,7 @@
+{
+  "label": "colever_seed",
+  "_note": "The seed touches ONE lever — Exposure. Everything the scorer can suggest without the essence wire is bounded by this plan.",
+  "edits": [
+    { "op": "param", "layerIndex": 1, "effectMatchName": "PEDG", "paramMatchName": "PEDG-0002", "value": 2.2 }
+  ]
+}

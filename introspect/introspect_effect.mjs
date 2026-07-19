@@ -131,6 +131,74 @@ function buildScript(effectName, cardPath) {
     .replace('__CARDPATH__', cardPath.replace(/\\/g, '\\\\'));
 }
 
+// SETTABILITY — a SECOND pass, and it must be a second bridge round-trip.
+//
+// Readable does not imply writable: Deep Glow's Spread reads perfectly (value 33, range
+// 0.01..100, units %) but every setValue throws "the property or a parent property is hidden".
+// A card built from readability alone therefore advertises levers that can NEVER move, and
+// everything downstream — the planner, the scorer's co-lever list, the tune loop — spends moves
+// on them. (This cost a real tune: the scorer pivoted to Spread, the edit threw, the iteration
+// was wasted.)
+//
+// Why a separate round-trip: a plugin decides which params to hide in its own params-UI pass,
+// which AE runs AFTER the script that created the effect returns. Probe inside the creating
+// script and every param still reports settable — measured directly: same instance, "settable"
+// during creation, "hidden" on the very next round-trip. So settability is only meaningful on a
+// SETTLED instance. An identity setValue (same value in, same value out) is then an exact,
+// side-effect-free probe, and it runs on the __Introspect scratch solid, so nothing user-owned
+// is touched.
+function buildSettableScript() {
+  return String.raw`(function () {
+  var esc = function (s) { return String(s).replace(/\\/g, "\\\\").replace(/"/g, '\"').replace(/[\r\n\t]/g, " "); };
+  var out = [];
+  function walk(group) {
+    for (var i = 1; i <= group.numProperties; i++) {
+      var p;
+      try { p = group.property(i); } catch (e) { continue; }
+      if (p.propertyType === PropertyType.PROPERTY) {
+        var st = "yes", mn = "";
+        try { mn = p.matchName; } catch (e) { continue; }
+        try {
+          if (p.propertyValueType === PropertyValueType.NO_VALUE ||
+              p.propertyValueType === PropertyValueType.CUSTOM_VALUE ||
+              p.propertyValueType === PropertyValueType.MARKER) st = "n/a";
+          else p.setValue(p.value);
+        } catch (eSet) {
+          var msg = String(eSet);
+          // "structurally unreachable" vs "busy right now" — only the first is a property of the
+          // effect itself; a keyframed/expression-driven param is settable in principle.
+          // Written as if/else deliberately: a CHAINED ternary misparses in this ExtendScript
+          // engine — "a ? x : (b) ? y : z" evaluated to y with a demonstrably true (indexOf
+          // returned 113, i.e. >= 0), silently mislabelling every hidden param as "driven".
+          if (msg.indexOf("hidden") >= 0) { st = "hidden"; }
+          else if (msg.indexOf("keyframe") >= 0 || msg.indexOf("expression") >= 0) { st = "driven"; }
+          else { st = "no"; }
+        }
+        out.push('"' + esc(mn) + '":"' + st + '"');
+      } else walk(p);
+    }
+  }
+  try {
+    var comp = null;
+    for (var i = 1; i <= app.project.numItems; i++) {
+      var it = app.project.item(i);
+      if (it instanceof CompItem && it.name === "__Introspect") { comp = it; break; }
+    }
+    if (!comp) return '{"status":"error","message":"no __Introspect comp"}';
+    var solid = null;
+    for (var L = 1; L <= comp.numLayers; L++) if (comp.layer(L).name === "probe") solid = comp.layer(L);
+    if (!solid || solid.Effects.numProperties < 1) return '{"status":"error","message":"no probe effect"}';
+    app.beginUndoGroup("Introspect settability");
+    walk(solid.Effects.property(1));
+    app.endUndoGroup();
+    return '{"status":"ok","settable":{' + out.join(",") + '}}';
+  } catch (e) {
+    try { app.endUndoGroup(); } catch (e2) {}
+    return '{"status":"error","message":"' + esc(String(e)) + '"}';
+  }
+})();`;
+}
+
 async function send(script, timeoutSec = 60) {
   fs.writeFileSync(RES, JSON.stringify({ status: 'waiting' }));
   fs.writeFileSync(CMD, JSON.stringify({ command: 'runScript', args: { script }, timestamp: new Date().toISOString(), status: 'pending' }, null, 2));
@@ -149,9 +217,24 @@ for (const eff of effects) {
   const safe = eff.replace(/[^a-zA-Z0-9]+/g, '_');
   const cardPath = path.join(CARDS, safe + '.json');
   const res = await send(buildScript(eff, cardPath));
-  if (res.status === 'ok') {
-    console.log(`✓ ${res.effect}  [${res.matchName}]  params=${res.total} leaf=${res.leaf} animatable=${res.animatable} customValue=${res.customValue}  → cards/${safe}.json`);
+  if (res.status !== 'ok') { console.log(`✗ "${eff}"  — ${res.message || res.status}`); continue; }
+
+  // second pass on the now-settled instance (see buildSettableScript) — merge into the card
+  let hidden = 0, probed = false;
+  const st = await send(buildSettableScript());
+  if (st.status === 'ok' && st.settable) {
+    const card = JSON.parse(fs.readFileSync(cardPath, 'utf8'));
+    for (const p of card.params) {
+      if (p.type === 'GROUP' || !p.matchName) continue;
+      p.settable = st.settable[p.matchName] || 'unknown';
+      if (p.settable === 'hidden') hidden++;
+    }
+    card.counts.hiddenLevers = hidden;
+    card.counts._settabilityProbe = 'second pass, settled instance';
+    fs.writeFileSync(cardPath, JSON.stringify(card, null, 1));
+    probed = true;
   } else {
-    console.log(`✗ "${eff}"  — ${res.message || res.status}`);
+    console.log(`  ⚠ settability probe unavailable (${st.message || st.status}) — card records structure only`);
   }
+  console.log(`✓ ${res.effect}  [${res.matchName}]  params=${res.total} leaf=${res.leaf} animatable=${res.animatable} customValue=${res.customValue}${probed ? `  hidden=${hidden}` : ''}  → cards/${safe}.json`);
 }

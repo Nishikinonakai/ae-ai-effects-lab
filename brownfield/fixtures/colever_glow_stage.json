@@ -1,0 +1,29 @@
+{
+  "_purpose": "Live test fixture for the essence→scorer co-lever wire (E2E finding #6). Stages a Deep Glow that is weak IN THE WRONG DIMENSION: Exposure is already reasonable (1.6) but Radius is choked to 60 and Threshold gates out all but the brightest pixels — so a 'wide soft bloom wash' intent is UNREACHABLE by pushing the seeded lever (Exposure), which can only blow the small disc to white. Convergence therefore requires pivoting to a lever that appears NOWHERE in the seed plan, which is exactly what the essence-card injection makes possible. Before the wire, the scorer was told 'only reference matchNames visible in the plan' and could only ever say 'more Exposure'.",
+  "intent": "暗场中的明亮圆形光源，用于测试 Deep Glow 的辉光扩散半径",
+  "name": "colever_glow_stage",
+  "compName": "CoLever_GlowStage",
+  "comp": { "width": 1280, "height": 720, "fps": 30, "duration": 4 },
+  "background": [0.02, 0.02, 0.05],
+  "hostName": "Artwork",
+  "effects": [
+    {
+      "matchName": "ADBE Circle",
+      "params": [
+        ["ADBE Circle-0001", [640, 360], "Center"],
+        ["ADBE Circle-0002", 70, "Radius — a small, bright point source"],
+        ["ADBE Circle-0006", 20, "Feather Outer Edge"],
+        ["ADBE Circle-0010", [1, 0.93, 0.72, 1], "Color — warm white"]
+      ]
+    },
+    {
+      "matchName": "PEDG",
+      "params": [
+        ["PEDG-0002", 1.6, "Exposure — the SEEDED lever (already reasonable)"],
+        ["PEDG-0001", 60, "Radius — choked: this is what actually blocks the 'wide' intent"],
+        ["PEDG-0004", 260, "Threshold — gating out all but the very brightest pixels"]
+      ]
+    }
+  ],
+  "renderFrames": [1.0]
+}

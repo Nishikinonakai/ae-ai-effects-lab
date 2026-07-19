@@ -20,6 +20,7 @@ import path from 'path';
 import os from 'os';
 import { fileURLToPath } from 'url';
 import { spawnSync } from 'child_process';
+import { effectsFromEdits } from '../introspect/essence/lookup.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -39,6 +40,15 @@ fs.mkdirSync(outDir, { recursive: true });
 const seed = JSON.parse(fs.readFileSync(path.resolve(seedPath), 'utf8'));
 const targetLayer = Number(arg('layer', (seed.edits && seed.edits[0] && seed.edits[0].layerIndex) || 1));
 
+// Effects touched so far in this tune — grows as the scorer pivots, and is what the essence index is
+// queried with each round (see verifyEdit). Seeded from the seed spec.
+const touchedEffects = new Set(effectsFromEdits(seed.edits || []).effects);
+// Levers this tune has proven unreachable (hidden behind a parent gate, wrong type, …) — never re-offered.
+const blockedLevers = new Set();
+// The plateau trace handed to the scorer as prior_iterations, rewritten before every verify.
+const historyPath = path.join(outDir, 'tune_history.json');
+fs.writeFileSync(historyPath, '[]');
+
 function node(script, args) { return spawnSync('node', [script, ...args], { encoding: 'utf8' }); }
 
 // apply an edit spec; returns the parsed report (or null on failure)
@@ -53,15 +63,38 @@ function applyEdit(spec, label) {
 }
 
 // verify a report against the ORIGINAL baseline + intent; returns {score, verdict, suggestions, decision}
-function verifyEdit(reportPath, baselineReportPath) {
-  const r = node(VERIFY, [`--report=${reportPath}`, `--intent=${intent}`, `--baseline=${baselineReportPath}`, `--accept=${acceptBar}`, `--rollback=3`, `--model=${model}`]);
+//
+// Two things beyond the frames make the multi-iteration case work (finding #6):
+//   · --history : the prior verdicts, so the scorer can SEE that a lever has stopped paying and
+//                 pivot off it. Without this every iteration read as an isolated one-shot review.
+//   · --effects : every effect touched SO FAR in this tune, not just the seed's — so the essence
+//                 co-lever block keeps covering the whole accumulated edit, not the first move.
+function verifyEdit(reportPath, baselineReportPath, iterNo) {
+  const args = [`--report=${reportPath}`, `--intent=${intent}`, `--baseline=${baselineReportPath}`,
+    `--accept=${acceptBar}`, `--rollback=3`, `--model=${model}`,
+    `--history=${historyPath}`, `--iter=${iterNo + 1}`, `--max-iters=${maxIters + 1}`];
+  if (touchedEffects.size) args.push(`--effects=${[...touchedEffects].join(',')}`);
+  // levers that turned out to be gated shut stay blocked for the REST of the tune — otherwise the
+  // scorer re-suggests them every round (a wider lever vocabulary makes this more likely, not less)
+  if (blockedLevers.size) args.push(`--blocked=${[...blockedLevers].join(',')}`);
+  const r = node(VERIFY, args);
   process.stdout.write(r.stdout || '');
   const reviewPath = path.join(path.dirname(reportPath), 'review.json');
   if (!fs.existsSync(reviewPath)) { console.error('verify produced no review.json:\n' + (r.stderr || '')); return null; }
   const review = JSON.parse(fs.readFileSync(reviewPath, 'utf8'));
+  // carry forward what verify_edit measured on this report (it names the request after the report's
+  // own label, so re-read the label rather than reconstructing it from the filename)
+  let deltaClass = null;
+  try {
+    const label = JSON.parse(fs.readFileSync(reportPath, 'utf8')).label || 'edit';
+    const reqPath = path.join(path.dirname(reportPath), `verify_${label}_request.json`);
+    const req = JSON.parse(fs.readFileSync(reqPath, 'utf8'));
+    for (const b of req.blocked_levers || []) blockedLevers.add(b);
+    deltaClass = req.frame_delta?.class ?? null;
+  } catch { /* request shape changed — the blocklist just stays as-is */ }
   // exit code: 0 accept / 2 tune / 3 rollback
   const decision = r.status === 0 ? 'accept' : r.status === 2 ? 'tune' : 'rollback';
-  return { score: review.score, verdict: review.verdict, critique: review.critique, suggestions: review.suggestions || [], decision };
+  return { score: review.score, verdict: review.verdict, critique: review.critique, suggestions: review.suggestions || [], decision, deltaClass };
 }
 
 function rollback(reportPath) {
@@ -75,7 +108,11 @@ function suggestionsToSpec(suggestions, label) {
   const edits = [];
   for (const s of suggestions) {
     if (s.type === 'param' && s.matchName && s.value !== undefined) {
-      edits.push({ op: 'param', layerIndex: targetLayer, effectMatchName: s.effect, paramMatchName: s.matchName, value: s.value });
+      // `effect` is required by the schema but a scorer pivoting to a co-lever sometimes names only
+      // the param. Vendor param matchNames are `<effect>-<digits>`, so recover the owner rather than
+      // sending apply_edit an undefined effect (which fails the locate and wastes an iteration).
+      const fx = s.effect || String(s.matchName).replace(/-\d+$/, '');
+      edits.push({ op: 'param', layerIndex: targetLayer, effectMatchName: fx, paramMatchName: s.matchName, value: s.value });
     } else if (s.type === 'effect' && s.matchName) {
       edits.push({ op: 'addEffect', layerIndex: targetLayer, effectMatchName: s.matchName });
     } else if (s.type === 'expression' && s.matchName && s.expression) {
@@ -98,22 +135,41 @@ const trace = [];
 let current = seed0;                        // the report of the currently-applied (topmost) edit
 let best = { score: -1, reportPath: seed0.reportPath, depth: 0 };
 const stack = [seed0];                      // applied reports, for rollback on decline
+let accepted = false;
 
 for (let n = 0; n <= maxIters; n++) {
   const label = `iter${n}`;
-  const v = verifyEdit(current.reportPath, baselineReport);
+  const v = verifyEdit(current.reportPath, baselineReport, n);
   if (!v) break;
   trace.push({ iter: n, score: v.score, verdict: v.verdict, decision: v.decision, critique: (v.critique || '').slice(0, 120) });
+  // hand the NEXT verify what this one concluded, in the prior_iterations shape the scorers read
+  fs.writeFileSync(historyPath, JSON.stringify(trace.map(t => ({ iter: t.iter, verdict: t.verdict, score: t.score, critique: t.critique })), null, 2));
   console.log(`  → iter ${n}: ${v.verdict} ${v.score}/10 (${v.decision})`);
 
-  if (v.decision === 'accept') { console.log(`\n✅ ACCEPTED at iter ${n} (score ${v.score}).`); break; }
-  if (n === maxIters) { console.log(`\n⏹ max iters reached — best was iter ${best.depth === 0 ? 0 : '?'} score ${Math.max(best.score, v.score)}.`); break; }
+  if (v.decision === 'accept') { console.log(`\n✅ ACCEPTED at iter ${n} (score ${v.score}).`); accepted = true; break; }
+  if (n === maxIters) {
+    if (v.score > best.score) best = { score: v.score, reportPath: current.reportPath, depth: stack.length };
+    console.log(`\n⏹ max iters reached — best score ${best.score}.`);
+    break;
+  }
 
   // revert-on-decline: if this iter is worse than the best so far, undo it and re-tune from best.
+  // Revert-on-decline, with one exception: an ENABLING move. Opening a gate (a threshold that was
+  // admitting no pixels, a toggle that was off) usually does not raise the score BY ITSELF — it
+  // just makes the next lever able to work at all. A strict "keep only if better" rule discards
+  // exactly those moves: measured live, the loop rolled back the Threshold fix because it merely
+  // TIED, then had to find a longer way round. So a tie survives when the frame actually changed —
+  // that edit did something real and may be what unlocks the next one. Ties that changed nothing
+  // are still reverted; keeping those would just accumulate dead weight.
   let baseForNext = current;
+  const enabling = v.score === best.score && v.deltaClass === 'changed';
   if (v.score > best.score) { best = { score: v.score, reportPath: current.reportPath, depth: stack.length }; }
+  else if (enabling && n > 0) {
+    console.log(`  ↦ tie (${v.score}) but the frame changed — keeping as an enabling move`);
+    best = { score: v.score, reportPath: current.reportPath, depth: stack.length };
+  }
   else if (n > 0) {
-    console.log(`  ↩ decline (${v.score} < best ${best.score}) — rolling back this edit, re-tuning from best`);
+    console.log(`  ↩ decline (${v.score} ${v.score === best.score ? '=' : '<'} best ${best.score}${v.deltaClass === 'inert' ? ', frame unchanged' : ''}) — rolling back this edit, re-tuning from best`);
     rollback(current.reportPath); stack.pop();
     baseForNext = stack[stack.length - 1];
   }
@@ -122,13 +178,30 @@ for (let n = 0; n <= maxIters; n++) {
   const nextSpec = suggestionsToSpec(v.suggestions, `iter${n + 1}`);
   if (!nextSpec) { console.log(`\n⏹ no applicable suggestions at iter ${n} — stopping (best score ${best.score}).`); break; }
   console.log(`  ↳ applying ${nextSpec.edits.length} suggested edit(s): ${nextSpec.edits.map(e => e.op + ' ' + (e.paramMatchName || e.effectMatchName || e.target)).join(', ')}`);
+  for (const fx of effectsFromEdits(nextSpec.edits).effects) touchedEffects.add(fx);   // widen the lever context as the tune pivots
   const applied = applyEdit(nextSpec, `iter${n + 1}`);
   if (!applied) { console.log('  (apply failed — stopping)'); break; }
   stack.push(applied);
   current = applied;
 }
 
+// Leave the comp in its BEST state, not its LAST. A tune that peaks at 7/10 on iteration 2 and then
+// tries a worse idea on iteration 3 must not hand back the worse one — but that is exactly what
+// running out of iterations used to do, silently: the loop stopped with the losing edit still
+// applied. Every applied edit above the best-scoring one is rolled back, newest first, using the
+// same deterministic inverses as a manual rollback. (An ACCEPT keeps everything: the accepted edit
+// is the result, and its score was never folded into `best`.)
+let restored = 0;
+if (!accepted) {
+  while (stack.length > best.depth && stack.length > 1) {
+    const top = stack.pop();
+    if (!rollback(top.reportPath)) { console.error('⚠ rollback failed — the comp may hold a worse-than-best edit; check the report.'); break; }
+    restored++;
+  }
+  if (restored) console.log(`↩ restored the best state (rolled back ${restored} edit(s) applied after the best score).`);
+}
+
 const summaryPath = path.join(outDir, 'tune_summary.json');
-fs.writeFileSync(summaryPath, JSON.stringify({ intent, targetLayer, acceptBar, trace, bestScore: best.score }, null, 2));
+fs.writeFileSync(summaryPath, JSON.stringify({ intent, targetLayer, acceptBar, trace, bestScore: best.score, accepted, rolledBackToBest: restored, blockedLevers: [...blockedLevers] }, null, 2));
 console.log(`\ntrajectory: ${trace.map(t => `${t.score}`).join(' → ')}`);
 console.log(`summary → ${path.relative(REPO, summaryPath)}`);

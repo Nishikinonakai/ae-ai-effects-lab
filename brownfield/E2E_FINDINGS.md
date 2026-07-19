@@ -92,3 +92,82 @@ Live testing alone missed edge cases, so an adversarial-review workflow attacked
 
 The one class of bug live testing can't reliably surface (silent inverse corruption on an untested
 key type) is exactly what the adversarial pass caught.
+
+---
+
+## Round 3 — closing finding #6 (co-lever pivot), 2026-07-19
+
+Finding #6 was "the scorer can only ever suggest levers the seed plan already touched". Closing it
+turned into a four-part fix, because a **controlled A/B on a purpose-built fixture** kept exposing
+the next layer down. Fixture: `fixtures/colever_glow_stage.json` — a bright disc under a Deep Glow
+that is weak *in the wrong dimension* (Exposure already fine at 1.6; Radius choked to 60; Threshold
+parked at 260% so **no pixel qualifies at all**). The intent "a wide, soft, dreamy bloom" is
+therefore unreachable by pushing the seeded lever, and the seed touches only Exposure.
+
+**#6a — the scorer had no vocabulary to pivot.** `introspect/essence/lookup.mjs` reads the essence
+cards for the effects in play and injects their verified levers + config recipes into the review
+request. The anti-hallucination guard survives (matchNames still come from ground truth, now the
+index rather than only the plan) while the pivot vocabulary widens.
+
+> **A/B, identical frames and intent.** Levers OFF: score 3/10, and the only suggestion it could
+> make was `PEDG-0002 → 8`, described as *"increase the bloom/spread control"* — it wanted spread,
+> could only see Exposure, and so would have applied a **causally wrong** edit. Levers ON: pivoted
+> to `PEDG-0001` Radius → 1300 and `PEDG-0011` Spread → 70, neither in the plan.
+
+**#6b — the scorer cannot tell "did very little" from "did literally nothing".** Both read to it as
+"visually indistinguishable", and it answers both the same way: push harder. But they need opposite
+responses — a zero delta means a lever is INERT and no magnitude can help. `frame_delta.mjs`
+(dependency-free 8/16-bit PNG decode + diff) measures it and **tells** the scorer instead of asking
+it to perceive it. Also revealed: an inert frame has two causes, and the edit report distinguishes
+them — if the param never took its value the edit was gated; if it *did* take its value and the
+frame still did not move, the lever is real but absorbed/saturated in this state.
+
+**#6c — essence cards advertised levers that can never move.** The pivot at #6a picked `PEDG-0011`
+Spread… and `setValue` threw *"the property or a parent property is hidden"*. Deep Glow exposes 9
+params to the scripting API — full name, range, units, live value — that it never opens for writing.
+Probed against Blend Mode, Auto Iterations, View, Unmult, Fixed Steps and Enable Dither, on fresh
+instances and after renders: they stay shut in every combination. Two fixes: `introspect_effect.mjs`
+now records **settability**, and unreachable levers are filtered out of what the scorer is offered.
+
+> **The settability probe must be a SECOND bridge round-trip.** A plugin decides which params to
+> hide in its own params-UI pass, which AE runs *after* the creating script returns. Probed inside
+> that script, every param reports settable; probed on the very next round-trip, the same instance
+> reports 9 hidden. Measured directly — this is why the first implementation reported `hidden=0`.
+>
+> **ExtendScript bug found en route:** a chained ternary
+> `a ? x : (b) ? y : z` evaluated to `y` with `a` demonstrably true (`indexOf` returned 113).
+> Every hidden param was silently mislabelled `driven`. Use if/else in ExtendScript.
+
+**#6d — the scorer was diagnosing causality blind.** The plan shows only what the current edit
+touched, so every other lever arrived as a name and a range with no idea where it *sits*. With
+Threshold parked at 260 and invisible, "which lever is the gate?" was guesswork — and it showed as
+high run-to-run variance. `verify_edit` now reads the live values of the offered levers in one
+round-trip and annotates the block `NOW=260`, turning inference into observation.
+
+### Result — same fixture, same seed, same intent
+
+| build | trajectory | outcome |
+|---|---|---|
+| before (levers off) | 3 → 3 → 3 → 3 | never converged; its one suggestion was causally mislabelled |
+| \+ co-levers (#6a) | 3 → 3 → 3 → 3 | pivoted correctly, but the shut gate was invisible |
+| \+ inert detection (#6b) | 2 → 4 → 9 | diagnosed the gate, converged |
+| \+ settability (#6c) | 3 → 3 → 3 → 8 | no move wasted on a phantom lever; still variable |
+| \+ live values (#6d) | **1 → 7 → 9** | correct diagnosis on the **first** review, converged in 2 iters |
+
+Two loop-mechanics bugs fixed alongside, both surfaced by these runs:
+
+- **The loop returned its LAST state, not its BEST.** A tune that peaked at 7/10 then tried a worse
+  idea handed back the worse one, silently. It now rolls back to the best-scoring state on exit
+  (an ACCEPT still keeps everything).
+- **Enabling moves were discarded.** Opening a gate usually does not raise the score *by itself* —
+  it makes the *next* lever able to work. Strict "keep only if better" threw exactly those away
+  (observed: the loop rolled back the Threshold fix on a tie, then needed a longer route). A tie now
+  survives when the frame actually changed; ties that changed nothing are still reverted.
+
+### What generalises
+
+- **Measure what the model is bad at, don't ask it to perceive it.** Inert-vs-weak is a pixel diff.
+- **Readable ≠ writable ≠ effective.** Three distinct states, and the ontology needs all three:
+  introspection gives readable, the settability probe gives writable, only the render gives effective.
+- **Show current state, not just capability.** A causal model plus a live value is a diagnosis; a
+  causal model alone is a guess.

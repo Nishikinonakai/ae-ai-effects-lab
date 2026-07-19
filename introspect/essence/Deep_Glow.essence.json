@@ -1,44 +1,148 @@
 {
-  "matchName": "PEDG",
-  "displayName": "Deep Glow",
-  "vendor": "Plugin Everything",
-  "category": "Glow / Bloom",
-  "essence": "A physically-plausible HDR bloom/glow. The brightest regions of the source bleed soft light outward (a threshold picks WHAT glows, radius sets HOW FAR, exposure sets HOW BRIGHT), composited back over the source. The go-to lens-bloom / neon-glow / dreamy-haze look — cleaner and softer than AE's native Glow, in the Trapcode-Glow / Optical-Glow class.",
-  "when_to_use": ["glow", "bloom", "光晕", "neon glow", "lens bloom", "dreamy haze", "soft light", "highlight bloom", "light leak feel", "make lights/emissives pop", "ethereal / soft-focus"],
-  "manifests_as": "soft halos of light spreading out of the bright areas of the source — probe-confirmed (Exposure 0=off, 2=strong bloom, 6=blown white; Radius 1500=wide wash; Threshold 200=only brightest bloom)",
-  "key_levers": [
-    { "name": "Exposure", "matchName": "PEDG-0002", "range": [0, 10], "default": 1, "effect": "MASTER glow brightness/intensity. 0 = glow off (source only), ~1-2 = natural bloom, ~3-5 = strong, 6+ = blows out to white. Probe-confirmed." },
-    { "name": "Radius", "matchName": "PEDG-0001", "range": [0, 2000], "default": 500, "effect": "size/reach of the glow. Low = tight halos hugging the highlights; high (1000-2000) = wide soft light-wash bleeding across the frame. Probe-confirmed." },
-    { "name": "Threshold", "matchName": "PEDG-0004", "range": [0, 500], "units": "percent", "default": 0, "effect": "luminance gate — WHICH pixels glow. 0 = everything glows (full-frame bloom); raise (100-300%) so only the brightest pixels (neon/highlights) bloom and the rest stays sharp. Probe-confirmed at 200%." },
-    { "name": "Threshold Smooth", "matchName": "PEDG-0005", "range": [0, 100], "units": "percent", "default": 0, "effect": "softness of the threshold cutoff — feathers the transition between glowing and non-glowing regions." },
-    { "name": "Spread", "matchName": "PEDG-0011", "range": [0.01, 100], "units": "percent", "default": 33, "effect": "shape/falloff of the glow — how the light energy is distributed across the radius (low = concentrated core, high = broad even spread)." },
-    { "name": "Source Opacity", "matchName": "PEDG-0024", "range": [0, 100], "units": "percent", "default": 100, "effect": "opacity of the original source under the glow. Lower toward 0 to fade the source and leave a glow-only / light-abstraction pass." },
-    { "name": "Blend Mode", "matchName": "PEDG-0008", "range": [1, 2], "default": 1, "enum": true, "effect": "how the glow composites over the source (Add-like vs Screen-like); verify which index is which if a specific comp is needed." }
-  ],
-  "enums_to_verify": {
-    "View (PEDG-0023, 1-2)": "1 = glow only, 2 = composite over source. Probe used default 2 (composite).",
-    "Blend Mode (PEDG-0008, 1-2)": "Add vs Screen compositing of the glow",
-    "Tint Mode (PEDG-0039, 1-3)": "how the optional glow Tint (enable PEDG-0037, color PEDG-0038) is applied",
-    "Chromatic Aberration Channels (PEDG-0014, 1-3)": "which channels split when Chromatic Aberration (enable PEDG-0013, amount PEDG-0015) is on",
-    "Edge Behaviour (PEDG-0055, 1-4)": "how the glow treats the frame edge (bleed/clamp/wrap)"
+ "matchName": "PEDG",
+ "displayName": "Deep Glow",
+ "vendor": "Plugin Everything",
+ "category": "Glow / Bloom",
+ "essence": "A physically-plausible HDR bloom/glow. The brightest regions of the source bleed soft light outward (a threshold picks WHAT glows, radius sets HOW FAR, exposure sets HOW BRIGHT), composited back over the source. The go-to lens-bloom / neon-glow / dreamy-haze look — cleaner and softer than AE's native Glow, in the Trapcode-Glow / Optical-Glow class.",
+ "when_to_use": [
+  "glow",
+  "bloom",
+  "光晕",
+  "neon glow",
+  "lens bloom",
+  "dreamy haze",
+  "soft light",
+  "highlight bloom",
+  "light leak feel",
+  "make lights/emissives pop",
+  "ethereal / soft-focus"
+ ],
+ "manifests_as": "soft halos of light spreading out of the bright areas of the source — probe-confirmed (Exposure 0=off, 2=strong bloom, 6=blown white; Radius 1500=wide wash; Threshold 200=only brightest bloom)",
+ "key_levers": [
+  {
+   "name": "Exposure",
+   "matchName": "PEDG-0002",
+   "range": [
+    0,
+    10
+   ],
+   "default": 1,
+   "effect": "MASTER glow brightness/intensity. 0 = glow off (source only), ~1-2 = natural bloom, ~3-5 = strong, 6+ = blows out to white. Probe-confirmed."
   },
-  "config_recipes": {
-    "subtle soft light": "Exposure 0.5-1, Radius 300-600, Threshold 30-60 — gentle bloom on highlights",
-    "dreamy heavy haze": "Exposure 2-3, Radius 800-1500, Threshold 0-20 — full soft-focus wash",
-    "neon / highlight-only glow": "Threshold 120-250, Exposure 2-4, Radius 400-700 — only the bright neon blooms, rest stays crisp",
-    "glow-only light pass": "Source Opacity 0 (or View=glow-only), Exposure 2-4 — isolate the bloom to Add over a stack",
-    "blown-out flash / bright hit": "Exposure 5-10 — clips toward white for an impact/transition"
+  {
+   "name": "Radius",
+   "matchName": "PEDG-0001",
+   "range": [
+    0,
+    2000
+   ],
+   "default": 500,
+   "effect": "size/reach of the glow. Low = tight halos hugging the highlights; high (1000-2000) = wide soft light-wash bleeding across the frame. Probe-confirmed."
   },
-  "reasoning_hooks": {
-    "make it stronger / brighter": "raise Exposure",
-    "bigger / softer glow": "raise Radius",
-    "only the bright parts should glow": "raise Threshold (+ Threshold Smooth for a soft cutoff)",
-    "everything is washed out / whole frame glowing": "raise Threshold and/or lower Exposure",
-    "tint the glow a color": "enable Tint (PEDG-0037) + set Color (PEDG-0038)",
-    "add a color fringe": "enable Chromatic Aberration (PEDG-0013) + Amount (PEDG-0015)",
-    "fade the original, keep only glow": "lower Source Opacity (PEDG-0024)"
+  {
+   "name": "Threshold",
+   "matchName": "PEDG-0004",
+   "range": [
+    0,
+    500
+   ],
+   "units": "percent",
+   "default": 0,
+   "effect": "luminance gate — WHICH pixels glow. 0 = everything glows (full-frame bloom); raise (100-300%) so only the brightest pixels (neon/highlights) bloom and the rest stays sharp. Probe-confirmed at 200%."
   },
-  "grounding": "introspect card (85 leaf params, full SEMANTIC names + ranges + units — cards/PEDG.json) + 5-frame visual probe on a Fractal-Noise+Tint textured base (introspect/frames/ess_pedg_*: exp0 off / exp2 bloom / exp6 white; rad1500 wide wash; thr200 back to near-source) + model prior on Deep Glow / bloom effects. Confidence: high on the levers; medium on the untested Blend/Tint/CA enum indices.",
-  "_method": "introspect + focused probe + synth (the essence-card pipeline)",
-  "_date": "2026-07-19"
+  {
+   "name": "Threshold Smooth",
+   "matchName": "PEDG-0005",
+   "range": [
+    0,
+    100
+   ],
+   "units": "percent",
+   "default": 0,
+   "effect": "softness of the threshold cutoff — feathers the transition between glowing and non-glowing regions."
+  },
+  {
+   "name": "Source Opacity",
+   "matchName": "PEDG-0024",
+   "range": [
+    0,
+    100
+   ],
+   "units": "percent",
+   "default": 100,
+   "effect": "opacity of the original source under the glow. Lower toward 0 to fade the source and leave a glow-only / light-abstraction pass."
+  },
+  {
+   "name": "Blend Mode",
+   "matchName": "PEDG-0008",
+   "range": [
+    1,
+    2
+   ],
+   "default": 1,
+   "enum": true,
+   "effect": "how the glow composites over the source (Add-like vs Screen-like); verify which index is which if a specific comp is needed."
+  }
+ ],
+ "enums_to_verify": {
+  "View (PEDG-0023, 1-2)": "1 = glow only, 2 = composite over source. Probe used default 2 (composite).",
+  "Blend Mode (PEDG-0008, 1-2)": "Add vs Screen compositing of the glow",
+  "Tint Mode (PEDG-0039, 1-3)": "how the optional glow Tint (enable PEDG-0037, color PEDG-0038) is applied",
+  "Chromatic Aberration Channels (PEDG-0014, 1-3)": "which channels split when Chromatic Aberration (enable PEDG-0013, amount PEDG-0015) is on",
+  "Edge Behaviour (PEDG-0055, 1-4)": "how the glow treats the frame edge (bleed/clamp/wrap)"
+ },
+ "config_recipes": {
+  "subtle soft light": "Exposure 0.5-1, Radius 300-600, Threshold 30-60 — gentle bloom on highlights",
+  "dreamy heavy haze": "Exposure 2-3, Radius 800-1500, Threshold 0-20 — full soft-focus wash",
+  "neon / highlight-only glow": "Threshold 120-250, Exposure 2-4, Radius 400-700 — only the bright neon blooms, rest stays crisp",
+  "glow-only light pass": "Source Opacity 0 (or View=glow-only), Exposure 2-4 — isolate the bloom to Add over a stack",
+  "blown-out flash / bright hit": "Exposure 5-10 — clips toward white for an impact/transition"
+ },
+ "reasoning_hooks": {
+  "make it stronger / brighter": "raise Exposure",
+  "bigger / softer glow": "raise Radius",
+  "only the bright parts should glow": "raise Threshold (+ Threshold Smooth for a soft cutoff)",
+  "everything is washed out / whole frame glowing": "raise Threshold and/or lower Exposure",
+  "tint the glow a color": "enable Tint (PEDG-0037) + set Color (PEDG-0038)",
+  "add a color fringe": "enable Chromatic Aberration (PEDG-0013) + Amount (PEDG-0015)",
+  "fade the original, keep only glow": "lower Source Opacity (PEDG-0024)"
+ },
+ "grounding": "introspect card (85 leaf params, full SEMANTIC names + ranges + units — cards/PEDG.json) + 5-frame visual probe on a Fractal-Noise+Tint textured base (introspect/frames/ess_pedg_*: exp0 off / exp2 bloom / exp6 white; rad1500 wide wash; thr200 back to near-source) + model prior on Deep Glow / bloom effects. Confidence: high on the levers; medium on the untested Blend/Tint/CA enum indices.",
+ "_method": "introspect + focused probe + synth (the essence-card pipeline)",
+ "_date": "2026-07-19",
+ "unreachable_levers": [
+  {
+   "name": "Spread",
+   "matchName": "PEDG-0011",
+   "advertised": "range 0.01..100 percent, default 33 — shape/falloff of the glow",
+   "why": "HIDDEN on Deep Glow v1.5.5: the plugin exposes it to the scripting API (it reads back a value, range and units) but never opens it for writing — every setValue throws 'the property or a parent property is hidden'. Not conditional: probed against Blend Mode, Auto Iterations, View, Unmult, Fixed Steps and Enable Dither, and it stays shut in every combination, on a fresh instance, and after a render.",
+   "_probe": "2026-07-19 settability second pass (introspect_effect.mjs) on a settled instance"
+  },
+  {
+   "name": "Smooth Blending",
+   "matchName": "PEDG-0035",
+   "why": "hidden — same probe"
+  },
+  {
+   "name": "Glow Iterations",
+   "matchName": "PEDG-0021",
+   "why": "hidden — same probe (Auto Iterations does not unlock it)"
+  },
+  {
+   "name": "Edge Behaviour",
+   "matchName": "PEDG-0055",
+   "why": "hidden — same probe"
+  },
+  {
+   "name": "Edge margins Left/Top/Right/Bottom",
+   "matchName": "PEDG-0026..0029",
+   "why": "hidden — same probe"
+  },
+  {
+   "name": "Show Buffers",
+   "matchName": "PEDG-0066",
+   "why": "hidden — debug param, same probe"
+  }
+ ],
+ "_settability_note": "Readable != writable. 9 of this effect's params report a name, range, units and current value through the scripting API yet reject every write. They are recorded in unreachable_levers so the planner and the tune loop's co-lever list never spend a move on them. Measured, not assumed — see _probe."
 }
