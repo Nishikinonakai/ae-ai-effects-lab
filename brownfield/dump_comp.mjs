@@ -111,6 +111,7 @@ const AEX = String.raw`(function () {
 
   var layers = [];
   var activeCount = 0;
+  var missingLive = 0;
   var bottomEnabledIdx = -1;
   for (var b=comp.numLayers; b>=1; b--){ try { if (comp.layer(b).enabled) { bottomEnabledIdx = b; break; } } catch(e){} }
 
@@ -134,8 +135,14 @@ const AEX = String.raw`(function () {
     // "present" in the layer list but contributes nothing to the rendered result the model reasons over).
     var activeNow = false; try { activeNow = enabled && (comp.time >= inP - 1e-6) && (comp.time <= outP + 1e-6); } catch(eA){}
     if (activeNow) activeCount++;
+    // sourceMissing = this layer's footage is OFFLINE — AE renders it as color-bar placeholder, so
+    // any visual reasoning about this frame is UNRELIABLE (E2E finding #1: a copied .aep with broken
+    // relative links rendered color bars). Flag it so the product warns instead of trusting the render.
+    var sourceMissing = false;
+    try { if (L.source && L.source.footageMissing) sourceMissing = true; } catch(eSM){}
+    if (activeNow && sourceMissing) missingLive++;
     layers.push('{"index":'+k+',"name":'+jstr(L.name)+',"role":'+jstr(role)+',"enabled":'+(enabled?'true':'false')+
-                ',"activeNow":'+(activeNow?'true':'false')+
+                ',"activeNow":'+(activeNow?'true':'false')+(sourceMissing?',"sourceMissing":true':'')+
                 ',"threeD":'+(threeD?'true':'false')+',"blendMode":'+jval(bm)+',"trackMatte":'+jval(tm)+
                 ',"parent":'+jval(parent)+',"in":'+jval(inP)+',"out":'+jval(outP)+
                 ',"effectCount":'+fxArr.length+',"effects":['+fxArr.join(',')+']}');
@@ -143,7 +150,7 @@ const AEX = String.raw`(function () {
 
   var meta = '{"comp":'+jstr(comp.name)+',"width":'+comp.width+',"height":'+comp.height+
              ',"fps":'+comp.frameRate+',"duration":'+comp.duration+',"time":'+comp.time+
-             ',"numLayers":'+comp.numLayers+',"activeCount":'+activeCount+',"layers":['+layers.join(',')+']}';
+             ',"numLayers":'+comp.numLayers+',"activeCount":'+activeCount+',"missingLive":'+missingLive+',"layers":['+layers.join(',')+']}';
 
   try {
     var f = new File(OUTJSON);
@@ -187,12 +194,14 @@ try {
   const state = JSON.parse(fs.readFileSync(finalJson, 'utf8'));
   const live = state.activeCount != null ? state.activeCount : state.layers.filter(L => L.activeNow).length;
   console.log(`comp "${state.comp}"  ${state.width}x${state.height} @${state.fps}fps  t=${state.time}s  ${state.numLayers} layers (${live} live at this frame)`);
+  if (state.missingLive > 0) console.log(`  ⚠ ${state.missingLive} LIVE layer(s) have MISSING footage → the rendered frame is a color-bar placeholder; do NOT trust visual reasoning about it.`);
   for (const L of state.layers) {
     const fx = L.effects.map(e => e.name + (e.enabled ? '' : ':off')).join(', ');
     // mark layers that exist but are trimmed out of / disabled at the current frame — the reasoning
     // layer should not attribute anything in the rendered frame to a non-live layer.
     const dead = L.activeNow === false ? (L.enabled ? ' ·trimmed-out' : ' (disabled)') : '';
-    console.log(`  [${L.index}] ${L.name}  <${L.role}>${dead}${L.threeD ? ' 3D' : ''}${fx ? '  fx: ' + fx : ''}`);
+    const miss = L.sourceMissing ? ' ⚠MISSING-FOOTAGE' : '';
+    console.log(`  [${L.index}] ${L.name}  <${L.role}>${dead}${miss}${L.threeD ? ' 3D' : ''}${fx ? '  fx: ' + fx : ''}`);
   }
   console.log(`\nstate → ${path.relative(REPO, finalJson)}`);
   console.log(`frame → ${fs.existsSync(finalPng) ? path.relative(REPO, finalPng) : '(frame not ready)'}`);

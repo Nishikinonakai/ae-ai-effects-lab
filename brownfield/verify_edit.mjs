@@ -14,7 +14,10 @@
 //   low                   → ROLLBACK (node apply_edit.mjs --rollback=<report>)
 //
 // usage: node brownfield/verify_edit.mjs --report=<edit_*_report.json> --intent="..." [--pass="c1||c2"]
-//        [--accept=8] [--rollback=4] [--model=gpt-5.6-terra]
+//        [--accept=8] [--rollback=4] [--model=gpt-5.6-terra] [--baseline=<first_report.json|orig.png>]
+//        [--maxdim=1600]
+//   --baseline: for a MULTI-STEP tune, compare AFTER against the ORIGINAL baseline (not the prior
+//               iteration's before), so cumulative convergence is visible (finding #5).
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -36,9 +39,21 @@ const model = arg('model', 'gpt-5.6-terra');
 const reportPath = path.resolve(reportArg);
 const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
 // report frame paths are repo-relative; resolve to absolute for the scorer (b64 reads them directly)
-const beforeAbs = path.resolve(REPO, report.beforePng);
 const afterAbs = path.resolve(REPO, report.afterPng);
-for (const [lbl, fp] of [['before', beforeAbs], ['after', afterAbs]]) {
+// --baseline (finding #5): in a MULTI-STEP tune, each iteration's own "before" is the PRIOR iteration's
+// state, so a small incremental nudge reads as "no change" and convergence is invisible. Point the
+// "before" at the ORIGINAL baseline (the first edit's before-frame, or an explicit PNG) so the scorer
+// judges the CUMULATIVE delta against where the tune started. Accepts a report.json or a .png.
+let beforeAbs;
+const baselineArg = arg('baseline', null);
+if (baselineArg) {
+  const bp = path.resolve(baselineArg);
+  if (bp.endsWith('.json')) { const br = JSON.parse(fs.readFileSync(bp, 'utf8')); beforeAbs = path.resolve(REPO, br.beforePng); }
+  else beforeAbs = bp;
+} else {
+  beforeAbs = path.resolve(REPO, report.beforePng);
+}
+for (const [lbl, fp] of [['before/baseline', beforeAbs], ['after', afterAbs]]) {
   if (!fs.existsSync(fp)) { console.error(`${lbl} frame missing: ${fp}`); process.exit(1); }
 }
 
