@@ -46,9 +46,13 @@ the pieces corroborated each other on real content:
 The core loop **coheres on real content** — that was the thing to prove, and it did, including the
 self-correcting visual safety net. The gaps are exactly the kind a real project surfaces that a
 throwaway comp can't: animated params, async render timing, resolution, iterative-baseline, and
-lever-choice. Fixed: #1 (footage-missing perception), #2 (keyframe-aware act, high — below),
-#3 (critical async frame), #4 (4K downscale), #5 (verify baseline). Only #6 (multi-lever essence
-routing) remains — it pairs with the essence-breadth / config-recipe work, not the edit protocol.
+lever-choice. **All six now addressed**: #1 (footage-missing perception), #2 (keyframe-aware act,
+high — below), #3 (critical async frame), #4 (4K downscale), #5 (verify baseline), #6 (multi-lever
+tuning via `tune_edit.mjs`). The edit protocol is now a self-converging loop: `tune_edit.mjs`
+composes apply → verify(vs original baseline) → apply-the-scorer's-suggestions → repeat, with
+revert-on-decline, so the manual tune the E2E did by hand is automatic (validated 4→9 on a dreamy-
+bloom intent, tuning Radius+Intensity together). The only remaining refinement is feeding essence
+`config_recipes` co-levers to the scorer so it can pivot to levers not yet in the plan.
 
 ## Keyframe-aware act (finding #2, fixed + adversarially reviewed)
 
