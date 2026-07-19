@@ -3,3 +3,4 @@ node_modules/
 *.log
 .mcp.json
 .env.api
+brownfield/dumps/
