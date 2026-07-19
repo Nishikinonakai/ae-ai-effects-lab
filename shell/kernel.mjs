@@ -106,7 +106,15 @@ async function handleRun(req) {
   const intent = String(req.intent || '').trim();
   if (!intent) { setState({ phase: 'error', message: 'no intent given', canAccept: false, canRollback: false }); return; }
 
-  session = { intent, appliedReports: [], summaryPath: null };
+  // Carry forward anything still applied and unaccepted. Overwriting the session here would drop
+  // the only pointer to the previous request's rollback reports — the edits would stay on the
+  // artist's comp with no way for the product to undo them, which is the same class of bug as
+  // losing the session on a crash. Asking a second question is not consent to lose the first
+  // answer, so instead the stack accumulates and Rollback unwinds all of it, newest first.
+  const carried = session?.appliedReports?.length ? session.appliedReports : [];
+  if (carried.length) console.log(`carrying ${carried.length} unaccepted edit(s) from "${session.intent}" into this request's rollback stack`);
+  session = { intent, appliedReports: [...carried], carriedFrom: carried.length ? session.intent : null, summaryPath: null };
+  saveSession();   // keep disk and memory in step even if this request fails before it applies anything
   const workDir = path.join(WORK, `req_${Date.now().toString(36)}`);
   fs.mkdirSync(workDir, { recursive: true });
 
@@ -156,17 +164,20 @@ async function handleRun(req) {
   const summaryPath = path.join(workDir, 'tune_summary.json');
   if (!fs.existsSync(summaryPath)) { setState({ phase: 'error', message: `the edit loop produced no result:\n${(tune.err || tune.out).slice(-400)}` }); return; }
   const summary = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
-  session.appliedReports = summary.appliedReports || [];
+  // append, don't replace — `carried` holds the earlier request's still-unaccepted edits, and they
+  // must stay in the stack (older first, so rollback unwinds newest first)
+  session.appliedReports = [...carried, ...(summary.appliedReports || [])];
   session.summaryPath = summaryPath;
   saveSession();
 
   const scored = summary.bestScore;
   const good = summary.accepted || scored >= ACCEPT_BAR;
+  const carryNote = carried.length ? ` (Roll back also undoes ${carried.length} earlier edit(s) you never accepted.)` : '';
   setState({
     phase: 'review',
-    message: good
+    message: (good
       ? `Done — scored ${scored}/10. Keep it?`
-      : `Best I got was ${scored}/10 — it may not be what you meant. Keep it or roll back?`,
+      : `Best I got was ${scored}/10 — it may not be what you meant. Keep it or roll back?`) + carryNote,
     frame: previewOf(summary.finalFrame ? path.resolve(REPO, summary.finalFrame) : null),
     trace: summary.trace || [],
     score: scored,
