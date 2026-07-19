@@ -216,8 +216,8 @@
 2. **(§10.4 已完成)settability 调查 + gate 探针都已跑通并验证。** 剩下的增量:把 `probe_gates.mjs`
    跑遍你高频用的效果,给 essence 卡补 `gated_levers`——每记录一扇门,planner 就多一片本来够不到
    的可用量程,而这正是 §二 moat 的原料。
-3. **essence 广度按需扩** + planner-eval round-2(现在有 headless planner,评测可以自动跑了——
-   这是本 session 顺带解锁的:r2 不再需要 agent 逐题推理)。
+3. **(§10.6 已做)planner-eval r2 T1 已跑 + native 广度已补(9→28 张卡)。下一步:跑完 T2/T3 拿全量基线,
+   并回答 §10.6 留下的那个问题——**为什么调优环在 5-7 分停住**(这已经是环的问题,不是 planner 的了)。
 4. **成本/延迟**:现在每轮 review 一次 vision 调用,tune 最多 4 轮;路由用便宜模型、判断用强模型、缓存。
 5. **运行时泛化(Phase C 预研)**:introspect-on-install 的版本/语言/插件探测。
 
@@ -297,3 +297,45 @@ layer / light / model / texture / input)默认跳过(`--force` 才试),**第一�
 **D. `test/smoke.mjs` —— 39 条离线自测**(不需要 AE),盯住环路盲目信任的纯逻辑:frame_delta 的
 inert/weak/changed 判定(8-bit 与 16-bit 两种深度结果必须一致)、**失败必须报 `ok:false` 而不是伪造出
 一个 "inert"**、以及 essence 三分杠杆(可用 / 门控 / 够不到)。
+
+### 10.6 本 session 最重要的一次测量:planner 才是瓶颈(不是视觉环)
+
+**跑完了 planner-eval round-2 的 T1 档(11 题,可续跑台账 `recipe-harness/eval/results_r2.jsonl`,
+写清在 `recipe-harness/eval/ROUND2.md`)。**
+
+| | round-1(agent 当 planner) | round-2(headless) |
+|---|---|---|
+| T1 one-shot | 82%* | **9%** |
+| T1 pass@3 | 82% | **18%** |
+
+> **口径:这不是同条件复赛。** r1 的 planner 是 agent 在会话里推理——比 headless 模型强得多,而且**任何
+> 能发布的产品都装不下**。所以数字低不代表退步,它第一次回答了另一个更贴产品的问题:**没有人在环时,
+> 这东西自己能做到什么。** 当作 headless planner 的新基线,以后和它自己比。
+
+**核心发现:瓶颈已经从视觉环转移到 planner。** r1 的结论"库负责搭对结构、视觉环收最后 20%"——那是
+**agent 在选结构**时成立的。headless 之后结构本身常常就是错的,而参数环救不了错的结构:那些
+`3→3→3` 的平线,就是环在一个永远不可能work的栈上老老实实拧参数。**视觉环本身没问题**
+(e05 6→7→8 在爬;同一天棕地环在诊断 fixture 上 1→7→9)。
+
+**最可操作的信号:native 家族 0/4,particular 家族 2/5。** 索引里 Particular 有深卡(本 session 写的),
+而 native 那些效果(Fractal Noise / Mosaic / Posterize / Emboss / Tint / Ramp)**一张都没有**——
+planner 拿得到 matchName 和量程,却没有因果模型。
+
+**于是做了广度补齐:`introspect/make_shallow_card.mjs`,索引 9 张 → 28 张**,凡是配方库真正用到的
+native 效果全部覆盖。卡片由"实测 introspect + 模型对这些效果的可靠先验"合成,**机械接地**:
+matchName 必须在实测里存在**且可写**,否则该杠杆直接丢掉(推销一个会抛错的参数,比没有卡更糟)。
+质量抽查:Fractal Noise 卡自己抓到了 Uniform Scaling 对 Scale Width/Height 的门控、以及
+Offset Turbulence(在固定场里移动)与 Evolution(改变场本身)的区别——正是本体要存的隐藏门控知识。
+
+**补齐后重跑那 4 道 native 题(n=4,单次):pass@3 仍然 0/4,不能算修好了。** 但:
+
+- **`3→3→3` 的平线消失了**,每题在调优下都会动——环终于有东西可调。
+- **路由偏置假设被证实**:e03 从 `tc Particular → BCC_TEXTURES`(给"星云流动背景"选粒子系统,因为当时
+  只有 Particular 有因果模型)变成 `Fractal Noise → Tint → Turbulent Displace → Deep Glow → Noise HLS`。
+  **深度不均的索引会把路由拽向它唯一懂得深的那个效果。**
+- **e24 自己重新发现了 r1 手工找到的"先二值化再浮雕"双色调架构**(FN→Mosaic→Posterize→Emboss→Tint),
+  拿到 7 分(r1 手调到 9)。
+- 均值最好分 4.25 → 6.25。
+
+**这把 round-2 的结论收窄而不是推翻:结构现在基本够得着了,差的是参数值。** 而参数值恰恰是视觉环
+存在的意义——所以下一个问题不是"为什么方案是错的",而是**"为什么环在 5-7 分停住而不是继续爬"**。
