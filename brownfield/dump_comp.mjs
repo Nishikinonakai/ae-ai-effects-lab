@@ -92,7 +92,13 @@ const AEX = String.raw`(function () {
         try { if (p.canSetExpression && p.expressionEnabled) expr = p.expression; } catch(e){}
         var mn = ""; try { mn = p.matchName; } catch(e){}
         var nm = ""; try { nm = p.name; } catch(e){}
+        // numKeys: a param with keyframes is ANIMATED — the value above is only its value at
+        // comp.time. The act layer needs this to route: a plain setValue THROWS on a keyframed
+        // property, so an edit must use a keyframe-aware mode (scale keys / setValueAtTime). See
+        // apply_edit.mjs (finding #2). Only emitted when >0 to keep the dump lean.
+        var nk = 0; try { nk = p.numKeys; } catch(e){}
         params.push('{"matchName":'+jstr(mn)+',"name":'+jstr(nm)+',"value":'+jval(val)+
+                    (nk>0?(',"numKeys":'+nk):'')+
                     (note?(',"note":'+jstr(note)):'')+(expr?(',"expr":'+jstr(expr)):'')+'}');
       }
     }

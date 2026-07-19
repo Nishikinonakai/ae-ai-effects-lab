@@ -15,6 +15,12 @@
 // Three ops (create-vs-modify pair + expression generation, PRD §八 D):
 //   { "op":"param",      "layerIndex":N, "effectMatchName":"BCC Cross Glitch",
 //     "paramMatchName":"BCC Cross Glitch-10682374", "value":80 [, "effectIndex":I] }
+//       · STATIC param → setValue(value).
+//       · KEYFRAMED param (finding #2 — real look-params are animated) → needs a keyframe mode:
+//         "keyframeMode":"scale"     → value is a FACTOR; multiplies every keyframe (envelope +
+//                                      ease preserved). Default when value is numeric.
+//         "keyframeMode":"setAtTime" → value is ABSOLUTE; sets/adds a key at the current playhead.
+//         Inverse restores the exact prior keyframe state either way.
 //   { "op":"addEffect",  "layerIndex":N, "effectMatchName":"PEDG" [, "name":"Deep Glow"] }
 //   { "op":"expression", "layerIndex":N, "target":"position"|"scale"|"rotation"|"opacity"|"anchor"
 //     (or "propertyPath":["ADBE Effect Parade","<fx>",...]), "expression":"...AE expr..." }
@@ -68,6 +74,43 @@ const PREAMBLE = String.raw`
     return jstr(v);
   }
   function getComp(){ var c = app.project.activeItem; return (c && c instanceof CompItem) ? c : null; }
+  // scale a keyframe value by a factor — scalar or per-component (position/color/etc.)
+  function mulVal(v, f){ if (v instanceof Array){ var a=[]; for (var i=0;i<v.length;i++) a.push(v[i]*f); return a; } return v*f; }
+  // A key's full "shape": interpolation TYPE (hold/linear/bezier, in+out) AND temporal ease
+  // (speed+influence per dimension). setValueAtTime resets both when it overwrites a key, so we
+  // capture the shape and restore it — otherwise a rolled-back HOLD/stepped key silently becomes a
+  // smooth bezier ramp (adversarial-review finding #1/#2; HOLD keys are idiomatic in glitch work).
+  function interpTok(t){ if (t === KeyframeInterpolationType.HOLD) return "hold"; if (t === KeyframeInterpolationType.LINEAR) return "linear"; return "bezier"; }
+  function interpEnum(tok){ if (tok === "hold") return KeyframeInterpolationType.HOLD; if (tok === "linear") return KeyframeInterpolationType.LINEAR; return KeyframeInterpolationType.BEZIER; }
+  function grabShape(pr, idx){
+    var o = { inI:"bezier", outI:"bezier", inE:null, outE:null };
+    try { o.inI = interpTok(pr.keyInInterpolationType(idx)); o.outI = interpTok(pr.keyOutInterpolationType(idx)); } catch(e){}
+    try {
+      var ie = pr.keyInTemporalEase(idx), oe = pr.keyOutTemporalEase(idx);
+      o.inE = []; for (var z=0; z<ie.length; z++) o.inE.push([ie[z].speed, ie[z].influence]);
+      o.outE = []; for (var z2=0; z2<oe.length; z2++) o.outE.push([oe[z2].speed, oe[z2].influence]);
+    } catch(e){ o.inE = null; o.outE = null; }
+    return o;
+  }
+  function shapeJson(o){
+    function arr(a){ if (a == null) return 'null'; var s=[]; for (var i=0;i<a.length;i++) s.push('['+a[i][0]+','+a[i][1]+']'); return '['+s.join(',')+']'; }
+    return '{"inI":'+jstr(o.inI)+',"outI":'+jstr(o.outI)+',"inE":'+arr(o.inE)+',"outE":'+arr(o.outE)+'}';
+  }
+  // restore a key's shape: interp TYPE always; temporal ease ONLY when both ends are bezier (setting
+  // ease forces bezier, which would clobber a restored hold/linear). Guarded/no-op on failure.
+  function applyShape(pr, idx, s){
+    if (!s) return false;
+    try { pr.setInterpolationTypeAtKey(idx, interpEnum(s.inI), interpEnum(s.outI)); } catch(e){}
+    if (s.inI === "bezier" && s.outI === "bezier" && s.inE && s.outE){
+      try {
+        var ia=[], oa=[];
+        for (var i=0;i<s.inE.length;i++) ia.push(new KeyframeEase(s.inE[i][0], s.inE[i][1]));
+        for (var j=0;j<s.outE.length;j++) oa.push(new KeyframeEase(s.outE[j][0], s.outE[j][1]));
+        pr.setTemporalEaseAtKey(idx, ia, oa);
+      } catch(e){ return false; }
+    }
+    return true;
+  }
   // find an effect on a layer: by 1-based parade index if given (>0), else first-by-matchName.
   function findFx(L, matchName, idx){
     var parade = L.property("ADBE Effect Parade");
@@ -126,8 +169,10 @@ if (rollbackPath) {
           if (!fx){ done.push('{"skip":"fx gone","'+'i":'+i+'}'); continue; }
           var pr = findParam(fx, op.paramMatchName);
           if (!pr){ done.push('{"skip":"param gone","i":'+i+'}'); continue; }
-          pr.setValue(op.value);
-          done.push('{"restored":'+jstr(op.paramMatchName)+',"to":'+jval(op.value)+'}');
+          // guard: if the param gained keyframes since the edit, setValue throws — degrade to a
+          // reported skip so ONE un-invertible op doesn't abort the whole rollback loop (finding #5).
+          try { pr.setValue(op.value); done.push('{"restored":'+jstr(op.paramMatchName)+',"to":'+jval(op.value)+'}'); }
+          catch(eRP){ done.push('{"skip":"setValue threw (now keyframed?)","i":'+i+'}'); }
         } else if (op.op === 'removeEffect'){
           var parade = L.property("ADBE Effect Parade");
           try { parade.property(op.effectIndex).remove(); done.push('{"removed_effect_at":'+op.effectIndex+'}'); }
@@ -141,6 +186,33 @@ if (rollbackPath) {
             else { try { xp.expressionEnabled = op.enabled; } catch(eE2){} }
             done.push('{"restored_expr_on":'+jstr(op.target||String(op.propertyPath))+'}');
           } catch(e){ done.push('{"skip":"setExpr threw","i":'+i+'}'); }
+        } else if (op.op === 'restoreKeyValues'){
+          // inverse of param-scale: set each key's value back BY INDEX (ease/interp untouched).
+          var fxr = findFx(L, op.effectMatchName, op.effectIndex);
+          if (!fxr){ done.push('{"skip":"fx gone","i":'+i+'}'); continue; }
+          var prr = findParam(fxr, op.paramMatchName);
+          if (!prr){ done.push('{"skip":"param gone","i":'+i+'}'); continue; }
+          if (prr.numKeys !== op.values.length){ done.push('{"skip":"key count changed ('+prr.numKeys+' vs '+op.values.length+')"}'); continue; }
+          try { for (var vi=0; vi<op.values.length; vi++){ prr.setValueAtKey(vi+1, op.values[vi]); } done.push('{"restored_key_values":'+op.values.length+'}'); }
+          catch(e){ done.push('{"skip":"restoreKeyValues threw","i":'+i+'}'); }
+        } else if (op.op === 'restoreKeyAtTime'){
+          // inverse of param-setAtTime: if we ADDED a key, remove it; if we OVERWROTE one, restore its
+          // prior value AND full shape (interp type + ease — else a HOLD key returns as a bezier ramp).
+          var fxa = findFx(L, op.effectMatchName, op.effectIndex);
+          if (!fxa){ done.push('{"skip":"fx gone","i":'+i+'}'); continue; }
+          var pra = findParam(fxa, op.paramMatchName);
+          if (!pra){ done.push('{"skip":"param gone","i":'+i+'}'); continue; }
+          try {
+            var ai = pra.nearestKeyIndex(op.time);
+            if (ai>=1 && ai<=pra.numKeys && Math.abs(pra.keyTime(ai)-op.time) < 1e-4){
+              if (op.added){ pra.removeKey(ai); done.push('{"removed_added_key_at":'+op.time+'}'); }
+              else {
+                pra.setValueAtKey(ai, op.priorValue);
+                if (op.shape){ applyShape(pra, ai, op.shape); }   // restore interp type + ease
+                done.push('{"restored_key_at":'+op.time+'}');
+              }
+            } else { done.push('{"skip":"no key at t='+op.time+'"}'); }
+          } catch(e){ done.push('{"skip":"restoreKeyAtTime threw","i":'+i+'}'); }
         }
       }
     } catch(e){ app.endUndoGroup(); return '{"err":'+jstr(String(e))+'}'; }
@@ -187,11 +259,62 @@ const AEX = String.raw`(function(){
         if (!fx){ applied.push('{"error":"effect not found","which":'+jstr(ed.effectMatchName)+'}'); continue; }
         var pr = findParam(fx, ed.paramMatchName);
         if (!pr){ applied.push('{"error":"param not found","which":'+jstr(ed.paramMatchName)+'}'); continue; }
-        var oldV; try { oldV = pr.value; } catch(eV){ oldV = null; }
-        pr.setValue(ed.value);
-        var newV; try { newV = pr.value; } catch(eN){ newV = ed.value; }
-        applied.push('{"op":"param","layer":'+ed.layerIndex+',"param":'+jstr(ed.paramMatchName)+',"old":'+jval(oldV)+',"new":'+jval(newV)+'}');
-        inverse.push('{"op":"param","layerIndex":'+ed.layerIndex+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+(ed.effectIndex||0)+',"paramMatchName":'+jstr(ed.paramMatchName)+',"value":'+jval(oldV)+'}');
+        // A value/keyframe edit under a LIVE expression has NO visible effect — the expression drives
+        // the rendered output, not the keyframes. Refuse loudly rather than pretend-succeed (finding #6).
+        var exprOn = false; try { exprOn = pr.expressionEnabled; } catch(eEx){}
+        if (exprOn){ applied.push('{"error":"param is expression-driven - a value/keyframe edit has no visible effect (edit or clear the expression instead)","which":'+jstr(ed.paramMatchName)+'}'); continue; }
+        var nk = 0; try { nk = pr.numKeys; } catch(eK){}
+        if (nk === 0){
+          // STATIC param — plain setValue; inverse restores the old value.
+          var oldV; try { oldV = pr.value; } catch(eV){ oldV = null; }
+          try { pr.setValue(ed.value); }
+          catch(eSV){ applied.push('{"error":"setValue threw","detail":'+jstr(String(eSV))+'}'); continue; }
+          var newV; try { newV = pr.value; } catch(eN){ newV = ed.value; }
+          applied.push('{"op":"param","layer":'+ed.layerIndex+',"param":'+jstr(ed.paramMatchName)+',"old":'+jval(oldV)+',"new":'+jval(newV)+'}');
+          inverse.push('{"op":"param","layerIndex":'+ed.layerIndex+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+(ed.effectIndex||0)+',"paramMatchName":'+jstr(ed.paramMatchName)+',"value":'+jval(oldV)+'}');
+        } else {
+          // KEYFRAMED param (finding #2) — a plain setValue THROWS. Real look-params are animated,
+          // so an edit MUST pick a keyframe-aware mode. NO default: 'value:100' is ambiguous between
+          // "set to 100" and "×100 every key" — inferring the wrong one silently multiplies the whole
+          // animation by 100 (adversarial-review finding #3). Require an explicit keyframeMode.
+          var kmode = ed.keyframeMode || null;
+          if (kmode === 'scale'){
+            // Multiply EVERY keyframe value by ed.value (a FACTOR). Preserves the animation
+            // envelope AND each key's ease/interp — setValueAtKey changes the value only, never
+            // timing. Inverse restores the recorded original values BY INDEX (scale never changes
+            // key count or order, so index alignment holds).
+            var f = ed.value; var origVals = [];
+            for (var ki=1; ki<=nk; ki++){ origVals.push(jval(pr.keyValue(ki))); }
+            try { for (var kj=1; kj<=nk; kj++){ pr.setValueAtKey(kj, mulVal(pr.keyValue(kj), f)); } }
+            catch(eSK){ applied.push('{"error":"scale keys threw","detail":'+jstr(String(eSK))+'}'); continue; }
+            var vNow=null; try { vNow = pr.valueAtTime(comp.time, false); } catch(eVN){}
+            applied.push('{"op":"param-scale","layer":'+ed.layerIndex+',"param":'+jstr(ed.paramMatchName)+',"factor":'+jnum(f)+',"numKeys":'+nk+',"valNowAfter":'+jval(vNow)+'}');
+            inverse.push('{"op":"restoreKeyValues","layerIndex":'+ed.layerIndex+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+(ed.effectIndex||0)+',"paramMatchName":'+jstr(ed.paramMatchName)+',"values":['+origVals.join(',')+']}');
+          } else if (kmode === 'setAtTime'){
+            // Overwrite (or add) a keyframe at the current playhead with ed.value (ABSOLUTE).
+            // add-vs-overwrite is decided by the KEY COUNT before/after setValueAtTime — definitive,
+            // vs a time-tolerance pre-check that a near-but-not-at key could fool (finding #4).
+            // On overwrite, setValueAtTime resets the key's shape (interp type + ease), so capture the
+            // prior SHAPE and re-apply it (accept keeps the envelope; only the value changed). Inverse:
+            // overwrote → restore prior value + shape; added → remove the key.
+            var t = comp.time;
+            var nBefore = 0; try { nBefore = pr.numKeys; } catch(eNB){}
+            // capture the shape of a pre-existing key AT ~t (only meaningful if we end up overwriting it)
+            var prior=null, priorShape=null, ppre=0;
+            try { ppre = pr.nearestKeyIndex(t); if (ppre>=1 && ppre<=nBefore && Math.abs(pr.keyTime(ppre)-t) < 1e-4){ prior = pr.keyValue(ppre); priorShape = grabShape(pr, ppre); } } catch(ePP){}
+            try { pr.setValueAtTime(t, ed.value); }
+            catch(eST){ applied.push('{"error":"setValueAtTime threw","detail":'+jstr(String(eST))+'}'); continue; }
+            var nAfter = 0; try { nAfter = pr.numKeys; } catch(eNA){}
+            var added = (nAfter > nBefore);            // count grew ⇒ a NEW key was created
+            var ri = 0; try { ri = pr.nearestKeyIndex(t); } catch(eRI){}
+            var keyAtT = (ri>=1 && Math.abs(pr.keyTime(ri)-t) < 1e-4);
+            if (!added && keyAtT && priorShape){ try { applyShape(pr, ri, priorShape); } catch(eRA){} }   // restore overwritten key's shape
+            applied.push('{"op":"param-setAtTime","layer":'+ed.layerIndex+',"param":'+jstr(ed.paramMatchName)+',"time":'+jnum(t)+',"added":'+(added?'true':'false')+'}');
+            inverse.push('{"op":"restoreKeyAtTime","layerIndex":'+ed.layerIndex+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+(ed.effectIndex||0)+',"paramMatchName":'+jstr(ed.paramMatchName)+',"time":'+jnum(t)+',"added":'+(added?'true':'false')+((!added && priorShape!==null)?',"priorValue":'+jval(prior)+',"shape":'+shapeJson(priorShape):'')+'}');
+          } else {
+            applied.push('{"error":"param is keyframed ('+nk+' keys) - set keyframeMode: scale|setAtTime","which":'+jstr(ed.paramMatchName)+'}');
+          }
+        }
       } else if (ed.op === 'addEffect'){
         var parade = L.property("ADBE Effect Parade");
         if (!parade || !parade.canAddProperty(ed.effectMatchName)){ applied.push('{"error":"cannot add effect","which":'+jstr(ed.effectMatchName)+'}'); continue; }
@@ -268,6 +391,8 @@ console.log(`edit "${label}" on comp "${res.comp}" @ t=${res.time}s`);
 for (const a of res.applied) {
   if (a.error) console.log(`  ✗ ${a.error}: ${a.which || a.op || ''}`);
   else if (a.op === 'param') console.log(`  ~ param ${a.param} on layer ${a.layer}: ${JSON.stringify(a.old)} → ${JSON.stringify(a.new)}`);
+  else if (a.op === 'param-scale') console.log(`  ×${a.factor} scaled ${a.numKeys} keyframes of ${a.param} on layer ${a.layer} (value@now → ${JSON.stringify(a.valNowAfter)})`);
+  else if (a.op === 'param-setAtTime') console.log(`  ⏱ keyframe on ${a.param} @ t=${a.time} layer ${a.layer}${a.added ? ' (added key)' : ' (overwrote existing key)'}`);
   else if (a.op === 'addEffect') console.log(`  + effect ${a.effect} on layer ${a.layer} (parade idx ${a.index})`);
   else if (a.op === 'expression') console.log(`  ƒ expression on layer ${a.layer} ${a.target}${a.had_expr ? ' (replaced prior)' : ''}`);
 }
