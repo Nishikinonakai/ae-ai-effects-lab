@@ -104,6 +104,7 @@ const AEX = String.raw`(function () {
   }
 
   var layers = [];
+  var activeCount = 0;
   var bottomEnabledIdx = -1;
   for (var b=comp.numLayers; b>=1; b--){ try { if (comp.layer(b).enabled) { bottomEnabledIdx = b; break; } } catch(e){} }
 
@@ -121,7 +122,14 @@ const AEX = String.raw`(function () {
     var threeD = false; try { threeD = L.threeDLayer; } catch(e3){}
     var enabled = true; try { enabled = L.enabled; } catch(eE){}
     var inP = 0, outP = 0; try { inP = L.inPoint; outP = L.outPoint; } catch(eIO){}
+    // activeNow = live at THIS frame: enabled + comp playhead inside the layer's in/out span.
+    // The F2 fix — an edit must be verified against what's actually visible at comp.time, not
+    // just what exists somewhere on the timeline (a layer trimmed out of the current frame is
+    // "present" in the layer list but contributes nothing to the rendered result the model reasons over).
+    var activeNow = false; try { activeNow = enabled && (comp.time >= inP - 1e-6) && (comp.time <= outP + 1e-6); } catch(eA){}
+    if (activeNow) activeCount++;
     layers.push('{"index":'+k+',"name":'+jstr(L.name)+',"role":'+jstr(role)+',"enabled":'+(enabled?'true':'false')+
+                ',"activeNow":'+(activeNow?'true':'false')+
                 ',"threeD":'+(threeD?'true':'false')+',"blendMode":'+jval(bm)+',"trackMatte":'+jval(tm)+
                 ',"parent":'+jval(parent)+',"in":'+jval(inP)+',"out":'+jval(outP)+
                 ',"effectCount":'+fxArr.length+',"effects":['+fxArr.join(',')+']}');
@@ -129,7 +137,7 @@ const AEX = String.raw`(function () {
 
   var meta = '{"comp":'+jstr(comp.name)+',"width":'+comp.width+',"height":'+comp.height+
              ',"fps":'+comp.frameRate+',"duration":'+comp.duration+',"time":'+comp.time+
-             ',"numLayers":'+comp.numLayers+',"layers":['+layers.join(',')+']}';
+             ',"numLayers":'+comp.numLayers+',"activeCount":'+activeCount+',"layers":['+layers.join(',')+']}';
 
   try {
     var f = new File(OUTJSON);
@@ -171,10 +179,14 @@ try { if (fs.existsSync(framePath)) fs.renameSync(framePath, finalPng); } catch 
 // print a compact summary the agent (or user) can read at a glance
 try {
   const state = JSON.parse(fs.readFileSync(finalJson, 'utf8'));
-  console.log(`comp "${state.comp}"  ${state.width}x${state.height} @${state.fps}fps  t=${state.time}s  ${state.numLayers} layers`);
+  const live = state.activeCount != null ? state.activeCount : state.layers.filter(L => L.activeNow).length;
+  console.log(`comp "${state.comp}"  ${state.width}x${state.height} @${state.fps}fps  t=${state.time}s  ${state.numLayers} layers (${live} live at this frame)`);
   for (const L of state.layers) {
     const fx = L.effects.map(e => e.name + (e.enabled ? '' : ':off')).join(', ');
-    console.log(`  [${L.index}] ${L.name}  <${L.role}>${L.enabled ? '' : ' (disabled)'}${L.threeD ? ' 3D' : ''}${fx ? '  fx: ' + fx : ''}`);
+    // mark layers that exist but are trimmed out of / disabled at the current frame — the reasoning
+    // layer should not attribute anything in the rendered frame to a non-live layer.
+    const dead = L.activeNow === false ? (L.enabled ? ' ·trimmed-out' : ' (disabled)') : '';
+    console.log(`  [${L.index}] ${L.name}  <${L.role}>${dead}${L.threeD ? ' 3D' : ''}${fx ? '  fx: ' + fx : ''}`);
   }
   console.log(`\nstate → ${path.relative(REPO, finalJson)}`);
   console.log(`frame → ${fs.existsSync(finalPng) ? path.relative(REPO, finalPng) : '(frame not ready)'}`);
