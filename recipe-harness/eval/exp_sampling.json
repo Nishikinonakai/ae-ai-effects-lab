@@ -1,0 +1,230 @@
+{
+  "_date": "2026-07-20",
+  "model": "gemini-3-flash-preview",
+  "treatment": [
+    4,
+    5
+  ],
+  "rows": [
+    {
+      "id": "e01",
+      "oldGptScore": 7,
+      "iter": 2,
+      "control": {
+        "scores": [
+          7,
+          7,
+          7,
+          7,
+          7
+        ],
+        "mean": 7,
+        "sd": 0,
+        "n": 5,
+        "errors": 0,
+        "min": 7,
+        "max": 7,
+        "passFraction": 0,
+        "verdict": "pass",
+        "critique": "The render captures the fine, golden quality of dust. Upward motion is visible across frames. The background and glow levels align with the requested aesthetic.",
+        "suggestions": 0,
+        "frames": [
+          "eval-e01_i2_control_t1.png",
+          "eval-e01_i2_control_t4.png"
+        ],
+        "degraded": null
+      },
+      "treatment": {
+        "scores": [
+          7,
+          8,
+          7,
+          8,
+          7
+        ],
+        "mean": 7.4,
+        "sd": 0.55,
+        "n": 5,
+        "errors": 0,
+        "min": 7,
+        "max": 8,
+        "passFraction": 0.4,
+        "verdict": "pass",
+        "critique": "The render effectively captures a dense field of fine, amber-toned dust. The upward motion is consistent and graceful across frames. The scale is appropriately small, and the black background is preserved well with a subtle, luminous additive feel.",
+        "suggestions": 0,
+        "frames": [
+          "eval-e01_i2_treatment_t4.png",
+          "eval-e01_i2_treatment_t5.png"
+        ],
+        "degraded": null
+      },
+      "frameDeltaControl": 1.799,
+      "frameDeltaTreatment": 2.479,
+      "delta": 0.4,
+      "separation": 1.03
+    },
+    {
+      "id": "e07",
+      "oldGptScore": 7,
+      "iter": 1,
+      "control": {
+        "scores": [
+          6,
+          6,
+          6,
+          6,
+          7
+        ],
+        "mean": 6.2,
+        "sd": 0.45,
+        "n": 5,
+        "errors": 0,
+        "min": 6,
+        "max": 7,
+        "passFraction": 0,
+        "verdict": "pass",
+        "critique": "Large flakes are clearly visible and soft. Background color and falling motion with drift align with the intent.",
+        "suggestions": 0,
+        "frames": [
+          "eval-e07_i1_control_t1.png",
+          "eval-e07_i1_control_t4.png"
+        ],
+        "degraded": null
+      },
+      "treatment": {
+        "scores": [
+          6,
+          6,
+          6,
+          6
+        ],
+        "mean": 6,
+        "sd": 0,
+        "n": 4,
+        "errors": 1,
+        "min": 6,
+        "max": 6,
+        "passFraction": 0,
+        "verdict": "fail",
+        "critique": "The snowflakes are white and readable as requested, but the density is too high, creating a cluttered look rather than a calm scene. The lateral drift is visible between frames but feels slightly stiff. The background color is accurate.",
+        "suggestions": 4,
+        "frames": [
+          "eval-e07_i1_treatment_t4.png",
+          "eval-e07_i1_treatment_t5.png"
+        ],
+        "degraded": null
+      },
+      "frameDeltaControl": 68.331,
+      "frameDeltaTreatment": 76.372,
+      "delta": -0.2,
+      "separation": 0.63
+    },
+    {
+      "id": "e24",
+      "oldGptScore": 7,
+      "iter": 2,
+      "control": {
+        "scores": [
+          7,
+          7,
+          7,
+          7,
+          7
+        ],
+        "mean": 7,
+        "sd": 0,
+        "n": 5,
+        "errors": 0,
+        "min": 7,
+        "max": 7,
+        "passFraction": 0,
+        "verdict": "fail",
+        "critique": "The colors and layout match the duotone print intent, but the geometry appears overly pixelated rather than like a composed geometric poster. The relief effect is present but could be sharper to feel more like embossed ink.",
+        "suggestions": 5,
+        "frames": [
+          "eval-e24_i2_control_t1.png",
+          "eval-e24_i2_control_t4.png"
+        ],
+        "degraded": null
+      },
+      "treatment": {
+        "scores": [
+          6,
+          7,
+          6,
+          6,
+          6
+        ],
+        "mean": 6.2,
+        "sd": 0.45,
+        "n": 5,
+        "errors": 0,
+        "min": 6,
+        "max": 7,
+        "passFraction": 0,
+        "verdict": "fail",
+        "critique": "The color palette and basic geometric structure meet the intent, but the result looks like a low-resolution pixel grid rather than a graphic poster. The emboss effect is only present at block edges and lacks the internal 'relief line texture' requested.",
+        "suggestions": 5,
+        "frames": [
+          "eval-e24_i2_treatment_t4.png",
+          "eval-e24_i2_treatment_t5.png"
+        ],
+        "degraded": null
+      },
+      "frameDeltaControl": 0,
+      "frameDeltaTreatment": 0,
+      "delta": -0.8,
+      "separation": 2.51
+    },
+    {
+      "id": "e02",
+      "oldGptScore": 7,
+      "iter": 1,
+      "control": {
+        "scores": [
+          6,
+          7
+        ],
+        "mean": 6.5,
+        "sd": 0.71,
+        "n": 2,
+        "errors": 3,
+        "min": 6,
+        "max": 7,
+        "passFraction": 0,
+        "verdict": "fail",
+        "critique": "Bubbles rise with correct colors, but they appear as flat dots with negligible horizontal sway.",
+        "suggestions": 4,
+        "frames": [
+          "eval-e02_i1_control_t1.png",
+          "eval-e02_i1_control_t4.png"
+        ],
+        "degraded": null
+      },
+      "treatment": {
+        "scores": [
+          7
+        ],
+        "mean": 7,
+        "sd": 0,
+        "n": 1,
+        "errors": 4,
+        "min": 7,
+        "max": 7,
+        "passFraction": 0,
+        "verdict": "fail",
+        "critique": "The color palette and dark background perfectly match the intent. Particles rise correctly, but the lateral sway is too subtle and bubble sizes appear too uniform for a natural underwater look.",
+        "suggestions": 4,
+        "frames": [
+          "eval-e02_i1_treatment_t4.png",
+          "eval-e02_i1_treatment_t5.png"
+        ],
+        "degraded": null
+      },
+      "frameDeltaControl": 0.801,
+      "frameDeltaTreatment": 1.665,
+      "delta": 0.5,
+      "separation": 1
+    }
+  ]
+}

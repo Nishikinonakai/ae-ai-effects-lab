@@ -194,3 +194,69 @@ change — moving *only* the sample times, and re-score. ~10 runs, no new planni
 move off 7, sampling is the binding constraint. If they hold, the residual is causal mis-attribution
 and structural vocabulary, and effort should go there instead. **Run this before building anything
 else on #1.**
+
+---
+
+## The sampling experiment — the lead hypothesis does NOT survive
+
+*2026-07-20 · `eval/exp_sampling.mjs`, plans byte-for-byte unchanged, only `renderFrames` differs,
+both arms scored by the same backend in the same run.*
+
+The plateau diagnosis named the sampling protocol as its lead cause: t=1 sits inside the emitter fill
+transient (particle life 7.5–9s in a 6s comp), so the first sample holds a fraction of the eventual
+population and the scorer reports "t1 is extremely sparse" as a defect no parameter can fix. It
+rested on n=1 and said so. This tested it.
+
+**Result: mean delta −0.03. It does not hold.**
+
+| id | control `[1,4]` | treatment `[4,5]` | delta | sep |
+|---|---|---|---|---|
+| e01 | 7±0 `[7,7,7,7,7]` | 7.4±0.55 `[7,8,7,8,7]` | +0.4 | 1.03 |
+| e07 | 6.2±0.45 | 6±0 | −0.2 | 0.63 |
+| e24 | 7±0 | 6.2±0.45 | **−0.8** | 2.51 |
+| e02 | 6.5±0.71 | 7±0 | +0.5 | 1.00 |
+
+Two up, two down, signs inconsistent, aggregate zero. Only **e01** shows a plausible positive — and
+it is the most extreme fill-transient case (life 9 in a 6s comp), where P(score≥8) moved 0 → 0.4.
+That single case may be worth a larger n. The hypothesis as stated is not supported.
+
+### The methodology finding, which matters more than the result
+
+**The first run of this experiment reported the opposite.** Single draws: `e01 7→8, e07 6→7,
+e24 6→7` — "3 of 3 improved, one cleared the bar." Every one of those was noise.
+
+What exposed it: e24 is a static-ish native stack, and its two frames were pixel-identical in *both*
+arms — yet it "improved" by +1. An unintentional negative control. Re-scoring one unchanged frame
+pair eight times then settled it:
+
+```
+control frames   × 8 → 7 7 7 7 7 7 8 7
+treatment frames × 8 → 7 7 8 7 7 7 7 7
+```
+
+**Identical distributions. The scorer emits an 8 roughly one time in eight on its own.** The
+"winning" case was a draw from a distribution both arms shared.
+
+> **Within-arm sd is 0.27–0.71, and ±1 swings occur on byte-identical inputs.**
+>
+> Every single-shot score in this repo carries that. `results_r2.jsonl`, the round-2 pass rates, the
+> per-prompt trajectories — all single draws. A trajectory reading `7 → 7 → 7` is consistent with a
+> loop that changed nothing AND with a loop whose changes are smaller than the measurement. **No
+> comparison at an effect size near 1 point means anything without repeated scoring.** Any future
+> experiment here uses `--repeats`; the flag exists now and defaults to 5.
+
+### Where this redirects the work
+
+Sampling is off the list. The remaining candidates from the diagnosis are the ones it labelled
+*genuinely hard*, and they now inherit the whole residual:
+
+- **#5 causal mis-attribution** — e07's blown cores blamed on Deep Glow's Exposure (driven 0.65 →
+  0.35 → 0.12 → 0) while the blowout came from Particular's own additive Glow Sphere, never touched.
+  e02's per-particle sway criterion answered with Wind X, which translates the whole field uniformly
+  and can never produce individual arcs.
+- **#4 missing structural vocabulary** — "reads as X not Y" complaints are particle-type choices and
+  stack-order problems, and the suggestion schema has no remove, no reorder, no type change.
+
+Both are about *which lever*, not *what value*. That is the same conclusion the panel dogfooding
+reached from the other direction: the product added Particular correctly and then faked convergence
+with a layer-scale animation, because nothing told it that inward emission is the real technique.
