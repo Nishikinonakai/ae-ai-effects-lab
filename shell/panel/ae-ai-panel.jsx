@@ -69,14 +69,38 @@
   logBox.alignment = ["fill", "bottom"];
 
   // ---------- io ----------
+  // Never fail silently. A button that does nothing when clicked is the worst outcome this panel
+  // can produce: the artist cannot tell a broken product from a slow one, and there is no thread to
+  // pull. Any throw in here gets surfaced in the log and the status line instead of dying inside
+  // ScriptUI's event handler. (Learned the hard way — the first live click did exactly nothing.)
+  // ExtendScript is ES3: Date.prototype.toISOString DOES NOT EXIST. Calling it threw inside the
+  // click handler, ScriptUI swallowed the exception, and the button became a silent no-op — the
+  // single worst failure mode this panel has, and invisible to every test that did not click it.
+  function isoNow() {
+    var d = new Date();
+    function p(n, w) { var s = String(n); while (s.length < (w || 2)) s = "0" + s; return s; }
+    return d.getUTCFullYear() + "-" + p(d.getUTCMonth() + 1) + "-" + p(d.getUTCDate()) +
+      "T" + p(d.getUTCHours()) + ":" + p(d.getUTCMinutes()) + ":" + p(d.getUTCSeconds()) +
+      "." + p(d.getUTCMilliseconds(), 3) + "Z";
+  }
+
   function writeRequest(obj) {
-    obj.status = "pending";
-    obj.ts = new Date().toISOString();
-    var f = new File(REQ);
-    f.encoding = "UTF-8";
-    f.open("w");
-    f.write(toJSON(obj));
-    f.close();
+    try {
+      obj.status = "pending";
+      obj.ts = isoNow();
+      var payload = toJSON(obj);
+      var f = new File(REQ);
+      f.encoding = "UTF-8";
+      if (!f.open("w")) throw new Error("could not open " + REQ + " for writing");
+      f.write(payload);
+      f.close();
+      log("sent: " + obj.action);
+      return true;
+    } catch (e) {
+      log("COULD NOT SEND: " + e.toString());
+      statusText.text = "could not reach the kernel — see the log";
+      return false;
+    }
   }
 
   // ExtendScript has no reliable JSON.stringify; the payloads here are small and flat, and the one
@@ -157,6 +181,11 @@
 
   // ---------- actions ----------
   runBtn.onClick = function () {
+    try { runClicked(); }
+    catch (e) { log("panel error in Make it: " + e.toString()); statusText.text = "panel error — see the log"; }
+  };
+  function runClicked() {
+    log("Make it clicked");          // first line, so "did the click register at all" is never in doubt
     var text = input.text;
     if (!text || !text.replace(/\s/g, "")) { log("type what you want first"); return; }
     var layerIdx = 0;
@@ -170,9 +199,8 @@
       } catch (e) {}
       if (!layerIdx) log("no layer selected — letting it choose");
     }
-    writeRequest({ action: "run", intent: text, layer: layerIdx });
-    log("asked for: " + text);
-  };
+    if (writeRequest({ action: "run", intent: text, layer: layerIdx })) log("asked for: " + text);
+  }
 
   acceptBtn.onClick = function () { writeRequest({ action: "accept" }); acceptBtn.enabled = false; rollbackBtn.enabled = false; };
   rollbackBtn.onClick = function () { writeRequest({ action: "rollback" }); acceptBtn.enabled = false; rollbackBtn.enabled = false; };

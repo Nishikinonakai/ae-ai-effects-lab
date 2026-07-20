@@ -27,7 +27,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { leverContext } from '../introspect/essence/lookup.mjs';
+import { leverContext, loadCards } from '../introspect/essence/lookup.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -94,9 +94,29 @@ const perception = {
   })),
 };
 
-// essence context for every effect present on a live layer
+// --- what the planner is allowed to reach for ---------------------------------------------------
+// Two different questions need two different palettes, and conflating them was a real failure:
+//   "tune what is here"  → the effects already on the live layers
+//   "ADD something"      → everything installed on this machine
+// This only ever supplied the first. On a bare solid with no effects the essence context came back
+// EMPTY, so the model could not know Particular existed — and correctly refused to invent a
+// matchName, producing an honest "I can't do that" for a request that was entirely doable. Found by
+// clicking the panel by hand: "add a disc-shaped particle convergence" on an empty layer.
 const presentEffects = [...new Set(liveLayers.flatMap(l => (l.effects || []).map(f => f.matchName)))];
-const lc = leverContext(presentEffects);
+
+const installedPath = path.join(REPO, 'introspect', 'installed_effects.json');
+const installed = fs.existsSync(installedPath) ? JSON.parse(fs.readFileSync(installedPath, 'utf8')).effects : [];
+const installedByMatch = new Map(installed.map(e => [e.match, e]));
+// Effects with a causal model get their full lever block; the rest are a name-only roster, which is
+// enough for the model to know something exists and reach for it by matchName.
+const cardedEffects = loadCards().map(c => c.matchName || c.primaryMatchName).filter(Boolean);
+const lc = leverContext([...new Set([...presentEffects, ...cardedEffects])]);
+const roster = installed
+  .filter(e => !/obsolete/i.test(e.category))
+  .filter(e => /^(ADBE|CC|tc |VIDEOCOPILOT|BCC|S_|PEDG)/.test(e.match))
+  .filter(e => !cardedEffects.includes(e.match))
+  .map(e => `${e.name} [${e.match}]`);
+
 
 const SPEC_CONTRACT = `Return STRICT JSON only, in this shape:
 {"targetLayer": <layer index to edit>,
@@ -113,7 +133,11 @@ apply_edit ops:
   {"op":"expression","layerIndex":N,"target":"position"|"scale"|"rotation"|"opacity"|"anchor","expression":"<AE expression>"}
 
 Rules:
-  · Use ONLY matchNames that appear in the PERCEPTION dump or the lever list. Never invent one.
+  · Use ONLY matchNames that appear in the PERCEPTION dump, the lever list, or the installed roster.
+    Never invent one.
+  · If the request asks for something the comp does not have yet, ADD the effect that provides it —
+    the roster above is what is available. Do not report the request as impossible just because the
+    layer is currently bare; a bare layer is the normal starting point for "add X".
   · Prefer the FEWEST edits that could plausibly achieve the intent — this is a seed the visual
     loop will refine, not a finished look. Two or three well-chosen levers beat ten guesses.
   · Read the CURRENT VALUES before choosing. If a lever is already at the value you want, it is not
@@ -137,7 +161,10 @@ const prompt = [
   'PERCEPTION — the live state of their comp (real values, read from the project just now):',
   JSON.stringify(perception, null, 1),
   '',
-  lc.block || '(no essence cards matched the effects present — reason from the param names and your own knowledge of these effects)',
+  lc.block || '(no essence cards available)',
+  '',
+  `=== OTHER EFFECTS INSTALLED ON THIS MACHINE (name-only, ${roster.length}) — you MAY add any of these ===`,
+  roster.join(' · '),
   '',
   'The rendered frame at the current playhead follows. This is what the artist is looking at right now.',
   '',
@@ -175,17 +202,42 @@ try { plan = JSON.parse(text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1)
 catch (e) { console.error('planner returned unparseable JSON:\n' + text.slice(0, 600)); process.exit(1); }
 
 // ---- validate every matchName against perception (the mechanical guard) ----------------------
+// Edits are validated IN ORDER, because an effect added by edit N is legitimately present for edit
+// N+1. Validating each edit against the original perception alone would drop every param of a
+// newly-added effect — i.e. it would break the exact thing the roster above just enabled ("add
+// Particular, then configure it"). Params on a freshly-added effect cannot be checked against
+// perception (it wasn't there when we looked), so they fall back to the ownership rule: a param
+// matchName must belong to its effect.
 const layerByIndex = new Map((state.layers || []).map(l => [l.index, l]));
 const problems = [];
+const addedHere = new Set();     // "<layerIndex>|<effectMatchName>" added earlier in this same spec
 const edits = (plan.edits || []).filter(e => {
   const L = layerByIndex.get(e.layerIndex);
   if (!L) { problems.push(`layer ${e.layerIndex} does not exist — edit dropped`); return false; }
   if (!L.activeNow) problems.push(`layer ${e.layerIndex} "${L.name}" is not live at this frame — the edit may be invisible`);
-  if (e.op === 'addEffect') return true;
+  if (e.op === 'addEffect') {
+    if (!installedByMatch.has(e.effectMatchName)) {
+      problems.push(`effect ${e.effectMatchName} is not installed on this machine — edit dropped`);
+      return false;
+    }
+    addedHere.add(`${e.layerIndex}|${e.effectMatchName}`);
+    return true;
+  }
   if (e.op === 'expression') return true;
   if (e.op === 'param') {
     const fx = (L.effects || []).find(f => f.matchName === e.effectMatchName);
-    if (!fx) { problems.push(`effect ${e.effectMatchName} is not on layer ${e.layerIndex} — edit dropped`); return false; }
+    if (!fx) {
+      if (addedHere.has(`${e.layerIndex}|${e.effectMatchName}`)) {
+        // added by an earlier edit in this spec — perception predates it, so use the ownership rule
+        if (!String(e.paramMatchName || '').startsWith(e.effectMatchName)) {
+          problems.push(`param ${e.paramMatchName} does not belong to ${e.effectMatchName} — edit dropped`);
+          return false;
+        }
+        return true;
+      }
+      problems.push(`effect ${e.effectMatchName} is not on layer ${e.layerIndex} — edit dropped`);
+      return false;
+    }
     const p = (fx.params || []).find(q => q.matchName === e.paramMatchName);
     if (!p) { problems.push(`param ${e.paramMatchName} is not on ${e.effectMatchName} — edit dropped`); return false; }
     // a keyframed param needs an explicit mode or apply_edit will refuse it
