@@ -190,6 +190,13 @@ function describeChanges(specPath, cardsFor) {
   return lines.join('\n');
 }
 
+// Result fields must be CLEARED at every request start, not only at kernel boot. setState merges,
+// so without this a request that ends in handoff/error shows the PREVIOUS run's frame, score and
+// "what it changed" — measured live (2026-07-21, the user's adversarial test): a text-replace
+// request correctly refused as a handoff, while the panel still displayed the Form-ember edits
+// from the run before it. Same shape as the stale-result-on-restart bug, one path over (§十三).
+const RESULT_FIELDS = { frame: null, changed: null, rationale: null, score: null, trace: [], pass: null };
+
 // ---- the pipeline ------------------------------------------------------------------------------
 async function handleRun(req) {
   const intent = String(req.intent || '').trim();
@@ -226,7 +233,7 @@ async function handleRun(req) {
   fs.mkdirSync(workDir, { recursive: true });
 
   // 1) PERCEIVE
-  setState({ phase: 'perceiving', message: 'reading your composition…', intent, frame: null, canAccept: false, canRollback: false, trace: [] });
+  setState({ ...RESULT_FIELDS, phase: 'perceiving', message: 'reading your composition…', intent, canAccept: false, canRollback: false });
   let dump = await run('brownfield/dump_comp.mjs', [`--out=${workDir}`]);
   if (dump.code !== 0 && looksLikeBridgeTimeout(dump.err + dump.out) && !cancelled) {
     // The one perceive failure the shell can heal by itself: the bridge palette died (an AE
@@ -430,9 +437,8 @@ async function poll() {
 // A fresh start must not present a STALE RESULT as if it were current. setState merges, so the
 // previous run's frame, rationale, score and "what it changed" survived every restart — the panel
 // opened showing a finished job nobody had just run, with Keep it / Roll back live against a session
-// that no longer existed. Clear the result fields explicitly; only a resumable session re-populates.
-const RESULT_FIELDS = { frame: null, changed: null, rationale: null, score: null, trace: [], pass: null };
-
+// that no longer existed. Clear the result fields explicitly (RESULT_FIELDS, defined above handleRun
+// — every request start clears them too); only a resumable session re-populates.
 session = loadSession();
 if (session) {
   setState({ ...RESULT_FIELDS, phase: 'review', message: `resumed — ${session.appliedReports.length} edit(s) from "${session.intent}" are still applied and not yet accepted.`, canAccept: true, canRollback: true, intent: session.intent });

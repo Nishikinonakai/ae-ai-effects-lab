@@ -56,6 +56,10 @@
 - ~~**安全模型**:undo group 打包、失败回滚~~ **已建成**(每步 undo group + 确定性逆操作 +
   崩溃后仍可回滚 + 中止打捞;`opaque-core` 门控划出"不碰我没建的东西"的边界)
 - ~~**Brownfield 编辑**(北极星):编辑协议未设计~~ **已建成并真机验证**(`apply_edit`/`verify_edit`/`tune_edit`)
+- **文本内容编辑 op(2026-07-21 用户破坏性测试暴露)**:`sourceText` 可脚本化而 edit 协议没有
+  `textContent` op——歌词 PV 的第一公民是文字层,改词/换字体/批量替换现在只能诚实拒绝(日志 §F.1)
+- **新建图层 op(同上暴露)**:没有 `addLayer`(solid/adjustment + undo/inverse),生成类请求被迫
+  拿现有图层当画布——加雪被贴到了歌词预合成上(日志 §F.2)
 - **配方重写**:licensing 决策已定(option b),**重写工作仍未做**
 - **运行时泛化**:introspect-on-install 的产品化,**仍只在这台 AE 2022 + TC2023 英文 macOS 验证过**
   —— Phase C 最大风险

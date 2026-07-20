@@ -595,3 +595,49 @@ Electron 以 `AE_AI_ORPHAN_EXIT=1` 拉起 kernel,kernel 轮询 `process.ppid`,�
 
 *(排练素材:副本 `20231209_Datte_PV_AI_PLAYGROUND.aep` 留在原工程目录随时可再开;
 三轮的帧/报告在 `~/Documents/ae-ai-shell/work/req_*`。)*
+
+---
+
+## F · 2026-07-21 凌晨 —— 用户亲手的破坏性测试:两个能力缺口 + 面板照着抱怨返工
+
+> §E 是 agent 代打的排练;这一节是**用户本人**上手,故意提"没在需求里的功能"。两条测试都
+> 打在产品能力的真实边界上,面板收获一份点名批评并当场返工。**这是第一份真正的 dogfooding
+> 输入**(KNOWN_ISSUES #12 等的就是它),虽然只有两条。
+
+### F.1 测试一:「把所有 Datte 字样替换成 Claude」→ 诚实拒绝,但缺口是真的
+
+Dattes comp(28 个文字层)。产品正确走了 **handoff**:"modifying character-level text content …
+is not supported by the available effect-parameter or transform-expression operations"——没有装懂,
+没有乱动。但缺口本身成立:**sourceText 在 ExtendScript 里是可写的**(TextDocument),edit 协议
+只是还没有 `textContent` op。歌词 PV 的第一公民就是文字层——这一族(改词/换字体/批量替换)
+是棕地编辑的显性需求,已入 §四 B。
+
+### F.2 测试二:「加雪景,而且要积雪」→ 选型赢,画布输
+
+- **选型是 choice-overload 的正面证据**:它选了 **BCC Snow**——用户原话"我甚至不知道有这个存在,
+  我以为它会弄个 particular"。事后核查:BCC Snow 的 Interaction 组确有
+  `Stick to Layer / Stick to Ground / View Ground / Ground Height`——**"自带积雪"的 rationale
+  是真话,不是编的**(4/10 输在 Snow Amount=3 这类配平和下述画布问题,不输在选型)。
+- **画布暴露第二个能力缺口**:它把效果加在了 `lrc Pre-comp 2`(一个歌词预合成)上。用户的
+  直觉是对的——该新建一个 solid/调整层当画布。**产品没有 addLayer op**,planner 被迫在现有
+  图层里挑一块画布,挑了个语义错误的。"greenfield-on-selected-layer" 楔子要立住,`addLayer`
+  (solid / adjustment,带 undo/inverse)是下一块必补的板。已入 §四 B。
+- 用户自己的做法(Particular 建地面开物理 + pre-run 数秒)正是配方库该沉淀的"积雪" recipe。
+
+### F.3 面板返工(用户点名,当场修 + 240px 真机验证)
+
+用户的三条抱怨,每条背后都是一个真实的布局机制:
+
+| 抱怨 | 机制 | 修法 |
+|---|---|---|
+| 最小宽度太大,窄停靠被裁切 | 三件横排的按钮行;**statictext 首选宽度跟随最长文本行**;**image 控件按原生像素画**——kernel 按请求时宽度渲的缩略图,缩窄后当场变成宽度地板 | 拆行;全部文本控件首选宽 180+fill(随面板换行);预览换 customview **onDraw 自绘缩放**,任何缩略图都不再撑宽 |
+| "Needs you first" 文本截断 | rationale 固定 30px 高 | 高度按内容自适应(CJK 按双宽估行,上限封顶) |
+| 白色文本框滚轮泛白盖字 | 只读区全是白底 edittext,滚轮拉起空白视口 | "what it changed" 与日志改为暗色原生 statictext(无滚动视口);白框只剩输入框 |
+
+外加:**等待成型**——busy 时状态行带实时耗时(和已有的 pass n/N 并排);kernel 侧修掉
+"结果字段只在启动清、不在每次请求清"(§十三第 8 例:用户截图里 handoff 请求还挂着上一轮的
+"what it changed")。窄至 240px 逐项截图验证;安装需 sudo(ScriptUI Panels 目录 root 属主),
+待用户执行 `./shell/shell_up.sh` 后重开面板生效。
+
+> 这一节的元教训:**§E 三轮 agent 排练没撞上的东西,用户两条"奇怪的"请求全撞上了**——
+> 文字层、画布创建、面板窄停靠,全是真实使用姿势里才存在的角度。dogfooding 无可替代。

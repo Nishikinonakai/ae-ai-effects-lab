@@ -18,6 +18,18 @@
 // The engine silently swallows exceptions thrown inside event handlers, so a modern-JS slip becomes
 // a button that does nothing — which is exactly how the first live click failed.
 //
+// 2026-07-21 rework, from the artist actually using it (Datte adversarial session):
+//   · the panel forced a minimum width and clipped when docked narrow → wide rows split up; the
+//     spend/engine line gets a row of its own instead of shouldering into the options row
+//   · long messages ("Needs you first" rationales) were cut off by fixed-height statictexts →
+//     text height now follows content (CJK-aware estimate), so the whole sentence is readable
+//   · every read-only surface was a WHITE edittext, and wheel-scrolling one dragged up a blank
+//     white viewport that covered the text → "what it changed" and the log are now plain
+//     statictext: dark-theme native, nothing to scroll, nothing to flash. The only edittext left
+//     is the input box, which has to be one.
+//   · waiting was shapeless ("is it iterating? how long?") → the status line now carries a live
+//     elapsed clock while the kernel is busy, next to the pass counter it already showed
+//
 // Channel: ~/Documents/ae-ai-shell/{request.json,state.json} — separate from the MCP bridge, which
 // is the kernel's own hands. Sharing one channel would deadlock the two.
 //
@@ -48,42 +60,68 @@
   promptGroup.add("statictext", undefined, "What do you want?");
   var input = promptGroup.add("edittext", undefined, "", { multiline: true });
   input.preferredSize.height = 52;
+  // Do not let the input's default width become the panel's floor.
+  input.minimumSize.width = 120;
 
+  // Buttons on one row, the layer checkbox on its own — three-abreast was one of the two rows that
+  // set the panel's minimum width, and the checkbox label was the first thing to get clipped.
   var rowRun = win.add("group");
   rowRun.alignment = ["fill", "top"];
   var runBtn = rowRun.add("button", undefined, "Make it");
   var stopBtn = rowRun.add("button", undefined, "Stop");
-  var layerChk = rowRun.add("checkbox", undefined, "only the selected layer");
-  layerChk.value = true;
   stopBtn.enabled = false;
+  var layerChk = win.add("checkbox", undefined, "only the selected layer");
+  layerChk.value = true;
 
   var statusText = win.add("statictext", undefined, "connecting…", { truncate: "middle" });
-  var rationale = win.add("statictext", undefined, "", { multiline: true, truncate: "end" });
-  rationale.preferredSize.height = 30;
+  statusText.alignment = ["fill", "top"];
+  statusText.preferredSize.width = 180;
+  var rationale = win.add("statictext", undefined, "", { multiline: true });
+  rationale.alignment = ["fill", "top"];
+  rationale.preferredSize.width = 180;
 
-  // The preview must not dictate the panel's width. A ScriptUI image draws at native size, so a
-  // fixed preferredSize became a hard minimum width for the whole panel — which is why it insisted
-  // on a particular width however it was docked. The kernel now renders the thumbnail to whatever
-  // width this panel reports, and the control itself is left unsized so it simply shows what it is
-  // given.
+  // The preview must not dictate the panel's width — and an `image` control always did, because it
+  // draws at native pixel size: the kernel's thumbnail is rendered for whatever width the panel had
+  // at REQUEST time, so after narrowing the dock the previous thumbnail held the old width as a
+  // hard floor until the next run replaced it (measured live: a 240px window refused to go below
+  // ~500px while showing a 470px frame). A customview with its own onDraw scales the bitmap down
+  // to whatever box the layout actually gives it, so no thumbnail can ever be a width floor again.
   var previewPanel = win.add("panel", undefined, "preview");
   previewPanel.alignment = ["fill", "fill"];
-  previewPanel.alignChildren = ["center", "center"];
+  previewPanel.alignChildren = ["fill", "fill"];
   previewPanel.margins = 5;
   previewPanel.minimumSize.height = 90;
-  var preview = previewPanel.add("image", undefined, undefined);
-  preview.alignment = ["center", "center"];
+  var preview = previewPanel.add("customview", undefined);
+  preview.alignment = ["fill", "fill"];
+  preview.preferredSize = [180, 100];
+  preview.previewImage = null;
+  preview.onDraw = function () {
+    try {
+      var g = this.graphics;
+      if (!this.previewImage) return;
+      var isz = this.previewImage.size, iw = isz[0], ih = isz[1];
+      var cw = this.size.width, chh = this.size.height;
+      if (!iw || !ih || !cw || !chh) return;
+      var k = cw / iw; if (chh / ih < k) k = chh / ih;
+      if (k > 1) k = 1;                      // never upscale — a soft blow-up reads as a render bug
+      var w = Math.floor(iw * k), h = Math.floor(ih * k);
+      g.drawImage(this.previewImage, Math.floor((cw - w) / 2), Math.floor((chh - h) / 2), w, h);
+    } catch (eDraw) { /* a failed paint must not kill the tick */ }
+  };
 
   // WHAT IT CHANGED — the handover surface, and the reason this is not just a progress bar.
   // PRD §11.6: the product's value is getting the STRUCTURE right and handing over, not converging
   // to a 9. An artist who can see "it added Particular with a disc emitter and moved these four
   // levers" can take it from there in ninety seconds. One that only sees "7/10" cannot.
+  // statictext, not edittext: the white scrolling box hid more than it showed (wheel over it raised
+  // a blank white viewport across the text). Height follows content instead of scrolling.
   var changedPanel = win.add("panel", undefined, "what it changed");
   changedPanel.alignment = ["fill", "top"];
+  changedPanel.alignChildren = ["fill", "top"];
   changedPanel.margins = 5;
-  var changedList = changedPanel.add("edittext", undefined, "", { multiline: true, readonly: true, scrolling: true });
-  changedList.preferredSize.height = 66;
+  var changedList = changedPanel.add("statictext", undefined, "", { multiline: true });
   changedList.alignment = ["fill", "top"];
+  changedList.preferredSize.width = 180;
 
   var rowDecide = win.add("group");
   rowDecide.alignment = ["fill", "top"];
@@ -101,14 +139,19 @@
   var barInput = rowOpts.add("edittext", undefined, "8");
   barInput.preferredSize.width = 34;
   var clearBtn = rowOpts.add("button", undefined, "clear log");
-  // Cost, visible without being asked for. £5.72 went out in a day on this project before anyone
-  // counted; a spend the artist only meets on the bill is one they cannot act on.
-  var spendText = rowOpts.add("statictext", undefined, "", { truncate: "middle" });
-  spendText.alignment = ["fill", "center"];
+  // Cost, visible without being asked for — on its own row, because the engine+spend string is the
+  // longest line in the panel and sharing the options row made it the width floor.
+  var spendText = win.add("statictext", undefined, "", { truncate: "middle" });
+  spendText.alignment = ["fill", "top"];
+  spendText.preferredSize.width = 180;
 
-  var logBox = win.add("edittext", undefined, "", { multiline: true, readonly: true, scrolling: true });
-  logBox.preferredSize.height = 84;
-  logBox.alignment = ["fill", "bottom"];
+  // The log keeps the last few events, newest first, as theme-native statictext. The full history
+  // is in the kernel's own terminal/log; the panel's job is "what just happened", not archaeology.
+  var LOG_KEEP = 6;
+  var logText = win.add("statictext", undefined, "", { multiline: true });
+  logText.alignment = ["fill", "bottom"];
+  logText.preferredSize.width = 180;
+  logText.preferredSize.height = 86;
 
   // ---------- io ----------
   function esc(s) {
@@ -169,9 +212,12 @@
     } catch (e) { return null; }
   }
 
+  var logLines = [];
   function log(msg) {
     var t = new Date().toLocaleTimeString();
-    logBox.text = t + "  " + msg + "\n" + logBox.text;
+    logLines.unshift(t + "  " + msg);
+    if (logLines.length > LOG_KEEP) logLines.length = LOG_KEEP;
+    logText.text = logLines.join("\n");
   }
 
   function intFrom(field, dflt, lo, hi) {
@@ -181,7 +227,36 @@
   }
 
   // ---------- ui update ----------
-  var lastMessage = "", lastFrame = "", lastChanged = "";
+  // Height-to-fit for a multiline statictext: the fixed 30px rationale cut "Needs you first"
+  // explanations mid-sentence, and the only place the full text survived was a scrolling white box
+  // nobody could read either. Estimate wrapped lines from the laid-out width; CJK glyphs run about
+  // twice the advance of latin in the UI font, so they count double. An estimate, not typography —
+  // clamped so a wild guess cannot blow the layout apart.
+  function fitHeight(ctrl, text, minH, maxH) {
+    var w = 280;
+    try { if (win.size && win.size.width && win.size.width > 60) w = win.size.width - 34; } catch (e) {}
+    if (w < 120) w = 120;
+    var units = 0, i, c;
+    for (i = 0; i < text.length; i++) { c = text.charCodeAt(i); units += (c > 0x2E80) ? 2 : 1; }
+    var perLine = Math.floor(w / 6.5);
+    if (perLine < 12) perLine = 12;
+    var lines = Math.ceil(units / perLine) + (text.split("\n").length - 1);
+    if (lines < 1) lines = 1;
+    var h = lines * 15 + 4;
+    if (h < minH) h = minH;
+    if (h > maxH) h = maxH;
+    ctrl.preferredSize.height = h;
+    ctrl.minimumSize.height = h;
+  }
+
+  function fmtElapsed(ms) {
+    var s = Math.floor(ms / 1000);
+    if (s < 60) return s + "s";
+    return Math.floor(s / 60) + "m" + (s % 60 < 10 ? "0" : "") + (s % 60) + "s";
+  }
+
+  var lastMessage = "", lastFrame = "", lastChanged = "", lastRationale = "";
+  var busySince = 0;   // wall-clock anchor for the elapsed display; 0 = not busy
   function applyState(s) {
     if (!s) { statusText.text = "kernel not running — start it with: node shell/kernel.mjs"; return; }
 
@@ -197,9 +272,16 @@
     acceptBtn.enabled = !!s.canAccept;
     rollbackBtn.enabled = !!s.canRollback;
 
+    // The elapsed clock answers "is it doing anything and for how long" — the wait between passes
+    // is a minute-plus of rendering and scoring, and a motionless line reads as a hang. Anchored to
+    // when THIS panel first saw the busy state; survives nothing and needs to survive nothing.
+    if (busy) { if (!busySince) busySince = new Date().getTime(); }
+    else busySince = 0;
+
     var head = phaseLabel(phase);
     if (phase === "review" && s.score !== undefined && s.score !== null) head += "  ·  " + s.score + "/10";
     if (busy && s.pass) head += "  ·  pass " + s.pass;
+    if (busy && busySince) head += "  ·  " + fmtElapsed(new Date().getTime() - busySince);
     statusText.text = head;
 
     // Which engine is actually answering. "I thought it was using X" was a real defect, not a
@@ -207,22 +289,31 @@
     if (s.spend || s.engine) spendText.text = (s.engine ? s.engine + "  ·  " : "") + (s.spend || "");
     // Explicit clears matter as much as sets: on a fresh kernel these come back null, and treating
     // null as "no update" is what made a stale result look like a live one.
-    if (s.rationale !== undefined) { var rt = s.rationale || ""; if (rt !== rationale.text) rationale.text = rt; }
+    if (s.rationale !== undefined) {
+      var rt = s.rationale || "";
+      if (rt !== lastRationale) { rationale.text = rt; fitHeight(rationale, rt, 14, 128); lastRationale = rt; }
+    }
     if (s.message && s.message !== lastMessage) { log(s.message); lastMessage = s.message; }
 
     var ch = s.changed || "";
-    if (ch !== lastChanged) { changedList.text = ch; lastChanged = ch; }
+    if (ch !== lastChanged) { changedList.text = ch; fitHeight(changedList, ch, 14, 180); lastChanged = ch; }
 
     // The frame is the product's actual output — show it, and only reload when the path changes
-    // (re-reading a PNG every second would make the panel crawl).
+    // (re-reading a PNG every second would make the panel crawl). Repaint must be asked for
+    // explicitly: onDraw fires on layout/expose, not on property assignment.
     if (s.frame && s.frame !== lastFrame) {
       var img = new File(s.frame);
       if (img.exists) {
-        try { preview.image = img; lastFrame = s.frame; } catch (e) { log("could not show the frame: " + e.toString()); }
+        try {
+          preview.previewImage = ScriptUI.newImage(img.fsName);
+          lastFrame = s.frame;
+          try { preview.notify("onDraw"); } catch (eN) {}
+        } catch (e) { log("could not show the frame: " + e.toString()); }
       }
     } else if (!s.frame && lastFrame) {
-      try { preview.image = undefined; } catch (e2) {}
+      preview.previewImage = null;
       lastFrame = "";
+      try { preview.notify("onDraw"); } catch (eN2) {}
     }
     try { win.layout.layout(true); } catch (e3) {}
   }
@@ -290,7 +381,7 @@
     try { writeRequest({ action: "rollback" }); acceptBtn.enabled = false; rollbackBtn.enabled = false; }
     catch (e) { log("panel error in Roll back: " + e.toString()); }
   };
-  clearBtn.onClick = function () { logBox.text = ""; };
+  clearBtn.onClick = function () { logLines = []; logText.text = ""; };
 
   // ---------- poll ----------
   // ScriptUI has no event loop of its own, so app.scheduleTask against a named global is the only
