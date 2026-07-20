@@ -34,6 +34,7 @@ import { loadCards, cardFor } from '../introspect/essence/lookup.mjs';
 import { defaultModel, spendSummary, setPurpose, activeConfig, beginRequest, endRequest } from './llm.mjs';
 import { startDashboard } from './dashboard.mjs';
 import { budgetStatus } from './budget.mjs';
+import { looksLikeBridgeTimeout, reviveBridge, collectEditReports } from './recover.mjs';
 
 // matchName -> the name an artist would recognise, via the essence index. Falls back to the
 // matchName, which is at least addressable, rather than to nothing.
@@ -226,8 +227,29 @@ async function handleRun(req) {
 
   // 1) PERCEIVE
   setState({ phase: 'perceiving', message: 'reading your composition…', intent, frame: null, canAccept: false, canRollback: false, trace: [] });
-  const dump = await run('brownfield/dump_comp.mjs', [`--out=${workDir}`]);
-  if (dump.code !== 0) { setState({ phase: 'error', message: `could not read the comp — is a composition open and the bridge panel running?\n${dump.err.slice(0, 300)}` }); return; }
+  let dump = await run('brownfield/dump_comp.mjs', [`--out=${workDir}`]);
+  if (dump.code !== 0 && looksLikeBridgeTimeout(dump.err + dump.out) && !cancelled) {
+    // The one perceive failure the shell can heal by itself: the bridge palette died (an AE
+    // restart kills it — it is script-injected, unlike the dockable panel the request came from).
+    // Measured live 2026-07-20 21:09: a real request timed out here and the product only shrugged.
+    // Revive is bounded to this FREE, deterministic step — a paid tune is never auto-retried.
+    setState({ message: 'the AE bridge is not answering — relaunching the bridge panel…' });
+    const rev = await reviveBridge(REPO);
+    if (!rev.ok) { setState({ phase: 'error', message: rev.why, canRollback: !!session?.appliedReports?.length }); return; }
+    setState({ message: 'bridge is back — reading your composition…' });
+    dump = await run('brownfield/dump_comp.mjs', [`--out=${workDir}`]);
+  }
+  if (dump.code !== 0) {
+    const noComp = /no active composition/.test(dump.err + dump.out);
+    setState({
+      phase: 'error',
+      message: noComp
+        ? 'no composition is open in AE — open the comp you want to edit, then ask again.'
+        : `could not read the comp — is a composition open and the bridge panel running?\n${dump.err.slice(0, 300)}`,
+      canRollback: !!session?.appliedReports?.length,
+    });
+    return;
+  }
   const stateFile = fs.readdirSync(workDir).find(f => f.endsWith('_state.json'));
   const frameFile = fs.readdirSync(workDir).find(f => f.endsWith('_frame.png'));
   if (!stateFile) { setState({ phase: 'error', message: 'perception produced no state file' }); return; }
@@ -275,32 +297,36 @@ async function handleRun(req) {
     },
   });
 
-  if (cancelled) {
-    // SALVAGE THE ROLLBACK STACK. A killed tune never writes tune_summary.json — that is the last
-    // thing it does — so reading the summary found nothing and the session came back empty while the
-    // comp had in fact been edited. Measured: Exposure/Radius/Threshold moved 1.6/60/260 to
-    // 2.5/2000/0 and Rollback was greyed out. Stranding edits the product cannot undo is the same
-    // failure the persisted session exists to prevent, reappearing on a different exit path.
-    //
-    // apply_edit writes one report PER EDIT as it goes, so those are the real record. Collect them
-    // in application order; each carries its own deterministic inverse.
-    try {
-      const reports = fs.readdirSync(workDir)
-        .filter(f => /^edit_.*_report\.json$/.test(f))
-        .map(f => ({ f, t: fs.statSync(path.join(workDir, f)).mtimeMs }))
-        .sort((a, b) => a.t - b.t)
-        .map(x => path.relative(REPO, path.join(workDir, x.f)));
-      if (reports.length) {
-        session.appliedReports = [...(session.appliedReports || []), ...reports];
-        saveSession();
-        console.log(`salvaged ${reports.length} applied edit(s) from the interrupted tune — Rollback can undo them`);
-      }
-    } catch (e) { console.error(`could not salvage the rollback stack: ${e}`); }
-    return finishCancelled();
-  }
+  // SALVAGE THE ROLLBACK STACK on ANY exit that never reached tune_summary.json — that file is the
+  // last thing a tune writes, so a cancelled tune AND a crashed one (bridge died mid-loop, apply
+  // blew up) both leave the comp edited with no summary. The cancel branch got this salvage first
+  // and the crash branch did not — §十三's half-an-abstraction shape, seventh sighting — so it now
+  // lives in recover.mjs and every no-summary exit goes through it. Measured when first built:
+  // Exposure/Radius/Threshold moved 1.6/60/260 → 2.5/2000/0 with Rollback greyed out.
+  const salvage = () => {
+    const reports = collectEditReports(workDir, REPO);
+    if (reports.length) {
+      session.appliedReports = [...(session.appliedReports || []), ...reports];
+      saveSession();
+      console.log(`salvaged ${reports.length} applied edit(s) from the dead tune — Rollback can undo them`);
+    }
+    return reports.length;
+  };
+
+  if (cancelled) { salvage(); return finishCancelled(); }
 
   const summaryPath = path.join(workDir, 'tune_summary.json');
-  if (!fs.existsSync(summaryPath)) { setState({ phase: 'error', message: `the edit loop produced no result:\n${(tune.err || tune.out).slice(-400)}` }); return; }
+  if (!fs.existsSync(summaryPath)) {
+    const n = salvage();
+    setState({
+      phase: 'error',
+      message: `the edit loop died before finishing:\n${(tune.err || tune.out).slice(-400)}`
+        + (n ? `\n${n} edit(s) it had already applied are recovered — Roll back undoes them, Accept keeps them.` : ''),
+      canAccept: n > 0,
+      canRollback: (session?.appliedReports?.length || 0) > 0,
+    });
+    return;
+  }
   const summary = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
   // append, don't replace — `carried` holds the earlier request's still-unaccepted edits, and they
   // must stay in the stack (older first, so rollback unwinds newest first)

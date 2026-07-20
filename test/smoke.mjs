@@ -198,6 +198,143 @@ console.log('\neffectsFromEdits — recovering which effects an edit touches');
   eq('undefined is safe', effectsFromEdits(undefined), { effects: [], params: [] });
 }
 
+// ---- plan validator: instance addressing (KNOWN_ISSUES #2, closed) ----------------------------
+// The validator decides which effect INSTANCE every param edit binds to. Wrong answers here are
+// silent until apply_edit refuses the edit (one paid cycle later) or — worse — until an edit lands
+// on a copy the plan never meant. The fixture layer carries twin Glows with different keyframe
+// states, so a test that reads the wrong instance's key count fails loudly.
+console.log('\nvalidateEdits — instance addressing');
+{
+  const { validateEdits } = await import('../shell/plan_validate.mjs');
+  const twinState = () => ({
+    layers: [
+      {
+        index: 1, name: 'hero', activeNow: true,
+        effects: [
+          { matchName: 'ADBE Glo2', paradeIndex: 1, params: [{ matchName: 'ADBE Glo2-0002', name: 'Glow Threshold', value: 60 }] },
+          { matchName: 'ADBE Glo2', paradeIndex: 2, params: [{ matchName: 'ADBE Glo2-0002', name: 'Glow Threshold', value: 80, numKeys: 3 }] },
+          { matchName: 'PEDG', paradeIndex: 3, params: [{ matchName: 'PEDG-0002', name: 'Exposure', value: 1 }] },
+        ],
+      },
+    ],
+  });
+  const installed = new Map([['ADBE Glo2', {}], ['ADBE Fractal Noise', {}]]);
+  const P = (extra) => ({ op: 'param', layerIndex: 1, effectMatchName: 'ADBE Glo2', paramMatchName: 'ADBE Glo2-0002', value: 30, ...extra });
+
+  // Unpinned on twins: apply_edit would refuse it as AMBIGUOUS, so the validator must pin, not shrug.
+  let r = validateEdits([P({})], twinState(), installed);
+  eq('unpinned edit on twin effects is pinned to the first instance', r.edits[0]?.effectIndex, 1);
+  ok('…and says so', r.problems.some(p => /pinned to parade slot 1/.test(p)));
+
+  // An explicit pin is honoured — and the keyframe check reads THAT instance (slot 2 is keyframed,
+  // slot 1 is not; the old max-across-copies guess could not tell them apart).
+  r = validateEdits([P({ effectIndex: 2 })], twinState(), installed);
+  eq('an explicit pin passes through', r.edits[0]?.effectIndex, 2);
+  eq('keyframeMode defaults from the PINNED instance\'s keys', r.edits[0]?.keyframeMode, 'setAtTime');
+  r = validateEdits([P({ effectIndex: 1 })], twinState(), installed);
+  ok('the un-keyframed twin needs no keyframeMode', r.edits[0] && r.edits[0].keyframeMode === undefined);
+
+  // A pin must point at what it claims — stale/invented indices die here, not one paid cycle later.
+  r = validateEdits([P({ effectIndex: 3 })], twinState(), installed);   // slot 3 is PEDG
+  ok('a pin on a slot holding a different effect is dropped', r.edits.length === 0 && r.problems.some(p => /holds PEDG/.test(p)));
+  r = validateEdits([P({ effectIndex: 9 })], twinState(), installed);
+  ok('a pin on a nonexistent slot is dropped', r.edits.length === 0 && r.problems.some(p => /does not exist/.test(p)));
+
+  // Single instance: no pin is needed and none is invented.
+  r = validateEdits([{ op: 'param', layerIndex: 1, effectMatchName: 'PEDG', paramMatchName: 'PEDG-0002', value: 2 }], twinState(), installed);
+  ok('a unique effect stays unpinned', r.edits.length === 1 && r.edits[0].effectIndex === undefined);
+
+  // "Add another Glow, then configure it": the param means the NEW instance, whose slot is
+  // predictable (AE appends to the parade). Unpinned it would be ambiguous the moment the add lands.
+  r = validateEdits([{ op: 'addEffect', layerIndex: 1, effectMatchName: 'ADBE Glo2' }, P({})], twinState(), installed);
+  eq('a param after this plan\'s own addEffect pins to the predicted slot', r.edits[1]?.effectIndex, 4);
+  // …and the param is validated against a SIBLING instance (same effect, same param set).
+  r = validateEdits([{ op: 'addEffect', layerIndex: 1, effectMatchName: 'ADBE Glo2' }, P({ paramMatchName: 'ADBE Glo2-9999' })], twinState(), installed);
+  ok('a bogus param on the fresh instance is caught via its sibling', r.edits.length === 1 && r.problems.some(p => /is not on ADBE Glo2/.test(p)));
+
+  // Fresh effect on a bare layer: no sibling to ask, ownership rule still holds.
+  const bare = { layers: [{ index: 1, name: 'solid', activeNow: true, effects: [] }] };
+  r = validateEdits([
+    { op: 'addEffect', layerIndex: 1, effectMatchName: 'ADBE Fractal Noise' },
+    { op: 'param', layerIndex: 1, effectMatchName: 'ADBE Fractal Noise', paramMatchName: 'ADBE Fractal Noise-0010', value: 5 },
+  ], bare, installed);
+  ok('fresh effect on a bare layer: ownership rule passes its own params', r.edits.length === 2);
+  ok('…and stays unpinned (nothing to be ambiguous with)', r.edits[1].effectIndex === undefined);
+  r = validateEdits([
+    { op: 'addEffect', layerIndex: 1, effectMatchName: 'ADBE Fractal Noise' },
+    { op: 'param', layerIndex: 1, effectMatchName: 'ADBE Fractal Noise', paramMatchName: 'XXX-1', value: 5 },
+  ], bare, installed);
+  ok('…but rejects a foreign param', r.edits.length === 1);
+
+  // The same effect added twice in one spec: a param BETWEEN the adds applies while only one copy
+  // exists (unpinned is exact); a param AFTER the second add would be ambiguous, so it pins to the
+  // newest slot. Order-sensitive by design — edits apply in the order the spec lists them.
+  r = validateEdits([
+    { op: 'addEffect', layerIndex: 1, effectMatchName: 'ADBE Fractal Noise' },
+    { op: 'param', layerIndex: 1, effectMatchName: 'ADBE Fractal Noise', paramMatchName: 'ADBE Fractal Noise-0010', value: 1 },
+    { op: 'addEffect', layerIndex: 1, effectMatchName: 'ADBE Fractal Noise' },
+    { op: 'param', layerIndex: 1, effectMatchName: 'ADBE Fractal Noise', paramMatchName: 'ADBE Fractal Noise-0010', value: 2 },
+  ], bare, installed);
+  ok('a param between twin adds stays unpinned (only one copy exists yet)', r.edits[1].effectIndex === undefined);
+  eq('a param after the second add pins to the newest slot', r.edits[3]?.effectIndex, 2);
+
+  r = validateEdits([{ op: 'addEffect', layerIndex: 1, effectMatchName: 'NOT INSTALLED' }], bare, installed);
+  ok('an uninstalled addEffect is dropped', r.edits.length === 0);
+  r = validateEdits([P({ layerIndex: 7 })], twinState(), installed);
+  ok('a missing layer is dropped', r.edits.length === 0);
+}
+
+// ---- suggestion mapper: the "#N" suffix is addressing, and now it addresses --------------------
+console.log('\nsuggestionsToEdits — instance suffix + pin inheritance');
+{
+  const { suggestionsToEdits } = await import('../brownfield/suggest_spec.mjs');
+  const sug = (effect, extra) => ({ type: 'param', effect, matchName: 'PEDG-0009', value: 100, ...extra });
+
+  let e = suggestionsToEdits([sug('PEDG#2')], 1, new Map());
+  eq('"PEDG#2" splits into matchName + effectIndex', [e[0].effectMatchName, e[0].effectIndex], ['PEDG', 2]);
+  e = suggestionsToEdits([sug('PEDG')], 1, new Map());
+  ok('no suffix, no pin map → unpinned', e[0].effectIndex === undefined);
+  e = suggestionsToEdits([sug('PEDG')], 1, new Map([['PEDG', 2]]));
+  eq('the seed\'s pin is inherited by later suggestions', e[0].effectIndex, 2);
+  const pins = new Map();
+  suggestionsToEdits([sug('PEDG#2')], 1, pins);
+  eq('a suffix TEACHES the pin map for the rest of the tune', pins.get('PEDG'), 2);
+  e = suggestionsToEdits([sug('Deep Glow')], 1, new Map());   // display name — the gemini failure
+  eq('a display-name effect is overridden by the param-derived owner', e[0].effectMatchName, 'PEDG');
+  e = suggestionsToEdits([{ type: 'expression', effect: 'PEDG#2', matchName: 'PEDG-0009', expression: 'time*10' }], 1, new Map());
+  eq('an expression path addresses a pinned effect BY SLOT', e[0].propertyPath, ['ADBE Effect Parade', 2, 'PEDG-0009']);
+  eq('empty input is safe', suggestionsToEdits([], 1, new Map()), []);
+  eq('undefined is safe', suggestionsToEdits(undefined, 1, new Map()), []);
+}
+
+// ---- recovery helpers (shell/recover.mjs) ------------------------------------------------------
+// The kernel branches on these when a step dies under it. A false "bridge timeout" would relaunch
+// the palette for a no-comp error (harmless but noisy); a MISSED one leaves tonight's exact
+// failure: a dead bridge reported as an unexplained error. Salvage order matters because rollback
+// unwinds newest-first — a shuffled list would restore values through the wrong intermediate states.
+console.log('\nrecover — failure signature + salvage collection');
+{
+  const { looksLikeBridgeTimeout, collectEditReports } = await import('../shell/recover.mjs');
+  ok('recognises the real bridge-timeout line', looksLikeBridgeTimeout('blah\nTIMEOUT waiting for AE bridge (panel open + Auto-run on?)\n'));
+  ok('a no-comp error is NOT a bridge timeout', !looksLikeBridgeTimeout('AE error: no active composition (open a comp first)'));
+  ok('empty/undefined are safe', !looksLikeBridgeTimeout('') && !looksLikeBridgeTimeout(undefined));
+
+  const wd = path.join(TMP, 'salvage'); fs.mkdirSync(wd, { recursive: true });
+  const REPO = path.resolve(__dirname, '..');
+  fs.writeFileSync(path.join(wd, 'edit_iter1_report.json'), '{}');
+  fs.writeFileSync(path.join(wd, 'edit_iter0_report.json'), '{}');
+  fs.writeFileSync(path.join(wd, 'tune_history.json'), '[]');           // not a report — ignored
+  fs.writeFileSync(path.join(wd, 'edit_iter0_before.png'), '');         // not a report — ignored
+  const t = Date.now() / 1000;
+  fs.utimesSync(path.join(wd, 'edit_iter0_report.json'), t - 60, t - 60);   // applied FIRST
+  fs.utimesSync(path.join(wd, 'edit_iter1_report.json'), t, t);
+  const got = collectEditReports(wd, REPO);
+  eq('collects only edit reports, in application order',
+    got.map(p => path.basename(p)), ['edit_iter0_report.json', 'edit_iter1_report.json']);
+  ok('paths are repo-relative (the shape session.appliedReports holds)', got.every(p => !path.isAbsolute(p)));
+  eq('a missing work dir yields [], not a throw', collectEditReports(path.join(TMP, 'nope'), REPO), []);
+}
+
 // ---- structural lint --------------------------------------------------------------------------
 // The behavioural assertions above were ALL GREEN through five instances of the half-a-seam bug,
 // including one that made rollback restore the wrong effect. They cannot catch it: half an

@@ -9,7 +9,8 @@
 >
 > 关联:[PRD.md](PRD.md)(要做什么)· [ENGINEERING_LOG.md](ENGINEERING_LOG.md)(怎么做出来的)
 >
-> 最后核对:2026-07-20
+> 最后核对:2026-07-20 深夜(#2 退役;桥自愈落地——AE 重启杀桥曾让 21:09 一次真实请求
+> 死在超时上,kernel 现在会自己重挂面板,见日志 §D.1)
 
 ---
 
@@ -32,18 +33,14 @@
 
 对照数据:`gemini-3.5-flash` 与 `gemini-3.1-pro-preview` 在同一语料上各给过 1 次 8。
 
-### 2. 编辑格式无法指定"第二个同名效果"
+### 2. ~~编辑格式无法指定"第二个同名效果"~~ —— 已修复并真机验证(2026-07-20 深夜)
 
-一层上两个 Glow 在真实工程里很常见(146 层的 KillKiss 歌词孪生层就是)。目前:
-
-- `apply_edit` 已修:歧义时**拒绝**并报出槽位,逆操作记真实落点(2026-07-20,真机验证)
-- `plan_edit` 校验器已改成对所有实例取并集、显式报出歧义(2026-07-20)
-- **但 edit spec 本身没有实例序号字段**,`dump_comp` 也不输出 parade 序号 ——
-  所以 planner **原则上**就无法表达"改第二个"
-
-现状是安全的(不会静默改错),但**能力上缺一块**:两个同名效果的图层,产品只能碰第一个。
-修法需要 `dump_comp` 输出 parade 序号 + edit spec 增加 `effectIndex` + planner 提示词说明,三处一起改
-——**这正是 §十三 说的"要么三处一起做,要么就不算做"**。
+**已从清单退役,编号保留以免别处引用指错。** 三处补完:感知透传 paradeIndex + planner 教学与
+校验(`shell/plan_validate.mjs`)+ 建议通道 `#N` 解析与 pin 继承(`brownfield/suggest_spec.mjs`)。
+真机全链:未 pin 拒绝 → pin #2 只改实例 2 → 回滚精确还原;headless planner 自发写出
+`"effectIndex":2`。详见 [ENGINEERING_LOG.md](ENGINEERING_LOG.md) §D.3。
+顺带修正:当时这条写"`dump_comp` 不输出 parade 序号、spec 没有 effectIndex 字段"——**两处当时都
+已存在**,是清单比代码悲观。"没修好的必须写在这里"的规矩是双向的:把已修的写成没修,同样失真。
 
 ### 3. 门控普查只做单门翻转
 

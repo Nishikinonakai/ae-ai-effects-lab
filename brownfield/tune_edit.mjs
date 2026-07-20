@@ -21,6 +21,7 @@ import os from 'os';
 import { fileURLToPath } from 'url';
 import { spawnSync } from 'child_process';
 import { effectsFromEdits } from '../introspect/essence/lookup.mjs';
+import { suggestionsToEdits } from './suggest_spec.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -103,34 +104,16 @@ function rollback(reportPath) {
   return r.status === 0;
 }
 
+// Instance pins this tune knows about: effect matchName -> parade slot. Seeded from the seed
+// spec's effectIndex fields (the planner pins whenever a layer duplicates an effect) and widened
+// by suggest_spec as "#N"-suffixed suggestions arrive. The mapping itself lives in
+// brownfield/suggest_spec.mjs so the offline tests can pin it.
+const pinnedSlot = new Map();
+for (const e of (seed.edits || [])) if (e.effectMatchName && e.effectIndex != null) pinnedSlot.set(e.effectMatchName, e.effectIndex);
+
 // map the scorer's typed suggestions -> an apply_edit spec on the target layer
 function suggestionsToSpec(suggestions, label) {
-  const edits = [];
-  for (const s of suggestions) {
-    if (s.type === 'param' && s.matchName && s.value !== undefined) {
-      // THE PARAM matchName IS GROUND TRUTH FOR ITS OWNER. Vendor param matchNames are
-      // `<effect matchName>-<digits>`, so the effect is derivable and does not have to be trusted
-      // from the scorer's `effect` field — which is wrong often enough to matter: gemini returned
-      // the DISPLAY name ("Deep Glow") where apply_edit looks up by matchName ("PEDG"), so all three
-      // edits of an iteration failed with "effect not found", the report carried no inverse, and the
-      // whole iteration was silently wasted. The old fallback only fired when `effect` was ABSENT,
-      // not when it was wrong.
-      //
-      // Prefer the derived owner; keep the scorer's value only when it agrees or when nothing can be
-      // derived (an instance suffix like "PEDG#2" is preserved, since that is addressing, not naming).
-      const derived = String(s.matchName).replace(/-\d+$/, '');
-      const given = String(s.effect || '');
-      const fx = (given && (given === derived || given.replace(/#\d+$/, '') === derived))
-        ? given
-        : (derived || given);
-      if (given && fx !== given) console.log(`  (scorer named effect "${given}" for ${s.matchName}; using "${fx}" derived from the param)`);
-      edits.push({ op: 'param', layerIndex: targetLayer, effectMatchName: fx, paramMatchName: s.matchName, value: s.value });
-    } else if (s.type === 'effect' && s.matchName) {
-      edits.push({ op: 'addEffect', layerIndex: targetLayer, effectMatchName: s.matchName });
-    } else if (s.type === 'expression' && s.matchName && s.expression) {
-      edits.push({ op: 'expression', layerIndex: targetLayer, propertyPath: ['ADBE Effect Parade', s.effect, s.matchName], expression: s.expression });
-    }
-  }
+  const edits = suggestionsToEdits(suggestions, targetLayer, pinnedSlot);
   return edits.length ? { label, edits } : null;
 }
 

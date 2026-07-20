@@ -29,6 +29,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { leverContext, loadCards } from '../introspect/essence/lookup.mjs';
 import { askJSON, parseJSON, provider, defaultModel } from './llm.mjs';
+import { validateEdits } from './plan_validate.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -59,7 +60,11 @@ function summariseEffect(fx) {
   const rest = params.filter(p => !keyMNs.has(p.matchName));
   const chosen = [...keyed, ...rest].slice(0, PARAMS_PER_EFFECT);
   return {
-    matchName: fx.matchName, name: fx.name, enabled: fx.enabled, paramCount: fx.paramCount,
+    // paradeIndex = WHICH instance. Two copies of one effect on a layer is routine (the KillKiss
+    // lyric twins), and without seeing the slot the model cannot address the second one even in
+    // principle — it would emit an unpinned edit apply_edit then refuses as AMBIGUOUS.
+    matchName: fx.matchName, ...(fx.paradeIndex != null ? { paradeIndex: fx.paradeIndex } : {}),
+    name: fx.name, enabled: fx.enabled, paramCount: fx.paramCount,
     ...(fx.opaqueCore ? { opaqueCore: fx.opaqueCore } : {}),
     params: chosen.map(p => ({
       matchName: p.matchName, name: p.name, value: p.value,
@@ -114,10 +119,14 @@ const SPEC_CONTRACT = `Return STRICT JSON only, in this shape:
  "edits": [ <one or more apply_edit ops> ]}
 
 apply_edit ops:
-  {"op":"param","layerIndex":N,"effectMatchName":"<fx matchName>","paramMatchName":"<param matchName>","value":<number | [r,g,b] 0..1>}
+  {"op":"param","layerIndex":N,"effectMatchName":"<fx matchName>","paramMatchName":"<param matchName>","value":<number | [r,g,b] 0..1> [,"effectIndex":<paradeIndex>]}
       · if the param has "numKeys" in the perception dump it is KEYFRAMED and you MUST add
         "keyframeMode":"scale"     (value is a MULTIPLIER applied to every key, preserving the envelope)
         or "keyframeMode":"setAtTime" (value is ABSOLUTE, set at the current playhead)
+      · if the layer carries MORE THAN ONE instance of the same effect (same matchName twice), you
+        MUST add "effectIndex": the "paradeIndex" (from the perception dump) of the instance you
+        mean — without it the edit cannot say which copy and will be refused. With a single
+        instance it may be omitted.
   {"op":"addEffect","layerIndex":N,"effectMatchName":"<fx matchName>"}
   {"op":"expression","layerIndex":N,"target":"position"|"scale"|"rotation"|"opacity"|"anchor","expression":"<AE expression>"}
 
@@ -180,65 +189,11 @@ try {
 }
 
 // ---- validate every matchName against perception (the mechanical guard) ----------------------
-// Edits are validated IN ORDER, because an effect added by edit N is legitimately present for edit
-// N+1. Validating each edit against the original perception alone would drop every param of a
-// newly-added effect — i.e. it would break the exact thing the roster above just enabled ("add
-// Particular, then configure it"). Params on a freshly-added effect cannot be checked against
-// perception (it wasn't there when we looked), so they fall back to the ownership rule: a param
-// matchName must belong to its effect.
-const layerByIndex = new Map((state.layers || []).map(l => [l.index, l]));
-const problems = [];
-const addedHere = new Set();     // "<layerIndex>|<effectMatchName>" added earlier in this same spec
-const edits = (plan.edits || []).filter(e => {
-  const L = layerByIndex.get(e.layerIndex);
-  if (!L) { problems.push(`layer ${e.layerIndex} does not exist — edit dropped`); return false; }
-  if (!L.activeNow) problems.push(`layer ${e.layerIndex} "${L.name}" is not live at this frame — the edit may be invisible`);
-  if (e.op === 'addEffect') {
-    if (!installedByMatch.has(e.effectMatchName)) {
-      problems.push(`effect ${e.effectMatchName} is not installed on this machine — edit dropped`);
-      return false;
-    }
-    addedHere.add(`${e.layerIndex}|${e.effectMatchName}`);
-    return true;
-  }
-  if (e.op === 'expression') return true;
-  if (e.op === 'param') {
-    // ALL instances, not the first. Two copies of the same effect on one layer is normal — a glow
-    // over a glow — and this validator has no way to say WHICH one the edit means, because the edit
-    // schema carries no instance index. That gap is real and is recorded in KNOWN_ISSUES.md; until
-    // it closes, the least-wrong thing this can do is refuse to answer from one arbitrary copy.
-    // Taking `[0]` here made the keyframe check below read the wrong instance's key count and pass
-    // an edit that apply_edit would then refuse.
-    const matches = (L.effects || []).filter(f => f.matchName === e.effectMatchName);
-    const fx = matches[0];
-    if (matches.length > 1) problems.push(`layer ${e.layerIndex} has ${matches.length} copies of ${e.effectMatchName}; the edit format cannot name one, so this targets the first`);
-    if (!fx) {
-      if (addedHere.has(`${e.layerIndex}|${e.effectMatchName}`)) {
-        // added by an earlier edit in this spec — perception predates it, so use the ownership rule
-        if (!String(e.paramMatchName || '').startsWith(e.effectMatchName)) {
-          problems.push(`param ${e.paramMatchName} does not belong to ${e.effectMatchName} — edit dropped`);
-          return false;
-        }
-        return true;
-      }
-      problems.push(`effect ${e.effectMatchName} is not on layer ${e.layerIndex} — edit dropped`);
-      return false;
-    }
-    const p = (fx.params || []).find(q => q.matchName === e.paramMatchName);
-    if (!p) { problems.push(`param ${e.paramMatchName} is not on ${e.effectMatchName} — edit dropped`); return false; }
-    // A keyframed param needs an explicit mode or apply_edit will refuse it. Ask every copy, not
-    // just the one bound above: if ANY copy is keyframed the edit may land on it, and defaulting the
-    // mode is harmless while omitting it is a hard refusal downstream.
-    const anyKeys = matches.reduce((n, f) => Math.max(n, (f.params || []).find(q => q.matchName === e.paramMatchName)?.numKeys || 0), 0);
-    if (anyKeys && !e.keyframeMode) {
-      e.keyframeMode = 'setAtTime';
-      problems.push(`param ${e.paramMatchName} is keyframed (${anyKeys} keys) and no keyframeMode was given — defaulted to setAtTime`);
-    }
-    return true;
-  }
-  problems.push(`unknown op "${e.op}" — edit dropped`);
-  return false;
-});
+// The validator lives in plan_validate.mjs so the offline tests can pin it. It resolves every
+// param edit to ONE effect instance (via paradeIndex/effectIndex — the last third of
+// KNOWN_ISSUES #2), predicts the parade slot of effects this spec itself adds, checks matchNames
+// against perception, and defaults keyframeMode where a bare setValue would be refused.
+const { edits, problems } = validateEdits(plan.edits, state, installedByMatch);
 
 const spec = {
   label: `plan_${Date.now().toString(36)}`,
@@ -257,7 +212,7 @@ console.log(`\n=== plan for "${intent}" ===`);
 console.log(`comp "${state.comp}" @ t=${state.time}s · ${state.activeCount}/${state.numLayers} layers live`);
 console.log(`rationale: ${spec._rationale}`);
 for (const e of edits) {
-  if (e.op === 'param') console.log(`  ~ layer ${e.layerIndex} ${e.effectMatchName} ${e.paramMatchName} → ${JSON.stringify(e.value)}${e.keyframeMode ? ` (${e.keyframeMode})` : ''}`);
+  if (e.op === 'param') console.log(`  ~ layer ${e.layerIndex} ${e.effectMatchName}${e.effectIndex != null ? ` #${e.effectIndex}` : ''} ${e.paramMatchName} → ${JSON.stringify(e.value)}${e.keyframeMode ? ` (${e.keyframeMode})` : ''}`);
   else if (e.op === 'addEffect') console.log(`  + layer ${e.layerIndex} add ${e.effectMatchName}`);
   else if (e.op === 'expression') console.log(`  ƒ layer ${e.layerIndex} ${e.target} = ${String(e.expression).slice(0, 60)}`);
 }

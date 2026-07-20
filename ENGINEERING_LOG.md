@@ -448,3 +448,75 @@ brownfield/verify_edit.mjs            ← 没有
 - **本文档(ENGINEERING_LOG.md)** 新建 —— PRD 原 §九/§十/§十一 三份追加式快照搬到这里,
   PRD 收敛成路线书 + 单一现状快照。三份快照本身**一字未改**(包括已被推翻的部分):
   删掉一个错误结论,等于抹掉"当时为什么会相信它"。
+
+---
+
+## D · 2026-07-20 深夜 —— 归档时躺在状态文件里的一次真实故障,和它牵出的三处收口
+
+> 一句话:自治会话开场做验收,**发现 21:09 有一次真实的面板请求死在了桥超时上**(错误状态还在
+> `state.json` 里躺着)——归档提交比它晚一小时,没人发现。这次故障成了本会话的需求清单:
+> 桥自愈补上并端到端验证;§十三第 7 例(打捞只建在 cancel 分支)修掉;KNOWN_ISSUES #2
+> (实例寻址)三处补完并真机走通全链。零实验开销,LLM 只花在产品自己身上(~$0.05)。
+
+### D.1 桥故障:AE 重启会无声杀死桥,而产品只会耸肩
+
+**时间线(全部来自文件 mtime 与进程表,零猜测):** AE 于 19:44 被重启(进程表)→ MCP 桥
+palette 是 `DoScriptFile` 注入的浮动窗,重启后无人重跑 `bridge_up.sh`,桥死;可停靠的
+ae-ai-panel 却随 AE 自动加载,看起来一切正常 → 21:09:56 一次真实请求("make this light bloom
+into a wide soft haze")被 kernel 接手,`ae_mcp_result.json` 从此停在 `{"status":"waiting"}` →
+21:11:56 kernel 报"could not read the comp"。**§七早把"通信自愈"列为外壳职责,`bridge_up.sh`
+也早就会做,但 kernel 的错误分支从没伸手去调它。**
+
+**修法(`shell/recover.mjs` + kernel 感知步):** dump 失败且错误里带桥超时签名 → 确认 AE 进程
+还在(**绝不代用户启动 AE**——请求来自 AE 内的面板,AE 不在 = 用户自己关的)→ 跑幂等的
+`bridge_up.sh`(ping 优先、只向**已在运行**的 AE 注入 palette)→ 重试 dump **一次**。自愈只
+绑在感知这一步:它免费且确定;**付过费的 tune 决不自动重试**。没合成打开时给专属文案,不再
+和桥死混在一张嘴里。
+
+**端到端验证(真机,完整复现当晚故障):** 通过桥命令把 Auto-run 勾掉 + 关闭 palette(正是
+错误文案点名的故障模式)→ 8s ping 确认桥死 → 提交面板请求 → kernel:`perceiving` →
+"**the AE bridge is not answering — relaunching the bridge panel…**" → "**bridge is back**" →
+规划 → 应用 → 3/10 交接 review → 产品回滚逐参数还原。全程无人碰 AE。
+
+### D.2 §十三第 7 例:回滚栈打捞只建在 cancel 分支
+
+C.8 给"被杀死的 tune"补了从 `edit_*_report.json` 打捞回滚栈的逻辑——**只补在了 cancel 分支**。
+tune **崩溃**(桥半路死掉、apply 异常)同样不会写 `tune_summary.json`,而 error 分支直接报错
+返回:已应用的编辑成为孤儿,面板的 Roll back 是灰的。同一个抽象、同一个文件、两个出口、
+只建了一个。已抽进 `recover.mjs::collectEditReports`,两个出口共用;error 态现在也报
+"N 个已应用的编辑已打捞——可回滚可保留"。离线断言覆盖(采集只认报告文件、按应用序、
+仓库相对路径)。
+
+### D.3 KNOWN_ISSUES #2 收口:这一次,文档比代码悲观
+
+验收时发现 #2 的三处里**两处早已存在**:`dump_comp` 在输出 paradeIndex,`apply_edit` 在接受
+effectIndex(歧义拒绝 + 逆操作记真实落点)——文档还说"没有"。**"已修"写成"没修"和写成"已修"
+一样是失真**;清单的规矩是双向的。真正缺的三截:
+
+| 缺口 | 修法 |
+|---|---|
+| planner 看不见槽位、不会写 effectIndex | `plan_edit` 感知摘要透传 paradeIndex + SPEC_CONTRACT 教学 + **校验器抽成 `shell/plan_validate.mjs`**:显式 pin 对着感知验证;孪生未 pin 时确定性钉到第一实例并写明;本 spec 自加的效果按"追加到 parade 末端"**预测槽位**(加了第二个同名效果后的 param 自动钉到新实例) |
+| scorer 建议的 `"PEDG#2"` 后缀从没人解析 | `brownfield/suggest_spec.mjs`:拆成 effectMatchName+effectIndex;种子 spec 的 pin 被后续每轮建议**继承**(否则 planner 的消歧只活一轮);表达式路径按**槽位数字**寻址 |
+| verify_edit 读 NOW= 实时值按名字取第一个实例 | 从报告 inverse 读真实落点槽位,槽位读 + matchName 校验,失配回退按名 |
+
+**真机全链(双 Glow 试验合成,半径 10/30):** 未 pin → AMBIGUOUS 拒绝并报槽位 1,2;pin #2 →
+只有实例 2 变(10/77);inverse 记 `effectIndex:2`;回滚精确还原(10/30)。**headless planner
+(gemini-3-flash-preview)在"改第二个 glow"的意图下自发在两条编辑里写了 `"effectIndex":2`,
+校验零问题。** 离线自测 41 → **72 条全绿**(校验器实例寻址 13 条、建议映射 8 条、恢复助手 6 条),
+seams lint 50 文件 0 违规。
+
+### D.4 顺带记下的两个真机事实
+
+- **ExtendScript:向 parade `addProperty` 会使已持有的效果引用失效。** 搭试验合成时
+  `g1.property(...)` 在 addProperty(g2) 之后报 "Object is invalid"——加完再重新取。挖过
+  ExtendScript 坑的清单里(链式三元、toISOString)再添一条。
+- **这台 AE 的固态文件夹叫「纯色」。** 英文界面装机上冒出中文条目名(清理脚本按 "Solids"
+  找不到它)。**按名字找东西跨语言就会碎;matchName 键控不会**——KNOWN_ISSUES #8 的运行时
+  泛化风险,在自己的清理脚本上先应验了一次。
+
+### D.5 遗留与未归因
+
+- **一次未归因的时间异常:** 本会话为测试以 `nohup` 后台启动 kernel,dump 的 120s 超时实际
+  ~6.5 分钟才触发,疑似 macOS App Nap 对无 TTY 后台 node 的节流。用户经 `shell_up.sh` 前台
+  运行不受此影响;**未复测确认,只记录现象。**
+- planner 质量(headless T1 9%)与及格线标定(#1)不在本次范围,状态不变。

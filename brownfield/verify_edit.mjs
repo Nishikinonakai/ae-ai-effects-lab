@@ -126,16 +126,28 @@ if (lc.block) console.log(`essence: ${lc.cards.length} card(s) hit — ${lc.leve
 // levers. Reading the live values costs one bridge round-trip and turns "which lever is the gate?"
 // from inference into observation.
 const layerIdx = (report.spec || []).find(e => e.layerIndex)?.layerIndex;
+// WHICH instance to read from: the inverse ops record the parade slot every edit actually landed
+// on (apply_edit resolves it — C.3(b)), so on a layer with twin effects the NOW= values come from
+// the instance this tune is editing, not whichever copy a name lookup finds first. The slot is
+// sanity-checked against its matchName in-script; a moved parade falls back to the name lookup.
+const slotFor = new Map();
+for (const inv of report.inverse || []) if (inv.effectMatchName && inv.effectIndex) slotFor.set(inv.effectMatchName, inv.effectIndex);
 let leverValues = {};
 if (lc.levers.length && layerIdx) {
-  const wanted = lc.levers.map(l => ({ effect: l.effect, mn: l.matchName }));
+  const wanted = lc.levers.map(l => ({ effect: l.effect, mn: l.matchName, slot: slotFor.get(l.effect) || 0 }));
   const script = `(function(){
     var c = app.project.activeItem; if (!(c instanceof CompItem)) return "{}";
     var L = c.layer(${layerIdx}); if (!L) return "{}";
     var W = ${JSON.stringify(wanted)}; var out = [];
     for (var i = 0; i < W.length; i++) {
       try {
-        var fx = L.Effects.property(W[i].effect); if (!fx) continue;
+        var fx = null;
+        if (W[i].slot > 0) {
+          try { fx = L.property("ADBE Effect Parade").property(W[i].slot); } catch (eS) { fx = null; }
+          if (fx && fx.matchName !== W[i].effect) fx = null;
+        }
+        if (!fx) fx = L.Effects.property(W[i].effect);
+        if (!fx) continue;
         var p = fx.property(W[i].mn); if (!p) continue;
         var v = String(p.value); var nk = 0; try { nk = p.numKeys; } catch (e) {}
         out.push('"' + W[i].mn + '":"' + v.replace(/"/g, "") + (nk ? ' (' + nk + ' keys)' : '') + '"');
