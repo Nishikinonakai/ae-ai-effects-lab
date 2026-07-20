@@ -26,9 +26,16 @@ const AEX = String.raw`(function () {
   var frames = [];
   var esc = function (s) { return String(s).replace(/\\/g, "\\\\").replace(/"/g, '\"'); };
 
+  // Layer lookup by name. Duplicate layer names are legal in AE and common in real projects, so
+  // "the first one" is a guess. This runner CREATES the layers it looks up, so a duplicate means the
+  // comp already held one — worth reporting rather than silently binding to whichever came first.
   function findLayer(comp, name) {
-    for (var i = 1; i <= comp.numLayers; i++) if (comp.layer(i).name === name) return comp.layer(i);
-    return null;
+    var hit = null, n = 0;
+    for (var i = 1; i <= comp.numLayers; i++) {
+      if (comp.layer(i).name === name) { if (!hit) hit = comp.layer(i); n++; }
+    }
+    if (n > 1) parts.push('{"p":"[warn] ' + esc(name) + ' matches ' + n + ' layers - using the topmost","ok":true}');
+    return hit;
   }
 
   try {
@@ -179,11 +186,23 @@ const AEX = String.raw`(function () {
           slay.property("ADBE Transform Group").property("ADBE Position").setValue(Sd.position || [R.comp.width/2, R.comp.height/2]);
           if (Sd.rotate) slay.property("ADBE Transform Group").property("ADBE Rotate Z").expression = Sd.rotate;
           if (Sd.effects) {
+            // Same Nth-instance rule as the host stack below. first-match-wins has now bitten twice
+            // in this repo — once in the host effect loop (two Particular systems collapsed into one)
+            // and once in apply_edit's rollback (which restored the wrong Glow) — so it is fixed here
+            // pre-emptively rather than waiting for a shape recipe to declare two of the same effect.
+            var sSeen = {};
             for (var se = 0; se < Sd.effects.length; se++) {
               var sfxSpec = Sd.effects[se];
-              var sfx = null;
+              var sWant = sSeen[sfxSpec.matchName] || 0;
+              sSeen[sfxSpec.matchName] = sWant + 1;
+              var sfx = null, sN = 0;
               for (var sfi = 1; sfi <= slay.Effects.numProperties; sfi++) {
-                try { if (slay.Effects.property(sfi).matchName === sfxSpec.matchName) { sfx = slay.Effects.property(sfi); break; } } catch (eSF) {}
+                try {
+                  if (slay.Effects.property(sfi).matchName === sfxSpec.matchName) {
+                    if (sN === sWant) { sfx = slay.Effects.property(sfi); break; }
+                    sN++;
+                  }
+                } catch (eSF) {}
               }
               if (!sfx) sfx = slay.Effects.addProperty(sfxSpec.matchName);
               if (sfxSpec.params) for (var sp = 0; sp < sfxSpec.params.length; sp++) {
