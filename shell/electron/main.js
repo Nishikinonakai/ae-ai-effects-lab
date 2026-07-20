@@ -34,7 +34,13 @@ function dashboardAlive() {
 
 async function ensureKernel() {
   if (await dashboardAlive()) return 'existing';
-  kernel = spawn('node', [path.join(REPO, 'shell', 'kernel.mjs')], { cwd: REPO, stdio: 'inherit' });
+  // AE_AI_ORPHAN_EXIT makes the kernel watch its parent and exit when orphaned. The signal
+  // handlers below are not enough on their own: measured live, a SIGTERM to the Electron process
+  // killed it without ever running them (Chromium's own signal disposition wins), and the spawned
+  // kernel outlived its window — two kernels then raced the same request file. The child watching
+  // its parent covers signals AND a hard crash; the handlers just make the graceful path prompt.
+  kernel = spawn('node', [path.join(REPO, 'shell', 'kernel.mjs')],
+    { cwd: REPO, stdio: 'inherit', env: { ...process.env, AE_AI_ORPHAN_EXIT: '1' } });
   for (let i = 0; i < 30; i++) {
     await new Promise(r => setTimeout(r, 400));
     if (await dashboardAlive()) return 'started';
@@ -58,9 +64,18 @@ async function createWindow() {
 }
 
 app.whenReady().then(createWindow);
-app.on('window-all-closed', () => {
-  // Only stop the kernel if THIS process started it — the AE panel may still be relying on one that
-  // was already running.
-  if (kernel) { try { kernel.kill('SIGTERM'); } catch {} }
-  app.quit();
-});
+
+// Only stop the kernel if THIS process started it — the AE panel may still be relying on one that
+// was already running.
+function stopOwnKernel() {
+  if (kernel) { try { kernel.kill('SIGTERM'); } catch { /* already gone */ } kernel = null; }
+}
+app.on('window-all-closed', () => { stopOwnKernel(); app.quit(); });
+// The first live run of this file found the cleanup above only covered the graceful path: a
+// SIGTERM to the Electron process (kill, logout, supervisor) skips 'window-all-closed' entirely,
+// and the spawned kernel outlived its window — measured: two kernels then raced the same request
+// file, the exact state ensureKernel() exists to prevent. Signals must run the same cleanup.
+// (A hard crash of this process still leaks the kernel; that gap is documented, not solved.)
+for (const sig of ['SIGTERM', 'SIGINT', 'SIGHUP']) {
+  process.on(sig, () => { stopOwnKernel(); app.quit(); });
+}

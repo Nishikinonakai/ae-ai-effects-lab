@@ -453,5 +453,19 @@ console.log(`  max-iters=${MAX_ITERS}  accept-bar=${ACCEPT_BAR}`);
 if (!cfg.provider) console.error('  ⚠ no credential found — every request will fail at planning. node shell/keys.mjs status');
 // Put it where the artist can see it too, not just in a terminal they may never look at.
 setState({ engine: `${cfg.provider || 'none'} · ${MODEL || cfg.model || 'none'}` });
+// A supervisor (the Electron window) sets AE_AI_ORPHAN_EXIT when it spawns this kernel: exit when
+// the parent goes away. Signal handlers in the supervisor are NOT a substitute — a SIGTERM to
+// Electron killed it before its Node-level handlers ran (measured live, first Electron run), and a
+// crash never runs them. An orphaned process's ppid flips to the reaper (1 on macOS), which is a
+// fact this side can poll. A standalone kernel (shell_up.sh, a terminal) never sets the flag.
+if (process.env.AE_AI_ORPHAN_EXIT) {
+  const supervisor = process.ppid;
+  setInterval(() => {
+    if (process.ppid !== supervisor) {
+      console.log(`supervisor (pid ${supervisor}) is gone — exiting so no second kernel races the request file`);
+      process.exit(0);
+    }
+  }, 2000).unref();
+}
 if (ONCE) { await poll(); process.exit(0); }
 setInterval(poll, 800);

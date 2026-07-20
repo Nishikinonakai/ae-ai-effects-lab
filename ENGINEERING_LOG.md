@@ -536,3 +536,21 @@ seams lint 50 文件 0 违规。
 
 顺带:结构 lint 在这次改动里**抓了我自己一次**——测试里写了真实模型名做 fixture,
 `provider-model-hardcoded` 当场报警,换成中性字符串。规则活着,而且不分对象。
+
+### D.7 Electron 壳首跑(KNOWN_ISSUES #4)—— 首次执行,五分钟一个真 bug
+
+`npm i`(依赖第一次真正装上)+ `npm start`。**复用路径**成立:窗口经 loopback 加载 kernel 的
+仪表盘(lsof 实证 ESTABLISHED 连接)、`ensureKernel()` 认出活着的 kernel、没有起第二个、
+关窗后既有 kernel 存活。**自启路径**也跑了:停掉 kernel 再启,Electron 自己拉起一个
+(进程树父子关系实证)。
+
+**然后它当场泄漏了。** SIGTERM 杀 Electron:进程死了,`window-all-closed` 里的清理**从没跑**
+(Chromium 的信号处置抢在 Node 处理器之前),拉起的 kernel 成了孤儿——**两个 kernel 抢同一个
+request 文件**,恰是 `ensureKernel()` 立誓要防的状态。先补 `process.on(SIGTERM/…)`,实测
+**仍然漏**(处理器根本没执行)。最终修法把契约翻过来:**被托管的一侧自己负责退场**——
+Electron 以 `AE_AI_ORPHAN_EXIT=1` 拉起 kernel,kernel 轮询 `process.ppid`,发现被孤儿化即退。
+用 **SIGKILL**(最坏情形,任何处理器都无法运行)复测:kernel 2 秒内自退,零泄漏。
+
+> 教训入册:**清理逻辑放在"死的那一侧"就永远只覆盖优雅退出**;放在"活下来的那一侧"
+> (孤儿自检)才盖得住信号和崩溃。KNOWN_ISSUES #4 的判词"文件在那里不等于能跑"再次兑现:
+> 这段代码从存在到第一次执行之间隔了一天,第一次执行五分钟内交出一个真缺陷。

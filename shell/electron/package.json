@@ -11,5 +11,5 @@
   "devDependencies": {
     "electron": "^43.1.1"
   },
-  "_status": "NOT RUN. Electron is a ~200MB dependency and is deliberately NOT installed \u2014 the UI it would host is already served by the kernel at http://127.0.0.1:7867/ and was verified there. This wrapper is 30 lines and has never been executed. Install with `npm i` in this directory before believing it works."
+  "_status": "RUN AND VERIFIED 2026-07-20 late night (ENGINEERING_LOG \u00a7D.7), both paths: reuse (window loads the dashboard of an already-running kernel, spawns nothing, leaves it alive on quit) and spawn (no kernel -> it starts one). First execution found a real leak: SIGTERM to Electron skipped 'window-all-closed' and stranded the spawned kernel -> two kernels raced the request file. Fixed by AE_AI_ORPHAN_EXIT: the spawned kernel watches its parent and exits when orphaned; verified against SIGKILL."
 }

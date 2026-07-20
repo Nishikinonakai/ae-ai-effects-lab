@@ -54,14 +54,13 @@
 
 ## 二、存在但从未被执行过
 
-### 4. `shell/electron/` 从没跑过
+### 4. ~~`shell/electron/` 从没跑过~~ —— 已首跑并双路径验证(2026-07-20 深夜)
 
-30 行的 `main.js` + 一份 `package.json`。**Electron 依赖没有安装**,所以 `npm start` 在今天之前
-根本不可能成功(`dependencies` 块原本就不存在)。已补 `devDependencies` 并在 `package.json` 里
-写了 `_status: NOT RUN`。
-
-这是刻意的:三屏 UI 已经做成 kernel 在 loopback 上提供的页面并逐屏验证过,Electron 只是个窗口壳。
-**但不要把"文件在那里"读成"能跑"**——这一天已经为"发布从未被执行过的 UI 代码"付过学费。
+**已从清单退役,编号保留。** 复用路径(不起第二个 kernel、关窗后既有 kernel 存活)与自启路径
+(无 kernel 时自己拉起)都真机验证。**首跑五分钟就抓到一个真泄漏**:SIGTERM 杀 Electron 不会走
+`window-all-closed`,拉起的 kernel 变孤儿、两个 kernel 抢同一个 request 文件——正是这份清单
+"存在≠能跑"要防的事。修法:子 kernel 按 `AE_AI_ORPHAN_EXIT` 监视父进程、孤儿即退,对 SIGKILL
+也成立。详见日志 §D.7。
 
 ### 5. `recipe-harness/vision/claude_score.mjs` 的凭据路径未验证
 
