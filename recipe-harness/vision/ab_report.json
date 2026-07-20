@@ -2,29 +2,51 @@
   "_date": "2026-07-20",
   "models": [
     "gemini-3.5-flash",
+    "gemini-3-flash-preview",
     "gemini-3.1-pro-preview"
   ],
-  "cases": 12,
+  "cases": 16,
   "gpt": {
-    "n": 12,
-    "mean": 5,
-    "passRate": 0,
+    "n": 16,
+    "mean": 5.25,
+    "passRate": 6,
     "emptySuggestionsOnFail": 0,
-    "meanSuggestions": 3.58
+    "meanSuggestions": 3.5
   },
   "byModel": {
     "gemini-3.5-flash": {
-      "n": 8,
-      "mean": 5.88,
-      "meanDeltaVsGpt": 0.63,
-      "meanAbsDelta": 0.88,
-      "passRate": 38,
-      "inconsistentVerdicts": 0,
-      "emptySuggestionsOnFail": 0,
-      "meanSuggestions": 1.88,
-      "errors": 4
+      "n": 14,
+      "mean": 5,
+      "meanDeltaVsGpt": -0.14,
+      "meanAbsDelta": 1,
+      "passRate": 7,
+      "inconsistentVerdicts": 1,
+      "emptySuggestionsOnFail": 1,
+      "meanSuggestions": 2.71,
+      "errors": 2
     },
-    "gemini-3.1-pro-preview": null
+    "gemini-3-flash-preview": {
+      "n": 15,
+      "mean": 5.4,
+      "meanDeltaVsGpt": 0.13,
+      "meanAbsDelta": 0.8,
+      "passRate": 0,
+      "inconsistentVerdicts": 1,
+      "emptySuggestionsOnFail": 1,
+      "meanSuggestions": 4.27,
+      "errors": 1
+    },
+    "gemini-3.1-pro-preview": {
+      "n": 16,
+      "mean": 4.88,
+      "meanDeltaVsGpt": -0.38,
+      "meanAbsDelta": 1.13,
+      "passRate": 6,
+      "inconsistentVerdicts": 3,
+      "emptySuggestionsOnFail": 3,
+      "meanSuggestions": 3.38,
+      "errors": 0
+    }
   },
   "rows": [
     {
@@ -44,60 +66,213 @@
       "gemini-3.5-flash": {
         "score": 3,
         "verdict": "fail",
-        "critique": "The render shows no visible falling raindrops in the upper frame, and the ripple pattern in the lower frame is clustered into a tiny, localized group of dots rather than expanding across a wider water surface zone.",
+        "critique": "The render fails to show any falling rain drops in the upper frame, and the ripple rings are confined to a tiny, static cluster of dots at the bottom center rather than expanding across the water surface.",
+        "suggestions": [
+          "param:tc Particular-0014",
+          "param:tc Particular-0011",
+          "param:tc Particular-0027",
+          "param:tc Particular-0146"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3-flash-preview": {
+        "score": 3,
+        "verdict": "fail",
+        "critique": "雨滴依然不可见，画面上半部完全空白。涟漪粒子仅集中在画面底部中心的一小块区域，没有覆盖整个水面宽度，且未呈现出明显的同心圆环结构。",
+        "suggestions": [
+          "param:tc Particular-0014",
+          "param:tc Particular-0577",
+          "param:tc Particular-0027",
+          "param:tc Particular-0033",
+          "param:tc Particular-0011",
+          "param:tc Particular-0027"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3.1-pro-preview": {
+        "score": 3,
+        "verdict": "fail",
+        "critique": "The render lacks visible falling raindrops, likely because they are angled incorrectly (shooting up/away) and moving too fast, causing them to disappear due to motion blur. The ripples fail to show expansion across the two sample frames because their 1.2s emission loop perfectly synchronizes with the 1.2s and 3.6s frame times, showing only newborn particles. Additionally, a single static emitter cannot simulate rain impacts scattered across the water surface.",
+        "suggestions": [
+          "param:tc Particular-0112",
+          "param:tc Particular-0011",
+          "param:tc Particular-0146",
+          "expression:tc Particular-0581",
+          "expression:tc Particular-0146",
+          "param:tc Particular-0011"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      }
+    },
+    {
+      "id": "eval-e20/iter2",
+      "gpt": {
+        "score": 3,
+        "verdict": "fail",
+        "critique": "The lower-frame water-impact zone is present, but it currently reads as a small cloud of bright particle dots rather than clean expanding ripple rings. The two frames do not provide a clear readable ring expansion. More importantly, there are no visible falling rain drops or streaks anywhere above the water zone, so the intended drop-to-impact causality is absent. The ripple source is centered while the rain emitter is extremely wide, which would also weaken the landing connection once rain becomes visible.",
+        "suggestions": [
+          "param:tc Particular-0011",
+          "param:tc Particular-0002",
+          "param:tc Particular-0027",
+          "param:tc Particular-0014",
+          "expression:tc Particular-0146",
+          "expression:tc Particular-0005"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "score": 3,
+        "verdict": "fail",
+        "critique": "The rain drops are completely invisible in the rendered frames, and the ripples are confined to a tiny, dense cluster of dots in the very center instead of spreading across the water surface.",
         "suggestions": [
           "param:tc Particular-0146",
           "param:tc Particular-0027",
+          "param:tc Particular-0577",
           "param:tc Particular-0014",
           "param:tc Particular-0011"
         ],
         "inconsistent": false,
         "degraded": null
       },
+      "gemini-3-flash-preview": {
+        "score": 4,
+        "verdict": "fail",
+        "critique": "The rain drops are completely invisible in the provided frames. The ripples are emitting from a single concentrated point in the center rather than being distributed across the water surface, failing the 'water surface zone' and 'causal feel' criteria.",
+        "suggestions": [
+          "param:tc Particular-0027",
+          "param:tc Particular-0146",
+          "param:tc Particular-0577",
+          "param:tc Particular-0014",
+          "param:tc Particular-0027",
+          "expression:tc Particular-0146"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
       "gemini-3.1-pro-preview": {
-        "error": "API unreachable after retries"
+        "score": 3,
+        "verdict": "fail",
+        "critique": "The render is mostly empty because the raindrops are shooting upwards (Angle X is -90). The ripples are clumped in a single center spot and expand too slowly, failing to create multiple distinct impact rings. Reversing the rain direction and using an expression to teleport the ring emitter for each burst will achieve the requested causal look.",
+        "suggestions": [
+          "param:tc Particular-0112",
+          "param:tc Particular-0146",
+          "expression:tc Particular-0581",
+          "expression:tc Particular-0146",
+          "expression:tc Particular-0005",
+          "expression:tc Particular-0005"
+        ],
+        "inconsistent": false,
+        "degraded": null
       }
     },
     {
-      "id": "eval-e20/iter3",
+      "id": "eval-e20/iter4",
       "gpt": {
         "score": 3,
         "verdict": "fail",
-        "critique": "A pale dotted oval/ripple-like particle pattern is visible in a stable lower-frame zone, but it reads as a single loose cloud of dots rather than small, clean water ripples. There are still no visible falling drops or rain streaks in the upper frame, so the required drop-to-impact causality is absent. The two sampled frames also show nearly the same ring state, making expansion difficult to read.",
+        "critique": "涟漪粒子稳定地出现在画面下方，且3.6秒时的覆盖范围比1.2秒更大，存在一定扩张迹象。但它们仍是松散、随机分布的亮点云团，不像清晰的小型同心水波环。两帧上半部均没有可辨认的下落雨滴或雨丝，因此无法建立雨滴落点与涟漪之间的因果关系。",
         "suggestions": [
+          "param:tc Particular-0581",
           "param:tc Particular-0002",
           "param:tc Particular-0027",
-          "param:tc Particular-0014",
-          "param:tc Particular-0011",
           "expression:tc Particular-0146",
-          "expression:tc Particular-0005"
+          "param:tc Particular-0002"
         ]
       },
       "gemini-3.5-flash": {
-        "error": "  \"critique\": \"The render shows a single ring of fine dots expanding in the lowe"
+        "score": 4,
+        "verdict": "fail",
+        "critique": "The rain drops are completely invisible, and the ripples are restricted to a tiny central spot rather than being distributed across the water surface. This is because the emitter size for both systems is far too narrow, and the raindrop birth rate is too low for the high velocity.",
+        "suggestions": [
+          "param:tc Particular-0014",
+          "param:tc Particular-0146",
+          "param:tc Particular-0027",
+          "param:tc Particular-0577",
+          "param:tc Particular-0014"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3-flash-preview": {
+        "score": 4,
+        "verdict": "fail",
+        "critique": "Falling rain streaks are still entirely invisible in the render, likely due to a very narrow emitter (70px) and particles that are too thin to resolve. The ripples appear as a localized cluster in the center rather than being distributed across the water surface to match the rain.",
+        "suggestions": [
+          "param:tc Particular-0014",
+          "param:tc Particular-0146",
+          "param:tc Particular-0014",
+          "param:tc Particular-0577",
+          "param:tc Particular-0011",
+          "param:tc Particular-0027"
+        ],
+        "inconsistent": false,
+        "degraded": null
       },
       "gemini-3.1-pro-preview": {
-        "error": "API unreachable after retries"
+        "score": 4,
+        "verdict": "fail",
+        "critique": "The lower frame shows a localized cluster of dots instead of clean expanding rings because the ring emitter size is too large. The upper frame is entirely devoid of rain; the rain emitter is too narrow, too sparse, and oriented upward rather than downward. To satisfy the intent, the rain must be widespread and fall downward, and the rings should emit from point sources at randomized horizontal locations along the water line.",
+        "suggestions": [
+          "param:tc Particular-0014",
+          "param:tc Particular-0112",
+          "param:tc Particular-0146",
+          "param:tc Particular-0002",
+          "param:tc Particular-0014",
+          "expression:tc Particular-0581"
+        ],
+        "inconsistent": false,
+        "degraded": null
       }
     },
     {
-      "id": "eval-e22/iter3",
+      "id": "eval-e04/iter2",
       "gpt": {
-        "score": 3,
+        "score": 4,
         "verdict": "fail",
-        "critique": "画面仍未达到可交付的科技感粒子背景：两帧都是接近纯黑的深海军蓝底，仅下方出现一条很暗的蓝紫色稀疏粒子轨迹。t1 到 t4 的下方粒子数量和形态确有变化，说明存在运动；但计划中的上方青绿色数据流在两帧中完全不可见，构图严重失衡。可用的中央留白很多，但当前更像粒子模拟刚启动时的局部残影，而非经过设计的科技数据框景；亮度、密度与色彩辨识度都不足，且蓝紫单色观感接近此前失败的默认蓝意外。",
+        "critique": "偏褐色调和柔和的云雾明暗仍然可读，但画面依旧明显像受损电视信号而非干净的老胶片抽象背景：左侧有连续的粗亮蛇形波纹，画面中部与下方有很清晰的横向分界和矩形区域边缘。颗粒主要集中在中央矩形内，导致纹理覆盖不均，也强化了拼贴/故障块感。当前可见帧中的颗粒有一定存在感，但需要更均匀的全幅细颗粒；亮度闪烁无法仅凭所示单帧确认。",
         "suggestions": [
-          "param:tc Particular-0146",
-          "param:tc Particular-0027",
-          "param:tc Particular-0216",
-          "param:tc Particular-0070"
+          "param:BCC_TEXTURES-1001",
+          "effect:ADBE Noise"
         ]
       },
       "gemini-3.5-flash": {
-        "error": "      \"why\": \"Set the On Source compositing mode to Over Original so this second"
+        "score": 5,
+        "verdict": "fail",
+        "critique": "The sepia tone and brightness flicker are well-established, but the prominent horizontal waves on the left edge and the sharp rectangular boundary in the center still heavily resemble a glitchy TV screen rather than soft, organic clouds. The fine film grain is also partially obscured by these large-scale distortions.",
+        "suggestions": [
+          "effect:ADBE Tint",
+          "param:BCC4Damaged TV-8192025",
+          "param:BCC4Damaged TV-8192001",
+          "param:BCC_TEXTURES-1001"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3-flash-preview": {
+        "score": 4,
+        "verdict": "fail",
+        "critique": "The sepia tint and brightness flicker meet the intent. However, the background is dominated by digital 'Damaged TV' artifacts—specifically wavy vertical interference on the left and a sharp rectangular boundary in the center—which clash with the 'soft clouds' requirement. Film grain is present but lacks clarity.",
+        "suggestions": [
+          "param:ADBE Fractal Noise-0001",
+          "param:ADBE Fractal Noise-0006",
+          "param:BCC_TEXTURES-1001",
+          "param:BCC_TEXTURES-1002"
+        ],
+        "inconsistent": false,
+        "degraded": null
       },
       "gemini-3.1-pro-preview": {
-        "error": "API unreachable after retries"
+        "score": 4,
+        "verdict": "fail",
+        "critique": "Fail. The render still resembles a broken CRT TV rather than old film. A prominent rectangular screen mask and left-edge wavy sync distortion (likely inherent to the BCC Damaged TV plugin) ruin the underlying clouds. The texture reads as large horizontal wavy bands instead of fine film grain. Sepia tint and flicker are present but overshadowed by the TV artifacts. Damaged TV should likely be removed or replaced in the next full plan.",
+        "suggestions": [
+          "param:BCC_TEXTURES-1001",
+          "param:BCC_TEXTURES-1018"
+        ],
+        "inconsistent": false,
+        "degraded": null
       }
     },
     {
@@ -114,64 +289,168 @@
         ]
       },
       "gemini-3.5-flash": {
-        "score": 3,
+        "score": 4,
         "verdict": "fail",
-        "critique": "The falling drops are completely missing from the rendered frames, leaving the top half of the frame empty. This happens because the first 'tc Particular' effect has Angle X set to -90, which directs the particles upward from Y=-40 (completely off-screen). Additionally, the ripples only emit from a single central point rather than across the water surface because the second 'tc Particular' effect uses a tiny Sphere emitter.",
+        "critique": "The expanding circular ripples are visible in the lower half of the frame, but the falling raindrops are completely invisible, failing the requirement to show both drops and rings.",
         "suggestions": [
-          "param:tc Particular-0112",
-          "param:tc Particular-0782",
-          "param:tc Particular-0014"
+          "param:tc Particular-0027",
+          "param:tc Particular-0146"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3-flash-preview": {
+        "score": 4,
+        "verdict": "fail",
+        "critique": "The raindrops are virtually invisible due to high speed and small size. The ripples are concentrated in the center of the frame rather than being distributed where rain would fall, and they appear as sparse dots rather than cohesive rings.",
+        "suggestions": [
+          "param:tc Particular-0577",
+          "param:tc Particular-0014",
+          "param:tc Particular-0016",
+          "param:tc Particular-0027",
+          "param:tc Particular-0011",
+          "param:tc Particular-0027"
         ],
         "inconsistent": false,
         "degraded": null
       },
       "gemini-3.1-pro-preview": {
-        "error": "API unreachable after retries"
+        "score": 5,
+        "verdict": "fail",
+        "critique": "The render shows distinct expanding rings over time at the lower water line, which satisfies half the prompt. However, the falling drops are completely missing from the frame (they are being emitted upwards, away from the camera view). Correcting the emission angle and narrowing the rain's horizontal spread will make the drops visible and causally link them to the central ripples.",
+        "suggestions": [
+          "param:tc Particular-0112",
+          "param:tc Particular-0014",
+          "param:tc Particular-0146"
+        ],
+        "inconsistent": false,
+        "degraded": null
       }
     },
     {
-      "id": "eval-e04/iter3",
+      "id": "eval-e01/iter1",
       "gpt": {
         "score": 5,
         "verdict": "fail",
-        "critique": "整体偏褐色调已经明确，底层也能读为柔和的云雾状明暗；t4比t1略亮，轻微曝光闪烁成立。问题仍是左边缘贯穿全高的双重蛇形亮线非常醒目，画面仍带有受损电视/信号故障的识别感，而不是干净的抽象老胶片背景。全幅细颗粒存在但偏弱，更多被云雾的大尺度纹理吸收，胶片颗粒的独立可读性不足。",
+        "critique": "The frame has a convincing near-black background and warm amber particles with soft luminous halos. However, the field is too sparse for fine golden dust: it reads as a few isolated glowing motes, including several comparatively large bright blobs, rather than a rich suspended dust cloud. The supplied render does not visibly provide a t4 comparison, so the intended upward motion cannot be confirmed from the available frame.",
         "suggestions": [
-          "param:BCC4Damaged TV-8192021",
-          "param:ADBE Noise-0001"
+          "param:tc Particular-0146",
+          "param:tc Particular-0027",
+          "param:tc Particular-0017"
         ]
       },
       "gemini-3.5-flash": {
-        "score": 5,
+        "score": 6,
         "verdict": "fail",
-        "critique": "The sepia/brown color tone, the soft underlying cloud base, and the subtle brightness flicker between t1 and t4 are working well. However, the image still strongly resembles a broken TV screen rather than an abstract old film background: there is a highly distracting snake-like wavy line running down the entire left edge, and horizontal ripple distortion warping the cloud texture across the frame. These electronic glitches are caused by the active distortion parameters in BCC4Damaged TV.",
+        "critique": "The particles are successfully small and fine on a dark background, but they appear more amber-orange than golden, and the glow is slightly too dim.",
         "suggestions": [
-          "param:BCC4Damaged TV-8192005",
-          "param:BCC4Damaged TV-8192001"
+          "param:tc Particular-0070",
+          "param:PEDG-0002"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3-flash-preview": {
+        "score": 7,
+        "verdict": "fail",
+        "critique": "Motion is correct. Particle density is too sparse for fine dust. Glow lacks sufficient emissive strength.",
+        "suggestions": [
+          "param:tc Particular-0146",
+          "param:tc Particular-0027",
+          "param:PEDG-0002",
+          "param:tc Particular-0017"
         ],
         "inconsistent": false,
         "degraded": null
       },
       "gemini-3.1-pro-preview": {
-        "error": "API unreachable after retries"
+        "score": 7,
+        "verdict": "pass",
+        "critique": "The golden/amber particles successfully read as fine, subtly glowing dust on a dark background. The upward drift is discernible between frames, and the scale and blending modes prevent the particles from feeling like flat blobs. The aesthetic perfectly matches the intent.",
+        "suggestions": [],
+        "inconsistent": true,
+        "degraded": null
       }
     },
     {
-      "id": "eval-e08/iter3",
+      "id": "eval-e08/iter2",
       "gpt": {
         "score": 5,
         "verdict": "fail",
-        "critique": "画面保留了紫、洋红与蓝色的抽象底图，横向扫描线和噪声也让它具备一定刻意的CRT/信号故障质感，不是灰阶或完全损坏的渲染。但 t1 与 t4 的主要构图、中央竖直切分位置、右侧重复竖条和水平条纹几乎重合，帧间整体内容偏移仍不可辨识。RGB 分离也没有形成明确独立的红、绿、蓝彩边；当前主要仍是紫红混色。中央偏右的硬竖向分界及右侧规则条纹依旧更像处理接缝，而非有节奏的信号错位。",
+        "critique": "彩色底图与横向CRT扫描线清晰可见，紫红和蓝紫纹理也使画面保持彩色，并非灰阶；整体有一定人为设计的电视信号风格。但t1与t4的主要构图、右侧竖条、横线及纹理位置几乎一致，未读到足够明确的帧间整体偏移/抖动。RGB错位仍主要表现为紫红混色，没有在横线、右侧竖条或画面分界处看到可分辨的红/绿/蓝独立彩边。画面中央偏右的硬性竖直切分和其后的规则重复竖条依然像处理接缝，削弱了受控故障效果。",
         "suggestions": [
           "param:BCC4Damaged TV-8192032",
           "param:BCC4Damaged TV-8192038",
-          "param:BCC_CAMERASHAKE-1000"
+          "param:BCC_CAMERASHAKE-1000",
+          "param:BCC4Damaged TV-8192008"
         ]
       },
       "gemini-3.5-flash": {
-        "error": "      \"why\": \"Animate the"
+        "score": 4,
+        "verdict": "fail",
+        "critique": "The background remains static between frames with no visible jitter. RGB channel separation is barely noticeable, and the harsh quadrant division looks like a rendering artifact.",
+        "suggestions": [
+          "expression:ADBE Fractal Noise-0015",
+          "param:BCC_CAMERASHAKE-1000",
+          "param:BCC4Damaged TV-8192032",
+          "param:BCC4Damaged TV-8192038"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3-flash-preview": {
+        "error": "      \"effect\": \"ADBE Fractal Noise\","
       },
       "gemini-3.1-pro-preview": {
-        "error": "API unreachable after retries"
+        "score": 4,
+        "verdict": "fail",
+        "critique": "Frames t1 and t4 are identical; there is no motion, jitter, or offset between samples. The static vertical banding on the right looks like a stuck digital artifact rather than a dynamic TV glitch. The base texture is too soft (lacking contrast) to produce visible RGB fringing at the edges, hiding the chromatic separation.",
+        "suggestions": [
+          "param:ADBE Fractal Noise-0001",
+          "expression:ADBE Fractal Noise-0004",
+          "expression:ADBE Fractal Noise-0006",
+          "expression:BCC4Damaged TV-8192011",
+          "param:BCC4Damaged TV-8192032",
+          "param:BCC4Damaged TV-8192038"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      }
+    },
+    {
+      "id": "eval-e15/iter1",
+      "gpt": {
+        "score": 5,
+        "verdict": "fail",
+        "critique": "两帧都呈现出足够密集的烟尘粒子体，颗粒的前后遮挡和明暗密度提供了一些纵深感，且帧间内部颗粒纹理确有变化。但整体轮廓更像几乎等宽的竖直圆柱，漏斗上宽下窄的形状非常弱；旋转被过高频率与高密度融合成静态噪点，缺少可读的环绕扫动或涡旋结构。因此它目前更像一根体积化尘柱，而不是明确的龙卷风漏斗。",
+        "suggestions": [
+          "expression:tc Particular-0581"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "error": "{\"verdict\":\"fail\",\"score\":5,\"critique\":\"The particle column is visible with a su"
+      },
+      "gemini-3-flash-preview": {
+        "score": 6,
+        "verdict": "fail",
+        "critique": "The current output resembles a narrow pillar of sand rather than a large-scale funnel. The taper is too subtle, and the particles appear as disconnected grains rather than a cohesive volume.",
+        "suggestions": [
+          "expression:tc Particular-0581"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3.1-pro-preview": {
+        "score": 4,
+        "verdict": "fail",
+        "critique": "The particle volume reads successfully as dense dust without visible coils, but it appears as a straight, uniform cylinder rather than a funnel. The math curve driving the radius expands too quickly at the base, and the camera placement flattens the 3D perspective.",
+        "suggestions": [
+          "expression:tc Particular-0581",
+          "camera:",
+          "param:tc Particular-0711"
+        ],
+        "inconsistent": false,
+        "degraded": null
       }
     },
     {
@@ -187,29 +466,48 @@
         ]
       },
       "gemini-3.5-flash": {
-        "score": 6,
+        "score": 5,
         "verdict": "fail",
-        "critique": "The sepia/brown tint is correctly applied, and the brightness flicker is present between t1 and t4. However, the background contains prominent wavy digital distortions and vertical squiggles on the left edge. These artifacts are characteristic of a damaged analog TV signal rather than classic old film, and they heavily disrupt the 'soft cloud' base. Additionally, the film grain from BCC_TEXTURES is extremely subtle and barely readable under the heavy tint.",
+        "critique": "The sepia tone and general cloud structure are present, but the frame suffers from a heavy wavy horizontal distortion (especially on the left edge) that detracts from a soft cloud base. The fine film grain is also too soft and barely visible.",
         "suggestions": [
           "param:BCC_TEXTURES-1001",
-          "param:BCC4Damaged TV-8192001"
+          "param:BCC_TEXTURES-1002"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3-flash-preview": {
+        "score": 4,
+        "verdict": "fail",
+        "critique": "The sepia tint and cloud base are present, but the visual is dominated by analog TV wave distortion which contradicts the film intent. Grain is nearly invisible.",
+        "suggestions": [
+          "param:BCC4Damaged TV-8192008",
+          "param:BCC_TEXTURES-1001",
+          "param:BCC_TEXTURES-1002",
+          "expression:PEDG-0002"
         ],
         "inconsistent": false,
         "degraded": null
       },
       "gemini-3.1-pro-preview": {
-        "error": "API unreachable after retries"
+        "score": 3,
+        "verdict": "fail",
+        "critique": "The frame achieves the requested sepia tint and slight brightness flicker. However, it fails the 'soft cloud base' and 'old film' criteria because the BCC Damaged TV effect introduces heavy CRT television artifacts (a squiggly wavy left edge and visible rectangular interference blocks in the center). This creates a broken video signal look rather than vintage film, heavily distorting the base clouds and overshadowing the film grain.",
+        "suggestions": [],
+        "inconsistent": false,
+        "degraded": null
       }
     },
     {
-      "id": "eval-e06/iter3",
+      "id": "eval-e06/iter2",
       "gpt": {
         "score": 6,
         "verdict": "fail",
-        "critique": "红/深红色调已成立，粒子排列足以连续读作一张起伏的曲面，t1到t4的顶部、底部波峰和内部竖向褶皱均有可见变化。主体覆盖范围较前次扩大，但两侧仍留有明显暗区，尚未形成横向铺满画面的宽幅波带。最主要的问题是粒子亮点仍然逐颗清晰可辨，规则纵向条纹和点阵边缘使其更像发光LED网格；整体亮度几乎均一，缺少丝绸所需的深红阴影、柔和过渡与局部流动高光。",
+        "critique": "红/深红调色已明显成立，粒子密度也足以读成一张规则的起伏网格；t1与t4的上下边缘和内部褶皱位置确有变化，满足缓慢波动的基础运动要求。但画面仍主要由清晰、分离的亮点组成，纵向重复纹样和点阵感很强，更像红色LED珠帘而非具有连续柔亮反射的丝绸曲面。主体横向只覆盖画面中央约45%，两侧留白过大，未形成宽幅横向波带。",
         "suggestions": [
           "param:PEDG-0002",
           "param:PEDG-0004",
+          "param:BCC_TEXTURES-1001",
           "expression:ADBE BEZMESH-0002",
           "expression:ADBE BEZMESH-0005",
           "expression:ADBE BEZMESH-0008",
@@ -217,43 +515,136 @@
         ]
       },
       "gemini-3.5-flash": {
-        "score": 6,
+        "score": 4,
         "verdict": "fail",
-        "critique": "红色调与丝绸质感有明显提升，粒子网格在两帧间也有柔和起伏。然而，网格在水平方向上依然呈现为中间一块方形区域，左右两侧留白过大，未能形成贯穿画面的宽幅波浪带；此外，网格颗粒感仍略显明显。",
+        "critique": "The crimson palette is now correct, but the shape remains a restricted central square rather than a wide band. The texture is still a discrete dot grid, resembling an LED screen rather than a continuous silk surface, and the wave motion is barely noticeable between t1 and t4.",
         "suggestions": [
-          "expression:ADBE BEZMESH-0002",
-          "expression:ADBE BEZMESH-0005",
-          "expression:ADBE BEZMESH-0008",
-          "expression:ADBE BEZMESH-0011"
+          "effect:ADBE Gaussian Blur 2",
+          "effect:ADBE Geometry2"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3-flash-preview": {
+        "score": 4,
+        "verdict": "fail",
+        "critique": "色彩已成功转为红色调，且具备基本的明暗起伏。但当前形态仍呈现为明显的点阵方块，而非横向铺展的宽幅波带。粒子点感过强，缺乏丝绸连续的折叠感与流动性。t1与t4之间变化过于微弱，动态不足。",
+        "suggestions": [
+          "param:ADBE BEZMESH-0001",
+          "param:ADBE Wave Warp-0002",
+          "param:ADBE Wave Warp-0003",
+          "effect:ADBE Fast Blur",
+          "param:PEDG-0002",
+          "expression:ADBE BEZMESH-0005"
         ],
         "inconsistent": false,
         "degraded": null
       },
       "gemini-3.1-pro-preview": {
-        "error": "API unreachable after retries"
+        "score": 5,
+        "verdict": "fail",
+        "critique": "The color has successfully shifted to a rich red, and the bezier mesh provides wave variation. However, the particles still look like distinct dots rather than a continuous silk surface, multiple Z-layers are creating a chaotic moiré pattern instead of smooth luminance, and the overall shape is constrained to a central square rather than a wide band filling the frame.",
+        "suggestions": [
+          "param:tc Form-0006",
+          "param:tc Form-0004",
+          "param:tc Form-0002",
+          "param:tc Form-0003"
+        ],
+        "inconsistent": false,
+        "degraded": null
       }
     },
     {
-      "id": "eval-e24/iter3",
+      "id": "eval-e07/iter2",
       "gpt": {
         "score": 6,
         "verdict": "fail",
-        "critique": "阶梯状抽象几何块面清晰，整体构图具备一定复古平面海报感，且 t1 与 t4 画面一致，没有意外时间变化。问题仍集中在双色限制与浮雕质感：大面积块面呈灰蓝、灰褐的连续中间调，而非明确的深蓝与米白；边缘虽有深浅线，但更像硬质的偏移描边。当前 Emboss 的混合量使浮雕产生大量综合色阶，削弱了严格双色印刷效果，也没有形成足够简洁可信的纸张压印明暗。",
+        "critique": "深灰蓝背景和白色大颗粒均符合方向，颗粒尺度清晰，画面中也能看出粒子场在持续下落。但雪仍明显读成高亮发光圆点而非柔软雪花：白色核心过曝、光晕偏大。t4相较t1的粒子密度显著堆积，出现大量相互贴连的亮团，画面变得拥挤，削弱了“大片雪花缓缓飘落”的舒缓、可读感。",
         "suggestions": [
-          "param:ADBE Emboss-0004",
-          "param:ADBE Emboss-0002"
+          "param:tc Particular-0146",
+          "param:PEDG-0002",
+          "param:PEDG-0001"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "score": 5,
+        "verdict": "fail",
+        "critique": "The snowflakes have a good large scale, but by frame 4 the density is far too high, crowding the frame. Additionally, the glow remains overly strong, giving the flakes a blurry, bulbous look resembling light orbs rather than soft snow.",
+        "suggestions": [
+          "param:tc Particular-0146",
+          "param:PEDG-0002",
+          "param:PEDG-0001"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3-flash-preview": {
+        "score": 6,
+        "verdict": "fail",
+        "critique": "The render features large flakes on the correct background with visible downward motion and drift. However, the flakes are excessively bloomed, appearing as glowing discs rather than soft snow, and the density increases too much by the second frame.",
+        "suggestions": [
+          "param:PEDG-0002",
+          "param:tc Particular-0146",
+          "param:PEDG-0001",
+          "param:PEDG-0004"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3.1-pro-preview": {
+        "score": 4,
+        "verdict": "fail",
+        "critique": "Motion is good (slow fall with slight drift) and background matches. However, flakes still look like glowing light orbs due to excessive opacity and bloom. Particle density also becomes too cluttered by frame 4.",
+        "suggestions": [
+          "param:tc Particular-0146",
+          "param:tc Particular-0033",
+          "param:PEDG-0002",
+          "param:PEDG-0001"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      }
+    },
+    {
+      "id": "eval-e01/iter2",
+      "gpt": {
+        "score": 7,
+        "verdict": "fail",
+        "critique": "At t4 the render convincingly shows a rich field of small amber-gold luminous dust over a near-black background, with soft additive-looking halos. However, t1 remains far too sparse, reading as isolated motes rather than a continuous suspended dust field; the large density jump by t4 reads as particle accumulation rather than a stable atmospheric field with clearly trackable upward drift. A few oversized bright motes also stand out against the otherwise fine scale.",
+        "suggestions": [
+          "param:tc Particular-0146",
+          "param:tc Particular-0002",
+          "param:tc Particular-0074"
         ]
       },
       "gemini-3.5-flash": {
         "score": 8,
         "verdict": "pass",
-        "critique": "The render successfully achieves the retro duotone print aesthetic. The geometric base is clean and readable, utilizing a strict deep-blue and cream palette. The embossed edges are clearly visible, creating a convincing stamped-paper relief texture that aligns perfectly with the poster concept.",
+        "critique": "The render successfully achieves the artistic intent. We now see a rich field of fine, golden-amber dust particles distributed across the frame. Comparing t1 to t4 reveals a subtle, readable upward drift with organic turbulence. The scale of the particles is appropriately microscopic, and the glow effect provides a soft, luminous quality against the near-black background.",
         "suggestions": [],
         "inconsistent": false,
         "degraded": null
       },
+      "gemini-3-flash-preview": {
+        "score": 7,
+        "verdict": "pass",
+        "critique": "The render achieves the requested golden dust effect on a dark background. Upward motion is distinct across the sampled frames, and the particles exhibit a soft, luminous quality with appropriate fine scale.",
+        "suggestions": [],
+        "inconsistent": true,
+        "degraded": null
+      },
       "gemini-3.1-pro-preview": {
-        "error": "API unreachable after retries"
+        "score": 7,
+        "verdict": "fail",
+        "critique": "The golden dust scale is excellent and the slow upward drift is clearly readable between t1 and t4. However, the particles are too dim and sharp to convey a 'soft glow' or additive feel. They mostly render as flat, crisp pixels because they are not bright enough to trigger the bloom threshold, making the overall field feel slightly matte and thin.",
+        "suggestions": [
+          "param:tc Particular-0146",
+          "param:tc Particular-0027",
+          "param:tc Particular-0075",
+          "param:PEDG-0004"
+        ],
+        "inconsistent": false,
+        "degraded": null
       }
     },
     {
@@ -269,57 +660,173 @@
         ]
       },
       "gemini-3.5-flash": {
-        "error": "      \"matchName"
+        "error": "{\"verdict\":\"fail\",\"score\":6,\"critique\":\"The background and blue-cyan color palet"
+      },
+      "gemini-3-flash-preview": {
+        "score": 7,
+        "verdict": "fail",
+        "critique": "The visual style successfully captures the deep sea palette and small, luminous particles. However, the lateral sway is still nearly imperceptible between t1 and t4, with the upward flow appearing too linear. Additionally, while the particles are small and round, they lack the specific volumetric 'bubble' feel, appearing more like glowing dots.",
+        "suggestions": [
+          "expression:tc Particular-0749",
+          "param:tc Particular-0027",
+          "param:tc Particular-0216",
+          "param:tc Particular-0146"
+        ],
+        "inconsistent": false,
+        "degraded": null
       },
       "gemini-3.1-pro-preview": {
-        "error": "API unreachable after retries"
+        "score": 6,
+        "verdict": "fail",
+        "critique": "The deep blue background and cyan color palette work well, and the particles are distributing correctly across the frame. However, the 'Glow Sphere' type and Additive blending still cause the particles to read as luminous energy dots rather than physical underwater bubbles. The Wind X expression is correctly applied for the lateral sway, but its amplitude is too low to produce a visible side-to-side meandering effect across the rendered frames.",
+        "suggestions": [
+          "param:tc Particular-0703",
+          "param:tc Particular-0069",
+          "param:tc Particular-0027",
+          "expression:tc Particular-0749"
+        ],
+        "inconsistent": false,
+        "degraded": null
       }
     },
     {
-      "id": "eval-e03/iter3",
+      "id": "eval-e03/iter2",
       "gpt": {
         "score": 7,
         "verdict": "fail",
-        "critique": "t1具备暗紫/紫罗兰色盘、全幅无硬边的柔和雾状底纹，整体亮度也维持在背景级；细微颗粒存在但未过分抢眼。不过当前t1的云雾明暗层次仍偏弱，画面主体接近均匀近黑紫，只有左下和中右可辨识到非常微弱的宽广云带，星云结构不够清晰。所给内容未包含可见的t4画面，无法确认本轮是否已消除此前从弱云到强环状云的亮度跳变问题。",
+        "critique": "暗紫/紫罗兰色盘、全画幅柔软无硬边的云雾感和颗粒均已具备，且t1到t4的云团位置与形态有明确变化。问题是时间一致性不够稳定：t1整体过于接近均匀的近黑紫色，仅有很弱的右侧和左下云雾；t4则出现了清晰而较亮的大尺度环状云团，亮度和结构对比明显高于t1，演化更像从几乎无云到强云的跳变，而非持续缓慢的暗背景星云。t4的颗粒也略偏显眼，接近噪点纹理而不只是近看可见的细微颗粒。",
         "suggestions": [
+          "param:ADBE Fractal Noise-0004",
           "param:ADBE Tint-0002",
-          "expression:ADBE Fractal Noise-0023"
+          "param:ADBE Noise HLS Auto2-0003"
         ]
       },
       "gemini-3.5-flash": {
-        "score": 8,
-        "verdict": "pass",
-        "critique": "The render successfully achieves a dark purple nebula background with soft flowing structures and subtle grain. The evolution between t1 and t4 is natural, maintaining a consistent balance of luminance and organic form across both frames.",
-        "suggestions": [],
+        "score": 6,
+        "verdict": "fail",
+        "critique": "The dark purple palette is well-established, and there is clear evolution and movement between t1 and t4. However, the brightness varies too drastically between the two frames, with t4 becoming overly bright and losing its background-grade luminance. Additionally, the grain is currently too prominent and coarse rather than subtle.",
+        "suggestions": [
+          "param:ADBE Fractal Noise-0004",
+          "param:ADBE Noise HLS Auto2-0003",
+          "param:ADBE Effect Mask Opacity"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3-flash-preview": {
+        "score": 7,
+        "verdict": "fail",
+        "critique": "星云结构在t1与t4之间有明确演化，色调符合暗紫设定。当前噪点过于均匀且强度略高，导致云雾质感显得破碎，整体对比度仍有提升空间。",
+        "suggestions": [
+          "param:ADBE Fractal Noise-0004",
+          "param:ADBE Fractal Noise-0005",
+          "param:ADBE Effect Mask Opacity",
+          "param:PEDG-0004"
+        ],
         "inconsistent": false,
         "degraded": null
       },
       "gemini-3.1-pro-preview": {
-        "error": "API unreachable after retries"
+        "score": 7,
+        "verdict": "pass",
+        "critique": "Frame t4 displays distinct, soft nebula structures with an excellent dark violet/purple color palette. Evolution and fluid motion are clearly visible between t1 and t4, confirming the temporal morphing requirements. The fine grain adds the requested subtle texture without overpowering the soft cloud edges, and the overall luminance is perfectly balanced for a dark background.",
+        "suggestions": [],
+        "inconsistent": true,
+        "degraded": null
       }
     },
     {
-      "id": "eval-e24/iter2",
+      "id": "eval-e07/iter1",
       "gpt": {
         "score": 7,
         "verdict": "fail",
-        "critique": "抽象的阶梯式几何块面清晰，深蓝与米白主色已建立，整体有一定复古海报图形感。t1 与 t4 完全相同，未见时间变化。问题是边界处仍有明显灰蓝、灰褐的过渡描边，严格双色并未成立；浮雕表现仍主要是偏移的双层轮廓线，而不是纸面压印产生的简洁明暗起伏。大面积米白块也较平，压印纹理的存在感不足。",
+        "critique": "The render clearly has white, soft-edged, readable large flakes over a suitably dark grey-blue background. However, the flakes read more like strongly bloomed circular light orbs than snow: their cores are heavily blown out and halos are oversized. This reduces the sense of individual soft snowflakes. The supplied view does not provide a visible second time sample to confirm the intended slow downward fall and subtle lateral wandering.",
         "suggestions": [
-          "param:ADBE Emboss-0004",
-          "param:ADBE Emboss-0002",
-          "param:ADBE Emboss-0003"
+          "param:PEDG-0002",
+          "param:PEDG-0001"
         ]
       },
       "gemini-3.5-flash": {
-        "score": 8,
-        "verdict": "pass",
-        "critique": "The visual successfully delivers the requested two-tone retro poster aesthetic. The geometric layout is clean and readable, the palette is strictly deep blue and cream with no color bleed, and the embossed edges effectively suggest a tactile letterpress or stamped paper quality. Temporal variation is absent, but the design cohesion is solid.",
-        "suggestions": [],
+        "score": 6,
+        "verdict": "fail",
+        "critique": "The snowflakes have a nice scale and soft appearance, but they accumulate too densely by frame 4, leading to a cluttered composition. Additionally, the glow makes them appear slightly too intense and orb-like.",
+        "suggestions": [
+          "param:tc Particular-0146",
+          "param:PEDG-0002"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3-flash-preview": {
+        "score": 7,
+        "verdict": "fail",
+        "critique": "The large white flakes correctly appear against the dark background. However, the density increases too much over time, leading to a cluttered frame, and the glow intensity makes the flakes appear like light bulbs rather than soft snow.",
+        "suggestions": [
+          "param:tc Particular-0146",
+          "param:PEDG-0002",
+          "param:tc Particular-0018",
+          "param:tc Particular-0027"
+        ],
         "inconsistent": false,
         "degraded": null
       },
       "gemini-3.1-pro-preview": {
-        "error": "API unreachable after retries"
+        "score": 4,
+        "verdict": "fail",
+        "critique": "The dark grey-blue background and lateral drift are working well. However, the particle density is much too high by frame 4, causing the composition to become overly cluttered. Additionally, the heavy glow makes the particles look like luminous bokeh balls rather than soft snowflakes.",
+        "suggestions": [
+          "param:tc Particular-0146",
+          "param:PEDG-0002",
+          "param:tc Particular-0027"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      }
+    },
+    {
+      "id": "eval-e05/iter3",
+      "gpt": {
+        "score": 8,
+        "verdict": "pass",
+        "critique": "The near-black field, sparse warm yellow-green points, varied intensities, and soft local glow halos are all visually on target. Population density is now reasonably consistent between t1 (about four lights) and t4 (about five), avoiding the earlier accumulation problem. However, the visible lights at t4 are largely a different set from t1, so the sampled change reads more like rapid particle turnover than a small persistent population slowly wandering and blinking. Longer-lived particles with a correspondingly lower birth rate would make the intended drifting motion legible without making the scene denser.",
+        "suggestions": [
+          "param:tc Particular-0002",
+          "param:tc Particular-0146"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "score": 7,
+        "verdict": "pass",
+        "critique": "The temporal consistency issue from previous iterations is resolved, maintaining 4-5 soft, warm yellow-green lights in both frames. The floating positions feel organic and the brightness variations match the blinking intent.",
+        "suggestions": [],
+        "inconsistent": true,
+        "degraded": null
+      },
+      "gemini-3-flash-preview": {
+        "score": 7,
+        "verdict": "fail",
+        "critique": "Population consistency is much better across frames. The color and background are accurate. However, the 'wandering' motion is still subtle and the fireflies feel a bit static and dim. The 'flickering' intent is not yet clearly achieved, and the halos are too small to feel soft and warm.",
+        "suggestions": [
+          "param:tc Particular-0711",
+          "param:PEDG-0001",
+          "param:PEDG-0002",
+          "param:tc Particular-0027",
+          "expression:tc Particular-0033"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3.1-pro-preview": {
+        "score": 8,
+        "verdict": "fail",
+        "critique": "Visuals successfully nail the warm yellow-green halos and brightness variation. While population density is now stable, the 2-second lifespan is too short to reveal slow wandering motion; particles pop out before traveling, making t1 and t4 show disconnected, static dots. Increasing life and using an expression to pre-populate the field will create continuous drift.",
+        "suggestions": [
+          "param:tc Particular-0002",
+          "expression:tc Particular-0146",
+          "expression:tc Particular-0715"
+        ],
+        "inconsistent": true,
+        "degraded": null
       }
     }
   ]

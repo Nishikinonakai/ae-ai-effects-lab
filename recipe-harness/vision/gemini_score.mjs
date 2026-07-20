@@ -16,13 +16,35 @@
 //      cannot judge motion, which is what 23 of 24 eval prompts ask it to do. Shrinking the payload
 //      removes the condition instead of degrading under it.
 //
-// Model default gemini-3.5-flash: stable (a preview model changing underneath an eval baseline would
-// invalidate comparisons), frontier-class vision. Override with --model= for A/B against
-// gemini-3.1-pro-preview on hard cases.
+// MODEL CHOICE — decided by a paired A/B, not by the docs and not by the tier name.
+//
+// 16 stored review_requests re-scored by each candidate and compared against the answer the old GPT
+// scorer already gave on the identical frames and instructions (vision/ab_scorers.mjs):
+//
+//   model                    |Δ| vs gpt   fail-with-no-suggestions   self-contradictory   API errors
+//   gemini-3-flash-preview       0.80              1/16                     1/16              1/16
+//   gemini-3.5-flash             1.00              1/16                     1/16              2/16
+//   gemini-3.1-pro-preview       1.13              3/16                     3/16              0/16
+//
+// DEFAULT gemini-3-flash-preview: closest agreement, most suggestions per review (4.3), and it is
+// the model Google's guide singles out for visual reasoning.
+//
+// The counter-intuitive result is that the PRO model is the worst fit. It is the most reliable at
+// the API layer — zero errors — and the worst at the job: it disagreed most, contradicted its own
+// verdict three times, and three times failed a render while proposing nothing. That last one is not
+// a quality issue, it is a loop-killer (tune_loop exits on fail_no_applicable_suggestions), which is
+// why this file now retries that case explicitly. "More capable tier" did not mean "better scorer".
+//
+// gemini-3.1-flash-lite works too; untested here, the cheap fallback.
+// Note gemini-2.5-flash now 404s for new users — do not fall back to it.
+//
+// (An earlier revision of this comment blamed free-tier per-day quota for the model ranking. That was
+// real at the time but has been superseded: the key now has billing, every candidate ran to
+// completion, and the table above is the behavioural comparison that quota previously prevented.)
 //
 // Auth: GEMINI_API_KEY from env, else recipe-harness/.env.api (gitignored).
 //
-// usage: node vision/gemini_score.mjs <review_request.json> [--model=gemini-3.5-flash] [--maxdim=1280]
+// usage: node vision/gemini_score.mjs <review_request.json> [--model=gemini-3-flash-preview] [--maxdim=1280]
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -46,7 +68,7 @@ const BASE = (process.env.GEMINI_BASE_URL || 'https://generativelanguage.googlea
 const reqPath = process.argv[2];
 if (!reqPath) { console.error('usage: node vision/gemini_score.mjs <review_request.json> [--model=...]'); process.exit(1); }
 const flag = (n, d) => { const a = process.argv.find(x => x.startsWith(`--${n}=`)); return a === undefined ? d : a.slice(n.length + 3); };
-const model = flag('model', 'gemini-3.5-flash');
+const model = flag('model', 'gemini-3-flash-preview');
 const maxdim = Number(flag('maxdim', 1280));
 
 const req = JSON.parse(fs.readFileSync(reqPath, 'utf8'));
@@ -86,6 +108,10 @@ const header = [
   'times to judge MOTION — a single still cannot show drift, rotation or flicker.',
   '',
   req.review_instructions,
+  '',
+  'Return AT MOST 6 suggestions, and fewer is better. They are applied mechanically and all at once,',
+  'so a long list is not thoroughness — it is an unattributable change where nothing can be learned',
+  'from the result. Name the smallest set of levers that would move the frame toward the intent.',
 ].filter(Boolean).join('\n');
 
 const parts = [{ text: header }];
@@ -118,8 +144,14 @@ const responseSchema = {
     verdict: { type: 'STRING', enum: ['pass', 'fail'] },
     score: { type: 'INTEGER' },
     critique: { type: 'STRING' },
+    // CAP THE LIST. Left unbounded, gemini-3-flash-preview returned FIFTY suggestions for one
+    // review — and tune_loop applies them mechanically and all at once, so that is not verbosity,
+    // it is a plan-destroying edit with no way to attribute which nudge did what. It is also what
+    // was exhausting the output budget. review_schema already asks for "FEW causal nudges over many
+    // speculative ones"; this makes the instruction structural instead of advisory.
     suggestions: {
       type: 'ARRAY',
+      maxItems: 6,
       items: {
         type: 'OBJECT',
         required: ['type', 'why'],
@@ -144,7 +176,10 @@ async function call(tries = 3) {
     // prompt already spends 30-80 of them, and a nuanced visual judgement spends far more. At 4096
     // the reasoning ate the allowance and the JSON came back truncated on 1 request in 3, which
     // responseSchema cannot prevent (it constrains shape, not completion). The models allow 65536.
-    generationConfig: { responseMimeType: 'application/json', responseSchema, maxOutputTokens: 16384 },
+    // 16384 still truncated the two longest reviews (dense Chinese critiques with full suggestion
+    // sets). Thinking tokens are unbounded from the caller's side, so the budget has to cover
+    // reasoning AND output — the models allow 65536 and unused budget costs nothing.
+    generationConfig: { responseMimeType: 'application/json', responseSchema, maxOutputTokens: 32768 },
   });
   for (let a = 1; a <= tries; a++) {
     try {
@@ -171,7 +206,7 @@ async function call(tries = 3) {
   console.error('API unreachable after retries'); process.exit(1);
 }
 
-const data = await call();
+let data = await call();
 const cand = data.candidates?.[0];
 if (!cand) { console.error('no candidate returned: ' + JSON.stringify(data).slice(0, 300)); process.exit(1); }
 // A truncated response and a refused one look identical downstream unless the reason is surfaced.
@@ -196,6 +231,52 @@ review.suggestions = (review.suggestions || []).map(s => {
   delete out.value_number; delete out.value_list;
   return out;
 });
+// A FAIL WITH NO SUGGESTIONS TERMINATES THE LOOP. tune_loop exits on
+// `fail_no_applicable_suggestions`, so a scorer that criticises the render and then offers nothing
+// does not merely waste an iteration — it ends the run. Measured across a 16-case A/B: 1 in 16 for
+// the flash models and 3 in 16 for gemini-3.1-pro-preview. That is far too common to accept, and it
+// is recoverable: the model has already articulated what is wrong in the critique, so asking it to
+// name the levers usually works. One targeted retry, then give up honestly and say so.
+if (review.verdict === 'fail' && !review.suggestions.length) {
+  console.error('scorer failed the render but proposed nothing — asking once for the levers');
+  parts.push({ text: [
+    '',
+    'You returned verdict="fail" with an EMPTY suggestions list. That combination stops the tune loop',
+    'entirely, so it must not be used to mean "I am not sure what to change".',
+    `Your critique was: ${review.critique}`,
+    'Name the concrete parameter changes that would address exactly that critique, using only',
+    'matchNames visible in the plan above. If the defect genuinely cannot be reached by any parameter',
+    '(it needs a different effect, a different stack order, or an asset), say so in the critique and',
+    'return verdict="fail" with suggestions=[] again — that answer is respected, but only on purpose.',
+  ].join('\n') });
+  const retry = await call(2);
+  const rc = retry.candidates?.[0];
+  const rtext = (rc?.content?.parts || []).map(p => p.text).filter(Boolean).join('').trim();
+  try {
+    const r2 = JSON.parse(rtext);
+    if (r2.suggestions?.length) {
+      review.suggestions = r2.suggestions;
+      if (r2.critique) review.critique = r2.critique;
+      degraded.push('suggestions_recovered_on_retry');
+      data = retry;
+    } else degraded.push('fail_without_suggestions_confirmed');
+  } catch { degraded.push('fail_without_suggestions_retry_unparseable'); }
+  // fold the split value fields on whatever we ended up with
+  review.suggestions = (review.suggestions || []).map(s => {
+    const out = { ...s };
+    if (s.value_list?.length) out.value = s.value_list;
+    else if (s.value_number !== undefined) out.value = s.value_number;
+    delete out.value_number; delete out.value_list;
+    return out;
+  });
+}
+
+// Belt and braces: the schema caps the list, but the applier is the thing that would be harmed, so
+// it must not depend on the API honouring maxItems.
+if (review.suggestions.length > 6) {
+  degraded.push(`truncated_suggestions:${review.suggestions.length}->6`);
+  review.suggestions = review.suggestions.slice(0, 6);
+}
 review.score = Math.max(0, Math.min(10, Math.round(review.score)));
 review._backend = `gemini:${model}`;
 review._frames_scored = attached;
