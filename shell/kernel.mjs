@@ -28,6 +28,7 @@ import { fileURLToPath } from 'url';
 import { spawn, spawnSync } from 'child_process';
 import { loadCards, cardFor } from '../introspect/essence/lookup.mjs';
 import { defaultModel, spendSummary, setPurpose, activeConfig } from './llm.mjs';
+import { startDashboard } from './dashboard.mjs';
 
 // matchName -> the name an artist would recognise, via the essence index. Falls back to the
 // matchName, which is at least addressable, rather than to nothing.
@@ -385,6 +386,13 @@ if (session) {
 } else {
   setState({ ...RESULT_FIELDS, phase: 'idle', message: 'ready', canAccept: false, canRollback: false });
 }
+// The dashboard is part of the shell, not a separate thing to remember to start. It is loopback-only
+// and costs nothing when nobody has the page open.
+if (!ONCE) {
+  const dashUrl = await startDashboard(Number(arg('dashboard-port', 7867)));
+  if (dashUrl) { console.log(`dashboard: ${dashUrl}`); setState({ dashboard: dashUrl }); }
+}
+
 console.log(`kernel up — watching ${REQ}`);
 const cfg = activeConfig();
 console.log(`  provider=${cfg.provider || 'NONE'}  model=${MODEL || cfg.model || '(none)'}  key from=${cfg.keySource}`);

@@ -1,0 +1,7 @@
+{
+  "name": "ae-ai-shell",
+  "version": "0.1.0",
+  "description": "Desktop window for the AE AI shell — cost, history and settings",
+  "main": "main.js",
+  "scripts": { "start": "electron ." }
+}

@@ -485,7 +485,14 @@ AE 面板(薄)          Electron 壳(厚)                    AE 桥
 kernel 已经能跑,所以顺序是:
 1. **成本计量先做**——它不依赖任何 UI,而且今天证明了它最急。给 `llm.mjs` 加 token/费用累计,写进 `state.json`,面板先显示一行。
 2. 密钥搬进钥匙串,provider/模型在 state 里可见。
-3. Electron 起最小窗口:成本 + 历史 + 设置三屏,复用 kernel 进程。
+3. ~~Electron 起最小窗口~~ **已做,但换了个做法(2026-07-20)**:三屏做成 **kernel 在 loopback 上提供的页面**
+   (`shell/dashboard.mjs`),而不是先做成 Electron App。理由有两条:
+   (a) Electron 是 ~200MB 依赖,而**在装上之前那份 UI 一行都跑不了**——这一天已经为"发布从未被执行过的
+   UI 代码"付过学费(那个点了没反应的按钮);做成页面则当天就能在浏览器里逐屏验证。
+   (b) **内存账**:实测这台机器上 AE 内嵌的 CEP(Chromium)面板 12 个进程共 ~538MB,**比 AE 自身的 361MB
+   还多**,而且只要 AE 开着就一直付。做成"想看时打开、关掉就没了"的窗口才对。
+   `shell/electron/main.js` 因此只有 30 行:确保 kernel 在跑(**已在跑就复用,绝不起第二个**——两个 kernel
+   会抢同一个 request 文件和同一个回滚栈),然后把这个 URL 放进窗口。
 4. 打包:资源路径解耦 + install-时 introspect 编排。
 
 
