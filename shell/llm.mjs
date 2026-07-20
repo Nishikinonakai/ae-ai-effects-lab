@@ -14,17 +14,28 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { spawnSync } from 'child_process';
+import { loadCredentials } from './keys.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
 
+// Credentials come from shell/keys.mjs: process env, then the macOS Keychain, then the legacy
+// plaintext file. Resolved ONCE per process — loadCredentials shells out to `security` per key, and
+// provider() is called on every request.
+let credSource = null;
 function loadEnv() {
-  const envFile = path.join(REPO, 'recipe-harness', '.env.api');
-  if (!fs.existsSync(envFile)) return;
-  for (const line of fs.readFileSync(envFile, 'utf8').split('\n')) {
-    const m = line.match(/^([A-Z_]+)=(.+)$/);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
-  }
+  if (credSource) return credSource;
+  credSource = loadCredentials();
+  return credSource;
+}
+
+// Which provider, which model, and where the key came from — the answer to "am I actually using
+// what I think I am". Not knowing that cost a whole afternoon: the scorer had moved to Gemini while
+// the planners still read OPENAI_API_KEY, and the failure read like a config error.
+export function activeConfig() {
+  const src = loadEnv();
+  const p = provider();
+  return { provider: p, model: defaultModel(p), keySource: p ? src[`${p.toUpperCase()}_API_KEY`] || 'none' : 'none' };
 }
 
 // ---- COST METER ------------------------------------------------------------------------------
@@ -144,10 +155,23 @@ export async function askJSON(parts, { schema = null, model = null, maxTokens = 
       // truncates the JSON, which responseSchema cannot prevent (it constrains shape, not completion).
       generationConfig: { responseMimeType: 'application/json', maxOutputTokens: maxTokens, ...(schema ? { responseSchema: schema } : {}) },
     });
+    let lastErr = null;
     for (let a = 1; a <= tries; a++) {
-      const r = await fetch(`${base}/models/${mdl}:generateContent`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': process.env.GEMINI_API_KEY }, body,
-      });
+      // The fetch itself must be inside the retry, not outside it. Without this a transient socket
+      // error ("TypeError: fetch failed") escapes the loop on the FIRST attempt and kills the whole
+      // request — two consecutive real runs died that way, at the planning step, on a hiccup that a
+      // single retry would have absorbed.
+      let r;
+      try {
+        r = await fetch(`${base}/models/${mdl}:generateContent`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': process.env.GEMINI_API_KEY }, body,
+        });
+      } catch (e) {
+        lastErr = e;
+        console.error(`network error (attempt ${a}/${tries}): ${String(e).slice(0, 120)}`);
+        if (a < tries) { await new Promise(res => setTimeout(res, a * 4000)); continue; }
+        throw new Error(`network unreachable after ${tries} attempts: ${String(lastErr).slice(0, 160)}`);
+      }
       if (r.ok) {
         const data = await r.json();
         const cand = data.candidates?.[0];
@@ -176,11 +200,18 @@ export async function askJSON(parts, { schema = null, model = null, maxTokens = 
       ? { type: 'image_url', image_url: { url: `data:image/png;base64,${b64(normaliseImage(x.image))}`, detail: 'high' } }
       : { type: 'text', text: x.text });
     for (let a = 1; a <= tries; a++) {
-      const r = await fetch(`${base}/chat/completions`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${process.env.OPENAI_API_KEY}` },
-        body: JSON.stringify({ model: mdl, max_completion_tokens: maxTokens, messages: [{ role: 'user', content }] }),
-      });
+      let r;
+      try {
+        r = await fetch(`${base}/chat/completions`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${process.env.OPENAI_API_KEY}` },
+          body: JSON.stringify({ model: mdl, max_completion_tokens: maxTokens, messages: [{ role: 'user', content }] }),
+        });
+      } catch (e) {
+        console.error(`network error (attempt ${a}/${tries}): ${String(e).slice(0, 120)}`);
+        if (a < tries) { await new Promise(res => setTimeout(res, a * 4000)); continue; }
+        throw new Error(`network unreachable after ${tries} attempts: ${String(e).slice(0, 160)}`);
+      }
       if (r.ok) {
         const data = await r.json();
         const spend = recordSpend({ model: mdl, usage: data.usage });

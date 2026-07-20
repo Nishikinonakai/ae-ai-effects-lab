@@ -15,17 +15,14 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { validateReview } from '../runner/review_schema.mjs';
+import { loadCredentials } from '../../shell/keys.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// ---- env (.env.api fallback) ----
-const envFile = path.join(__dirname, '..', '.env.api');
-if ((!process.env.OPENAI_API_KEY || !process.env.OPENAI_BASE_URL) && fs.existsSync(envFile)) {
-  for (const line of fs.readFileSync(envFile, 'utf8').split('\n')) {
-    const m = line.match(/^([A-Z_]+)=(.+)$/);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
-  }
-}
+// Credentials come from shell/keys.mjs (env -> macOS Keychain -> legacy plaintext file).
+// This file used to load .env.api itself, which is the same half-a-seam that broke the planners:
+// moving the key to the Keychain fixed the kernel and left the scorer keyless.
+loadCredentials();
 const API_KEY = process.env.OPENAI_API_KEY;
 const BASE = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
 if (!API_KEY) { console.error('OPENAI_API_KEY missing (env or recipe-harness/.env.api)'); process.exit(1); }

@@ -27,7 +27,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { spawn, spawnSync } from 'child_process';
 import { loadCards, cardFor } from '../introspect/essence/lookup.mjs';
-import { defaultModel, spendSummary, setPurpose } from './llm.mjs';
+import { defaultModel, spendSummary, setPurpose, activeConfig } from './llm.mjs';
 
 // matchName -> the name an artist would recognise, via the essence index. Falls back to the
 // matchName, which is at least addressable, rather than to nothing.
@@ -370,6 +370,11 @@ if (session) {
   setState({ phase: 'idle', message: 'ready', canAccept: false, canRollback: false, trace: [], frame: null });
 }
 console.log(`kernel up — watching ${REQ}`);
-console.log(`  model=${MODEL || '(auto: ' + (defaultModel() || 'no credential') + ')'}  max-iters=${MAX_ITERS}  accept-bar=${ACCEPT_BAR}`);
+const cfg = activeConfig();
+console.log(`  provider=${cfg.provider || 'NONE'}  model=${MODEL || cfg.model || '(none)'}  key from=${cfg.keySource}`);
+console.log(`  max-iters=${MAX_ITERS}  accept-bar=${ACCEPT_BAR}`);
+if (!cfg.provider) console.error('  ⚠ no credential found — every request will fail at planning. node shell/keys.mjs status');
+// Put it where the artist can see it too, not just in a terminal they may never look at.
+setState({ engine: `${cfg.provider || 'none'} · ${MODEL || cfg.model || 'none'}` });
 if (ONCE) { await poll(); process.exit(0); }
 setInterval(poll, 800);

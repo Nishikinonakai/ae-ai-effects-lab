@@ -191,7 +191,9 @@
     if (busy && s.pass) head += "  ·  pass " + s.pass;
     statusText.text = head;
 
-    if (s.spend) spendText.text = s.spend;
+    // Which engine is actually answering. "I thought it was using X" was a real defect, not a
+    // hypothetical — the scorer moved provider while the planners did not, and nothing showed it.
+    if (s.spend || s.engine) spendText.text = (s.engine ? s.engine + "  ·  " : "") + (s.spend || "");
     if (s.rationale && s.rationale !== rationale.text) rationale.text = s.rationale;
     if (s.message && s.message !== lastMessage) { log(s.message); lastMessage = s.message; }
 

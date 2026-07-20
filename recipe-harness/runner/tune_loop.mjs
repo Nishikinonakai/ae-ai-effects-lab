@@ -28,6 +28,7 @@ import { spawnSync } from 'child_process';
 import { runRecipe, fmtParams } from './recipe_runner.mjs';
 import { schemaPrompt, validateReview } from './review_schema.mjs';
 import { leverContext } from '../../introspect/essence/lookup.mjs';
+import { provider } from '../../shell/llm.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -186,11 +187,11 @@ function scoreViaApi(n) {
   // only one of the three that enforces the review shape at the API (responseSchema) and downscales
   // frames before sending, so the two failure modes the other backends share — unparseable JSON and
   // a silently dropped frame — cannot occur.
+  // By resolvable credential, not by what a file contains — grepping .env.api meant moving the key
+  // into the Keychain silently reverted the scorer to OpenAI.
   const explicit = flag('scorer', '');
-  const scorerFile = explicit ? `${explicit}_score.mjs`
-    : process.env.GEMINI_API_KEY || fs.existsSync(path.join(REPO, '.env.api')) && /GEMINI_API_KEY/.test(fs.readFileSync(path.join(REPO, '.env.api'), 'utf8')) ? 'gemini_score.mjs'
-    : process.env.ANTHROPIC_API_KEY ? 'claude_score.mjs'
-    : 'gpt_score.mjs';
+  const SCORER_FOR = { gemini: 'gemini_score.mjs', anthropic: 'claude_score.mjs', openai: 'gpt_score.mjs' };
+  const scorerFile = explicit ? `${explicit}_score.mjs` : (SCORER_FOR[provider()] || 'gpt_score.mjs');
   const scorer = path.join(REPO, 'vision', scorerFile);
   console.log(`scoring iter ${n} via ${path.basename(scorer)} ...`);
   const r = spawnSync('node', [scorer, req], { stdio: 'inherit' });
