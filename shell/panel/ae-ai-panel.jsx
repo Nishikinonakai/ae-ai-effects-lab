@@ -232,6 +232,7 @@
     if (p === "rolling-back") return "Undoing…";
     if (p === "cancelling") return "Stopping…";
     if (p === "cancelled") return "Stopped";
+    if (p === "budget") return "Budget reached — nothing was run";
     if (p === "error") return "Something went wrong";
     return p;
   }

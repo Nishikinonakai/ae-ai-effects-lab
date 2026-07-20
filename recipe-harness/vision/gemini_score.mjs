@@ -51,7 +51,7 @@ import { fileURLToPath } from 'url';
 import { spawnSync } from 'child_process';
 import { validateReview } from '../runner/review_schema.mjs';
 import { loadCredentials } from '../../shell/keys.mjs';
-import { recordSpend } from '../../shell/llm.mjs';
+import { recordSpend, assertBudget } from '../../shell/llm.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -166,6 +166,12 @@ const responseSchema = {
     },
   },
 };
+
+// The scorer has its own fetch, so it must pass the gate explicitly — a cap that guards askJSON and
+// not this one would be exactly the half-a-seam pattern PRD §十三 is about, and the scorer is the
+// bigger spender of the two.
+try { assertBudget(); }
+catch (e) { console.error(String(e.message || e)); process.exit(3); }
 
 async function call(tries = 3) {
   const body = JSON.stringify({

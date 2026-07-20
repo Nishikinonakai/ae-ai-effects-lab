@@ -29,6 +29,7 @@ import { spawn, spawnSync } from 'child_process';
 import { loadCards, cardFor } from '../introspect/essence/lookup.mjs';
 import { defaultModel, spendSummary, setPurpose, activeConfig } from './llm.mjs';
 import { startDashboard } from './dashboard.mjs';
+import { budgetStatus } from './budget.mjs';
 
 // matchName -> the name an artist would recognise, via the essence index. Falls back to the
 // matchName, which is at least addressable, rather than to nothing.
@@ -194,6 +195,19 @@ async function handleRun(req) {
   // artist's comp with no way for the product to undo them, which is the same class of bug as
   // losing the session on a crash. Asking a second question is not consent to lose the first
   // answer, so instead the stack accumulates and Rollback unwinds all of it, newest first.
+  // PRE-FLIGHT THE BUDGET. The gate in llm.mjs is the thing that actually stops spending, but on its
+  // own it surfaces mid-request as a cryptic failure after the comp has already been read. Checking
+  // here means the artist is told before anything happens, in numbers, with the command to change it.
+  const bud = budgetStatus();
+  if (bud.exceeded) {
+    setState({
+      phase: 'budget',
+      message: `Daily budget reached — $${bud.spentToday.toFixed(3)} of $${bud.dailyUsd.toFixed(2)}. Nothing was run. Raise it with: node shell/budget.mjs daily <amount>`,
+      canAccept: false, canRollback: !!session?.appliedReports?.length,
+    });
+    return;
+  }
+
   cancelled = false;
   setPreviewWidth(req.panelWidth);
   const carried = session?.appliedReports?.length ? session.appliedReports : [];

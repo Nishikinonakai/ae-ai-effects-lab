@@ -21,6 +21,7 @@ import { fileURLToPath } from 'url';
 import { spendSummary } from './llm.mjs';
 import { activeConfig } from './llm.mjs';
 import { KNOWN, keychainGet } from './keys.mjs';
+import { budgetStatus } from './budget.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -128,8 +129,16 @@ async function draw(){
   if(view==='cost'){
     const rows=Object.entries(d.byPurpose||{}).sort((a,b)=>b[1]-a[1]);
     const max=rows.length?rows[0][1]:1;
+    const b=d.budget||{};
+    const budCard = b.dailyUsd
+      ? '<div class="bar" style="margin-top:10px"><i style="width:'+(100*(b.fraction||0))+'%;background:'+
+        (b.exceeded?'var(--warn)':'var(--accent)')+'"></i></div>'+
+        '<div class="sub">'+(b.exceeded
+          ? '<span class="warn">daily cap of '+money(b.dailyUsd)+' reached — calls are being refused</span>'
+          : money(b.remaining)+' left of '+money(b.dailyUsd)+' today')+'</div>'
+      : '<div class="sub">no daily cap — <code>node shell/budget.mjs daily 2.00</code></div>';
     out.innerHTML='<div class="card"><div class="big">'+money(d.today.total)+'</div>'+
-      '<div class="sub">today · '+d.today.calls+' calls</div></div>'+
+      '<div class="sub">today · '+d.today.calls+' calls</div>'+budCard+'</div>'+
       '<div class="row"><div class="card" style="flex:1"><div class="sub">7 days</div><div class="big">'+money(d.week.total)+'</div>'+
       '<div class="sub">'+d.week.calls+' calls · '+money(d.week.calls?d.week.total/d.week.calls:0)+' each</div></div>'+
       '<div class="card" style="flex:1"><div class="sub">per request (plan+tune)</div><div class="big">'+
@@ -199,6 +208,7 @@ export function startDashboard(port = 7867) {
       const span = earliest ? Date.now() - earliest + 60_000 : 0;   // +1min so the first request isn't clipped
       const requests = span ? new Set(history(500, span).map(h => h.id)).size : 0;
       return send({
+        budget: budgetStatus(),
         today: spendSummary({ sinceMs: 24 * 3600 * 1000 }),
         week,
         byPurpose: week.byPurpose,

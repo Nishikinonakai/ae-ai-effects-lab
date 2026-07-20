@@ -56,6 +56,48 @@ const PRICES = {
   'claude-sonnet-5': { in: 3.00, out: 15.00 },
 };
 const LEDGER = path.join(os.homedir(), 'Documents', 'ae-ai-shell', 'spend.jsonl');
+const BUDGET_FILE = path.join(os.homedir(), 'Documents', 'ae-ai-shell', 'budget.json');
+
+// ---- BUDGET GATE -------------------------------------------------------------------------------
+// Metering alone does not stop anything — it tells you afterwards. £5.72 left this project in one
+// day and the meter would have shown it, correctly, the next morning.
+//
+// The gate lives HERE, not in the kernel, and that is the whole point: today's spend went to
+// EXPERIMENTS, not to artist requests. A limit that only guards the product path would have watched
+// every pound of it go by. Everything that spends money resolves a provider through this file, so
+// this is the one place a cap cannot be routed around.
+//
+// Default OFF. A tool that refuses to work on first run because of a limit nobody set is worse than
+// one that spends a little; the artist opts in with a number they choose.
+export function budget() {
+  try { return JSON.parse(fs.readFileSync(BUDGET_FILE, 'utf8')); }
+  catch { return { dailyUsd: null, perRequestUsd: null }; }
+}
+
+export function setBudget(patch) {
+  const next = { ...budget(), ...patch };
+  fs.mkdirSync(path.dirname(BUDGET_FILE), { recursive: true });
+  fs.writeFileSync(BUDGET_FILE, JSON.stringify(next, null, 2));
+  return next;
+}
+
+export class BudgetExceeded extends Error {
+  constructor(spent, cap) {
+    super(`daily budget reached: $${spent.toFixed(4)} of $${cap.toFixed(2)}. Raise it with node shell/budget.mjs, or wait for tomorrow.`);
+    this.name = 'BudgetExceeded';
+    this.spent = spent; this.cap = cap;
+  }
+}
+
+// Called before every paid call. Throwing is deliberate: a gate that logs a warning and proceeds is
+// not a gate.
+export function assertBudget() {
+  const cap = budget().dailyUsd;
+  if (!cap) return { capped: false };
+  const spent = spendSummary({ sinceMs: 24 * 3600 * 1000 }).total;
+  if (spent >= cap) throw new BudgetExceeded(spent, cap);
+  return { capped: true, spent, cap, remaining: cap - spent };
+}
 
 // What this call was FOR. Without it the ledger says "you spent £5.72" and not "you spent £5.60 of
 // it on experiments" — which is the only version that changes behaviour.
@@ -139,6 +181,7 @@ function normaliseImage(fp) {
 }
 
 export async function askJSON(parts, { schema = null, model = null, maxTokens = 16384, tries = 3 } = {}) {
+  assertBudget();
   const p = provider();
   if (!p) throw new Error('no LLM credential found (GEMINI_API_KEY / OPENAI_API_KEY / ANTHROPIC_API_KEY, in env or recipe-harness/.env.api)');
   const mdl = model || defaultModel(p);
