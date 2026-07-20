@@ -61,11 +61,17 @@
   var rationale = win.add("statictext", undefined, "", { multiline: true, truncate: "end" });
   rationale.preferredSize.height = 30;
 
+  // The preview must not dictate the panel's width. A ScriptUI image draws at native size, so a
+  // fixed preferredSize became a hard minimum width for the whole panel — which is why it insisted
+  // on a particular width however it was docked. The kernel now renders the thumbnail to whatever
+  // width this panel reports, and the control itself is left unsized so it simply shows what it is
+  // given.
   var previewPanel = win.add("panel", undefined, "preview");
   previewPanel.alignment = ["fill", "fill"];
+  previewPanel.alignChildren = ["center", "center"];
   previewPanel.margins = 5;
+  previewPanel.minimumSize.height = 90;
   var preview = previewPanel.add("image", undefined, undefined);
-  preview.preferredSize = [320, 180];
   preview.alignment = ["center", "center"];
 
   // WHAT IT CHANGED — the handover surface, and the reason this is not just a progress bar.
@@ -194,11 +200,13 @@
     // Which engine is actually answering. "I thought it was using X" was a real defect, not a
     // hypothetical — the scorer moved provider while the planners did not, and nothing showed it.
     if (s.spend || s.engine) spendText.text = (s.engine ? s.engine + "  ·  " : "") + (s.spend || "");
-    if (s.rationale && s.rationale !== rationale.text) rationale.text = s.rationale;
+    // Explicit clears matter as much as sets: on a fresh kernel these come back null, and treating
+    // null as "no update" is what made a stale result look like a live one.
+    if (s.rationale !== undefined) { var rt = s.rationale || ""; if (rt !== rationale.text) rationale.text = rt; }
     if (s.message && s.message !== lastMessage) { log(s.message); lastMessage = s.message; }
 
-    if (s.changed && s.changed !== lastChanged) { changedList.text = s.changed; lastChanged = s.changed; }
-    else if (!s.changed && lastChanged) { changedList.text = ""; lastChanged = ""; }
+    var ch = s.changed || "";
+    if (ch !== lastChanged) { changedList.text = ch; lastChanged = ch; }
 
     // The frame is the product's actual output — show it, and only reload when the path changes
     // (re-reading a PNG every second would make the panel crawl).
@@ -248,10 +256,13 @@
       } catch (e) {}
       if (!layerIdx) log("no layer selected — letting it choose");
     }
+    var w = 0;
+    try { w = win.size ? win.size.width : 0; } catch (eW) {}
     if (writeRequest({
       action: "run", intent: text, layer: layerIdx,
       maxIters: intFrom(itersInput, 3, 1, 8),
-      acceptBar: intFrom(barInput, 8, 1, 10)
+      acceptBar: intFrom(barInput, 8, 1, 10),
+      panelWidth: w                                  // so the next preview is rendered to fit
     })) log("asked for: " + text);
   }
 
@@ -286,6 +297,10 @@
   app.scheduleTask("__aeAiPanelTick()", POLL_SEC * 1000, true);
 
   try { applyState(readState()); } catch (e) {}
+
+  // A docked panel gets resized by dragging its edge; without this the children keep their first
+  // layout and the panel looks broken at any other width.
+  win.onResizing = win.onResize = function () { try { win.layout.resize(); } catch (eR) {} };
 
   if (win instanceof Window) { win.center(); win.show(); }
   else { win.layout.layout(true); win.layout.resize(); }

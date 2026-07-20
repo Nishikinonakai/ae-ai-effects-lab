@@ -97,11 +97,20 @@ function setState(patch) {
 // layout apart. So the panel is only ever given a thumbnail, generated with sips (macOS-native, and
 // already the downscaler verify_edit uses for the vision API). Falls back to the original path if
 // sips fails — a mis-sized preview beats no preview.
-const PREVIEW_W = 320;
+// ScriptUI image controls do not scale their contents — they draw at native size, so the thumbnail
+// width IS a minimum width for the whole panel. A fixed 320 therefore forced the panel to be at
+// least that wide however the artist had docked it. The panel reports its own width with each
+// request and the preview is generated to match, so the layout follows the dock instead of fighting
+// it. Clamped: too small to read is as useless as too wide to fit.
+let previewW = 320;
+function setPreviewWidth(w) {
+  const n = Number(w);
+  if (Number.isFinite(n) && n >= 160) previewW = Math.max(200, Math.min(640, Math.round(n) - 30));
+}
 function previewOf(framePath) {
   if (!framePath || !fs.existsSync(framePath)) return framePath || null;
-  const out = framePath.replace(/\.png$/i, `_panel${PREVIEW_W}.png`);
-  const r = spawnSync('sips', ['-Z', String(PREVIEW_W), framePath, '--out', out], { encoding: 'utf8' });
+  const out = framePath.replace(/\.png$/i, `_panel${previewW}.png`);
+  const r = spawnSync('sips', ['-Z', String(previewW), framePath, '--out', out], { encoding: 'utf8' });
   return (r.status === 0 && fs.existsSync(out)) ? out : framePath;
 }
 
@@ -185,6 +194,7 @@ async function handleRun(req) {
   // losing the session on a crash. Asking a second question is not consent to lose the first
   // answer, so instead the stack accumulates and Rollback unwinds all of it, newest first.
   cancelled = false;
+  setPreviewWidth(req.panelWidth);
   const carried = session?.appliedReports?.length ? session.appliedReports : [];
   if (carried.length) console.log(`carrying ${carried.length} unaccepted edit(s) from "${session.intent}" into this request's rollback stack`);
   session = { intent, appliedReports: [...carried], carriedFrom: carried.length ? session.intent : null, summaryPath: null };
@@ -363,11 +373,17 @@ async function poll() {
   }
 }
 
+// A fresh start must not present a STALE RESULT as if it were current. setState merges, so the
+// previous run's frame, rationale, score and "what it changed" survived every restart — the panel
+// opened showing a finished job nobody had just run, with Keep it / Roll back live against a session
+// that no longer existed. Clear the result fields explicitly; only a resumable session re-populates.
+const RESULT_FIELDS = { frame: null, changed: null, rationale: null, score: null, trace: [], pass: null };
+
 session = loadSession();
 if (session) {
-  setState({ phase: 'review', message: `resumed — ${session.appliedReports.length} edit(s) from "${session.intent}" are still applied and not yet accepted.`, canAccept: true, canRollback: true, intent: session.intent });
+  setState({ ...RESULT_FIELDS, phase: 'review', message: `resumed — ${session.appliedReports.length} edit(s) from "${session.intent}" are still applied and not yet accepted.`, canAccept: true, canRollback: true, intent: session.intent });
 } else {
-  setState({ phase: 'idle', message: 'ready', canAccept: false, canRollback: false, trace: [], frame: null });
+  setState({ ...RESULT_FIELDS, phase: 'idle', message: 'ready', canAccept: false, canRollback: false });
 }
 console.log(`kernel up — watching ${REQ}`);
 const cfg = activeConfig();
