@@ -260,3 +260,85 @@ Sampling is off the list. The remaining candidates from the diagnosis are the on
 Both are about *which lever*, not *what value*. That is the same conclusion the panel dogfooding
 reached from the other direction: the product added Particular correctly and then faked convergence
 with a layer-scale animation, because nothing told it that inward emission is the real technique.
+
+---
+
+## The lever experiment — the wire works, but only as well as the ontology behind it
+
+*2026-07-20 · `eval/exp_levers.mjs`, frames FIXED, 5 scorings per arm, scoring key PRE-REGISTERED by
+an independent multi-agent analysis before the experiment ran.*
+
+### Pre-registration
+
+Three analysts (one per case, each adjudicated by an independent verifier against the param dumps
+and the rendered pixels) named the lever that *physically* causes each stalled defect. They were not
+told the hypothesis. All three converged on the same structural claim:
+
+| case | defect | correct levers | what the loop actually pushed |
+|---|---|---|---|
+| e02 | bubbles read as glowing dots | `0029` Sphere Feather, `0703` Particle Type, `0069` Blend Mode | `0749` Wind X, `0711` Turbulence, `0146` Particles/sec |
+| e06 | silk reads as an LED bead curtain | Form `0033` Size, `0007` Particles in X, `0310` Shading, `0313` Specular, `0025` Feather | three Deep Glow params |
+| e07 | flakes read as blown orbs | `0703` Particle Type, `0216`/`0215` per-particle glow, `0027` Size, `0002` Life | Deep Glow Exposure, `0146` |
+
+**The pattern is one sentence: every stalled defect is a SHADING-stage defect, and the loop spent its
+whole budget on emitter- and physics-stage levers.** Particles/sec changes how many dots exist; it
+cannot change what one dot looks like. Wind translates the field rigidly; it cannot produce
+per-particle variation. A downstream Deep Glow cannot remove a halo the particle itself emitted.
+
+The e02 analysis measured it rather than asserting it: sampling a particle's radial profile in the
+actual render gave r90/r10 = 0.44, matching `Sphere Feather = 50` (a ramp over half the radius) to
+within measurement error — and Sphere Feather was **never written by any of the three plans**. It
+also showed why Size cannot substitute: feather is a *percentage of radius*, so Size 7 → 9 moved the
+normalised profile 0.44 → 0.46. Same soft bell, bigger.
+
+### Run 1 — negative, and the negative was informative
+
+Injecting the essence lever list moved the correct-lever hit rate **20% → 13%**. Before concluding
+the scorer was not vocabulary-constrained, I checked whether the list actually contained the answers:
+
+| case | correct levers present in the offered list |
+|---|---|
+| e02 | 2/3 — `0029` Sphere Feather missing |
+| e06 | **0/5** — there was no `tc Form` essence card at all |
+| e07 | 4/5 — `0216` Glow Opacity missing (the card had merged Glow Size and Glow Opacity into one entry, so `0216` had no matchName of its own) |
+
+So run 1 tested the wire against a vocabulary that omitted the words. And the omissions were not
+random: **`0029` feather, `0216` per-particle glow, Form's Size / Shading / Specular — every missing
+lever is a shading-stage lever.** The essence index covered emitter → birth → physics well and
+shading badly, which is precisely the stage where "reads as X not Y" defects live.
+
+### Run 2 — same wire, same key, same script; only the cards changed
+
+Added the four missing Particular shading levers (splitting the merged Glow entry) and authored a
+`tc Form` card. Lever coverage went 6/13 → 13/13.
+
+| case | correct-lever hit rate | levers hit |
+|---|---|---|
+| e02 | 0% → **100%** | `0029` Sphere Feather |
+| e06 | 0% → **100%** | Form `0033`, `0025`, `0310`, `0313`, `0007` — all five |
+| e07 | 0% → **40%** | `0703`, `0027` |
+| **mean** | **0% → 80%** | |
+
+e06 also stopped hallucinating: with no Form card it reached for `ADBE Gaussian Blur`, `ADBE
+Transform`, `ADBE Fast Blur`, `ADBE Directional Blur` — effects not in the plan at all — and
+off-plan reach fell 13 → 7 once it had real Form levers to name.
+
+Scores stayed flat (6→6, 4→3.6, 6.6→5.2). **That is the expected result and not a disappointment:**
+the measured noise floor is ±0.5 with ±1 swings on identical input, so the score could not have
+shown this either way. The lever is the metric.
+
+### The caveat, stated plainly
+
+**The cards were authored after reading the pre-registration analysis of these same three cases.** I
+wrote "THIS is why particles read as glowing dots" into the `0029` entry, and e02's critique is
+about dots. The scorer still had to pick `0029` out of 24 offered levers and did so in 100% of runs,
+which is not nothing — but this run cannot distinguish "the ontology now describes the shading
+stage" from "the answer was written into the card".
+
+**A clean test needs held-out cases**: score stalled runs whose defects were *not* consulted while
+writing the cards. e04, e08, e20, e22 are available and untouched by this analysis. Until that runs,
+the honest claim is narrow:
+
+> The lever wire functions, and it is bounded by ontology coverage rather than by the scorer's
+> willingness to use it. Run 1 and run 2 differ *only* in card content and differ by 67 points of
+> hit rate.

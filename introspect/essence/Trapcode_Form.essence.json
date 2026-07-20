@@ -1,0 +1,125 @@
+{
+ "matchName": "tc Form",
+ "displayName": "Trapcode Form",
+ "vendor": "Maxon / Red Giant",
+ "category": "Particle grid / volumetric field",
+ "essence": "A PERSISTENT particle GRID, not an emitter. Form fills a base shape (box / sphere / layer / OBJ) with a fixed lattice of particles that never die and are never born — everything is displaced, coloured and shaded from that standing field. So the mental model is a cloth or a volume, not a stream: you set how MANY particles and how BIG each one is, and whether they touch. The whole look hinges on the ratio between particle Size and lattice pitch (base size / particle count) — under 1 you see separate beads, over 1 they merge into a continuous surface.",
+ "when_to_use": [
+  "silk", "cloth", "丝绸", "flag", "surface", "sheet", "grid", "网格",
+  "volumetric field", "audio-reactive wall", "point cloud", "terrain",
+  "abstract mesh", "flowing fabric", "digital sea", "morphing surface"
+ ],
+ "manifests_as": "a regular lattice of particles filling a shape, displaced by fractal fields; reads as beads when Size < pitch and as continuous fabric when Size >= pitch",
+ "key_levers": [
+  {
+   "name": "Size",
+   "matchName": "tc Form-0033",
+   "range": [0, 10000],
+   "default": 2,
+   "effect": "particle diameter. THE decisive lever for the beads-vs-surface read, and it defaults to 2 — far below the lattice pitch of almost any real setup, so an unconfigured Form ALWAYS renders as separated dots. If a critique says the result looks like an LED grid / bead curtain / point cloud when continuous material was wanted, this is the first lever, not any downstream glow or blur. Raise until Size >= pitch (pitch = Base Form Size X / Particles in X)."
+  },
+  {
+   "name": "Particles in X / Y / Z",
+   "matchName": "tc Form-0007",
+   "range": [1, 100000],
+   "default": 70,
+   "effect": "lattice density along each axis (Y = tc Form-0008, Z = tc Form-0009). The other half of the size/pitch ratio: raising count shrinks the pitch, so a milder Size closes the gaps. Z defaults to 3, i.e. THREE stacked sheets — for a single surface set Z to 1, otherwise three near-identical lattices beat against each other in perspective and produce moire."
+  },
+  {
+   "name": "Sphere Feather",
+   "matchName": "tc Form-0025",
+   "range": [0, 100],
+   "default": 50,
+   "units": "percent",
+   "effect": "radial alpha falloff of each particle, as a percentage of its radius. Once Size exceeds the pitch, this is what makes neighbouring discs cross-fade into a seamless sheet rather than overlapping as visible circles. Raise (85-100) for continuous material; lower (5-10) for discrete, hard-edged elements."
+  },
+  {
+   "name": "Shading",
+   "matchName": "tc Form-0310",
+   "range": [1, 2],
+   "default": 1,
+   "enum": true,
+   "effect": "1 = Off, 2 = On. OFF BY DEFAULT, which means every particle emits its flat Color with no light interaction — the field is uniformly bright and reads as self-luminous plastic. Any critique asking for depth, shadow, soft gradient or a travelling highlight needs this ON (and a light in the comp). This is the single most common reason a Form field looks flat."
+  },
+  {
+   "name": "Specular Amount",
+   "matchName": "tc Form-0313",
+   "range": [0, 10000],
+   "default": 0,
+   "effect": "specular highlight strength, and 0 by default. With Shading on, this is what produces the moving sheen that reads as silk, satin or wet material. Flat-looking fabric with correct colour is usually missing this, not missing brightness."
+  },
+  {
+   "name": "Particle Type",
+   "matchName": "tc Form-0024",
+   "range": [1, 12],
+   "default": 1,
+   "enum": true,
+   "effect": "sphere / glow sphere / star / cloudlet / streaklet / square / sprite family, same vocabulary as Particular. Glow-type particles cannot take a hard edge by construction; sprite types route through a layer reference. Verify the index before relying on a specific type."
+  },
+  {
+   "name": "Base Form",
+   "matchName": "tc Form-0003",
+   "range": [1, 5],
+   "default": 1,
+   "enum": true,
+   "effect": "the shape the lattice fills (box grid / sphere layered / sphere random / OBJ model / layer). Changing it re-homes every particle, so set it BEFORE tuning counts and sizes."
+  },
+  {
+   "name": "Base Form Size X",
+   "matchName": "tc Form-0004",
+   "range": [0, 100000],
+   "default": 500,
+   "effect": "extent of the field along X (Y = tc Form-0005, Z = tc Form-0006). With Particles in X it sets the lattice pitch, which every appearance decision is relative to. NOTE: Size Y and Z are GATED — they only become writable once Base Form Size (tc Form-0489) is switched from linked to individual; set that gate first in the same edit."
+  },
+  {
+   "name": "Density",
+   "matchName": "tc Form-0016",
+   "range": [0, 1000],
+   "default": 15,
+   "effect": "fraction of lattice sites actually populated — thins the field without changing its geometry. Useful for breaking up a too-regular grid, but it removes particles rather than merging them, so it cannot fix a beads-vs-surface complaint."
+  },
+  {
+   "name": "Size Random",
+   "matchName": "tc Form-0034",
+   "range": [0, 100],
+   "default": 0,
+   "units": "percent",
+   "effect": "per-particle size variation. 0 means every particle is identical, which is what makes an untouched Form read as mechanical and regular."
+  },
+  {
+   "name": "Opacity",
+   "matchName": "tc Form-0035",
+   "range": [0, 100],
+   "default": 100,
+   "effect": "master particle opacity."
+  },
+  {
+   "name": "Color",
+   "matchName": "tc Form-0036",
+   "default": [1, 1, 1, 1],
+   "effect": "flat particle colour, used directly when Shading is Off."
+  }
+ ],
+ "gated_levers": [
+  {
+   "name": "Base Form Size Y / Z",
+   "matchName": "tc Form-0005, tc Form-0006",
+   "gate": "tc Form-0489 (Base Form Size) = 2 — switch from linked to individual",
+   "note": "Verified: 49 shipped recipes set Size Y, and a live run confirms the runner opens the gate first, then writes Y and Z successfully, while tc Form-0010 Center XY stays shut."
+  }
+ ],
+ "config_recipes": {
+  "continuous silk / cloth": "Size 8-14 with Particles in X/Y 140-180 (so Size >= pitch), Sphere Feather 85-100, Particles in Z = 1, Shading ON, Specular Amount 150-300 — the size/pitch ratio makes it a surface, the shading makes it material",
+  "bead curtain / LED wall (when you WANT discrete)": "Size 2-4, Sphere Feather 10-30, Shading Off — the default look, which is why an unconfigured Form lands here",
+  "volumetric point cloud": "Particles in Z 20-60, Density 40-70, Size 2-5, Shading On for depth",
+  "audio-reactive wall": "box grid + fractal displacement on the Y axis, Shading On, Specular for the travelling highlight"
+ },
+ "reasoning_hooks": [
+  "STAGE DISCIPLINE: lattice (base form, counts, size) -> displacement (fractal/audio) -> SHADING (shading, specular, colour). A complaint about MATERIAL — flat, plasticky, beads not fabric, no depth — is a lattice-ratio or shading defect. It cannot be fixed by a downstream glow/blur/tint, which only redistribute light the field already emitted.",
+  "THE DEFAULTS ARE A TRAP: Size 2, Shading Off, Specular 0, Particles in Z 3. A Form applied with no params at all renders as three stacked sheets of tiny flat beads. Measured: a tune that applied Form with an EMPTY param list and then spent three iterations adjusting a downstream Deep Glow scored 6/10 with the critique 'reads as a red LED bead curtain rather than silk' — the actual fix was Size, which was never written.",
+  "The beads-vs-surface question is arithmetic before it is taste: pitch = Base Form Size X / Particles in X. Compare Size against it before proposing anything."
+ ],
+ "grounding": "params + ranges + defaults from introspect/cards/tc_Form.json (settability-probed on a displayed comp); gate behaviour verified live against shipped recipes; defect analysis grounded in eval-e06's three rendered iterations",
+ "_method": "introspect card + settability probe + failure-case analysis (eval-e06), 2026-07-20",
+ "_date": "2026-07-20"
+}

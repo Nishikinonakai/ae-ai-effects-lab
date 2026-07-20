@@ -20,13 +20,14 @@
 // Exit codes: 0 = pass, 1 = failed (max-iters / recipe error / dead-end), 2 = awaiting review.
 //
 // usage: node runner/tune_loop.mjs <plan.json> [--max-iters=4] [--backend=agent|api]
-//        [--timeout=180] [--fresh] [--scorer=gemini|gpt|claude]
+//        [--timeout=180] [--fresh] [--scorer=gemini|gpt|claude] [--levers=off]
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { spawnSync } from 'child_process';
 import { runRecipe, fmtParams } from './recipe_runner.mjs';
 import { schemaPrompt, validateReview } from './review_schema.mjs';
+import { leverContext } from '../../introspect/essence/lookup.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -94,6 +95,26 @@ async function renderIter(n, plan) {
 
   const effects = iterPlan.effects
     || [{ matchName: iterPlan.effect, params: iterPlan.params || [], expressions: iterPlan.expressions || [] }];
+
+  // ---- CO-LEVER CONTEXT ----------------------------------------------------------------------
+  // review_schema tells the scorer to reference only matchNames visible in the plan. That guard
+  // stops it inventing matchNames, but it also means the loop can only ever push the levers the
+  // PLANNER happened to write down — and the diagnosis of the 5-7 plateau found the loop applying
+  // correct values to the wrong lever, repeatedly: e07's blown particle cores answered with Deep
+  // Glow's Exposure (driven to zero, defect unmoved) while the blowout came from Particular's own
+  // additive Glow Sphere, which was never in play; e02's per-particle sway answered with Wind X,
+  // which translates the entire field uniformly and cannot produce individual arcs.
+  //
+  // The essence index knows what those effects' other levers DO. The brownfield loop has fed it to
+  // the scorer since the co-lever fix; this is the same wire for the greenfield loop. The guard
+  // survives — matchNames still come from ground truth, now the index as well as the plan.
+  //
+  // Opt out with --levers=off to measure what this changes.
+  const leversOn = flag('levers', 'on') !== 'off';
+  const inPlay = effects.flatMap(e => (e.params || []).map(pr => (Array.isArray(pr) ? pr[0] : pr)));
+  const lc = leversOn ? leverContext(effects.map(e => e.matchName), inPlay) : { block: '', cards: [], levers: [] };
+  if (lc.block) console.log(`essence: ${lc.cards.length} card(s) hit — ${lc.levers.length} lever(s) offered to the scorer`);
+
   writeJ(path.join(dir, 'review_request.json'), {
     intent: src.intent,
     pass_criteria: src.pass_criteria || [],
@@ -102,7 +123,14 @@ async function renderIter(n, plan) {
     plan: { effects, camera: iterPlan.camera ?? null, background: iterPlan.background ?? null, renderFrames: iterPlan.renderFrames },
     frames: frames.map(f => f.path),
     prior_iterations: trajectory(n),
-    review_instructions: schemaPrompt(),
+    available_levers: lc.levers,
+    review_instructions: lc.block
+      ? [schemaPrompt(), '', lc.block, '',
+         'NAME THE LEVER THAT PHYSICALLY PRODUCES THE DEFECT YOU DESCRIBED. A parameter that acts on',
+         'the whole field cannot fix a per-element complaint, and a downstream effect cannot fix a',
+         'defect created upstream of it. If the lever you need is in the list above but not yet in the',
+         'plan, suggest it — that is what the list is for.'].join('\n')
+      : schemaPrompt(),
   });
 }
 

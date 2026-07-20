@@ -1,0 +1,56 @@
+{
+ "e02": {
+  "correct": [
+   "tc Particular-0029",
+   "tc Particular-0703",
+   "tc Particular-0069"
+  ],
+  "wrong": [
+   "tc Particular-0749",
+   "tc Particular-0711",
+   "tc Particular-0146",
+   "tc Particular-0027"
+  ],
+  "defect": "Every particle is a monotonically-decreasing soft radial luminance bell — no hard silhouette, no rim, no internal structure — so the field reads as glowing cyan dots rather than discrete bubbles.",
+  "_passes": 2
+ },
+ "e07": {
+  "correct": [
+   "tc Particular-0703",
+   "tc Particular-0216",
+   "tc Particular-0215",
+   "tc Particular-0027",
+   "tc Particular-0002"
+  ],
+  "wrong": [
+   "PEDG-0002",
+   "PEDG-0001",
+   "tc Particular-0146",
+   "tc Particular-0074"
+  ],
+  "defect": "Every flake renders as a luminous orb — a flat overexposed white core surrounded by an oversized soft halo — instead of a soft, low-contrast snowflake; the halos are wide enough that neighbouring flakes fuse into connected bright blobs by t=4s.",
+  "_passes": 1
+ },
+ "e06": {
+  "correct": [
+   "tc Form-0033",
+   "tc Form-0007",
+   "tc Form-0310",
+   "tc Form-0313",
+   "tc Form-0025"
+  ],
+  "wrong": [
+   "PEDG-0002",
+   "PEDG-0001",
+   "PEDG-0004",
+   "ADBE BEZMESH-0002",
+   "ADBE BEZMESH-0005",
+   "ADBE BEZMESH-0008",
+   "ADBE BEZMESH-0011",
+   "BCC_TEXTURES-1001",
+   "ADBE Tint-0003"
+  ],
+  "defect": "Every Form particle is a ~2 px dot sitting on an ~8-10 px lattice, so the sheet reads as a grid of separated glowing beads (an LED curtain) rather than a continuous silk surface, and because Form's Shading is Off with Specular Amount 0 every particle emits the same flat colour, so the sheet also has no soft shadow and no travelling highlight.",
+  "_passes": 2
+ }
+}
