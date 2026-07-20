@@ -12,7 +12,7 @@
 // sees prior_iterations (a plateau on one lever) and pivots to another — and we feed it that history.
 //
 // usage: node brownfield/tune_edit.mjs --seed=<seed_spec.json> --intent="..." [--layer=N]
-//        [--max-iters=4] [--accept=8] [--model=gpt-5.6-terra] [--out=<dir>]
+//        [--max-iters=4] [--accept=8] [--model=<provider default>] [--out=<dir>]
 //   --seed  : the initial edit spec (apply_edit format) — the first move the loop refines.
 //   --layer : the target layer for scorer-suggested edits (defaults to the seed's first edit's layer).
 import fs from 'fs';
@@ -33,7 +33,7 @@ const intent = arg('intent', null);
 if (!seedPath || !intent) { console.error('usage: node brownfield/tune_edit.mjs --seed=<spec.json> --intent="..." [--layer=N] [--max-iters=4] [--accept=8]'); process.exit(1); }
 const maxIters = Number(arg('max-iters', 4));
 const acceptBar = Number(arg('accept', 8));
-const model = arg('model', 'gpt-5.6-terra');
+const model = arg('model', null);   // the scorer picks per provider
 const outDir = path.resolve(arg('out', path.join(__dirname, 'dumps', 'tune_edit')));
 fs.mkdirSync(outDir, { recursive: true });
 
@@ -71,7 +71,7 @@ function applyEdit(spec, label) {
 //                 co-lever block keeps covering the whole accumulated edit, not the first move.
 function verifyEdit(reportPath, baselineReportPath, iterNo) {
   const args = [`--report=${reportPath}`, `--intent=${intent}`, `--baseline=${baselineReportPath}`,
-    `--accept=${acceptBar}`, `--rollback=3`, `--model=${model}`,
+    `--accept=${acceptBar}`, `--rollback=3`, ...(model ? [`--model=${model}`] : []),
     `--history=${historyPath}`, `--iter=${iterNo + 1}`, `--max-iters=${maxIters + 1}`];
   if (touchedEffects.size) args.push(`--effects=${[...touchedEffects].join(',')}`);
   // levers that turned out to be gated shut stay blocked for the REST of the tune — otherwise the
@@ -108,10 +108,22 @@ function suggestionsToSpec(suggestions, label) {
   const edits = [];
   for (const s of suggestions) {
     if (s.type === 'param' && s.matchName && s.value !== undefined) {
-      // `effect` is required by the schema but a scorer pivoting to a co-lever sometimes names only
-      // the param. Vendor param matchNames are `<effect>-<digits>`, so recover the owner rather than
-      // sending apply_edit an undefined effect (which fails the locate and wastes an iteration).
-      const fx = s.effect || String(s.matchName).replace(/-\d+$/, '');
+      // THE PARAM matchName IS GROUND TRUTH FOR ITS OWNER. Vendor param matchNames are
+      // `<effect matchName>-<digits>`, so the effect is derivable and does not have to be trusted
+      // from the scorer's `effect` field — which is wrong often enough to matter: gemini returned
+      // the DISPLAY name ("Deep Glow") where apply_edit looks up by matchName ("PEDG"), so all three
+      // edits of an iteration failed with "effect not found", the report carried no inverse, and the
+      // whole iteration was silently wasted. The old fallback only fired when `effect` was ABSENT,
+      // not when it was wrong.
+      //
+      // Prefer the derived owner; keep the scorer's value only when it agrees or when nothing can be
+      // derived (an instance suffix like "PEDG#2" is preserved, since that is addressing, not naming).
+      const derived = String(s.matchName).replace(/-\d+$/, '');
+      const given = String(s.effect || '');
+      const fx = (given && (given === derived || given.replace(/#\d+$/, '') === derived))
+        ? given
+        : (derived || given);
+      if (given && fx !== given) console.log(`  (scorer named effect "${given}" for ${s.matchName}; using "${fx}" derived from the param)`);
       edits.push({ op: 'param', layerIndex: targetLayer, effectMatchName: fx, paramMatchName: s.matchName, value: s.value });
     } else if (s.type === 'effect' && s.matchName) {
       edits.push({ op: 'addEffect', layerIndex: targetLayer, effectMatchName: s.matchName });

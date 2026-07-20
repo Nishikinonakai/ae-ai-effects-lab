@@ -14,7 +14,7 @@
 //   low                   → ROLLBACK (node apply_edit.mjs --rollback=<report>)
 //
 // usage: node brownfield/verify_edit.mjs --report=<edit_*_report.json> --intent="..." [--pass="c1||c2"]
-//        [--accept=8] [--rollback=4] [--model=gpt-5.6-terra] [--baseline=<first_report.json|orig.png>]
+//        [--accept=8] [--rollback=4] [--model=<provider default>] [--baseline=<first_report.json|orig.png>]
 //        [--maxdim=1600] [--levers=off] [--effects=A,B] [--history=<trace.json>] [--iter=N] [--max-iters=M]
 //   --baseline: for a MULTI-STEP tune, compare AFTER against the ORIGINAL baseline (not the prior
 //               iteration's before), so cumulative convergence is visible (finding #5).
@@ -67,7 +67,7 @@ const intent = arg('intent', null);
 if (!reportArg || !intent) { console.error('usage: node brownfield/verify_edit.mjs --report=<edit_report.json> --intent="..." [--pass="a||b"] [--accept=8] [--rollback=4]'); process.exit(1); }
 const acceptBar = Number(arg('accept', 8));
 const rollbackBar = Number(arg('rollback', 4));
-const model = arg('model', 'gpt-5.6-terra');
+const model = arg('model', null);   // the scorer picks per provider
 
 const reportPath = path.resolve(reportArg);
 const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
@@ -287,7 +287,7 @@ const reqPath = path.join(reqDir, `verify_${report.label || 'edit'}_request.json
 fs.writeFileSync(reqPath, JSON.stringify(req, null, 2));
 
 // run the shared scorer (writes review.json next to the request)
-const r = spawnSync('node', [GPT_SCORE, reqPath, `--model=${model}`], { encoding: 'utf8' });
+const r = spawnSync('node', [GPT_SCORE, reqPath, ...(model ? [`--model=${model}`] : [])], { encoding: 'utf8' });
 if (r.status !== 0) { console.error('scorer failed:\n' + (r.stderr || r.stdout)); process.exit(1); }
 const reviewPath = path.join(reqDir, 'review.json');
 if (!fs.existsSync(reviewPath)) { console.error('scorer produced no review.json'); process.exit(1); }

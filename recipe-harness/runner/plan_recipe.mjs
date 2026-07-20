@@ -17,10 +17,11 @@
 // A plan that names a param that cannot exist is rejected before it costs a render.
 //
 // usage: node recipe-harness/runner/plan_recipe.mjs --intent="..." [--out=<recipe.json>]
-//        [--name=<slug>] [--model=gpt-5.6-terra] [--pass="a||b"] [--families=native|particular|form|any]
+//        [--name=<slug>] [--model=<provider default>] [--pass="a||b"] [--families=native|particular|form|any]
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { askJSON, parseJSON, provider } from '../../shell/llm.mjs';
 import { loadCards, leverContext } from '../../introspect/essence/lookup.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -30,23 +31,11 @@ const REPO = path.resolve(HARNESS, '..');
 const arg = (n, d) => { const a = process.argv.find(x => x.startsWith(`--${n}=`)); return a === undefined ? d : a.slice(n.length + 3); };
 const intent = arg('intent', null);
 if (!intent) { console.error('usage: node recipe-harness/runner/plan_recipe.mjs --intent="..." [--out=<recipe.json>] [--name=slug]'); process.exit(1); }
-const model = arg('model', 'gpt-5.6-terra');
+const model = arg('model', null);   // llm.mjs picks per provider
 const families = arg('families', 'any');
 const slug = arg('name', 'planned-' + Date.now().toString(36));
 const outPath = path.resolve(arg('out', path.join(HARNESS, 'plans', `${slug}.json`)));
 const passCriteria = (arg('pass', '') || '').split('||').map(s => s.trim()).filter(Boolean);
-
-// ---- env (.env.api fallback), same seam as the scorer ----
-const envFile = path.join(HARNESS, '.env.api');
-if ((!process.env.OPENAI_API_KEY || !process.env.OPENAI_BASE_URL) && fs.existsSync(envFile)) {
-  for (const line of fs.readFileSync(envFile, 'utf8').split('\n')) {
-    const m = line.match(/^([A-Z_]+)=(.+)$/);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
-  }
-}
-const API_KEY = process.env.OPENAI_API_KEY;
-const BASE = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
-if (!API_KEY) { console.error('OPENAI_API_KEY missing (env or recipe-harness/.env.api)'); process.exit(1); }
 
 // ---- what exists on THIS machine (the generalization anchor) -----------------------------------
 const installed = JSON.parse(fs.readFileSync(path.join(REPO, 'introspect', 'installed_effects.json'), 'utf8')).effects;
@@ -140,38 +129,24 @@ const prompt = [
   CONTRACT,
 ].filter(Boolean).join('\n');
 
-async function call(body, tries = 3) {
-  for (let a = 1; a <= tries; a++) {
-    try {
-      const r = await fetch(`${BASE}/chat/completions`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${API_KEY}` },
-        body,
-      });
-      if (r.ok) return r.json();
-      const t = (await r.text()).slice(0, 300);
-      if (r.status < 500 && r.status !== 429) { console.error(`API ${r.status}: ${t}`); process.exit(1); }
-      console.error(`API ${r.status} (attempt ${a}/${tries})`);
-    } catch (e) { console.error(`fetch error (attempt ${a}/${tries}): ${String(e).slice(0, 140)}`); }
-    if (a < tries) await new Promise(r => setTimeout(r, a * 4000));
-  }
-  console.error('API unreachable after retries'); process.exit(1);
-}
+// One shared LLM seam (shell/llm.mjs). This file used to carry its own OpenAI request, so swapping
+// the key to Gemini moved the scorer and left both planners reading OPENAI_API_KEY — the whole
+// product stopped planning and it read like a config error rather than the architecture gap it was.
+//
+// A full particle recipe is long (a real Particular stack runs well past 3k tokens) and a truncated
+// response is a budget failure, not a planning failure. They look identical from outside — both
+// surface as "unparseable JSON" — so llm.mjs names the token-ceiling case explicitly.
+if (!provider()) { console.error('no LLM credential found (GEMINI_API_KEY / OPENAI_API_KEY / ANTHROPIC_API_KEY)'); process.exit(1); }
+let text, usedModel;
+try {
+  const res = await askJSON([{ text: prompt }], { model, maxTokens: 16384 });
+  text = res.text; usedModel = res.model;
+} catch (e) { console.error('planner failed: ' + String(e).slice(0, 400)); process.exit(1); }
 
-// A full particle recipe is long — a Particular stack with a real param set runs well past 3k
-// tokens, and a truncated response is not a planning failure but a budget failure. They look
-// identical from the outside (both surface as "unparseable JSON"), so say which one happened.
-const data = await call(JSON.stringify({ model, max_completion_tokens: 8000, messages: [{ role: 'user', content: prompt }] }));
-const choice = data.choices?.[0];
-const text = (choice?.message?.content || '').trim();
 let recipe;
-try { recipe = JSON.parse(text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1)); }
-catch {
-  if (choice?.finish_reason === 'length') {
-    console.error(`planner response hit the token ceiling (${text.length} chars) and was cut mid-JSON — raise max_completion_tokens or ask for a smaller stack.`);
-  } else {
-    console.error('planner returned unparseable JSON:\n' + text.slice(0, 600));
-  }
+try { recipe = parseJSON(text); }
+catch (e) {
+  console.error('planner returned unparseable JSON: ' + String(e).slice(0, 200) + '\n' + text.slice(0, 600));
   process.exit(1);
 }
 

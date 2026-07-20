@@ -28,6 +28,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { leverContext, loadCards } from '../introspect/essence/lookup.mjs';
+import { askJSON, parseJSON, provider, defaultModel } from './llm.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -39,21 +40,9 @@ if (!intent || !statePath) {
   console.error('usage: node shell/plan_edit.mjs --intent="..." --state=<comp_state.json> [--frame=<f.png>] [--out=<spec.json>]');
   process.exit(1);
 }
-const model = arg('model', 'gpt-5.6-terra');
+const model = arg('model', null);   // null = whatever llm.mjs picks for the available credential
 const outPath = path.resolve(arg('out', path.join(REPO, 'shell', 'out', 'plan_spec.json')));
 const forcedLayer = arg('layer', null) ? Number(arg('layer')) : null;
-
-// ---- env (.env.api fallback), same seam as the scorer ----
-const envFile = path.join(REPO, 'recipe-harness', '.env.api');
-if ((!process.env.OPENAI_API_KEY || !process.env.OPENAI_BASE_URL) && fs.existsSync(envFile)) {
-  for (const line of fs.readFileSync(envFile, 'utf8').split('\n')) {
-    const m = line.match(/^([A-Z_]+)=(.+)$/);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
-  }
-}
-const API_KEY = process.env.OPENAI_API_KEY;
-const BASE = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
-if (!API_KEY) { console.error('OPENAI_API_KEY missing (env or recipe-harness/.env.api)'); process.exit(1); }
 
 const state = JSON.parse(fs.readFileSync(path.resolve(statePath), 'utf8'));
 
@@ -171,35 +160,24 @@ const prompt = [
   SPEC_CONTRACT,
 ].filter(Boolean).join('\n');
 
-const content = [{ type: 'text', text: prompt }];
+// One shared LLM seam (shell/llm.mjs) rather than an inline provider call. This file used to carry
+// its own OpenAI request, so swapping the key to Gemini moved the scorer and left the planner
+// reading OPENAI_API_KEY — every request died at "planning failed" and the product was completely
+// unusable until a hand-driven run surfaced it.
+const content = [{ text: prompt }];
 const framePath = arg('frame', null);
-if (framePath && fs.existsSync(path.resolve(framePath))) {
-  content.push({ type: 'image_url', image_url: { url: `data:image/png;base64,${fs.readFileSync(path.resolve(framePath)).toString('base64')}`, detail: 'high' } });
-}
+if (framePath && fs.existsSync(path.resolve(framePath))) content.push({ image: path.resolve(framePath) });
 
-async function call(body, tries = 3) {
-  for (let a = 1; a <= tries; a++) {
-    try {
-      const r = await fetch(`${BASE}/chat/completions`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${API_KEY}` },
-        body,
-      });
-      if (r.ok) return r.json();
-      const t = (await r.text()).slice(0, 300);
-      if (r.status < 500 && r.status !== 429) { console.error(`API ${r.status}: ${t}`); process.exit(1); }
-      console.error(`API ${r.status} (attempt ${a}/${tries})`);
-    } catch (e) { console.error(`fetch error (attempt ${a}/${tries}): ${String(e).slice(0, 140)}`); }
-    if (a < tries) await new Promise(r => setTimeout(r, a * 4000));
-  }
-  console.error('API unreachable after retries'); process.exit(1);
+if (!provider()) { console.error('no LLM credential found (GEMINI_API_KEY / OPENAI_API_KEY / ANTHROPIC_API_KEY)'); process.exit(1); }
+let plan, usedModel;
+try {
+  const res = await askJSON(content, { model, maxTokens: 16384 });
+  usedModel = res.model;
+  plan = parseJSON(res.text);
+} catch (e) {
+  console.error('planning failed: ' + String(e).slice(0, 400));
+  process.exit(1);
 }
-
-const data = await call(JSON.stringify({ model, max_completion_tokens: 2048, messages: [{ role: 'user', content }] }));
-const text = (data.choices?.[0]?.message?.content || '').trim();
-let plan;
-try { plan = JSON.parse(text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1)); }
-catch (e) { console.error('planner returned unparseable JSON:\n' + text.slice(0, 600)); process.exit(1); }
 
 // ---- validate every matchName against perception (the mechanical guard) ----------------------
 // Edits are validated IN ORDER, because an effect added by edit N is legitimately present for edit
@@ -257,7 +235,7 @@ const spec = {
   _rationale: plan.rationale || '',
   _passCriteria: plan.passCriteria || [],
   _targetLayer: plan.targetLayer ?? edits[0]?.layerIndex ?? null,
-  _model: model,
+  _model: usedModel,
   ...(problems.length ? { _validation: problems } : {}),
   edits,
 };
