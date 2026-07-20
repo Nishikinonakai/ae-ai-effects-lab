@@ -1,0 +1,29 @@
+{
+ "e04": {
+  "correct": [
+   "BCC4Damaged TV-8192004",
+   "BCC4Damaged TV-8192008",
+   "BCC4Damaged TV-8192051"
+  ],
+  "wrong": [
+   "ADBE Noise-0001",
+   "BCC4Damaged TV-8192021",
+   "BCC_TEXTURES-1001",
+   "PEDG-0002"
+  ],
+  "defect": "Damaged TV's per-scanline horizontal displacement (running at its untouched 50 px default) shears the whole frame into a chevron zigzag and pushes content off the left edge, exposing a dark background"
+ },
+ "e08": {
+  "correct": [
+   "BCC4Damaged TV-8192032",
+   "BCC4Damaged TV-8192035",
+   "BCC4Damaged TV-8192038"
+  ],
+  "wrong": [
+   "BCC4Damaged TV-8192008",
+   "BCC_CAMERASHAKE-1000",
+   "BCC_CAMERASHAKE-1013"
+  ],
+  "defect": "Every rendered frame is bodily translated ~632 px right and ~357 px up with edge-pixel replication filling the vacated area, so only ~25% of the canvas (the top-right quadrant) holds real image — the "
+ }
+}

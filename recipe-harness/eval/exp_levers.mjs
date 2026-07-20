@@ -83,14 +83,32 @@ function variant(c, withLevers) {
 }
 
 function scoreN(req, dir, label) {
+  // Wipe the cell first. WORK is a fixed path, and a failed scoring skips its write while the
+  // filename index still advances — so a re-invocation left BOTH runs' review_*.json interleaved in
+  // one directory and the per-run numbers could no longer be reconstructed from disk.
+  try { fs.rmSync(dir, { recursive: true, force: true }); } catch { /* first run */ }
   fs.mkdirSync(dir, { recursive: true });
   const reqP = path.join(dir, 'review_request.json');
   fs.writeFileSync(reqP, JSON.stringify(req, null, 2));
   const revP = path.join(dir, 'review.json');
+  // ATTRITION MUST NOT BE SILENT. This used to `continue` past a failed scoring with no retry and no
+  // log line, so a run declaring repeats=5 quietly reported cells of n=2 and n=3 — and every
+  // percentage in the writeup was k/2 or k/3 while the header said 5. Retry once, then record the
+  // shortfall where the reader will see it.
   const runs = [];
+  let attempts = 0, failures = 0;
   for (let k = 0; k < repeats; k++) {
-    const s = spawnSync('node', [SCORER, reqP, `--model=${model}`], { encoding: 'utf8', timeout: 300000 });
-    if (s.status !== 0 || !fs.existsSync(revP)) continue;
+    let s = spawnSync('node', [SCORER, reqP, `--model=${model}`], { encoding: 'utf8', timeout: 300000 });
+    attempts++;
+    if (s.status !== 0 || !fs.existsSync(revP)) {
+      s = spawnSync('node', [SCORER, reqP, `--model=${model}`], { encoding: 'utf8', timeout: 300000 });
+      attempts++;
+    }
+    if (s.status !== 0 || !fs.existsSync(revP)) {
+      failures++;
+      console.error(`  ⚠ ${label}: scoring ${k + 1}/${repeats} failed twice — cell will be n<repeats`);
+      continue;
+    }
     const rev = JSON.parse(fs.readFileSync(revP, 'utf8'));
     fs.copyFileSync(revP, path.join(dir, `review_${k + 1}.json`));
     runs.push({
@@ -99,7 +117,8 @@ function scoreN(req, dir, label) {
       types: (rev.suggestions || []).map(x => x.type),
     });
   }
-  return { label, runs };
+  if (failures) console.error(`  ⚠ ${label}: ${runs.length}/${repeats} scorings usable (${failures} lost)`);
+  return { label, runs, requested: repeats, lost: failures };
 }
 
 const rows = [];

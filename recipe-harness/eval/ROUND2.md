@@ -417,3 +417,88 @@ Re-scoring the ORIGINAL half-built frames with Gemini gives the like-for-like pi
 
 **The missing system barely moved the score.** And e17's apparent collapse from 9 to 6.5 was entirely
 the scorer swap: GPT gave 9 to the same half-built frames Gemini gives 6.5. Nothing regressed.
+
+---
+
+## RETRACTION — the lever result does not hold, and the metric that produced it is not stable
+
+*2026-07-20 · four independent auditors attacked the result before it was reported as evidence. Most
+of it did not survive. Everything below I re-verified myself against the raw files.*
+
+### The headline numbers are withdrawn
+
+Both are unreliable, for different reasons.
+
+**"0% → 80%" (contaminated run, e02/e06/e07).** The cards were written between run 1 and run 2 —
+`lever_key.json` at 12:53, the Particular/Form card edits at 13:18, run 1 at 13:16, run 2 at 13:39.
+In e06 the ON arm named zero Form levers before the edit and named `0033/0025/0310/0313/0007` after
+it: **exactly, item for item, the key's correct list.** The answer was written into the card between
+the two runs. It is not evidence of anything except that.
+
+**"75% → 100%" (held-out, e04/e08).** Decomposes to e08 (4/4 → 4/4, zero movement — all eight runs
+in both arms name the identical pair) and e04 (2/4 → 4/4). Fisher exact: e04 alone p = 0.43, pooled
+p = 0.47. Not distinguishable from chance.
+
+### The instrument is worse than the effect it was measuring
+
+I switched from score to lever-hit because the score's noise floor (±0.5, ±1 swings on identical
+input) buried any plausible effect. **I never checked whether the new metric was more stable. It is
+not.**
+
+> The same OFF arm — same case, same stored frames, same card-independent prompt, n=5 both times —
+> scored e07 at **3/5 correct-lever hits at 13:16 and 0/5 at 13:39**. A 60-point swing in the
+> CONTROL condition on byte-identical input. The held-out effect I was about to report is 25 points.
+
+That is the finding. Not "levers help" and not "levers don't help" — **this experiment cannot tell,
+because the control moves further on its own than the treatment moved.**
+
+### Two real defects in my own experiment code, now fixed
+
+- **Silent attrition.** `scoreN` did `continue` past a failed scoring with no retry and no log, so a
+  run declaring `repeats: 5` reported cells of n=4, and in the contaminated run **n=2 and n=3**. Every
+  percentage was k/2 or k/3 under a header that said 5. Now retries once and prints the shortfall.
+- **The work directory was never cleared.** A fixed path plus a skipped write on failure left two
+  invocations' `review_*.json` interleaved in one folder, so the contaminated run's per-case numbers
+  **can no longer be reconstructed from disk.** Each cell is now wiped before it is written.
+
+### What can honestly be claimed
+
+One narrow thing, and only with the caveat above:
+
+> On e04, `BCC4Damaged TV-8192004` — the blind key's primary lever, the untouched 50px default that
+> shears the frame — was named in **0/4 control runs and 4/4 treatment runs**. That specific
+> contrast is more stable than the aggregate because it is a single lever rather than a key that also
+> credits a no-op. But given a control that swings 60 points elsewhere, even this needs replication.
+
+Also worth recording: the e04 key credits `8192008` Signal Strength, and **both** of the control
+arm's "hits" were suggestions to set it to 0 — the value the plan already holds. A no-op counted as
+a hit. Scored against levers that could actually change the frame, the control is 0/4.
+
+### One auditor claim that is wrong
+
+Three of four auditors called the result fatally confounded because `schemaPrompt()` says "only
+reference matchNames visible in the plan", so the control was supposedly *barred* from naming
+off-plan levers. It is a soft instruction and the control violates it routinely — e06's OFF arm
+named thirteen off-plan levers including three `tc Form` params from an effect listed with zero
+params. The control was **disadvantaged, not barred.** Serious confound, not a fatal one.
+
+A fourth claimed run 1's null result went unreported. It did not — it is written up above under
+"Run 1 — negative, and the negative was informative".
+
+### The experiment that would actually settle it
+
+Both arms must be allowed to name any param on the effects in play; the ONLY difference should be
+whether the causal *descriptions* are present. That isolates "knowing what the lever does" from
+"being permitted to name it", which the current design conflates.
+
+Powering it: with 4 runs per arm the best achievable p on a single case is 0.014, and the observed
+control instability is far larger than the expected effect. **This needs ≥8 cases × ≥10 repeats, and
+a stability check on the metric first** — re-run one control arm three times and confirm it agrees
+with itself before trusting any comparison built on it.
+
+### The lesson worth keeping
+
+**Changing metrics because the first one was too noisy does not make the second one clean.** The
+score's noise floor was measured. The lever metric's was not, and it turned out to be worse. Any
+metric adopted to escape a noise problem has to be validated against the same standard the old one
+failed.
