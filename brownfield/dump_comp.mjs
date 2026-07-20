@@ -83,7 +83,7 @@ const AEX = String.raw`(function () {
   }
 
   // --- one effect: matchName + name + enabled + ACTUAL leaf param values ---
-  function dumpEffect(fx){
+  function dumpEffect(fx, fxIdx){
     var params = [], count = { n: 0 };
     function walk(prop){
       for (var i=1; i<=prop.numProperties; i++){
@@ -118,7 +118,10 @@ const AEX = String.raw`(function () {
     var truncated = (count.n >= MAXP);
     var en = true; try { en = fx.enabled; } catch(e){}
     var sml = null; try { sml = spatialML(fx.matchName); } catch(eSm){}
-    return '{"matchName":'+jstr(fx.matchName)+',"name":'+jstr(fx.name)+',"enabled":'+(en?'true':'false')+
+    // paradeIndex: WHICH instance this is. Two Glows on one layer are routine in a real comp (the
+    // lyric-twin structure in KillKiss is exactly that), and without this the planner cannot address
+    // the second one even in principle — every edit, and every ROLLBACK, silently binds to the first.
+    return '{"matchName":'+jstr(fx.matchName)+',"paradeIndex":'+fxIdx+',"name":'+jstr(fx.name)+',"enabled":'+(en?'true':'false')+
            (sml?',"opaqueCore":'+sml:'')+
            ',"paramCount":'+count.n+(truncated?',"truncated":true':'')+',"params":['+params.join(',')+']}';
   }
@@ -134,7 +137,7 @@ const AEX = String.raw`(function () {
     var fxArr = [];
     try {
       var g = L.property("ADBE Effect Parade");
-      if (g) for (var e=1; e<=g.numProperties; e++) fxArr.push(dumpEffect(g.property(e)));
+      if (g) for (var e=1; e<=g.numProperties; e++) fxArr.push(dumpEffect(g.property(e), e));
     } catch(eF){}
     var role = roleOf(L, k === bottomEnabledIdx, fxArr.length);
     var parent = null; try { if (L.parent) parent = L.parent.index; } catch(eP){}

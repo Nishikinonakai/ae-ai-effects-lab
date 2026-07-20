@@ -284,6 +284,33 @@ while (true) {
     console.error(`⚠ iter ${n}: the scorer saw a DEGRADED payload (${review._degraded.join(', ')}) — this score judged less evidence than intended; re-run this iteration before trusting it.`);
   }
 
+  // CONFIRM A PASS BEFORE BELIEVING IT. The accept bar is a threshold on a SINGLE draw from a judge
+  // whose measured spread is +/-1 on byte-identical input — it emits an 8 on frames it usually calls
+  // 7 about one draw in eight. So an unconfirmed "pass" at exactly the bar is a coin flip, and the
+  // artist is told "done" on the strength of it. Round-2's only api-backend pass (e05 [6,7,8]) is
+  // precisely that shape: one 7->8 transition at a bar of 8.
+  //
+  // Re-scoring only fires at the decision boundary, so it costs a couple of calls per RUN, not per
+  // iteration. Median of three: a 1-in-8 fluke becomes about 1 in 50.
+  if (review.verdict === 'pass' && passAt > 0 && !review._confirmed) {
+    const draws = [review.score];
+    for (let k = 0; k < 2; k++) {
+      const again = spawnSync('node', [scorer, req, `--model=${flag('model', 'gemini-3-flash-preview')}`], { encoding: 'utf8' });
+      if (again.status !== 0 || !fs.existsSync(revPath)) continue;
+      draws.push(JSON.parse(fs.readFileSync(revPath, 'utf8')).score);
+    }
+    const median = [...draws].sort((a, b) => a - b)[Math.floor(draws.length / 2)];
+    console.log(`confirming pass: draws [${draws.join(',')}] median ${median} vs bar ${passAt}`);
+    review._confirmed = draws;
+    review._median = median;
+    if (median < passAt) {
+      console.log(`  → NOT confirmed (${median} < ${passAt}) — the single ${review.score} was a draw, not a result. Continuing to tune.`);
+      review.verdict = 'fail';
+      review.score = median;
+    }
+    writeJ(revPath, review);
+  }
+
   if (review.verdict === 'pass') { finalize('pass'); process.exit(0); }
   if (n >= maxIters) {
     // maxIters counts RENDERS, so the final render's suggestions are generated and never applied.

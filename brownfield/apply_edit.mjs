@@ -123,13 +123,35 @@ const PREAMBLE = String.raw`
     return true;
   }
   // find an effect on a layer: by 1-based parade index if given (>0), else first-by-matchName.
-  function findFx(L, matchName, idx){
+  // Resolve an effect to a SPECIFIC parade slot, and report which slot it was.
+  //
+  // The old version returned the first matchName match and told nobody which one that was. On a
+  // layer carrying two Glows — routine in a real comp; the KillKiss lyric twins are exactly that —
+  // every edit bound to instance 1, and because the inverse recorded the caller's (absent) index as
+  // 0, ROLLBACK ALSO bound to instance 1. An edit aimed at the second Glow would therefore be undone
+  // by overwriting the first one: a param the product never intended to touch, changed with no
+  // record. Rollback correctness is the safety property this whole tool exists to provide.
+  //
+  // So: ambiguity is now refused rather than guessed, and the resolved index is returned for the
+  // inverse to record.
+  function findFxAt(L, matchName, idx){
     var parade = L.property("ADBE Effect Parade");
-    if (!parade) return null;
-    if (idx && idx > 0){ try { return parade.property(idx); } catch(e){ return null; } }
-    for (var e=1; e<=parade.numProperties; e++){ if (parade.property(e).matchName === matchName) return parade.property(e); }
-    return null;
+    if (!parade) return { fx: null, at: 0, err: "layer has no effects" };
+    if (idx && idx > 0){
+      try {
+        var pinned = parade.property(idx);
+        if (pinned && pinned.matchName !== matchName) return { fx: null, at: 0, err: "effectIndex " + idx + " holds " + pinned.matchName + ", not " + matchName };
+        return { fx: pinned, at: idx };
+      } catch(e){ return { fx: null, at: 0, err: "no effect at index " + idx }; }
+    }
+    var hits = [];
+    for (var e=1; e<=parade.numProperties; e++){ if (parade.property(e).matchName === matchName) hits.push(e); }
+    if (!hits.length) return { fx: null, at: 0, err: "effect not found" };
+    if (hits.length > 1) return { fx: null, at: 0, err: "AMBIGUOUS: " + hits.length + " instances of " + matchName + " on this layer (parade slots " + hits.join(",") + ") — pass effectIndex to say which" };
+    return { fx: parade.property(hits[0]), at: hits[0] };
   }
+  // back-compat shim for call sites that only want the effect
+  function findFx(L, matchName, idx){ return findFxAt(L, matchName, idx).fx; }
   // find a param inside an effect by matchName (deep — effect groups can nest).
   function findParam(fx, matchName){
     for (var p=1; p<=fx.numProperties; p++){
@@ -266,8 +288,9 @@ const AEX = String.raw`(function(){
       var ed = EDITS[i];
       var L = comp.layer(ed.layerIndex);
       if (ed.op === 'param'){
-        var fx = findFx(L, ed.effectMatchName, ed.effectIndex);
-        if (!fx){ applied.push('{"error":"effect not found","which":'+jstr(ed.effectMatchName)+'}'); continue; }
+        var res = findFxAt(L, ed.effectMatchName, ed.effectIndex);
+        var fx = res.fx, fxAt = res.at;
+        if (!fx){ applied.push('{"error":'+jstr(res.err || "effect not found")+',"which":'+jstr(ed.effectMatchName)+'}'); continue; }
         // opaque-core gate (spatial/ML): flag that this edit may be inert unless the user handoff is
         // done. Not a refuse — pre-staging is legit — but the caller must verify the gate.
         var gmsg = opaqueGate(fx.matchName);
@@ -286,7 +309,7 @@ const AEX = String.raw`(function(){
           catch(eSV){ applied.push('{"error":"setValue threw","detail":'+jstr(String(eSV))+'}'); continue; }
           var newV; try { newV = pr.value; } catch(eN){ newV = ed.value; }
           applied.push('{"op":"param","layer":'+ed.layerIndex+',"param":'+jstr(ed.paramMatchName)+',"old":'+jval(oldV)+',"new":'+jval(newV)+'}');
-          inverse.push('{"op":"param","layerIndex":'+ed.layerIndex+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+(ed.effectIndex||0)+',"paramMatchName":'+jstr(ed.paramMatchName)+',"value":'+jval(oldV)+'}');
+          inverse.push('{"op":"param","layerIndex":'+ed.layerIndex+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+fxAt+',"paramMatchName":'+jstr(ed.paramMatchName)+',"value":'+jval(oldV)+'}');
         } else {
           // KEYFRAMED param (finding #2) — a plain setValue THROWS. Real look-params are animated,
           // so an edit MUST pick a keyframe-aware mode. NO default: 'value:100' is ambiguous between
@@ -304,7 +327,7 @@ const AEX = String.raw`(function(){
             catch(eSK){ applied.push('{"error":"scale keys threw","detail":'+jstr(String(eSK))+'}'); continue; }
             var vNow=null; try { vNow = pr.valueAtTime(comp.time, false); } catch(eVN){}
             applied.push('{"op":"param-scale","layer":'+ed.layerIndex+',"param":'+jstr(ed.paramMatchName)+',"factor":'+jnum(f)+',"numKeys":'+nk+',"valNowAfter":'+jval(vNow)+'}');
-            inverse.push('{"op":"restoreKeyValues","layerIndex":'+ed.layerIndex+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+(ed.effectIndex||0)+',"paramMatchName":'+jstr(ed.paramMatchName)+',"values":['+origVals.join(',')+']}');
+            inverse.push('{"op":"restoreKeyValues","layerIndex":'+ed.layerIndex+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+fxAt+',"paramMatchName":'+jstr(ed.paramMatchName)+',"values":['+origVals.join(',')+']}');
           } else if (kmode === 'setAtTime'){
             // Overwrite (or add) a keyframe at the current playhead with ed.value (ABSOLUTE).
             // add-vs-overwrite is decided by the KEY COUNT before/after setValueAtTime — definitive,
@@ -325,7 +348,7 @@ const AEX = String.raw`(function(){
             var keyAtT = (ri>=1 && Math.abs(pr.keyTime(ri)-t) < 1e-4);
             if (!added && keyAtT && priorShape){ try { applyShape(pr, ri, priorShape); } catch(eRA){} }   // restore overwritten key's shape
             applied.push('{"op":"param-setAtTime","layer":'+ed.layerIndex+',"param":'+jstr(ed.paramMatchName)+',"time":'+jnum(t)+',"added":'+(added?'true':'false')+'}');
-            inverse.push('{"op":"restoreKeyAtTime","layerIndex":'+ed.layerIndex+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+(ed.effectIndex||0)+',"paramMatchName":'+jstr(ed.paramMatchName)+',"time":'+jnum(t)+',"added":'+(added?'true':'false')+((!added && priorShape!==null)?',"priorValue":'+jval(prior)+',"shape":'+shapeJson(priorShape):'')+'}');
+            inverse.push('{"op":"restoreKeyAtTime","layerIndex":'+ed.layerIndex+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+fxAt+',"paramMatchName":'+jstr(ed.paramMatchName)+',"time":'+jnum(t)+',"added":'+(added?'true':'false')+((!added && priorShape!==null)?',"priorValue":'+jval(prior)+',"shape":'+shapeJson(priorShape):'')+'}');
           } else {
             applied.push('{"error":"param is keyframed ('+nk+' keys) - set keyframeMode: scale|setAtTime","which":'+jstr(ed.paramMatchName)+'}');
           }
