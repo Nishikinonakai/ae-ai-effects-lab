@@ -335,6 +335,28 @@ console.log('\nrecover — failure signature + salvage collection');
   eq('a missing work dir yields [], not a throw', collectEditReports(path.join(TMP, 'nope'), REPO), []);
 }
 
+// ---- per-purpose model routing (shell/llm.mjs::modelFor) ---------------------------------------
+// The seam every model default now resolves through (askJSON via AE_AI_PURPOSE; the three scorers
+// as their --model fallback). The contract worth pinning: NO config file means EXACTLY the provider
+// default — routing must be bit-identical to the old behaviour until someone writes models.json —
+// and a config entry wins only for its own purpose.
+console.log('\nmodelFor — per-purpose routing, defaults untouched');
+{
+  const cfg = path.join(TMP, 'models.json');
+  process.env.AE_AI_MODELS_FILE = cfg;                    // must be set before the module loads
+  const { modelFor, defaultModel } = await import('../shell/llm.mjs');
+  ok('no config file → the provider default', modelFor('vision', 'gemini') === defaultModel('gemini'));
+  ok('no purpose → the provider default', modelFor(null, 'openai') === defaultModel('openai'));
+  fs.writeFileSync(cfg, JSON.stringify({ vision: 'x-routed-model' }));
+  eq('a configured purpose wins', modelFor('vision', 'gemini'), 'x-routed-model');
+  ok('an unconfigured purpose still gets the default', modelFor('plan', 'gemini') === defaultModel('gemini'));
+  fs.writeFileSync(cfg, '{not json');
+  ok('a corrupt config degrades to the default, not a throw', modelFor('vision', 'gemini') === defaultModel('gemini'));
+  fs.writeFileSync(cfg, JSON.stringify({ vision: '   ' }));
+  ok('a blank entry does not blank the model', modelFor('vision', 'gemini') === defaultModel('gemini'));
+  delete process.env.AE_AI_MODELS_FILE;
+}
+
 // ---- structural lint --------------------------------------------------------------------------
 // The behavioural assertions above were ALL GREEN through five instances of the half-a-seam bug,
 // including one that made rollback restore the wrong effect. They cannot catch it: half an

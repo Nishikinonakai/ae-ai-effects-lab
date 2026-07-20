@@ -51,7 +51,7 @@ import { fileURLToPath } from 'url';
 import { spawnSync } from 'child_process';
 import { validateReview } from '../runner/review_schema.mjs';
 import { loadCredentials } from '../../shell/keys.mjs';
-import { recordSpend, assertBudget } from '../../shell/llm.mjs';
+import { recordSpend, assertBudget, modelFor } from '../../shell/llm.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -66,7 +66,9 @@ const BASE = (process.env.GEMINI_BASE_URL || 'https://generativelanguage.googlea
 const reqPath = process.argv[2];
 if (!reqPath) { console.error('usage: node vision/gemini_score.mjs <review_request.json> [--model=...]'); process.exit(1); }
 const flag = (n, d) => { const a = process.argv.find(x => x.startsWith(`--${n}=`)); return a === undefined ? d : a.slice(n.length + 3); };
-const model = flag('model', 'gemini-3-flash-preview');
+// default routes through modelFor('vision') — one seam for "which model judges" across all three
+// scorers and models.json. Unconfigured it is the same A/B-chosen name as before, from DEFAULT_MODEL.
+const model = flag('model', null) || modelFor('vision', 'gemini');
 const maxdim = Number(flag('maxdim', 1280));
 
 const req = JSON.parse(fs.readFileSync(reqPath, 'utf8'));

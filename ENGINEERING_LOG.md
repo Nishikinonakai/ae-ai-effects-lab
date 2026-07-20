@@ -520,3 +520,19 @@ seams lint 50 文件 0 违规。
   ~6.5 分钟才触发,疑似 macOS App Nap 对无 TTY 后台 node 的节流。用户经 `shell_up.sh` 前台
   运行不受此影响;**未复测确认,只记录现象。**
 - planner 质量(headless T1 9%)与及格线标定(#1)不在本次范围,状态不变。
+
+### D.6 成本路由缝(§9.4 第 2 条的第一片,拖了三个 session)
+
+`shell/llm.mjs::modelFor(purpose)` + `~/Documents/ae-ai-shell/models.json`。优先级:显式
+`--model` > 配置里该用途的条目 > provider 默认。消费方**全覆盖**:askJSON 内部按
+`AE_AI_PURPOSE` 解析(kernel 的 plan/tune 环境变量随子进程继承),三个 scorer 的默认值同改此缝
+——顺带退役了它们各自硬编码的模型名(gpt_score 的 `gpt-5.6-terra`、claude_score 的
+`claude-sonnet-5`、gemini_score 的 `gemini-3-flash-preview`,§十三实例 2 的残余)。
+
+**没写配置时行为逐位不变,这是设计而非胆小:** 把 vision 判官换成别的模型就是换量具,分数分布
+会跟着走(C.1 的 A/B:同语料上 flash-preview 从不给 8,3.5-flash 与 3.1-pro 各给过一次)——
+在 #1 的及格线标定有标注集之前,任何"顺手换个便宜/强模型"都是在重演 C.2。缝先在,开关交给
+标定之后的决定。离线断言 6 条(无配置=默认、按用途覆盖、坏配置降级、空串不清空)。
+
+顺带:结构 lint 在这次改动里**抓了我自己一次**——测试里写了真实模型名做 fixture,
+`provider-model-hardcoded` 当场报警,换成中性字符串。规则活着,而且不分对象。

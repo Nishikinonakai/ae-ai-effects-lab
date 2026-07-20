@@ -16,6 +16,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { validateReview } from '../runner/review_schema.mjs';
 import { loadCredentials } from '../../shell/keys.mjs';
+import { modelFor } from '../../shell/llm.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -29,7 +30,7 @@ if (!API_KEY) { console.error('OPENAI_API_KEY missing (env or recipe-harness/.en
 
 const reqPath = process.argv[2];
 if (!reqPath) { console.error('usage: node vision/gpt_score.mjs <review_request.json> [--model=...]'); process.exit(1); }
-const model = (process.argv.find(a => a.startsWith('--model=')) || '').split('=')[1] || 'gpt-5.6-terra';
+const model = (process.argv.find(a => a.startsWith('--model=')) || '').split('=')[1] || modelFor('vision', 'openai');
 
 const req = JSON.parse(fs.readFileSync(reqPath, 'utf8'));
 const b64 = fp => fs.readFileSync(fp).toString('base64');

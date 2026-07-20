@@ -192,6 +192,35 @@ const DEFAULT_MODEL = {
 
 export function defaultModel(p = provider()) { return DEFAULT_MODEL[p] || null; }
 
+// ---- PER-PURPOSE MODEL ROUTING ----------------------------------------------------------------
+// "Route with a cheap model, judge with a strong one" has sat at priority 4 for three sessions
+// (PRD §9.4). This is the SEAM half of it: one place where "which model for which job" can be
+// answered differently per purpose, consulted by every consumer — askJSON resolves through it via
+// AE_AI_PURPOSE, and the three vision scorers (which fetch outside askJSON, same reason the budget
+// gate meets them separately) ask it for their default too. Building it anywhere less than
+// everywhere would be §十三 all over again.
+//
+// The SAVINGS half is deliberately NOT here: with no models.json every purpose still gets the
+// provider default, so behaviour is bit-identical to yesterday. Changing the actual assignments is
+// an instrument change (C.2: the scorer's score distribution moves with the model) and needs the
+// pass-bar calibration KNOWN_ISSUES #1 is waiting on — not a default swapped in silence.
+//
+// ~/Documents/ae-ai-shell/models.json, e.g. {"plan": "gemini-3.1-flash-lite", "vision": "gemini-3.5-flash"}
+// Live purposes today: "plan" (plan_edit / plan_recipe via askJSON) and "vision" (the scorers).
+// Priority everywhere: explicit --model flag > models.json[purpose] > provider default.
+const MODELS_FILE = process.env.AE_AI_MODELS_FILE
+  || path.join(os.homedir(), 'Documents', 'ae-ai-shell', 'models.json');
+
+export function modelFor(purpose, p = provider()) {
+  if (purpose) {
+    try {
+      const m = JSON.parse(fs.readFileSync(MODELS_FILE, 'utf8'))[purpose];
+      if (typeof m === 'string' && m.trim()) return m.trim();
+    } catch { /* no config or unreadable = provider default */ }
+  }
+  return defaultModel(p);
+}
+
 // Ask for JSON. `parts` is [{text}] and/or [{image: <path>}] — the caller does not need to know how
 // each provider spells an attachment.
 //
@@ -215,7 +244,9 @@ export async function askJSON(parts, { schema = null, model = null, maxTokens = 
   assertBudget();
   const p = provider();
   if (!p) throw new Error('no LLM credential found (GEMINI_API_KEY / OPENAI_API_KEY / ANTHROPIC_API_KEY, in env or recipe-harness/.env.api)');
-  const mdl = model || defaultModel(p);
+  // explicit caller choice > the per-purpose route (AE_AI_PURPOSE rides the env through every
+  // kernel-spawned child) > provider default. With no models.json this IS defaultModel(p).
+  const mdl = model || modelFor(process.env.AE_AI_PURPOSE || null, p);
   const b64 = fp => fs.readFileSync(fp).toString('base64');
 
   if (p === 'gemini') {

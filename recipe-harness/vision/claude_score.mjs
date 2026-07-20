@@ -12,10 +12,11 @@ import fs from 'fs';
 import path from 'path';
 import Anthropic from '@anthropic-ai/sdk';
 import { validateReview } from '../runner/review_schema.mjs';
+import { modelFor } from '../../shell/llm.mjs';
 
 const reqPath = process.argv[2];
 if (!reqPath) { console.error('usage: node vision/claude_score.mjs <review_request.json> [--model=...]'); process.exit(1); }
-const model = (process.argv.find(a => a.startsWith('--model=')) || '').split('=')[1] || 'claude-sonnet-5';
+const model = (process.argv.find(a => a.startsWith('--model=')) || '').split('=')[1] || modelFor('vision', 'anthropic');
 
 const req = JSON.parse(fs.readFileSync(reqPath, 'utf8'));
 const client = new Anthropic(); // reads ANTHROPIC_API_KEY
