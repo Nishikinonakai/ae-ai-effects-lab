@@ -20,7 +20,7 @@
 // Exit codes: 0 = pass, 1 = failed (max-iters / recipe error / dead-end), 2 = awaiting review.
 //
 // usage: node runner/tune_loop.mjs <plan.json> [--max-iters=4] [--backend=agent|api]
-//        [--timeout=180] [--fresh]
+//        [--timeout=180] [--fresh] [--scorer=gemini|gpt|claude]
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -154,8 +154,16 @@ function scoreViaApi(n) {
   const req = path.join(iterDir(n), 'review_request.json');
   // scorer pick: Anthropic if its key is present; else the OpenAI-compatible twin
   // (key from env or the gitignored .env.api that gpt_score.mjs self-loads).
-  const useClaude = !!process.env.ANTHROPIC_API_KEY;
-  const scorer = path.join(REPO, 'vision', useClaude ? 'claude_score.mjs' : 'gpt_score.mjs');
+  // Backend selection by available credential, overridable with --scorer=. Gemini first: it is the
+  // only one of the three that enforces the review shape at the API (responseSchema) and downscales
+  // frames before sending, so the two failure modes the other backends share — unparseable JSON and
+  // a silently dropped frame — cannot occur.
+  const explicit = flag('scorer', '');
+  const scorerFile = explicit ? `${explicit}_score.mjs`
+    : process.env.GEMINI_API_KEY || fs.existsSync(path.join(REPO, '.env.api')) && /GEMINI_API_KEY/.test(fs.readFileSync(path.join(REPO, '.env.api'), 'utf8')) ? 'gemini_score.mjs'
+    : process.env.ANTHROPIC_API_KEY ? 'claude_score.mjs'
+    : 'gpt_score.mjs';
+  const scorer = path.join(REPO, 'vision', scorerFile);
   console.log(`scoring iter ${n} via ${path.basename(scorer)} ...`);
   const r = spawnSync('node', [scorer, req], { stdio: 'inherit' });
   if (r.status !== 0 || !fs.existsSync(path.join(iterDir(n), 'review.json'))) {
@@ -226,9 +234,18 @@ while (true) {
   const errs = validateReview(review);
   if (errs.length) die(`iter ${n} review.json invalid: ${errs.join('; ')}`);
 
+  // Normalise BOTH directions. The upward case (score clears the bar, verdict still says fail) was
+  // always handled. The downward case was not, and it is not hypothetical: gemini-3.5-flash returned
+  // verdict="pass" with score=7 against a bar of 8 on its very first real request. Left alone that
+  // silently books a pass below the bar and inflates the whole eval. The bar is DEFINED on the
+  // score, so when the two disagree the score wins.
   if (passAt > 0 && review.verdict !== 'pass' && review.score >= passAt) {
     console.log(`pass-bar: iter ${n} scored ${review.score} >= ${passAt} — normalizing verdict to pass`);
     review.verdict = 'pass'; review._normalized_pass_at = passAt;
+    writeJ(revPath, review);
+  } else if (passAt > 0 && review.verdict === 'pass' && review.score < passAt) {
+    console.log(`pass-bar: iter ${n} claimed pass but scored ${review.score} < ${passAt} — the score is the bar, normalizing verdict to fail`);
+    review.verdict = 'fail'; review._normalized_fail_at = passAt;
     writeJ(revPath, review);
   }
 

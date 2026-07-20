@@ -31,7 +31,17 @@ import { frameDelta, classifyDelta } from './frame_delta.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
-const GPT_SCORE = path.join(REPO, 'recipe-harness', 'vision', 'gpt_score.mjs');
+// Same seam as the greenfield loop: pick the backend from the credential that is actually present,
+// so swapping the key swaps the scorer everywhere instead of in one place and not the other.
+function pickScorer() {
+  const dir = path.join(REPO, 'recipe-harness', 'vision');
+  const envFile = path.join(REPO, 'recipe-harness', '.env.api');
+  const env = fs.existsSync(envFile) ? fs.readFileSync(envFile, 'utf8') : '';
+  if (process.env.GEMINI_API_KEY || /GEMINI_API_KEY/.test(env)) return path.join(dir, 'gemini_score.mjs');
+  if (process.env.ANTHROPIC_API_KEY) return path.join(dir, 'claude_score.mjs');
+  return path.join(dir, 'gpt_score.mjs');
+}
+const GPT_SCORE = pickScorer();
 const BRIDGE = path.join(os.homedir(), 'Documents', 'ae-mcp-bridge');
 
 // Read-only bridge round-trip (same file protocol as apply_edit). Used only to read live param

@@ -1,0 +1,326 @@
+{
+  "_date": "2026-07-20",
+  "models": [
+    "gemini-3.5-flash",
+    "gemini-3.1-pro-preview"
+  ],
+  "cases": 12,
+  "gpt": {
+    "n": 12,
+    "mean": 5,
+    "passRate": 0,
+    "emptySuggestionsOnFail": 0,
+    "meanSuggestions": 3.58
+  },
+  "byModel": {
+    "gemini-3.5-flash": {
+      "n": 8,
+      "mean": 5.88,
+      "meanDeltaVsGpt": 0.63,
+      "meanAbsDelta": 0.88,
+      "passRate": 38,
+      "inconsistentVerdicts": 0,
+      "emptySuggestionsOnFail": 0,
+      "meanSuggestions": 1.88,
+      "errors": 4
+    },
+    "gemini-3.1-pro-preview": null
+  },
+  "rows": [
+    {
+      "id": "eval-e20/iter5",
+      "gpt": {
+        "score": 1,
+        "verdict": "fail",
+        "critique": "两帧几乎全黑，仅在下方偏中央出现一小团青蓝色亮点。它既不是可读的同心水波环，也没有足够范围或清晰的帧间半径变化来证明扩张。上半部及水面上方完全没有可辨认的雨滴或雨丝，因此“雨滴落下—落点产生涟漪”的因果关系完全缺失。当前环形发射速率表达式在采样时刻恰好重新触发，导致两帧都主要显示刚生成的小点团，而不是不同年龄、不同半径的涟漪。",
+        "suggestions": [
+          "expression:tc Particular-0146",
+          "param:tc Particular-0002",
+          "param:tc Particular-0027",
+          "param:tc Particular-0033",
+          "param:tc Particular-0002"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "score": 3,
+        "verdict": "fail",
+        "critique": "The render shows no visible falling raindrops in the upper frame, and the ripple pattern in the lower frame is clustered into a tiny, localized group of dots rather than expanding across a wider water surface zone.",
+        "suggestions": [
+          "param:tc Particular-0146",
+          "param:tc Particular-0027",
+          "param:tc Particular-0014",
+          "param:tc Particular-0011"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3.1-pro-preview": {
+        "error": "API unreachable after retries"
+      }
+    },
+    {
+      "id": "eval-e20/iter3",
+      "gpt": {
+        "score": 3,
+        "verdict": "fail",
+        "critique": "A pale dotted oval/ripple-like particle pattern is visible in a stable lower-frame zone, but it reads as a single loose cloud of dots rather than small, clean water ripples. There are still no visible falling drops or rain streaks in the upper frame, so the required drop-to-impact causality is absent. The two sampled frames also show nearly the same ring state, making expansion difficult to read.",
+        "suggestions": [
+          "param:tc Particular-0002",
+          "param:tc Particular-0027",
+          "param:tc Particular-0014",
+          "param:tc Particular-0011",
+          "expression:tc Particular-0146",
+          "expression:tc Particular-0005"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "error": "  \"critique\": \"The render shows a single ring of fine dots expanding in the lowe"
+      },
+      "gemini-3.1-pro-preview": {
+        "error": "API unreachable after retries"
+      }
+    },
+    {
+      "id": "eval-e22/iter3",
+      "gpt": {
+        "score": 3,
+        "verdict": "fail",
+        "critique": "画面仍未达到可交付的科技感粒子背景：两帧都是接近纯黑的深海军蓝底，仅下方出现一条很暗的蓝紫色稀疏粒子轨迹。t1 到 t4 的下方粒子数量和形态确有变化，说明存在运动；但计划中的上方青绿色数据流在两帧中完全不可见，构图严重失衡。可用的中央留白很多，但当前更像粒子模拟刚启动时的局部残影，而非经过设计的科技数据框景；亮度、密度与色彩辨识度都不足，且蓝紫单色观感接近此前失败的默认蓝意外。",
+        "suggestions": [
+          "param:tc Particular-0146",
+          "param:tc Particular-0027",
+          "param:tc Particular-0216",
+          "param:tc Particular-0070"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "error": "      \"why\": \"Set the On Source compositing mode to Over Original so this second"
+      },
+      "gemini-3.1-pro-preview": {
+        "error": "API unreachable after retries"
+      }
+    },
+    {
+      "id": "eval-e20/iter1",
+      "gpt": {
+        "score": 4,
+        "verdict": "fail",
+        "critique": "The render shows pale dotted expanding circular/arc patterns across the lower half, and their larger extent at 3.6s suggests expansion. However, there are no clearly readable falling rain streaks in either frame: the upper frame is almost entirely empty. The ripple pattern is also very large and dispersed rather than small, distinct impact ripples, so the connection between a raindrop landing and a ring forming is not visually convincing.",
+        "suggestions": [
+          "param:tc Particular-0002",
+          "param:tc Particular-0027",
+          "param:tc Particular-0011",
+          "param:tc Particular-0002"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "score": 3,
+        "verdict": "fail",
+        "critique": "The falling drops are completely missing from the rendered frames, leaving the top half of the frame empty. This happens because the first 'tc Particular' effect has Angle X set to -90, which directs the particles upward from Y=-40 (completely off-screen). Additionally, the ripples only emit from a single central point rather than across the water surface because the second 'tc Particular' effect uses a tiny Sphere emitter.",
+        "suggestions": [
+          "param:tc Particular-0112",
+          "param:tc Particular-0782",
+          "param:tc Particular-0014"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3.1-pro-preview": {
+        "error": "API unreachable after retries"
+      }
+    },
+    {
+      "id": "eval-e04/iter3",
+      "gpt": {
+        "score": 5,
+        "verdict": "fail",
+        "critique": "整体偏褐色调已经明确，底层也能读为柔和的云雾状明暗；t4比t1略亮，轻微曝光闪烁成立。问题仍是左边缘贯穿全高的双重蛇形亮线非常醒目，画面仍带有受损电视/信号故障的识别感，而不是干净的抽象老胶片背景。全幅细颗粒存在但偏弱，更多被云雾的大尺度纹理吸收，胶片颗粒的独立可读性不足。",
+        "suggestions": [
+          "param:BCC4Damaged TV-8192021",
+          "param:ADBE Noise-0001"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "score": 5,
+        "verdict": "fail",
+        "critique": "The sepia/brown color tone, the soft underlying cloud base, and the subtle brightness flicker between t1 and t4 are working well. However, the image still strongly resembles a broken TV screen rather than an abstract old film background: there is a highly distracting snake-like wavy line running down the entire left edge, and horizontal ripple distortion warping the cloud texture across the frame. These electronic glitches are caused by the active distortion parameters in BCC4Damaged TV.",
+        "suggestions": [
+          "param:BCC4Damaged TV-8192005",
+          "param:BCC4Damaged TV-8192001"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3.1-pro-preview": {
+        "error": "API unreachable after retries"
+      }
+    },
+    {
+      "id": "eval-e08/iter3",
+      "gpt": {
+        "score": 5,
+        "verdict": "fail",
+        "critique": "画面保留了紫、洋红与蓝色的抽象底图，横向扫描线和噪声也让它具备一定刻意的CRT/信号故障质感，不是灰阶或完全损坏的渲染。但 t1 与 t4 的主要构图、中央竖直切分位置、右侧重复竖条和水平条纹几乎重合，帧间整体内容偏移仍不可辨识。RGB 分离也没有形成明确独立的红、绿、蓝彩边；当前主要仍是紫红混色。中央偏右的硬竖向分界及右侧规则条纹依旧更像处理接缝，而非有节奏的信号错位。",
+        "suggestions": [
+          "param:BCC4Damaged TV-8192032",
+          "param:BCC4Damaged TV-8192038",
+          "param:BCC_CAMERASHAKE-1000"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "error": "      \"why\": \"Animate the"
+      },
+      "gemini-3.1-pro-preview": {
+        "error": "API unreachable after retries"
+      }
+    },
+    {
+      "id": "eval-e04/iter1",
+      "gpt": {
+        "score": 6,
+        "verdict": "fail",
+        "critique": "整体偏褐色调和柔和的云雾明暗底图已经成立，t4相较t1也有可见但不过分的亮度变化。问题是画面目前更像受损电视信号：左侧持续的粗亮波纹、底部及中部的横向分界/扭曲非常显眼，干扰了抽象云雾背景。细密胶片颗粒不够清晰，主要被较重的柔光和大尺度的纹理起伏吞没。",
+        "suggestions": [
+          "param:PEDG-0002",
+          "param:BCC_TEXTURES-1001",
+          "param:BCC4Damaged TV-8192021"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "score": 6,
+        "verdict": "fail",
+        "critique": "The sepia/brown tint is correctly applied, and the brightness flicker is present between t1 and t4. However, the background contains prominent wavy digital distortions and vertical squiggles on the left edge. These artifacts are characteristic of a damaged analog TV signal rather than classic old film, and they heavily disrupt the 'soft cloud' base. Additionally, the film grain from BCC_TEXTURES is extremely subtle and barely readable under the heavy tint.",
+        "suggestions": [
+          "param:BCC_TEXTURES-1001",
+          "param:BCC4Damaged TV-8192001"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3.1-pro-preview": {
+        "error": "API unreachable after retries"
+      }
+    },
+    {
+      "id": "eval-e06/iter3",
+      "gpt": {
+        "score": 6,
+        "verdict": "fail",
+        "critique": "红/深红色调已成立，粒子排列足以连续读作一张起伏的曲面，t1到t4的顶部、底部波峰和内部竖向褶皱均有可见变化。主体覆盖范围较前次扩大，但两侧仍留有明显暗区，尚未形成横向铺满画面的宽幅波带。最主要的问题是粒子亮点仍然逐颗清晰可辨，规则纵向条纹和点阵边缘使其更像发光LED网格；整体亮度几乎均一，缺少丝绸所需的深红阴影、柔和过渡与局部流动高光。",
+        "suggestions": [
+          "param:PEDG-0002",
+          "param:PEDG-0004",
+          "expression:ADBE BEZMESH-0002",
+          "expression:ADBE BEZMESH-0005",
+          "expression:ADBE BEZMESH-0008",
+          "expression:ADBE BEZMESH-0011"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "score": 6,
+        "verdict": "fail",
+        "critique": "红色调与丝绸质感有明显提升，粒子网格在两帧间也有柔和起伏。然而，网格在水平方向上依然呈现为中间一块方形区域，左右两侧留白过大，未能形成贯穿画面的宽幅波浪带；此外，网格颗粒感仍略显明显。",
+        "suggestions": [
+          "expression:ADBE BEZMESH-0002",
+          "expression:ADBE BEZMESH-0005",
+          "expression:ADBE BEZMESH-0008",
+          "expression:ADBE BEZMESH-0011"
+        ],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3.1-pro-preview": {
+        "error": "API unreachable after retries"
+      }
+    },
+    {
+      "id": "eval-e24/iter3",
+      "gpt": {
+        "score": 6,
+        "verdict": "fail",
+        "critique": "阶梯状抽象几何块面清晰，整体构图具备一定复古平面海报感，且 t1 与 t4 画面一致，没有意外时间变化。问题仍集中在双色限制与浮雕质感：大面积块面呈灰蓝、灰褐的连续中间调，而非明确的深蓝与米白；边缘虽有深浅线，但更像硬质的偏移描边。当前 Emboss 的混合量使浮雕产生大量综合色阶，削弱了严格双色印刷效果，也没有形成足够简洁可信的纸张压印明暗。",
+        "suggestions": [
+          "param:ADBE Emboss-0004",
+          "param:ADBE Emboss-0002"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "score": 8,
+        "verdict": "pass",
+        "critique": "The render successfully achieves the retro duotone print aesthetic. The geometric base is clean and readable, utilizing a strict deep-blue and cream palette. The embossed edges are clearly visible, creating a convincing stamped-paper relief texture that aligns perfectly with the poster concept.",
+        "suggestions": [],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3.1-pro-preview": {
+        "error": "API unreachable after retries"
+      }
+    },
+    {
+      "id": "eval-e02/iter2",
+      "gpt": {
+        "score": 7,
+        "verdict": "fail",
+        "critique": "The deep near-black blue background and cyan palette match well. By t4 there is a readable moderate field of small luminous particles distributed across the frame, with new particles visible near the bottom. However, t1 remains too sparse, and the particles still read more as soft glowing dots than distinct bubbles. Comparing t1 and t4 does not clearly demonstrate individual side-to-side swaying arcs; the motion reads primarily as dispersed upward movement.",
+        "suggestions": [
+          "param:tc Particular-0146",
+          "expression:tc Particular-0749",
+          "param:tc Particular-0027"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "error": "      \"matchName"
+      },
+      "gemini-3.1-pro-preview": {
+        "error": "API unreachable after retries"
+      }
+    },
+    {
+      "id": "eval-e03/iter3",
+      "gpt": {
+        "score": 7,
+        "verdict": "fail",
+        "critique": "t1具备暗紫/紫罗兰色盘、全幅无硬边的柔和雾状底纹，整体亮度也维持在背景级；细微颗粒存在但未过分抢眼。不过当前t1的云雾明暗层次仍偏弱，画面主体接近均匀近黑紫，只有左下和中右可辨识到非常微弱的宽广云带，星云结构不够清晰。所给内容未包含可见的t4画面，无法确认本轮是否已消除此前从弱云到强环状云的亮度跳变问题。",
+        "suggestions": [
+          "param:ADBE Tint-0002",
+          "expression:ADBE Fractal Noise-0023"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "score": 8,
+        "verdict": "pass",
+        "critique": "The render successfully achieves a dark purple nebula background with soft flowing structures and subtle grain. The evolution between t1 and t4 is natural, maintaining a consistent balance of luminance and organic form across both frames.",
+        "suggestions": [],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3.1-pro-preview": {
+        "error": "API unreachable after retries"
+      }
+    },
+    {
+      "id": "eval-e24/iter2",
+      "gpt": {
+        "score": 7,
+        "verdict": "fail",
+        "critique": "抽象的阶梯式几何块面清晰，深蓝与米白主色已建立，整体有一定复古海报图形感。t1 与 t4 完全相同，未见时间变化。问题是边界处仍有明显灰蓝、灰褐的过渡描边，严格双色并未成立；浮雕表现仍主要是偏移的双层轮廓线，而不是纸面压印产生的简洁明暗起伏。大面积米白块也较平，压印纹理的存在感不足。",
+        "suggestions": [
+          "param:ADBE Emboss-0004",
+          "param:ADBE Emboss-0002",
+          "param:ADBE Emboss-0003"
+        ]
+      },
+      "gemini-3.5-flash": {
+        "score": 8,
+        "verdict": "pass",
+        "critique": "The visual successfully delivers the requested two-tone retro poster aesthetic. The geometric layout is clean and readable, the palette is strictly deep blue and cream with no color bleed, and the embossed edges effectively suggest a tactile letterpress or stamped paper quality. Temporal variation is absent, but the design cohesion is solid.",
+        "suggestions": [],
+        "inconsistent": false,
+        "degraded": null
+      },
+      "gemini-3.1-pro-preview": {
+        "error": "API unreachable after retries"
+      }
+    }
+  ]
+}
