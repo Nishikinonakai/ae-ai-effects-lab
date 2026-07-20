@@ -260,22 +260,43 @@ const AEX = String.raw`(function () {
     //
     // Counting occurrences keeps idempotency intact: a re-run binds spec k to instance k as before,
     // and only creates an instance when the comp genuinely has fewer than the plan asks for.
+    // ...and a repeated matchName gets its OWN LAYER, not just its own instance.
+    //
+    // Creating the second instance on the same layer was necessary but useless: Particular (and every
+    // other generator that renders onto transparency) REPLACES what the layer already holds instead
+    // of compositing over it, so instance 2 wipes instance 1. Measured on eval-e20, which asks for
+    // falling drops plus splash rings: with both instances on one layer only the rings appeared;
+    // disabling the rings made the drops appear. Both were correctly configured the whole time —
+    // psec 90 at y=-40 and psec 1100 at y=560 — the first was simply painted over.
+    //
+    // So the Nth duplicate spec hosts on "<hostName> 2", "<hostName> 3", ... which is also how an
+    // artist would build it. Found by name so re-runs are idempotent, stacked directly above the
+    // primary host so draw order follows plan order.
     var seenOfMatch = {};
     for (var s = 0; s < R.effects.length; s++) {
       var spec = R.effects[s];
       var wantNth = seenOfMatch[spec.matchName] || 0;      // 0-based instance this spec owns
       seenOfMatch[spec.matchName] = wantNth + 1;
+
+      var target = host;
+      if (wantNth > 0) {
+        var sibName = hostName + " " + (wantNth + 1);
+        target = findLayer(comp, sibName);
+        if (!target) {
+          target = comp.layers.addSolid([0,0,0], sibName, R.comp.width, R.comp.height, 1, R.comp.duration);
+          try { target.moveBefore(host); } catch (eMB) {}
+          parts.push('{"p":"[layer] ' + esc(sibName) + ' for ' + esc(spec.matchName) + ' #' + (wantNth + 1) + '","ok":true}');
+        }
+      }
+
       var fx = null, nSeen = 0;
-      for (var fi = 1; fi <= host.Effects.numProperties; fi++) {
+      for (var fi = 1; fi <= target.Effects.numProperties; fi++) {
         try {
-          if (host.Effects.property(fi).matchName === spec.matchName) {
-            if (nSeen === wantNth) { fx = host.Effects.property(fi); break; }
-            nSeen++;
-          }
+          if (target.Effects.property(fi).matchName === spec.matchName) { fx = target.Effects.property(fi); break; }
         } catch (e) {}
       }
-      if (!fx) fx = host.Effects.addProperty(spec.matchName);
-      var tag = "[" + (s + 1) + ":" + spec.matchName + (wantNth > 0 ? "#" + (wantNth + 1) : "") + "] ";
+      if (!fx) fx = target.Effects.addProperty(spec.matchName);
+      var tag = "[" + (s + 1) + ":" + spec.matchName + (wantNth > 0 ? "#" + (wantNth + 1) + "@" + target.name : "") + "] ";
 
       // params — per-param try/catch + readback (batch-set dies silently on first hidden param)
       if (spec.params) {

@@ -378,3 +378,42 @@ rows need re-running before their scores mean anything.
 This is the third time a "the model chose badly" reading has turned out to be a harness defect
 (after the silently-dropped frame and the param/expression collision). Worth stating as a rule:
 **before concluding the intelligence is wrong, check that what it asked for is what actually ran.**
+
+### The multi-instance fix was half a fix — and the other half is architectural
+
+Creating the second instance was necessary and useless on its own. **Particular renders onto
+transparency and REPLACES the layer content rather than compositing over it**, so two instances on
+one layer means the second wipes the first.
+
+Proved directly on e20, which asks for falling drops plus splash rings:
+
+| state | what renders |
+|---|---|
+| both instances on one layer | rings only |
+| instance #2 disabled | drops appear |
+| each instance on its own layer | **both** |
+
+Both systems had been configured correctly the entire time — psec 90 at y=-40 for the drops, psec
+1100 at y=560 for the rings. The drops were simply painted over. So the Nth duplicate spec now hosts
+on `<hostName> 2`, `<hostName> 3`, found by name so re-runs stay idempotent, stacked above the
+primary host so draw order follows plan order.
+
+**What this did NOT fix:** the rain is still only four particles. That is a genuine planning defect —
+psec 90 emitting from just above frame means almost nothing has entered the visible area by t=1.2s —
+and it is exactly what the blind pre-registration named for e20 (`0148` physics time factor and the
+emission-timing group, not size or velocity). Score therefore barely moved, which is the honest
+outcome: **the harness fix is a precondition for lever work to matter, not a substitute for it.**
+
+### Same-instrument correction to the re-run table
+
+The first re-run compared GPT-recorded scores against Gemini-rescored ones — not a comparison at all.
+Re-scoring the ORIGINAL half-built frames with Gemini gives the like-for-like picture:
+
+| id | half-built (Gemini) | full build (Gemini) |
+|---|---|---|
+| e17 | ~6.5 | 6.5±0.71 |
+| e20 | 3.6±0.55 | 3.6±0.89 |
+| e22 | 3.8±0.45 | 3±0 |
+
+**The missing system barely moved the score.** And e17's apparent collapse from 9 to 6.5 was entirely
+the scorer swap: GPT gave 9 to the same half-built frames Gemini gives 6.5. Nothing regressed.

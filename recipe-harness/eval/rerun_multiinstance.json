@@ -1,0 +1,94 @@
+{
+  "_date": "2026-07-20",
+  "model": "gemini-3-flash-preview",
+  "repeats": 5,
+  "rows": [
+    {
+      "id": "e17",
+      "oldBest": 9,
+      "instances": {
+        "tc Particular": {
+          "want": 2,
+          "got": 2
+        }
+      },
+      "scores": [
+        6,
+        7
+      ],
+      "mean": 6.5,
+      "sd": 0.71,
+      "frames": [
+        "mi_e17_t1.png",
+        "mi_e17_t4.png"
+      ]
+    },
+    {
+      "id": "e20",
+      "oldBest": 4,
+      "instances": {
+        "tc Particular": {
+          "want": 2,
+          "got": 2
+        }
+      },
+      "scores": [
+        4,
+        3,
+        5,
+        3,
+        3
+      ],
+      "mean": 3.6,
+      "sd": 0.89,
+      "frames": [
+        "mi_e20_t1p2.png",
+        "mi_e20_t3p6.png"
+      ]
+    },
+    {
+      "id": "e22",
+      "oldBest": 4,
+      "instances": {
+        "tc Particular": {
+          "want": 2,
+          "got": 2
+        }
+      },
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "mean": 3,
+      "sd": 0,
+      "frames": [
+        "mi_e22_t1.png",
+        "mi_e22_t4.png"
+      ]
+    },
+    {
+      "id": "portal-ring",
+      "oldBest": null,
+      "instances": {
+        "tc Particular": {
+          "want": 2,
+          "got": 2
+        }
+      },
+      "scores": [
+        10,
+        8,
+        7
+      ],
+      "mean": 8.33,
+      "sd": 1.53,
+      "frames": [
+        "mi_portal-ring_t1.png",
+        "mi_portal-ring_t4.png"
+      ]
+    }
+  ]
+}
