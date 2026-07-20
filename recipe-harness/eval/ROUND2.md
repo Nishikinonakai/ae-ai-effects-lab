@@ -342,3 +342,39 @@ the honest claim is narrow:
 > The lever wire functions, and it is bounded by ontology coverage rather than by the scorer's
 > willingness to use it. Run 1 and run 2 differ *only* in card content and differ by 67 points of
 > hit rate.
+
+---
+
+## A harness bug that explains two of the four held-out failures
+
+*2026-07-20 · found by the held-out pre-registration, verified in code and on a live comp.*
+
+The blind analysts diagnosing e20 and e22 both reported the same thing, and it is not about levers
+at all:
+
+> "Only one Particular instance exists — the runner's first-match effect lookup collapses both plan
+> specs onto it, so the plan's SECOND Particular is silently never created."
+
+**Confirmed in `recipe_runner.mjs`.** The effect lookup broke on the first matchName match, so a plan
+carrying two `tc Particular` entries bound BOTH specs to instance 1. The second spec overwrote the
+first, and its system was never created. Every param reported `ok`, the report looked clean, and half
+the composition did not exist.
+
+e20 and e22 both plan two Particular systems — falling rain plus splash rings. Only the rings
+rendered. The critique across five iterations was *"no falling rain is ever visible"*, and the loop
+spent all five adjusting parameters of a system that was never the problem: **the rain it was asked
+for had no emitter.**
+
+Fixed by counting occurrences — the Nth spec of a matchName binds to the Nth instance, creating one
+only when the comp has fewer than the plan asks for. Verified live on e20's plan: the host layer now
+carries two Particular instances, the second spec's 17 params apply under a `#2` tag, and three
+consecutive runs leave the count at 2, so idempotency survives.
+
+**Consequence for the eval:** e20 and e22 are not valid tests of any lever or ontology hypothesis.
+Their defect was structural and upstream of every knob. Any multi-instance plan in the corpus —
+core+wisps, rain+splash, the tornado recipes — has been silently running at half strength, so those
+rows need re-running before their scores mean anything.
+
+This is the third time a "the model chose badly" reading has turned out to be a harness defect
+(after the silently-dropped frame and the param/expression collision). Worth stating as a rule:
+**before concluding the intelligence is wrong, check that what it asked for is what actually ran.**

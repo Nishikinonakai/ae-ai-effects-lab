@@ -248,14 +248,34 @@ const AEX = String.raw`(function () {
     }
 
     // 4) find-or-apply the effect STACK in order (multi-effect plans: form + color + glow ...)
+    // MULTI-INSTANCE: bind the Nth spec of a matchName to the Nth INSTANCE of it.
+    //
+    // This used to break on the first match, so a plan carrying two "tc Particular" entries — a rain
+    // system plus a splash system, a core plus wisps — bound BOTH specs to instance 1. The second
+    // spec silently overwrote the first and its instance was never created. The plan looked applied
+    // (every param reports ok) and half the composition simply did not exist. Measured on eval-e20
+    // and e22: both plan two Particular systems, both rendered only one, and the tune loop then spent
+    // five iterations adjusting parameters of a system that was never the problem — the falling rain
+    // it was asked for had no emitter at all.
+    //
+    // Counting occurrences keeps idempotency intact: a re-run binds spec k to instance k as before,
+    // and only creates an instance when the comp genuinely has fewer than the plan asks for.
+    var seenOfMatch = {};
     for (var s = 0; s < R.effects.length; s++) {
       var spec = R.effects[s];
-      var fx = null;
+      var wantNth = seenOfMatch[spec.matchName] || 0;      // 0-based instance this spec owns
+      seenOfMatch[spec.matchName] = wantNth + 1;
+      var fx = null, nSeen = 0;
       for (var fi = 1; fi <= host.Effects.numProperties; fi++) {
-        try { if (host.Effects.property(fi).matchName === spec.matchName) { fx = host.Effects.property(fi); break; } } catch (e) {}
+        try {
+          if (host.Effects.property(fi).matchName === spec.matchName) {
+            if (nSeen === wantNth) { fx = host.Effects.property(fi); break; }
+            nSeen++;
+          }
+        } catch (e) {}
       }
       if (!fx) fx = host.Effects.addProperty(spec.matchName);
-      var tag = "[" + (s + 1) + ":" + spec.matchName + "] ";
+      var tag = "[" + (s + 1) + ":" + spec.matchName + (wantNth > 0 ? "#" + (wantNth + 1) : "") + "] ";
 
       // params — per-param try/catch + readback (batch-set dies silently on first hidden param)
       if (spec.params) {
