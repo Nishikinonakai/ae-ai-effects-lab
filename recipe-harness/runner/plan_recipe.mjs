@@ -105,8 +105,18 @@ Rules:
   · Params are applied IN ORDER and order matters: a param hidden behind a gate must come AFTER the
     param that opens it, or the write throws.
   · Prefer the smallest stack that could read as the intent. Two well-chosen effects beat six.
-  · Motion: render frames are ${JSON.stringify([1, 4])} seconds apart, so anything meant to move needs an
-    expression (evolution/offset/rotation driven by \`time\`) — a static value will read as a still.
+  · SAMPLING — you choose "renderFrames", and the whole render will be judged from ONLY those two
+    stills, so pick times at which your effect is actually measurable:
+      - the FIRST sample must be at steady state. A particle system with life L takes ~L seconds to
+        fill; sampling at t=1 with life 8 shows a fraction of the population and reads as "too
+        sparse" no matter how high the birth rate goes.
+      - the two samples must share a trackable cohort: their gap must be SHORTER than particle life,
+        or every particle visible in the first is dead by the second and no motion is inferable.
+      - avoid sampling in phase with any periodic expression you write, or both stills catch the
+        same moment of the cycle.
+    If life is longer than the comp, shorten life rather than sampling early.
+  · Motion needs an expression (evolution/offset/rotation driven by \`time\`) — a static value reads
+    as a still across both samples.
   · The library below is PRIOR ART, not a lookup table. Reason from what those stacks were doing;
     do not copy one unless it genuinely fits.`;
 

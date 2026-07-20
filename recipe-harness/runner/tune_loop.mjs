@@ -163,14 +163,37 @@ function scoreViaApi(n) {
   }
 }
 
-function finalize(outcome) {
+function finalize(outcome, discardedSuggestions) {
   const iterations = trajectory(Infinity);
   const best = iterations.reduce((a, b) => (b.score > (a?.score ?? -1) ? b : a), null);
-  const summary = { intent: src.intent, backend, outcome, best_iter: best?.iter ?? null, iterations };
-  writeJ(path.join(loopDir, 'summary.json'), summary);
+  const last = iterations[iterations.length - 1];
+  const summary = {
+    intent: src.intent, backend, outcome, best_iter: best?.iter ?? null, iterations,
+    renders: iterations.length, tuning_rounds: Math.max(0, iterations.length - 1),
+    ...(discardedSuggestions?.length ? { discarded_terminal_suggestions: discardedSuggestions } : {}),
+  };
   console.log(`\n== LOOP ${outcome.toUpperCase()} ==`);
   for (const it of iterations) console.log(`  iter ${it.iter}: ${it.verdict} (${it.score}/10) — ${it.critique.slice(0, 90)}`);
+
+  // Leave the comp in its BEST state, not its LAST. compName is constant across iterations, so each
+  // render overwrites the previous one in place — a run that peaks at 7 and then declines to 5 hands
+  // the artist the 5 while reporting 7. (brownfield/tune_edit.mjs already restores best; this is its
+  // greenfield twin, which did not.) Re-running the best plan is idempotent by construction.
+  if (best && last && best.iter !== last.iter) {
+    const bestPlan = path.join(iterDir(best.iter), 'plan.json');
+    if (fs.existsSync(bestPlan)) {
+      console.log(`restoring the best state (iter ${best.iter}, ${best.score}/10) over the final iter ${last.iter} (${last.score}/10)…`);
+      try {
+        const r = spawnSync('node', [path.join(__dirname, 'recipe_runner.mjs'), bestPlan, `--timeout=${timeoutSec}`], { encoding: 'utf8' });
+        summary.restored_best = r.status === 0 ? best.iter : null;
+        if (r.status !== 0) console.error('  ⚠ could not restore the best state — the comp still holds the final iteration.');
+      } catch (e) { console.error(`  ⚠ restore failed: ${e}`); summary.restored_best = null; }
+    }
+  }
+
+  writeJ(path.join(loopDir, 'summary.json'), summary);
   if (best) console.log(`best: iter ${best.iter} — plan at ${path.join(iterDir(best.iter), 'plan.json')}`);
+  console.log(`renders: ${summary.renders}  tuning rounds: ${summary.tuning_rounds}${summary.discarded_terminal_suggestions ? `  (${summary.discarded_terminal_suggestions.length} terminal suggestion(s) discarded)` : ''}`);
   console.log(`summary: ${path.join(loopDir, 'summary.json')}`);
 }
 
@@ -209,8 +232,21 @@ while (true) {
     writeJ(revPath, review);
   }
 
+  // A review produced from a degraded payload (gpt_score had to drop a frame to get an answer at
+  // all) judged LESS evidence than the loop thinks it did — and with a motion criterion that means
+  // it could not judge the criterion. Flag it loudly rather than letting it steer the next nudge.
+  if (review._degraded) {
+    console.error(`⚠ iter ${n}: the scorer saw a DEGRADED payload (${review._degraded.join(', ')}) — this score judged less evidence than intended; re-run this iteration before trusting it.`);
+  }
+
   if (review.verdict === 'pass') { finalize('pass'); process.exit(0); }
-  if (n >= maxIters) { finalize('fail_max_iters'); process.exit(1); }
+  if (n >= maxIters) {
+    // maxIters counts RENDERS, so the final render's suggestions are generated and never applied.
+    // That is not free: it is the difference between "N chances to improve" and "N-1", and it made
+    // short-budget runs look like plateaus. Record what was discarded instead of hiding it.
+    finalize('fail_max_iters', review.suggestions || []);
+    process.exit(1);
+  }
 
   // revert-on-decline: if this iter scored below the best prior iter, base the next plan
   // on the BEST plan instead of the declined one (suggestions are absolute values, so

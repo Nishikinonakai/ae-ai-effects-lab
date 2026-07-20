@@ -72,6 +72,11 @@ for (const fp of req.frames) {
   content.push({ type: 'image_url', image_url: { url: `data:image/png;base64,${b64(fp)}`, detail: 'high' } });
 }
 
+// What the scorer ACTUALLY saw. The degrade path below silently removes attachments to get a
+// response at all; without this record, a review produced from half the evidence is indistinguishable
+// from a review produced from all of it.
+const degraded = [];
+
 // retry: headless batches die on one transient socket error otherwise (horns, dim-gpt-r1)
 async function callWithRetry(body, tries = 3) {
   for (let a = 1; a <= tries; a++) {
@@ -96,9 +101,15 @@ async function callWithRetry(body, tries = 3) {
           const imgCount = c.filter(x => x.type === 'image_url').length;
           if (ri >= 0) {
             console.error('image_parse_error — retrying WITHOUT the reference thumbnail');
+            degraded.push('dropped_reference_thumbnail');
             c.splice(ri, 2);
           } else if (imgCount > 1) {
+            // Dropping the LAST frame silently is the worst of these: 23 of 24 eval prompts phrase a
+            // motion criterion against the frame PAIR, so a one-frame scorer cannot judge motion and
+            // says so ("does not visibly provide a t4 comparison") — and the caller had no way to
+            // tell that review apart from a genuine low score. It now leaves a trace.
             console.error('image_parse_error persists — dropping the last frame attachment');
+            degraded.push('dropped_last_frame');
             for (let i = c.length - 1; i >= 0; i--) if (c[i].type === 'image_url') { c.splice(i - 1, 2); break; }
           } else {
             console.error(`API ${resp.status}: ${errText}`); process.exit(1);
@@ -123,6 +134,7 @@ const json = text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1);
 const review = JSON.parse(json);
 review.suggestions = review.suggestions || [];
 review._backend = `gpt-api:${model}`;
+if (degraded.length) review._degraded = degraded;
 
 const errs = validateReview(review);
 if (errs.length) { console.error('scorer returned invalid review: ' + errs.join('; ')); process.exit(1); }

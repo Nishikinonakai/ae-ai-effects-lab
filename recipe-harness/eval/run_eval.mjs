@@ -94,7 +94,15 @@ for (const p of prompts) {
   recipe.intent = p.prompt;
   recipe.pass_criteria = p.pass_criteria || [];
   recipe.comp ||= defaults.comp;
-  recipe.renderFrames = defaults.renderFrames || recipe.renderFrames;
+  // The PLANNER's sampling choice wins. This line used to read
+  //   recipe.renderFrames = defaults.renderFrames || recipe.renderFrames
+  // and defaults.renderFrames is [1,4] in prompts.json — always truthy — so the planner's choice was
+  // discarded on EVERY round-2 prompt. That matters more than it looks: 23 of 24 prompts phrase a
+  // motion criterion against the sampled pair, and t=1 sits inside the emitter fill transient (with
+  // particle life 7.5-9s in a 6s comp, t1 holds a fraction of steady-state population). The scorer
+  // then correctly reports "t1 is extremely sparse" as a defect that no birth-rate nudge can fix —
+  // eval-e02 drove Particles/sec 28→34→48 and the t1:t4 ratio got WORSE (5.54x→6.01x), score 7,7,7.
+  recipe.renderFrames ||= defaults.renderFrames;
   fs.writeFileSync(planPath, JSON.stringify(recipe, null, 2));
   row.stack = (recipe.effects || []).map(e => e.matchName);
   row.rationale = recipe._rationale || '';

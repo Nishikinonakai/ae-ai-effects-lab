@@ -109,3 +109,88 @@ and it is much closer to what the visual loop is actually designed to close — 
 is why the loop stalls at 5-7 instead of climbing, not why the plan is wrong.
 
 n=4, single run, no repeats. Treat the direction as real and the magnitude as noisy.
+
+---
+
+## Why the loop stalls at 5–7 — adversarial multi-agent diagnosis
+
+*2026-07-20 · 5 investigators × independent verifiers × synthesis, over 24 loop dirs / 50 reviews /
+124 suggestions. Full report: workflow `wf_5691bf0f-0c1`.*
+
+**Method caveat first:** only 1 of 33 candidate findings survived the adversarial verify pass. That
+verifier was told to default to `survives=false` when uncertain, which was too harsh — most value
+came from the synthesis stage doing its own primary measurement rather than from the surviving set.
+Read the numbers below as *measured by one agent and re-verified by me in the code*, not as
+consensus.
+
+### The premise was half wrong
+
+Round-2 concluded "structure is mostly right, the gap is parameter values." The evidence only half
+supports that. The loop **is** closing the value gap it can see — eval-e05 bisected its way to a
+pass. What remains at 7 is a mix of **harness measurement artifacts** and **"reads as X, not Y"**
+character complaints, and the second is not a scalar at all:
+
+> e02 *"particles read as soft glowing dots rather than distinct small bubbles"* · e06 *"更像发光LED
+> 网格"* · e19 *"更像数字下落字符而非连续的高速雨线"* · e24 *"Emboss 的混合量…削弱了严格双色"*
+
+Bubbles-vs-dots is a particle-type choice. Strict duotone vs Emboss mid-tones is a **stack-order**
+problem. The suggestion vocabulary has `param`/`expression`/`effect`(add-only)/`camera`/`background`
+— no remove, no reorder, no type change. That is a capability the loop does not have, not a bug.
+
+### Four defects found and fixed (each verified in the code first)
+
+| # | defect | fix |
+|---|---|---|
+| 1 | **`run_eval.mjs` discarded the planner's sampling choice on every prompt** — `defaults.renderFrames` is `[1,4]` and always truthy. Mine, written the same day. | precedence inverted; planner now chooses |
+| 2 | the planner was never told **when** to sample | `plan_recipe` now states the three constraints |
+| 3 | `gpt_score` **silently drops the last frame** on `image_parse_error` — no trace in `review.json`. 4 reviews complain the second frame was absent while both PNGs sit valid on disk. | records `_degraded`; `tune_loop` warns loudly |
+| 4 | `tune_loop.finalize()` reported `best: iter N` and **left the comp in its LAST state** | restores the best plan (its brownfield twin already did) |
+
+**Why #1/#2 matter more than they look.** 23 of 24 prompts phrase a motion criterion against the
+sampled pair, and `t=1` sits inside the emitter fill transient — with particle life 7.5–9s in a 6s
+comp, the first sample holds a fraction of steady-state population. The scorer then correctly
+reports *"t1 is extremely sparse"* as a defect **no birth-rate nudge can remove**: e02 drove
+Particles/sec 28→34→48 and the t1:t4 ratio got *worse* (5.54× → 6.01×), scoring 7, 7, 7.
+
+The positive control: e05 passed at exactly the iteration its ratio collapsed — life 6→2 took the
+ratio 5.06× → 1.32× and the score 7 → 8. *"Population density is now reasonably consistent between
+t1 and t4, avoiding the earlier accumulation problem."* **The pass was bought by making the pair
+measurable, not by making the render prettier.**
+
+Confidence: moderate, not high. n=1 causal control, and two facts cut against it — e21 passed at
+9/10 with a 2.92× ratio, and e01 improved 5→7 while its ratio worsened. The honest claim is *largest
+tractable contributor with a demonstrated escape route*, not majority cause.
+
+### Also true, not yet fixed
+
+- **`maxIters` counts RENDERS, so `--max-iters=3` buys two tuning rounds, not three.** 38 of 124
+  suggestions were emitted at a terminal iteration and discarded. Worse, e01 ran at 2 and e15/e19 at
+  **1** — one render, zero tuning — and are recorded as `fail_max_iters`, inflating the plateau.
+  Now recorded in `summary.json` as `renders` / `tuning_rounds` / `discarded_terminal_suggestions`.
+- **Causal mis-attribution.** e07's complaint is blown-out particle cores; the loop drove Deep Glow's
+  Exposure 0.65→0.35→0.12→0 while the blowout came from Particular's own additive Glow Sphere,
+  never touched. e02's criterion is per-particle sway; the loop escalated Wind X, which translates
+  the whole field uniformly and can never produce individual arcs. **The values are applied
+  faithfully to the wrong parameters.**
+- **param/expression collision:** a `param` nudge on an expression-driven property is a silent no-op
+  reported `ok:true` (2 of 69). Do *not* fix by deleting the param row — three collisions in the
+  corpus are intentional base-plus-modulation where the expression reads the static value.
+
+### ⚠ Data integrity — `loop/eval-*` is NOT the round-2 record
+
+Four directories disagree with `results_r2.jsonl` (e03 `[3,3,3]`→`[6,7,7]`, e24 `[3]`→`[5,7,6]`,
+e04, e08) because the native-card follow-up **re-ran those four in place** while logging to a
+separate ledger. The directory also still holds July-18 agent-backend runs (e09–e14, e16, e18, e23)
+and dev runs at `max_iters` 1 and 5. Round-2 proper is the 11 ledger rows.
+
+Consequence: any aggregate computed over `loop/eval-*` mixes four experiments. **Re-run round-2 into
+a clean directory before the next investigation** — effects smaller than ~2 points are currently
+unmeasurable.
+
+### The experiment to run next
+
+Re-render the existing failing plans **byte-for-byte unchanged** — no planner change, no param
+change — moving *only* the sample times, and re-score. ~10 runs, no new planning. If e01/e02/e07
+move off 7, sampling is the binding constraint. If they hold, the residual is causal mis-attribution
+and structural vocabulary, and effort should go there instead. **Run this before building anything
+else on #1.**
