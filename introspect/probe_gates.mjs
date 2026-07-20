@@ -161,6 +161,7 @@ if (!shut0.length) { console.log('nothing is gated on a default instance — no 
 // 3) flip each gate to each value, one round-trip per flip, and see what opens
 const gates = meta.gates.slice(0, maxGates);
 const opened = new Map();      // matchName -> [{gate,name,value}]
+let completed = 0;             // gates whose flips actually finished, so an abort cannot look complete
 let wedged = null;
 for (let gi = 0; gi < gates.length; gi++) {
   const g = gates[gi];
@@ -201,6 +202,7 @@ for (let gi = 0; gi < gates.length; gi++) {
     } else console.log('—');
   }
   if (wedged) break;
+  completed++;
   // restore this gate before moving on, so gates are measured independently
   try { await runAE(`(function(){${PRE} var fx=fxOf(); app.beginUndoGroup("g"); fx.property(${JSON.stringify(g.mn)}).setValue(${g.now}); app.endUndoGroup(); return "ok"; })()`); } catch {}
 }
@@ -218,7 +220,8 @@ const out = {
   _method: 'single-gate flips, one bridge round-trip each (visibility recomputes only between script executions)',
   _caveat: 'single-gate flips only — a param that needs two gates open together still reads as shut. Requires the comp to be displayed (this tool asserts that on every probe); without it AE reports every param settable.',
   ...(wedged ? { _abortedAfter: wedged, _partial: true } : {}),
-  gatesProbed: gates.length,
+  gatesProbed: completed,   // COMPLETED, not planned — recording the plan made an aborted run read as a finished one
+  gatesPlanned: gates.length,
   shutOnDefault: shut0.length,
   conditionallyGated: conditional.length,
   probablyDead: dead.length,

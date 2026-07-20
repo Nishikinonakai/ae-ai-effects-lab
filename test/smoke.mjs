@@ -167,7 +167,13 @@ console.log('\nessence lookup — which levers may be reached for');
 
   // the two categories that cost real iterations when handled wrongly
   ok('an unreachable lever is never offered', !names.includes('Spread'));
-  ok('Spread is absent from the prompt text too', !/PEDG-0011/.test(lc.block));
+  // It must be NAMED, not merely absent. This assertion used to demand the opposite — that PEDG-0011
+  // never appear in the prompt at all — which quietly encoded the wrong contract: the planner knows
+  // Deep Glow from its own training and will reach for Spread whether or not the card mentions it,
+  // so silence is not a warning. What must never happen is Spread appearing as something to REACH
+  // FOR; appearing on an explicit do-not-touch line is the whole point.
+  ok('a dead lever is named as dead, not silently omitted', /⟨DEAD/.test(lc.block) && /PEDG-0011/.test(lc.block));
+  ok('the dead line is not an offer', !new RegExp('·[^\\n]*PEDG-0011').test(lc.block));
   ok('a gated lever IS offered', names.includes('Glow Iterations'));
   ok('a gated lever carries its gate in the prompt', /Auto Iterations \[PEDG-0050\] = 0/.test(lc.block));
   ok('a gated lever is flagged as such', lc.levers.find(l => l.name === 'Glow Iterations')?.gated === true);

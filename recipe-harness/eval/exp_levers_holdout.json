@@ -1,170 +1,171 @@
 {
-  "_date": "2026-07-20",
-  "model": "gemini-3-flash-preview",
-  "repeats": 5,
-  "keyUsed": true,
-  "rows": [
-    {
-      "id": "e04",
-      "iter": 1,
-      "oldScore": 6,
-      "planLevers": [
-        "BCC_TEXTURES-1001",
-        "BCC_TEXTURES-1002",
-        "BCC_TEXTURES-1018",
-        "BCC_TEXTURES-1019",
-        "BCC4Damaged TV-8192008",
-        "BCC4Damaged TV-8192021",
-        "BCC4Damaged TV-8192025",
-        "BCC4Damaged TV-8192026",
-        "BCC4Damaged TV-8192027",
-        "PEDG-0001",
-        "PEDG-0004",
-        "PEDG-0005",
-        "PEDG-0002"
-      ],
-      "off": {
-        "n": 4,
-        "meanScore": 4.25,
-        "distinctLevers": [
-          "PEDG-0001",
-          "BCC_TEXTURES-1001",
-          "BCC4Damaged TV-8192021",
-          "BCC4Damaged TV-8192008",
-          "BCC4Damaged TV-8192025",
-          "PEDG-0002",
-          "ADBE Fractal Noise-0002"
-        ],
-        "offPlanLevers": [
-          "ADBE Fractal Noise-0002"
-        ],
-        "meanSuggestions": 3.75,
-        "correctHit": [
-          "BCC4Damaged TV-8192008"
-        ],
-        "wrongHit": [
-          "BCC_TEXTURES-1001",
-          "BCC4Damaged TV-8192021",
-          "PEDG-0002"
-        ],
-        "correctHitRate": 0.5
-      },
-      "on": {
-        "n": 4,
-        "meanScore": 4.5,
-        "distinctLevers": [
-          "BCC4Damaged TV-8192004",
-          "ADBE Fractal Noise-0010",
-          "ADBE Fractal Noise-0004",
-          "BCC_TEXTURES-1001",
-          "ADBE Fractal Noise-0015",
-          "ADBE Fractal Noise-0023",
-          "PEDG-0002",
-          "PEDG-0005"
-        ],
-        "offPlanLevers": [
-          "BCC4Damaged TV-8192004",
-          "ADBE Fractal Noise-0010",
-          "ADBE Fractal Noise-0004",
-          "ADBE Fractal Noise-0015",
-          "ADBE Fractal Noise-0023"
-        ],
-        "meanSuggestions": 4.25,
-        "correctHit": [
-          "BCC4Damaged TV-8192004"
-        ],
-        "wrongHit": [
-          "BCC_TEXTURES-1001",
-          "PEDG-0002"
-        ],
-        "correctHitRate": 1
-      }
-    },
-    {
-      "id": "e08",
-      "iter": 2,
-      "oldScore": 5,
-      "planLevers": [
-        "BCC4Damaged TV-8192008",
-        "BCC4Damaged TV-8192011",
-        "BCC4Damaged TV-8192004",
-        "BCC4Damaged TV-8192021",
-        "BCC4Damaged TV-8192015",
-        "BCC4Damaged TV-8192032",
-        "BCC4Damaged TV-8192035",
-        "BCC4Damaged TV-8192038",
-        "BCC4Damaged TV-8192025",
-        "BCC4Damaged TV-8192019",
-        "BCC4Damaged TV-8192002",
-        "BCC_CAMERASHAKE-1001",
-        "BCC_CAMERASHAKE-1000",
-        "BCC_CAMERASHAKE-1014",
-        "BCC_CAMERASHAKE-1015",
-        "BCC_CAMERASHAKE-1002",
-        "BCC_CAMERASHAKE-1003",
-        "BCC_CAMERASHAKE-1016",
-        "BCC_CAMERASHAKE-1012"
-      ],
-      "off": {
-        "n": 4,
-        "meanScore": 4.5,
-        "distinctLevers": [
-          "ADBE Fractal Noise-0006",
-          "BCC4Damaged TV-8192032",
-          "BCC4Damaged TV-8192038",
-          "BCC_CAMERASHAKE-1000",
-          "BCC4Damaged TV-8192008",
-          "BCC_CAMERASHAKE-1013",
-          "BCC4Damaged TV-8192011"
-        ],
-        "offPlanLevers": [
-          "ADBE Fractal Noise-0006",
-          "BCC_CAMERASHAKE-1013"
-        ],
-        "meanSuggestions": 4.5,
-        "correctHit": [
-          "BCC4Damaged TV-8192032",
-          "BCC4Damaged TV-8192038"
-        ],
-        "wrongHit": [
-          "BCC_CAMERASHAKE-1000",
-          "BCC4Damaged TV-8192008",
-          "BCC_CAMERASHAKE-1013"
-        ],
-        "correctHitRate": 1
-      },
-      "on": {
-        "n": 4,
-        "meanScore": 5.5,
-        "distinctLevers": [
-          "BCC4Damaged TV-8192032",
-          "BCC4Damaged TV-8192038",
-          "ADBE Fractal Noise-0004",
-          "ADBE Fractal Noise-0015",
-          "BCC4Damaged TV-8192008",
-          "BCC4Damaged TV-8192011",
-          "BCC_CAMERASHAKE-1000",
-          "ADBE Fractal Noise-0023",
-          "ADBE Fractal Noise-0010",
-          "BCC4Damaged TV-8192004"
-        ],
-        "offPlanLevers": [
-          "ADBE Fractal Noise-0004",
-          "ADBE Fractal Noise-0015",
-          "ADBE Fractal Noise-0023",
-          "ADBE Fractal Noise-0010"
-        ],
-        "meanSuggestions": 5.5,
-        "correctHit": [
-          "BCC4Damaged TV-8192032",
-          "BCC4Damaged TV-8192038"
-        ],
-        "wrongHit": [
-          "BCC4Damaged TV-8192008",
-          "BCC_CAMERASHAKE-1000"
-        ],
-        "correctHitRate": 1
-      }
-    }
-  ]
+ "_retracted": "RETRACTED: \"75%->100%\" decomposes to one case moving two runs; Fisher p=0.47. Not distinguishable from chance. See ROUND2.md \"RETRACTION\".",
+ "_date": "2026-07-20",
+ "model": "gemini-3-flash-preview",
+ "repeats": 5,
+ "keyUsed": true,
+ "rows": [
+  {
+   "id": "e04",
+   "iter": 1,
+   "oldScore": 6,
+   "planLevers": [
+    "BCC_TEXTURES-1001",
+    "BCC_TEXTURES-1002",
+    "BCC_TEXTURES-1018",
+    "BCC_TEXTURES-1019",
+    "BCC4Damaged TV-8192008",
+    "BCC4Damaged TV-8192021",
+    "BCC4Damaged TV-8192025",
+    "BCC4Damaged TV-8192026",
+    "BCC4Damaged TV-8192027",
+    "PEDG-0001",
+    "PEDG-0004",
+    "PEDG-0005",
+    "PEDG-0002"
+   ],
+   "off": {
+    "n": 4,
+    "meanScore": 4.25,
+    "distinctLevers": [
+     "PEDG-0001",
+     "BCC_TEXTURES-1001",
+     "BCC4Damaged TV-8192021",
+     "BCC4Damaged TV-8192008",
+     "BCC4Damaged TV-8192025",
+     "PEDG-0002",
+     "ADBE Fractal Noise-0002"
+    ],
+    "offPlanLevers": [
+     "ADBE Fractal Noise-0002"
+    ],
+    "meanSuggestions": 3.75,
+    "correctHit": [
+     "BCC4Damaged TV-8192008"
+    ],
+    "wrongHit": [
+     "BCC_TEXTURES-1001",
+     "BCC4Damaged TV-8192021",
+     "PEDG-0002"
+    ],
+    "correctHitRate": 0.5
+   },
+   "on": {
+    "n": 4,
+    "meanScore": 4.5,
+    "distinctLevers": [
+     "BCC4Damaged TV-8192004",
+     "ADBE Fractal Noise-0010",
+     "ADBE Fractal Noise-0004",
+     "BCC_TEXTURES-1001",
+     "ADBE Fractal Noise-0015",
+     "ADBE Fractal Noise-0023",
+     "PEDG-0002",
+     "PEDG-0005"
+    ],
+    "offPlanLevers": [
+     "BCC4Damaged TV-8192004",
+     "ADBE Fractal Noise-0010",
+     "ADBE Fractal Noise-0004",
+     "ADBE Fractal Noise-0015",
+     "ADBE Fractal Noise-0023"
+    ],
+    "meanSuggestions": 4.25,
+    "correctHit": [
+     "BCC4Damaged TV-8192004"
+    ],
+    "wrongHit": [
+     "BCC_TEXTURES-1001",
+     "PEDG-0002"
+    ],
+    "correctHitRate": 1
+   }
+  },
+  {
+   "id": "e08",
+   "iter": 2,
+   "oldScore": 5,
+   "planLevers": [
+    "BCC4Damaged TV-8192008",
+    "BCC4Damaged TV-8192011",
+    "BCC4Damaged TV-8192004",
+    "BCC4Damaged TV-8192021",
+    "BCC4Damaged TV-8192015",
+    "BCC4Damaged TV-8192032",
+    "BCC4Damaged TV-8192035",
+    "BCC4Damaged TV-8192038",
+    "BCC4Damaged TV-8192025",
+    "BCC4Damaged TV-8192019",
+    "BCC4Damaged TV-8192002",
+    "BCC_CAMERASHAKE-1001",
+    "BCC_CAMERASHAKE-1000",
+    "BCC_CAMERASHAKE-1014",
+    "BCC_CAMERASHAKE-1015",
+    "BCC_CAMERASHAKE-1002",
+    "BCC_CAMERASHAKE-1003",
+    "BCC_CAMERASHAKE-1016",
+    "BCC_CAMERASHAKE-1012"
+   ],
+   "off": {
+    "n": 4,
+    "meanScore": 4.5,
+    "distinctLevers": [
+     "ADBE Fractal Noise-0006",
+     "BCC4Damaged TV-8192032",
+     "BCC4Damaged TV-8192038",
+     "BCC_CAMERASHAKE-1000",
+     "BCC4Damaged TV-8192008",
+     "BCC_CAMERASHAKE-1013",
+     "BCC4Damaged TV-8192011"
+    ],
+    "offPlanLevers": [
+     "ADBE Fractal Noise-0006",
+     "BCC_CAMERASHAKE-1013"
+    ],
+    "meanSuggestions": 4.5,
+    "correctHit": [
+     "BCC4Damaged TV-8192032",
+     "BCC4Damaged TV-8192038"
+    ],
+    "wrongHit": [
+     "BCC_CAMERASHAKE-1000",
+     "BCC4Damaged TV-8192008",
+     "BCC_CAMERASHAKE-1013"
+    ],
+    "correctHitRate": 1
+   },
+   "on": {
+    "n": 4,
+    "meanScore": 5.5,
+    "distinctLevers": [
+     "BCC4Damaged TV-8192032",
+     "BCC4Damaged TV-8192038",
+     "ADBE Fractal Noise-0004",
+     "ADBE Fractal Noise-0015",
+     "BCC4Damaged TV-8192008",
+     "BCC4Damaged TV-8192011",
+     "BCC_CAMERASHAKE-1000",
+     "ADBE Fractal Noise-0023",
+     "ADBE Fractal Noise-0010",
+     "BCC4Damaged TV-8192004"
+    ],
+    "offPlanLevers": [
+     "ADBE Fractal Noise-0004",
+     "ADBE Fractal Noise-0015",
+     "ADBE Fractal Noise-0023",
+     "ADBE Fractal Noise-0010"
+    ],
+    "meanSuggestions": 5.5,
+    "correctHit": [
+     "BCC4Damaged TV-8192032",
+     "BCC4Damaged TV-8192038"
+    ],
+    "wrongHit": [
+     "BCC4Damaged TV-8192008",
+     "BCC_CAMERASHAKE-1000"
+    ],
+    "correctHitRate": 1
+   }
+  }
+ ]
 }

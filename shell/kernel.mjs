@@ -20,14 +20,18 @@
 //   dump_comp (perceive) → plan_edit (decide) → tune_edit (act + verify + converge) → present
 // and then the artist decides — Accept keeps it, Rollback undoes the WHOLE request, deterministically.
 //
-// usage: node shell/kernel.mjs [--model=gpt-5.6-terra] [--max-iters=3] [--accept=8] [--once]
+// usage: node shell/kernel.mjs [--model=<provider default>] [--max-iters=3] [--accept=8] [--once]
+//        [--dashboard-port=7867] [--no-dashboard]
+// NOTE on --accept: 8 is not calibrated against the ACTIVE scorer. The default Gemini model scored
+// 3-7 across 15 cases and never once emitted an 8 (recipe-harness/vision/ab_report.json), so on that
+// corpus the accept path is unreachable and every run ends in handover. See KNOWN_ISSUES.md.
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { spawn, spawnSync } from 'child_process';
 import { loadCards, cardFor } from '../introspect/essence/lookup.mjs';
-import { defaultModel, spendSummary, setPurpose, activeConfig } from './llm.mjs';
+import { defaultModel, spendSummary, setPurpose, activeConfig, beginRequest, endRequest } from './llm.mjs';
 import { startDashboard } from './dashboard.mjs';
 import { budgetStatus } from './budget.mjs';
 
@@ -209,6 +213,9 @@ async function handleRun(req) {
   }
 
   cancelled = false;
+  // Open the per-request budget window. Its scope is the whole tune, not one API call — the cap is
+  // there to stop a loop that keeps iterating, and a loop is many calls.
+  beginRequest(intent.slice(0, 60));
   setPreviewWidth(req.panelWidth);
   const carried = session?.appliedReports?.length ? session.appliedReports : [];
   if (carried.length) console.log(`carrying ${carried.length} unaccepted edit(s) from "${session.intent}" into this request's rollback stack`);
@@ -382,8 +389,14 @@ async function poll() {
     else if (req.action === 'rollback') await handleRollback();
     else setState({ phase: 'error', message: `unknown action "${req.action}"` });
   } catch (e) {
-    setState({ phase: 'error', message: `kernel error: ${String(e).slice(0, 300)}` });
+    // A budget refusal is not a crash. Naming it as one sends the artist to the logs looking for a
+    // bug, when the answer is a number they chose and can change in one command.
+    const msg = /BudgetExceeded/.test(e?.name || '')
+      ? `${e.message}`
+      : `kernel error: ${String(e).slice(0, 300)}`;
+    setState({ phase: /BudgetExceeded/.test(e?.name || '') ? 'budget' : 'error', message: msg });
   } finally {
+    endRequest();
     busy = false;
   }
 }

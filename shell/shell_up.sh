@@ -8,9 +8,12 @@
 #   1. bridge_up.sh          — AE running + the MCP bridge panel answering (the kernel's hands)
 #   2. install the panel     — copy ae-ai-panel.jsx into AE's ScriptUI Panels folder if changed
 #   3. launch the panel      — via DoScriptFile, no Window-menu click needed
-#   4. start the kernel      — the brain, watching ~/Documents/ae-ai-shell/request.json
+#   4. start the kernel      — the brain: watches ~/Documents/ae-ai-shell/request.json, and serves
+#                              the cost/history/settings dashboard on http://127.0.0.1:7867/
 #
-# usage: ./shell/shell_up.sh [--no-panel]   (--no-panel: kernel only, for headless testing)
+# usage: ./shell/shell_up.sh [--no-panel] [kernel flags...]
+#   --no-panel        kernel only, for headless testing
+#   any other flag    forwarded to the kernel (--max-iters=, --accept=, --model=, --dashboard-port=)
 set -e
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 AE_APP="Adobe After Effects 2022"
@@ -41,5 +44,14 @@ if [ "$1" != "--no-panel" ]; then
 fi
 
 echo "→ kernel"
-echo "   channel: $SHELL_DIR"
-exec node "$REPO/shell/kernel.mjs" "${@:2}"
+echo "   channel:   $SHELL_DIR"
+echo "   dashboard: http://127.0.0.1:7867/  (cost · history · settings)"
+echo "   keys:      node shell/keys.mjs status      budget: node shell/budget.mjs"
+
+# Forward every flag EXCEPT the one this script consumes. `"${@:2}"` dropped the first argument
+# unconditionally, so `shell_up.sh --max-iters=5` silently ran with the default — and every flag the
+# kernel gained after this script was written (dashboard port, budget, model) was unreachable
+# through the one command that is supposed to start the product.
+KERNEL_ARGS=()
+for a in "$@"; do [ "$a" = "--no-panel" ] || KERNEL_ARGS+=("$a"); done
+exec node "$REPO/shell/kernel.mjs" "${KERNEL_ARGS[@]}"

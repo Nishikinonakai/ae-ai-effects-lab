@@ -187,7 +187,12 @@
 
     var phase = s.phase || "idle";
     var busy = (phase === "perceiving" || phase === "planning" || phase === "applying" || phase === "rolling-back");
-    runBtn.enabled = !busy;
+    // "cancelling" is not in `busy` because Stop must go dead the moment it is pressed — but that
+    // left Make it LIVE during the wind-down, so a second click could start a new request while the
+    // old one was still undoing its edits, against a comp mid-rollback. Cancelling is a state where
+    // NEITHER button should accept input: the run is not finished, and stopping it again is a no-op.
+    var cancelling = (phase === "cancelling");
+    runBtn.enabled = !busy && !cancelling;
     stopBtn.enabled = busy;
     acceptBtn.enabled = !!s.canAccept;
     rollbackBtn.enabled = !!s.canRollback;

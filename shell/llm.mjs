@@ -89,11 +89,42 @@ export class BudgetExceeded extends Error {
   }
 }
 
+export class RequestBudgetExceeded extends Error {
+  constructor(spent, cap, label) {
+    super(`this request has spent $${spent.toFixed(4)} of its $${cap.toFixed(2)} cap${label ? ` (${label})` : ''}. It is stopping here rather than iterating further. Raise it with node shell/budget.mjs request <usd>.`);
+    this.name = 'RequestBudgetExceeded';
+    this.spent = spent; this.cap = cap;
+  }
+}
+
+// ONE user request — a whole tune, however many iterations it takes. The per-request cap exists to
+// stop a loop that keeps finding "one more thing to try"; that loop is many API calls, so a cap
+// applied per API call would never fire. The kernel opens a request here before planning and the
+// window stays open until the next one, so every call the tune makes counts against the same cap.
+//
+// This was settable for a day before it was enforced anywhere — budget.mjs accepted `request 0.10`,
+// printed it back, wrote it to disk, and nothing ever read it. A limit that only appears to exist is
+// worse than no limit, because it is the one you stop watching for.
+let requestWindow = null;   // { startedMs, label }
+export function beginRequest(label) { requestWindow = { startedMs: Date.now(), label: label || '' }; return requestWindow; }
+export function endRequest() { const w = requestWindow; requestWindow = null; return w; }
+export function requestSpend() {
+  if (!requestWindow) return null;
+  return spendSummary({ sinceMs: Math.max(1000, Date.now() - requestWindow.startedMs) }).total;
+}
+
 // Called before every paid call. Throwing is deliberate: a gate that logs a warning and proceeds is
 // not a gate.
 export function assertBudget() {
-  const cap = budget().dailyUsd;
-  if (!cap) return { capped: false };
+  const b = budget();
+
+  if (b.perRequestUsd && requestWindow) {
+    const spent = requestSpend();
+    if (spent >= b.perRequestUsd) throw new RequestBudgetExceeded(spent, b.perRequestUsd, requestWindow.label);
+  }
+
+  const cap = b.dailyUsd;
+  if (!cap) return { capped: false, request: requestWindow ? { spent: requestSpend(), cap: b.perRequestUsd || null } : null };
   const spent = spendSummary({ sinceMs: 24 * 3600 * 1000 }).total;
   if (spent >= cap) throw new BudgetExceeded(spent, cap);
   return { capped: true, spent, cap, remaining: cap - spent };

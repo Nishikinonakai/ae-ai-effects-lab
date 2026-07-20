@@ -129,8 +129,23 @@
    "why": "not writable; no single gate opened it across 19 gates"
   },
   {
-   "name": "Edge margins Left/Top/Right/Bottom",
-   "matchName": "PEDG-0026..0029",
+   "name": "Edge margin Left",
+   "matchName": "PEDG-0026",
+   "why": "not writable; no single gate opened them across 19 gates"
+  },
+  {
+   "name": "Edge margin Top",
+   "matchName": "PEDG-0027",
+   "why": "not writable; no single gate opened them across 19 gates"
+  },
+  {
+   "name": "Edge margin Right",
+   "matchName": "PEDG-0028",
+   "why": "not writable; no single gate opened them across 19 gates"
+  },
+  {
+   "name": "Edge margin Bottom",
+   "matchName": "PEDG-0029",
    "why": "not writable; no single gate opened them across 19 gates"
   },
   {

@@ -243,6 +243,19 @@ if (editClass === 'inert') {
     ]),
     'Re-read the lever list above and the CURRENT PLAN before choosing; check what each param already holds.',
   ].join('\n');
+} else if (editClass === 'negligible') {
+  // The third class existed in frame_delta.mjs from the start and nothing ever asked for it — every
+  // near-inert edit fell through to the generic numbers block below, which reports "0.04% of pixels
+  // changed" and leaves the scorer to decide whether that is a little or nothing. That is exactly
+  // the judgement the pixel diff was added to take off it. `negligible` means the lever IS live —
+  // unlike inert, it is not gated — but its effect is confined to a sliver of the frame, so the
+  // answer is a DIFFERENT lever or a much larger step, not one more nudge of this one.
+  deltaBlock = [
+    `MEASURED PIXEL DELTA: this edit moved only ${(editDelta.movedFraction * 100).toFixed(3)}% of pixels, max |Δ| ${editDelta.maxDelta.toFixed(0)}/255.`,
+    'This is NEGLIGIBLE but not inert: the lever is live and did take effect — it simply has almost no',
+    'reach at this setting. A small further nudge will not be visible either. Either take a MUCH larger',
+    'step on this lever, or accept it is the wrong lever for what the intent asks and choose another.',
+  ].join('\n');
 } else if (editDelta.ok) {
   deltaBlock = `MEASURED PIXEL DELTA for this edit: ${(editDelta.movedFraction * 100).toFixed(2)}% of pixels changed, mean |Δ| ${editDelta.meanDelta.toFixed(2)}/255, max |Δ| ${editDelta.maxDelta.toFixed(0)}/255`
     + (cumulativeDelta.ok && baselineArg ? ` · cumulatively vs the ORIGINAL baseline: ${(cumulativeDelta.movedFraction * 100).toFixed(2)}% of pixels, mean |Δ| ${cumulativeDelta.meanDelta.toFixed(2)}/255.` : '.')
@@ -288,6 +301,37 @@ if (r.status !== 0) { console.error('scorer failed:\n' + (r.stderr || r.stdout))
 const reviewPath = path.join(reqDir, 'review.json');
 if (!fs.existsSync(reviewPath)) { console.error('scorer produced no review.json'); process.exit(1); }
 const review = JSON.parse(fs.readFileSync(reviewPath, 'utf8'));
+
+// CONFIRM A PASS BEFORE BELIEVING IT. The measured within-arm sd of this scorer is 0.27-0.71, with
+// +/-1 swings on pixel-identical input — so a single draw landing exactly on the bar is a coin flip,
+// not a result. A judge that "usually says 7" has roughly a 1-in-8 chance of saying 8, and the panel
+// would then tell the artist the job is done on the strength of one lucky sample.
+//
+// This confirmation existed in tune_loop.mjs (the greenfield eval path) from the moment the defect
+// was found, and PRD §11.3 recorded it as fixed. It was not fixed HERE — on the path the product
+// actually runs when someone types into the panel. That is the sixth instance of §十三: the same
+// abstraction built in one place and absent in the other, invisible because each half works alone.
+//
+// Re-scoring only fires at the boundary, so it costs two extra calls per RUN, not per iteration.
+// Median of three turns a 1-in-8 fluke into about 1 in 50.
+if (review.score >= acceptBar && !review._confirmed) {
+  const draws = [review.score];
+  for (let k = 0; k < 2; k++) {
+    const again = spawnSync('node', [GPT_SCORE, reqPath, ...(model ? [`--model=${model}`] : [])], { encoding: 'utf8' });
+    if (again.status !== 0 || !fs.existsSync(reviewPath)) continue;
+    draws.push(JSON.parse(fs.readFileSync(reviewPath, 'utf8')).score);
+  }
+  const median = [...draws].sort((a, b) => a - b)[Math.floor(draws.length / 2)];
+  console.log(`confirming pass: draws [${draws.join(',')}] median ${median} vs bar ${acceptBar}`);
+  review._confirmed = draws;
+  review._median = median;
+  if (median < acceptBar) {
+    console.log(`  → NOT confirmed (${median} < ${acceptBar}) — the single ${review.score} was a draw, not a result. Keep tuning.`);
+    review.score = median;
+    review.verdict = 'fail';
+  }
+  fs.writeFileSync(reviewPath, JSON.stringify(review, null, 2));
+}
 
 // map score -> decision
 const score = review.score;

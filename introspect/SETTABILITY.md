@@ -94,7 +94,7 @@ of the viewer, so it re-read stale visibility and reported "0 conditionally gate
   `Center XY` correctly stays shut. This matches ground truth: 49 shipped recipes set `Size Y`, and
   a live run confirms the runner sets the gate first, then writes Y ✓ Z ✓ while `Center XY` fails ✗.
 - **Deep Glow** — `Auto Iterations = 0` opens `Glow Iterations`. The remaining 8 params resist all
-  19 gates and are treated as unreachable.
+  18 of 19 gates — the run aborted before ADBE Force CPU GPU — and are treated as unreachable on that basis.
 
 So both categories are real, and the essence cards now carry both:
 

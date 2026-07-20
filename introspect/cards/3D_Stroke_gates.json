@@ -1,4 +1,5 @@
 {
+ "_retracted": "Produced by probe_gates BEFORE the display requirement was found; a \"still shut\" result from that version proves nothing. Re-run before citing.",
  "effect": "3D Stroke",
  "_date": "2026-07-19",
  "_method": "single-gate flips, one bridge round-trip each (visibility recomputes only between script executions)",

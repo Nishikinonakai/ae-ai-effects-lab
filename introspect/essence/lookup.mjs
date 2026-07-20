@@ -97,6 +97,16 @@ export function leverContext(effectMatchNames, usedParams = [], dir = __dirname)
       lines.push(`  ${inPlay ? '·(in play)' : '·'} ${l.name} [${l.matchName}]${rangeStr(l)}${l.enum ? ' ENUM' : ''} — ${clip(l.effect)}`);
     }
 
+    // NAME the dead ones. Filtering them out silently is only half the job: the planner knows these
+    // effects from its own training and will reach for Deep Glow's Spread whether or not this card
+    // mentions it — absence is not instruction. The filter above has in fact never fired, because
+    // dead levers were deleted from key_levers outright, which means until now this knowledge was
+    // stored and never delivered. One line is cheap; a wasted tune iteration is not.
+    const dead = (card.unreachable_levers || []).filter(u => u.matchName);
+    if (dead.length) {
+      lines.push(`  ⟨DEAD — readable but never writable; do NOT reach for these⟩ ${dead.map(u => `${u.name} [${u.matchName}]`).join(', ')}`);
+    }
+
     // --- gated levers: real, useful, but they need their gate opened FIRST ---
     // These are the "hidden parameter gating" cases the ontology exists to hold. Hiding them would
     // throw away usable range; offering them naked would produce an edit that throws. So they are

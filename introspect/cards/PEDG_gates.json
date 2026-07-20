@@ -5,7 +5,7 @@
  "_caveat": "single-gate flips only — a param that needs two gates open together still reads as shut. Requires the comp to be displayed (this tool asserts that on every probe); without it AE reports every param settable.",
  "_abortedAfter": "GPU Rendering = 2",
  "_partial": true,
- "gatesProbed": 19,
+ "gatesProbed": 18,
  "shutOnDefault": 9,
  "conditionallyGated": 1,
  "probablyDead": 8,
@@ -27,5 +27,7 @@
   "PEDG-0027",
   "PEDG-0028",
   "PEDG-0029"
- ]
+ ],
+ "gatesPlanned": 19,
+ "_note": "gatesProbed is now the count actually completed. It previously recorded the PLANNED count, which made an aborted run read as a complete one."
 }

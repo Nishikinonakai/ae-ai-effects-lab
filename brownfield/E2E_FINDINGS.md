@@ -128,7 +128,7 @@ params to the scripting API — full name, range, units, live value — that rej
 default state. `introspect_effect.mjs` now records **settability**, and the cards split three ways:
 `key_levers` (usable now) / `gated_levers` (usable after opening a named gate, offered *with* that
 gate) / `unreachable_levers` (never offered). Deep Glow's `Glow Iterations` turned out to be gated
-behind `Auto Iterations = 0`; the other 8, Spread included, resist all 19 of the effect's gates.
+behind `Auto Iterations = 0`; the other 8, Spread included, resist 18 of the effect's 19 gates (the probe aborted after GPU Rendering, which was never tested).
 
 > **Settability is only measurable on a DISPLAYED comp** — the finding that cost the most to reach.
 > AE runs a plugin's params-UI pass (the code that decides what to hide) only when the comp is shown

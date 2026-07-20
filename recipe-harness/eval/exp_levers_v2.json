@@ -1,267 +1,268 @@
 {
-  "_date": "2026-07-20",
-  "model": "gemini-3-flash-preview",
-  "repeats": 5,
-  "keyUsed": true,
-  "rows": [
-    {
-      "id": "e02",
-      "iter": 1,
-      "oldScore": 7,
-      "planLevers": [
-        "tc Particular-0782",
-        "tc Particular-0581",
-        "tc Particular-0014",
-        "tc Particular-0146",
-        "tc Particular-0011",
-        "tc Particular-0113",
-        "tc Particular-0010",
-        "tc Particular-0002",
-        "tc Particular-0027",
-        "tc Particular-0074",
-        "tc Particular-0033",
-        "tc Particular-0075",
-        "tc Particular-0088",
-        "tc Particular-0070",
-        "tc Particular-0703",
-        "tc Particular-0069",
-        "tc Particular-0215",
-        "tc Particular-0216",
-        "tc Particular-0017",
-        "tc Particular-0018",
-        "tc Particular-0711",
-        "tc Particular-0715",
-        "tc Particular-0716",
-        "tc Particular-0035",
-        "tc Particular-0036"
-      ],
-      "off": {
-        "n": 2,
-        "meanScore": 6,
-        "distinctLevers": [
-          "tc Particular-0146",
-          "tc Particular-0711",
-          "tc Particular-0074",
-          "tc Particular-0749"
-        ],
-        "offPlanLevers": [
-          "tc Particular-0749"
-        ],
-        "meanSuggestions": 3.5,
-        "correctHit": [],
-        "wrongHit": [
-          "tc Particular-0146",
-          "tc Particular-0711",
-          "tc Particular-0749"
-        ],
-        "correctHitRate": 0
-      },
-      "on": {
-        "n": 3,
-        "meanScore": 6,
-        "distinctLevers": [
-          "tc Particular-0146",
-          "tc Particular-0749",
-          "tc Particular-0711",
-          "tc Particular-0215",
-          "tc Particular-0029",
-          "tc Particular-0074",
-          "tc Particular-0075"
-        ],
-        "offPlanLevers": [
-          "tc Particular-0749",
-          "tc Particular-0029"
-        ],
-        "meanSuggestions": 4.33,
-        "correctHit": [
-          "tc Particular-0029"
-        ],
-        "wrongHit": [
-          "tc Particular-0146",
-          "tc Particular-0749",
-          "tc Particular-0711"
-        ],
-        "correctHitRate": 1
-      }
-    },
-    {
-      "id": "e06",
-      "iter": 2,
-      "oldScore": 6,
-      "planLevers": [
-        "BCC_TEXTURES-1001",
-        "BCC_TEXTURES-1002",
-        "BCC_TEXTURES-1018",
-        "BCC_TEXTURES-1019",
-        "PEDG-0002",
-        "PEDG-0001",
-        "PEDG-0004",
-        "PEDG-0005",
-        "ADBE BEZMESH-0014",
-        "ADBE Tint-0001",
-        "ADBE Tint-0002",
-        "ADBE Tint-0003"
-      ],
-      "off": {
-        "n": 3,
-        "meanScore": 4,
-        "distinctLevers": [
-          "ADBE Gaussian Blur 2",
-          "ADBE Transform",
-          "ADBE BEZMESH-0002",
-          "PEDG-0002",
-          "tc Form-0002",
-          "tc Form-0003",
-          "tc Form-0005",
-          "ADBE Fast Blur",
-          "ADBE Wave Warp-0001",
-          "ADBE Wave Warp-0002",
-          "ADBE BEZMESH-0005",
-          "ADBE BEZMESH-0008",
-          "ADBE BEZMESH-0011",
-          "PEDG-0001",
-          "ADBE Directional Blur"
-        ],
-        "offPlanLevers": [
-          "ADBE Gaussian Blur 2",
-          "ADBE Transform",
-          "ADBE BEZMESH-0002",
-          "tc Form-0002",
-          "tc Form-0003",
-          "tc Form-0005",
-          "ADBE Fast Blur",
-          "ADBE Wave Warp-0001",
-          "ADBE Wave Warp-0002",
-          "ADBE BEZMESH-0005",
-          "ADBE BEZMESH-0008",
-          "ADBE BEZMESH-0011",
-          "ADBE Directional Blur"
-        ],
-        "meanSuggestions": 5.33,
-        "correctHit": [],
-        "wrongHit": [
-          "ADBE BEZMESH-0002",
-          "PEDG-0002",
-          "ADBE BEZMESH-0005",
-          "ADBE BEZMESH-0008",
-          "ADBE BEZMESH-0011",
-          "PEDG-0001"
-        ],
-        "correctHitRate": 0
-      },
-      "on": {
-        "n": 5,
-        "meanScore": 3.6,
-        "distinctLevers": [
-          "tc Form-0033",
-          "tc Form-0025",
-          "tc Form-0310",
-          "tc Form-0313",
-          "tc Form-0004",
-          "tc Form-0007",
-          "tc Form-0008"
-        ],
-        "offPlanLevers": [
-          "tc Form-0033",
-          "tc Form-0025",
-          "tc Form-0310",
-          "tc Form-0313",
-          "tc Form-0004",
-          "tc Form-0007",
-          "tc Form-0008"
-        ],
-        "meanSuggestions": 6,
-        "correctHit": [
-          "tc Form-0033",
-          "tc Form-0025",
-          "tc Form-0310",
-          "tc Form-0313",
-          "tc Form-0007"
-        ],
-        "wrongHit": [],
-        "correctHitRate": 1
-      }
-    },
-    {
-      "id": "e07",
-      "iter": 1,
-      "oldScore": 7,
-      "planLevers": [
-        "tc Particular-0782",
-        "tc Particular-0581",
-        "tc Particular-0014",
-        "tc Particular-0146",
-        "tc Particular-0011",
-        "tc Particular-0113",
-        "tc Particular-0002",
-        "tc Particular-0703",
-        "tc Particular-0027",
-        "tc Particular-0074",
-        "tc Particular-0033",
-        "tc Particular-0075",
-        "tc Particular-0088",
-        "tc Particular-0070",
-        "tc Particular-0069",
-        "tc Particular-0017",
-        "tc Particular-0018",
-        "tc Particular-0749",
-        "tc Particular-0711",
-        "tc Particular-0715",
-        "tc Particular-0716",
-        "PEDG-0002",
-        "PEDG-0001",
-        "PEDG-0004",
-        "PEDG-0005",
-        "PEDG-0024"
-      ],
-      "off": {
-        "n": 5,
-        "meanScore": 6.6,
-        "distinctLevers": [
-          "tc Particular-0146",
-          "tc Particular-0017",
-          "PEDG-0002",
-          "tc Particular-0749",
-          "tc Particular-0711"
-        ],
-        "offPlanLevers": [],
-        "meanSuggestions": 3,
-        "correctHit": [],
-        "wrongHit": [
-          "tc Particular-0146",
-          "PEDG-0002"
-        ],
-        "correctHitRate": 0
-      },
-      "on": {
-        "n": 5,
-        "meanScore": 5.2,
-        "distinctLevers": [
-          "tc Particular-0146",
-          "tc Particular-0703",
-          "tc Particular-0029",
-          "tc Particular-0017",
-          "PEDG-0002",
-          "tc Particular-0715",
-          "tc Particular-0074",
-          "tc Particular-0033",
-          "tc Particular-0027"
-        ],
-        "offPlanLevers": [
-          "tc Particular-0029"
-        ],
-        "meanSuggestions": 5,
-        "correctHit": [
-          "tc Particular-0703",
-          "tc Particular-0027"
-        ],
-        "wrongHit": [
-          "tc Particular-0146",
-          "PEDG-0002",
-          "tc Particular-0074"
-        ],
-        "correctHitRate": 0.4
-      }
-    }
-  ]
+ "_retracted": "RETRACTED: the cards were edited between run 1 (13:16) and this run (13:39), so the \"0%->80%\" headline measured the answer being written into the card. See recipe-harness/eval/ROUND2.md \"RETRACTION\".",
+ "_date": "2026-07-20",
+ "model": "gemini-3-flash-preview",
+ "repeats": 5,
+ "keyUsed": true,
+ "rows": [
+  {
+   "id": "e02",
+   "iter": 1,
+   "oldScore": 7,
+   "planLevers": [
+    "tc Particular-0782",
+    "tc Particular-0581",
+    "tc Particular-0014",
+    "tc Particular-0146",
+    "tc Particular-0011",
+    "tc Particular-0113",
+    "tc Particular-0010",
+    "tc Particular-0002",
+    "tc Particular-0027",
+    "tc Particular-0074",
+    "tc Particular-0033",
+    "tc Particular-0075",
+    "tc Particular-0088",
+    "tc Particular-0070",
+    "tc Particular-0703",
+    "tc Particular-0069",
+    "tc Particular-0215",
+    "tc Particular-0216",
+    "tc Particular-0017",
+    "tc Particular-0018",
+    "tc Particular-0711",
+    "tc Particular-0715",
+    "tc Particular-0716",
+    "tc Particular-0035",
+    "tc Particular-0036"
+   ],
+   "off": {
+    "n": 2,
+    "meanScore": 6,
+    "distinctLevers": [
+     "tc Particular-0146",
+     "tc Particular-0711",
+     "tc Particular-0074",
+     "tc Particular-0749"
+    ],
+    "offPlanLevers": [
+     "tc Particular-0749"
+    ],
+    "meanSuggestions": 3.5,
+    "correctHit": [],
+    "wrongHit": [
+     "tc Particular-0146",
+     "tc Particular-0711",
+     "tc Particular-0749"
+    ],
+    "correctHitRate": 0
+   },
+   "on": {
+    "n": 3,
+    "meanScore": 6,
+    "distinctLevers": [
+     "tc Particular-0146",
+     "tc Particular-0749",
+     "tc Particular-0711",
+     "tc Particular-0215",
+     "tc Particular-0029",
+     "tc Particular-0074",
+     "tc Particular-0075"
+    ],
+    "offPlanLevers": [
+     "tc Particular-0749",
+     "tc Particular-0029"
+    ],
+    "meanSuggestions": 4.33,
+    "correctHit": [
+     "tc Particular-0029"
+    ],
+    "wrongHit": [
+     "tc Particular-0146",
+     "tc Particular-0749",
+     "tc Particular-0711"
+    ],
+    "correctHitRate": 1
+   }
+  },
+  {
+   "id": "e06",
+   "iter": 2,
+   "oldScore": 6,
+   "planLevers": [
+    "BCC_TEXTURES-1001",
+    "BCC_TEXTURES-1002",
+    "BCC_TEXTURES-1018",
+    "BCC_TEXTURES-1019",
+    "PEDG-0002",
+    "PEDG-0001",
+    "PEDG-0004",
+    "PEDG-0005",
+    "ADBE BEZMESH-0014",
+    "ADBE Tint-0001",
+    "ADBE Tint-0002",
+    "ADBE Tint-0003"
+   ],
+   "off": {
+    "n": 3,
+    "meanScore": 4,
+    "distinctLevers": [
+     "ADBE Gaussian Blur 2",
+     "ADBE Transform",
+     "ADBE BEZMESH-0002",
+     "PEDG-0002",
+     "tc Form-0002",
+     "tc Form-0003",
+     "tc Form-0005",
+     "ADBE Fast Blur",
+     "ADBE Wave Warp-0001",
+     "ADBE Wave Warp-0002",
+     "ADBE BEZMESH-0005",
+     "ADBE BEZMESH-0008",
+     "ADBE BEZMESH-0011",
+     "PEDG-0001",
+     "ADBE Directional Blur"
+    ],
+    "offPlanLevers": [
+     "ADBE Gaussian Blur 2",
+     "ADBE Transform",
+     "ADBE BEZMESH-0002",
+     "tc Form-0002",
+     "tc Form-0003",
+     "tc Form-0005",
+     "ADBE Fast Blur",
+     "ADBE Wave Warp-0001",
+     "ADBE Wave Warp-0002",
+     "ADBE BEZMESH-0005",
+     "ADBE BEZMESH-0008",
+     "ADBE BEZMESH-0011",
+     "ADBE Directional Blur"
+    ],
+    "meanSuggestions": 5.33,
+    "correctHit": [],
+    "wrongHit": [
+     "ADBE BEZMESH-0002",
+     "PEDG-0002",
+     "ADBE BEZMESH-0005",
+     "ADBE BEZMESH-0008",
+     "ADBE BEZMESH-0011",
+     "PEDG-0001"
+    ],
+    "correctHitRate": 0
+   },
+   "on": {
+    "n": 5,
+    "meanScore": 3.6,
+    "distinctLevers": [
+     "tc Form-0033",
+     "tc Form-0025",
+     "tc Form-0310",
+     "tc Form-0313",
+     "tc Form-0004",
+     "tc Form-0007",
+     "tc Form-0008"
+    ],
+    "offPlanLevers": [
+     "tc Form-0033",
+     "tc Form-0025",
+     "tc Form-0310",
+     "tc Form-0313",
+     "tc Form-0004",
+     "tc Form-0007",
+     "tc Form-0008"
+    ],
+    "meanSuggestions": 6,
+    "correctHit": [
+     "tc Form-0033",
+     "tc Form-0025",
+     "tc Form-0310",
+     "tc Form-0313",
+     "tc Form-0007"
+    ],
+    "wrongHit": [],
+    "correctHitRate": 1
+   }
+  },
+  {
+   "id": "e07",
+   "iter": 1,
+   "oldScore": 7,
+   "planLevers": [
+    "tc Particular-0782",
+    "tc Particular-0581",
+    "tc Particular-0014",
+    "tc Particular-0146",
+    "tc Particular-0011",
+    "tc Particular-0113",
+    "tc Particular-0002",
+    "tc Particular-0703",
+    "tc Particular-0027",
+    "tc Particular-0074",
+    "tc Particular-0033",
+    "tc Particular-0075",
+    "tc Particular-0088",
+    "tc Particular-0070",
+    "tc Particular-0069",
+    "tc Particular-0017",
+    "tc Particular-0018",
+    "tc Particular-0749",
+    "tc Particular-0711",
+    "tc Particular-0715",
+    "tc Particular-0716",
+    "PEDG-0002",
+    "PEDG-0001",
+    "PEDG-0004",
+    "PEDG-0005",
+    "PEDG-0024"
+   ],
+   "off": {
+    "n": 5,
+    "meanScore": 6.6,
+    "distinctLevers": [
+     "tc Particular-0146",
+     "tc Particular-0017",
+     "PEDG-0002",
+     "tc Particular-0749",
+     "tc Particular-0711"
+    ],
+    "offPlanLevers": [],
+    "meanSuggestions": 3,
+    "correctHit": [],
+    "wrongHit": [
+     "tc Particular-0146",
+     "PEDG-0002"
+    ],
+    "correctHitRate": 0
+   },
+   "on": {
+    "n": 5,
+    "meanScore": 5.2,
+    "distinctLevers": [
+     "tc Particular-0146",
+     "tc Particular-0703",
+     "tc Particular-0029",
+     "tc Particular-0017",
+     "PEDG-0002",
+     "tc Particular-0715",
+     "tc Particular-0074",
+     "tc Particular-0033",
+     "tc Particular-0027"
+    ],
+    "offPlanLevers": [
+     "tc Particular-0029"
+    ],
+    "meanSuggestions": 5,
+    "correctHit": [
+     "tc Particular-0703",
+     "tc Particular-0027"
+    ],
+    "wrongHit": [
+     "tc Particular-0146",
+     "PEDG-0002",
+     "tc Particular-0074"
+    ],
+    "correctHitRate": 0.4
+   }
+  }
+ ]
 }

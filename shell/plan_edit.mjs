@@ -203,7 +203,15 @@ const edits = (plan.edits || []).filter(e => {
   }
   if (e.op === 'expression') return true;
   if (e.op === 'param') {
-    const fx = (L.effects || []).find(f => f.matchName === e.effectMatchName);
+    // ALL instances, not the first. Two copies of the same effect on one layer is normal — a glow
+    // over a glow — and this validator has no way to say WHICH one the edit means, because the edit
+    // schema carries no instance index. That gap is real and is recorded in KNOWN_ISSUES.md; until
+    // it closes, the least-wrong thing this can do is refuse to answer from one arbitrary copy.
+    // Taking `[0]` here made the keyframe check below read the wrong instance's key count and pass
+    // an edit that apply_edit would then refuse.
+    const matches = (L.effects || []).filter(f => f.matchName === e.effectMatchName);
+    const fx = matches[0];
+    if (matches.length > 1) problems.push(`layer ${e.layerIndex} has ${matches.length} copies of ${e.effectMatchName}; the edit format cannot name one, so this targets the first`);
     if (!fx) {
       if (addedHere.has(`${e.layerIndex}|${e.effectMatchName}`)) {
         // added by an earlier edit in this spec — perception predates it, so use the ownership rule
@@ -218,10 +226,13 @@ const edits = (plan.edits || []).filter(e => {
     }
     const p = (fx.params || []).find(q => q.matchName === e.paramMatchName);
     if (!p) { problems.push(`param ${e.paramMatchName} is not on ${e.effectMatchName} — edit dropped`); return false; }
-    // a keyframed param needs an explicit mode or apply_edit will refuse it
-    if (p.numKeys && !e.keyframeMode) {
+    // A keyframed param needs an explicit mode or apply_edit will refuse it. Ask every copy, not
+    // just the one bound above: if ANY copy is keyframed the edit may land on it, and defaulting the
+    // mode is harmless while omitting it is a hard refusal downstream.
+    const anyKeys = matches.reduce((n, f) => Math.max(n, (f.params || []).find(q => q.matchName === e.paramMatchName)?.numKeys || 0), 0);
+    if (anyKeys && !e.keyframeMode) {
       e.keyframeMode = 'setAtTime';
-      problems.push(`param ${e.paramMatchName} is keyframed (${p.numKeys} keys) and no keyframeMode was given — defaulted to setAtTime`);
+      problems.push(`param ${e.paramMatchName} is keyframed (${anyKeys} keys) and no keyframeMode was given — defaulted to setAtTime`);
     }
     return true;
   }

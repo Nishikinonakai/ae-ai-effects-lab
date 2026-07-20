@@ -1,7 +1,15 @@
 {
   "name": "ae-ai-shell",
   "version": "0.1.0",
-  "description": "Desktop window for the AE AI shell — cost, history and settings",
+  "description": "Desktop window for the AE AI shell \u2014 cost, history and settings",
   "main": "main.js",
-  "scripts": { "start": "electron ." }
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "echo \"run: npm start\""
+  },
+  "private": true,
+  "devDependencies": {
+    "electron": "^43.1.1"
+  },
+  "_status": "NOT RUN. Electron is a ~200MB dependency and is deliberately NOT installed \u2014 the UI it would host is already served by the kernel at http://127.0.0.1:7867/ and was verified there. This wrapper is 30 lines and has never been executed. Install with `npm i` in this directory before believing it works."
 }
