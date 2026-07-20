@@ -296,7 +296,8 @@ while (true) {
   if (review.verdict === 'pass' && passAt > 0 && !review._confirmed) {
     const draws = [review.score];
     for (let k = 0; k < 2; k++) {
-      const again = spawnSync('node', [scorer, req, `--model=${flag('model', 'gemini-3-flash-preview')}`], { encoding: 'utf8' });
+      const mdl = flag('model', '');
+      const again = spawnSync('node', [scorer, req, ...(mdl ? [`--model=${mdl}`] : [])], { encoding: 'utf8' });
       if (again.status !== 0 || !fs.existsSync(revPath)) continue;
       draws.push(JSON.parse(fs.readFileSync(revPath, 'utf8')).score);
     }

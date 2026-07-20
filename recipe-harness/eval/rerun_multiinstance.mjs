@@ -14,7 +14,7 @@
 // matchName and refuses to report a score if the comp still has fewer than the plan asked for. A
 // green number from a half-built comp is exactly the failure being repaired here.
 //
-// usage: node recipe-harness/eval/rerun_multiinstance.mjs [--repeats=5] [--model=gemini-3-flash-preview]
+// usage: node recipe-harness/eval/rerun_multiinstance.mjs [--repeats=5] [--model=<provider default>]
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
@@ -30,7 +30,7 @@ const BRIDGE = path.join(os.homedir(), 'Documents', 'ae-mcp-bridge');
 
 const arg = (n, d) => { const a = process.argv.find(x => x.startsWith(`--${n}=`)); return a === undefined ? d : a.slice(n.length + 3); };
 const repeats = Number(arg('repeats', 5));
-const model = arg('model', 'gemini-3-flash-preview');
+const model = arg('model', null);   // provider's own default; a name baked in here 404s the moment the credential changes
 const outPath = path.resolve(arg('out', path.join(__dirname, 'rerun_multiinstance.json')));
 const WORK = path.join(REPO, 'shell', 'out', 'rerun_mi');
 fs.mkdirSync(WORK, { recursive: true });
@@ -137,7 +137,7 @@ for (const t of TARGETS) {
 
   const scores = [];
   for (let k = 0; k < repeats; k++) {
-    const s = spawnSync('node', [SCORER, reqP, `--model=${model}`], { encoding: 'utf8', timeout: 300000 });
+    const s = spawnSync('node', [SCORER, reqP, ...(model ? [`--model=${model}`] : [])], { encoding: 'utf8', timeout: 300000 });
     const revP = path.join(dir, 'review.json');
     if (s.status !== 0 || !fs.existsSync(revP)) continue;
     const rev = JSON.parse(fs.readFileSync(revP, 'utf8'));

@@ -20,7 +20,7 @@
 // and completed prompts are skipped, so an interrupted run is resumed rather than restarted.
 //
 // usage: node recipe-harness/eval/run_eval.mjs [--only=e01,e07] [--tier=T1] [--max-iters=3]
-//        [--model=gpt-5.6-terra] [--out=<results.jsonl>] [--replan] [--dry]
+//        [--model=<provider default>] [--out=<results.jsonl>] [--replan] [--dry]
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -33,7 +33,7 @@ const REPO = path.resolve(HARNESS, '..');
 const arg = (n, d) => { const a = process.argv.find(x => x.startsWith(`--${n}=`)); return a === undefined ? d : a.slice(n.length + 3); };
 const only = (arg('only', '') || '').split(',').map(s => s.trim()).filter(Boolean);
 const tierFilter = arg('tier', null);
-const model = arg('model', 'gpt-5.6-terra');
+const model = arg('model', null);   // provider's own default; a name baked in here 404s the moment the credential changes
 const maxIters = Number(arg('max-iters', 0)) || null;   // 0 → use the prompt-set default
 const replan = process.argv.includes('--replan');
 const dry = process.argv.includes('--dry');
@@ -61,7 +61,7 @@ function node(script, args, timeoutMs = 900000) {
 }
 
 console.log(`planner-eval round-2 — ${prompts.length} prompt(s), ${done.size} already in the ledger`);
-console.log(`model=${model}  ledger=${path.relative(REPO, ledgerPath)}\n`);
+console.log(`model=${model || "(provider default)"}  ledger=${path.relative(REPO, ledgerPath)}\n`);
 
 for (const p of prompts) {
   if (done.has(p.id) && !replan) { console.log(`· ${p.id} — already done (${done.get(p.id).outcome})`); continue; }
@@ -75,7 +75,7 @@ for (const p of prompts) {
   const planPath = path.join(planDir, `${p.id}.json`);
   const plan = node('recipe-harness/runner/plan_recipe.mjs', [
     `--intent=${p.prompt}`, `--pass=${(p.pass_criteria || []).join('||')}`,
-    `--name=eval-${p.id}`, `--out=${planPath}`, `--model=${model}`,
+    `--name=eval-${p.id}`, `--out=${planPath}`, ...(model ? [`--model=${model}`] : []),
   ]);
   if (!fs.existsSync(planPath)) {
     row.outcome = 'plan-failed';

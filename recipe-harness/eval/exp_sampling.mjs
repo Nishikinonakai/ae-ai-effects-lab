@@ -28,7 +28,7 @@
 // structural vocabulary, and effort belongs there instead. Either answer redirects the roadmap.
 //
 // usage: node recipe-harness/eval/exp_sampling.mjs [--ids=e01,e02,e07] [--treatment=4,5]
-//        [--model=gemini-3-flash-preview] [--out=<report.json>]
+//        [--model=<provider default>] [--out=<report.json>]
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -43,7 +43,7 @@ const RUNNER = path.join(HARNESS, 'runner', 'recipe_runner.mjs');
 const arg = (n, d) => { const a = process.argv.find(x => x.startsWith(`--${n}=`)); return a === undefined ? d : a.slice(n.length + 3); };
 const ids = (arg('ids', 'e01,e02,e07,e19,e24')).split(',').map(s => s.trim()).filter(Boolean);
 const treatment = (arg('treatment', '4,5')).split(',').map(Number);
-const model = arg('model', 'gemini-3-flash-preview');
+const model = arg('model', null);   // provider's own default; a name baked in here 404s the moment the credential changes
 // REPEATED MEASURES, and this is not optional rigour — it is the difference between a result and an
 // artefact. The first run of this experiment reported "3 of 3 improved by +1, one cleared the bar"
 // on single draws. Re-scoring ONE unchanged frame pair eight times then produced 7 7 7 7 7 7 8 7 —
@@ -98,7 +98,7 @@ function renderAndScore(c, frames, label) {
   const scores = [];
   let last = null, errs = 0;
   for (let k = 0; k < repeats; k++) {
-    const s = spawnSync('node', [SCORER, reqP, `--model=${model}`], { encoding: 'utf8', timeout: 300000 });
+    const s = spawnSync('node', [SCORER, reqP, ...(model ? [`--model=${model}`] : [])], { encoding: 'utf8', timeout: 300000 });
     if (s.status !== 0 || !fs.existsSync(revP)) { errs++; continue; }
     last = JSON.parse(fs.readFileSync(revP, 'utf8'));
     scores.push(last.score);

@@ -192,6 +192,15 @@ console.log('\neffectsFromEdits — recovering which effects an edit touches');
   eq('undefined is safe', effectsFromEdits(undefined), { effects: [], params: [] });
 }
 
+// ---- structural lint --------------------------------------------------------------------------
+// The behavioural assertions above were ALL GREEN through five instances of the half-a-seam bug,
+// including one that made rollback restore the wrong effect. They cannot catch it: half an
+// abstraction behaves correctly until the config changes. test/seams.mjs checks structure instead,
+// so it runs here rather than being something to remember.
+console.log('\nstructure (test/seams.mjs):');
+const seamViolations = (await import('./seams.mjs')).default;
+if (seamViolations) fail += seamViolations; else pass++;
+
 fs.rmSync(TMP, { recursive: true, force: true });
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

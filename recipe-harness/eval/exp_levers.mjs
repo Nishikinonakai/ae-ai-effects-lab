@@ -21,7 +21,7 @@
 // experiment is not graded by the same reasoning that designed it.
 //
 // usage: node recipe-harness/eval/exp_levers.mjs [--ids=e02,e06,e07] [--repeats=5]
-//        [--key=lever_key.json] [--model=gemini-3-flash-preview]
+//        [--key=lever_key.json] [--model=<provider default>]
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -37,7 +37,7 @@ const SCORER = path.join(HARNESS, 'vision', 'gemini_score.mjs');
 const arg = (n, d) => { const a = process.argv.find(x => x.startsWith(`--${n}=`)); return a === undefined ? d : a.slice(n.length + 3); };
 const ids = (arg('ids', 'e02,e06,e07')).split(',').map(s => s.trim()).filter(Boolean);
 const repeats = Number(arg('repeats', 5));
-const model = arg('model', 'gemini-3-flash-preview');
+const model = arg('model', null);   // provider's own default; a name baked in here 404s the moment the credential changes
 const keyPath = arg('key', path.join(__dirname, 'lever_key.json'));
 const outPath = path.resolve(arg('out', path.join(__dirname, 'exp_levers.json')));
 const WORK = path.join(REPO, 'shell', 'out', 'exp_levers');
@@ -98,10 +98,10 @@ function scoreN(req, dir, label) {
   const runs = [];
   let attempts = 0, failures = 0;
   for (let k = 0; k < repeats; k++) {
-    let s = spawnSync('node', [SCORER, reqP, `--model=${model}`], { encoding: 'utf8', timeout: 300000 });
+    let s = spawnSync('node', [SCORER, reqP, ...(model ? [`--model=${model}`] : [])], { encoding: 'utf8', timeout: 300000 });
     attempts++;
     if (s.status !== 0 || !fs.existsSync(revP)) {
-      s = spawnSync('node', [SCORER, reqP, `--model=${model}`], { encoding: 'utf8', timeout: 300000 });
+      s = spawnSync('node', [SCORER, reqP, ...(model ? [`--model=${model}`] : [])], { encoding: 'utf8', timeout: 300000 });
       attempts++;
     }
     if (s.status !== 0 || !fs.existsSync(revP)) {
