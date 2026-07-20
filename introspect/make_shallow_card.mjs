@@ -26,6 +26,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { askJSON, parseJSON, provider } from '../shell/llm.mjs';
 import { spawnSync } from 'child_process';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -34,40 +35,27 @@ const CARDS = path.join(__dirname, 'cards');
 const ESSENCE = path.join(__dirname, 'essence');
 
 const arg = (n, d) => { const a = process.argv.find(x => x.startsWith(`--${n}=`)); return a === undefined ? d : a.slice(n.length + 3); };
-const model = arg('model', 'gpt-5.6-terra');
+const model = arg('model', null);   // llm.mjs picks per provider
 const force = process.argv.includes('--force');
 const fromFile = arg('from', null);
 let targets = process.argv.slice(2).filter(a => !a.startsWith('--'));
 if (fromFile) targets = fs.readFileSync(path.resolve(fromFile), 'utf8').split('\n').map(s => s.trim()).filter(Boolean);
 if (!targets.length) { console.error('usage: node introspect/make_shallow_card.mjs "<matchName>" ... | --from=<list.txt>'); process.exit(1); }
 
-const envFile = path.join(REPO, 'recipe-harness', '.env.api');
-if ((!process.env.OPENAI_API_KEY || !process.env.OPENAI_BASE_URL) && fs.existsSync(envFile)) {
-  for (const line of fs.readFileSync(envFile, 'utf8').split('\n')) {
-    const m = line.match(/^([A-Z_]+)=(.+)$/);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
-  }
-}
-const API_KEY = process.env.OPENAI_API_KEY;
-const BASE = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
-if (!API_KEY) { console.error('OPENAI_API_KEY missing'); process.exit(1); }
+// Credentials and provider come from the shared seam (shell/llm.mjs -> shell/keys.mjs). This file
+// carried its own inline OpenAI block — the half-a-seam pattern PRD §十三 is about. It was found by
+// grepping for `.env.api` after the keychain migration, not by anything failing: it would simply
+// have stopped working the next time someone reached for it.
+if (!provider()) { console.error('no LLM credential found (GEMINI_API_KEY / OPENAI_API_KEY / ANTHROPIC_API_KEY)'); process.exit(1); }
 
 const installed = JSON.parse(fs.readFileSync(path.join(__dirname, 'installed_effects.json'), 'utf8')).effects;
 const byMatch = new Map(installed.map(e => [e.match, e]));
 
-async function call(body, tries = 3) {
-  for (let a = 1; a <= tries; a++) {
-    try {
-      const r = await fetch(`${BASE}/chat/completions`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${API_KEY}` }, body,
-      });
-      if (r.ok) return r.json();
-      const t = (await r.text()).slice(0, 200);
-      if (r.status < 500 && r.status !== 429) { console.error(`  API ${r.status}: ${t}`); return null; }
-    } catch (e) { console.error(`  fetch error (${a}/${tries})`); }
-    if (a < tries) await new Promise(r => setTimeout(r, a * 3000));
-  }
-  return null;
+// Returns the reply TEXT, or null so the caller can skip this effect and continue the batch — one
+// unreachable card must not abort a sweep over hundreds.
+async function call(prompt) {
+  try { return (await askJSON([{ text: prompt }], { model, maxTokens: 8192 })).text; }
+  catch (e) { console.error(`  ${String(e).slice(0, 120)}`); return null; }
 }
 
 const CONTRACT = `Return STRICT JSON only:
@@ -127,11 +115,10 @@ for (const mn of targets) {
     CONTRACT,
   ].filter(Boolean).join('\n');
 
-  const data = await call(JSON.stringify({ model, max_completion_tokens: 2500, messages: [{ role: 'user', content: prompt }] }));
-  if (!data) { console.log('✗ (API)'); continue; }
-  const text = (data.choices?.[0]?.message?.content || '').trim();
+  const text = await call(prompt);
+  if (!text) { console.log('✗ (API)'); continue; }
   let body;
-  try { body = JSON.parse(text.slice(text.indexOf('{'), text.lastIndexOf('}') + 1)); }
+  try { body = parseJSON(text); }
   catch { console.log('✗ (unparseable)'); continue; }
 
   // 2) GROUNDING — drop any lever whose matchName is not real and settable

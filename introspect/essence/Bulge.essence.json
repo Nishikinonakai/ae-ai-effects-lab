@@ -1,0 +1,103 @@
+{
+ "matchName": "ADBE Bulge",
+ "displayName": "Bulge",
+ "vendor": "Adobe (native)",
+ "category": "Distort",
+ "cardDepth": "shallow",
+ "essence": "A localized elliptical displacement that simulates a magnifying lens or a pinch by shifting pixels toward or away from a center point. It uses an ellipsoid boundary to define the area of influence, where a height parameter determines the intensity and direction of the distortion.",
+ "when_to_use": [
+  "eye enlargement",
+  "大眼",
+  "magnifying glass",
+  "放大镜",
+  "pinch or bloat",
+  "挤压膨胀",
+  "bubble effect",
+  "泡泡",
+  "fisheye lens distortion",
+  "鱼眼镜头"
+ ],
+ "manifests_as": "A spherical or elliptical bulge/pinch within a specific region that preserves the original image outside its radii.",
+ "key_levers": [
+  {
+   "name": "Horizontal Radius",
+   "matchName": "ADBE Bulge-0001",
+   "range": [
+    0,
+    8000
+   ],
+   "default": 50,
+   "units": "pixels",
+   "enum": false,
+   "effect": "Sets the width of the distortion field; zeroing this effectively disables the effect along the X axis."
+  },
+  {
+   "name": "Vertical Radius",
+   "matchName": "ADBE Bulge-0002",
+   "range": [
+    0,
+    8000
+   ],
+   "default": 50,
+   "units": "pixels",
+   "enum": false,
+   "effect": "Sets the height of the distortion field; the ratio between Horizontal and Vertical Radius determines the shape of the 'lens'."
+  },
+  {
+   "name": "Bulge Center",
+   "matchName": "ADBE Bulge-0003",
+   "range": null,
+   "default": [
+    320,
+    180
+   ],
+   "units": "pixels",
+   "enum": false,
+   "effect": "The focal point of the distortion; moving this shifts where the magnification or pinch occurs on the layer."
+  },
+  {
+   "name": "Bulge Height",
+   "matchName": "ADBE Bulge-0004",
+   "range": [
+    -4,
+    4
+   ],
+   "default": 1,
+   "units": "pixels",
+   "enum": false,
+   "effect": "The primary intensity lever. Positive values (0 to 4) expand the image outward (bloat); negative values (0 to -4) pull the image inward (pinch)."
+  },
+  {
+   "name": "Taper Radius",
+   "matchName": "ADBE Bulge-0005",
+   "range": [
+    0,
+    8000
+   ],
+   "default": 0,
+   "units": "pixels",
+   "enum": false,
+   "effect": "Determines the falloff at the edges of the radii; higher values create a smoother, more gradual transition into the undistorted areas of the image."
+  }
+ ],
+ "enums_to_verify": {
+  "Antialiasing (ADBE Bulge-0006, 1-2)": "1 is likely Low/None, 2 is likely High (Best Quality).",
+  "Pinning (ADBE Bulge-0007, 0-1)": "0 is likely Off, 1 is likely On (pins edges of the layer to prevent the distortion from pulling in transparency).",
+  "GPU Rendering (ADBE Force CPU GPU, 1-3)": "1: Manual/CPU, 2: GPU Accelerated, 3: Auto."
+ },
+ "config_recipes": {
+  "Magnifying Glass": "Bulge Height: 1.5, Taper Radius: 10, Radii: matched to lens size",
+  "Extreme Pinch": "Bulge Height: -3.5, Taper Radius: 0, Radii: 100",
+  "Wide Angle Fisheye": "Bulge Height: 2.0, Radii: Large (e.g., 500+), Taper Radius: 100"
+ },
+ "reasoning_hooks": [
+  "The effect is completely invisible if either Radius is set to 0, regardless of the Bulge Height.",
+  "Negative 'Bulge Height' values functionally invert the effect, turning a magnification bubble into a black-hole-like pinch.",
+  "Unlike 'Spherize', Bulge allows for non-uniform (elliptical) scaling by decoupling Horizontal and Vertical radii.",
+  "High 'Bulge Height' values can cause extreme pixel stretching; the Antialiasing lever [ADBE Bulge-0006] must be at 2 for final renders to avoid aliasing artifacts."
+ ],
+ "grounding": "matchNames verified against a live introspection of this build (9 settable params); levers the model proposed that do not exist or are not settable were dropped",
+ "_method": "introspect/make_shallow_card.mjs — live introspection + model causal knowledge, mechanically grounded",
+ "_model": null,
+ "_date": "2026-07-20"
+}
