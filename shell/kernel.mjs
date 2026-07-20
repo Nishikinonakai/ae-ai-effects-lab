@@ -27,7 +27,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { spawn, spawnSync } from 'child_process';
 import { loadCards, cardFor } from '../introspect/essence/lookup.mjs';
-import { defaultModel } from './llm.mjs';
+import { defaultModel, spendSummary, setPurpose } from './llm.mjs';
 
 // matchName -> the name an artist would recognise, via the essence index. Falls back to the
 // matchName, which is at least addressable, rather than to nothing.
@@ -82,7 +82,11 @@ function loadSession() {
 }
 function setState(patch) {
   const prev = fs.existsSync(STATE) ? JSON.parse(fs.readFileSync(STATE, 'utf8')) : {};
-  const next = { ...prev, ...patch, ts: new Date().toISOString() };
+  // Spend rides on every state write, so the panel can show it without asking. A cost the artist
+  // only discovers on the monthly bill is a cost they cannot act on.
+  let spend = null;
+  try { const d = spendSummary({ sinceMs: 24 * 3600 * 1000 }); spend = `$${d.total.toFixed(3)} today · ${d.calls} calls`; } catch { /* never block a state write */ }
+  const next = { ...prev, ...patch, ...(spend ? { spend } : {}), ts: new Date().toISOString() };
   fs.writeFileSync(STATE, JSON.stringify(next, null, 2));
   if (patch.message) console.log(`[${patch.phase || next.phase || '·'}] ${patch.message}`);
   return next;
@@ -204,6 +208,7 @@ async function handleRun(req) {
   if (cancelled) return finishCancelled();
 
   // 2) PLAN
+  process.env.AE_AI_PURPOSE = 'plan';
   setState({ phase: 'planning', message: 'deciding what to change…' });
   const planArgs = [`--intent=${intent}`, `--state=${path.join(workDir, stateFile)}`, `--out=${path.join(workDir, 'plan_spec.json')}`];
   if (MODEL) planArgs.push(`--model=${MODEL}`);
@@ -224,6 +229,7 @@ async function handleRun(req) {
   if (cancelled) return finishCancelled();
 
   // 3) ACT + VERIFY + CONVERGE
+  process.env.AE_AI_PURPOSE = 'tune';
   setState({ phase: 'applying', message: 'applying and checking the render…' });
   const tune = await run('brownfield/tune_edit.mjs', [
     `--seed=${specPath}`, `--intent=${intent}`, `--layer=${spec._targetLayer || 1}`,

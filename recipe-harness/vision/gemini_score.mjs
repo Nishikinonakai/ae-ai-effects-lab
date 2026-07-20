@@ -50,6 +50,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { spawnSync } from 'child_process';
 import { validateReview } from '../runner/review_schema.mjs';
+import { recordSpend } from '../../shell/llm.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -279,6 +280,12 @@ if (review.suggestions.length > 6) {
 }
 review.score = Math.max(0, Math.min(10, Math.round(review.score)));
 review._backend = `gemini:${model}`;
+// The scorer is the product's biggest recurring cost — one call per tune iteration, several per
+// request. Metering only the planner would have shown a tenth of the real spend.
+try {
+  const sp = recordSpend({ model, usage: data.usageMetadata, purpose: process.env.AE_AI_PURPOSE || 'score' });
+  if (sp && sp.usd !== null) review._usd = sp.usd;
+} catch { /* accounting must never break scoring */ }
 review._frames_scored = attached;
 if (data.usageMetadata?.thoughtsTokenCount) review._thinking_tokens = data.usageMetadata.thoughtsTokenCount;
 if (degraded.length) review._degraded = degraded;

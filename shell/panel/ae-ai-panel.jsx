@@ -95,6 +95,10 @@
   var barInput = rowOpts.add("edittext", undefined, "8");
   barInput.preferredSize.width = 34;
   var clearBtn = rowOpts.add("button", undefined, "clear log");
+  // Cost, visible without being asked for. £5.72 went out in a day on this project before anyone
+  // counted; a spend the artist only meets on the bill is one they cannot act on.
+  var spendText = rowOpts.add("statictext", undefined, "", { truncate: "middle" });
+  spendText.alignment = ["fill", "center"];
 
   var logBox = win.add("edittext", undefined, "", { multiline: true, readonly: true, scrolling: true });
   logBox.preferredSize.height = 84;
@@ -187,6 +191,7 @@
     if (busy && s.pass) head += "  ·  pass " + s.pass;
     statusText.text = head;
 
+    if (s.spend) spendText.text = s.spend;
     if (s.rationale && s.rationale !== rationale.text) rationale.text = s.rationale;
     if (s.message && s.message !== lastMessage) { log(s.message); lastMessage = s.message; }
 
