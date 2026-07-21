@@ -19,10 +19,54 @@ export function validateEdits(rawEdits, state, installedByMatch) {
   const addedSlot = new Map();     // "<layerIndex>|<matchName>" -> predicted parade slot of the NEWEST add
   const addedCount = new Map();    // "<layerIndex>|<matchName>" -> how many this spec has added
 
+  // addLayer bookkeeping: layerIndex 0 in later edits means "the layer this spec just created"
+  // (apply_edit resolves it by id; pre-existing layers keep their perception indices and are
+  // re-mapped there). The validator only needs to know that 0 is legal once an addLayer exists,
+  // and which effects the spec has put on it.
+  let newLayerCount = 0;
+  const newLayerEffects = new Set();   // effect matchNames this spec has added onto the NEW layer
+
   const edits = (rawEdits || []).filter(e => {
+    if (e.op === 'addLayer') {
+      if (e.kind !== 'solid' && e.kind !== 'adjustment') {
+        problems.push(`addLayer kind "${e.kind}" is not solid|adjustment — edit dropped`);
+        return false;
+      }
+      newLayerCount++;
+      return true;
+    }
+    if (e.layerIndex === 0) {
+      // The freshly-created layer: perception cannot check it, so validation is by construction —
+      // an addLayer must precede it, addEffect goes through the installed roster, params through
+      // the ownership rule against effects this spec added onto it.
+      if (!newLayerCount) { problems.push(`layerIndex 0 refers to a new layer but no addLayer precedes it — edit dropped`); return false; }
+      if (e.op === 'addEffect') {
+        if (!installedByMatch.has(e.effectMatchName)) { problems.push(`effect ${e.effectMatchName} is not installed on this machine — edit dropped`); return false; }
+        newLayerEffects.add(e.effectMatchName);
+        return true;
+      }
+      if (e.op === 'param') {
+        if (!newLayerEffects.has(e.effectMatchName)) { problems.push(`param ${e.paramMatchName} targets ${e.effectMatchName} on the new layer, but this spec never added it there — edit dropped`); return false; }
+        if (!String(e.paramMatchName || '').startsWith(e.effectMatchName)) { problems.push(`param ${e.paramMatchName} does not belong to ${e.effectMatchName} — edit dropped`); return false; }
+        return true;
+      }
+      if (e.op === 'expression') return true;
+      if (e.op === 'textContent') { problems.push(`the new solid/adjustment layer is not a text layer — textContent dropped`); return false; }
+      problems.push(`unknown op "${e.op}" — edit dropped`);
+      return false;
+    }
     const L = layerByIndex.get(e.layerIndex);
     if (!L) { problems.push(`layer ${e.layerIndex} does not exist — edit dropped`); return false; }
     if (!L.activeNow) problems.push(`layer ${e.layerIndex} "${L.name}" is not live at this frame — the edit may be invisible`);
+    if (e.op === 'textContent') {
+      // Perception marks text layers with role "text" and shows their current string; a text edit
+      // aimed anywhere else would only fail at apply time, one paid cycle later. The [KEYFRAMED]
+      // tag in the dump means apply will refuse — say so now.
+      if (L.role !== 'text') { problems.push(`layer ${e.layerIndex} "${L.name}" is not a text layer — textContent dropped`); return false; }
+      if (typeof e.text !== 'string' || !e.text.length) { problems.push(`textContent needs a non-empty "text" string — edit dropped`); return false; }
+      if (/\[KEYFRAMED×\d+\]$/.test(L.text || '')) { problems.push(`layer ${e.layerIndex} "${L.name}" has KEYFRAMED source text — per-key editing unsupported, edit dropped`); return false; }
+      return true;
+    }
     if (e.op === 'addEffect') {
       if (!installedByMatch.has(e.effectMatchName)) {
         problems.push(`effect ${e.effectMatchName} is not installed on this machine — edit dropped`);

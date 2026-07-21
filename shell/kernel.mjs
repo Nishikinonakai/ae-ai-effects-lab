@@ -185,6 +185,8 @@ function describeChanges(specPath, cardsFor) {
       const lever = cardsFor(fx, e.paramMatchName);
       lines.push(`~ ${nice}${e.effectIndex ? ` #${e.effectIndex}` : ''} · ${lever || e.paramMatchName} → ${JSON.stringify(e.value)}${e.keyframeMode ? ` (${e.keyframeMode})` : ''}`);
     } else if (e.op === 'expression') lines.push(`ƒ ${e.target || 'property'} driven by an expression`);
+    else if (e.op === 'addLayer') lines.push(`⊕ new ${e.kind || 'solid'} layer${e.name ? ` "${e.name}"` : ''} on top`);
+    else if (e.op === 'textContent') lines.push(`✎ layer ${e.layerIndex} text → "${String(e.text).slice(0, 40)}"`);
   }
   if (spec._rationale) lines.push('', spec._rationale);
   return lines.join('\n');

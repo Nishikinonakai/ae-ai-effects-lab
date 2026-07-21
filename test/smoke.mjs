@@ -284,6 +284,54 @@ console.log('\nvalidateEdits — instance addressing');
   ok('a missing layer is dropped', r.edits.length === 0);
 }
 
+// ---- validator: the two ops the artist's adversarial tests demanded (log §F) -------------------
+// textContent must only reach real, un-keyframed text layers; addLayer establishes the
+// "layerIndex 0 = the new layer" convention that later edits in the same spec rely on.
+console.log('\nvalidateEdits — textContent + addLayer');
+{
+  const { validateEdits } = await import('../shell/plan_validate.mjs');
+  const installed = new Map([['ADBE Fractal Noise', {}], ['BCC3Snow', {}]]);
+  const lyric = () => ({
+    layers: [
+      { index: 1, name: 'Datte 7', role: 'text', activeNow: true, text: 'Datte', effects: [] },
+      { index: 2, name: 'chorus', role: 'text', activeNow: true, text: '狂ってる [KEYFRAMED×4]', effects: [] },
+      { index: 3, name: 'BG', role: 'background', activeNow: true, effects: [] },
+    ],
+  });
+
+  let r = validateEdits([{ op: 'textContent', layerIndex: 1, text: 'Claude' }], lyric(), installed);
+  ok('a text edit on a text layer passes', r.edits.length === 1);
+  r = validateEdits([{ op: 'textContent', layerIndex: 3, text: 'x' }], lyric(), installed);
+  ok('a text edit on a non-text layer is dropped', r.edits.length === 0 && r.problems.some(p => /not a text layer/.test(p)));
+  r = validateEdits([{ op: 'textContent', layerIndex: 2, text: 'x' }], lyric(), installed);
+  ok('KEYFRAMED source text is refused at plan time, not one paid cycle later', r.edits.length === 0 && r.problems.some(p => /KEYFRAMED/.test(p)));
+  r = validateEdits([{ op: 'textContent', layerIndex: 1, text: '' }], lyric(), installed);
+  ok('an empty replacement string is dropped', r.edits.length === 0);
+
+  // the new-layer convention: addLayer → later edits address it as layerIndex 0
+  r = validateEdits([
+    { op: 'addLayer', kind: 'solid', name: 'snow canvas' },
+    { op: 'addEffect', layerIndex: 0, effectMatchName: 'BCC3Snow' },
+    { op: 'param', layerIndex: 0, effectMatchName: 'BCC3Snow', paramMatchName: 'BCC3Snow-0001', value: 40 },
+  ], lyric(), installed);
+  ok('addLayer + configure-the-new-layer passes whole', r.edits.length === 3);
+  r = validateEdits([{ op: 'addEffect', layerIndex: 0, effectMatchName: 'BCC3Snow' }], lyric(), installed);
+  ok('layerIndex 0 without a preceding addLayer is dropped', r.edits.length === 0 && r.problems.some(p => /no addLayer precedes/.test(p)));
+  r = validateEdits([{ op: 'addLayer', kind: 'null-object' }], lyric(), installed);
+  ok('an unknown addLayer kind is dropped', r.edits.length === 0);
+  r = validateEdits([
+    { op: 'addLayer', kind: 'adjustment' },
+    { op: 'param', layerIndex: 0, effectMatchName: 'ADBE Fractal Noise', paramMatchName: 'ADBE Fractal Noise-0010', value: 1 },
+  ], lyric(), installed);
+  ok('a param on the new layer for an effect never added there is dropped', r.edits.length === 1 && r.problems.some(p => /never added it there/.test(p)));
+  // pre-existing layers keep their perception indices after an addLayer (the applier re-maps)
+  r = validateEdits([
+    { op: 'addLayer', kind: 'solid' },
+    { op: 'textContent', layerIndex: 1, text: 'Claude' },
+  ], lyric(), installed);
+  ok('perception indices stay valid for pre-existing layers after addLayer', r.edits.length === 2);
+}
+
 // ---- suggestion mapper: the "#N" suffix is addressing, and now it addresses --------------------
 console.log('\nsuggestionsToEdits — instance suffix + pin inheritance');
 {

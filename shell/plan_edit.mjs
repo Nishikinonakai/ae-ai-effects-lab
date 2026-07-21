@@ -84,6 +84,7 @@ const perception = {
   ...(state.missingLive ? { WARNING_missingFootage: `${state.missingLive} live layer(s) have OFFLINE source — the frame shows colour-bar placeholders, do not judge the look from it` } : {}),
   layers: liveLayers.map(l => ({
     index: l.index, name: l.name, role: l.role, blendMode: l.blendMode, trackMatte: l.trackMatte,
+    ...(l.text !== undefined ? { text: l.text } : {}),   // text layers: what they currently say
     effects: (l.effects || []).map(summariseEffect),
   })),
 };
@@ -129,6 +130,17 @@ apply_edit ops:
         instance it may be omitted.
   {"op":"addEffect","layerIndex":N,"effectMatchName":"<fx matchName>"}
   {"op":"expression","layerIndex":N,"target":"position"|"scale"|"rotation"|"opacity"|"anchor","expression":"<AE expression>"}
+  {"op":"textContent","layerIndex":N,"text":"<full replacement string>"}
+      · replaces a TEXT layer's source text (layers with a "text" field in the perception dump).
+        Whole-string replacement. A layer whose text shows [KEYFRAMED×n] cannot be edited this way.
+  {"op":"addLayer","kind":"solid"|"adjustment" [,"name":"<label>"] [,"color":[r,g,b] 0..1]}
+      · creates a NEW full-comp layer at the TOP of the stack. Use it whenever the request needs its
+        own canvas — a generative effect (rain, snow, noise, particles), an overlay texture, or a
+        grade above everything — instead of painting on an unrelated existing layer.
+      · in LATER edits of this same spec, address the new layer as "layerIndex": 0 and keep using
+        the PERCEPTION indices for all pre-existing layers — the applier re-maps them automatically.
+      · "adjustment" affects every layer below it (grades/distortion); "solid" is a fresh opaque
+        canvas for generative effects.
 
 Rules:
   · Use ONLY matchNames that appear in the PERCEPTION dump, the lever list, or the installed roster.
@@ -215,6 +227,8 @@ for (const e of edits) {
   if (e.op === 'param') console.log(`  ~ layer ${e.layerIndex} ${e.effectMatchName}${e.effectIndex != null ? ` #${e.effectIndex}` : ''} ${e.paramMatchName} → ${JSON.stringify(e.value)}${e.keyframeMode ? ` (${e.keyframeMode})` : ''}`);
   else if (e.op === 'addEffect') console.log(`  + layer ${e.layerIndex} add ${e.effectMatchName}`);
   else if (e.op === 'expression') console.log(`  ƒ layer ${e.layerIndex} ${e.target} = ${String(e.expression).slice(0, 60)}`);
+  else if (e.op === 'addLayer') console.log(`  ⊕ new ${e.kind} layer "${e.name || ''}"`);
+  else if (e.op === 'textContent') console.log(`  ✎ layer ${e.layerIndex} text → "${String(e.text).slice(0, 40)}"`);
 }
 for (const p of problems) console.log(`  ⚠ ${p}`);
 if (!edits.length) console.log('  (no applicable edits — see rationale; this usually means a handoff is required)');

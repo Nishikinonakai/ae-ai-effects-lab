@@ -158,7 +158,22 @@ const AEX = String.raw`(function () {
     var sourceMissing = false;
     try { if (L.source && L.source.footageMissing) sourceMissing = true; } catch(eSM){}
     if (activeNow && sourceMissing) missingLive++;
+    // text = a TEXT layer's current source string (truncated) — what makes "replace every X" and
+    // "fix the typo in the chorus line" plannable at all: the planner must SEE which layer says
+    // what. A [KEYFRAMED] tag warns it off layers whose text is animated per-key (apply_edit
+    // refuses those rather than rewrite an animation).
+    var txt = null;
+    try {
+      if (L instanceof TextLayer){
+        var tdoc = L.property("ADBE Text Properties").property("ADBE Text Document");
+        var ts = String(tdoc.value.text);
+        txt = ts.length > 60 ? ts.substring(0,60) + "…" : ts;
+        var tk = 0; try { tk = tdoc.numKeys; } catch(eTk){}
+        if (tk > 0) txt += " [KEYFRAMED×" + tk + "]";
+      }
+    } catch(eTx){}
     layers.push('{"index":'+k+',"name":'+jstr(L.name)+',"role":'+jstr(role)+',"enabled":'+(enabled?'true':'false')+
+                (txt!==null?',"text":'+jstr(txt):'')+
                 ',"activeNow":'+(activeNow?'true':'false')+(sourceMissing?',"sourceMissing":true':'')+
                 ',"threeD":'+(threeD?'true':'false')+',"blendMode":'+jval(bm)+',"trackMatte":'+jval(tm)+
                 ',"parent":'+jval(parent)+',"in":'+jval(inP)+',"out":'+jval(outP)+

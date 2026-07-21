@@ -12,7 +12,8 @@
 //      model verifies against is the one actually live at comp.time),
 //   4) never touches a user's original file — operate on a copy or scratch comp only.
 //
-// Three ops (create-vs-modify pair + expression generation, PRD §八 D):
+// Five ops (create-vs-modify pair + expression generation, PRD §八 D; textContent + addLayer added
+// 2026-07-21 after the artist's adversarial dogfooding hit both gaps in one evening — log §F):
 //   { "op":"param",      "layerIndex":N, "effectMatchName":"BCC Cross Glitch",
 //     "paramMatchName":"BCC Cross Glitch-10682374", "value":80 [, "effectIndex":I] }
 //       · STATIC param → setValue(value).
@@ -25,6 +26,17 @@
 //   { "op":"expression", "layerIndex":N, "target":"position"|"scale"|"rotation"|"opacity"|"anchor"
 //     (or "propertyPath":["ADBE Effect Parade","<fx>",...]), "expression":"...AE expr..." }
 //     — inverse restores the prior expression text + enabled state (empty text clears it).
+//   { "op":"textContent", "layerIndex":N, "text":"replacement string" }
+//     — whole-string replacement of a TEXT layer's source text via TextDocument round-trip (the
+//       same document object is mutated and set back, so font/size/tracking survive). Keyframed or
+//       expression-driven source text is REFUSED, not guessed at. Inverse restores the old string.
+//   { "op":"addLayer", "kind":"solid"|"adjustment" [,"name":"..."] [,"color":[r,g,b] 0..1] }
+//     — a NEW full-comp layer at the TOP, so a generative ask gets its own canvas instead of
+//       painting on whichever existing layer looked least wrong (the snow-on-a-lyric-precomp
+//       failure). INDEXING CONVENTION: layers keep their PERCEPTION indices in later edits of the
+//       same spec — this tool re-maps them (+1 per layer added so far); the new layer itself is
+//       addressed as layerIndex 0. Inverse removes the layer by its stable AE id, plus its solid
+//       source item when nothing else uses it (a rollback must not leave orphans in the bin).
 //
 // usage:
 //   apply:    node brownfield/apply_edit.mjs --spec=<spec.json> [--out=<dir>] [--label="..."]
@@ -210,6 +222,32 @@ if (rollbackPath) {
           var parade = L.property("ADBE Effect Parade");
           try { parade.property(op.effectIndex).remove(); done.push('{"removed_effect_at":'+op.effectIndex+'}'); }
           catch(e){ done.push('{"skip":"effect gone at '+op.effectIndex+'"}'); }
+        } else if (op.op === 'textContent'){
+          // inverse of a text replacement: write the recorded old string back the same way.
+          var srcTr = null;
+          try { srcTr = L.property("ADBE Text Properties").property("ADBE Text Document"); } catch(eTr){}
+          if (!srcTr){ done.push('{"skip":"not a text layer","i":'+i+'}'); continue; }
+          try {
+            var tdr = srcTr.value;
+            tdr.text = String(op.text);
+            srcTr.setValue(tdr);
+            done.push('{"restored_text_on_layer":'+op.layerIndex+'}');
+          } catch(eTrs){ done.push('{"skip":"setValue threw","i":'+i+'}'); }
+        } else if (op.op === 'removeLayerById'){
+          // inverse of addLayer. The id survives every index shift; the solid's own footage item
+          // goes too when nothing else uses it — a rollback must not leave orphans in the bin.
+          // (comp.layerByID is absent in AE 22.6, so scan for the id by hand.)
+          try {
+            var Lr = null;
+            for (var qr=1;qr<=comp.numLayers;qr++){ try { if (comp.layer(qr).id === op.id){ Lr = comp.layer(qr); break; } } catch(eQr){} }
+            if (!Lr){ done.push('{"skip":"layer gone (id '+op.id+')"}'); continue; }
+            var srcItem = null; try { srcItem = Lr.source; } catch(eSi){}
+            Lr.remove();
+            if (op.removeSource && srcItem){
+              try { if (srcItem.usedIn.length === 0) srcItem.remove(); } catch(eRs){}
+            }
+            done.push('{"removed_layer_id":'+op.id+'}');
+          } catch(eRL){ done.push('{"skip":"removeLayerById threw","i":'+i+'}'); }
         } else if (op.op === 'setExpression'){
           var xp = resolveProp(L, op);
           if (!xp){ done.push('{"skip":"prop gone","i":'+i+'}'); continue; }
@@ -282,11 +320,34 @@ const AEX = String.raw`(function(){
   try { comp.saveFrameToPng(comp.time, BEFORE); } catch(e){}
 
   var applied = [], inverse = [], gateWarns = [];
+  // addLayer indexing: every layer added by THIS spec lands at the top and shifts the rest down,
+  // so later edits keep using PERCEPTION indices and are re-mapped here (+addedLayers). The new
+  // layer itself is layerIndex 0, resolved by its stable AE id — object references can go stale,
+  // ids cannot.
+  var addedLayers = 0, lastAddedId = 0;
+  // comp.layerByID does NOT exist in AE 22.6 (later API) — measured live; layer.id does. A plain
+  // scan works on every version that has ids at all, which is the whole point of id-addressing.
+  function layerById(id){
+    if (!id) return null;
+    for (var q=1;q<=comp.numLayers;q++){ try { if (comp.layer(q).id === id) return comp.layer(q); } catch(eQ){} }
+    return null;
+  }
+  function resolveLayer(idx){
+    if (idx === 0) return layerById(lastAddedId);
+    try { return comp.layer(idx + addedLayers); } catch(eRL2){ return null; }
+  }
   app.beginUndoGroup(${JSON.stringify('apply: ' + label)});
   try {
     for (var i=0;i<EDITS.length;i++){
       var ed = EDITS[i];
-      var L = comp.layer(ed.layerIndex);
+      // addLayer is the one op that TARGETS no layer — it creates one. Resolving first and
+      // bailing on null silently killed the whole branch on the first live run (the resolver got
+      // layerIndex undefined); every other op still fails loudly here when its target is gone.
+      var L = null;
+      if (ed.op !== 'addLayer'){
+        L = resolveLayer(ed.layerIndex);
+        if (!L){ applied.push('{"error":"layer not found","which":'+jstr(String(ed.layerIndex))+'}'); continue; }
+      }
       if (ed.op === 'param'){
         var res = findFxAt(L, ed.effectMatchName, ed.effectIndex);
         var fx = res.fx, fxAt = res.at;
@@ -309,7 +370,7 @@ const AEX = String.raw`(function(){
           catch(eSV){ applied.push('{"error":"setValue threw","detail":'+jstr(String(eSV))+'}'); continue; }
           var newV; try { newV = pr.value; } catch(eN){ newV = ed.value; }
           applied.push('{"op":"param","layer":'+ed.layerIndex+',"param":'+jstr(ed.paramMatchName)+',"old":'+jval(oldV)+',"new":'+jval(newV)+'}');
-          inverse.push('{"op":"param","layerIndex":'+ed.layerIndex+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+fxAt+',"paramMatchName":'+jstr(ed.paramMatchName)+',"value":'+jval(oldV)+'}');
+          inverse.push('{"op":"param","layerIndex":'+L.index+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+fxAt+',"paramMatchName":'+jstr(ed.paramMatchName)+',"value":'+jval(oldV)+'}');
         } else {
           // KEYFRAMED param (finding #2) — a plain setValue THROWS. Real look-params are animated,
           // so an edit MUST pick a keyframe-aware mode. NO default: 'value:100' is ambiguous between
@@ -327,7 +388,7 @@ const AEX = String.raw`(function(){
             catch(eSK){ applied.push('{"error":"scale keys threw","detail":'+jstr(String(eSK))+'}'); continue; }
             var vNow=null; try { vNow = pr.valueAtTime(comp.time, false); } catch(eVN){}
             applied.push('{"op":"param-scale","layer":'+ed.layerIndex+',"param":'+jstr(ed.paramMatchName)+',"factor":'+jnum(f)+',"numKeys":'+nk+',"valNowAfter":'+jval(vNow)+'}');
-            inverse.push('{"op":"restoreKeyValues","layerIndex":'+ed.layerIndex+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+fxAt+',"paramMatchName":'+jstr(ed.paramMatchName)+',"values":['+origVals.join(',')+']}');
+            inverse.push('{"op":"restoreKeyValues","layerIndex":'+L.index+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+fxAt+',"paramMatchName":'+jstr(ed.paramMatchName)+',"values":['+origVals.join(',')+']}');
           } else if (kmode === 'setAtTime'){
             // Overwrite (or add) a keyframe at the current playhead with ed.value (ABSOLUTE).
             // add-vs-overwrite is decided by the KEY COUNT before/after setValueAtTime — definitive,
@@ -348,7 +409,7 @@ const AEX = String.raw`(function(){
             var keyAtT = (ri>=1 && Math.abs(pr.keyTime(ri)-t) < 1e-4);
             if (!added && keyAtT && priorShape){ try { applyShape(pr, ri, priorShape); } catch(eRA){} }   // restore overwritten key's shape
             applied.push('{"op":"param-setAtTime","layer":'+ed.layerIndex+',"param":'+jstr(ed.paramMatchName)+',"time":'+jnum(t)+',"added":'+(added?'true':'false')+'}');
-            inverse.push('{"op":"restoreKeyAtTime","layerIndex":'+ed.layerIndex+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+fxAt+',"paramMatchName":'+jstr(ed.paramMatchName)+',"time":'+jnum(t)+',"added":'+(added?'true':'false')+((!added && priorShape!==null)?',"priorValue":'+jval(prior)+',"shape":'+shapeJson(priorShape):'')+'}');
+            inverse.push('{"op":"restoreKeyAtTime","layerIndex":'+L.index+',"effectMatchName":'+jstr(ed.effectMatchName)+',"effectIndex":'+fxAt+',"paramMatchName":'+jstr(ed.paramMatchName)+',"time":'+jnum(t)+',"added":'+(added?'true':'false')+((!added && priorShape!==null)?',"priorValue":'+jval(prior)+',"shape":'+shapeJson(priorShape):'')+'}');
           } else {
             applied.push('{"error":"param is keyframed ('+nk+' keys) - set keyframeMode: scale|setAtTime","which":'+jstr(ed.paramMatchName)+'}');
           }
@@ -360,7 +421,7 @@ const AEX = String.raw`(function(){
         if (ed.name){ try { neweff.name = ed.name; } catch(eNm){} }
         var newIdx = parade.numProperties;   // added at the end
         applied.push('{"op":"addEffect","layer":'+ed.layerIndex+',"effect":'+jstr(ed.effectMatchName)+',"index":'+newIdx+'}');
-        inverse.push('{"op":"removeEffect","layerIndex":'+ed.layerIndex+',"effectIndex":'+newIdx+'}');
+        inverse.push('{"op":"removeEffect","layerIndex":'+L.index+',"effectIndex":'+newIdx+'}');
       } else if (ed.op === 'expression'){
         // GENERATE + APPLY an expression (PRD §八 D). Target = a Transform prop or an explicit
         // propertyPath. Record the prior expression + enabled state so rollback restores it exactly.
@@ -373,9 +434,45 @@ const AEX = String.raw`(function(){
         try { xp.expression = ed.expression; }
         catch(eSet){ applied.push('{"error":"setExpression threw","detail":'+jstr(String(eSet))+'}'); continue; }
         applied.push('{"op":"expression","layer":'+ed.layerIndex+',"target":'+jstr(ed.target||String(ed.propertyPath))+',"had_expr":'+(oldEn?'true':'false')+'}');
-        inverse.push('{"op":"setExpression","layerIndex":'+ed.layerIndex+
+        inverse.push('{"op":"setExpression","layerIndex":'+L.index+
           (ed.target?',"target":'+jstr(ed.target):',"propertyPath":'+jval(ed.propertyPath))+
           ',"expression":'+jstr(oldExpr)+',"enabled":'+(oldEn?'true':'false')+'}');
+      } else if (ed.op === 'textContent'){
+        // Whole-string replacement on a text layer. The TextDocument is mutated and set back, so
+        // character styling rides along. Keyframed source text (per-key lyric switches are idiomatic
+        // in this genre) and expression-driven text are REFUSED — a silent wrong guess on either
+        // would rewrite an animation, not a string.
+        var srcT = null;
+        try { srcT = L.property("ADBE Text Properties").property("ADBE Text Document"); } catch(eT){}
+        if (!srcT){ applied.push('{"error":"not a text layer","which":"layer '+ed.layerIndex+'"}'); continue; }
+        var nkT = 0; try { nkT = srcT.numKeys; } catch(eTK){}
+        if (nkT > 0){ applied.push('{"error":"sourceText is keyframed ('+nkT+' keys) - per-key text editing is not supported yet","which":"sourceText"}'); continue; }
+        var exprT = false; try { exprT = srcT.expressionEnabled; } catch(eTE){}
+        if (exprT){ applied.push('{"error":"sourceText is expression-driven - a text edit has no visible effect (edit or clear the expression instead)","which":"sourceText"}'); continue; }
+        var oldTxt = "";
+        try { oldTxt = String(srcT.value.text); } catch(eTV){}
+        try {
+          var td = srcT.value;
+          td.text = String(ed.text);
+          srcT.setValue(td);
+        } catch(eTS){ applied.push('{"error":"setValue threw","detail":'+jstr(String(eTS))+'}'); continue; }
+        applied.push('{"op":"textContent","layer":'+ed.layerIndex+',"old":'+jstr(oldTxt)+',"new":'+jstr(String(ed.text))+'}');
+        inverse.push('{"op":"textContent","layerIndex":'+L.index+',"text":'+jstr(oldTxt)+'}');
+      } else if (ed.op === 'addLayer'){
+        var kind = (ed.kind === 'adjustment') ? 'adjustment' : 'solid';
+        var col = (ed.color instanceof Array && ed.color.length >= 3) ? ed.color : (kind === 'adjustment' ? [1,1,1] : [0,0,0]);
+        var lname = ed.name || (kind === 'adjustment' ? 'AI adjustment' : 'AI solid');
+        var nl = null;
+        try { nl = comp.layers.addSolid([col[0],col[1],col[2]], lname, comp.width, comp.height, 1, comp.duration); }
+        catch(eAL){ applied.push('{"error":"addSolid threw","detail":'+jstr(String(eAL))+'}'); continue; }
+        if (kind === 'adjustment'){ try { nl.adjustmentLayer = true; } catch(eAdj){} }
+        addedLayers++;
+        var lid = 0; try { lid = nl.id; } catch(eId){}
+        lastAddedId = lid;
+        applied.push('{"op":"addLayer","kind":'+jstr(kind)+',"name":'+jstr(lname)+',"index":'+nl.index+',"id":'+lid+'}');
+        // removeSource: the solid's footage item was created FOR this layer; a rollback that leaves
+        // it orphaned in the project bin is pollution, but an item something else also uses stays.
+        inverse.push('{"op":"removeLayerById","id":'+lid+',"removeSource":true}');
       } else {
         applied.push('{"error":"unknown op","op":'+jstr(String(ed.op))+'}');
       }
