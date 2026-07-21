@@ -140,6 +140,29 @@ if (tempCues.length) {
   }
 }
 
+// --- tier C: a real clip for a judge that can watch video (#13) --------------------------------
+// Sampled stills bracket motion; a clip SHOWS it. Only for temporal intents, only on the gemini
+// backend (the one with video input), and always a degradation ladder — a failed render or upload
+// falls back to the tier-B frames without killing the review. --clip=off forces stills-only.
+let clipPath = null;
+if (tempCues.length && provider() === 'gemini' && arg('clip', 'on') !== 'off') {
+  try {
+    const rc = spawnSync('node', [path.join(REPO, 'brownfield', 'render_clip.mjs'),
+      '--start=-1', '--dur=1.6', `--out=${path.dirname(reportPath)}`, `--label=${report.label || 'edit'}`],
+      { encoding: 'utf8', timeout: 200000 });
+    const line = (rc.stdout || '').trim().split('\n').pop();
+    const j = rc.status === 0 && line ? JSON.parse(line) : null;
+    if (j && j.ok) {
+      clipPath = path.resolve(REPO, j.mov);
+      console.log(`temporal clip rendered: ${j.dur}s from t=${j.start.toFixed(2)} (${(j.bytes / 1048576).toFixed(1)}MB) — the judge will watch it`);
+    } else {
+      console.log(`(clip render failed — tier B frames only: ${(rc.stderr || '').slice(0, 100)})`);
+    }
+  } catch (e) {
+    console.log(`(clip render failed — tier B frames only: ${String(e).slice(0, 80)})`);
+  }
+}
+
 // Build a review_request the shared scorer understands. Frame ORDER carries the meaning, so the
 // instructions pin frame 1 = BEFORE, frame 2 = AFTER, and ask specifically about the DELTA.
 const pass_criteria = (arg('pass', '') || '').split('||').map(s => s.trim()).filter(Boolean);
@@ -353,6 +376,7 @@ const req = {
   blocked_levers: blockedAll,      // the loop reads this back to carry the blocklist forward
   ...(temporalFrames.length ? { temporal: { cues: tempCues, offsets: temporalFrames.map(f => f.dt) } } : {}),
   frames: [beforeScaled, afterScaled, ...temporalFrames.map(f => f.scaled)],
+  ...(clipPath ? { clip: clipPath } : {}),
   review_instructions: reviewInstructions,
 };
 const reqDir = path.dirname(reportPath);

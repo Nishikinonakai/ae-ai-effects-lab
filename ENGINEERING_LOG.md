@@ -751,3 +751,35 @@ planner 没伸手。配方已改写为「settling particles / 积雪·积火」,
 `decisions.jsonl`(意图/判官分/编辑数/引擎),空会话误点有守卫,写标签永不阻塞产品。
 **用户的每一次真实点击从此都在给及格线标定攒数据**;n≈30 时动线。首个数据点将是挂在
 review 上的这团火。
+
+---
+
+## I · 2026-07-21 下午 —— 时域判据 C 层落地(判官开始看视频)+ 弹药库 + 收工备份
+
+> 用户离场前把绝望之火 **Keep 了**——`decisions.jsonl` 第一行是一条真实的人类标注
+> (keep · 火雨意图 · 3 edits)。管道上线当天就有了第一个数据点。
+
+### I.1 C 层:render queue 片段 → Files API → 判官看片(#13 关闭到只剩广度)
+
+三个 spike 定了三件事:**①渲染腿** `brownfield/render_clip.mjs`——render queue 出段落,
+带严格卫生(快照并禁用既有渲染项、渲后恢复、自删条目;实测用户队列里挂着 218s 母带
+willRender=true,裸 `rq.render()` 会把它渲起来);**②编码现实**:脚本层选不了编码器
+(`om.getSettings(STRING_SETTABLE)` 无 format 字段),"Lossless"=Animation/qtrle,本机
+AVFoundation 都解不了(avconvert 全预设拒收,对照组无声 H.264 转码正常→排除音轨假说)——
+**但 Google 的解码器直接吃 qtrle**,所以走 **Files API**(29.5MB 上传 9.4s、ACTIVE 2.8s、
+判定 3.7s),本地零转码、尺寸上限解除;**③管线** `llm.mjs::uploadVideoForJudging`(uri 缓存
+在 .mov 旁,48h TTL 内三取中位复判免重传)+ `gemini_score` 认 `clip` 字段 + `verify_edit`
+时域意图且 gemini 后端时渲 1.6s 附上,失败逐级降回 B 层帧采样(降级梯子实测兜住过一次)。
+
+**Live e2e**(呼吸表达式):cues 命中 → 3 帧 + 1.6s/2.5MB 片段 → 判官 7/10,critique
+"oscillates rhythmically and slowly" —— 台账那笔 score \$0.0043。**首跑抓到的真 bug:输出文件
+已存在时 AE 弹模态覆盖确认,把桥连同用户会话一起卡死**(computer-use 现场解锁)——修法:渲前
+删旧文件 + 同步失效 uri 缓存(判官不许看旧片)。另:C 层块曾被插进 if 块内导致作用域错——
+真机首跑第 N 次兑现"存在≠能跑"。
+
+### I.2 弹药库 + 备份
+
+[DOGFOOD_BATTERY.md](DOGFOOD_BATTERY.md):六层级 24 发(甩手掌柜→氛围党→半懂哥→精确执行→
+越界需求→恶意模糊),每发标注考察点与"好的表现"——**含"正确答案是诚实拒绝"的题**,把说不行
+也当作待测能力。用户带点评回来后:吐槽入卡入 KNOWN_ISSUES,Keep/Roll back 自动进标定集。
+全部提交并推送远端备份。

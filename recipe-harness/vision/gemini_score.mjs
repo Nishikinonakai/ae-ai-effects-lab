@@ -51,7 +51,7 @@ import { fileURLToPath } from 'url';
 import { spawnSync } from 'child_process';
 import { validateReview } from '../runner/review_schema.mjs';
 import { loadCredentials } from '../../shell/keys.mjs';
-import { recordSpend, assertBudget, modelFor } from '../../shell/llm.mjs';
+import { recordSpend, assertBudget, modelFor, uploadVideoForJudging } from '../../shell/llm.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -129,7 +129,23 @@ for (const fp of req.frames || []) {
   parts.push({ text: `frame ${path.basename(fp)}:` });
   parts.push({ inlineData: { mimeType: 'image/png', data: b64(s) } });
 }
-const attached = parts.filter(p => p.inlineData).length;
+// Tier C (#13): a rendered CLIP of the result, when the request carries one. The clip is the
+// ground truth for anything about MOTION — rhythm, dissolve, drift — which sampled stills can only
+// bracket. Upload rides the Files API (llm.mjs owns it, uri cached beside the .mov so the
+// median-confirm draws re-use it). A failed upload degrades to the frames, loudly, not fatally.
+if (req.clip && fs.existsSync(req.clip)) {
+  try {
+    const up = await uploadVideoForJudging(req.clip);
+    parts.push({ text: 'RESULT CLIP (a short render of the comp AFTER the edit — the authoritative evidence for MOTION; judge tempo/rhythm/dissolve from THIS, use the stills for framing and colour):' });
+    parts.push({ fileData: { mimeType: 'video/quicktime', fileUri: up.uri } });
+    console.log(`clip attached: ${path.basename(req.clip)} (${(fs.statSync(req.clip).size / 1048576).toFixed(1)}MB via Files API)`);
+  } catch (eClip) {
+    degraded.push(`clip_upload_failed:${String(eClip).slice(0, 60)}`);
+    console.log(`(clip upload failed — judging from stills: ${String(eClip).slice(0, 100)})`);
+  }
+}
+
+const attached = parts.filter(p => p.inlineData || p.fileData).length;
 if (!attached) { console.error('no frames could be attached — refusing to score blind'); process.exit(1); }
 
 // ---- schema ------------------------------------------------------------------------------------

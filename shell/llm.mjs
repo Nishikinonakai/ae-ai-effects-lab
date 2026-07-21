@@ -240,6 +240,55 @@ function normaliseImage(fp) {
   return (r.status === 0 && fs.existsSync(out)) ? out : fp;
 }
 
+// ---- VIDEO UPLOAD (Files API) ------------------------------------------------------------------
+// Tier C of the temporal judge (#13): a rendered clip goes up once via the resumable Files API and
+// is referenced by uri — no inline size limit, and no local transcode: AE's "Lossless" is
+// Animation/qtrle, which this Mac's own AVFoundation cannot decode but Google's decoder eats fine
+// (measured: 29.5MB up in 9.4s, ACTIVE in 2.8s, judged in 3.7s). The uri is CACHED next to the
+// clip so a median-confirm re-score reuses it instead of re-uploading; remote files self-expire in
+// ~48h, so nothing is deleted here — deleting would break the cache for the confirm draws.
+export async function uploadVideoForJudging(clipPath) {
+  const p = provider();
+  if (p !== 'gemini') throw new Error(`video judging needs the gemini provider (active: ${p || 'none'})`);
+  const cachePath = clipPath + '.uri.json';
+  try {
+    const c = JSON.parse(fs.readFileSync(cachePath, 'utf8'));
+    if (c.uri && Date.now() - c.ts < 40 * 3600 * 1000) return c;   // comfortably inside the 48h TTL
+  } catch { /* no cache — upload */ }
+  const base = 'https://generativelanguage.googleapis.com';
+  const bytes = fs.readFileSync(clipPath);
+  const init = await fetch(`${base}/upload/v1beta/files`, {
+    method: 'POST',
+    headers: {
+      'x-goog-api-key': process.env.GEMINI_API_KEY,
+      'X-Goog-Upload-Protocol': 'resumable',
+      'X-Goog-Upload-Command': 'start',
+      'X-Goog-Upload-Header-Content-Length': String(bytes.length),
+      'X-Goog-Upload-Header-Content-Type': 'video/quicktime',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ file: { display_name: path.basename(clipPath) } }),
+  });
+  const uploadUrl = init.headers.get('x-goog-upload-url');
+  if (!uploadUrl) throw new Error(`Files API refused the upload start (${init.status})`);
+  const up = await fetch(uploadUrl, {
+    method: 'POST',
+    headers: { 'X-Goog-Upload-Command': 'upload, finalize', 'X-Goog-Upload-Offset': '0' },
+    body: bytes,
+  });
+  let f = (await up.json()).file;
+  const deadline = Date.now() + 60000;
+  while (f && f.state === 'PROCESSING' && Date.now() < deadline) {
+    await new Promise(r => setTimeout(r, 2000));
+    const g = await fetch(`${base}/v1beta/${f.name}`, { headers: { 'x-goog-api-key': process.env.GEMINI_API_KEY } });
+    f = await g.json();
+  }
+  if (!f || f.state !== 'ACTIVE') throw new Error(`uploaded video never became ACTIVE (state: ${f?.state})`);
+  const rec = { uri: f.uri, name: f.name, ts: Date.now() };
+  try { fs.writeFileSync(cachePath, JSON.stringify(rec)); } catch { /* cache is an optimisation */ }
+  return rec;
+}
+
 export async function askJSON(parts, { schema = null, model = null, maxTokens = 16384, tries = 3 } = {}) {
   assertBudget();
   const p = provider();
