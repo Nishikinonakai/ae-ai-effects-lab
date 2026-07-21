@@ -736,3 +736,18 @@ after 序列(`saveFrameToPng(t, file)` 按时间直接渲,不碰 playhead,守住
 TUNE,合理。离线自测 87 → **96 条**。顺带:kernel 的 rollback/accept 现在也清结果字段
 (回滚完还挂着"what it changed"是误导,真机所见);面板 changed 区高度上限 180→120
 (长清单曾把花费行和日志挤出停靠区)。C 层(真视频)留在 #13。
+
+### H.5 举一反三实证 + 标定管道接通(当日下午)
+
+**"绝望的火雨,落地持续燃烧"**——用户的下一条真需求,planner 自发组合了前两天落地的全部三样:
+`addLayer` 建 "Despair Fire" 画布、Particular 火色 Add 混合、**引用积雪卡的地面物理**(rationale
+明写 "high gravity and ground-bounce physics… accumulate and 'burn'"),7/10 交接,画面成立。
+**雪的知识迁移到了火**——因果本体的复利第一次被用户亲眼看到("基本算是实现了举一反三")。
+用户挑的毛病同样精确:落地太弹——Bounce Strength 停在默认 50,而卡里明写 ≤20 才读作沉降,
+planner 没伸手。配方已改写为「settling particles / 积雪·积火」,并把"默认 50 落地发弹"记为
+实测陷阱(要求与开关同一次编辑里压低 0882)。
+
+**标定管道(#1 的前置)接通:** Keep/Roll back 此前点完即蒸发——现在每次决策落一行
+`decisions.jsonl`(意图/判官分/编辑数/引擎),空会话误点有守卫,写标签永不阻塞产品。
+**用户的每一次真实点击从此都在给及格线标定攒数据**;n≈30 时动线。首个数据点将是挂在
+review 上的这团火。

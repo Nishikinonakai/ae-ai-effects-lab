@@ -361,7 +361,33 @@ async function handleRun(req) {
   });
 }
 
+// THE CALIBRATION PIPELINE. KNOWN_ISSUES #1 is stuck on a dataset nobody was collecting: the
+// accept bar can only be calibrated against "what a human considered done", and every Keep/Roll
+// back click IS that label — yet until 2026-07-21 the click evaporated (both handlers just cleared
+// the session). One JSONL row per decision, written BEFORE the session is torn down; when a few
+// dozen accumulate, the judge's score distribution can finally be lined up against human taste.
+// Labels must never break the product, hence the swallow.
+function logDecision(decision) {
+  try {
+    // A click with nothing applied ("nothing to roll back", "kept 0 edits") is not a judgment on
+    // any result — recording it would poison the label set with intent:null rows. Guarded HERE,
+    // once, not at each call site.
+    if (!(session?.appliedReports?.length)) return;
+    const st = fs.existsSync(STATE) ? JSON.parse(fs.readFileSync(STATE, 'utf8')) : {};
+    fs.appendFileSync(path.join(SHELL_DIR, 'decisions.jsonl'), JSON.stringify({
+      ts: new Date().toISOString(),
+      decision,                                          // keep | rollback
+      intent: session?.intent || null,
+      score: st.score ?? null,                           // null when deciding on a resumed session
+      edits: session?.appliedReports?.length || 0,
+      engine: st.engine || null,
+      summary: session?.summaryPath ? path.relative(REPO, String(session.summaryPath)) : null,
+    }) + '\n');
+  } catch { /* a lost label is a pity; a broken accept is a bug */ }
+}
+
 async function handleRollback() {
+  logDecision('rollback');   // log FIRST — even a rollback that stalls midway was still a rejection
   if (!session?.appliedReports?.length) { setState({ phase: 'idle', message: 'nothing to roll back', canAccept: false, canRollback: false }); return; }
   setState({ phase: 'rolling-back', message: 'undoing…', canAccept: false, canRollback: false });
   // newest-first: each report's inverse assumes the edits above it are already gone
@@ -393,6 +419,7 @@ async function handleRollback() {
 }
 
 function handleAccept() {
+  logDecision('keep');
   const n = session?.appliedReports?.length || 0;
   session = null; saveSession();
   setState({ ...RESULT_FIELDS, phase: 'idle', message: n ? `kept ${n} edit(s).` : 'kept.', canAccept: false, canRollback: false });
