@@ -355,6 +355,23 @@ console.log('\nsuggestionsToEdits — instance suffix + pin inheritance');
   eq('undefined is safe', suggestionsToEdits(undefined, 1, new Map()), []);
 }
 
+// ---- temporal-intent detection (brownfield/temporal.mjs — KNOWN_ISSUES #13 tier B) -------------
+// The asymmetry the detector encodes: a false positive costs a few frames (~$0.001), a false
+// negative judges motion blind. So motion words must hit and pure-look asks must not.
+console.log('\ntemporalCues — motion words trigger, looks do not');
+{
+  const { isTemporalIntent, temporalCues } = await import('../brownfield/temporal.mjs');
+  ok('消散/留恋 hits', isTemporalIntent('残粒被风扫走,消散得更留恋一点'));
+  ok('呼吸/慢慢 hits', isTemporalIntent('让背景慢慢地有呼吸感'));
+  ok('闪烁 hits', isTemporalIntent('让霓虹灯闪烁'));
+  ok('english pulse hits', isTemporalIntent('make the glow pulse with the beat'));
+  ok('english fade out hits', isTemporalIntent('the text should fade out at the end'));
+  ok('a pure look-ask does NOT hit (warmer)', !isTemporalIntent('把整体色调调暖一点'));
+  ok('a pure look-ask does NOT hit (wider glow)', !isTemporalIntent('make the second glow much wider and stronger'));
+  ok('empty is safe', !isTemporalIntent('') && !isTemporalIntent(undefined));
+  eq('cues are reported for the prompt', temporalCues('慢慢呼吸').length, 2);
+}
+
 // ---- recovery helpers (shell/recover.mjs) ------------------------------------------------------
 // The kernel branches on these when a step dies under it. A false "bridge timeout" would relaunch
 // the palette for a no-comp error (harmless but noisy); a MISSED one leaves tonight's exact

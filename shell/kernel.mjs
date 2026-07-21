@@ -386,13 +386,16 @@ async function handleRollback() {
     undone++;
   }
   session = null; saveSession();
-  setState({ phase: 'idle', message: `rolled back ${undone} edit(s) — your comp is back where it started.`, frame: null, canAccept: false, canRollback: false, trace: [] });
+  // RESULT_FIELDS here too: after a rollback those changes no longer exist, and a "what it
+  // changed" list describing undone edits is actively misleading (seen live after the artist's
+  // level-by-level rollback — the fresh panel still displayed the rolled-back snow stack).
+  setState({ ...RESULT_FIELDS, phase: 'idle', message: `rolled back ${undone} edit(s) — your comp is back where it started.`, canAccept: false, canRollback: false });
 }
 
 function handleAccept() {
   const n = session?.appliedReports?.length || 0;
   session = null; saveSession();
-  setState({ phase: 'idle', message: n ? `kept ${n} edit(s).` : 'kept.', canAccept: false, canRollback: false, trace: [] });
+  setState({ ...RESULT_FIELDS, phase: 'idle', message: n ? `kept ${n} edit(s).` : 'kept.', canAccept: false, canRollback: false });
 }
 
 // ---- request loop -------------------------------------------------------------------------------

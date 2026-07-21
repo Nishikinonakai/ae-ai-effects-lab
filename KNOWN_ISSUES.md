@@ -100,17 +100,19 @@ AE 2022 + Trapcode 2023 + 英文界面 + macOS。跨版本 / 跨语言 / Windows
 
 ---
 
-### 13. 时域意图被静默投影成静帧优化(2026-07-20 深夜,Datte 排练 E.2-C 实测)
+### 13. 时域意图被静默投影成静帧优化 —— **B 层已接线并真机验证(2026-07-21 午)**,C 层待做
 
-环的判据是 before/after **静帧**,而真实诉求常是时域的:"消散得更留恋一点"、"起伏像布料"。
-产品对这类意图**既不拒绝也不声明边界**,直接在单帧上优化它的空间投影——Form 余烬案例里,
-playhead 恰在爆散尾声,before 近空,产品把残粒抹得更干净还拿了 5 分。
+环的判据曾是 before/after **静帧**,时域诉求("消散得更留恋")被静默投影到单帧优化(§E.2-C)。
 
-修法方向(未做,但 API 腿已于 2026-07-21 实测通,日志 §H.1):planner 识别时域词汇(消散/渐渐/
-节奏/呼吸/越来越)→ 按层级升级判据:**B 层多帧采样**(现有 saveFrameToPng + askJSON 图片位,
-零新依赖,当天可做)/ **C 层真视频**(Gemini 视频输入实测:~263 token/秒、0.6MB 片段 5.5s 时延、
-单次 ≈$0.001,运动描述真实时域;渲染侧用 AE render queue 出 quarter-res PhotoJPEG .mov,无需
-ffmpeg)。产品环仍未接线;与 Phase A 遗留的"animated probing"同族。
+**已修的一半(B 层,日志 §H.4):** `brownfield/temporal.mjs` 检测时域词汇(宽召回是刻意的:
+误报多花 ~$0.001,漏报=盲判)→ verify_edit 一次桥调用补采 +0.4/0.8/1.2s 三帧 after 序列
+(`saveFrameToPng(t,f)` 不动 playhead,只读契约保持)→ scorer 收 5 帧 + 时域说明段。真机对照:
+"慢慢地呼吸,忽明忽暗"意图下,判官 critique 为 "opacity modulates rhythmically **across the
+sampled frames**"——判的是序列不是脑补。
+
+**未做的一半(C 层):** 真视频判据(API 腿已实测:~263 token/秒、5.5s 时延、单次 ≈$0.001;
+渲染侧走 AE render queue 出 quarter-res PhotoJPEG .mov,无需 ffmpeg)。三帧采样看不出的高频
+运动(glitch 打点、卡点)仍需要它;与 Phase A 遗留的"animated probing"同族。
 
 ## 四、已排期但没做
 

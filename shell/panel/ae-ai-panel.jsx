@@ -307,8 +307,11 @@
     }
     if (s.message && s.message !== lastMessage) { log(s.message); lastMessage = s.message; }
 
+    // Height cap 120, not 180: a long change list used to grow the panel past the dock's height and
+    // push the spend line and log clean out of view (seen live after the two-layer snow plan).
+    // Bottom lines that exist but cannot be seen are worse than a truncated list the log completes.
     var ch = s.changed || "";
-    if (ch !== lastChanged) { changedList.text = ch; fitHeight(changedList, ch, 14, 180); lastChanged = ch; }
+    if (ch !== lastChanged) { changedList.text = ch; fitHeight(changedList, ch, 14, 120); lastChanged = ch; }
 
     // The frame is the product's actual output — show it, and only reload when the path changes
     // (re-reading a PNG every second would make the panel crawl). Repaint must be asked for

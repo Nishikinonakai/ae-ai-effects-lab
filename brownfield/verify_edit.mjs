@@ -28,6 +28,8 @@ import { spawnSync } from 'child_process';
 import { schemaPrompt } from '../recipe-harness/runner/review_schema.mjs';
 import { leverContext, effectsFromEdits } from '../introspect/essence/lookup.mjs';
 import { frameDelta, classifyDelta } from './frame_delta.mjs';
+import { temporalCues } from './temporal.mjs';
+import { waitForFrameSettle } from './frame_settle.mjs';
 import { provider } from '../shell/llm.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -98,6 +100,45 @@ function scaledCopy(fp) {
 }
 const beforeScaled = scaledCopy(beforeAbs);
 const afterScaled = scaledCopy(afterAbs);
+
+// --- temporal sampling (KNOWN_ISSUES #13, tier B) ---------------------------------------------
+// When the intent speaks in motion words, a single AFTER still judges the wrong thing — measured
+// on the Datte rehearsal, where "消散得更留恋一点" was optimised into erasing the particles. So:
+// detect the temporal vocabulary, render a few MORE after-frames across the following second, and
+// hand the scorer the sequence. gemini_score already accepts any number of req.frames. Sampling
+// uses comp.saveFrameToPng(t, file), which renders at t without touching the playhead — this tool
+// keeps its never-mutate contract. False positives cost ~a second and ~$0.001; false negatives
+// judge motion blind, which is the #13 failure — so the detector leans inclusive.
+const tempCues = temporalCues(intent);
+const TEMPORAL_OFFSETS = [0.4, 0.8, 1.2];
+let temporalFrames = [];   // scaled copies, in time order
+if (tempCues.length) {
+  const outPrefix = afterAbs.replace(/\.png$/i, '');
+  const spec = TEMPORAL_OFFSETS.map((dt, i) => ({ dt, fp: `${outPrefix}_t${i + 1}.png` }));
+  const script = `(function(){
+    var c = app.project.activeItem; if (!(c instanceof CompItem)) return '{"err":"no comp"}';
+    var t0 = c.time, took = [];
+    var S = ${JSON.stringify(spec.map(s => ({ dt: s.dt, fp: s.fp })))};
+    for (var i = 0; i < S.length; i++){
+      var t = t0 + S[i].dt;
+      if (t > c.duration - c.frameDuration) continue;   // never sample past the comp's end
+      try { c.saveFrameToPng(t, new File(S[i].fp)); took.push(S[i].dt); } catch(e){}
+    }
+    return '{"ok":true,"took":[' + took.join(',') + ']}';
+  })()`;
+  try {
+    const res = JSON.parse(await runAE(script, 60000));
+    const took = res.took || [];
+    for (const s of spec) {
+      if (took.indexOf(s.dt) === -1) continue;
+      if ((await waitForFrameSettle(s.fp)) > 0) temporalFrames.push({ dt: s.dt, scaled: scaledCopy(s.fp) });
+    }
+    console.log(`temporal intent (${tempCues.join(', ')}) — sampled ${temporalFrames.length} extra after-frame(s) at +${temporalFrames.map(f => f.dt).join('s, +')}s`);
+  } catch (e) {
+    console.log(`(temporal sampling failed: ${String(e).slice(0, 80)} — judging from the single after-frame)`);
+    temporalFrames = [];
+  }
+}
 
 // Build a review_request the shared scorer understands. Frame ORDER carries the meaning, so the
 // instructions pin frame 1 = BEFORE, frame 2 = AFTER, and ask specifically about the DELTA.
@@ -276,6 +317,15 @@ if (editClass === 'inert') {
 if (editClass) console.log(`frame delta: ${editClass}${editDelta.ok ? ` (moved ${(editDelta.movedFraction * 100).toFixed(2)}%, mean ${editDelta.meanDelta.toFixed(2)}/255)` : ''}`);
 else if (!editDelta.ok) console.log(`frame delta: unavailable — ${editDelta.why} (skipping the inert check)`);
 
+const temporalBlock = temporalFrames.length ? [
+  `TEMPORAL INTENT DETECTED (cues: ${tempCues.join(', ')}). The intent is about MOTION over time,`,
+  'not a single look. After the first two frames, the remaining frames are the SAME edited comp',
+  `sampled at +${temporalFrames.map(f => f.dt + 's').join(', +')} after the edit frame, in time order.`,
+  'Judge the EVOLUTION across them: does the change move/build/decay the way the intent asks?',
+  'A sequence that sits still when the intent asks for motion — or that changes arbitrarily when the',
+  'intent asks for a specific evolution — fails REGARDLESS of how good any single frame looks.',
+].join('\n') : '';
+
 const reviewInstructions = [
   `The FIRST frame (${path.basename(beforeScaled)}) is the comp BEFORE the edit.`,
   `The SECOND frame (${path.basename(afterScaled)}) is the SAME comp+frame AFTER the edit was applied.`,
@@ -284,6 +334,7 @@ const reviewInstructions = [
   'is a FAIL. score = how well AFTER realizes the intent (10 = exactly, would ship; 0 = wrong or broken).',
   'suggestions, when verdict=fail, are the concrete next nudges to improve the edit.',
   '',
+  ...(temporalBlock ? [temporalBlock, ''] : []),
   ...(lc.block ? [lc.block, ''] : []),
   ...(blockedBlock ? [blockedBlock, ''] : []),
   ...(deltaBlock ? [deltaBlock, ''] : []),
@@ -300,7 +351,8 @@ const req = {
   available_levers: lc.levers,     // machine-readable twin of the block above (for post-hoc analysis)
   frame_delta: { edit: editDelta, cumulative: cumulativeDelta, class: editClass },
   blocked_levers: blockedAll,      // the loop reads this back to carry the blocklist forward
-  frames: [beforeScaled, afterScaled],
+  ...(temporalFrames.length ? { temporal: { cues: tempCues, offsets: temporalFrames.map(f => f.dt) } } : {}),
+  frames: [beforeScaled, afterScaled, ...temporalFrames.map(f => f.scaled)],
   review_instructions: reviewInstructions,
 };
 const reqDir = path.dirname(reportPath);

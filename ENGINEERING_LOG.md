@@ -720,3 +720,19 @@ MCP Bridge Auto 小窗是 vendored 上游(Dakkshin/after-effects-mcp)的 UI;轮�
 不叠定时器,并且**加载即退役在跑的旧 palette**(no-op 其全局轮询函数 + 关窗)。真机热切换:
 用户 AE 开着、review 挂着,一次 DoScriptFile 完成换代,ping/心跳/往返全通,零打扰。
 `bridge_up.sh` 改为直接从仓库注入——**桥从此不需要任何 sudo 安装**。白框滚动泛白随窗口一起消失。
+
+### H.4 时域判据 B 层接线(#13 修复的前一半,当日下午)
+
+`brownfield/temporal.mjs`(时域词汇检测,zh+en,**宽召回是设计**:误报成本 ~$0.001 三帧,
+漏报成本 = §E.2-C 那种盲判)→ `verify_edit` 检出后**一次桥调用**补采 +0.4/0.8/1.2s 三帧
+after 序列(`saveFrameToPng(t, file)` 按时间直接渲,不碰 playhead,守住只读契约;越过 comp
+末尾的采样点自动跳过)→ settle 规则抽为共享 `frame_settle.mjs`(apply_edit 同源)→ 请求
+`frames` 从 2 张变 5 张 + 专门的时域说明段。**gemini_score 零改动**——它从第一天就循环
+`req.frames`。
+
+**真机对照实验**(呼吸表达式 `50+45·sin(6t)`,意图"慢慢地呼吸,忽明忽暗地起伏"):检测命中
+4 词、采样 3 帧、`_frames_scored: 5`,判官 critique = "The opacity modulates rhythmically
+**across the sampled frames**" —— 同类意图在 §E.2-C 只能对单帧脑补,现在判的是真序列。7/10
+TUNE,合理。离线自测 87 → **96 条**。顺带:kernel 的 rollback/accept 现在也清结果字段
+(回滚完还挂着"what it changed"是误导,真机所见);面板 changed 区高度上限 180→120
+(长清单曾把花费行和日志挤出停靠区)。C 层(真视频)留在 #13。
