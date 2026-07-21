@@ -1,15 +1,17 @@
 #!/bin/bash
 # bridge_up.sh — zero-manual-step session bootstrap for the AE MCP bridge.
 #
-# Discovered 2026-07-15: mcp-bridge-auto.jsx is a plain `new Window("palette")`, so it can
-# be launched via AppleScript DoScriptFile — no Window-menu click needed. Auto-run defaults
-# to ON in the panel source. This replaces the old "open AE → Window → mcp-bridge-auto.jsx →
-# check Auto-run" manual ritual entirely.
+# Discovered 2026-07-15: a script launched via AppleScript DoScriptFile — no Window-menu click
+# needed. Since 2026-07-21 the bridge is HEADLESS (shell/panel/mcp-bridge-headless.jsx): polling
+# always lived on app.scheduleTask, not on the palette window, and the artist named the floater a
+# nuisance. Launched straight from the repo — nothing to install into root-owned folders (the old
+# palette needed a sudo copy; this needs nothing).
 #
 # usage: ./bridge_up.sh   (idempotent; safe to re-run)
 set -e
 AE_APP="Adobe After Effects 2022"
-PANEL="/Applications/Adobe After Effects 2022/Scripts/ScriptUI Panels/mcp-bridge-auto.jsx"
+REPO="$(cd "$(dirname "$0")" && pwd)"
+PANEL="$REPO/shell/panel/mcp-bridge-headless.jsx"
 BRIDGE_DIR="$HOME/Documents/ae-mcp-bridge"
 PING_JSX="$(mktemp -t aeping).jsx"
 

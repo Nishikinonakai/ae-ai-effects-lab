@@ -106,8 +106,11 @@ AE 2022 + Trapcode 2023 + 英文界面 + macOS。跨版本 / 跨语言 / Windows
 产品对这类意图**既不拒绝也不声明边界**,直接在单帧上优化它的空间投影——Form 余烬案例里,
 playhead 恰在爆散尾声,before 近空,产品把残粒抹得更干净还拿了 5 分。
 
-修法方向(未做):planner 识别时域词汇(消散/渐渐/节奏/呼吸/越来越)→ 或明确交接"这需要你看
-预览"、或渲多帧对给 scorer。与 Phase A 遗留的"animated probing"同族。
+修法方向(未做,但 API 腿已于 2026-07-21 实测通,日志 §H.1):planner 识别时域词汇(消散/渐渐/
+节奏/呼吸/越来越)→ 按层级升级判据:**B 层多帧采样**(现有 saveFrameToPng + askJSON 图片位,
+零新依赖,当天可做)/ **C 层真视频**(Gemini 视频输入实测:~263 token/秒、0.6MB 片段 5.5s 时延、
+单次 ≈$0.001,运动描述真实时域;渲染侧用 AE render queue 出 quarter-res PhotoJPEG .mov,无需
+ffmpeg)。产品环仍未接线;与 Phase A 遗留的"animated probing"同族。
 
 ## 四、已排期但没做
 

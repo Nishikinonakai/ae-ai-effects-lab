@@ -39,6 +39,10 @@
   var SHELL_DIR = Folder.myDocuments.fsName + "/ae-ai-shell";
   var REQ = SHELL_DIR + "/request.json";
   var STATE = SHELL_DIR + "/state.json";
+  // The headless bridge (the kernel's hands — now windowless) writes a heartbeat file every couple
+  // of seconds; its age is the cheapest possible "is the bridge alive" signal, and showing it here
+  // is what let the floating MCP palette disappear without losing the one thing it told anyone.
+  var BRIDGE_HEART = Folder.myDocuments.fsName + "/ae-mcp-bridge/bridge_heartbeat.json";
   var POLL_SEC = 1.0;
 
   var dir = new Folder(SHELL_DIR);
@@ -286,7 +290,15 @@
 
     // Which engine is actually answering. "I thought it was using X" was a real defect, not a
     // hypothetical — the scorer moved provider while the planners did not, and nothing showed it.
-    if (s.spend || s.engine) spendText.text = (s.engine ? s.engine + "  ·  " : "") + (s.spend || "");
+    // Plus the bridge heartbeat: AE-open-but-deaf and bridge-alive look identical otherwise.
+    if (s.spend || s.engine) {
+      var bridgeMark = "";
+      try {
+        var hf = new File(BRIDGE_HEART);
+        bridgeMark = (hf.exists && (new Date().getTime() - hf.modified.getTime()) < 6000) ? "  ·  bridge ✓" : "  ·  bridge ✗";
+      } catch (eH) { bridgeMark = ""; }
+      spendText.text = (s.engine ? s.engine + "  ·  " : "") + (s.spend || "") + bridgeMark;
+    }
     // Explicit clears matter as much as sets: on a fresh kernel these come back null, and treating
     // null as "no update" is what made a stale result look like a live one.
     if (s.rationale !== undefined) {

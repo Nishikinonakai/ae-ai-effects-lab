@@ -235,6 +235,16 @@
    },
    "effect": "Y (0015) and Z (0016) can be hidden behind the size-mode enum. Same family of gate as Trapcode Form's Base Form Size — set the mode first, then the individual axes.",
    "_status": "gate identified, exact enum value still unresolved — re-run probe_gates.mjs on tc Particular to settle it"
+  },
+  {
+   "name": "Bounce ground plane (settling / accumulation)",
+   "matchName": "tc Particular-0878",
+   "gate": {
+    "matchName": "tc Particular-0690 AND tc Particular-0875",
+    "name": "Enable Bounce + Enable Ground Plane",
+    "setTo": "both 1 (checkboxes, default 0)"
+   },
+   "effect": "Physics Simulations > Bounce gives particles a FLOOR: with Enable Bounce (0690) and Enable Ground Plane (0875) on, falling particles collide with a horizontal plane at Ground Height (0878, % of frame, default 60) instead of falling out of frame. Bounce Strength (0882, default 50) is how live the bounce is — LOW values make particles settle and pile visually, which is what '积雪/accumulation' asks for; Bounce Random (0883) varies it; Slide Friction (0884, default 80) stops the settled ones sliding. Pair with small positive Gravity (0017) and, for sideways drift, Wind X (0749). Artist-validated in the UI 2026-07-21 (defaults + the two enables were sufficient); SCRIPT settability of these params is not yet probed — if a write throws, hand off with the checkbox names instead of guessing."
   }
  ],
  "unreachable_levers": [
@@ -260,7 +270,8 @@
   "snow": "Box emitter spanning wider than frame, positive Gravity (small), Velocity low, Air Resistance up so Wind Y can drift it sideways, Size Random high, NO Add blend (snow is opaque, not luminous)",
   "sparks / burst": "Point emitter, high Velocity 400-1200, Direction Spread wide, very short Life 0.4-1.2, Motion Blur on with Shutter ~180, Add blend. Bursts need a psec SPIKE over time (expression), not a constant rate — a constant rate reads as a fountain",
   "trail / light path": "Point emitter with an EXPRESSION on Position (0581) sweeping the path; Velocity low so particles stay where they were born; Life tuned to how long the trail should persist",
-  "volume painting (funnel, tornado, ring)": "the emitter SWEEPS the shape via a Position expression — angle from time, radius from height. High sweep rate plus turbulence fuses the discrete passes into a wall. This is the real technique; there is no vortex force"
+  "volume painting (funnel, tornado, ring)": "the emitter SWEEPS the shape via a Position expression — angle from time, radius from height. High sweep rate plus turbulence fuses the discrete passes into a wall. This is the real technique; there is no vortex force",
+  "settling snow / 积雪 (snow that lands and stays)": "the falling-snow recipe above PLUS the bounce floor: Enable Bounce 0690=1, Enable Ground Plane 0875=1, Ground Height 0878 to where the ground should read (default 60% worked), Bounce Strength 0882 LOW (≤20 reads as settling, 50 default visibly bounces), Slide Friction 0884 high (default 80), small positive Gravity 0017 (≈20), Wind X 0749 for drift. Long particle Life so landed flakes persist; consider pre-run so the ground is already dusted at frame 1. Do NOT fake the ground with a separate Fractal Noise solid — the particles themselves can land (measured: the FN-ground plan scored 4/10 and read as a texture bar, log §F.2)."
  },
  "reasoning_hooks": [
   "Reason in causal order — emitter → birth → physics → shading. A wrong look is almost always wrong at one specific stage, and naming the stage narrows 7657 params to a handful.",

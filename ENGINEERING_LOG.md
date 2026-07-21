@@ -681,3 +681,42 @@ addLayer 没有 layerIndex,整个分支从未执行——改为按 op 决定是�
 规则、感知索引连续性)。SPEC_CONTRACT 已教学两个新 op;面板 "what it changed" 能翻译它们。
 §F 记下的两个能力缺口就此关闭;用户当晚的两条测试请求,现在**能力上都接得住了**
 (planner 质量另论,那是 §四 A 的仗)。
+
+---
+
+## H · 2026-07-21 午 —— 用户三连:视频判官评估、第二次雪测试复盘、桥去窗化
+
+### H.1 视频判官(用户提议)—— 实测:比预想的还便宜,值得做
+
+用户点出 Gemini 是当前最强多模态,建议必要时导出小片段给它打分。**API 腿当场实测**
+(两支真实素材,走产品同一把钥匙串 key):0.6MB 短循环 → **视频 396 token、5.5s、单次 ≈$0.001**;
+4MB/约12秒 → 3168 token(≈263 token/秒)。关键是回答质量:两次的 motion 描述都是**真时域**
+("scanlines flicker and roll vertically… rapid, jittery pace"),不是从单帧脑补的。
+
+**结论与分层**(接 #13):时域意图触发升级判据——**B 层多帧采样**(现有渲帧 + askJSON 图片位,
+零新依赖)先接线;**C 层真视频**(AE render queue 出 quarter-res PhotoJPEG .mov ≈ 几 MB,
+Gemini inline 直收,无需 ffmpeg——本机没装)是正解。判据升级只对时域意图付费,静态意图维持
+静帧对。产品环接线未做,记在 #13。
+
+### H.2 第二次雪测试:FN 糊地面不是想象力问题,是卡片盲区
+
+用户重跑雪景意图,planner 这次**自发用了昨晚的 addLayer**(Snowfall + Ground_Snow 两层,
+Particular 下雪 + FN 固态当"地面")——op 落地当天即被采用。但 FN 糊地面被用户当场点破:
+正解是 **Particular 物理模拟 > 弹跳 > 地平面**,他还顺手在 UI 里验证了(默认值 + 两个开关即成)。
+
+根因排序:**深卡里 Bounce/Ground 一族完全空白**(有"下雪"配方、无"积雪"知识),planner 够不着
+正确杠杆,才拿手边的 FN 拼贴;flash 思考弱是次要因子(路由缝已在,等标定后可换强 planner)。
+**已修**:卡片新增 gated lever「Bounce ground plane」(0690+0875 双门 → 0878/0882/0883/0884,
+matchName 对齐 7657 实测表,参数组合标注"用户 UI 实测 2026-07-21、脚本可写性未探")+
+config_recipe「settling snow / 积雪」,内含负面教训:"别拿 FN 糊地面,实测 4/10"。
+这正是 §二 因果本体的运转方式:**用户的手感 → 机器的知识**。
+
+### H.3 桥去窗化:上游的 palette 退役,协议原样保留
+
+MCP Bridge Auto 小窗是 vendored 上游(Dakkshin/after-effects-mcp)的 UI;轮询从来挂在
+`app.scheduleTask` 上,与窗口无关(§D 杀窗桥不死即证)。新 `shell/panel/mcp-bridge-headless.jsx`:
+**runScript-only**(本仓库全部工具只用它)、同文件同状态机、日志入 `bridge_log.txt`、心跳入
+`bridge_heartbeat.json`(面板据此显示 bridge ✓/✗,小窗的唯一价值被接走)、可远程停机、重复注入
+不叠定时器,并且**加载即退役在跑的旧 palette**(no-op 其全局轮询函数 + 关窗)。真机热切换:
+用户 AE 开着、review 挂着,一次 DoScriptFile 完成换代,ping/心跳/往返全通,零打扰。
+`bridge_up.sh` 改为直接从仓库注入——**桥从此不需要任何 sudo 安装**。白框滚动泛白随窗口一起消失。
