@@ -183,6 +183,27 @@ P0 复测后的标签总量见下文。
   Keep / Roll back。
 - 完整离线回归更新为 **152 passed / 0 failed**；该修复不调用模型，成本和标签数不变。
 
+### 新建效果的参数卡前置校验
+
+- 用当前 AE 2022 对 `ADBE Lumetri` 做两阶段真机 introspection：卡片记录 **128 个参数 /
+  126 个 leaf / 38 个 animatable / 21 个 CUSTOM / 1 个默认隐藏**。历史失败目标中，
+  `ADBE Lumetri-0026` 实际是 0..200 的 **1D Intensity**，不是颜色；`0027` 是 GROUP，
+  `0032` Split Toning、`0047` Wheels、`0085` Color Wheels 均是 **CUSTOM**，不能用
+  `setValue` 写颜色数组。
+- planner 现在会在用户明确点名效果时收到对应参数卡的紧凑版：可写 leaf 带类型/范围，
+  GROUP/CUSTOM 单独标成不可脚本赋值。validator 对本计划新建的效果再机械拒绝不存在参数、
+  GROUP/CUSTOM、不可写参数、错误 value shape、缺值和越界标量；第三方参数名无需再假设
+  必须以效果 matchName 开头。已有动态实例仍以实时 dump 为准，避免默认卡误杀动态 pin。
+- 第三次原文复测 #14：planner 直接返回 `edits: []`，准确说明 Lumetri 的 Split Toning /
+  Color Wheels 是 CUSTOM，并说明硬效果契约禁止偷换其他调色效果；面板进入 `handoff`，
+  `canAccept=false / canRollback=false`，**零 apply report、零 session、AE 零修改**。
+- introspection 的 `__Introspect` scratch comp 已删除；实时回读仍为 5 层，最终 PNG 与
+  P0 基线 SHA-256 同为
+  `da781f833fdfb91b8a8f1fc1adb0df3139481ddaad6c7542b3c796bd1317ebf7`，字节完全一致。
+- 完整离线回归更新为 **168 passed / 0 failed**；两次 planning 验证后总模型使用为
+  **$0.9903 / 104 calls**，标签仍为 26 条。参数卡覆盖到的效果在 plan 前拦截；未知效果
+  仍保留 apply report 检错 + 原子补偿作为安全兜底。
+
 ## 跨题确定性缺陷（持续更新）
 
 - ~~`passes=3` 实际执行 4 轮，状态显示 `4/3`。~~ **P0 已关闭：真机严格 3/3。**
@@ -200,7 +221,8 @@ P0 复测后的标签总量见下文。
 - ~~对协议明确不支持的层序仍会 bluff。~~ **P0 已关闭：#12 在 planner 前具体交接。**
 - ~~判官 `verdict=pass` 与 accept bar 信号冲突。~~ **已关闭：5–7 分 semantic pass 停止
   调优并明确 handoff；8 分自动接受门槛保持不变。**
-- Lumetri/复杂效果参数结构未过滤 group header：#14 的初始 plan 与调优均向不可写分组写颜色。
+- ~~Lumetri/复杂效果参数结构未过滤 group header。~~ **已关闭有卡效果的入口：#14 真机参数卡
+  在 plan 前识别 1D/GROUP/CUSTOM 和范围，planner 准确空计划交接，未进入 apply。**
 - #15 面板最终缩略图一度缺主体，但随后 AE 实时 dump/render 完整；交接 preview 存在瞬时缓存或
   渲染时序不一致。
 - ~~缺少请求级 capability gate。~~ **P0 已关闭首批高风险类别：#6/#7/#12/#17/#18/#19/
@@ -208,8 +230,8 @@ P0 复测后的标签总量见下文。
 - ~~#19 空 edits 只给通用英文 handoff。~~ **P0 已关闭该入口：发色请求现在明确说明需要
   蒙版/分层素材或回 PS，不会整层染黄。** 通用 planner 自发空 edits 的 rationale 完整性仍需观察。
 - ~~planner 可能用“可执行替代品”绕开精确点名。~~ **已关闭：installed roster 效果名契约
-  会拒绝替换；#14 真机确认回到 ADBE Lumetri。** Lumetri 新实例的 group/leaf 参数结构仍
-  无法在 plan 前完整辨认，目前由 apply report 检错并原子补偿。
+  会拒绝替换；#14 真机确认回到 ADBE Lumetri。参数卡补测又确认不可写 CUSTOM 时会保留
+  planner 的具体 handoff，不会被效果名契约覆盖成通用报错。**
 - 决策标注只记录有 appliedReports 的 Keep/Roll back；正确的空 edits/handoff（如 #19）无法进入
   calibration 数据集。
 - AE ScriptUI 面板控件不暴露可自动化的 AX Press/文本接口；截图可读，但系统辅助功能返回 `AXError.notImplemented`。

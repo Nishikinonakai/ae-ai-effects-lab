@@ -99,3 +99,9 @@ export function explicitEffectProblems(intent, installedEffects, edits) {
       return `intent explicitly names ${expected} [${m.matchNames.join(' | ')}], but the validated plan touches ${actual}`;
     });
 }
+
+export function planEffectContractProblems(intent, installedEffects, plannedEdits, validatedEdits) {
+  return (plannedEdits || []).length
+    ? explicitEffectProblems(intent, installedEffects, validatedEdits)
+    : [];
+}

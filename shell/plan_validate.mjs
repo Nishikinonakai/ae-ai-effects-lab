@@ -8,8 +8,10 @@
 // Glows no longer reaches apply_edit as a guaranteed "AMBIGUOUS" refusal — a whole
 // apply→render→verify cycle wasted on an addressing gap the validator could see coming.
 //
+import { cardParamProblem } from '../introspect/card_lookup.mjs';
+
 // Validation is IN ORDER, because an effect added by edit N is legitimately present for edit N+1.
-export function validateEdits(rawEdits, state, installedByMatch) {
+export function validateEdits(rawEdits, state, installedByMatch, paramCards = new Map()) {
   const layerByIndex = new Map((state.layers || []).map(l => [l.index, l]));
   const problems = [];
   // Where a freshly-added effect will land: AE appends to the parade, so its slot is the layer's
@@ -47,7 +49,15 @@ export function validateEdits(rawEdits, state, installedByMatch) {
       }
       if (e.op === 'param') {
         if (!newLayerEffects.has(e.effectMatchName)) { problems.push(`param ${e.paramMatchName} targets ${e.effectMatchName} on the new layer, but this spec never added it there — edit dropped`); return false; }
-        if (!String(e.paramMatchName || '').startsWith(e.effectMatchName)) { problems.push(`param ${e.paramMatchName} does not belong to ${e.effectMatchName} — edit dropped`); return false; }
+        const card = paramCards.get(e.effectMatchName);
+        const cardProblem = card ? cardParamProblem(card, e.paramMatchName, e.value) : null;
+        if (cardProblem) { problems.push(`${cardProblem} — edit dropped`); return false; }
+        // A card is stronger ownership evidence than a naming convention: many third-party
+        // effects use parameter matchNames that do not share the effect matchName prefix.
+        if (!card && !String(e.paramMatchName || '').startsWith(e.effectMatchName)) {
+          problems.push(`param ${e.paramMatchName} does not belong to ${e.effectMatchName} — edit dropped`);
+          return false;
+        }
         return true;
       }
       if (e.op === 'expression') return true;
@@ -129,16 +139,20 @@ export function validateEdits(rawEdits, state, installedByMatch) {
 
       // -- validate the param on the resolved instance ------------------------------------------
       if (fresh) {
+        const card = paramCards.get(e.effectMatchName);
+        const cardProblem = card ? cardParamProblem(card, e.paramMatchName, e.value) : null;
+        if (cardProblem) { problems.push(`${cardProblem} — edit dropped`); return false; }
         // The instance does not exist yet. A sibling copy carries the same effect's param set, so
         // check against it when one is present; otherwise fall back to the ownership rule (a param
-        // matchName must belong to its effect). A brand-new effect has no keyframes, so no
-        // keyframeMode is needed either way.
+        // matchName must belong to its effect). A parameter card is stronger evidence than either:
+        // plugins need not prefix their parameter matchNames with the effect matchName. A brand-new
+        // effect has no keyframes, so no keyframeMode is needed either way.
         if (matches.length) {
           if (!(matches[0].params || []).find(q => q.matchName === e.paramMatchName)) {
             problems.push(`param ${e.paramMatchName} is not on ${e.effectMatchName} — edit dropped`);
             return false;
           }
-        } else if (!String(e.paramMatchName || '').startsWith(e.effectMatchName)) {
+        } else if (!card && !String(e.paramMatchName || '').startsWith(e.effectMatchName)) {
           problems.push(`param ${e.paramMatchName} does not belong to ${e.effectMatchName} — edit dropped`);
           return false;
         }

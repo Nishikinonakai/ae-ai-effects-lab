@@ -332,6 +332,71 @@ console.log('\nvalidateEdits — textContent + addLayer');
   ok('perception indices stay valid for pre-existing layers after addLayer', r.edits.length === 2);
 }
 
+// ---- introspection cards: GROUP/CUSTOM headers and wrong value shapes die before apply ---------
+console.log('\nparam cards — fresh-effect plans target writable leaves');
+{
+  const { cardParamProblem, compactCardBlock } = await import('../introspect/card_lookup.mjs');
+  const lumetri = {
+    effect: { name: 'Lumetri Color', matchName: 'ADBE Lumetri' },
+    params: [
+      { name: 'Intensity', matchName: 'ADBE Lumetri-0026', type: '1D', min: 0, max: 200, settable: 'yes' },
+      { name: 'Adjustments', matchName: 'ADBE Lumetri-0027', type: 'GROUP' },
+      { name: 'Split Toning', matchName: 'ADBE Lumetri-0032', type: 'CUSTOM', settable: 'n/a' },
+      { name: 'White Balance', matchName: 'ADBE Lumetri-0094', type: 'COLOR', settable: 'yes' },
+    ],
+  };
+  ok('a GROUP header is rejected', /GROUP/.test(cardParamProblem(lumetri, 'ADBE Lumetri-0027', [1, 0, 1])));
+  ok('a CUSTOM blob is rejected', /CUSTOM/.test(cardParamProblem(lumetri, 'ADBE Lumetri-0032', [1, 0, 1])));
+  ok('an array cannot be written to a 1D leaf', /expects 1D/.test(cardParamProblem(lumetri, 'ADBE Lumetri-0026', [1, 0, 1])));
+  ok('a missing scalar value is rejected', /expects 1D/.test(cardParamProblem(lumetri, 'ADBE Lumetri-0026', undefined)));
+  ok('an out-of-range scalar is rejected', /outside.*range/.test(cardParamProblem(lumetri, 'ADBE Lumetri-0026', 250)));
+  ok('a numeric 1D value passes', cardParamProblem(lumetri, 'ADBE Lumetri-0026', 80) === null);
+  ok('a three-component color passes', cardParamProblem(lumetri, 'ADBE Lumetri-0094', [0.4, 0.5, 0.6]) === null);
+  ok('a missing param is rejected when a card exists', /absent/.test(cardParamProblem(lumetri, 'ADBE Lumetri-9999', 1)));
+  const block = compactCardBlock(lumetri);
+  ok('planner context offers writable leaves', /Intensity \[ADBE Lumetri-0026\] 1D/.test(block));
+  ok('planner context names unscriptable structure explicitly', /Split Toning.*UNSCRIPTABLE/.test(block));
+
+  const { validateEdits } = await import('../shell/plan_validate.mjs');
+  const installed = new Map([['ADBE Lumetri', {}]]);
+  const cards = new Map([['ADBE Lumetri', lumetri]]);
+  const bare = { layers: [{ index: 1, name: 'solid', activeNow: true, effects: [] }] };
+  let r = validateEdits([
+    { op: 'addEffect', layerIndex: 1, effectMatchName: 'ADBE Lumetri' },
+    { op: 'param', layerIndex: 1, effectMatchName: 'ADBE Lumetri', paramMatchName: 'ADBE Lumetri-0027', value: [1, 0, 1] },
+  ], bare, installed, cards);
+  ok('one structural param rejects the autonomous plan downstream', r.edits.length === 1 && r.problems.some(p => /GROUP/.test(p)));
+  r = validateEdits([
+    { op: 'addLayer', kind: 'adjustment' },
+    { op: 'addEffect', layerIndex: 0, effectMatchName: 'ADBE Lumetri' },
+    { op: 'param', layerIndex: 0, effectMatchName: 'ADBE Lumetri', paramMatchName: 'ADBE Lumetri-0026', value: [1, 0, 1] },
+  ], bare, installed, cards);
+  ok('new-layer params also use card value-shape validation', r.edits.length === 2 && r.problems.some(p => /expects 1D/.test(p)));
+
+  const oddCard = {
+    effect: { name: 'Odd Plugin', matchName: 'PLUGIN Odd' },
+    params: [{ name: 'Amount', matchName: 'vendor/amount', type: '1D', min: 0, max: 10, settable: 'yes' }],
+  };
+  const oddInstalled = new Map([['PLUGIN Odd', {}]]);
+  const oddCards = new Map([['PLUGIN Odd', oddCard]]);
+  r = validateEdits([
+    { op: 'addEffect', layerIndex: 1, effectMatchName: 'PLUGIN Odd' },
+    { op: 'param', layerIndex: 1, effectMatchName: 'PLUGIN Odd', paramMatchName: 'vendor/amount', value: 2 },
+  ], bare, oddInstalled, oddCards);
+  ok('a card proves ownership when a plugin param uses a non-prefixed matchName', r.edits.length === 2);
+
+  const dynamic = {
+    layers: [{ index: 1, name: 'dynamic rig', activeNow: true, effects: [{
+      matchName: 'PLUGIN Odd', paradeIndex: 1,
+      params: [{ matchName: 'vendor/dynamic-pin', value: 4 }],
+    }] }],
+  };
+  r = validateEdits([
+    { op: 'param', layerIndex: 1, effectMatchName: 'PLUGIN Odd', paramMatchName: 'vendor/dynamic-pin', value: 5 },
+  ], dynamic, oddInstalled, oddCards);
+  ok('live instance params outrank a default card for dynamic existing effects', r.edits.length === 1);
+}
+
 // ---- deterministic request gate: unsupported work must not become a visual bluff ---------------
 console.log('\nintent gate — unsupported and ambiguous requests become honest handoffs');
 {
@@ -411,7 +476,7 @@ console.log('\nplan safety — atomic validation + selected-layer hard scope');
 // ---- explicit effect contract: a named tool is a requirement, not a style suggestion -----------
 console.log('\nintent effects — explicit names cannot be silently substituted');
 {
-  const { mentionedInstalledEffects, explicitEffectProblems } = await import('../shell/intent_effects.mjs');
+  const { mentionedInstalledEffects, explicitEffectProblems, planEffectContractProblems } = await import('../shell/intent_effects.mjs');
   const installed = [
     { name: 'Glow', match: 'ADBE Glo2' },
     { name: 'Deep Glow', match: 'PEDG' },
@@ -444,6 +509,12 @@ console.log('\nintent effects — explicit names cannot be silently substituted'
     { op: 'expression', layerIndex: 4, target: 'opacity', expression: 'value' },
   ]);
   eq('supporting non-effect ops may accompany the named effect', p, []);
+  eq('an explicit empty-plan handoff preserves the planner rationale',
+    planEffectContractProblems('加 Lumetri', installed, [], []), []);
+  ok('a non-empty substitute plan still violates the contract',
+    planEffectContractProblems('加 Lumetri', installed,
+      [{ op: 'addEffect', effectMatchName: 'ADBE Tint' }],
+      [{ op: 'addEffect', effectMatchName: 'ADBE Tint' }]).length === 1);
 
   const { makePlanAtomic } = await import('../shell/plan_safety.mjs');
   const atomic = makePlanAtomic({

@@ -31,7 +31,8 @@ import { leverContext, loadCards } from '../introspect/essence/lookup.mjs';
 import { askJSON, parseJSON, provider, defaultModel } from './llm.mjs';
 import { validateEdits } from './plan_validate.mjs';
 import { makePlanAtomic } from './plan_safety.mjs';
-import { mentionedInstalledEffects, explicitEffectProblems } from './intent_effects.mjs';
+import { mentionedInstalledEffects, planEffectContractProblems } from './intent_effects.mjs';
+import { loadParamCards, compactCardBlock } from '../introspect/card_lookup.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -114,6 +115,11 @@ const roster = installed
   .filter(e => !cardedEffects.includes(e.match))
   .map(e => `${e.name} [${e.match}]`);
 const namedEffects = mentionedInstalledEffects(intent, installed);
+const paramCards = loadParamCards();
+const namedCardBlock = namedEffects
+  .flatMap(m => m.matchNames.map(match => paramCards.get(match)).filter(Boolean))
+  .map(card => compactCardBlock(card))
+  .join('\n\n');
 
 
 const SPEC_CONTRACT = `Return STRICT JSON only, in this shape:
@@ -179,6 +185,7 @@ const prompt = [
   '',
   `=== OTHER EFFECTS INSTALLED ON THIS MACHINE (name-only, ${roster.length}) — you MAY add any of these ===`,
   roster.join(' · '),
+  namedCardBlock ? `\n${namedCardBlock}` : '',
   '',
   'The rendered frame at the current playhead follows. This is what the artist is looking at right now.',
   '',
@@ -209,8 +216,11 @@ try {
 // param edit to ONE effect instance (via paradeIndex/effectIndex — the last third of
 // KNOWN_ISSUES #2), predicts the parade slot of effects this spec itself adds, checks matchNames
 // against perception, and defaults keyframeMode where a bare setValue would be refused.
-const validated = validateEdits(plan.edits, state, installedByMatch);
-const effectContractProblems = explicitEffectProblems(intent, installed, validated.edits);
+const validated = validateEdits(plan.edits, state, installedByMatch, paramCards);
+// An explicit empty plan is the planner honouring the contract with a handoff explanation. Do not
+// replace that useful rationale with "you failed to touch the named effect"; the violation exists
+// only when the planner tries to execute a non-empty substitute plan.
+const effectContractProblems = planEffectContractProblems(intent, installed, plan.edits, validated.edits);
 const atomic = makePlanAtomic({
   edits: validated.edits,
   validationProblems: validated.problems,
