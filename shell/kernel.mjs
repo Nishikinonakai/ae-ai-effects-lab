@@ -35,6 +35,7 @@ import { defaultModel, spendSummary, setPurpose, activeConfig, beginRequest, end
 import { startDashboard } from './dashboard.mjs';
 import { budgetStatus } from './budget.mjs';
 import { looksLikeBridgeTimeout, reviveBridge, collectEditReports } from './recover.mjs';
+import { gateIntent } from './intent_gate.mjs';
 
 // matchName -> the name an artist would recognise, via the essence index. Falls back to the
 // matchName, which is at least addressable, rather than to nothing.
@@ -197,12 +198,31 @@ function describeChanges(specPath, cardsFor) {
 // "what it changed" — measured live (2026-07-21, the user's adversarial test): a text-replace
 // request correctly refused as a handoff, while the panel still displayed the Form-ember edits
 // from the run before it. Same shape as the stale-result-on-restart bug, one path over (§十三).
-const RESULT_FIELDS = { frame: null, changed: null, rationale: null, score: null, trace: [], pass: null };
+const RESULT_FIELDS = { frame: null, changed: null, rationale: null, score: null, trace: [], pass: null, handoffCode: null };
 
 // ---- the pipeline ------------------------------------------------------------------------------
 async function handleRun(req) {
   const intent = String(req.intent || '').trim();
   if (!intent) { setState({ phase: 'error', message: 'no intent given', canAccept: false, canRollback: false }); return; }
+
+  // Requests whose missing capability is knowable without reading the comp must stop here. Besides
+  // preventing bluff edits, this avoids spending a planning/scoring call on an impossible request.
+  // Preserve any older unaccepted session: a handoff must never strand its rollback stack.
+  const gated = gateIntent(intent);
+  if (gated) {
+    const pending = !!session?.appliedReports?.length;
+    setState({
+      ...RESULT_FIELDS,
+      phase: 'handoff',
+      message: gated.rationale,
+      rationale: gated.rationale,
+      intent,
+      handoffCode: gated.code,
+      canAccept: pending,
+      canRollback: pending,
+    });
+    return;
+  }
 
   // Carry forward anything still applied and unaccepted. Overwriting the session here would drop
   // the only pointer to the previous request's rollback reports — the edits would stay on the
@@ -285,7 +305,8 @@ async function handleRun(req) {
   if (!spec.edits?.length) {
     // The honest outcome when the load-bearing state isn't scriptable (an unpainted Roto matte, an
     // unbuilt Element 3D scene). Say which handoff is needed rather than applying a bluff edit.
-    setState({ phase: 'handoff', message: spec._rationale || 'This needs something only you can do in the UI first.', canAccept: false, canRollback: false });
+    const pending = !!session?.appliedReports?.length;
+    setState({ phase: 'handoff', message: spec._rationale || 'This needs something only you can do in the UI first.', canAccept: pending, canRollback: pending });
     return;
   }
 

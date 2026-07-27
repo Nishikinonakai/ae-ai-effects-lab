@@ -332,6 +332,98 @@ console.log('\nvalidateEdits — textContent + addLayer');
   ok('perception indices stay valid for pre-existing layers after addLayer', r.edits.length === 2);
 }
 
+// ---- deterministic request gate: unsupported work must not become a visual bluff ---------------
+console.log('\nintent gate — unsupported and ambiguous requests become honest handoffs');
+{
+  const { gateIntent } = await import('../shell/intent_gate.mjs');
+  const code = intent => gateIntent(intent)?.code || null;
+
+  eq('audio replacement is gated', code('把这段的音乐换成另一首，节奏对齐'), 'audio_editing');
+  eq('export/upload is gated before any planner call', code('帮我把成片导出成 mp4 传到 B 站，标题写好'), 'export_or_upload');
+  eq('local hair repaint is gated', code('把女主角的发色改成金色'), 'local_mask_or_repaint');
+  eq('a whole-layer VHS edit cannot promise face protection',
+    code('像老录像带放了二十年那种质感，但别把人物脸糊掉'), 'subject_protection_requires_mask');
+  eq('performance claims are gated', code('这个工程渲染太卡了，帮我优化一下让预览快点'), 'performance_optimization');
+  eq('unsupported layer ordering is gated', code('用 fractal noise 做雾，叠在最底下，别挡字'), 'layer_reordering');
+  eq('unknown chorus timing is gated', code('副歌这段应该更炸一点，现在情绪没到'), 'missing_timing_context');
+  eq('BPM without a value is gated', code('motion tile 无缝滚动，速度跟 BPM 差不多'), 'missing_timing_context');
+  eq('cross-request references are gated', code('把刚才那个效果再来一遍，但是反过来'), 'cross_request_reference');
+  eq('bare negative feedback is gated', code('太普通了。重来。'), 'negative_feedback_without_context');
+  eq('literal no-change contradiction is gated', code('别动任何东西，但是让它变好看'), 'no_change_contradiction');
+  eq('opposed strength targets are gated', code('加一个特别夸张但是几乎看不出来的效果'), 'strength_visibility_contradiction');
+
+  ok('an explicit time range makes chorus timing addressable',
+    code('10–18 秒的副歌加一点辉光') === null);
+  ok('an explicit BPM is not rejected as missing timing',
+    code('让背景按 120 BPM 滚动') === null);
+  ok('precise supported Deep Glow work passes',
+    code('选中层加 Deep Glow，Exposure 1.2，Radius 180') === null);
+  ok('precise supported text work passes',
+    code('把歌词换成 kurutteru') === null);
+  ok('precise supported Particular work passes',
+    code('把 Wind X 调到 200，Air Resistance 调到 0.5') === null);
+  ok('empty input is left to the kernel no-intent error', gateIntent('') === null);
+}
+
+// ---- autonomous-plan safety: one rejected op rejects the transaction; selected means selected --
+console.log('\nplan safety — atomic validation + selected-layer hard scope');
+{
+  const { fatalValidationProblems, selectedLayerProblems, makePlanAtomic } = await import('../shell/plan_safety.mjs');
+  const valid = [{ op: 'param', layerIndex: 4, effectMatchName: 'PEDG', paramMatchName: 'PEDG-0002', value: 1.2 }];
+
+  eq('validator warnings are non-fatal',
+    fatalValidationProblems(['keyframed and no mode — defaulted to setAtTime']), []);
+  eq('dropped ops are fatal',
+    fatalValidationProblems(['opacity target is unsupported — edit dropped']), ['opacity target is unsupported — edit dropped']);
+
+  let r = makePlanAtomic({
+    edits: valid,
+    validationProblems: ['opacity target is unsupported — edit dropped'],
+    forcedLayer: null,
+  });
+  ok('a partial validated plan executes nothing', r.edits.length === 0 && r.fatalProblems.length === 1);
+  ok('atomic rejection explains that nothing changed', /未对工程做任何修改/.test(r.rationale));
+
+  r = makePlanAtomic({
+    edits: valid,
+    validationProblems: ['param was keyframed — defaulted to setAtTime'],
+    forcedLayer: null,
+  });
+  eq('warnings preserve the whole plan', r.edits, valid);
+
+  eq('selected-layer scope rejects another existing layer',
+    selectedLayerProblems([{ ...valid[0], layerIndex: 2 }], 4).length, 1);
+  eq('selected-layer scope rejects new layers',
+    selectedLayerProblems([{ op: 'addLayer', kind: 'adjustment' }], 4).length, 1);
+  eq('selected-layer scope permits only the selected layer',
+    selectedLayerProblems(valid, 4), []);
+  eq('no selected layer means no extra scope restriction',
+    selectedLayerProblems([{ op: 'addLayer', kind: 'adjustment' }], null), []);
+
+  r = makePlanAtomic({
+    edits: [valid[0], { ...valid[0], layerIndex: 1 }],
+    validationProblems: [],
+    forcedLayer: 4,
+  });
+  ok('one off-scope edit rejects even the otherwise-valid selected-layer edit', r.edits.length === 0);
+}
+
+// ---- tune transaction + pass-count policy ------------------------------------------------------
+console.log('\ntune policy — apply failures are visible and passes are exact');
+{
+  const { applyReportErrors } = await import('../brownfield/apply_report.mjs');
+  const { iterationNumbers } = await import('../brownfield/tune_policy.mjs');
+  eq('three requested passes means exactly 0,1,2', iterationNumbers(3), [0, 1, 2]);
+  eq('fractional pass count is floored', iterationNumbers(2.9), [0, 1]);
+  eq('invalid/zero input still performs one safety review', iterationNumbers(0), [0]);
+  eq('successful apply report has no errors',
+    applyReportErrors({ applied: [{ op: 'param' }, { op: 'addEffect' }] }), []);
+  eq('per-operation apply failures are detected despite process exit 0',
+    applyReportErrors({ applied: [{ op: 'addLayer' }, { error: 'setValue threw', detail: 'bad param' }] }).map(e => e.error),
+    ['setValue threw']);
+  eq('missing report shape is safe', applyReportErrors(null), []);
+}
+
 // ---- suggestion mapper: the "#N" suffix is addressing, and now it addresses --------------------
 console.log('\nsuggestionsToEdits — instance suffix + pin inheritance');
 {
@@ -386,8 +478,9 @@ console.log('\nrecover — failure signature + salvage collection');
 
   const wd = path.join(TMP, 'salvage'); fs.mkdirSync(wd, { recursive: true });
   const REPO = path.resolve(__dirname, '..');
-  fs.writeFileSync(path.join(wd, 'edit_iter1_report.json'), '{}');
-  fs.writeFileSync(path.join(wd, 'edit_iter0_report.json'), '{}');
+  fs.writeFileSync(path.join(wd, 'edit_iter1_report.json'), '{"inverse":[{"op":"param"}]}');
+  fs.writeFileSync(path.join(wd, 'edit_iter0_report.json'), '{"inverse":[{"op":"removeEffect"}]}');
+  fs.writeFileSync(path.join(wd, 'edit_compensated_report.json'), '{"inverse":[],"rolledBackAfterFailure":true}');
   fs.writeFileSync(path.join(wd, 'tune_history.json'), '[]');           // not a report — ignored
   fs.writeFileSync(path.join(wd, 'edit_iter0_before.png'), '');         // not a report — ignored
   const t = Date.now() / 1000;
@@ -396,6 +489,8 @@ console.log('\nrecover — failure signature + salvage collection');
   const got = collectEditReports(wd, REPO);
   eq('collects only edit reports, in application order',
     got.map(p => path.basename(p)), ['edit_iter0_report.json', 'edit_iter1_report.json']);
+  ok('a compensated partial transaction is not exposed for double rollback',
+    !got.some(p => path.basename(p) === 'edit_compensated_report.json'));
   ok('paths are repo-relative (the shape session.appliedReports holds)', got.every(p => !path.isAbsolute(p)));
   eq('a missing work dir yields [], not a throw', collectEditReports(path.join(TMP, 'nope'), REPO), []);
 }

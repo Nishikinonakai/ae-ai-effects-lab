@@ -22,6 +22,8 @@ import { fileURLToPath } from 'url';
 import { spawnSync } from 'child_process';
 import { effectsFromEdits } from '../introspect/essence/lookup.mjs';
 import { suggestionsToEdits } from './suggest_spec.mjs';
+import { applyReportErrors } from './apply_report.mjs';
+import { iterationNumbers } from './tune_policy.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -33,6 +35,8 @@ const seedPath = arg('seed', null);
 const intent = arg('intent', null);
 if (!seedPath || !intent) { console.error('usage: node brownfield/tune_edit.mjs --seed=<spec.json> --intent="..." [--layer=N] [--max-iters=4] [--accept=8]'); process.exit(1); }
 const maxIters = Number(arg('max-iters', 4));
+const iterations = iterationNumbers(maxIters);
+const iterationCount = iterations.length;
 const acceptBar = Number(arg('accept', 8));
 const model = arg('model', null);   // the scorer picks per provider
 const outDir = path.resolve(arg('out', path.join(__dirname, 'dumps', 'tune_edit')));
@@ -60,7 +64,25 @@ function applyEdit(spec, label) {
   process.stdout.write(r.stdout || '');
   const reportPath = path.join(outDir, `edit_${label.replace(/[^\w.-]+/g, '_')}_report.json`);
   if (r.status !== 0 || !fs.existsSync(reportPath)) { console.error('apply failed:\n' + (r.stderr || '')); return null; }
-  return { reportPath, report: JSON.parse(fs.readFileSync(reportPath, 'utf8')) };
+  const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
+  const errors = applyReportErrors(report);
+  if (errors.length) {
+    console.error(`apply was incomplete (${errors.length} operation(s) failed) — compensating the successful operations`);
+    if (rollback(reportPath)) {
+      // The compensation already consumed this inverse. Clear it so crash/cancel salvage cannot
+      // roll the same report back twice or tell the panel that a non-existent change is pending.
+      report.inverse = [];
+      report.rolledBackAfterFailure = true;
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    } else {
+      // Do not continue to a normal summary: it would omit this report from `stack`, hiding the
+      // still-applied successful subset. An uncaught failure takes the no-summary kernel path,
+      // whose salvage scans reports with live inverses and exposes Roll back.
+      throw new Error('compensation failed — kernel recovery must salvage the partial transaction');
+    }
+    return null;
+  }
+  return { reportPath, report };
 }
 
 // verify a report against the ORIGINAL baseline + intent; returns {score, verdict, suggestions, decision}
@@ -73,7 +95,7 @@ function applyEdit(spec, label) {
 function verifyEdit(reportPath, baselineReportPath, iterNo) {
   const args = [`--report=${reportPath}`, `--intent=${intent}`, `--baseline=${baselineReportPath}`,
     `--accept=${acceptBar}`, `--rollback=3`, ...(model ? [`--model=${model}`] : []),
-    `--history=${historyPath}`, `--iter=${iterNo + 1}`, `--max-iters=${maxIters + 1}`];
+    `--history=${historyPath}`, `--iter=${iterNo + 1}`, `--max-iters=${iterationCount}`];
   if (touchedEffects.size) args.push(`--effects=${[...touchedEffects].join(',')}`);
   // levers that turned out to be gated shut stay blocked for the REST of the tune — otherwise the
   // scorer re-suggests them every round (a wider lever vocabulary makes this more likely, not less)
@@ -118,7 +140,7 @@ function suggestionsToSpec(suggestions, label) {
 }
 
 // ---------------- the loop ----------------
-console.log(`\n=== tune_edit: "${intent}" (layer ${targetLayer}, accept≥${acceptBar}, max ${maxIters} iters) ===\n`);
+console.log(`\n=== tune_edit: "${intent}" (layer ${targetLayer}, accept≥${acceptBar}, max ${iterationCount} scored passes) ===\n`);
 
 // iter 0: apply the seed. Its BEFORE frame is the ORIGINAL baseline for every verify (finding #5).
 console.log('— iter 0: seed —');
@@ -132,7 +154,7 @@ let best = { score: -1, reportPath: seed0.reportPath, depth: 0 };
 const stack = [seed0];                      // applied reports, for rollback on decline
 let accepted = false;
 
-for (let n = 0; n <= maxIters; n++) {
+for (const n of iterations) {
   const label = `iter${n}`;
   const v = verifyEdit(current.reportPath, baselineReport, n);
   if (!v) break;
@@ -150,7 +172,7 @@ for (let n = 0; n <= maxIters; n++) {
     accepted = true;
     break;
   }
-  if (n === maxIters) {
+  if (n === iterationCount - 1) {
     if (v.score > best.score) best = { score: v.score, reportPath: current.reportPath, depth: stack.length };
     console.log(`\n⏹ max iters reached — best score ${best.score}.`);
     break;

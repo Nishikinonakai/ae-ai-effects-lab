@@ -61,13 +61,20 @@ export function reviveBridge(repo) {
   });
 }
 
-// Every edit report a tune left in its work dir, in APPLICATION order (mtime), as repo-relative
-// paths — the shape session.appliedReports holds. Pure collection; the caller owns the session.
+// Every edit report that STILL HAS AN INVERSE in APPLICATION order (mtime), as repo-relative paths.
+// A partially-applied transaction may compensate itself and clear its inverse; surfacing that as
+// "an edit is applied" would invite a double rollback and mislead the panel.
 export function collectEditReports(workDir, repo) {
   try {
     return fs.readdirSync(workDir)
       .filter(f => /^edit_.*_report\.json$/.test(f))
-      .map(f => ({ f, t: fs.statSync(path.join(workDir, f)).mtimeMs }))
+      .map(f => {
+        const full = path.join(workDir, f);
+        let report = null;
+        try { report = JSON.parse(fs.readFileSync(full, 'utf8')); } catch { /* corrupt = unsafe to salvage */ }
+        return { f, t: fs.statSync(full).mtimeMs, recoverable: !!report?.inverse?.length };
+      })
+      .filter(x => x.recoverable)
       .sort((a, b) => a.t - b.t)
       .map(x => path.relative(repo, path.join(workDir, x.f)));
   } catch {

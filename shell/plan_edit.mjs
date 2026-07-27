@@ -30,6 +30,7 @@ import { fileURLToPath } from 'url';
 import { leverContext, loadCards } from '../introspect/essence/lookup.mjs';
 import { askJSON, parseJSON, provider, defaultModel } from './llm.mjs';
 import { validateEdits } from './plan_validate.mjs';
+import { makePlanAtomic } from './plan_safety.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -166,7 +167,7 @@ const prompt = [
   'you decide the concrete edit to make to their EXISTING composition.',
   '',
   `ARTIST INTENT: ${intent}`,
-  forcedLayer ? `The artist has selected layer ${forcedLayer} — target that layer unless it is impossible.` : '',
+  forcedLayer ? `HARD SCOPE: layer ${forcedLayer} is selected. Every edit MUST target that existing layer. Do not add a layer and do not modify any other layer; return empty edits if the request cannot be completed inside this scope.` : '',
   '',
   'PERCEPTION — the live state of their comp (real values, read from the project just now):',
   JSON.stringify(perception, null, 1),
@@ -205,12 +206,21 @@ try {
 // param edit to ONE effect instance (via paradeIndex/effectIndex — the last third of
 // KNOWN_ISSUES #2), predicts the parade slot of effects this spec itself adds, checks matchNames
 // against perception, and defaults keyframeMode where a bare setValue would be refused.
-const { edits, problems } = validateEdits(plan.edits, state, installedByMatch);
+const validated = validateEdits(plan.edits, state, installedByMatch);
+const atomic = makePlanAtomic({
+  edits: validated.edits,
+  validationProblems: validated.problems,
+  forcedLayer,
+});
+const edits = atomic.edits;
+const problems = [...validated.problems, ...atomic.fatalProblems.filter(p => !validated.problems.includes(p))];
+const rationale = atomic.rationale || plan.rationale || '';
 
 const spec = {
   label: `plan_${Date.now().toString(36)}`,
   _intent: intent,
-  _rationale: plan.rationale || '',
+  _rationale: rationale,
+  ...(atomic.rationale && plan.rationale ? { _plannerRationale: plan.rationale } : {}),
   _passCriteria: plan.passCriteria || [],
   _targetLayer: plan.targetLayer ?? edits[0]?.layerIndex ?? null,
   _model: usedModel,
