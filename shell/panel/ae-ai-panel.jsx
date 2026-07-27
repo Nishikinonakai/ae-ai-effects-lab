@@ -273,6 +273,10 @@
     var cancelling = (phase === "cancelling");
     runBtn.enabled = !busy && !cancelling;
     stopBtn.enabled = busy;
+    // A zero-edit handoff has nothing to keep or undo, but the explanation still needs a human
+    // label. The kernel keeps those labels separate from visual Keep/Roll back calibration.
+    acceptBtn.text = s.canRateHandoff ? "Helpful" : "Keep it";
+    rollbackBtn.text = s.canRateHandoff ? "Not enough" : "Roll back";
     acceptBtn.enabled = !!s.canAccept;
     rollbackBtn.enabled = !!s.canRollback;
 

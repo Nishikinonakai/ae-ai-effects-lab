@@ -33,7 +33,8 @@ the loop to do anything at all.
 ```
 
 Then in AE: select a layer, type what you want, press **Make it**. Watch the preview. **Keep it** or
-**Roll back**.
+**Roll back**. A zero-edit handoff instead offers **Helpful / Not enough**; those usefulness labels
+go to `~/Documents/ae-ai-shell/handoff_feedback.jsonl`, separate from visual decisions.
 
 Pieces can also be driven directly:
 

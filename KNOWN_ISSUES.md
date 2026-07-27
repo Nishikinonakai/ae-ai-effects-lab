@@ -29,6 +29,8 @@
 
 **标注管道已通(2026-07-21 午后,日志 §H.5):** 每次 Keep/Roll back 现在落一行
 `~/Documents/ae-ai-shell/decisions.jsonl`(意图/判官分/编辑数/决策),空会话误点有守卫。
+零编辑 handoff 不进入这份视觉分数数据；面板会改为 Helpful / Not enough，并单独写入
+`~/Documents/ae-ai-shell/handoff_feedback.jsonl`（意图/具体原因/能力码/反馈）。
 **攒到 ~30 条再动线**;在那之前这条仍然活着。
 
 **当下的缓解:** 已在 kernel 的 usage 注释里点名。另外从路线上看这未必是坏事——PRD §11.6 的结论是

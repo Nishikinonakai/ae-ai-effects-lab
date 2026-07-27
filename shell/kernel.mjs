@@ -36,6 +36,7 @@ import { startDashboard } from './dashboard.mjs';
 import { budgetStatus } from './budget.mjs';
 import { looksLikeBridgeTimeout, reviveBridge, collectEditReports } from './recover.mjs';
 import { gateIntent } from './intent_gate.mjs';
+import { appendHandoffFeedback } from './handoff_feedback.mjs';
 
 // matchName -> the name an artist would recognise, via the essence index. Falls back to the
 // matchName, which is at least addressable, rather than to nothing.
@@ -53,6 +54,7 @@ const SHELL_DIR = path.join(os.homedir(), 'Documents', 'ae-ai-shell');
 const REQ = path.join(SHELL_DIR, 'request.json');
 const STATE = path.join(SHELL_DIR, 'state.json');
 const WORK = path.join(SHELL_DIR, 'work');
+const HANDOFF_FEEDBACK = path.join(SHELL_DIR, 'handoff_feedback.jsonl');
 fs.mkdirSync(WORK, { recursive: true });
 
 const arg = (n, d) => { const a = process.argv.find(x => x.startsWith(`--${n}=`)); return a === undefined ? d : a.slice(n.length + 3); };
@@ -211,7 +213,10 @@ function describeChanges(specPath, cardsFor) {
 // "what it changed" — measured live (2026-07-21, the user's adversarial test): a text-replace
 // request correctly refused as a handoff, while the panel still displayed the Form-ember edits
 // from the run before it. Same shape as the stale-result-on-restart bug, one path over (§十三).
-const RESULT_FIELDS = { frame: null, changed: null, rationale: null, score: null, trace: [], pass: null, handoffCode: null };
+const RESULT_FIELDS = {
+  frame: null, changed: null, rationale: null, score: null, trace: [], pass: null,
+  handoffCode: null, canRateHandoff: false, intent: null,
+};
 
 // ---- the pipeline ------------------------------------------------------------------------------
 async function handleRun(req) {
@@ -231,8 +236,11 @@ async function handleRun(req) {
       rationale: gated.rationale,
       intent,
       handoffCode: gated.code,
-      canAccept: pending,
-      canRollback: pending,
+      // With no older applied session these buttons rate the handoff, not a nonexistent edit.
+      // If an older session is pending they retain their normal Keep/Roll back meaning.
+      canRateHandoff: !pending,
+      canAccept: true,
+      canRollback: true,
     });
     return;
   }
@@ -320,7 +328,13 @@ async function handleRun(req) {
     // The honest outcome when the load-bearing state isn't scriptable (an unpainted Roto matte, an
     // unbuilt Element 3D scene). Say which handoff is needed rather than applying a bluff edit.
     const pending = !!session?.appliedReports?.length;
-    setState({ phase: 'handoff', message: spec._rationale || 'This needs something only you can do in the UI first.', canAccept: pending, canRollback: pending });
+    setState({
+      phase: 'handoff',
+      message: spec._rationale || 'This needs something only you can do in the UI first.',
+      canRateHandoff: !pending,
+      canAccept: true,
+      canRollback: true,
+    });
     discardEmptySession();
     return;
   }
@@ -426,7 +440,33 @@ function logDecision(decision) {
   } catch { /* a lost label is a pity; a broken accept is a bug */ }
 }
 
+// A zero-edit handoff needs a usefulness label, not a fake visual keep/rollback label. The state
+// owns this outcome because there is deliberately no session. Return true when the action was
+// consumed so the normal edit handlers do not continue into "nothing to roll back".
+function consumeHandoffFeedback(action) {
+  try {
+    if (session?.appliedReports?.length) return false;
+    const st = fs.existsSync(STATE) ? JSON.parse(fs.readFileSync(STATE, 'utf8')) : {};
+    const row = appendHandoffFeedback(HANDOFF_FEEDBACK, st, action);
+    if (!row) return false;
+    setState({
+      ...RESULT_FIELDS,
+      phase: 'idle',
+      message: row.feedback === 'helpful'
+        ? 'handoff marked helpful — no edits were made.'
+        : 'handoff marked not enough — no edits were made.',
+      canAccept: false,
+      canRollback: false,
+    });
+    return true;
+  } catch {
+    // Feedback persistence must not turn a harmless zero-edit outcome into a stuck panel.
+    return false;
+  }
+}
+
 async function handleRollback() {
+  if (consumeHandoffFeedback('rollback')) return;
   logDecision('rollback');   // log FIRST — even a rollback that stalls midway was still a rejection
   if (!session?.appliedReports?.length) { setState({ phase: 'idle', message: 'nothing to roll back', canAccept: false, canRollback: false }); return; }
   setState({ phase: 'rolling-back', message: 'undoing…', canAccept: false, canRollback: false });
@@ -459,6 +499,7 @@ async function handleRollback() {
 }
 
 function handleAccept() {
+  if (consumeHandoffFeedback('accept')) return;
   logDecision('keep');
   const n = session?.appliedReports?.length || 0;
   session = null; saveSession();

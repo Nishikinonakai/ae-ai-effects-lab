@@ -204,6 +204,26 @@ P0 复测后的标签总量见下文。
   **$0.9903 / 104 calls**，标签仍为 26 条。参数卡覆盖到的效果在 plan 前拦截；未知效果
   仍保留 apply report 检错 + 原子补偿作为安全兜底。
 
+### 零编辑 handoff 反馈与感知帧完整性
+
+- 零编辑 handoff 不再伪装成 Keep/Roll back：无旧编辑待处理时，面板把按钮切成
+  **Helpful / Not enough**，并单独写入 `~/Documents/ae-ai-shell/handoff_feedback.jsonl`；
+  有旧 session 时按钮仍只管理旧编辑，避免“评价新交接”和“处置旧画面”语义混淆。
+- 真机复测 #19：能力闸门零模型调用进入 handoff，状态为
+  `canRateHandoff=true / canAccept=true / canRollback=true`；标记 Helpful 后独立数据新增
+  `local_mask_or_repaint` 一行，`decisions.jsonl` 仍为 26 条。
+- 再次复测 #14：从仓库直接载入新版浮动面板，视觉确认完整 CUSTOM/不可替换原因和
+  **Helpful / Not enough** 两个按钮；通过同一 request channel 标记 Helpful，独立数据现为
+  **2 Helpful / 0 Not enough**。AE ScriptUI 的 AX 点击仍返回已知的
+  `AXError.notImplemented`，因此自动化不能伪称真的按过面板像素按钮。
+- 本轮顺带真机抓到感知帧竞态：`saveFrameToPng` 已创建文件不等于写完，紧接着读取时哈希会变，
+  甚至出现 zlib `unexpected end of file`。`dump_comp` 现复用统一 settle 边界，并要求文件尺寸
+  连续稳定且末尾已有 PNG `IEND` 后才交给 planner/面板；超时会拒绝半帧，不再继续视觉判断。
+- 修复后连续两次实时 dump 的 PNG SHA-256 都为
+  `da781f833fdfb91b8a8f1fc1adb0df3139481ddaad6c7542b3c796bd1317ebf7`，彼此及相对 P0
+  基线均为 `mean=0 / max=0 / moved=0`。完整离线回归更新为 **178 passed / 0 failed**；
+  总模型使用为 **$1.0159 / 105 calls**。
+
 ## 跨题确定性缺陷（持续更新）
 
 - ~~`passes=3` 实际执行 4 轮，状态显示 `4/3`。~~ **P0 已关闭：真机严格 3/3。**
@@ -223,8 +243,9 @@ P0 复测后的标签总量见下文。
   调优并明确 handoff；8 分自动接受门槛保持不变。**
 - ~~Lumetri/复杂效果参数结构未过滤 group header。~~ **已关闭有卡效果的入口：#14 真机参数卡
   在 plan 前识别 1D/GROUP/CUSTOM 和范围，planner 准确空计划交接，未进入 apply。**
-- #15 面板最终缩略图一度缺主体，但随后 AE 实时 dump/render 完整；交接 preview 存在瞬时缓存或
-  渲染时序不一致。
+- #15 面板最终缩略图一度缺主体，但随后 AE 实时 dump/render 完整；本轮已真机复现并修复
+  `dump_comp` 把异步半写 PNG 过早交给面板的路径。**这是高度吻合的候选根因，但 #15 的原始
+  text-edit 序列尚未再次复现，暂不宣告完全关闭。**
 - ~~缺少请求级 capability gate。~~ **P0 已关闭首批高风险类别：#6/#7/#12/#17/#18/#19/
   #21/#22/#23/#24 真机均零调用交接；#20 有离线固定回归。**
 - ~~#19 空 edits 只给通用英文 handoff。~~ **P0 已关闭该入口：发色请求现在明确说明需要
@@ -232,6 +253,7 @@ P0 复测后的标签总量见下文。
 - ~~planner 可能用“可执行替代品”绕开精确点名。~~ **已关闭：installed roster 效果名契约
   会拒绝替换；#14 真机确认回到 ADBE Lumetri。参数卡补测又确认不可写 CUSTOM 时会保留
   planner 的具体 handoff，不会被效果名契约覆盖成通用报错。**
-- 决策标注只记录有 appliedReports 的 Keep/Roll back；正确的空 edits/handoff（如 #19）无法进入
-  calibration 数据集。
+- ~~正确的空 edits/handoff 无反馈入口。~~ **已关闭：Helpful / Not enough 进入独立
+  `handoff_feedback.jsonl`，不把无分数、无画面的交接混进视觉门槛 calibration；#19 与 #14
+  真机各落一条 Helpful。**
 - AE ScriptUI 面板控件不暴露可自动化的 AX Press/文本接口；截图可读，但系统辅助功能返回 `AXError.notImplemented`。

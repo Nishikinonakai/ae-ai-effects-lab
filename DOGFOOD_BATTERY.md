@@ -1,8 +1,10 @@
 # Dogfooding 弹药库 —— 从甩手掌柜到设计专家的 24 发
 
 *2026-07-21 出题。用法:开 `./shell/shell_up.sh`,在面板里**原文照抄**(或按你的语气改写——改写本身也是测试),
-选不选层按每题提示。**每题跑完务必点 Keep 或 Roll back**——每一次点击都会落进
-`~/Documents/ae-ai-shell/decisions.jsonl`,那就是及格线标定(KNOWN_ISSUES #1)要的标注集。
+选不选层按每题提示。产生视觉编辑时，**每题跑完务必点 Keep 或 Roll back**——点击会落进
+`~/Documents/ae-ai-shell/decisions.jsonl`，用于及格线标定（KNOWN_ISSUES #1）。如果正确结果是
+零编辑 handoff，按钮会变成 **Helpful / Not enough**，反馈单独落进
+`~/Documents/ae-ai-shell/handoff_feedback.jsonl`，不会污染视觉分数标定。
 顺手在每题后面记一行:分数 / 你的判断 / 一句吐槽。吐槽比分数值钱。*
 
 *出题原则:六个层级各考产品的不同器官。有的题**正确答案是拒绝或交接**——把"诚实说不行"

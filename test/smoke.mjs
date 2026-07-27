@@ -148,6 +148,18 @@ console.log('\nframe_delta — failure must never masquerade as a measurement');
     decodePng(writePng(p('d4.png'), { rgb: [1, 1, 1] })).ok === true);
 }
 
+console.log('\nframe settle — a size plateau is not enough without PNG IEND');
+{
+  const { pngHasIend } = await import('../brownfield/frame_settle.mjs');
+  const full = writePng(p('complete.png'), { w: 1, h: 1, rgb: [1, 2, 3], alpha: 255 });
+  const truncated = p('truncated.png');
+  const bytes = fs.readFileSync(full);
+  fs.writeFileSync(truncated, bytes.subarray(0, bytes.length - 12));
+  ok('a complete PNG exposes its terminal IEND chunk', pngHasIend(full));
+  ok('a truncated PNG is not considered settled even when its size stops changing', !pngHasIend(truncated));
+  ok('a missing path is not considered settled', !pngHasIend(p('never-written.png')));
+}
+
 console.log('\nessence lookup — which levers may be reached for');
 {
   ok('cards load', loadCards().length > 0);
@@ -428,6 +440,32 @@ console.log('\nintent gate — unsupported and ambiguous requests become honest 
   ok('precise supported Particular work passes',
     code('把 Wind X 调到 200，Air Resistance 调到 0.5') === null);
   ok('empty input is left to the kernel no-intent error', gateIntent('') === null);
+}
+
+// ---- zero-edit handoffs have a separate human-feedback schema ---------------------------------
+console.log('\nhandoff feedback — usefulness labels do not contaminate visual decisions');
+{
+  const { handoffFeedbackRow } = await import('../shell/handoff_feedback.mjs');
+  const state = {
+    phase: 'handoff',
+    canRateHandoff: true,
+    intent: '把音乐换掉',
+    rationale: 'Audio replacement is outside this editing protocol.',
+    handoffCode: 'audio_replacement',
+    engine: 'gemini · test',
+  };
+  const at = new Date('2026-07-27T08:00:00.000Z');
+  let r = handoffFeedbackRow(state, 'accept', at);
+  eq('accept maps to a helpful handoff label', r.feedback, 'helpful');
+  eq('handoff feedback preserves its deterministic capability code', r.handoffCode, 'audio_replacement');
+  eq('handoff feedback has a stable supplied timestamp', r.ts, '2026-07-27T08:00:00.000Z');
+  r = handoffFeedbackRow(state, 'rollback', at);
+  eq('rollback maps to not-enough without pretending an edit was undone', r.feedback, 'not_enough');
+  eq('a normal review state cannot enter the handoff dataset',
+    handoffFeedbackRow({ ...state, phase: 'review' }, 'accept', at), null);
+  eq('a handoff protecting an older edit session is not rateable',
+    handoffFeedbackRow({ ...state, canRateHandoff: false }, 'accept', at), null);
+  eq('unknown actions are ignored', handoffFeedbackRow(state, 'cancel', at), null);
 }
 
 // ---- autonomous-plan safety: one rejected op rejects the transaction; selected means selected --

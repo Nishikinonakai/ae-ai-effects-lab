@@ -14,6 +14,7 @@ import fs from 'fs';
 import path from 'path';
 import os from 'os';
 import { fileURLToPath } from 'url';
+import { waitForFrameSettle } from './frame_settle.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -217,8 +218,15 @@ const safe = String(report.comp || 'comp').replace(/[^\w.-]+/g, '_');
 const finalJson = path.join(outDir, `${safe}_state.json`);
 const finalPng = path.join(outDir, `${safe}_frame.png`);
 try { if (fs.existsSync(jsonPath)) fs.renameSync(jsonPath, finalJson); } catch {}
-// wait briefly for the async frame, then rename
-for (let i = 0; i < 25 && !fs.existsSync(framePath); i++) await new Promise(r => setTimeout(r, 400));
+// saveFrameToPng is asynchronous. Existence is not readiness: a partially-written frame was
+// observed with a changing hash and then failed zlib with "unexpected end of file". Use the same
+// stable-size + terminal-IEND rule as apply_edit/temporal sampling before the planner or panel can
+// see the file.
+const frameSize = await waitForFrameSettle(framePath);
+if (frameSize < 0) {
+  console.error('FRAME TIMEOUT: AE did not finish writing the perception PNG; refusing a partial visual.');
+  process.exit(1);
+}
 try { if (fs.existsSync(framePath)) fs.renameSync(framePath, finalPng); } catch {}
 
 // print a compact summary the agent (or user) can read at a glance

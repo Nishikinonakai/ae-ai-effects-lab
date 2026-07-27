@@ -7,13 +7,34 @@
 // verify_edit grew its own frame rendering (temporal sampling) — one settle rule, not two copies.
 import fs from 'fs';
 
+// A stable byte count alone is not sufficient: AE can pause between IDAT writes for longer than
+// the polling interval. A complete PNG ends with the fixed 12-byte IEND chunk. Checking it is cheap,
+// resolution-independent, and prevents a mid-write plateau from being mistaken for completion.
+export function pngHasIend(fp) {
+  let fd = null;
+  try {
+    const size = fs.statSync(fp).size;
+    if (size < 20) return false;
+    fd = fs.openSync(fp, 'r');
+    const tail = Buffer.alloc(12);
+    if (fs.readSync(fd, tail, 0, 12, size - 12) !== 12) return false;
+    return tail.readUInt32BE(0) === 0 && tail.toString('ascii', 4, 8) === 'IEND';
+  } catch {
+    return false;
+  } finally {
+    if (fd !== null) try { fs.closeSync(fd); } catch { /* already closed */ }
+  }
+}
+
 export async function waitForFrameSettle(fp, timeoutMs = 45000) {
   const deadline = Date.now() + timeoutMs;
   let prev = -1, stable = 0;
   while (Date.now() < deadline) {
     await new Promise(r => setTimeout(r, 800));
     let sz = 0; try { sz = fs.statSync(fp).size; } catch { sz = 0; }
-    if (sz > 0 && sz === prev) { if (++stable >= 2) return sz; }
+    if (sz > 0 && sz === prev) {
+      if (++stable >= 2 && pngHasIend(fp)) return sz;
+    }
     else stable = 0;
     prev = sz;
   }
