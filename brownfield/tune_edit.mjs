@@ -24,6 +24,7 @@ import { effectsFromEdits } from '../introspect/essence/lookup.mjs';
 import { suggestionsToEdits } from './suggest_spec.mjs';
 import { applyReportErrors } from './apply_report.mjs';
 import { iterationNumbers } from './tune_policy.mjs';
+import { temporalEditCues } from './temporal.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -48,6 +49,7 @@ const targetLayer = Number(arg('layer', (seed.edits && seed.edits[0] && seed.edi
 // Effects touched so far in this tune — grows as the scorer pivots, and is what the essence index is
 // queried with each round (see verifyEdit). Seeded from the seed spec.
 const touchedEffects = new Set(effectsFromEdits(seed.edits || []).effects);
+const forcedTemporalCues = new Set(temporalEditCues(seed.edits || []));
 // Levers this tune has proven unreachable (hidden behind a parent gate, wrong type, …) — never re-offered.
 const blockedLevers = new Set();
 // The plateau trace handed to the scorer as prior_iterations, rewritten before every verify.
@@ -100,6 +102,7 @@ function verifyEdit(reportPath, baselineReportPath, iterNo) {
   // levers that turned out to be gated shut stay blocked for the REST of the tune — otherwise the
   // scorer re-suggests them every round (a wider lever vocabulary makes this more likely, not less)
   if (blockedLevers.size) args.push(`--blocked=${[...blockedLevers].join(',')}`);
+  if (forcedTemporalCues.size) args.push(`--temporal-cues=${[...forcedTemporalCues].join('|')}`);
   const r = node(VERIFY, args);
   process.stdout.write(r.stdout || '');
   const reviewPath = path.join(path.dirname(reportPath), 'review.json');
@@ -204,6 +207,7 @@ for (const n of iterations) {
   if (!nextSpec) { console.log(`\n⏹ no applicable suggestions at iter ${n} — stopping (best score ${best.score}).`); break; }
   console.log(`  ↳ applying ${nextSpec.edits.length} suggested edit(s): ${nextSpec.edits.map(e => e.op + ' ' + (e.paramMatchName || e.effectMatchName || e.target)).join(', ')}`);
   for (const fx of effectsFromEdits(nextSpec.edits).effects) touchedEffects.add(fx);   // widen the lever context as the tune pivots
+  for (const cue of temporalEditCues(nextSpec.edits)) forcedTemporalCues.add(cue);
   const applied = applyEdit(nextSpec, `iter${n + 1}`);
   if (!applied) { console.log('  (apply failed — stopping)'); break; }
   stack.push(applied);

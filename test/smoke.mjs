@@ -501,7 +501,7 @@ console.log('\nsuggestionsToEdits — instance suffix + pin inheritance');
 // negative judges motion blind. So motion words must hit and pure-look asks must not.
 console.log('\ntemporalCues — motion words trigger, looks do not');
 {
-  const { isTemporalIntent, temporalCues } = await import('../brownfield/temporal.mjs');
+  const { isTemporalIntent, temporalCues, temporalEditCues, temporalFramesChanged } = await import('../brownfield/temporal.mjs');
   ok('消散/留恋 hits', isTemporalIntent('残粒被风扫走,消散得更留恋一点'));
   ok('呼吸/慢慢 hits', isTemporalIntent('让背景慢慢地有呼吸感'));
   ok('闪烁 hits', isTemporalIntent('让霓虹灯闪烁'));
@@ -511,6 +511,30 @@ console.log('\ntemporalCues — motion words trigger, looks do not');
   ok('a pure look-ask does NOT hit (wider glow)', !isTemporalIntent('make the second glow much wider and stronger'));
   ok('empty is safe', !isTemporalIntent('') && !isTemporalIntent(undefined));
   eq('cues are reported for the prompt', temporalCues('慢慢呼吸').length, 2);
+  eq('a planner-created expression forces temporal evidence even for a pure-look intent',
+    temporalEditCues([{ op: 'expression', target: 'opacity', expression: 'wiggle(2,10)' }]),
+    ['edit:expression:opacity']);
+  eq('a keyframe-aware param edit forces temporal evidence',
+    temporalEditCues([{ op: 'param', paramMatchName: 'PEDG-0002', keyframeMode: 'scale', value: 1.2 }]),
+    ['edit:keyframes:PEDG-0002']);
+  eq('Camera Shake is temporal even when the request only says "tense"',
+    temporalEditCues([{ op: 'addEffect', effectMatchName: 'BCC_CAMERASHAKE' }]),
+    ['edit:effect:BCC_CAMERASHAKE']);
+  eq('Particular parameter changes are judged as an evolving particle system',
+    temporalEditCues([{ op: 'param', effectMatchName: 'tc Particular', paramMatchName: 'tc Particular-0749', value: 200 }]),
+    ['edit:effect:tc Particular']);
+  eq('a static color effect does not force temporal sampling',
+    temporalEditCues([{ op: 'addEffect', effectMatchName: 'ADBE Tint' }]), []);
+  eq('undefined edit input is safe', temporalEditCues(undefined), []);
+  ok('a changed later frame overrides an inert same-playhead pair',
+    temporalFramesChanged([
+      { ok: true, maxDelta: 0, movedFraction: 0 },
+      { ok: true, maxDelta: 40, movedFraction: 0.2 },
+    ]));
+  ok('pixel-identical temporal samples remain inert',
+    !temporalFramesChanged([{ ok: true, maxDelta: 0, movedFraction: 0 }]));
+  ok('unavailable temporal measurements do not invent motion',
+    !temporalFramesChanged([{ ok: false, why: 'missing' }]));
 }
 
 // ---- recovery helpers (shell/recover.mjs) ------------------------------------------------------

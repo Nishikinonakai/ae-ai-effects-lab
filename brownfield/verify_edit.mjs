@@ -28,7 +28,7 @@ import { spawnSync } from 'child_process';
 import { schemaPrompt } from '../recipe-harness/runner/review_schema.mjs';
 import { leverContext, effectsFromEdits } from '../introspect/essence/lookup.mjs';
 import { frameDelta, classifyDelta } from './frame_delta.mjs';
-import { temporalCues } from './temporal.mjs';
+import { temporalCues, temporalEditCues, temporalFramesChanged } from './temporal.mjs';
 import { waitForFrameSettle } from './frame_settle.mjs';
 import { provider } from '../shell/llm.mjs';
 
@@ -109,7 +109,12 @@ const afterScaled = scaledCopy(afterAbs);
 // uses comp.saveFrameToPng(t, file), which renders at t without touching the playhead — this tool
 // keeps its never-mutate contract. False positives cost ~a second and ~$0.001; false negatives
 // judge motion blind, which is the #13 failure — so the detector leans inclusive.
-const tempCues = temporalCues(intent);
+const forcedTempCues = (arg('temporal-cues', '') || '').split('|').map(s => s.trim()).filter(Boolean);
+const tempCues = [...new Set([
+  ...temporalCues(intent),
+  ...temporalEditCues(report.spec || report.applied || []),
+  ...forcedTempCues,
+])];
 const TEMPORAL_OFFSETS = [0.4, 0.8, 1.2];
 let temporalFrames = [];   // scaled copies, in time order
 if (tempCues.length) {
@@ -131,9 +136,9 @@ if (tempCues.length) {
     const took = res.took || [];
     for (const s of spec) {
       if (took.indexOf(s.dt) === -1) continue;
-      if ((await waitForFrameSettle(s.fp)) > 0) temporalFrames.push({ dt: s.dt, scaled: scaledCopy(s.fp) });
+      if ((await waitForFrameSettle(s.fp)) > 0) temporalFrames.push({ dt: s.dt, fp: s.fp, scaled: scaledCopy(s.fp) });
     }
-    console.log(`temporal intent (${tempCues.join(', ')}) — sampled ${temporalFrames.length} extra after-frame(s) at +${temporalFrames.map(f => f.dt).join('s, +')}s`);
+    console.log(`temporal evidence required (${tempCues.join(', ')}) — sampled ${temporalFrames.length} extra after-frame(s) at +${temporalFrames.map(f => f.dt).join('s, +')}s`);
   } catch (e) {
     console.log(`(temporal sampling failed: ${String(e).slice(0, 80)} — judging from the single after-frame)`);
     temporalFrames = [];
@@ -149,7 +154,7 @@ if (tempCues.length && provider() === 'gemini' && arg('clip', 'on') !== 'off') {
   try {
     const rc = spawnSync('node', [path.join(REPO, 'brownfield', 'render_clip.mjs'),
       '--start=-1', '--dur=1.6', `--out=${path.dirname(reportPath)}`, `--label=${report.label || 'edit'}`],
-      { encoding: 'utf8', timeout: 200000 });
+      { encoding: 'utf8', timeout: Number(arg('clip-timeout-ms', 60000)) });
     const line = (rc.stdout || '').trim().split('\n').pop();
     const j = rc.status === 0 && line ? JSON.parse(line) : null;
     if (j && j.ok) {
@@ -284,7 +289,13 @@ const maxItersReq = Number(arg('max-iters', Math.max(iteration, 1)));
 // for free, so we measure it and TELL the scorer rather than asking it to perceive it.
 const editDelta = frameDelta(path.resolve(REPO, report.beforePng), afterAbs);   // did THIS edit do anything?
 const cumulativeDelta = frameDelta(beforeAbs, afterAbs);                        // has the tune moved at all?
-const editClass = classifyDelta(editDelta);
+const staticEditClass = classifyDelta(editDelta);
+const temporalDeltas = temporalFrames.map(f => ({ dt: f.dt, ...frameDelta(afterAbs, f.fp) }));
+const temporalChanged = temporalFramesChanged(temporalDeltas);
+// A time expression can land exactly on a zero crossing at the playhead: BEFORE and AFTER are then
+// pixel-identical even though +0.4s is visibly different. Temporal measurements outrank that
+// zero-phase still; calling the edit INERT would be a demonstrably false statement.
+const editClass = temporalChanged ? 'changed' : staticEditClass;
 // An inert frame has two very different causes, and the report says which. If the param never
 // actually moved, the edit did not take. If the param DID move and the frame still did not, the
 // lever is real but has no visible consequence in this state — masked, occluded, or saturated by
@@ -294,7 +305,16 @@ const editClass = classifyDelta(editDelta);
 const valueMoved = (report.applied || []).some(a => a && !a.error &&
   (a.op === 'param' ? JSON.stringify(a.old) !== JSON.stringify(a.new) : true));
 let deltaBlock = '';
-if (editClass === 'inert') {
+if (temporalChanged) {
+  deltaBlock = [
+    'MEASURED TEMPORAL DELTA: later edited frames DO change over time.',
+    `The same-playhead BEFORE/AFTER delta is ${staticEditClass || 'unavailable'}, but sampled frames moved:`,
+    ...temporalDeltas.filter(d => d.ok).map(d =>
+      `  +${d.dt}s: ${(d.movedFraction * 100).toFixed(2)}% pixels moved, mean ${d.meanDelta.toFixed(2)}/255, max ${d.maxDelta.toFixed(2)}/255`),
+    'This edit is NOT inert. Judge the direction, rhythm and continuity from the temporal sequence;',
+    'never infer "no motion" from the zero-phase same-playhead pair.',
+  ].join('\n');
+} else if (editClass === 'inert') {
   deltaBlock = [
     'MEASURED PIXEL DELTA: this edit changed ZERO pixels. The two frames are bit-identical.',
     'This is a MEASUREMENT, not an impression — the edit is INERT, not merely too weak.',
@@ -337,7 +357,9 @@ if (editClass === 'inert') {
     + (cumulativeDelta.ok && baselineArg ? ` · cumulatively vs the ORIGINAL baseline: ${(cumulativeDelta.movedFraction * 100).toFixed(2)}% of pixels, mean |Δ| ${cumulativeDelta.meanDelta.toFixed(2)}/255.` : '.')
     + ' Use this to calibrate how much the edit actually moved the image; judge the LOOK from the frames.';
 }
-if (editClass) console.log(`frame delta: ${editClass}${editDelta.ok ? ` (moved ${(editDelta.movedFraction * 100).toFixed(2)}%, mean ${editDelta.meanDelta.toFixed(2)}/255)` : ''}`);
+if (temporalChanged) {
+  console.log(`frame delta: changed over time (${temporalDeltas.filter(d => d.ok).map(d => `+${d.dt}s ${(d.movedFraction * 100).toFixed(2)}%`).join(', ')})`);
+} else if (editClass) console.log(`frame delta: ${editClass}${editDelta.ok ? ` (moved ${(editDelta.movedFraction * 100).toFixed(2)}%, mean ${editDelta.meanDelta.toFixed(2)}/255)` : ''}`);
 else if (!editDelta.ok) console.log(`frame delta: unavailable — ${editDelta.why} (skipping the inert check)`);
 
 const temporalBlock = temporalFrames.length ? [
@@ -372,7 +394,12 @@ const req = {
   plan: report.applied || report.spec || [],
   prior_iterations: priorIterations,
   available_levers: lc.levers,     // machine-readable twin of the block above (for post-hoc analysis)
-  frame_delta: { edit: editDelta, cumulative: cumulativeDelta, class: editClass },
+  frame_delta: {
+    edit: editDelta,
+    cumulative: cumulativeDelta,
+    class: editClass,
+    ...(temporalDeltas.length ? { temporal: temporalDeltas } : {}),
+  },
   blocked_levers: blockedAll,      // the loop reads this back to carry the blocklist forward
   ...(temporalFrames.length ? { temporal: { cues: tempCues, offsets: temporalFrames.map(f => f.dt) } } : {}),
   frames: [beforeScaled, afterScaled, ...temporalFrames.map(f => f.scaled)],
@@ -383,10 +410,31 @@ const reqDir = path.dirname(reportPath);
 const reqPath = path.join(reqDir, `verify_${report.label || 'edit'}_request.json`);
 fs.writeFileSync(reqPath, JSON.stringify(req, null, 2));
 
-// run the shared scorer (writes review.json next to the request)
-const r = spawnSync('node', [GPT_SCORE, reqPath, ...(model ? [`--model=${model}`] : [])], { encoding: 'utf8' });
-if (r.status !== 0) { console.error('scorer failed:\n' + (r.stderr || r.stdout)); process.exit(1); }
 const reviewPath = path.join(reqDir, 'review.json');
+const scoreTimeoutMs = Number(arg('score-timeout-ms', 60000));
+function runScorer() {
+  // Never accept a review.json left by an earlier iteration after a timeout/crash.
+  try { if (fs.existsSync(reviewPath)) fs.unlinkSync(reviewPath); } catch { /* next existence check catches it */ }
+  return spawnSync('node', [GPT_SCORE, reqPath, ...(model ? [`--model=${model}`] : [])],
+    { encoding: 'utf8', timeout: scoreTimeoutMs });
+}
+
+// Run the shared scorer (writes review.json next to the request). Video gets one bounded attempt;
+// on timeout, retry from the already-rendered temporal frame sequence instead of hanging the panel.
+let r = runScorer();
+if (r.error?.code === 'ETIMEDOUT' && req.clip) {
+  console.log(`video scorer timed out after ${scoreTimeoutMs}ms — retrying once with temporal frames only`);
+  delete req.clip;
+  fs.writeFileSync(reqPath, JSON.stringify(req, null, 2));
+  r = runScorer();
+}
+if (r.status !== 0) {
+  const why = r.error?.code === 'ETIMEDOUT'
+    ? `scorer timed out after ${scoreTimeoutMs}ms`
+    : (r.stderr || r.stdout);
+  console.error('scorer failed:\n' + why);
+  process.exit(1);
+}
 if (!fs.existsSync(reviewPath)) { console.error('scorer produced no review.json'); process.exit(1); }
 const review = JSON.parse(fs.readFileSync(reviewPath, 'utf8'));
 
@@ -405,7 +453,7 @@ const review = JSON.parse(fs.readFileSync(reviewPath, 'utf8'));
 if (review.score >= acceptBar && !review._confirmed) {
   const draws = [review.score];
   for (let k = 0; k < 2; k++) {
-    const again = spawnSync('node', [GPT_SCORE, reqPath, ...(model ? [`--model=${model}`] : [])], { encoding: 'utf8' });
+    const again = runScorer();
     if (again.status !== 0 || !fs.existsSync(reviewPath)) continue;
     draws.push(JSON.parse(fs.readFileSync(reviewPath, 'utf8')).score);
   }
