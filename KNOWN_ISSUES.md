@@ -16,26 +16,30 @@
 
 ## 一、会直接影响用户的
 
-### 1. 及格线 8 分对当前判官不可达 —— 产品永远说不出"完成了"
+### 1. 及格线 8 分仍缺少 8/9 分人类标签 —— 暂不下调
 
-`--accept=8` 是 kernel / `tune_edit` / `verify_edit` 的默认值,而**当前默认模型
-`gemini-3-flash-preview` 在 A/B 语料 15 例上的分数范围是 3~7,一次 8 都没给过**
-(`recipe-harness/vision/ab_report.json`,`passRate: 0`)。
+`--accept=8` 是 kernel / `tune_edit` / `verify_edit` 的默认值。历史 A/B 语料 15 例上，
+`gemini-3-flash-preview` 的分数范围确实只有 3~7（
+`recipe-harness/vision/ab_report.json`,`passRate: 0`），但 dogfood 真机已出现一次
+**10 分 Keep**，所以“8 分不可达”已经不是当前事实。
 
-后果:accept 分支在这类内容上是**不可达代码**,每一轮都走满 max-iters 然后交接。
+当前更准确的风险是**门槛缺少边界样本**：截至 2026-07-27，
+`decisions.jsonl` 为 27 条（18 条有判官分）；7 分恰好是 **3 Keep / 3 Roll back**，
+8/9 分均无样本，10 分为 1 Keep。把门槛降到 7 会直接自动接收已有的 3 个人工 Roll back；
+保持 8 在现有数据上没有 false accept，但只覆盖 1 个有分 Keep。
 
-**为什么没有当场改掉那条线:** n=15,而且改及格线是在**调整量具的判据去迁就量具**——正是 C.2 撤回
-教训点名的动作。要动它需要先有一份"人认为算过关"的标注集,拿它去标定这个判官的分数分布。
+**为什么仍不改:** 改及格线是在**调整量具的判据去迁就量具**——正是 C.2 撤回教训点名的动作。
+实时数据已经明确否决 7，却尚未告诉我们 8/9 是否可靠。先积累真实边界标签，不为了凑数重复刷题。
 
 **标注管道已通(2026-07-21 午后,日志 §H.5):** 每次 Keep/Roll back 现在落一行
 `~/Documents/ae-ai-shell/decisions.jsonl`(意图/判官分/编辑数/决策),空会话误点有守卫。
 零编辑 handoff 不进入这份视觉分数数据；面板会改为 Helpful / Not enough，并单独写入
 `~/Documents/ae-ai-shell/handoff_feedback.jsonl`（意图/具体原因/能力码/反馈）。
-**攒到 ~30 条再动线**;在那之前这条仍然活着。
+`node shell/calibrate_decisions.mjs` 可重复输出每个候选门槛的 auto-accept、false-accept 和
+Keep 覆盖率。**攒到 ~30 条且至少出现 8/9 分边界样本再动线**；在那之前这条仍然活着。
 
-**当下的缓解:** 已在 kernel 的 usage 注释里点名。另外从路线上看这未必是坏事——PRD §11.6 的结论是
-产品的价值在**交接**而不在收敛到 9 分,"总是交接"和那个结论是一致的。但**用户看不到"完成"这个信号**
-这件事本身仍然是缺陷。
+**当下的缓解:** `verdict=pass` 且 5–7 分会停止继续调优并交给 artist Keep/Roll back，
+不会为了追 8 分破坏已经满足语义的结果；8 分自动完成门槛本身保持不变。
 
 对照数据:`gemini-3.5-flash` 与 `gemini-3.1-pro-preview` 在同一语料上各给过 1 次 8。
 

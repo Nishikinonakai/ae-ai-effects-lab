@@ -236,6 +236,19 @@ P0 复测后的标签总量见下文。
 - 本次使用 1 次 plan + 1 次 score；总模型使用更新为 **$1.0301 / 107 calls**。独立 handoff
   反馈仍为 **2 Helpful / 0 Not enough**，完整离线回归仍为 **178 passed / 0 failed**。
 
+### accept bar 实时标定快照
+
+- 新增 `node shell/calibrate_decisions.mjs`：从真实 `decisions.jsonl` 逐分桶统计 Keep /
+  Roll back，并为 1–10 每个候选门槛输出 auto-accept、false-accept 和有分 Keep 覆盖率；
+  无分 Stop/恢复会话标签保留计数，但不进入阈值数学。
+- 当前 27 条为 **5 Keep / 22 Roll back**，其中 18 条有判官分、9 条无分。7 分是
+  **3 Keep / 3 Roll back**；8/9 分无样本；10 分是 **1 Keep / 0 Roll back**。
+- 因此门槛 7 会把 3 个实际 Roll back 自动接收；当前样本里最低零 false-accept 门槛仍是
+  **8**。bar 8/9/10 目前都只自动覆盖那 1 个 10 分 Keep，即有分 Keep 覆盖率 **25%**。
+- **继续不动 accept bar=8。** 不为了凑 30 条重复刷题；等待自然出现的 8/9 分边界样本。
+  完整离线回归更新为 **185 passed / 0 failed**，无新增模型调用，费用仍为
+  **$1.0301 / 107 calls**。
+
 ## 跨题确定性缺陷（持续更新）
 
 - ~~`passes=3` 实际执行 4 轮，状态显示 `4/3`。~~ **P0 已关闭：真机严格 3/3。**

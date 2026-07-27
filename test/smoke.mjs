@@ -468,6 +468,25 @@ console.log('\nhandoff feedback — usefulness labels do not contaminate visual 
   eq('unknown actions are ignored', handoffFeedbackRow(state, 'cancel', at), null);
 }
 
+console.log('\ndecision calibration — threshold candidates follow human labels');
+{
+  const { summarizeDecisions } = await import('../shell/calibration.mjs');
+  const s = summarizeDecisions([
+    { decision: 'keep', score: 7 },
+    { decision: 'rollback', score: 7 },
+    { decision: 'keep', score: 10 },
+    { decision: 'rollback', score: null },
+    { decision: 'ignored', score: 10 },
+  ]);
+  eq('only Keep/Roll back rows are labels', s.labels, 4);
+  eq('unscored decisions stay visible but do not enter threshold math', s.unscored, 1);
+  eq('the ambiguous 7 bucket preserves both outcomes', s.byScore['7'], { keep: 1, rollback: 1 });
+  eq('bar 7 would falsely auto-accept one rollback', s.candidates[6].falseAccepts, 1);
+  eq('the lowest observed zero-false-accept bar is 8', s.lowestObservedZeroFalseAcceptBar, 8);
+  eq('bar 8 covers only the 10-point Keep in this fixture', s.candidates[7].keepCoverage, 0.5);
+  eq('empty input is safe', summarizeDecisions([]).lowestObservedZeroFalseAcceptBar, null);
+}
+
 // ---- autonomous-plan safety: one rejected op rejects the transaction; selected means selected --
 console.log('\nplan safety — atomic validation + selected-layer hard scope');
 {
