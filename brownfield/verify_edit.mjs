@@ -31,6 +31,7 @@ import { frameDelta, classifyDelta } from './frame_delta.mjs';
 import { temporalCues, temporalEditCues, temporalFramesChanged } from './temporal.mjs';
 import { waitForFrameSettle } from './frame_settle.mjs';
 import { provider } from '../shell/llm.mjs';
+import { reviewDecision } from './review_decision.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -469,12 +470,15 @@ if (review.score >= acceptBar && !review._confirmed) {
   fs.writeFileSync(reviewPath, JSON.stringify(review, null, 2));
 }
 
-// map score -> decision
+// Map the two scorer signals to an action. Semantic pass below the numeric bar is deliberately a
+// HANDOFF: stop changing the comp, but keep the artist in control instead of auto-accepting.
 const score = review.score;
-let decision, action;
-if (score >= acceptBar) { decision = 'ACCEPT'; action = 'keep the edit as-is.'; }
-else if (score <= rollbackBar) { decision = 'ROLLBACK'; action = `node brownfield/apply_edit.mjs --rollback=${path.relative(REPO, reportPath)}`; }
-else { decision = 'TUNE'; action = 'apply the scorer suggestions below as the next edit, then re-verify.'; }
+const decision = reviewDecision({ score, verdict: review.verdict, acceptBar, rollbackBar });
+let action;
+if (decision === 'accept') action = 'keep the edit as-is.';
+else if (decision === 'handoff') action = 'stop tuning and ask the artist to Keep or Roll back; the semantic intent passed but did not reach the auto-accept score.';
+else if (decision === 'rollback') action = `node brownfield/apply_edit.mjs --rollback=${path.relative(REPO, reportPath)}`;
+else action = 'apply the scorer suggestions below as the next edit, then re-verify.';
 
 console.log(`\n=== verify "${report.label}" — intent: ${intent} ===`);
 console.log(`scorer: ${review._backend}  verdict=${review.verdict}  score=${score}/10`);
@@ -483,7 +487,7 @@ if (review.suggestions?.length) {
   console.log('suggestions:');
   for (const s of review.suggestions) console.log(`  - [${s.type}] ${s.matchName || s.effect || ''} ${s.value !== undefined ? '→ ' + JSON.stringify(s.value) : ''} — ${s.why || ''}`);
 }
-console.log(`\n▶ DECISION: ${decision} (accept≥${acceptBar}, rollback≤${rollbackBar})`);
+console.log(`\n▶ DECISION: ${decision.toUpperCase()} (accept≥${acceptBar}, rollback≤${rollbackBar})`);
 console.log(`  ${action}`);
-// exit code: 0 accept / 2 tune / 3 rollback — so a harness can branch on it
-process.exit(decision === 'ACCEPT' ? 0 : decision === 'TUNE' ? 2 : 3);
+// exit code: 0 accept / 2 tune / 3 rollback / 4 semantic-pass handoff
+process.exit(decision === 'accept' ? 0 : decision === 'tune' ? 2 : decision === 'handoff' ? 4 : 3);

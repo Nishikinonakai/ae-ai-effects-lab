@@ -118,8 +118,8 @@ function verifyEdit(reportPath, baselineReportPath, iterNo) {
     for (const b of req.blocked_levers || []) blockedLevers.add(b);
     deltaClass = req.frame_delta?.class ?? null;
   } catch { /* request shape changed — the blocklist just stays as-is */ }
-  // exit code: 0 accept / 2 tune / 3 rollback
-  const decision = r.status === 0 ? 'accept' : r.status === 2 ? 'tune' : 'rollback';
+  // exit code: 0 accept / 2 tune / 3 rollback / 4 semantic-pass handoff
+  const decision = r.status === 0 ? 'accept' : r.status === 2 ? 'tune' : r.status === 4 ? 'handoff' : 'rollback';
   return { score: review.score, verdict: review.verdict, critique: review.critique, suggestions: review.suggestions || [], decision, deltaClass };
 }
 
@@ -153,7 +153,7 @@ const baselineReport = seed0.reportPath;   // seed's before-frame = the untouche
 
 const trace = [];
 let current = seed0;                        // the report of the currently-applied (topmost) edit
-let best = { score: -1, reportPath: seed0.reportPath, depth: 0 };
+let best = { score: -1, verdict: null, reportPath: seed0.reportPath, depth: 0 };
 const stack = [seed0];                      // applied reports, for rollback on decline
 let accepted = false;
 
@@ -170,13 +170,18 @@ for (const n of iterations) {
     // The accepting iteration IS the final state, so its score is the result. Without this,
     // bestScore reported the last score that beat its predecessor — a run that went 7 then 9-accept
     // told the caller "7", which is what the panel then showed the artist.
-    best = { score: v.score, reportPath: current.reportPath, depth: stack.length };
+    best = { score: v.score, verdict: v.verdict, reportPath: current.reportPath, depth: stack.length };
     console.log(`\n✅ ACCEPTED at iter ${n} (score ${v.score}).`);
     accepted = true;
     break;
   }
+  if (v.decision === 'handoff') {
+    best = { score: v.score, verdict: v.verdict, reportPath: current.reportPath, depth: stack.length };
+    console.log(`\n👤 SEMANTIC PASS at iter ${n} (${v.score}/10 below auto-accept ${acceptBar}) — stopping for artist review.`);
+    break;
+  }
   if (n === iterationCount - 1) {
-    if (v.score > best.score) best = { score: v.score, reportPath: current.reportPath, depth: stack.length };
+    if (v.score > best.score) best = { score: v.score, verdict: v.verdict, reportPath: current.reportPath, depth: stack.length };
     console.log(`\n⏹ max iters reached — best score ${best.score}.`);
     break;
   }
@@ -191,10 +196,10 @@ for (const n of iterations) {
   // are still reverted; keeping those would just accumulate dead weight.
   let baseForNext = current;
   const enabling = v.score === best.score && v.deltaClass === 'changed';
-  if (v.score > best.score) { best = { score: v.score, reportPath: current.reportPath, depth: stack.length }; }
+  if (v.score > best.score) { best = { score: v.score, verdict: v.verdict, reportPath: current.reportPath, depth: stack.length }; }
   else if (enabling && n > 0) {
     console.log(`  ↦ tie (${v.score}) but the frame changed — keeping as an enabling move`);
-    best = { score: v.score, reportPath: current.reportPath, depth: stack.length };
+    best = { score: v.score, verdict: v.verdict, reportPath: current.reportPath, depth: stack.length };
   }
   else if (n > 0) {
     console.log(`  ↩ decline (${v.score} ${v.score === best.score ? '=' : '<'} best ${best.score}${v.deltaClass === 'inert' ? ', frame unchanged' : ''}) — rolling back this edit, re-tuning from best`);
@@ -232,7 +237,8 @@ if (!accepted) {
 
 const summaryPath = path.join(outDir, 'tune_summary.json');
 fs.writeFileSync(summaryPath, JSON.stringify({
-  intent, targetLayer, acceptBar, trace, bestScore: best.score, accepted,
+  intent, targetLayer, acceptBar, trace, bestScore: best.score, bestVerdict: best.verdict,
+  semanticPass: best.verdict === 'pass', accepted,
   rolledBackToBest: restored, blockedLevers: [...blockedLevers],
   // What is STILL APPLIED to the comp when this loop exits, oldest first. A caller that wants to
   // undo the whole tune (the panel's Rollback button undoes an entire request, not one iteration)

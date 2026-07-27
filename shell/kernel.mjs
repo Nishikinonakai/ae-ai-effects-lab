@@ -382,6 +382,7 @@ async function handleRun(req) {
 
   const scored = summary.bestScore;
   const good = summary.accepted || scored >= ACCEPT_BAR;
+  const semanticPass = summary.semanticPass && !good;
   const carryNote = carried.length ? ` (Roll back also undoes ${carried.length} earlier edit(s) you never accepted.)` : '';
   const changed = describeChanges(specPath, niceName);
   setState({
@@ -389,6 +390,8 @@ async function handleRun(req) {
     changed,
     message: (good
       ? `Done — scored ${scored}/10. Keep it?`
+      : semanticPass
+        ? `The visual judge says the intent is met, but confidence is ${scored}/10 below auto-accept ${ACCEPT_BAR}. I stopped tuning — Keep it or roll back?`
       : `Best I got was ${scored}/10 — it may not be what you meant. Keep it or roll back?`) + carryNote,
     frame: previewOf(summary.finalFrame ? path.resolve(REPO, summary.finalFrame) : null),
     trace: summary.trace || [],

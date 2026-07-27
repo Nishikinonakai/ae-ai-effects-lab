@@ -172,6 +172,17 @@ P0 复测后的标签总量见下文。
 - 完整离线回归更新为 **148 passed / 0 failed**；两次只读 score 调用后总模型使用为
   **$0.9441 / 102 calls**，标签仍为 26 条。
 
+### `verdict=pass` 与 8 分门槛解冲突
+
+- **accept bar 仍为 8，未下调。** 新增第三种确定性结果：分数达到 8 仍自动 accept；
+  `verdict=pass` 且分数为 5–7 时停止继续调优，但不自动接受，进入 artist handoff；
+  低分矛盾 pass 仍按 rollback 处理。
+- 用历史 #13 的真实 review（`score=7, verdict=pass`，critique 明确确认 Deep Glow 数值和
+  0.5Hz breathing 正确）重放，新策略输出 `handoff`。因此不会再显示“可能不是你想要的”，
+  也不会在已经完成后继续追加建议；面板会说明语义已通过、置信度低于 8，并让用户
+  Keep / Roll back。
+- 完整离线回归更新为 **152 passed / 0 failed**；该修复不调用模型，成本和标签数不变。
+
 ## 跨题确定性缺陷（持续更新）
 
 - ~~`passes=3` 实际执行 4 轮，状态显示 `4/3`。~~ **P0 已关闭：真机严格 3/3。**
@@ -187,8 +198,8 @@ P0 复测后的标签总量见下文。
 - ~~时域视频判官无超时/退避。~~ **P1 已加入 60 秒边界与 video → temporal frames 自动降级。**
   真实外部超时降级路径仍需在下一次自然长尾时记录一次生产证据。
 - ~~对协议明确不支持的层序仍会 bluff。~~ **P0 已关闭：#12 在 planner 前具体交接。**
-- 判官 `verdict=pass` 与 accept bar 信号冲突：#13、#15 均语义通过但 7<8，面板仍展示
-  “Best I got was 7/10”，用户看不出到底完成没有。
+- ~~判官 `verdict=pass` 与 accept bar 信号冲突。~~ **已关闭：5–7 分 semantic pass 停止
+  调优并明确 handoff；8 分自动接受门槛保持不变。**
 - Lumetri/复杂效果参数结构未过滤 group header：#14 的初始 plan 与调优均向不可写分组写颜色。
 - #15 面板最终缩略图一度缺主体，但随后 AE 实时 dump/render 完整；交接 preview 存在瞬时缓存或
   渲染时序不一致。

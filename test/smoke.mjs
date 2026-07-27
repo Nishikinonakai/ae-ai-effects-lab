@@ -462,6 +462,7 @@ console.log('\ntune policy — apply failures are visible and passes are exact')
 {
   const { applyReportErrors } = await import('../brownfield/apply_report.mjs');
   const { iterationNumbers } = await import('../brownfield/tune_policy.mjs');
+  const { reviewDecision } = await import('../brownfield/review_decision.mjs');
   eq('three requested passes means exactly 0,1,2', iterationNumbers(3), [0, 1, 2]);
   eq('fractional pass count is floored', iterationNumbers(2.9), [0, 1]);
   eq('invalid/zero input still performs one safety review', iterationNumbers(0), [0]);
@@ -471,6 +472,13 @@ console.log('\ntune policy — apply failures are visible and passes are exact')
     applyReportErrors({ applied: [{ op: 'addLayer' }, { error: 'setValue threw', detail: 'bad param' }] }).map(e => e.error),
     ['setValue threw']);
   eq('missing report shape is safe', applyReportErrors(null), []);
+  eq('8/10 still auto-accepts', reviewDecision({ score: 8, verdict: 'pass', acceptBar: 8, rollbackBar: 4 }), 'accept');
+  eq('semantic pass at 7 stops for artist review without lowering the bar',
+    reviewDecision({ score: 7, verdict: 'pass', acceptBar: 8, rollbackBar: 4 }), 'handoff');
+  eq('a low-confidence contradictory pass still rolls back',
+    reviewDecision({ score: 3, verdict: 'pass', acceptBar: 8, rollbackBar: 4 }), 'rollback');
+  eq('ordinary 7/fail continues tuning',
+    reviewDecision({ score: 7, verdict: 'fail', acceptBar: 8, rollbackBar: 4 }), 'tune');
 }
 
 // ---- suggestion mapper: the "#N" suffix is addressing, and now it addresses --------------------
