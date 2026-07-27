@@ -145,6 +145,17 @@ P0 复测后的标签总量见下文。
 复测新增 2 次人工 Roll back 标签，`decisions.jsonl` 现为 **26 条**；总模型使用更新为
 **$0.905 / 99 calls**。能力闸门 handoff 仍不会进入这份仅记录 appliedReports 的标注集。
 
+### 精确效果名约束补测
+
+- 新增 installed roster 驱动的效果名契约：请求明确写出 `Lumetri`、`Deep Glow`、
+  `Fractal Noise` 等名字时，validated plan 必须触碰对应 matchName；不能换成另一个“近似”
+  效果。重叠名称取最长匹配，`不要用 Tint` 这类否定不计为必用效果。
+- 再次原文复测 #14：planner 生成 `ADBE Lumetri`，不再替换为 Tint。两个新参数仍是不可写
+  分组，report 捕获两次 `setValue threw` 后立即补偿调整层和效果；实时回读 5 层，最终帧与
+  初始 P0 基线仍是 **16-bit pixel-exact delta 0**。
+- 该请求只消耗 1 次 planning call，没有进入视觉判官；总模型使用更新为
+  **$0.937 / 100 calls**，标签仍为 26 条。
+
 ## 跨题确定性缺陷（持续更新）
 
 - ~~`passes=3` 实际执行 4 轮，状态显示 `4/3`。~~ **P0 已关闭：真机严格 3/3。**
@@ -168,8 +179,9 @@ P0 复测后的标签总量见下文。
   #21/#22/#23/#24 真机均零调用交接；#20 有离线固定回归。**
 - ~~#19 空 edits 只给通用英文 handoff。~~ **P0 已关闭该入口：发色请求现在明确说明需要
   蒙版/分层素材或回 PS，不会整层染黄。** 通用 planner 自发空 edits 的 rationale 完整性仍需观察。
-- planner 可能用“可执行替代品”绕开精确点名：修复后 #14 要求 Lumetri，实际改用 Tint；
-  事务完整但语义不忠实，仍需新增“显式效果名不可替换”的 plan contract/validator。
+- ~~planner 可能用“可执行替代品”绕开精确点名。~~ **已关闭：installed roster 效果名契约
+  会拒绝替换；#14 真机确认回到 ADBE Lumetri。** Lumetri 新实例的 group/leaf 参数结构仍
+  无法在 plan 前完整辨认，目前由 apply report 检错并原子补偿。
 - 决策标注只记录有 appliedReports 的 Keep/Roll back；正确的空 edits/handoff（如 #19）无法进入
   calibration 数据集。
 - AE ScriptUI 面板控件不暴露可自动化的 AX Press/文本接口；截图可读，但系统辅助功能返回 `AXError.notImplemented`。

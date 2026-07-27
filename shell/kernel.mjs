@@ -84,9 +84,21 @@ function loadSession() {
     const s = JSON.parse(fs.readFileSync(SESSION, 'utf8'));
     // only resume if the reports it points at still exist — otherwise rollback would half-fail
     const live = (s.appliedReports || []).filter(r => fs.existsSync(path.resolve(REPO, r)));
-    if (live.length !== (s.appliedReports || []).length) return null;
-    return live.length ? s : null;
-  } catch { return null; }
+    if (live.length !== (s.appliedReports || []).length || !live.length) {
+      fs.unlinkSync(SESSION);
+      return null;
+    }
+    return s;
+  } catch {
+    try { fs.unlinkSync(SESSION); } catch { /* already gone */ }
+    return null;
+  }
+}
+function discardEmptySession() {
+  if (session && !(session.appliedReports || []).length) {
+    session = null;
+    saveSession();
+  }
 }
 function setState(patch) {
   const prev = fs.existsSync(STATE) ? JSON.parse(fs.readFileSync(STATE, 'utf8')) : {};
@@ -149,6 +161,7 @@ function run(script, args, { onLine } = {}) {
 // cancel would be the product deciding for them.
 function finishCancelled() {
   const n = session?.appliedReports?.length || 0;
+  if (!n) discardEmptySession();
   setState({
     phase: 'cancelled',
     message: n ? `stopped — ${n} edit(s) are applied. Keep them or roll back.` : 'stopped before anything was applied.',
@@ -264,7 +277,7 @@ async function handleRun(req) {
     // Revive is bounded to this FREE, deterministic step — a paid tune is never auto-retried.
     setState({ message: 'the AE bridge is not answering — relaunching the bridge panel…' });
     const rev = await reviveBridge(REPO);
-    if (!rev.ok) { setState({ phase: 'error', message: rev.why, canRollback: !!session?.appliedReports?.length }); return; }
+    if (!rev.ok) { discardEmptySession(); setState({ phase: 'error', message: rev.why, canRollback: !!session?.appliedReports?.length }); return; }
     setState({ message: 'bridge is back — reading your composition…' });
     dump = await run('brownfield/dump_comp.mjs', [`--out=${workDir}`]);
   }
@@ -277,11 +290,12 @@ async function handleRun(req) {
         : `could not read the comp — is a composition open and the bridge panel running?\n${dump.err.slice(0, 300)}`,
       canRollback: !!session?.appliedReports?.length,
     });
+    discardEmptySession();
     return;
   }
   const stateFile = fs.readdirSync(workDir).find(f => f.endsWith('_state.json'));
   const frameFile = fs.readdirSync(workDir).find(f => f.endsWith('_frame.png'));
-  if (!stateFile) { setState({ phase: 'error', message: 'perception produced no state file' }); return; }
+  if (!stateFile) { discardEmptySession(); setState({ phase: 'error', message: 'perception produced no state file' }); return; }
   const perceived = JSON.parse(fs.readFileSync(path.join(workDir, stateFile), 'utf8'));
   setState({ message: `comp "${perceived.comp}" — ${perceived.activeCount}/${perceived.numLayers} layers live at this frame`, frame: previewOf(frameFile ? path.join(workDir, frameFile) : null) });
   if (perceived.missingLive) {
@@ -299,7 +313,7 @@ async function handleRun(req) {
   if (req.layer) planArgs.push(`--layer=${req.layer}`);
   const plan = await run('shell/plan_edit.mjs', planArgs);
   const specPath = path.join(workDir, 'plan_spec.json');
-  if (!fs.existsSync(specPath)) { setState({ phase: 'error', message: `planning failed:\n${(plan.err || plan.out).slice(0, 400)}` }); return; }
+  if (!fs.existsSync(specPath)) { discardEmptySession(); setState({ phase: 'error', message: `planning failed:\n${(plan.err || plan.out).slice(0, 400)}` }); return; }
   const spec = JSON.parse(fs.readFileSync(specPath, 'utf8'));
   setState({ message: spec._rationale || 'planned.', rationale: spec._rationale });
   if (!spec.edits?.length) {
@@ -307,6 +321,7 @@ async function handleRun(req) {
     // unbuilt Element 3D scene). Say which handoff is needed rather than applying a bluff edit.
     const pending = !!session?.appliedReports?.length;
     setState({ phase: 'handoff', message: spec._rationale || 'This needs something only you can do in the UI first.', canAccept: pending, canRollback: pending });
+    discardEmptySession();
     return;
   }
 
@@ -348,6 +363,7 @@ async function handleRun(req) {
   const summaryPath = path.join(workDir, 'tune_summary.json');
   if (!fs.existsSync(summaryPath)) {
     const n = salvage();
+    if (!n) discardEmptySession();
     setState({
       phase: 'error',
       message: `the edit loop died before finishing:\n${(tune.err || tune.out).slice(-400)}`

@@ -408,6 +408,55 @@ console.log('\nplan safety — atomic validation + selected-layer hard scope');
   ok('one off-scope edit rejects even the otherwise-valid selected-layer edit', r.edits.length === 0);
 }
 
+// ---- explicit effect contract: a named tool is a requirement, not a style suggestion -----------
+console.log('\nintent effects — explicit names cannot be silently substituted');
+{
+  const { mentionedInstalledEffects, explicitEffectProblems } = await import('../shell/intent_effects.mjs');
+  const installed = [
+    { name: 'Glow', match: 'ADBE Glo2' },
+    { name: 'Deep Glow', match: 'PEDG' },
+    { name: 'Deep Glow 2', match: 'PEDG2' },
+    { name: 'Lumetri Color', match: 'ADBE Lumetri' },
+    { name: 'Tint', match: 'ADBE Tint' },
+    { name: 'Fractal Noise', match: 'ADBE Fractal Noise' },
+    { name: 'Particular', match: 'tc Particular' },
+  ];
+
+  let m = mentionedInstalledEffects('加 Lumetri，阴影偏青，高光偏品红', installed);
+  eq('Lumetri is recognised as the installed Lumetri Color alias', m.map(x => x.matchNames), [['ADBE Lumetri']]);
+  m = mentionedInstalledEffects('选中层加 Deep Glow，Radius 180', installed);
+  eq('the longest overlapping effect name wins (not built-in Glow)', m.map(x => x.matchNames), [['PEDG']]);
+  m = mentionedInstalledEffects('加 Deep Glow 2', installed);
+  eq('a versioned name stays distinct', m.map(x => x.matchNames), [['PEDG2']]);
+  eq('negated names are not requirements',
+    mentionedInstalledEffects('不要用 Tint，改用 Lumetri', installed).map(x => x.matchNames), [['ADBE Lumetri']]);
+
+  let p = explicitEffectProblems('加 Lumetri', installed, [
+    { op: 'addEffect', layerIndex: 0, effectMatchName: 'ADBE Tint' },
+  ]);
+  ok('substituting Tint for named Lumetri is a contract failure', p.length === 1 && /Lumetri/.test(p[0]) && /ADBE Tint/.test(p[0]));
+  p = explicitEffectProblems('加 Lumetri', installed, [
+    { op: 'addEffect', layerIndex: 0, effectMatchName: 'ADBE Lumetri' },
+  ]);
+  eq('touching the named effect satisfies the contract', p, []);
+  p = explicitEffectProblems('加 Deep Glow，再做 opacity 呼吸', installed, [
+    { op: 'addEffect', layerIndex: 4, effectMatchName: 'PEDG' },
+    { op: 'expression', layerIndex: 4, target: 'opacity', expression: 'value' },
+  ]);
+  eq('supporting non-effect ops may accompany the named effect', p, []);
+
+  const { makePlanAtomic } = await import('../shell/plan_safety.mjs');
+  const atomic = makePlanAtomic({
+    edits: [{ op: 'addEffect', layerIndex: 0, effectMatchName: 'ADBE Tint' }],
+    validationProblems: [],
+    forcedLayer: null,
+    contractProblems: explicitEffectProblems('加 Lumetri', installed, [
+      { op: 'addEffect', layerIndex: 0, effectMatchName: 'ADBE Tint' },
+    ]),
+  });
+  ok('an effect-name contract failure rejects the whole plan', atomic.edits.length === 0 && atomic.fatalProblems.length === 1);
+}
+
 // ---- tune transaction + pass-count policy ------------------------------------------------------
 console.log('\ntune policy — apply failures are visible and passes are exact');
 {

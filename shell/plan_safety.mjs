@@ -25,10 +25,11 @@ export function selectedLayerProblems(edits, forcedLayer) {
   return problems;
 }
 
-export function makePlanAtomic({ edits, validationProblems, forcedLayer }) {
+export function makePlanAtomic({ edits, validationProblems, forcedLayer, contractProblems = [] }) {
   const fatal = [
     ...fatalValidationProblems(validationProblems),
     ...selectedLayerProblems(edits, forcedLayer),
+    ...contractProblems,
   ];
   if (!fatal.length) {
     return { edits: edits || [], fatalProblems: [], rationale: null };

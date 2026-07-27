@@ -31,6 +31,7 @@ import { leverContext, loadCards } from '../introspect/essence/lookup.mjs';
 import { askJSON, parseJSON, provider, defaultModel } from './llm.mjs';
 import { validateEdits } from './plan_validate.mjs';
 import { makePlanAtomic } from './plan_safety.mjs';
+import { mentionedInstalledEffects, explicitEffectProblems } from './intent_effects.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(__dirname, '..');
@@ -112,6 +113,7 @@ const roster = installed
   .filter(e => /^(ADBE|CC|tc |VIDEOCOPILOT|BCC|S_|PEDG)/.test(e.match))
   .filter(e => !cardedEffects.includes(e.match))
   .map(e => `${e.name} [${e.match}]`);
+const namedEffects = mentionedInstalledEffects(intent, installed);
 
 
 const SPEC_CONTRACT = `Return STRICT JSON only, in this shape:
@@ -168,6 +170,7 @@ const prompt = [
   '',
   `ARTIST INTENT: ${intent}`,
   forcedLayer ? `HARD SCOPE: layer ${forcedLayer} is selected. Every edit MUST target that existing layer. Do not add a layer and do not modify any other layer; return empty edits if the request cannot be completed inside this scope.` : '',
+  namedEffects.length ? `HARD EFFECT CONTRACT: The artist explicitly named ${namedEffects.map(m => `${m.displayNames.join('/')} [${m.matchNames.join('|')}]`).join(', ')}. The plan MUST touch the corresponding matchName; do not substitute another effect. Return empty edits with an explanation if the named effect cannot fulfil the request.` : '',
   '',
   'PERCEPTION — the live state of their comp (real values, read from the project just now):',
   JSON.stringify(perception, null, 1),
@@ -207,10 +210,12 @@ try {
 // KNOWN_ISSUES #2), predicts the parade slot of effects this spec itself adds, checks matchNames
 // against perception, and defaults keyframeMode where a bare setValue would be refused.
 const validated = validateEdits(plan.edits, state, installedByMatch);
+const effectContractProblems = explicitEffectProblems(intent, installed, validated.edits);
 const atomic = makePlanAtomic({
   edits: validated.edits,
   validationProblems: validated.problems,
   forcedLayer,
+  contractProblems: effectContractProblems,
 });
 const edits = atomic.edits;
 const problems = [...validated.problems, ...atomic.fatalProblems.filter(p => !validated.problems.includes(p))];
